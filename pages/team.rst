@@ -92,7 +92,7 @@ DECaLS New Co-Is
 * Anand Raichoor anand.raichoor@cea.fr - postdoc of Palanque-Delabrouille, 25 Sep 2014
 * Andrew Miller acm@seas.harvard.edu - Inference team, 25 Sep 2014
 * Ryan P. Adams rpa@seas.harvard.edu - Inference team, 25 Sep 2014
-* Jon !McAuliffe jon@stat.berkeley.edu - Inference team, 25 Sep 2014
+* Jon McAuliffe jon@stat.berkeley.edu - Inference team, 25 Sep 2014
 * Jeffrey Regier jeff@stat.berkeley.edu - Inference team, 25 Sep 2014
 * Prabhat prabhat@lbl.gov - Inference team, 25 Sep 2014
 * Yushu Yao yao.yushu@gmail.com - Inference team, 25 Sep 2014
@@ -102,7 +102,7 @@ DECaLS New Co-Is
 * Tom Shanks tom.shanks@durham.ac.uk - Durham - 19 Nov 2014
 * Ben Chehade ben.chehade@durham.ac.uk - Durham - 19 Nov 2014
 * James Lowenthal james@ast.smith.edu - Smith College - 3 Dec 2014
-* Ian !McGreer imcgreer@as.arizona.edu - University of Arizona - 9 Dec 2014
+* Ian McGreer imcgreer@as.arizona.edu - University of Arizona - 9 Dec 2014
 * Shaun Cole shaun.cole@durham.ac.uk - Durham - 20 Jan 2015
 * Carlos Frenk c.s.frenk@durham.ac.uk - Durham - 20 Jan 2015
 * Nigel Metcalfe nigel.metcalfe@durham.ac.uk - Durham - 20 Jan 2015

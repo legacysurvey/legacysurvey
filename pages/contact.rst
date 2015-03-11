@@ -1,9 +1,15 @@
 .. title: Contact Us
 .. slug: contact
 
-.. container:: col-md-4
-
    DECals P.I.'s:
         Arjun Dey <dey@noao.edu> and David Schlegel <djschlegel@lbl.gov>
-   The Tractor lead developer
+   DECals scheduling team lead:
+        Anna Patej <apatej@physics.harvard.edu>
+   DESI Imaging Survey Scientist
         Dustin Lang <dstn@cmu.edu>
+   DESI Target Selection Manager
+        Peter Nugent <nugent@lbl.gov>
+   Media contacts
+        ???
+   Discussion forum
+        https://groups.google.com/forum/#!forum/decam-legacy-survey

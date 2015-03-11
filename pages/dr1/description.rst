@@ -2,9 +2,9 @@
 .. slug: description
 .. tags: mathjax
 .. description:
+.. include:: <isonum.txt>
 
-
-:math:`(x+y)^2 = \sqrt{x+y+z} = {1\over c}`
+.. |sup2|   unicode:: U+000B2 .. SUPERSCRIPT TWO
 
 Contents of DR1
 ===============
@@ -12,7 +12,7 @@ Contents of DR1
 The Legacy Survey will produce an inference model of the 14,000 square degrees of extragalactic sky
 visible from the northern hemisphere in three optical bands (g,r,z) and four infrared bands.
 The sky coverage is approximately bounded by -18 < Dec < +84 deg in celestial coordinates
-and {b| > 18 deg in Galactic coordinates.
+and :math:`|b|` > 18 deg in Galactic coordinates.
 The DECam Legacy Survey is providing these data in the equatorial region at Dec < +30 deg
 using the Dark Energy Camera on the Blanco Telescope.
 
@@ -21,9 +21,12 @@ It includes DECam data primarily from z-band observations in August 2013 (http:/
 and g,r,z-band observations from August 2014 through January 2015 for an
 NOAO survey program (https://www.noao.edu/perl/abstract?2014B-0404).
 It also includes public data from other programs near the Fall celestial equator bounded by -45 < RA + 5, -3 < Dec < +3.
-In total, the optical data covers a disjoint 1500 deg^2^ footprint, with 570 deg^2^ in g-band, 600 deg^2^ in r-band
-and 1200 deg^2^ in z-band.  300 deg^2^ of this footprint has been observed in all three optical filters.
-Only 200 deg^2^ (???) of this footprint is covered to the expected final depth of g=24.0, r=23.6, z=23.0.
+In total, the optical data covers a disjoint 1500 deg\ |sup2| footprint,
+with 570 deg\ |sup2| in g-band, 600 deg\ |sup2| in r-band
+and 1200 deg\ |sup2| in z-band. 300 deg\ |sup2| of this footprint has been
+observed in all three optical filters.
+Only 200 deg\ |sup2| (???) of this footprint is covered to the expected
+final depth of g=24.0, r=23.6, z=23.0.
 Non-photometric data have been excluded from this first data release
 
 There are 100 million (???) unique sources, of which 40 million (???) include identifiers to sources in the SDSS
@@ -32,14 +35,21 @@ imaging catalog.  A total of approximately 400,000 (???) of these sources also h
 
 DR1 includes the calibrated, single-epoch images, stacked images, and the Tractor-based catalogs.
 The size of this data distribution is:
-|| ??? || tractor || Tractor catalogs ||
-|| ??? || coadd || Co-added images, including chi2, depth, image, model, nexp, PNG plots ||
-|| ??? || images || Single-epoch images ||
+
+===== ========= ===============
+Size  Directory Description
+===== ========= ===============
+???   tractor   Tractor catalogs
+???   coadd     Co-added images, including chi2, depth, image, model, nexp, PNG plots
+???   images    Single-epoch images
+===== ========= ===============
+
 The co-added images and Tractor catalogs are presented in bricks of approximate size 0.25 deg X 0.25 deg.
 These images are identical projections for each of the g,r,z filters.
 
 
-== Source Detection ==
+Source detection
+================
 
 The source detection relies upon a combination of known SDSS sources
 and a PSF-matched-filter detection of the DECam stacked images.
@@ -61,18 +71,20 @@ are detected in each of these two SED-matched filters.  Sources (blobs
 of significant pixels) containing an SDSS catalog object are removed.
 Remaining sources are added as point sources in the Tractor fitting.
 
-== PSF ==
+PSF
+===
 
 The Tractor makes use of the PSF on each individual exposure.  There is no
 PSF computed for the image stacks, as that would not be used.
 
 The PSF for the individual exposures are first computed independently for each CCD
-using PSFEx, generating pixelized models.  Those PSFs are then re-fit by a spatially-varying mixture of gaussians (!MoGs).
+using PSFEx, generating pixelized models.  Those PSFs are then re-fit by a spatially-varying mixture of gaussians (MoGs).
 The data model for those MoG PSFs are described
 [wiki:DecamLegacy/DataModel here] .
 
 
-== Sky level ==
+Sky Level
+=========
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
@@ -84,7 +96,8 @@ The Tractor removes a constant sky computed from the median on the object residu
 This value can be found as the SKY_P0 keyword in the files cosmo/work/decam/calib/sky .
 The stacked images have this sky level removed.
 
-== Tractor catalogs ==
+Tractor catalogs
+================
 
 The Tractor code runs within the geometrical region
 of a brick.  This fitting is performed on the individual exposures
@@ -103,7 +116,8 @@ This approach is likely to fail near the Galactic plane, where the
 high density of stars would be expected to result in a brick appearing
 as a single blob.
 
-== Morphological Classification ==
+Morphological classification
+============================
 
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
@@ -143,7 +157,8 @@ biases at the faint end.  It also allows the stacking of fluxes
 at the catalog level.
 
 
-== Tractor Implementation Details ==
+Tractor implementation details
+==============================
 
 Tractor fundamentally treats the fitting as a chi^2^ minimization
 problem.  The current core routine uses the sparse least squares
@@ -155,7 +170,7 @@ The PSF models and the PSF-convolved galaxy profiles are approximated
 with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563).
 This is not an exact representation, but introduces errors in these
 models typically at the level of 10^-4^ or smaller.
-The !MoGs are treated as the pixel-convolved quantities for the PSF, etc,
+The MoGs are treated as the pixel-convolved quantities for the PSF, etc,
 and are evaluated at the integral pixel coordinates without integrating
 any functions over the pixels.
 
@@ -170,15 +185,13 @@ Another practical issue is that the current PSF models may allow
 too much freedom.
 
 
-== Photometry ==
+Photometry
+==========
 
 The flux calibration for the DR1 is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm^2^/Hz. A source with a spectrum of
-{{{
-#!latex
-f = 10^{-(48.6+22.5)/2.5} erg/cm^2/Hz
-}}}
+:math:` f = 10^{-(48.6+22.5)/2.5} erg/cm^2/Hz`
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
@@ -191,10 +204,7 @@ Comparing the individual CCD zero points with a global average for an image show
 	 	 
 The brightness of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is as follows:
-{{{
-#!latex
-m = 22.5 - 2.5 * \log_{10}(flux)
-}}}
+:math:`m = 22.5 - 2.5 * \log_{10}(flux)`
 These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
@@ -202,18 +212,16 @@ expect many such cases for the faintest objects.
 The SDSS, DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the recommended conversions by
-the WISE team documented here:
-   http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-{{{
-#!latex
-Flux_{AB} = Flux_{Vega} * 10^{-(\Delta m/2.5)}
-}}}
-where Delta-m = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
-For example, a WISE W1 image should be multiplied by 10^-2.699/2.5^ = 0.083253 to
+the WISE team documented here
+http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
+:math:`Flux_{AB} = Flux_{Vega} * 10^{-(\Delta m/2.5)}`
+where :math:`\Delta-m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
+For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5}` = 0.083253 to
 give units consistent with the Tractor catalogs.
 
 
-== Extinction ==
+Galactic extinction
+===================
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3
 Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for ugrizY, and are applied
@@ -221,7 +229,8 @@ to the SFD98 E(B-V) values at the coordinate of each object.  The coefficients a
 only have small changes, with the largest effect in g-band where the coefficient would be 3.219
 at airmass=1 and 3.202 at airmass=2.
 
-== Astrometry ==
+Astrometry
+==========
 
 The astrometry is currently tied to star positions in Pan-STARRS.
 
@@ -234,7 +243,8 @@ differences for individual CCDs in the image. The residuals are shown by the arr
 In the future, the plan is to tied the astrometry to the GAIA astrometry, at which point we'll be able
 to use the predicted stellar positions at the DECam epoch of observation.
 
-== Image Stacks ==
+Image stacks
+============
 
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
@@ -242,20 +252,23 @@ These are tangent projections centered at each brick center, North up, with dime
 and a scale of 0.262 arcsec/pix.
 
 
-== Depths ==
+Depths
+======
 
 The median 5-sigma point source depths for areas in the DR1 with 3 observations is g=24.65, r=23.61, z=22.84.
 This is based upon the formal errors in the Tractor catalogs for point sources; those errors need more confirmation.
 This can be compared to the depths in the proposal for 2 observations at 1.5 arcsec seeing predicting g=24.7, r=23.9, z=23.0.
 
 
-== Code Versions ==
+Code versions
+=============
 
 * NOAO Community Pipeline
 * Sextractor, PSFEx
 * Tractor, astrometry.net -- mixed bag of Tractor versions as bugs were found & fixed.  "tune-up" run at tag "decals1".  Astrometry.net development version (git master).
 
-== Glossary ==
+Glossary
+========
 
 - Astrometry.net - Dustin Lang's astrometry code (https://github.com/dstndstn/astrometry.net)
 - Blob - Continguous region of pixels above a detection threshold and neighboring pixels; Tractor is optimized within blobs
@@ -277,3 +290,4 @@ This can be compared to the depths in the proposal for 2 observations at 1.5 arc
 - Tractor - Dustin Lang's inference code (https://github.com/dstndstn/tractor)
 - unWISE - New coadds of the WISE imaging, at original full resolution (http://unwise.me, http://arxiv.org/abs/1405.0308)
 - WISE - Wide Infrared Survey Explorer (http://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer)
+

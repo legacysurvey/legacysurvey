@@ -1,49 +1,66 @@
-= Data Release 1 (DR1) =
+.. title: Legacy survey files
+.. slug: files
+.. tags: mathjax
+.. description:
 
-Top level directory at NERSC:
-  '''/global/project/projectdirs/cosmo/work/decam/release/dr1/'''
+Top level directory for web access:
+  http://portal.nersc.gov/project/cosmo/test/dr1/
 
-== Summary files and Tractor catalogs ==
+Top level directory local to NERSC computers (for collaborators):
+  /global/project/projectdirs/cosmo/work/decam/release/dr1/
 
-- '''bricks.fits''' -- FITS binary table with the RA,DEC bounds of each geometrical "brick" on the sky
+Summary files
+=============
+
+:bricks.fits: FITS binary table with the RA,DEC bounds of each geometrical "brick" on the sky
   - Copied from https://desi.lbl.gov/trac/browser/decam/code/dtiling/trunk/bricks-0.25.fits
-- '''dr1-bricks.fits''' -- subset of bricks.fits listing the bricks included in this release
-- '''ccds.fits''' -- FITS binary table with almanac information about each individual CCD image
+:dr1-bricks.fits: subset of bricks.fits listing the bricks included in this release
+:ccds.fits: FITS binary table with almanac information about each individual CCD image
   - Copied from cosmo/work/decam/decals-ccds-CPv2.fits
-- '''dr1-ccds.fits''' -- subset of ccds.fits listing the CCDs that touch the area included in this release
-- '''dr1-specz-dr12.fits''' -- Merged photometric and spectroscopic catalog for 12,033 sources with spectroscopic redshifts from SDSS/DR12.  This is a FITS binary file with 4 extensions, each that are row-matched as follows:
+:dr1-ccds.fits: subset of ccds.fits listing the CCDs that touch the area included in this release
+:dr1-specz-dr12.fits: Merged photometric and spectroscopic catalog for 12,033 sources with spectroscopic redshifts from SDSS/DR12.  This is a FITS binary file with 4 extensions, each that are row-matched as follows:
+
   - HDU1 - DECaLS photometry and related Tractor outputs
   - HDU2 - SDSS/DR12 spectroscopy (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/specObj-dr12.fits ) 
   - HDU3 - SDSS/DR12 photometry (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/photoPosPlate-dr12.fits) recalibrated according to the latest (DR13) uber-calibration
   - HDU4 - WISE forced photometry (from specmatch-dr12.fits available [http://unwise.me here])
-- '''tractor/tractor-<brick>.fits''' - FITS binary table containing Tractor photometry
+
+Tractor catalogs
+================
+
+:tractor/<AAA>/tractor-<brick>.fits: FITS binary table containing Tractor photometry
   - Documented here: https://desi.lbl.gov/trac/wiki/DecamLegacy/TractorCatalogs
 
-== Image Stacks ==
+Image stacks
+============
 
-- '''coadd/decals-<brick>-ccds.fits''' - FITS binary table with the list of CCD images that were used in this brick.
+:coadd/<AAA>/decals-<brick>-ccds.fits: FITS binary table with the list of CCD images that were used in this brick.
    EXPNUM indicates the DECam exposure ID and FILTER indicates the filter (u,g,r).
-- '''coadd/decals-<brick>-image-<filter>.fits''' - Stacked image centered on a brick location covering 0.25 x 0.25 deg
+:coadd/<AAA>/decals-<brick>-image-<filter>.fits: Stacked image centered on a brick location covering 0.25 x 0.25 deg
   - NOTE: These are not the images used by Tractor, which operates on the single-epoch images.
   - the primary HDU contains the coadded image (simple unweighted coadd), in units of nano-maggies per pixel.
   - the first extension HDU contains the inverse-variance map.  This is the sum of inverse-variances of the input images.
-- '''coadd/decals-<brick>-model-<filter>.fits.gz''' - Stacked model image centered on a brick location covering 0.25 x 0.25 deg
+:coadd/<AAA>/decals-<brick>-model-<filter>.fits.gz: Stacked model image centered on a brick location covering 0.25 x 0.25 deg
   - the Tractor's idea of what the coadded images should look like; the Tractor's model prediction
-- '''coadd/decals-<brick>-chi2-<filter>.fits''' - Stacked chi^2^ image, which is approximately the summed chi^2^ values from the single-epoch images
-- '''coadd/decals-<file>-depth-<filter>.fits.gz''' - Stacked depth map in units of the point-source inverse-variance at each pixel
+:coadd/<AAA>/decals-<brick>-chi2-<filter>.fits: Stacked chi^2^ image, which is approximately the summed chi^2^ values from the single-epoch images
+:coadd/<AAA>/decals-<file>-depth-<filter>.fits.gz: Stacked depth map in units of the point-source inverse-variance at each pixel
   - The 5-sigma point-source depth would be computed as 5 / sqrt(depth_ivar) .
-- '''coadd/decals-<file>-nexp-<filter>.fits.gz''' - Number of exposures contributing to each pixel of the stacked images
-- '''coadd/decals-<brick>-image-full.jpg''' - full-size (3600x3600) JPEG image of calibrated image using the g,r,z filters as the colors
-- '''coadd/decals-<brick>-model-full.jpg''' - full-size (3600x3600) JPEG image of the Tractor's model image using the g,r,z filters as the colors
-- '''coadd/decals-<brick>-plot<nn>.jpg''' - plots of the results.
-  - nn=00: grz color image
-  - 01: grz color image + overplotted source positions
-  - 02: the first-round Tractor model, color image
-  - 03: the second-round Tractor model, color image (after removing some spurious sources and reducing the model complexity)
-  - 04: second-round model + overplotted source positions
+:coadd/<AAA>/decals-<file>-nexp-<filter>.fits.gz: Number of exposures contributing to each pixel of the stacked images
+:coadd/<AAA>/decals-<brick>-image-full.jpg: full-size (3600x3600) JPEG image of calibrated image using the g,r,z filters as the colors
+:coadd/<AAA>/decals-<brick>-model-full.jpg: full-size (3600x3600) JPEG image of the Tractor's model image using the g,r,z filters as the colors
+:coadd/<AAA>/decals-<brick>-plot<nn>.jpg: plots of the results.
 
-== Single-epoch images ==
-- '''images/YYYYMMDD/decam_<expnum>_<filter>.imag.fits''' - Calibrated CCD images used for Tractor processing
+  - nn=00 grz color image
+  - 01 grz color image + overplotted source positions
+  - 02 the first-round Tractor model, color image
+  - 03 the second-round Tractor model, color image (after removing some spurious sources and reducing the model complexity)
+  - 04 second-round model + overplotted source positions
+
+Single-epoch images
+===================
+
+:images/YYYYMMDD/decam_<expnum>_<filter>.imag.fits: Calibrated CCD images used for Tractor processing
+
   - 60 HDUs for each of the CCDs in a full DECam exposure.
   - Units are nano-maggies per pixel after applying the zero-point.
   - Based upon the Community Pipeline.
@@ -51,12 +68,17 @@ Top level directory at NERSC:
   - MAGZPT and SEEING header keywords in each hdu are from A. Dey's work.
   - NOTE: The astrometric solution is that generated by the CP and used for the Sexactor catalogs; the Tractor catalogs have re-fit the astromety for each CCD, but that's not stored here.
   - The units of these files are ADUs, which can be converted to fluxes using the MAGZERO header keyword, as follows:
-    * m = MAGZPT - 2.5 * log10(flux_ADU)
-    * flux_nanomaggies = flux_ADU * 10^((22.5 - MAGZPT)/2.5)
-- '''images/YYYYMMDD/decam_<expnum>_<filter>.ivar.fits''' - Calibrated CCD inverse variance images used for Tractor processing
+
+    - :math:`m = MAGZPT - 2.5 * log10(flux_{\rm ADU})`
+    - :math:`flux_{\rm nanomaggies} = flux_{\rm ADU} * 10^{(22.5 - MAGZPT)/2.5}`
+
+:images/YYYYMMDD/decam_<expnum>_<filter>.ivar.fits: Calibrated CCD inverse variance images used for Tractor processing
+
   - 60 HDUs for each of the CCDs in a full DECam exposure.
   - The units are 1/ADU^2^, with the same conversion from ADU to flux as for the corresponding image.
-- '''images/YYYYMMDD/decam_<expnum>_<filter>.mask.fits.gz''' - Calibrated CCD mask images used for Tractor processing
+
+:images/YYYYMMDD/decam_<expnum>_<filter>.mask.fits.gz: Calibrated CCD mask images used for Tractor processing
+
   - 60 HDUs for each of the CCDs in a full DECam exposure.
-  - Generated by the Community Pipeline, with the mask bits documented in the ``Data Quality Bit Defininitions'' table in http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  - Generated by the Community Pipeline, with the mask bits documented in the "Data Quality Bit Defininitions" table in http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 

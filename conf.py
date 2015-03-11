@@ -16,7 +16,7 @@ SITE_URL = "http://legacysurvey.org/"
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_small.jpg"
+LOGO_URL = "/files/logo_med.png"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -64,15 +64,17 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-#        (
-#           (('/research-topics', 'Topics'),
-#           ('/research-projects', 'Projects'),
-#           ('/research-archive', 'Archived Projects'),
-#           ),
-#           'Research'),
+        ("/.", 'Home'),
         ((
             ("/dr1", 'Data Release 1'),
             ), 'Data'),
+        ("http://legacysurvey.org", 'Viewer'),
+        ((
+            ("decals", 'DECaLS'),
+            ("http://www.darkenergysurvey.org", 'DES'),
+            ("http://batc.bao.ac.cn/BASS", 'BASS'),
+            ("http:unwise.com", 'unWISE'),
+            ), 'Inputs'),
         ((
             ("http://astrometry.net", 'astrometry.net'),
             ("http://thetractor.org", 'The Tractor'),
@@ -324,7 +326,7 @@ DATE_FORMAT = '%Y %b %d'
 # For creating favicons, take a look at:
 # http://www.netmagazine.com/features/create-perfect-favicon
 FAVICONS = {
-     ("icon", "/files/logo_square_32.ico", "32x32"),
+     ("icon", "/files/logo_script_32x32.png", "32x32"),
 #     ("icon", "/icon_128x128.png", "128x128"),
 }
 

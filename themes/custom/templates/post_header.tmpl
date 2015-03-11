@@ -1,0 +1,52 @@
+## -*- coding: utf-8 -*-
+
+## This is modified from base to remove some of the metadata that appears
+## under the post title (in html_post_header()) and put the date on the
+## same line as the title (in html_title())
+
+<%namespace name="helper" file="post_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+
+<%def name="html_title()">
+%if title and not post.meta('hidetitle'):
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="${post.permalink()}" class="u-url">${title|h}</a>&nbsp;&nbsp;
+         <small>
+            <time class="published dt-published" datetime="${post.date.isoformat()}" itemprop="datePublished">${post.formatted_date(date_format)}</time>
+        </small>
+    </h1>
+%endif
+</%def>
+
+<%def name="html_translations(post)">
+    % if len(translations) > 1:
+        <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">${messages("Also available in:")}</h3>
+            % for langname in translations.keys():
+                % if langname != lang and post.is_translation_available(langname):
+                <p><a href="${post.permalink(langname)}" rel="alternate" hreflang="${langname}">${messages("LANGUAGE", langname)}</a></p>
+                % endif
+            % endfor
+        </div>
+    % endif
+</%def>
+
+<%def name="html_sourcelink()">
+    % if show_sourcelink:
+        <p class="sourceline"><a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a></p>
+    % endif
+</%def>
+
+<%def name="html_post_header()">
+    <header>
+	${html_title()}
+       <div class="metadata">
+            % if post.meta('link'):
+                    <p><a href='${post.meta('link')}'>${messages("Original site")}</a></p>
+            % endif
+            %if post.description():
+                <meta name="description" itemprop="description" content="${post.description()}">
+            %endif
+        </div>
+        ${html_translations(post)}
+    </header>
+</%def>

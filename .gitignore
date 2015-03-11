@@ -9,12 +9,14 @@ __pycache__/
 .Python
 env/
 build/
+cache/
 develop-eggs/
 dist/
 downloads/
 eggs/
 lib/
 lib64/
+output/
 parts/
 sdist/
 var/

@@ -13,27 +13,34 @@ Name                        Type         Units                 Description
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char[]                             Name of brick, encoding the brick sky position
 OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+BRICK_PRIMARY               char[]                             "T" if the object is within the brick boundary
+BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
+TYPE                        char[]                             Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
 RA                          float64      deg                   Right ascension at epoch J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
-TYPE                        char[]                             Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 TX                          float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
 TY                          float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
-BRICK_PRIMARY               char[]                             "T" if the object is within the brick boundary
-BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
-DCHISQ                      float32[4]                         Difference in chi\ |sup2| between successfully more-complex model fits
-DECAM_RCHI2                 float32[6]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
-DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-DECAM_FRACMASKED            float32                            Profile-weighted raction of pixels masked from all observations of this object, strictly between [0,1]
-DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
 DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fluxes on the co-added residual images
 DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
+DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
+DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+DECAM_RCHI2                 float32[6]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
+DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
+DECAM_FRACMASKED            float32                            Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
+WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
+WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
+WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
+WISE_NOBS                   float32[4]                         Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
+WISE_RCHI2                  float32[4]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
+DCHISQ                      float32[4]                         Difference in chi\ |sup2| between successfully more-complex model fits
 FRACDEV                     float32                            Fraction of model in deVauc [0,1]
 FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
 SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)
@@ -48,15 +55,8 @@ SHAPEDEV_E1                 float32                            Ellipticity compo
 SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-SDSS_TREATED_AS_POINTSOURCE byte                               "T" if initialized as a point source from SDSS, "F" if initialized as a galaxy from SDSS
-DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
-WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
-WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
-WISE_NOBS                   float32[4]                         Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
-WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-WISE_RCHI2                  float32[4]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
-WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+SDSS_TREATED_AS_POINTSOURCE byte                               "T" if initialized as a point source from SDSS, "F" if initialized as a galaxy from SDSS
 =========================== ============ ===================== ===============================================
 
 Goodness-of-fits
@@ -132,29 +132,34 @@ as the SDSS-IV/eBOSS target selection catalogs.
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description                                    
 =========================== ============ ===================== ===============================================
-SDSS_OBJID                  int64                              http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
+SDSS_RUN                    int32                              http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
+SDSS_CAMCOL                 byte
+SDSS_FIELD                  int32
+SDSS_ID                     int32
+SDSS_OBJID                  int64
+SDSS_PARENT                 int32
+SDSS_NCHILD                 int32
+SDSS_OBJC_TYPE              int64
+SDSS_OBJC_FLAGS             int64
+SDSS_OBJC_FLAGS2            int64
+SDSS_FLAGS                  int64[5]
+SDSS_FLAGS2                 int64[5]
+SDSS_TAI                    float64[5]
 SDSS_RA                     float64
 SDSS_DEC                    float64
-SDSS_FRACDEV                float32[5]
-SDSS_OBJC_TYPE              int64
+SDSS_PSF_FWHM               float32[5]
+SDSS_MJD                    int64
 SDSS_THETA_DEV              float32[5]
 SDSS_THETA_DEVERR           float32[5]
 SDSS_AB_DEV                 float32[5]
 SDSS_AB_DEVERR              float32[5]
-SDSS_PHI_DEV_DEG            float32[5]
 SDSS_THETA_EXP              float32[5]
 SDSS_THETA_EXPERR           float32[5]
 SDSS_AB_EXP                 float32[5]
 SDSS_AB_EXPERR              float32[5]
+SDSS_FRACDEV                float32[5]
+SDSS_PHI_DEV_DEG            float32[5]
 SDSS_PHI_EXP_DEG            float32[5]
-SDSS_RESOLVE_STATUS         int64
-SDSS_NCHILD                 int32
-SDSS_FLAGS                  int64[5]
-SDSS_OBJC_FLAGS             int64
-SDSS_RUN                    int32
-SDSS_CAMCOL                 byte
-SDSS_FIELD                  int32
-SDSS_ID                     int32
 SDSS_PSFFLUX                float32[5]
 SDSS_PSFFLUX_IVAR           float32[5]
 SDSS_CMODELFLUX             float32[5]
@@ -162,8 +167,12 @@ SDSS_CMODELFLUX_IVAR        float32[5]
 SDSS_MODELFLUX              float32[5]
 SDSS_MODELFLUX_IVAR         float32[5]
 SDSS_DEVFLUX                float32[5]
+SDSS_DEVFLUX_IVAR           float32[5]
+SDSS_EXPFLUX                float32[5]
 SDSS_EXPFLUX_IVAR           float32[5]
 SDSS_EXTINCTION             float32[5]
+SDSS_CALIB_STATUS           int64
+SDSS_RESOLVE_STATUS         int64
 =========================== ============ ===================== ===============================================
 
 

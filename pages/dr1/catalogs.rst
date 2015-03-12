@@ -22,8 +22,6 @@ DEC                         float64      deg                   Declination at ep
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
-TX                          float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
-TY                          float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
@@ -34,6 +32,7 @@ DECAM_NOBS                  int32[6]                           Number of images 
 DECAM_RCHI2                 float32[6]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 DECAM_FRACMASKED            float32                            Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
+DECAM_SATURATED             byte                               "T" if any contributing image has the central pixel saturated
 WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
 WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
@@ -56,7 +55,6 @@ SHAPEDEV_E1_IVAR            float32                            Inverse variance 
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
-SDSS_TREATED_AS_POINTSOURCE byte                               "T" if initialized as a point source from SDSS, "F" if initialized as a galaxy from SDSS
 =========================== ============ ===================== ===============================================
 
 Goodness-of-fits
@@ -171,7 +169,7 @@ SDSS_DEVFLUX_IVAR           float32[5]
 SDSS_EXPFLUX                float32[5]
 SDSS_EXPFLUX_IVAR           float32[5]
 SDSS_EXTINCTION             float32[5]
-SDSS_CALIB_STATUS           int64
+SDSS_CALIB_STATUS           int64[5]
 SDSS_RESOLVE_STATUS         int64
 =========================== ============ ===================== ===============================================
 

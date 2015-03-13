@@ -19,7 +19,7 @@ TYPE                        char[]                             Morphological mod
 RA                          float64      deg                   Right ascension at epoch J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
-DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
+DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY

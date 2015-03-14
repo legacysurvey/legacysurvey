@@ -68,11 +68,11 @@ NAVIGATION_LINKS = {
         ((
             ("/dr1", 'Data Release 1'),
             ), 'Data'),
-        ("http://legacysurvey.org", 'Viewer'),
+        ("http://legacysurvey.org/viewer", 'Viewer'),
         ((
             ("decals", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
-            ("http://batc.bao.ac.cn/BASS", 'BASS'),
+#            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http:unwise.com", 'unWISE'),
             ), 'Inputs'),
         ((

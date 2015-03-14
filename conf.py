@@ -65,9 +65,10 @@ TRANSLATIONS = {
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
-        ((
-            ("/dr1", 'Data Release 1'),
-            ), 'Data'),
+        ("/dr1", 'Data Release 1'),
+#        ((
+#            ("/dr1", 'Data Release 1'),
+#            ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Viewer'),
         ((
             ("decals", 'DECaLS'),
@@ -79,7 +80,6 @@ NAVIGATION_LINKS = {
             ("http://astrometry.net", 'astrometry.net'),
             ("http://thetractor.org", 'The Tractor'),
             ), 'Code'),
-        ('/team', 'Team'),
         ('/contact', 'Contacts'),
         
     ),

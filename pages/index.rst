@@ -27,13 +27,13 @@
    .. raw:: html
 
       <h2>Data Release 1</h2>
-      <p>March 18, 2015</p>
+      <p>March 31, 2015</p>
       <p><a class="btn btn-primary btn-lg" href="http://legacysurvey.org/dr1">DR1</a></p>
 
 .. container::
 
-   *Acknowledgements:
-   The LBNL Physics Division is supported by the U.S. Department of
+   **Acknowledgements:**
+   *The LBNL Physics Division is supported by the U.S. Department of
    Energy Office of Science High Energy Physics.*
 
    *The Cerro Tololo Inter-American Observatory and the National
@@ -50,31 +50,7 @@
    Office of High Energy Physics provided resources through the
    "Cosmology Data Repository" project (Grant #KA2401022).*
 
-   *This project used data obtained with the Dark Energy Camera
-   (DECam), which was constructed by the Dark Energy Survey (DES)
-   collaborating institutions: Argonne National Lab, University of
-   California Santa Cruz, University of Cambridge, Centro de
-   Investigaciones Energeticas, Medioambientales y
-   Tecnologicas-Madrid, University of Chicago, University College
-   London, DES-Brazil consortium, University of Edinburgh, ETH-Zurich,
-   University of Illinois at Urbana-Champaign, Institut de Ciencies de
-   l'Espai, Institut de Fisica d'Altes Energies, Lawrence Berkeley
-   National Lab, Ludwig-Maximilians Universitat, University of
-   Michigan, National Optical Astronomy Observatory, University of
-   Nottingham, Ohio State University, University of Pennsylvania,
-   University of Portsmouth, SLAC National Lab, Stanford University,
-   University of Sussex, and Texas A&M University. Funding for DES,
-   including DECam, has been provided by the U.S. Department of
-   Energy, National Science Foundation, Ministry of Education and
-   Science (Spain), Science and Technology Facilities Council (UK),
-   Higher Education Funding Council (England), National Center for
-   Supercomputing Applications, Kavli Institute for Cosmological
-   Physics, Financiadora de Estudos e Projetos, Fundação Carlos Chagas
-   Filho de Amparo a Pesquisa, Conselho Nacional de Desenvolvimento
-   Científico e Tecnológico and the Ministério da Ciência e Tecnologia
-   (Brazil), the German Research Foundation-sponsored cluster of
-   excellence "Origin and Structure of the Universe" and the DES
-   collaborating institutions.*
+.. .. youtube:: 08LBltePDZw
 
 .. .. slides::
 

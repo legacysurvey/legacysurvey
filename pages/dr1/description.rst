@@ -160,7 +160,7 @@ at the catalog level.
 Tractor implementation details
 ==============================
 
-Tractor fundamentally treats the fitting as a chi^2^ minimization
+Tractor fundamentally treats the fitting as a chi\ |sup2| minimization
 problem.  The current core routine uses the sparse least squares
 solver from the scipy (scientific python) package, or the open source
 Ceres solver (http://ceres-solver.org), originally developed by
@@ -169,7 +169,7 @@ Google.
 The PSF models and the PSF-convolved galaxy profiles are approximated
 with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563).
 This is not an exact representation, but introduces errors in these
-models typically at the level of 10^-4^ or smaller.
+models typically at the level of :math:`10^{-4}` or smaller.
 The MoGs are treated as the pixel-convolved quantities for the PSF, etc,
 and are evaluated at the integral pixel coordinates without integrating
 any functions over the pixels.
@@ -190,8 +190,8 @@ Photometry
 
 The flux calibration for the DR1 is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
-constant in units of erg/cm^2^/Hz. A source with a spectrum of
-:math:` f = 10^{-(48.6+22.5)/2.5} erg/cm^2/Hz`
+constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
+:math:`f = 10^{-(48.6+22.5)/2.5} erg/cm^2/Hz`
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
@@ -277,9 +277,10 @@ Glossary
 - DECals - Dark Energy Camera Legacy Survey (http://legacysurvey.org)
 - DR1 - Data Release 1, scheduled for 18 March 2015
 - DECam - Dark Energy Camera on the NOAO Blanco 4-meter telescope
-- maggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to 1\timex 10^-9^ maggie or 1.0 nanomaggie
+- maggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to :math:`1 x 10^{-9}` maggie or 1.0 nanomaggie
 - MoG - Mixture-of-gaussian model to approximate the PSF and galaxy models
-- nanomaggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to 1\timex 10^-9^ maggie or 1.0 nanomaggie
+- NOAO - National Optical Astronomy Observatory (http://www.noao.edu)
+- nanomaggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to :math:`1 x 10^{-9}` maggie or 1.0 nanomaggie
 - PSF - Point spread function
 - PSFEx - Emmanuel Bertin's PSF fitting code (http://www.astromatic.net/software/psfex)
 - SDSS - Sloan Digital Sky Survey (http://www.sdss.org)

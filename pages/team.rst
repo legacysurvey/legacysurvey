@@ -114,4 +114,5 @@ DECaLS New Co-Is
 * Beth Willman bwillman@haverford.edu - Haverford - 4 Feb 2015
 * Aaron Meisner ameisner@fas.harvard.edu - Harvard -> Berkeley - 20 Feb 2015
 * Yu Feng yfeng1@berkeley.edu - UC Berkeley - 27 Feb 2015
+* Ana Bonaca ana.bonaca@yale.edu - Yale - 12 March 2015
 

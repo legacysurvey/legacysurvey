@@ -13,7 +13,6 @@ Summary files
 =============
 
 :bricks.fits: FITS binary table with the RA,DEC bounds of each geometrical "brick" on the sky
-  - Copied from https://desi.lbl.gov/trac/browser/decam/code/dtiling/trunk/bricks-0.25.fits
 :dr1-bricks.fits: subset of bricks.fits listing the bricks included in this release
 :ccds.fits: FITS binary table with almanac information about each individual CCD image
   - Copied from cosmo/work/decam/decals-ccds-CPv2.fits

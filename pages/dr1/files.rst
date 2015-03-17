@@ -4,10 +4,10 @@
 .. description:
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/test/dr1/
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr1/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/work/decam/release/dr1/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr1/
 
 Summary files
 =============

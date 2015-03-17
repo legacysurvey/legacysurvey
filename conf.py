@@ -358,7 +358,7 @@ CONTENT_FOOTER = """<hr>
 Contents &copy; {date}  <a href="mailto:{email}">{author}</a> | 
 Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> | 
 Theme is <a href="http://bootswatch.com/readable/">Readable</a> |
-<a href="http://github.com/bccp/website">Source</a>
+<a href="http://github.com/djschlegel/legacysurvey">Source</a>
 """
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,

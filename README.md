@@ -1,7 +1,7 @@
 website
 =======
 
-Source for Nikola-built website for bccp.berkeley.edu.
+Source for Nikola-built website for the Legacy Survey.
 
 With [nikola](http://getnikola.com) (v7.0+) installed:
 

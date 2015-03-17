@@ -27,13 +27,13 @@
    .. raw:: html
 
       <h2>Data Release 1</h2>
-      <p>March 31, 2015</p>
+      <p>March 18, 2015</p>
       <p><a class="btn btn-primary btn-lg" href="http://legacysurvey.org/dr1">DR1</a></p>
 
 .. container::
 
-   **Acknowledgements:**
-   *The LBNL Physics Division is supported by the U.S. Department of
+   *Acknowledgements:
+   The LBNL Physics Division is supported by the U.S. Department of
    Energy Office of Science High Energy Physics.*
 
    *The Cerro Tololo Inter-American Observatory and the National
@@ -50,7 +50,18 @@
    Office of High Energy Physics provided resources through the
    "Cosmology Data Repository" project (Grant #KA2401022).*
 
-.. .. youtube:: 08LBltePDZw
+.. image:: /files/Berkeley_Lab_Logo_Small.png
+   :height: 70px
+.. image:: /files/doeOOS.jpg
+   :height: 70px
+.. image:: /files/nersc-logo.png
+   :height: 70px
+.. image:: /files/3.5inch_72dpi.jpg
+   :height: 70px
+.. image:: /files/AURAlogo.jpg
+   :height: 70px
+.. image:: /files/nsf1.jpg
+   :height: 70px
 
 .. .. slides::
 

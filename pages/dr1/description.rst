@@ -232,7 +232,13 @@ at airmass=1 and 3.202 at airmass=2.
 Astrometry
 ==========
 
-The astrometry is currently tied to star positions in Pan-STARRS.
+The astrometry is currently tied to star positions in Pan-STARRS-1,
+which is implicitly at the time of observation for Pan-STARRS-1.
+
+The Astrometry.net code has been run on SourceExtractor-generated source lists
+(the same sources used for PSF determination).  This yields WCS headers with
+2nd-order SIP polynomial distortions.  The astrometric reference catalog
+is from Pan-STARRS-1.  This is solved independently on each CCD.
 
 In the DR1 footprint, the SDSS data spans epochs ??? through ???.
 
@@ -240,8 +246,9 @@ Comparison of the astrometric zero point for each image to the PS1 star position
 differences for individual CCDs in the image. The residuals are shown by the arrows in the attachments below
 (Offsets*ps*gz). The systematic residuals are typically smaller than +/-0.03 arcsec. 
 
-In the future, the plan is to tied the astrometry to the GAIA astrometry, at which point we'll be able
-to use the predicted stellar positions at the DECam epoch of observation.
+In the future, the plan is to tied the astrometry to the GAIA astrometry,
+at which point we will use the predicted stellar positions at the
+DECam epoch of observation.
 
 Image stacks
 ============

@@ -297,5 +297,5 @@ Glossary
 - SFD98 - Schlegel, Finkbeiner & Davis 1998 extinction maps
 - Tractor - Dustin Lang's inference code (https://github.com/dstndstn/tractor)
 - unWISE - New coadds of the WISE imaging, at original full resolution (http://unwise.me, http://arxiv.org/abs/1405.0308)
-- WISE - Wide Infrared Survey Explorer (http://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer)
+- WISE - Wide Infrared Survey Explorer (http://wise.ssl.berkeley.edu)
 

@@ -196,12 +196,21 @@ would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
-Zero point magnitudes for the CP version 2 reductions of the DECam images were computed by comparing 7 arcsec diameter aperture 
-photometry to PS1 photometry, where the latter was modified with color terms according to [https://desi.lbl.gov/trac/wiki/DecamLegacy/Reductions/Photometric] 
-to place the PS1 photometry on the DECam system. Zero points are computed separately for each CCD, but not for each amplifier.  
-Comparing the individual CCD zero points with a global average for an image shows residuals that are shown as the greyscale in the attachments below 
-(Offsets*ps.gz). The residuals are typically smaller than +/-0.015 mag.  
-	 	 
+Zero point magnitudes for the CP version 2 reductions of the DECam images
+were computed by comparing 7 arcsec diameter aperture photometry to PS1
+photometry, where the latter was modified with color terms
+to place the PS1 photometry on the DECam system.  The same color terms
+are applied to all CCDs.
+Zero points are computed separately for each CCD, but not for each amplifier.
+The color terms to convert from PS1 to DECam were computed for stars
+in the color range :math:`0.4 < (g-i) < 2.7` as follows:
+
+.. math::
+   & (g-i) = g_{PS} - i_{PS} \\
+   & g_{DECam} = g_{PS} + 0.04709 * (g-i) + 0.00084 * (g-i)^2 - 0.00340 * (g-i)^3 \\
+   & r_{DECam} = r_{PS} - 0.09939 * (g-i) + 0.04509 * (g-i)^2 - 0.01488 * (g-i)^3 \\
+   & z_{DECam} = z_{PS} - 0.13404 * (g-i) + 0.06591 * (g-i)^2 - 0.01695 * (g-i)^3
+
 The brightness of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is as follows:
 :math:`m = 22.5 - 2.5 * \log_{10}(flux)`

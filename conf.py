@@ -74,7 +74,7 @@ NAVIGATION_LINKS = {
             ("decals", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
-            ("http:unwise.com", 'unWISE'),
+            ("http://unwise.me", 'unWISE'),
             ), 'Inputs'),
         ((
             ("http://astrometry.net", 'astrometry.net'),

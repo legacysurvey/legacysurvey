@@ -1,7 +1,7 @@
 .. title: Contacts
 .. slug: contact
 
-DECals P.I.'s:
+DECaLS Principal Investigators:
      Arjun Dey dey@noao.edu and David Schlegel djschlegel@lbl.gov
 
 DESI Imaging Survey Scientist and lead Tractor developer

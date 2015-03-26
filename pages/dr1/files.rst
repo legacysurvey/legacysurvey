@@ -45,15 +45,8 @@ Image stacks
 :coadd/<AAA>/decals-<file>-depth-<filter>.fits.gz: Stacked depth map in units of the point-source inverse-variance at each pixel
   - The 5-sigma point-source depth would be computed as 5 / sqrt(depth_ivar) .
 :coadd/<AAA>/decals-<file>-nexp-<filter>.fits.gz: Number of exposures contributing to each pixel of the stacked images
-:coadd/<AAA>/decals-<brick>-image-full.jpg: full-size (3600x3600) JPEG image of calibrated image using the g,r,z filters as the colors
-:coadd/<AAA>/decals-<brick>-model-full.jpg: full-size (3600x3600) JPEG image of the Tractor's model image using the g,r,z filters as the colors
-:coadd/<AAA>/decals-<brick>-plot<nn>.jpg: plots of the results.
-
-  - nn=00 grz color image
-  - 01 grz color image + overplotted source positions
-  - 02 the first-round Tractor model, color image
-  - 03 the second-round Tractor model, color image (after removing some spurious sources and reducing the model complexity)
-  - 04 second-round model + overplotted source positions
+:coadd/<AAA>/decals-<brick>-image.jpg: JPEG image of calibrated image using the g,r,z filters as the colors
+:coadd/<AAA>/decals-<brick>-model.jpg: JPEG image of the Tractor's model image using the g,r,z filters as the colors
 
 Single-epoch images
 ===================

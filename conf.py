@@ -16,7 +16,7 @@ SITE_URL = "http://legacysurvey.org/"
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_med.png"
+LOGO_URL = "/files/logo_small.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #

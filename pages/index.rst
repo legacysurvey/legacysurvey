@@ -51,17 +51,17 @@
    "Cosmology Data Repository" project (Grant #KA2401022).*
 
 .. image:: /files/Berkeley_Lab_Logo_Small.png
-   :height: 70px
+   :height: 80px
 .. image:: /files/doeOOS.jpg
-   :height: 70px
+   :height: 40px
 .. image:: /files/nersc-logo.png
-   :height: 70px
+   :height: 40px
 .. image:: /files/3.5inch_72dpi.jpg
-   :height: 70px
+   :height: 80px
 .. image:: /files/AURAlogo.jpg
-   :height: 70px
+   :height: 40px
 .. image:: /files/nsf1.jpg
-   :height: 70px
+   :height: 40px
 
 .. .. slides::
 

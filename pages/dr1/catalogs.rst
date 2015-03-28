@@ -35,8 +35,8 @@ DECAM_FRACMASKED            float32[6]                         Profile-weighted 
 DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
 DECAM_SATURATED             byte[6]                            "T" if any contributing image has the central pixel saturated
 OUT_OF_BOUNDS               bool[6]                            "T" for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
-DECAM_ANYMASK               int32[6]                           Bitwise mask set if any pixels for an object satisfy each condition
-DECAM_ALLMASK               int32[6]                           Bitwise mask set if all pixels for an object satisfy each condition
+DECAM_ANYMASK               int32[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
+DECAM_ALLMASK               int32[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
 WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
 WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
@@ -63,7 +63,8 @@ EBV                         float32      mag                   Galactic extincti
 
 Mask values
 ===========
-The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows:
+The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
+from the CP Data Quality bits:
 
 === =======
 Bit Name  

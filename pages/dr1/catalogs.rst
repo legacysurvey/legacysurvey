@@ -11,11 +11,11 @@
 Name                        Type         Units                 Description                                    
 =========================== ============ ===================== ===============================================
 BRICKID                     int32                              Brick ID [1,662174]
-BRICKNAME                   char[]                             Name of brick, encoding the brick sky position
+BRICKNAME                   char                               Name of brick, encoding the brick sky position
 OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
-BRICK_PRIMARY               char[]                             "T" if the object is within the brick boundary
+BRICK_PRIMARY               bool                               "T" if the object is within the brick boundary
 BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
-TYPE                        char[]                             Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
+TYPE                        char                               Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
 RA                          float64      deg                   Right ascension at epoch J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
@@ -31,12 +31,16 @@ DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmis
 DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 DECAM_RCHI2                 float32[6]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-DECAM_FRACMASKED            float32                            Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
-DECAM_SATURATED             byte                               "T" if any contributing image has the central pixel saturated
+DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
+DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
+DECAM_SATURATED             byte[6]                            "T" if any contributing image has the central pixel saturated
+OUT_OF_BOUNDS               bool[6]                            "T" for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
+DECAM_ANYMASK               int32[6]                           Bitwise mask set if any pixels for an object satisfy each condition
+DECAM_ALLMASK               int32[6]                           Bitwise mask set if all pixels for an object satisfy each condition
 WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
 WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
-WISE_NOBS                   float32[4]                         Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+WISE_NOBS                   int32[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 WISE_RCHI2                  float32[4]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
 DCHISQ                      float32[4]                         Difference in chi\ |sup2| between successfully more-complex model fits
@@ -56,6 +60,23 @@ SHAPEDEV_E2                 float32                            Ellipticity compo
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 =========================== ============ ===================== ===============================================
+
+Mask values
+===========
+The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows:
+
+=== =======
+Bit Name  
+=== =======
+  0 badpix
+  1 satur
+  2 interp
+  4 cr
+  6 bleed
+  7 trans
+  8 edge
+  9 edge2
+=== =======
 
 Goodness-of-fits
 ================
@@ -203,7 +224,7 @@ and shape parameters are fixed.  Only the amplitude of the fluxes are fit, and a
 Name                        Type         Units                 Description                                    
 =========================== ============ ===================== ===============================================
 BRICKID                     int64                              Brick ID [1,662174]
-BRICKNAME                   char[]                             Name of brick, encoding the brick sky position
+BRICKNAME                   char                               Name of brick, encoding the brick sky position
 OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID
 FILTER                      char[1]                            Filter name, which will be 'g', 'r', or 'z' for DECam files or 'W1', 'W2', 'W3' or 'W4' for WISE files
 TAI                         float64      sec                   International Atomic Time timestamp for start of observation

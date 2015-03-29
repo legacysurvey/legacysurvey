@@ -70,6 +70,7 @@ NAVIGATION_LINKS = {
             ("/dr1", 'Data Release 1'),
             ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Viewer'),
+        ("/status", 'Survey Status'),
         ((
             ("decals", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),

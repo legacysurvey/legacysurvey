@@ -67,7 +67,7 @@ NAVIGATION_LINKS = {
         ("/.", 'Home'),
         ((
             ("/dr1", 'Data Release 1'),
-            ("/decals", 'DECaLS'),
+            ("/decamls", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),

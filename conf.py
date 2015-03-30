@@ -524,14 +524,14 @@ COPY_SOURCES = False
 #""" % SITE_URL
 #
 # If you prefer a google search form, here's an example that should just work:
-SEARCH_FORM = """
-<!-- Custom search with google-->
-<form id="search" action="http://google.com/search" method="get" class="navbar-form pull-left">
-<input type="hidden" name="q" value="site:%s" />
-<input type="text" name="q" maxlength="255" results="0" placeholder="Search"/>
-</form>
-<!-- End of custom search -->
-""" % SITE_URL
+#SEARCH_FORM = """
+#<!-- Custom search with google-->
+#<form id="search" action="http://google.com/search" method="get" class="navbar-form pull-left">
+#<input type="hidden" name="q" value="site:%s" />
+#<input type="text" name="q" maxlength="255" results="0" placeholder="Search"/>
+#</form>
+#<!-- End of custom search -->
+#""" % SITE_URL
 
 # Also, there is a local search plugin you can use, based on Tipue, but it requires setting several
 # options:

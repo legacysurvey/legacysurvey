@@ -65,22 +65,20 @@ TRANSLATIONS = {
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
-        ("/dr1", 'Data Release 1'),
         ((
             ("/dr1", 'Data Release 1'),
-            ), 'Data'),
-        ("http://legacysurvey.org/viewer", 'Viewer'),
-        ("/status", 'Survey Status'),
-        ((
-            ("decals", 'DECaLS'),
+            ("/decals", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
-            ), 'Inputs'),
-        ((
-            ("http://astrometry.net", 'astrometry.net'),
-            ("http://thetractor.org", 'The Tractor'),
-            ), 'Code'),
+            ), 'Data'),
+        ("http://legacysurvey.org/viewer", 'Sky Viewer'),
+        ("/status", 'Survey Status'),
+        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Members Pages'),
+#        ((
+#            ("http://astrometry.net", 'astrometry.net'),
+#            ("http://thetractor.org", 'The Tractor'),
+#            ), 'Code'),
         ('/contact', 'Contacts'),
         
     ),

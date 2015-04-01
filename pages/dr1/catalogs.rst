@@ -8,7 +8,7 @@
 
 
 =========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description                                    
+Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position
@@ -29,7 +29,7 @@ DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fl
 DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
 DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
 DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
-DECAM_RCHI2                 float32[6]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
+DECAM_RCHI2                 float32[6]                         Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
 DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
@@ -42,8 +42,8 @@ WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance 
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
 WISE_NOBS                   int32[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-WISE_RCHI2                  float32[4]                         Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
-DCHISQ                      float32[4]                         Difference in chi\ |sup2| between successfully more-complex model fits
+WISE_RCHI2                  float32[4]                         Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
+DCHISQ                      float32[4]                         Difference in :math:`\chi^2` between successfully more-complex model fits
 FRACDEV                     float32                            Fraction of model in deVauc [0,1]
 FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
 SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)
@@ -63,11 +63,12 @@ EBV                         float32      mag                   Galactic extincti
 
 Mask values
 ===========
+
 The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
 from the CP Data Quality bits:
 
 === =======
-Bit Name  
+Bit Name
 === =======
   0 badpix
   1 satur
@@ -82,15 +83,15 @@ Bit Name
 Goodness-of-fits
 ================
 
-The DCHISQ values represent the penalized chi\ |sup2| of all the pixels compared to
-various models.  This 4-element vectorcontains the chi\ |sup2| difference between
+The DCHISQ values represent the penalized :math:`\chi^2` of all the pixels compared to
+various models.  This 4-element vectorcontains the :math:`\chi^2` difference between
 the best-fit point source, deVauc model, exponential model, and a composite model.
-The number of degrees of freedom to include as a penalty to these chi\ |sup2| values
+The number of degrees of freedom to include as a penalty to these :math:`\chi^2` values
 are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.
 
-The DECAM_RCHI2 values are interpreted as the reduced chi\ |sup2| pixel-weighted by the model fit,
+The DECAM_RCHI2 values are interpreted as the reduced :math:`\chi^2` pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
-:math:`SUM[ (image - model)^2 * model * ivar] / SUM[ model ]`
+:math:`\sum [ (\mathrm{image} - \mathrm{model})^2 * \mathrm{model} * \mathrm{ivar}] / \sum [ \mathrm{model} ]`
 The above sum is over all images contributing to a particular filter.
 The above can be negative-valued for sources that have a flux measured as negative in some bands
 where they are not detected.
@@ -113,7 +114,7 @@ The value can slightly exceed unity owing to noise in the SFD98 maps, although i
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
 by Schlafly & Finkbeiner 2011 (http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
-extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.  
+extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
@@ -129,19 +130,18 @@ These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 Ellipticities
 =============
 
-Going between `r,e1,e2` and `r,ba,phi`:
+Going between :math:`r, e_1, e_2` and :math:`r, ba, \phi`:
 
-{{{
-e = hypot(e1, e2)
+.. math::
 
-ab = (1 - e) / (1 + e)
-e  = (ba + 1) / (ba - 1)
+    e & = & hypot(e1, e2) \\
+    ab & = & (1 - e) / (1 + e) \\
+     e & = & (ba + 1) / (ba - 1) \\
+   \phi & = & -rad2deg(arctan2(e2, e1) / 2) \\
+    angle & = & deg2rad(-2 * \phi) \\
+      e1 & = & e * cos(angle) \\
+      e2 & = & e * sin(angle) \\
 
-phi = -rad2deg(arctan2(e2, e1) / 2)
-angle = deg2rad(-2 * phi)
-e1 = e * cos(angle)
-e2 = e * sin(angle)
-}}}
 
 Debugging tags to remove in the future
 ======================================
@@ -150,7 +150,7 @@ The following are from the SDSS DR13 catalogs, to be released in 2015
 as the SDSS-IV/eBOSS target selection catalogs.
 
 =========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description                                    
+Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 SDSS_RUN                    int32                              http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
 SDSS_CAMCOL                 byte
@@ -200,7 +200,7 @@ Tags to add in the future
 =========================
 
 =========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description                                    
+Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 TAI_MIN                     float64      sec                   TAI timestamp for the earliest DECam image contributing to this brick (any filter)
 TAI_MAX                     float64      sec                   TAI timestamp for the latest DECam image contributing to this brick (any filter)
@@ -222,7 +222,7 @@ and shape parameters are fixed.  Only the amplitude of the fluxes are fit, and a
 (e.g., they can go negative).
 
 =========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description                                    
+Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 BRICKID                     int64                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position
@@ -235,7 +235,7 @@ Y                           float32      pix                   X coordinate cent
 FLUX                        float32      nanomaggies           Model flux
 FLUX_IVAR                   float32      1/nanomaggies\ |sup2| Inverse variance oF FLUX
 FRACFLUX                    float32                            Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-RCHI2                       float32                            Profile-weighted chi\ |sup2| of model fit normalized by the number of pixels
+RCHI2                       float32                            Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
 =========================== ============ ===================== ===============================================
 
 **Note:** The RCHI2 is different from the PROCHI2 and PRONPIX in the WISE Tractor catalog, since the

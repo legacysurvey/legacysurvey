@@ -127,7 +127,7 @@ and the shape parameters.  The discontinous properties are
 the choice for each source model: point source, exponential,
 deVaucouleurs, or a composite exponential+deVauc.  In this run, the
 initialization of sources uses SDSS models where available or otherwise
-a point source. 
+a point source.
 
 Four morphological types are used: point sources, deVauc profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
@@ -141,7 +141,7 @@ this corresponds to a chi-squared difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
 The classification is as a point source unless the penalized chi-squared
 is improved by 9 (i.e., approximately a 3-sigma improvement) by treating
-it as a deVauc or exponential profile. 
+it as a deVauc or exponential profile.
 The classification is a composite of deVauc + exponential if it both a
 better fit to a single profile over the point source, and the composite improves
 the penalized chi-squared by another 9.  These choices implicitly mean
@@ -150,7 +150,7 @@ and that composite profiles must be at least 6.5-sigma detections.
 
 In addition,any source brighter than r=12.5 is re-classified as a star (Is this still true???)..
 This step could be handled more elegantly in the future by holding fixed the classifications for known stars.
- 
+
 The fluxes are not constrained to be positive-valued.  This allows
 the fitting of very low signal-to-noise sources without introducing
 biases at the faint end.  It also allows the stacking of fluxes
@@ -160,7 +160,7 @@ at the catalog level.
 Tractor implementation details
 ==============================
 
-Tractor fundamentally treats the fitting as a chi\ |sup2| minimization
+Tractor fundamentally treats the fitting as a :math:`\chi^2` minimization
 problem.  The current core routine uses the sparse least squares
 solver from the scipy (scientific python) package, or the open source
 Ceres solver (http://ceres-solver.org), originally developed by
@@ -191,7 +191,7 @@ Photometry
 The flux calibration for the DR1 is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
-:math:`f = 10^{-(48.6+22.5)/2.5} erg/cm^2/Hz`
+:math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
@@ -206,14 +206,14 @@ The color terms to convert from PS1 to DECam were computed for stars
 in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
 .. math::
-   & (g-i) = g_{PS} - i_{PS} \\
-   & g_{DECam} = g_{PS} + 0.04709 * (g-i) + 0.00084 * (g-i)^2 - 0.00340 * (g-i)^3 \\
-   & r_{DECam} = r_{PS} - 0.09939 * (g-i) + 0.04509 * (g-i)^2 - 0.01488 * (g-i)^3 \\
-   & z_{DECam} = z_{PS} - 0.13404 * (g-i) + 0.06591 * (g-i)^2 - 0.01695 * (g-i)^3
+                (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
+   g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.04709 (g-i) + 0.00084 (g-i)^2 - 0.00340 (g-i)^3 \\
+   r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} - 0.09939 (g-i) + 0.04509 (g-i)^2 - 0.01488 (g-i)^3 \\
+   z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} - 0.13404 (g-i) + 0.06591 (g-i)^2 - 0.01695 (g-i)^3
 
 The brightness of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is as follows:
-:math:`m = 22.5 - 2.5 * \log_{10}(flux)`
+:math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`
 These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
@@ -223,7 +223,7 @@ The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the recommended conversions by
 the WISE team documented here
 http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-:math:`Flux_{AB} = Flux_{Vega} * 10^{-(\Delta m/2.5)}`
+:math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta-m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5}` = 0.083253 to
 give units consistent with the Tractor catalogs.
@@ -251,9 +251,9 @@ is from Pan-STARRS-1.  This is solved independently on each CCD.
 
 In the DR1 footprint, the SDSS data spans epochs ??? through ???.
 
-Comparison of the astrometric zero point for each image to the PS1 star positions shows systematic 
+Comparison of the astrometric zero point for each image to the PS1 star positions shows systematic
 differences for individual CCDs in the image. The residuals are shown by the arrows in the attachments below
-(Offsets*ps*gz). The systematic residuals are typically smaller than +/-0.03 arcsec. 
+(Offsets*ps*gz). The systematic residuals are typically smaller than +/-0.03 arcsec.
 
 In the future, the plan is to tied the astrometry to the GAIA astrometry,
 at which point we will use the predicted stellar positions at the
@@ -298,7 +298,7 @@ Glossary
 - maggie - Linear flux units, where an object with an AB magnitude of 0 is 1.0 maggie
 - MoG - Mixture-of-gaussian model to approximate the PSF and galaxy models (http://arxiv.org/abs/1210.6563)
 - NOAO - National Optical Astronomy Observatory (http://www.noao.edu)
-- nanomaggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to :math:`1 x 10^{-9}` maggie or 1.0 nanomaggie
+- nanomaggie - Linear flux units, where an object with an AB magnitude of 22.5 is equivalent to :math:`1 \times 10^{-9}` maggie or 1.0 nanomaggie
 - PSF - Point spread function
 - PSFEx - Emmanuel Bertin's PSF fitting code (http://www.astromatic.net/software/psfex)
 - SDSS - Sloan Digital Sky Survey (http://www.sdss.org)
@@ -309,4 +309,3 @@ Glossary
 - Tractor - Dustin Lang's inference code (https://github.com/dstndstn/tractor)
 - unWISE - New coadds of the WISE imaging, at original full resolution (http://unwise.me, http://arxiv.org/abs/1405.0308)
 - WISE - Wide Infrared Survey Explorer (http://wise.ssl.berkeley.edu)
-

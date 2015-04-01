@@ -54,3 +54,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Nikola files
+.doit.db
+my_conf.py

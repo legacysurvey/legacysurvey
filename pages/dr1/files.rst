@@ -28,7 +28,7 @@ Tractor catalogs
 ================
 
 :tractor/<AAA>/tractor-<brick>.fits: FITS binary table containing Tractor photometry
-  - Documented here: https://desi.lbl.gov/trac/wiki/DecamLegacy/TractorCatalogs
+  - Documented here: http://legacysurvey.org/dr1/catalogs/
 
 Image stacks
 ============

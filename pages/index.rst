@@ -1,7 +1,12 @@
 .. title: Index
 .. slug: index
+.. tags: mathjax
 .. date: 2012-11-08 00:06:06
 .. hidetitle: true
+
+.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
+.. |sup2|   unicode:: U+000B2 .. SUPERSCRIPT TWO
+.. |delta|    unicode:: U+003B4 .. GREEK SMALL LETTER DELTA
 
 .. raw:: html
 
@@ -11,14 +16,14 @@
 .. container:: col-md-6 col-left
 
    The Legacy Survey is producing an inference model catalog of the sky
-   from a set of optical and infrared imaging data.
-   14,000 square degrees of extragalactic sky
+   from a set of optical and infrared imaging data, comprising
+   14,000 deg\ |sup2| of extragalactic sky
    visible from the northern hemisphere in three optical bands (g,r,z)
    and four infrared bands.
-   The sky coverage is approximately bounded by -18 < Dec < +84 deg
-   in celestial coordinates and abs(b) > 18 deg in Galactic coordinates.
+   The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
+   in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
    The DECam Legacy Survey is providing these data in the equatorial
-   region at Dec < +30 deg using the Dark Energy Camera on the Blanco Telescope.
+   region at |delta| < +30\ |deg| using the Dark Energy Camera on the Blanco Telescope.
 
 .. container:: col-md-6 col-right
 
@@ -68,4 +73,3 @@
 ..   /galleries/frontpage/cosmic_web.jpg
 ..   /galleries/frontpage/planck.jpg
 ..   /galleries/frontpage/sn1994D.jpg
-

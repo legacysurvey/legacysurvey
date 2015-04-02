@@ -1,10 +1,13 @@
-.. title: Tractor catalog format
+.. title: Tractor Catalog Format
 .. slug: catalogs
 .. tags: mathjax
 .. description:
-.. include:: <isonum.txt>
 
+.. |chi|      unicode:: U+003C7 .. GREEK SMALL LETTER CHI
 .. |sup2|   unicode:: U+000B2 .. SUPERSCRIPT TWO
+.. |epsilon|  unicode:: U+003B5 .. GREEK SMALL LETTER EPSILON
+.. |phi|      unicode:: U+003D5 .. GREEK PHI SYMBOL
+.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 
 
 =========================== ============ ===================== ===============================================
@@ -29,7 +32,7 @@ DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fl
 DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
 DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
 DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
-DECAM_RCHI2                 float32[6]                         Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
+DECAM_RCHI2                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
 DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
@@ -42,8 +45,8 @@ WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance 
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
 WISE_NOBS                   int32[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-WISE_RCHI2                  float32[4]                         Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
-DCHISQ                      float32[4]                         Difference in :math:`\chi^2` between successfully more-complex model fits
+WISE_RCHI2                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+DCHISQ                      float32[4]                         Difference in |chi|\ |sup2| between successfully more-complex model fits
 FRACDEV                     float32                            Fraction of model in deVauc [0,1]
 FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
 SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)
@@ -61,7 +64,7 @@ SHAPEDEV_E2_IVAR            float32                            Inverse variance 
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 =========================== ============ ===================== ===============================================
 
-Mask values
+Mask Values
 ===========
 
 The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
@@ -80,18 +83,21 @@ Bit Name
   9 edge2
 === =======
 
-Goodness-of-fits
+Goodness-of-Fits
 ================
 
-The DCHISQ values represent the penalized :math:`\chi^2` of all the pixels compared to
-various models.  This 4-element vectorcontains the :math:`\chi^2` difference between
+The DCHISQ values represent the penalized |chi|\ |sup2| of all the pixels compared to
+various models.  This 4-element vectorcontains the |chi|\ |sup2| difference between
 the best-fit point source, deVauc model, exponential model, and a composite model.
-The number of degrees of freedom to include as a penalty to these :math:`\chi^2` values
+The number of degrees of freedom to include as a penalty to these |chi|\ |sup2| values
 are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.
 
-The DECAM_RCHI2 values are interpreted as the reduced :math:`\chi^2` pixel-weighted by the model fit,
+The DECAM_RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
-:math:`\sum [ (\mathrm{image} - \mathrm{model})^2 * \mathrm{model} * \mathrm{ivar}] / \sum [ \mathrm{model} ]`
+
+.. math::
+    \chi^2 = \frac{\sum \left[ \left(\mathrm{image} - \mathrm{model}\right)^2 \times \mathrm{model} \times \mathrm{inverse\, variance}\right]}{\sum \left[ \mathrm{model} \right]}
+
 The above sum is over all images contributing to a particular filter.
 The above can be negative-valued for sources that have a flux measured as negative in some bands
 where they are not detected.
@@ -104,7 +110,7 @@ sources with very large flux, the effective radius reported is the largest allow
 larger than expected given the measured flux of the objects.  These are almost the same conditions as
 described in Lang et al 2014 (http://arxiv.org/abs/1410.7397), and are further described there.
 
-Galactic extinction coefficients
+Galactic Extinction Coefficients
 ================================
 
 The Galactic extinction values are derived from the SFD98 maps, but with updated coefficients to
@@ -130,20 +136,32 @@ These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 Ellipticities
 =============
 
-Going between :math:`r, e_1, e_2` and :math:`r, ba, \phi`:
+The ellipticity, |epsilon|, is different from the usual
+eccentricity, :math:`e \equiv \sqrt{1 - (b/a)^2}`.  In gravitational lensing
+studies, the ellipticity is taken to be a complex number:
 
 .. math::
 
-    e & = & hypot(e1, e2) \\
-    ab & = & (1 - e) / (1 + e) \\
-     e & = & (ba + 1) / (ba - 1) \\
-   \phi & = & -rad2deg(arctan2(e2, e1) / 2) \\
-    angle & = & deg2rad(-2 * \phi) \\
-      e1 & = & e * cos(angle) \\
-      e2 & = & e * sin(angle) \\
+    \epsilon = \frac{a-b}{a+b} \exp( 2i\phi ) = \epsilon_1 + i \epsilon_2
 
+Where |phi| is the position angle with a range of 180\ |deg|, due to the
+ellipse's symmetry. Going between :math:`r, \epsilon_1, \epsilon_2`
+and :math:`r, b/a, \phi`:
 
-Debugging tags to remove in the future
+.. math::
+
+    r           & = & r \\
+    |\epsilon|  & = & \sqrt{\epsilon_1^2 + \epsilon_2^2} \\
+    \frac{b}{a} & = & \frac{1 - |\epsilon|}{1 + |\epsilon|} \\
+    \phi        & = & \frac{1}{2} \arctan \frac{\epsilon_2}{\epsilon_1} \\
+    |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
+    \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
+    \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
+
+** ??? In the catalogs sometimes AB is used to mean b/a.  We need to define this
+explicitly. ??? **
+
+Debugging Tags to Remove in the Future
 ======================================
 
 The following are from the SDSS DR13 catalogs, to be released in 2015
@@ -196,7 +214,7 @@ SDSS_RESOLVE_STATUS         int64
 =========================== ============ ===================== ===============================================
 
 
-Tags to add in the future
+Tags to Add in the Future
 =========================
 
 =========================== ============ ===================== ===============================================
@@ -214,12 +232,12 @@ PARALLAX_IVAR               float32      1/mas\ |sup2|         Inverse variance 
 =========================== ============ ===================== ===============================================
 
 
-Measurement catalogs
+Measurement Catalogs
 ====================
 
 This is the forced photometry model fluxes on individual frames.  The object coordinates, classification,
 and shape parameters are fixed.  Only the amplitude of the fluxes are fit, and are unconstrained
-(e.g., they can go negative).
+(*e.g.*, they can go negative).
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
@@ -235,20 +253,20 @@ Y                           float32      pix                   X coordinate cent
 FLUX                        float32      nanomaggies           Model flux
 FLUX_IVAR                   float32      1/nanomaggies\ |sup2| Inverse variance oF FLUX
 FRACFLUX                    float32                            Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-RCHI2                       float32                            Profile-weighted :math:`\chi^2` of model fit normalized by the number of pixels
+RCHI2                       float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
 =========================== ============ ===================== ===============================================
 
-**Note:** The RCHI2 is different from the PROCHI2 and PRONPIX in the WISE Tractor catalog, since the
-latter only had one stacked image from which it was measuring.  Here, the measurement can be from
-multiple images (and in principle those images could have different pixel scales).
+Notes
+-----
 
-**NOTE:** FRACFLUX would be >1 in the WISE Tractor catalog if
-neighbors contribute more than the object.  This is computed from the
-models only, not the actual image flux.
-
-**NOTE:** We may replace the ellipse parameters R, AB, PHI with a
-different parameterization, such as R, G1, G2 (shear parameters)
-often used by weak lensers.  Question: Which has less covariance?
-
-**Note:** Timestamps would normally be associated with the image, but for SDSS it's also a function of row number.
-That would be the argument to attach the timestamps to each individual measurement rather than image.
+* The RCHI2 is different from the PROCHI2 and PRONPIX in the WISE Tractor catalog, since the
+  latter only had one stacked image from which it was measuring.  Here, the measurement can be from
+  multiple images (and in principle those images could have different pixel scales).
+* FRACFLUX would be >1 in the WISE Tractor catalog if
+  neighbors contribute more than the object.  This is computed from the
+  models only, not the actual image flux.
+* We may replace the ellipse parameters R, AB, PHI with a
+  different parameterization, such as R, G1, G2 (shear parameters)
+  often used by weak lensers.  Question: Which has less covariance?
+* Timestamps would normally be associated with the image, but for SDSS it's also a function of row number.
+  That would be the argument to attach the timestamps to each individual measurement rather than image.

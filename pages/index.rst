@@ -27,7 +27,7 @@
    .. raw:: html
 
       <h2>Data Release 1</h2>
-      <p>March 31, 2015</p>
+      <p>April 2015</p>
       <p><a class="btn btn-primary btn-lg" href="http://legacysurvey.org/dr1">DR1</a></p>
 
 .. container::

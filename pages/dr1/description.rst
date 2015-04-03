@@ -5,6 +5,7 @@
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
 .. |sup2|     unicode:: U+000B2 .. SUPERSCRIPT TWO
+.. |alpha|      unicode:: U+003B1 .. GREEK SMALL LETTER ALPHA
 .. |chi|      unicode:: U+003C7 .. GREEK SMALL LETTER CHI
 .. |delta|    unicode:: U+003B4 .. GREEK SMALL LETTER DELTA
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
@@ -27,7 +28,8 @@ Data Release 1 (DR1) is the first public data release of images and catalogs for
 It includes DECam data primarily from z-band observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741)
 and g,r,z-band observations from August 2014 through January 2015 for an
 NOAO survey program (https://www.noao.edu/perl/abstract?2014B-0404).
-It also includes public data from other programs near the Fall celestial equator bounded by -45 < RA + 5 (???), -3\ |deg| < |delta| < +3\ |deg|.
+It also includes public data from other programs near the Fall celestial equator bounded by 315 < |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by
+-3\ |deg| < |delta| < +3\ |deg|.
 In total, the optical data covers a disjoint 1500 deg\ |sup2| footprint,
 with 570 deg\ |sup2| in g-band, 600 deg\ |sup2| in r-band
 and 1200 deg\ |sup2| in z-band. 300 deg\ |sup2| of this footprint has been

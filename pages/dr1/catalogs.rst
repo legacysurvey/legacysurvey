@@ -16,7 +16,7 @@ Name                        Type         Units                 Description
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position
 OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
-BRICK_PRIMARY               bool                               "T" if the object is within the brick boundary
+BRICK_PRIMARY               char                               "T" if the object is within the brick boundary
 BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
 TYPE                        char                               Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
 RA                          float64      deg                   Right ascension at epoch J2000
@@ -25,6 +25,9 @@ DEC                         float64      deg                   Declination at ep
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
+BX0                         float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
+BY0                         float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
+LEFT_BLOB                   char                               "T" if an object center has been optimized to be outside the fitting pixel area; otherwise "F"
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
@@ -68,20 +71,18 @@ Mask Values
 ===========
 
 The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
-from the CP Data Quality bits:
+from the CP Data Quality bits.
 
-=== =======
-Bit Name
-=== =======
-  0 badpix
-  1 satur
-  2 interp
-  4 cr
-  6 bleed
-  7 trans
-  8 edge
-  9 edge2
-=== =======
+=== ===== ===========================
+Bit Value Name
+=== ===== ===========================
+  0     1 detector bad pixel/no data
+  1     2 saturated
+  2     4 interpolated
+  4    16 single exposure cosmic ray
+  6    64 bleed trail
+  7   128 multi-exposure transient
+=== ===== ===========================
 
 Goodness-of-Fits
 ================

@@ -39,7 +39,6 @@ DECAM_RCHI2                 float32[6]                         Profile-weighted 
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
 DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
-DECAM_SATURATED             byte[6]                            "T" if any contributing image has the central pixel saturated
 OUT_OF_BOUNDS               bool[6]                            "T" for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 DECAM_ANYMASK               int32[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
 DECAM_ALLMASK               int32[6]                           Bitwise mask set if the central pixel from all images satisfy each condition

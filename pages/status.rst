@@ -10,5 +10,5 @@ This strategy will ensure a photometric solution across the full survey area.
 In addition to the DECam Legacy observations, data releases will include
 reductions of data from other programs in the same filters that overlap this footprint.
 
-.. image:: /files/coverage.19.jpg
+.. image:: /files/coverage.till.2015-04-14.pdf
 

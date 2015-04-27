@@ -290,7 +290,7 @@ USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
 #
 # If set to False, it will sort by filename instead. Defaults to True
-# GALLERY_SORT_BY_DATE = True
+GALLERY_SORT_BY_DATE = False
 #
 # Folders containing images to be used in normal posts or
 # pages. Images will be scaled down according to IMAGE_THUMBNAIL_SIZE

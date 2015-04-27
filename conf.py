@@ -277,16 +277,30 @@ ARCHIVE_PATH = "archive"
 # Image Gallery Options
 # #############################################################################
 
-# Galleries are folders in galleries/
-# Final location of galleries will be output / GALLERY_PATH / gallery_name
-# GALLERY_PATH = "galleries"
-# THUMBNAIL_SIZE = 180
-# MAX_IMAGE_SIZE = 1280
-# USE_FILENAME_AS_TITLE = True
+# One or more folders containing galleries. The format is a dictionary of
+# {"source": "relative_destination"}, where galleries are looked for in
+# "source/" and the results will be located in
+# "OUTPUT_PATH/relative_destination/gallery_name"
+# Default is:
+GALLERY_FOLDERS = {"galleries/galaxies": "galaxies"}
+# More gallery options:
+THUMBNAIL_SIZE = 512
+MAX_IMAGE_SIZE = 2048
+USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
 #
 # If set to False, it will sort by filename instead. Defaults to True
 # GALLERY_SORT_BY_DATE = True
+#
+# Folders containing images to be used in normal posts or
+# pages. Images will be scaled down according to IMAGE_THUMBNAIL_SIZE
+# and MAX_IMAGE_SIZE options, but will have to be referenced manually
+# to be visible on the site. The format is a dictionary of {source:
+# relative destination}.
+#
+IMAGE_FOLDERS = {'images': 'images'}
+# IMAGE_THUMBNAIL_SIZE = 400
+
 
 # #############################################################################
 # HTML fragments and diverse things that are used by the templates

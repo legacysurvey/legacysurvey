@@ -26,12 +26,13 @@
 <div id="gallery_container"></div>
 %if photo_array:
 <noscript>
-<ul class="thumbnails">
-    %for image in photo_array:
-        <li><a href="${image['url']}" class="thumbnail image-reference" title="${image['title']}">
-            <img src="${image['url_thumb']}" alt="${image['title']}" /></a>
-    %endfor
-</ul>
+<table>
+<tbody>
+	%for count, image in enumerate(photo_array):
+		<td><a href="${image['url']}" class="thumbnail image-reference" title="${image['title'].upper()}"><img src="${image['url_thumb']}" alt="${image['title'].upper()}" /></a></td> 
+	%endfor
+</tbody>
+</table>
 </noscript>
 %endif
 %if site_has_comments and enable_comments:
@@ -58,15 +59,16 @@ ${parent.extra_head()}
 jsonContent = ${photo_array_json};
 $("#gallery_container").flowr({
         data : jsonContent,
-        height : ${thumbnail_size}*.6,
+        height : ${thumbnail_size}*.5,
         padding: 5,
+        margin: 5,
         rows: -1,
         render : function(params) {
             // Just return a div, string or a dom object, anything works fine
             img = $("<img />").attr({
                 'src': params.itemData.url_thumb,
                 'width' : params.width,
-                'height' : params.height
+                'height' : params.width,
             }).css('max-width', '100%');
             link = $( "<a></a>").attr({
                 'href': params.itemData.url,

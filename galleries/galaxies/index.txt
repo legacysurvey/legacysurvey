@@ -1,2 +1,5 @@
 .. title: Gallery
 .. slug: gallery
+
+Color mosaics generated using `Dan Coe's trilogy.py
+<http://www.stsci.edu/~dcoe/trilogy/Intro.html>`_.

@@ -17,29 +17,30 @@
 Contents of DR1
 ===============
 
-The Legacy Survey will produce an inference model of the 14,000 square degrees of extragalactic sky
-visible from the northern hemisphere in three optical bands (g,r,z) and four infrared bands.
-The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates
-and :math:`|b|` > 18\ |deg| in Galactic coordinates.
-The DECam Legacy Survey is providing these data in the equatorial region at |delta| < +30\ |deg|
-using the Dark Energy Camera on the Blanco Telescope.
+The Legacy Survey will produce an inference model of the 14,000 square degrees
+of extragalactic sky visible from the northern hemisphere in three optical bands
+(g,r,z) and four infrared bands.  The sky coverage is approximately bounded by
+-18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
+|deg| in Galactic coordinates.  The DECam Legacy Survey is providing these data
+in the equatorial region at |delta| < +30\ |deg| using the Dark Energy Camera on
+the Blanco Telescope.
 
-Data Release 1 (DR1) is the first public data release of images and catalogs for the DECam Legacy Survey.
-It includes DECam data primarily from z-band observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741)
-and g,r,z-band observations from August 2014 through January 2015 for an
-NOAO survey program (https://www.noao.edu/perl/abstract?2014B-0404).
-It also includes public data from other programs near the Fall celestial equator bounded by 315 < |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by
--3\ |deg| < |delta| < +3\ |deg|.
-In total, the optical data covers a disjoint 1500 deg\ |sup2| footprint,
-with 570 deg\ |sup2| in g-band, 600 deg\ |sup2| in r-band
-and 1200 deg\ |sup2| in z-band. 300 deg\ |sup2| of this footprint has been
-observed in all three optical filters.
-Only 200 deg\ |sup2| (???) of this footprint is covered to the expected
-final depth of g=24.0, r=23.6, z=23.0.
-Non-photometric data have been excluded from this first data release
+Data Release 1 (DR1) is the first public data release of images and catalogs for
+the DECam Legacy Survey.  It includes DECam data primarily from z-band
+observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
+g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
+program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
+public data from other programs near the Fall celestial equator bounded by 315 <
+|alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
+|deg|.  In total, the optical data covers a disjoint 3100 deg\ |sup2| footprint,
+with 1200 deg\ |sup2| in g-band, 1300 deg\ |sup2| in r-band and 2700 deg\ |sup2|
+in z-band, of which 750 deg\ |sup2| of this footprint has been observed in all
+three optical filters.  Only 110 deg\ |sup2| of this footprint is covered to the
+expected final depth of g=24.0, r=23.6, z=23.0.  Non-photometric data have been
+excluded from this first data release.
 
-There are 100 million (???) unique sources, of which 40 million (???) include identifiers to sources in the SDSS
-imaging catalog.  A total of approximately 400,000 (???) of these sources also have SDSS spectroscopy.
+There are approximately 140 million unique sources, of which approximately
+750,000 have SDSS spectroscopy.
 
 DR1 includes the calibrated, single-epoch images, stacked images, and the Tractor-based catalogs.
 The size of this data distribution is:
@@ -47,14 +48,14 @@ The size of this data distribution is:
 ===== ========= ===============
 Size  Directory Description
 ===== ========= ===============
-???   tractor   Tractor catalogs
-???   coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, PNG plots
-???   images    Single-epoch images
+235GB tractor   Tractor catalogs
+15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
+1.2TB images    Single-epoch images
 ===== ========= ===============
 
-The co-added images and Tractor catalogs are presented in bricks of approximate size 0.25\ |deg| |times| 0.25\ |deg|.
-These images are identical projections for each of the g,r,z filters.
-
+The co-added images and Tractor catalogs are presented in bricks of approximate
+size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections
+for each of the g,r,z filters.
 
 Source Detection
 ================

@@ -158,8 +158,6 @@ and :math:`r, b/a, \phi`:
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
 
-** ??? In the catalogs sometimes AB is used to mean b/a.  We need to define this
-explicitly. ??? **
 
 Debugging Tags to Remove in the Future
 ======================================

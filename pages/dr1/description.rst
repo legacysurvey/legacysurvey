@@ -88,8 +88,6 @@ PSF computed for the image stacks, as that would not be used.
 
 The PSF for the individual exposures are first computed independently for each CCD
 using PSFEx, generating pixelized models.  Those PSFs are then re-fit by a spatially-varying mixture of gaussians (MoGs).
-The data model for those MoG PSFs are described
-[wiki:DecamLegacy/DataModel here] (???).
 
 
 Sky Level
@@ -102,7 +100,7 @@ This makes the sky level in the processed images near zero, and removes most pat
 A constant sky level is then added back to the image that is mean of what was removed.
 
 The Tractor removes a constant sky computed from the median on the object residual image.
-This value can be found as the SKY_P0 keyword in the files cosmo/work/decam/calib/sky (???).
+This value can be found as the SKY_P0 keyword in the calibration files cosmo/work/decam/calib/sky.
 The stacked images have this sky level removed.
 
 Tractor Catalogs
@@ -156,9 +154,6 @@ better fit to a single profile over the point source, and the composite improves
 the penalized |chi|\ |sup2| by another 9.  These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections
 and that composite profiles must be at least 6.5\ |sigma| detections.
-
-In addition,any source brighter than r=12.5 is re-classified as a star (Is this still true???).
-This step could be handled more elegantly in the future by holding fixed the classifications for known stars.
 
 The fluxes are not constrained to be positive-valued.  This allows
 the fitting of very low signal-to-noise sources without introducing
@@ -258,7 +253,8 @@ The Astrometry.net code has been run on SourceExtractor-generated source lists
 2nd-order SIP polynomial distortions.  The astrometric reference catalog
 is from Pan-STARRS-1.  This is solved independently on each CCD.
 
-In the DR1 footprint, the SDSS data spans epochs ??? through ???.
+In the DR1 footprint, the SDSS imaging data spans 1998 through 2005,
+and the SDSS spectroscopic data spans Feb 2000 through April 2014.
 
 Comparison of the astrometric zero point for each image to the PS1 star positions shows systematic
 differences for individual CCDs in the image. The residuals are shown by the arrows in the attachments below
@@ -316,7 +312,7 @@ DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
 
 DR1
-    Data Release 1, scheduled for ??? April 2015.
+    DECam Legacy Survey Data Release 1, May 2015.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

@@ -50,7 +50,7 @@ Size  Directory Description
 ===== ========= ===============
 235GB tractor   Tractor catalogs
 15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-1.2TB images    Single-epoch images
+2.6TB images    Single-epoch images
 ===== ========= ===============
 
 The co-added images and Tractor catalogs are presented in bricks of approximate

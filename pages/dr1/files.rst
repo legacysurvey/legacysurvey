@@ -71,52 +71,69 @@ ascension <AAA>.
 Image Stacks
 ============
 
-coadd/<AAA>/decals-<brick>-ccds.fits
-------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-ccds.fits
+--------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
 EXPNUM indicates the DECam exposure ID and FILTER indicates the filter (u,g,r).
 
-coadd/<AAA>/decals-<brick>-image-<filter>.fits
-----------------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-image-<filter>.fits
+------------------------------------------------------
 
-Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
+Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
+|deg|.  The primary HDU contains the coadded image (simple unweighted coadd), in
+units of nano-maggies per pixel. 
 
-- NOTE: These are not the images used by Tractor, which operates on the single-epoch images.
-- The primary HDU contains the coadded image (simple unweighted coadd), in units of nano-maggies per pixel.
-- The first extension HDU contains the inverse-variance map.  This is the sum of inverse-variances of the input images.
+- NOTE: These are not the images used by Tractor, which operates on the
+  single-epoch images. 
 
-coadd/<AAA>/decals-<brick>-model-<filter>.fits.gz
--------------------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-invvar-<filter>.fits
+-------------------------------------------------------
+
+Corresponding stacked inverse variance image based on the sum of the
+inverse-variances of the individual input images in units of 1/(nano-maggies)\
+|sup2| per pixel.
+
+- NOTE: These are not the inverse variance maps used by Tractor, which operates
+  on the single-epoch images.
+
+coadd/<AAA>/<brick>/decals-<brick>-model-<filter>.fits.gz
+---------------------------------------------------------
 
 Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
 
 - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
-coadd/<AAA>/decals-<brick>-chi2-<filter>.fits
----------------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-chi2-<filter>.fits
+-----------------------------------------------------
 
 Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
 
-coadd/<AAA>/decals-<file>-depth-<filter>.fits.gz
-------------------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-depth-<filter>.fits.gz
+---------------------------------------------------------
 
 Stacked depth map in units of the point-source inverse-variance at each pixel.
 
-- The 5\ |sigma| point-source depth would be computed as 5 / sqrt(depth_ivar) .
+- The 5\ |sigma| point-source depth can be computed as 5 / sqrt(depth_ivar) .
 
-coadd/<AAA>/decals-<file>-nexp-<filter>.fits.gz
------------------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-nexp-<filter>.fits.gz
+--------------------------------------------------------
 
 Number of exposures contributing to each pixel of the stacked images.
 
-coadd/<AAA>/decals-<brick>-image.jpg
-------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-image.jpg
+--------------------------------------------
 
 JPEG image of calibrated image using the g,r,z filters as the colors.
 
-coadd/<AAA>/decals-<brick>-model.jpg
-------------------------------------
+coadd/<AAA>/<brick>/decals-<brick>-model.jpg
+--------------------------------------------
 
 JPEG image of the Tractor's model image using the g,r,z filters as the colors.
+
+coadd/<AAA>/<brick>/decals-<brick>-resid.jpg
+--------------------------------------------
+
+JPEG image of the residual image (data minus model) using the g,r,z filters as
+the colors. 
 

@@ -32,7 +32,7 @@
    .. raw:: html
 
       <h2>Data Release 1</h2>
-      <p>April 2015</p>
+      <p>May 2015</p>
       <p><a class="btn btn-primary btn-lg" href="http://legacysurvey.org/dr1">DR1</a></p>
 
 .. container::

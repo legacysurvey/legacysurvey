@@ -116,4 +116,6 @@ DECaLS New Co-Is
 * Yu Feng yfeng1@berkeley.edu - UC Berkeley - 27 Feb 2015
 * Ana Bonaca ana.bonaca@yale.edu - Yale - 12 March 2015
 * Jaime Ernesto Forero Romero je.forero@uniandes.edu.co - Andes - 17 Apr 2015
-
+* Adrian Price-Whelan adrianmpw@gmail.com - NYU - 15 Jun 2015
+* Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC - 15 Jun 2015
+* Jim Annis annis@fnal.gov - FNAL - 15 Jun 2015

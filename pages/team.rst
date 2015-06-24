@@ -120,4 +120,4 @@ DECaLS New Co-Is
 * Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC - 15 Jun 2015
 * Jim Annis annis@fnal.gov - FNAL - 15 Jun 2015
 * James Jee mkjee@physics.ucdavis.edu - Davis - 24 Jun 2015
-
+* Stephanie Juneau stephanie.juneau@cea.fr - Saclay - 24 Jun 2015

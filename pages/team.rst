@@ -119,3 +119,5 @@ DECaLS New Co-Is
 * Adrian Price-Whelan adrianmpw@gmail.com - NYU - 15 Jun 2015
 * Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC - 15 Jun 2015
 * Jim Annis annis@fnal.gov - FNAL - 15 Jun 2015
+* James Jee mkjee@physics.ucdavis.edu - Davis - 24 Jun 2015
+

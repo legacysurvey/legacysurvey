@@ -24,11 +24,32 @@ Summary Files
 decals-bricks.fits
 ------------------
 
-FITS binary table with the RA,DEC bounds of each geometrical "brick" on the sky.
+FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 The subset of bricks which have g-, r-, or z-band imaging in this data release
-can be identified using the HAS_IMAGE_G, HAS_IMAGE_R, and HAS_IMAGE_Z tags,
+can be identified using the ``has_image_g``, ``has_image_r``, and ``has_image_z`` tags,
 respectively.  The bricks with a corresponding Tractor photometric catalog in
-this release can be identified using the HAS_CATALOG tag.
+this release can be identified using the ``has_catalog`` tag.
+
+=============== ======= =========================================
+Column          Type    Description
+=============== ======= =========================================
+``brickname``   char[8] Name of the brick.
+``brickid``     int32   Is this a unique integer that can be used as a primary key?
+``brickq``      int16   A "priority" factor used for processing.
+``brickrow``    int32   Dec row number
+``brickcol``    int32   Number of the brick within a Dec row.
+``ra``          double  RA of the center of the brick.
+``dec``         double  Dec of the center of the brick.
+``ra1``         double  Lower RA boundary.
+``ra2``         double  Upper RA boundary.
+``dec1``        double  Lower Dec boundary.
+``dec2``        double  Upper Dec boundary.
+``has_image_g`` byte    This brick has imaging data in this band.
+``has_image_r`` byte    This brick has imaging data in this band.
+``has_image_z`` byte    This brick has imaging data in this band.
+``has_catalog`` byte    This brick has Tractor photometry.
+=============== ======= =========================================
+
 
 decals-ccds.fits
 ----------------
@@ -66,7 +87,7 @@ tractor-sweep-<AAA>.fits
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs in a given degree of right
-ascension <AAA>.  
+ascension <AAA>.
 
 Image Stacks
 ============
@@ -82,10 +103,10 @@ coadd/<AAA>/<brick>/decals-<brick>-image-<filter>.fits
 
 Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
 |deg|.  The primary HDU contains the coadded image (simple unweighted coadd), in
-units of nano-maggies per pixel. 
+units of nano-maggies per pixel.
 
 - NOTE: These are not the images used by Tractor, which operates on the
-  single-epoch images. 
+  single-epoch images.
 
 coadd/<AAA>/<brick>/decals-<brick>-invvar-<filter>.fits
 -------------------------------------------------------
@@ -135,5 +156,4 @@ coadd/<AAA>/<brick>/decals-<brick>-resid.jpg
 --------------------------------------------
 
 JPEG image of the residual image (data minus model) using the g,r,z filters as
-the colors. 
-
+the colors.

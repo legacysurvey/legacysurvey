@@ -30,11 +30,11 @@ can be identified using the ``has_image_g``, ``has_image_r``, and ``has_image_z`
 respectively.  The bricks with a corresponding Tractor photometric catalog in
 this release can be identified using the ``has_catalog`` tag.
 
-=============== ======= =========================================
+=============== ======= ======================================================
 Column          Type    Description
-=============== ======= =========================================
+=============== ======= ======================================================
 ``brickname``   char[8] Name of the brick.
-``brickid``     int32   Is this a unique integer that can be used as a primary key?
+``brickid``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
 ``brickq``      int16   A "priority" factor used for processing.
 ``brickrow``    int32   Dec row number
 ``brickcol``    int32   Number of the brick within a Dec row.
@@ -48,7 +48,7 @@ Column          Type    Description
 ``has_image_r`` byte    This brick has imaging data in this band.
 ``has_image_z`` byte    This brick has imaging data in this band.
 ``has_catalog`` byte    This brick has Tractor photometry.
-=============== ======= =========================================
+=============== ======= ======================================================
 
 
 decals-ccds.fits

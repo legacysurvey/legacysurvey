@@ -126,4 +126,5 @@ DECaLS New Co-Is
 * Knut Olsen kolsen@noao.edu - NOAO - 15 April 2015
 * Alexander Mendez ajmendez@jhu.edu - JHU - 8 July 2015
 * Kyle Willett willett@physics.umn.edu - UMN - 22 July 2015
+* Feige Wang fgwang.astro@gmail.com - student of X. Fan - 29 July 2015
 

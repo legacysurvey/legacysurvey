@@ -127,4 +127,5 @@ DECaLS New Co-Is
 * Alexander Mendez ajmendez@jhu.edu - JHU - 8 July 2015
 * Kyle Willett willett@physics.umn.edu - UMN - 22 July 2015
 * Feige Wang fgwang.astro@gmail.com - student of X. Fan - 29 July 2015
+* David Gerdes gerdes@umich.edu - Michigan - 7 Aug 2015
 

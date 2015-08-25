@@ -157,3 +157,26 @@ coadd/<AAA>/<brick>/decals-<brick>-resid.jpg
 
 JPEG image of the residual image (data minus model) using the g,r,z filters as
 the colors.
+
+Raw Data
+========
+
+Raw Legacy Survey images are available through the NOAO Science Archive.  The
+*input* data used to create the stacked images, Tractor catalogs, etc. comprises
+images taken by the dedicated DECam Legacy Survey project, as well as other
+DECam images, and images from other surveys.  These instructions are for
+obtaining raw images from the DECam Legacy Survey *only*.
+
+1. Visit the `NOAO Science Archive`_.
+2. Click on `General Search for NOAO data (all users)`_.
+3. In the Simple Query Form, enter "2014B-0404" in the Program number box.
+4. Check "Raw" under All instruments.
+5. Click Search
+6. Once the query finishes, you can "Categorize by"  "Observation type".  The "object"
+   images are actual on-sky data.  Other Observation types are flats, darks, etc.
+7. The Results page offers several different ways to download the detail.  See
+   `the Tutorials page`_ for details.
+
+.. _`NOAO Science Archive`: http://portal-nvo.noao.edu
+.. _`General Search for NOAO data (all users)`: http://portal-nvo.noao.edu/search/query
+.. _`the Tutorials page`: http://portal-nvo.noao.edu/tutorials/query

@@ -106,20 +106,36 @@ DECaLS New Co-Is
 * Prabhat prabhat@lbl.gov - Inference team, 25 Sep 2014
 * Yushu Yao yao.yushu@gmail.com - Inference team, 25 Sep 2014
 * Mohit Singh mohit1007@gmail.com - Inference team, 25 Sep 2014
-* Nikhil Padmanabhan nikhil.padmanabhan@yale.edu - 28 Oct 2014
-* Koshy George koshy@iiap.res.in - IIA - 30 Oct 2014
-* Tom Shanks tom.shanks@durham.ac.uk - Durham - 19 Nov 2014
-* Ben Chehade ben.chehade@durham.ac.uk - Durham - 19 Nov 2014
-* James Lowenthal james@ast.smith.edu - Smith College - 3 Dec 2014
-* Ian McGreer imcgreer@as.arizona.edu - University of Arizona - 9 Dec 2014
-* Shaun Cole shaun.cole@durham.ac.uk - Durham - 20 Jan 2015
-* Carlos Frenk c.s.frenk@durham.ac.uk - Durham - 20 Jan 2015
-* Nigel Metcalfe nigel.metcalfe@durham.ac.uk - Durham - 20 Jan 2015
-* Peder Norberg peder.norberg@durham.ac.uk - Durham - 20 Jan 2015
-* Zhou Xu zhouxu@bao.ac.cn - NOAC, BASS team - 22 Jan 2015
-* Zou Hu zouhu@nao.cas.cn - NOAC, BASS team - 22 Jan 2015
-* Mark Ma ma@astro.utoronto.ca - student of Carlberg - 29 Jan 2015
-* Karen Masters karen.masters@port.ac.uk - Portsmouth - 30 Jan 2015
-* Beth Willman bwillman@haverford.edu - Haverford - 4 Feb 2015
-* Aaron Meisner ameisner@fas.harvard.edu - Harvard -> Berkeley - 20 Feb 2015
-* Yu Feng yfeng1@berkeley.edu - UC Berkeley - 27 Feb 2015
+* Nikhil Padmanabhan nikhil.padmanabhan@yale.edu - Yale, 28 Oct 2014
+* Koshy George koshy@iiap.res.in - IIA, 30 Oct 2014
+* Tom Shanks tom.shanks@durham.ac.uk - Durham, 19 Nov 2014
+* Ben Chehade ben.chehade@durham.ac.uk - Durham, 19 Nov 2014
+* James Lowenthal james@ast.smith.edu - Smith College, 3 Dec 2014
+* Ian McGreer imcgreer@as.arizona.edu - University of Arizona, 9 Dec 2014
+* Shaun Cole shaun.cole@durham.ac.uk - Durham, 20 Jan 2015
+* Carlos Frenk c.s.frenk@durham.ac.uk - Durham, 20 Jan 2015
+* Nigel Metcalfe nigel.metcalfe@durham.ac.uk - Durham, 20 Jan 2015
+* Peder Norberg peder.norberg@durham.ac.uk - Durham, 20 Jan 2015
+* Zhou Xu zhouxu@bao.ac.cn - NOAC / BASS team, 22 Jan 2015
+* Zou Hu zouhu@nao.cas.cn - NOAC / BASS team, 22 Jan 2015
+* Mark Ma ma@astro.utoronto.ca - student of Carlberg, 29 Jan 2015
+* Karen Masters karen.masters@port.ac.uk - Portsmouth, 30 Jan 2015
+* Beth Willman bwillman@haverford.edu - Haverford, 4 Feb 2015
+* Aaron Meisner ameisner@fas.harvard.edu - Harvard -> Berkeley, 20 Feb 2015
+* Yu Feng yfeng1@berkeley.edu - UC Berkeley, 27 Feb 2015
+* Ana Bonaca ​ana.bonaca@yale.edu - Yale, 12 March 2015
+* Chris Bonnett ​c.bonnett@gmail.com - IFAE, 24 March 2015
+* Andras Kovacs ​andraspankasz@gmail.com - IFAE , 24 March 2015
+* Jaime Ernesto Forero Romero ​je.forero@uniandes.edu.co - Andes, 17 Apr 2015
+* Adrian Price-Whelan ​adrianmpw@gmail.com - Columbia, 15 Jun 2015
+* Zhi-Min Zhou ​zmzhou@bao.ac.cn - NAOC, 15 Jun 2015
+* Jim Annis ​annis@fnal.gov - FNAL, 15 Jun 2015
+* James Jee ​mkjee@physics.ucdavis.edu - Davis, 24 Jun 2015
+* Stephanie Juneau ​stephanie.juneau@cea.fr - Saclay, 24 Jun 2015
+* Knut Olsen ​kolsen@noao.edu - NOAO, 15 April 2015
+* Alexander Mendez ​ajmendez@jhu.edu - JHU, 8 July 2015
+* Kyle Willett ​willett@physics.umn.edu - UMN, 22 July 2015
+* Feige Wang ​feigewang@email.arizona.edu - University of Arizona, 30 July 2015
+* David Gerdes ​gerdes@umich.edu - Michigan, 7 Aug 2015
+* Jundan Nie jdnie@bao.ac.cn - NAOC, 18 Aug 2015
+* Linhua Jiang ​jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015

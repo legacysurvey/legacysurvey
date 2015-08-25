@@ -42,16 +42,16 @@ excluded from this first data release.
 There are approximately 140 million unique sources, of which approximately
 750,000 have SDSS spectroscopy.
 
-DR1 includes the calibrated, single-epoch images, stacked images, and the Tractor-based catalogs.
+DR1 includes the stacked images and the Tractor-based catalogs.
 The size of this data distribution is:
 
-===== ========= ===============
+===== ========= ==============================================
 Size  Directory Description
-===== ========= ===============
+===== ========= ==============================================
 235GB tractor   Tractor catalogs
 15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-2.6TB images    Single-epoch images
-===== ========= ===============
+41GB  sweep     Light-weight versions of the Tractor catalogs.
+===== ========= ==============================================
 
 The co-added images and Tractor catalogs are presented in bricks of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections

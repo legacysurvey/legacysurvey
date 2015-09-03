@@ -30,13 +30,15 @@ can be identified using the ``has_image_g``, ``has_image_r``, and ``has_image_z`
 respectively.  The bricks with a corresponding Tractor photometric catalog in
 this release can be identified using the ``has_catalog`` tag.
 
+- HDU1 (only HDU) - tags in the ``decals-bricks.fits`` file
+
 =============== ======= ======================================================
 Column          Type    Description
 =============== ======= ======================================================
 ``brickname``   char[8] Name of the brick.
 ``brickid``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
 ``brickq``      int16   A "priority" factor used for processing.
-``brickrow``    int32   Dec row number
+``brickrow``    int32   Dec row number.
 ``brickcol``    int32   Number of the brick within a Dec row.
 ``ra``          double  RA of the center of the brick.
 ``dec``         double  Dec of the center of the brick.
@@ -54,6 +56,44 @@ Column          Type    Description
 decals-ccds.fits
 ----------------
 
+================ ========= ======================================================
+Column           Type      Description
+================ ========= ======================================================
+``filter``       char[1]
+``ra``           double
+``dec``          double
+``airmass``      float
+``date_obs``     char[26]
+``g_seeing``     float
+``exptime``      float
+``expnum``       int32
+``mjd_obs``      float
+``propid``       char[10]
+``guider``       int32
+``object``       char[31]
+``avsky``        float
+``arawgain``     float
+``fwhm``         float
+``crpix1``       double
+``crpix2``       double
+``crval1``       double
+``crval2``       double
+``cd1_1``        float
+``cd1_2``        float
+``cd2_1``        float
+``cd2_2``        float
+``extname``      char[8]
+``ccdnum``       int32
+``cpimage``      char[82]
+``cpimage_hdu``  int32
+``calname``      float[38]
+``height``       int32
+``width``        int32
+``ra_bore``      double
+``dec_bore``     double
+``dr1``          byte
+================ ========= ======================================================
+
 FITS binary table with almanac information (seeing, sky-brighness, etc.) about
 each individual CCD image.  The subset of CCDs included in this release can be
 identified using the DR1 tag.
@@ -66,9 +106,98 @@ spectroscopic redshifts from SDSS/DR12.  This file is a binary FITS table with 4
 extensions (HDUs).  Each extension contains the following row-matched catalogs:
 
 - HDU1 - DECaLS photometry and related Tractor outputs
+
+========================== ============ ======================================================
+Column                     Type         Description
+========================== ============ ======================================================
+``brickid``                int32        Name of the brick.
+``brickname``              char[8]      A unique integer with 1-to-1 mapping to ``brickname``.
+``objid``                  int32
+``brick_primary``          char[1]
+``blob``                   int32
+``type``                   char[4]
+``ra``                     double
+``ra_ivar``                float
+``dec``                    double
+``dec_ivar``               float
+``bx``                     float
+``by``                     float
+``bx0``                    float
+``by0``                    float
+``left_blob``              char[1]
+``decam_flux``             fltarr[6]
+``decam_flux_ivar``        fltarr[6]
+``decam_apflux``           fltarr[48]
+``decam_apflux_resid``     fltarr[48]
+``decam_apflux_ivar``      fltarr[48]
+``decam_mw_transmission``  fltarr[6]
+``decam_nobs``             bytarr[6]
+``decam_rchi2``            fltarr[6]
+``decam_fracflux``         fltarr[6]
+``decam_fracmasked``       fltarr[6]
+``decam_fracin``           fltarr[6]
+``out_of_bounds``          char[1]
+``decam_anymask``          intarr[6]
+``decam_allmask``          intarr[6]
+``wise_flux``              fltarr[4]
+``wise_flux_ivar``         fltarr[4]
+``wise_mw_transmission``   fltarr[4]
+``wise_nobs``              intarr[4]
+``wise_fracflux``          fltarr[4]
+``wise_rchi2``             fltarr[4]
+``dchisq``                 fltarr[4]
+``fracdev``                float
+``fracdev_ivar``           float
+``shapeexp_r``             float
+``shapeexp_r_ivar``        float
+``shapeexp_e1``            float
+``shapeexp_e1_ivar``       float
+``shapeexp_e2``            float
+``shapeexp_e2_ivar``       float
+``shapedev_r``             float
+``shapedev_r_ivar``        float
+``shapedev_e1``            float
+``shapedev_e1_ivar``       float
+``shapedev_e2``            float
+``shapedev_e2_ivar``       float
+``ebv``                    float
+========================== ============ ======================================================
+
 - HDU2 - SDSS/DR12 spectroscopy (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/specObj-dr12.fits )
 - HDU3 - SDSS/DR12 photometry (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/photoPosPlate-dr12.fits)
 - HDU4 - WISE forced photometry (http://unwise.me)
+
+ZeroPoints-DR1.fits
+-------------------
+The ZeroPoints-DR1.fits file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR1 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
+
+- HDU1 (only HDU) - tags in the ``ZeroPoints-DR1.fits`` file
+
+================= ======== ======================================================
+Column            Type     Description
+================= ======== ======================================================
+``filename``      char[78] Name of the NOAO CP-reduced image FITS file.
+``expnum``        char[12] Unique DECam exposure number.
+``exptime``       float    Exposure time in seconds.
+``filter``        char[32] Filter used for observation.
+``seeing``        float    Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD.
+``ra``            double   Right Ascension in decimal degrees.
+``dec``           double   Declination in decimal degrees.
+``zpt``           float    Median zero point for the entire image (median of all CCDs of the image).
+``ccdnum``        int32    CCD number (see DECam layout).
+``ccdname``       char[3]  CCD name (see DECam layout).
+``ccdra``         double   Central RA for the CCD.
+``ccddec``        double   Central Dec for the CCD.
+``ccdzpt``        double   Zeropoint for the CCD (AB mag).
+``ccdphrms``      double   Photometric rms for the CCD (in mag).
+``ccdskyrms``     double   Sky rms (in counts).
+``ccdraoff``      double   Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
+``ccddecoff``     double   Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
+``ccdnstar``      int32    Number of stars found on the CCD.
+``ccdnmatch``     int32    Number of stars matched to PS1 (and used to compute the photometric zero points and astrometric offsets).
+``ccdmdncol``     float    Median (g-i) color from the PS1 catalog of the matched stars.
+``dr1``           byte     Included in the DR1 data set? 1=Yes, 0=No. Images that are non-photometric or on malfunctioning CCDs are excluded from DR1.
+================= ======== ======================================================
 
 Tractor Catalogs
 ================

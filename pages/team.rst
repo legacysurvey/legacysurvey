@@ -129,4 +129,7 @@ DECaLS New Co-Is
 * Feige Wang fgwang.astro@gmail.com - student of X. Fan - 29 July 2015
 * David Gerdes gerdes@umich.edu - Michigan - 7 Aug 2015
 * Jundan Nie jdnie@bao.ac.cn - NAOC - 18 Aug 2015
+* Linhua Jiang jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015
+* Paul Martini martini.10@osu.edu - Ohio State University, 15 Sep 2015
+* Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
 

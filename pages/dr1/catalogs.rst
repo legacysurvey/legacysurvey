@@ -83,7 +83,6 @@ Bit Value Name			      Description
   7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
   8   256 edge			      detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
   9   512 edge2			      detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
- 10  1024 longthin		      detected at :math:`5\sigma` to be :math:`\geq200` pixels in length and to have a major/minor axis ratio :math:`\gt10` (i.e. like a satellite trail)
 === ===== =========================== ==================================================
 
 Goodness-of-Fits

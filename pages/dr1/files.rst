@@ -105,7 +105,7 @@ Merged photometric and spectroscopic catalog for 751,070 sources with
 spectroscopic redshifts from SDSS/DR12.  This file is a binary FITS table with 4
 extensions (HDUs).  Each extension contains the following row-matched catalogs:
 
-- HDU1 - DECaLS photometry and related Tractor outputs
+- HDU1 - DECaLS photometry and related Tractor outputs, WISE forced photometry (http://unwise.me)
 
 ========================== ============ ======================================================
 Column                     Type         Description
@@ -165,7 +165,6 @@ Column                     Type         Description
 
 - HDU2 - SDSS/DR12 spectroscopy (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/specObj-dr12.fits )
 - HDU3 - SDSS/DR12 photometry (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/photoPosPlate-dr12.fits)
-- HDU4 - WISE forced photometry (http://unwise.me)
 
 ZeroPoints-DR1.fits
 -------------------

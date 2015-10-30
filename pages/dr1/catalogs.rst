@@ -72,16 +72,19 @@ Mask Values
 The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
 from the CP Data Quality bits.
 
-=== ===== ===========================
-Bit Value Name
-=== ===== ===========================
-  0     1 detector bad pixel/no data
-  1     2 saturated
-  2     4 interpolated
-  4    16 single exposure cosmic ray
-  6    64 bleed trail
-  7   128 multi-exposure transient
-=== ===== ===========================
+=== ===== =========================== ==================================================
+Bit Value Name                        Description
+=== ===== =========================== ==================================================
+  0     1 detector bad pixel/no data  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  1     2 saturated                   detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  2     4 interpolated                detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  4    16 single exposure cosmic ray  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  6    64 bleed trail                 detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  8   256 edge                        detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  9   512 edge2                       detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+=== ===== =========================== ==================================================
+
 
 Goodness-of-Fits
 ================
@@ -228,43 +231,3 @@ PM_DEC_ISIG                 float32      1/(mas/year)\ |sup2|  Inverse variance 
 PARALLAX                    float32      mas                   Trigonometric parallax in milliarcsec; distance in parsecs equals 1000/PARALLAX
 PARALLAX_IVAR               float32      1/mas\ |sup2|         Inverse variance of PARALLAX
 =========================== ============ ===================== ===============================================
-
-
-Measurement Catalogs
-====================
-
-This is the forced photometry model fluxes on individual frames.  The object coordinates, classification,
-and shape parameters are fixed.  Only the amplitude of the fluxes are fit, and are unconstrained
-(*e.g.*, they can go negative).
-
-=========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description
-=========================== ============ ===================== ===============================================
-BRICKID                     int64                              Brick ID [1,662174]
-BRICKNAME                   char                               Name of brick, encoding the brick sky position
-OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID
-FILTER                      char[1]                            Filter name, which will be 'g', 'r', or 'z' for DECam files or 'W1', 'W2', 'W3' or 'W4' for WISE files
-TAI                         float64      sec                   International Atomic Time timestamp for start of observation
-EXPTIME                     float64      sec                   Exposure time; shutter open from [TAI,TAI+EXPTIME]
-X                           float32      pix                   X coordinate center from 0-indexed lower-left of image; not measured but projected from the object catalog
-Y                           float32      pix                   X coordinate center from 0-indexed lower-left of image; not measured but projected from the object catalog
-FLUX                        float32      nanomaggies           Model flux
-FLUX_IVAR                   float32      1/nanomaggies\ |sup2| Inverse variance oF FLUX
-FRACFLUX                    float32                            Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-RCHI2                       float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-=========================== ============ ===================== ===============================================
-
-Notes
------
-
-* The RCHI2 is different from the PROCHI2 and PRONPIX in the WISE Tractor catalog, since the
-  latter only had one stacked image from which it was measuring.  Here, the measurement can be from
-  multiple images (and in principle those images could have different pixel scales).
-* FRACFLUX would be >1 in the WISE Tractor catalog if
-  neighbors contribute more than the object.  This is computed from the
-  models only, not the actual image flux.
-* We may replace the ellipse parameters R, AB, PHI with a
-  different parameterization, such as R, G1, G2 (shear parameters)
-  often used by weak lensers.  Question: Which has less covariance?
-* Timestamps would normally be associated with the image, but for SDSS it's also a function of row number.
-  That would be the argument to attach the timestamps to each individual measurement rather than image.

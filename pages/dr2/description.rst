@@ -14,48 +14,80 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 
-Contents of DR1
+Contents of DR2
 ===============
 
 The DECam Legacy Survey will produce an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (g,r,z) and four infrared bands.  The sky coverage is approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
-|deg| in Galactic coordinates.  The DECam Legacy Survey is providing these data
+|deg| in Galactic coordinates.  The Legacy Survey is providing these data
 in the equatorial region at |delta| < +30\ |deg| using the Dark Energy Camera on
 the Blanco Telescope.
 
-Data Release 1 (DR1) is the first public data release of images and catalogs for
-the DECam Legacy Survey.  It includes DECam data primarily from z-band
+Data Release 2 (DR2) is the second public data release of images and catalogs for
+the DECam Legacy Survey. DR2 includes DECam data primarily from z-band
 observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
 g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
 program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
 public data from other programs near the Fall celestial equator bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
-|deg|.  In total, the optical data covers a disjoint 3100 deg\ |sup2| footprint,
-with 1200 deg\ |sup2| in g-band, 1300 deg\ |sup2| in r-band and 2700 deg\ |sup2|
-in z-band, of which 750 deg\ |sup2| of this footprint has been observed in all
-three optical filters.  Only 110 deg\ |sup2| of this footprint is covered to the
-expected final depth of g=24.0, r=23.6, z=23.0.  Non-photometric data have been
-excluded from this first data release.
+|deg|.  In total, the optical data covers a disjoint footprint
+with 2078 deg\ |sup2| in g-band, 2141 deg\ |sup2| in r-band and 5322 deg\ |sup2|
+in z-band, of which 1807 deg\ |sup2| has been observed in all
+three optical filters.  
 
-There are approximately 140 million unique sources, of which approximately
-750,000 have SDSS spectroscopy.
+There are approximately 260 million unique sources in DR2 spread over 97554 bricks.
+These sources comprise:
 
-DR1 includes the stacked images and the Tractor-based catalogs.
+================= =====================
+Number of Sources Type
+================= =====================
+   288,347,865    All objects
+   262,426,862    Objects in a Primary brick
+   149,084,610    PSF
+    69,164,070    SIMP
+    31,300,725    EXP
+    11,610,513    DEV 
+     1,266,944    COMP
+================= =====================
+
+DR2 includes the stacked images and the Tractor-based catalogs.
 The size of this data distribution is:
 
-===== ========= ==============================================
+===== ========= =======================
 Size  Directory Description
-===== ========= ==============================================
-235GB tractor   Tractor catalogs
-15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-41GB  sweep     Light-weight versions of the Tractor catalogs.
-===== ========= ==============================================
+===== ========= =======================
+xxxGB tractor   Tractor catalogs
+xxxTB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
+xxxGB sweep     Light-weight versions of the Tractor catalogs.
+===== ========= =======================
 
 The co-added images and Tractor catalogs are presented in bricks of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections
 for each of the g,r,z filters.
+
+Obtaining Images and Raw Data
+==============================
+
+Images can be viewed directly using `the Sky viewer`_
+and raw data can be obtained through `the NOAO portal`_ (see also the information near
+the bottom of the `files`_ page).
+
+Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
+the cutout servers as follows:
+
+JPEG: http://imagine.legacysurvey.org/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
+
+FITS: http://imagine.legacysurvey.org/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
+
+where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
+maximum size for cutouts (in number of pixels) is 512.  
+Pixscale=0.262 will return (approximately) the native DECam pixels.
+
+.. _`files`: ../files
+.. _`the Sky viewer`: http://portal-nvo.noao.edu/
+.. _`the NOAO portal`: http://portal-nvo.noao.edu/
 
 Source Detection
 ================
@@ -112,16 +144,6 @@ that overlap the brick, without making use of the image stacks.
 This preserves the full information content of the data set in the fits,
 handles masked pixels without the need for uncertain interpolation techniques,
 and fits to data points within the complication of pixel covariances.
-
-To improve the run time for Tractor, each brick is divided into blobs
-that are collections of contiguous pixels above a detection level and
-the neighboring pixels.  The boundaries of the blobs are made from
-the stacked detection image.  For the high-Galactic latitudes of the
-DR1, all bricks can be successfully divided into blobs that contain
-few enough sources to run in a reasonable amount of time.
-This approach is likely to fail near the Galactic plane, where the
-high density of stars would be expected to result in a brick appearing
-as a single blob.
 
 Morphological classification
 ============================
@@ -192,7 +214,7 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for the DR1 is on the AB natural system of the DECam instrument.
+The flux calibration for DR2 is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
@@ -253,12 +275,8 @@ The Astrometry.net code has been run on SourceExtractor-generated source lists
 2nd-order SIP polynomial distortions.  The astrometric reference catalog
 is from Pan-STARRS-1.  This is solved independently on each CCD.
 
-In the DR1 footprint, the SDSS imaging data spans 1998 through 2005,
-and the SDSS spectroscopic data spans Feb 2000 through April 2014.
-
 Comparison of the astrometric zero point for each image to the PS1 star positions shows systematic
-differences for individual CCDs in the image. The residuals are shown by the arrows in the attachments below
-(Offsets*ps*gz). The systematic residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
+differences for individual CCDs in the image. The systematic residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
 In the future, the plan is to tied the astrometry to the GAIA astrometry,
 at which point we will use the predicted stellar positions at the
@@ -276,9 +294,9 @@ and a scale of 0.262\ |Prime|/pix.
 Depths
 ======
 
-The median 5\ |sigma| point source depths for areas in the DR1 with 3 observations is g=24.65, r=23.61, z=22.84.
-This is based upon the formal errors in the Tractor catalogs for point sources; those errors need more confirmation.
-This can be compared to the depths in the proposal for 2 observations at 1.5\ |Prime| seeing predicting g=24.7, r=23.9, z=23.0.
+The median 5\ |sigma| point source depths for areas in DR2 with 3 observations is g=24.65, r=23.61, z=22.84.
+This is based upon the formal errors in the Tractor catalogs for point sources; those errors need further confirmation.
+This can be compared to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of g=24.7, r=23.9, z=23.0.
 
 
 Code Versions
@@ -301,7 +319,7 @@ Blob
     pixels; Tractor is optimized within blobs.
 
 Brick
-    A region bounded by lines of constant RA and DEC; the DR1 reductions
+    A region bounded by lines of constant RA and DEC; the DR2 reductions
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
@@ -311,8 +329,8 @@ CP
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
 
-DR1
-    DECam Legacy Survey Data Release 1, May 2015.
+DR2
+    DECam Legacy Survey Data Release 2, December 2015.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

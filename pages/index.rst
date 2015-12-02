@@ -31,9 +31,9 @@
 
    .. raw:: html
 
-      <h2>Data Release 1</h2>
-      <p>May 2015</p>
-      <p><a class="btn btn-primary btn-lg" href="http://legacysurvey.org/dr1">DR1</a></p>
+      <h2>Current Release: Data Release 2</h2>
+      <p>December 2015</p>
+      <p><a class="btn btn-primary btn-lg" href="dr2">DR2</a></p>
 
 .. container::
 

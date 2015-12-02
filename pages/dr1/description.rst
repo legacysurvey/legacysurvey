@@ -17,7 +17,7 @@
 Contents of DR1
 ===============
 
-The Legacy Survey will produce an inference model of the 14,000 square degrees
+The DECam Legacy Survey will produce an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (g,r,z) and four infrared bands.  The sky coverage is approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\

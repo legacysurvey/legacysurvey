@@ -59,7 +59,7 @@ The size of this data distribution is:
 Size  Directory Description
 ===== ========= =======================
 287GB tractor   Tractor catalogs
-~30TB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
+ 33TB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 ~250GB sweep    Repackages versions of the Tractor catalogs.
 ===== ========= =======================
 

@@ -58,9 +58,9 @@ The size of this data distribution is:
 ===== ========= =======================
 Size  Directory Description
 ===== ========= =======================
-xxxGB tractor   Tractor catalogs
-xxxTB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-xxxGB sweep     Light-weight versions of the Tractor catalogs.
+287GB tractor   Tractor catalogs
+~30TB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
+~250GB sweep    Repackages versions of the Tractor catalogs.
 ===== ========= =======================
 
 The co-added images and Tractor catalogs are presented in bricks of approximate
@@ -77,40 +77,35 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout servers as follows:
 
-JPEG: http://imagine.legacysurvey.org/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
 
-FITS: http://imagine.legacysurvey.org/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
+FITS: http://legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
 
 where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
 maximum size for cutouts (in number of pixels) is 512.  
 Pixscale=0.262 will return (approximately) the native DECam pixels.
 
 .. _`files`: ../files
-.. _`the Sky viewer`: http://portal-nvo.noao.edu/
+.. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://portal-nvo.noao.edu/
 
 Source Detection
 ================
 
-The source detection relies upon a combination of known SDSS sources
-and a PSF-matched-filter detection of the DECam stacked images.
-This should include all detections of sources to near the 5\ |sigma|
-detection limit.  The Tractor fitting step is initialized with
-these positions and classifications, although those positions and
-classifications can be changed during the fits and low-S/N sources
-are removed.
+The source detection uses a PSF- and SED-matched-filter detection on
+the DECam stacked images, with a 6\ |sigma| detection limit.
+The Tractor fitting
+step is initialized with these positions, although
+those positions can be changed during the fits and
+low-S/N sources can be removed.
 
-The existing SDSS DR12 sources are included with the RA,DEC coordinates,
-classifications, and shape parameters from that catalog.
-
-Each DECam image is convolved by its PSF model, then a weighted stack
+For source detection, cach DECam image is convolved by its PSF model,
+then a weighted stack
 of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
 created, for two SEDs: "flat" (a source with AB color zero), and
-"red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 5\ |sigma|
-are detected in each of these two SED-matched filters.  Sources (blobs
-of significant pixels) containing an SDSS catalog object are removed.
-Remaining sources are added as point sources in the Tractor fitting.
+"red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
+are detected in each of these two SED-matched filters, and well as in each band independently.
 
 PSF
 ===
@@ -119,8 +114,7 @@ The Tractor makes use of the PSF on each individual exposure.  There is no
 PSF computed for the image stacks, as that would not be used.
 
 The PSF for the individual exposures are first computed independently for each CCD
-using PSFEx, generating pixelized models.  Those PSFs are then re-fit by a spatially-varying mixture of gaussians (MoGs).
-
+using PSFEx, generating spatially-varying pixelized models.
 
 Sky Level
 =========
@@ -131,9 +125,10 @@ http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is mean of what was removed.
 
-The Tractor removes a constant sky computed from the median on the object residual image.
-This value can be found as the SKY_P0 keyword in the calibration files cosmo/work/decam/calib/sky.
-The stacked images have this sky level removed.
+Additionally, we compute and remove a spatially varying (spline) sky
+model, by detecting and masking sources, then computing medians in
+sliding 512-pixel boxes.  The stacked images have this sky level
+removed.
 
 Tractor Catalogs
 ================
@@ -143,7 +138,7 @@ of a brick.  This fitting is performed on the individual exposures
 that overlap the brick, without making use of the image stacks.
 This preserves the full information content of the data set in the fits,
 handles masked pixels without the need for uncertain interpolation techniques,
-and fits to data points within the complication of pixel covariances.
+and fits to data points without the complication of pixel covariances.
 
 Morphological classification
 ============================
@@ -153,14 +148,16 @@ image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in this run.
 These are continuous properties for the object centers, fluxes,
 and the shape parameters.  The discontinous properties are
-the choice for each source model: point source, exponential,
-deVaucouleurs, or a composite exponential+deVauc.  In this run, the
-initialization of sources uses SDSS models where available or otherwise
-a point source.
+the choice for each source model: point source, "simple" galaxy,
+exponential,
+deVaucouleurs, or a composite exponential+deVauc.
 
-Four morphological types are used: point sources, deVauc profiles
+Five morphological types are used: point sources,
+"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
+and round profile),
+deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
-profiles that are deVauc + exponential (with the same source center).
+profiles that are deVaucouleurs + exponential (with the same source center).
 The decision to retain an object in the catalog and to re-classify as
 models more complicated than a point source are made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
@@ -170,8 +167,8 @@ this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
 The classification is as a point source unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
-it as a deVauc or exponential profile.
-The classification is a composite of deVauc + exponential if it both a
+it as a deVaucouleurs or exponential profile.
+The classification is a composite of deVaucouleurs + exponential if it both a
 better fit to a single profile over the point source, and the composite improves
 the penalized |chi|\ |sup2| by another 9.  These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections
@@ -192,11 +189,13 @@ solver from the scipy (scientific python) package, or the open source
 Ceres solver (http://ceres-solver.org), originally developed by
 Google.
 
-The PSF models and the PSF-convolved galaxy profiles are approximated
-with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563).
-This is not an exact representation, but introduces errors in these
+The galaxy profiles are approximated
+with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563)
+and are convolved by the pixelized PSF models using a new Fourier-space
+method (Lang, in prep).
+The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
-The MoGs are treated as the pixel-convolved quantities for the PSF, etc,
+The PSF models are treated as pixel-convolved quantities,
 and are evaluated at the integral pixel coordinates without integrating
 any functions over the pixels.
 
@@ -209,7 +208,6 @@ and fitting calibration parameters in exposure space.  Such iterations
 will be considered and tested for future data releases.
 Another practical issue is that the current PSF models may allow
 too much freedom.
-
 
 Photometry
 ==========
@@ -244,7 +242,7 @@ These linear fluxes are well-defined even at the faint end, and the errors on th
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
 
-The SDSS, DECam and WISE fluxes are all within a few percent of being on an AB system.
+The DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the recommended conversions by
 the WISE team documented here
@@ -268,17 +266,12 @@ Astrometry
 ==========
 
 The astrometry is currently tied to star positions in Pan-STARRS-1,
-which is implicitly at the time of observation for Pan-STARRS-1.
+so the epoch is implicitly at the time of observation for Pan-STARRS-1.
+We keep the polynomial distortion model provided by the Community Pipeline,
+computing a simple RA,Dec offset for each CCD to align it with Pan-STARRS-1.
+The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-The Astrometry.net code has been run on SourceExtractor-generated source lists
-(the same sources used for PSF determination).  This yields WCS headers with
-2nd-order SIP polynomial distortions.  The astrometric reference catalog
-is from Pan-STARRS-1.  This is solved independently on each CCD.
-
-Comparison of the astrometric zero point for each image to the PS1 star positions shows systematic
-differences for individual CCDs in the image. The systematic residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
-
-In the future, the plan is to tied the astrometry to the GAIA astrometry,
+In the future, the plan is to tie the astrometry to the GAIA astrometry,
 at which point we will use the predicted stellar positions at the
 DECam epoch of observation.
 
@@ -302,11 +295,11 @@ This can be compared to the predicted proposed depths for 2 observations at 1.5\
 Code Versions
 =============
 
-* NOAO Community Pipeline
-* Sextractor, PSFEx
-* Astrometry.net
-* Tractor
-
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions starting with "dr2p" tag; documented in all file headers.
+* NOAO Community Pipeline: mixture of versions; recorded as PLVER.
+* SourceExtractor 2.19.5, PSFEx 3.17.1
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.64
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr2.2
 
 Glossary
 ========
@@ -340,7 +333,7 @@ maggie
     flux of 1.0 maggie.
 
 MoG
-    Mixture-of-gaussian model to approximate the PSF and galaxy models (http://arxiv.org/abs/1210.6563).
+    Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).
 
 NOAO
     `National Optical Astronomy Observatory <http://www.noao.edu>`_.
@@ -364,7 +357,7 @@ SDSS DR12
 SED
     Spectral energy distribution.
 
-SExtractor
+SourceExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98

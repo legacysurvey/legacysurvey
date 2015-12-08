@@ -90,7 +90,7 @@ Bit Value Name                        Description
   7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
   8   256 edge                        detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
   9   512 edge2                       detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
- 10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and minor/major axis :math: `\lt 0.1`.  To mask, e.g, satellite trails.
+ 10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, e.g, satellite trails.
 === ===== =========================== ==================================================
 
 

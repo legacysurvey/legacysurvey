@@ -17,7 +17,7 @@
 Contents of DR2
 ===============
 
-The DECam Legacy Survey will produce an inference model of the 14,000 square degrees
+The Legacy Survey will produce an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (g,r,z) and four infrared bands.  The sky coverage is approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
@@ -38,30 +38,17 @@ in z-band, of which 1807 deg\ |sup2| has been observed in all
 three optical filters.  
 
 There are approximately 260 million unique sources in DR2 spread over 97554 bricks.
-These sources comprise:
-
-================= =====================
-Number of Sources Type
-================= =====================
-   288,347,865    All objects
-   262,426,862    Objects in a Primary brick
-   149,084,610    PSF
-    69,164,070    SIMP
-    31,300,725    EXP
-    11,610,513    DEV 
-     1,266,944    COMP
-================= =====================
 
 DR2 includes the stacked images and the Tractor-based catalogs.
-The size of this data distribution is:
+The size of the DR2 data distribution is:
 
-===== ========= =======================
-Size  Directory Description
-===== ========= =======================
-287GB tractor   Tractor catalogs
- 33TB coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-~250GB sweep    Repackages versions of the Tractor catalogs.
-===== ========= =======================
+====== ========= ====================
+Size   Directory Description
+====== ========= ====================
+287GB  tractor   Tractor catalogs
+ 33TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
+~250GB sweep     Repackages versions of the Tractor catalogs.
+====== ========= ====================
 
 The co-added images and Tractor catalogs are presented in bricks of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections
@@ -105,7 +92,7 @@ of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
 created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
-are detected in each of these two SED-matched filters, and well as in each band independently.
+are detected in each of these two SED-matched filters, as well as in each band independently.
 
 PSF
 ===
@@ -123,7 +110,7 @@ The Community Pipeline removes a sky level that includes a sky pattern, an illum
 and a single scaled fringe pattern.  These steps are described here:
 http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
-A constant sky level is then added back to the image that is mean of what was removed.
+A constant sky level is then added back to the image that is the mean of what was removed.
 
 Additionally, we compute and remove a spatially varying (spline) sky
 model, by detecting and masking sources, then computing medians in
@@ -145,7 +132,7 @@ Morphological classification
 
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
-Only the source properties were allowed to float in this run.
+Only the source properties were allowed to float in DR2.
 These are continuous properties for the object centers, fluxes,
 and the shape parameters.  The discontinous properties are
 the choice for each source model: point source, "simple" galaxy,
@@ -158,8 +145,23 @@ and round profile),
 deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The decision to retain an object in the catalog and to re-classify as
-models more complicated than a point source are made using the penalized
+The total numbers of the different morphological types in DR2 are:
+
+================= ==================
+Number of Sources Type
+================= ==================
+   288,347,865    All objects
+   262,426,862    Objects in a Primary brick
+   149,084,610    PSF
+    69,164,070    SIMP
+    31,300,725    EXP
+    11,610,513    DEV 
+     1,266,944    COMP
+================= ==================
+
+
+The decision to retain an object in the catalog and to re-classify it using
+models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
 A source is retained if this penalized |chi|\ |sup2| is improved by 25;
@@ -168,7 +170,7 @@ of 2 for the source centroid).  Sources below this threshold are removed.
 The classification is as a point source unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
 it as a deVaucouleurs or exponential profile.
-The classification is a composite of deVaucouleurs + exponential if it both a
+The classification is a composite of deVaucouleurs + exponential if it is both a
 better fit to a single profile over the point source, and the composite improves
 the penalized |chi|\ |sup2| by another 9.  These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections

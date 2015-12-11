@@ -174,12 +174,16 @@ Debugging Tags to Remove in the Future
 ======================================
 
 The following are from the SDSS DR13 catalogs, to be released in 2016
-as the SDSS-IV/eBOSS target selection catalogs.
+as the SDSS-IV/eBOSS target selection catalogs. Columns in this file are as
+documented in the SDSS DR12 `data model`_ but the column names have "SDSS\_" prepended to them.
 
-=========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description
-=========================== ============ ===================== ===============================================
-SDSS_RUN                    int32                              http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
+.. _`data model`: http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
+
+
+=========================== ============ ===============================================
+Name                        Type         Description
+=========================== ============ ===============================================
+SDSS_RUN                    int32
 SDSS_CAMCOL                 byte
 SDSS_FIELD                  int32
 SDSS_ID                     int32
@@ -220,7 +224,7 @@ SDSS_EXPFLUX_IVAR           float32[5]
 SDSS_EXTINCTION             float32[5]
 SDSS_CALIB_STATUS           int64[5]
 SDSS_RESOLVE_STATUS         int64
-=========================== ============ ===================== ===============================================
+=========================== ============ ===============================================
 
 
 Tags to Add in the Future

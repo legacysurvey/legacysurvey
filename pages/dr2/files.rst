@@ -98,73 +98,49 @@ FITS binary table with almanac information (seeing, sky-brighness, etc.) about
 each individual CCD image.  The subset of CCDs included in this release can be
 identified using the DR2 tag.
 
-decals-specz.fits
------------------
+decals-dr2-specObj-dr12.fits
+----------------------------
+HDU1 (the only HDU) contains Tractored DECaLS
+photometry that is row-by-row-matched to the SDSS DR12 spectrosopic
+pipeline file such that the photometric parameters in row "N" of 
+decals-dr2-specObj-dr12.fits matches the spectroscopic parameters in row "N" of
+specObj-dr12.fits. The structure of the DECaLS photometric catalog file is documented on the
+`catalogs page`_ and the spectroscopic file 
+is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
 
-Merged photometric and spectroscopic catalog for 751,070 sources with
-spectroscopic redshifts from SDSS/DR12.  This file is a binary FITS table with 4
-extensions (HDUs).  Each extension contains the following row-matched catalogs:
+.. _`catalogs page`: ../catalogs
+.. _`data model for specObj-dr12.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-- HDU1 - DECaLS photometry and related Tractor outputs, WISE forced photometry (http://unwise.me)
+decals-dr2-DR12Q.fits
+---------------------
+HDU1 (the only HDU) contains Tractored DECaLS 
+photometry that is row-by-row-matched to the SDSS DR12 
+visually inspected quasar catalog (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
+such that the photometric parameters in row "N" of 
+decals-dr2-DR12Q.fits matches the spectroscopic parameters in row "N" of
+DR12Q.fits. The structure of the DECaLS photometric catalog file is documented on the
+`catalogs page`_ and the spectroscopic file 
+is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-========================== ============ ======================================================
-Column                     Type         Description
-========================== ============ ======================================================
-``brickid``                int32        Name of the brick.
-``brickname``              char[8]      A unique integer with 1-to-1 mapping to ``brickname``.
-``objid``                  int32
-``brick_primary``          char[1]
-``blob``                   int32
-``type``                   char[4]
-``ra``                     double
-``ra_ivar``                float
-``dec``                    double
-``dec_ivar``               float
-``bx``                     float
-``by``                     float
-``bx0``                    float
-``by0``                    float
-``left_blob``              char[1]
-``decam_flux``             fltarr[6]
-``decam_flux_ivar``        fltarr[6]
-``decam_apflux``           fltarr[48]
-``decam_apflux_resid``     fltarr[48]
-``decam_apflux_ivar``      fltarr[48]
-``decam_mw_transmission``  fltarr[6]
-``decam_nobs``             bytarr[6]
-``decam_rchi2``            fltarr[6]
-``decam_fracflux``         fltarr[6]
-``decam_fracmasked``       fltarr[6]
-``decam_fracin``           fltarr[6]
-``out_of_bounds``          char[1]
-``decam_anymask``          intarr[6]
-``decam_allmask``          intarr[6]
-``wise_flux``              fltarr[4]
-``wise_flux_ivar``         fltarr[4]
-``wise_mw_transmission``   fltarr[4]
-``wise_nobs``              intarr[4]
-``wise_fracflux``          fltarr[4]
-``wise_rchi2``             fltarr[4]
-``dchisq``                 fltarr[4]
-``fracdev``                float
-``fracdev_ivar``           float
-``shapeexp_r``             float
-``shapeexp_r_ivar``        float
-``shapeexp_e1``            float
-``shapeexp_e1_ivar``       float
-``shapeexp_e2``            float
-``shapeexp_e2_ivar``       float
-``shapedev_r``             float
-``shapedev_r_ivar``        float
-``shapedev_e1``            float
-``shapedev_e1_ivar``       float
-``shapedev_e2``            float
-``shapedev_e2_ivar``       float
-``ebv``                    float
-========================== ============ ======================================================
+.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
+.. _`catalogs page`: ../catalogs
+.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-- HDU2 - SDSS/DR12 spectroscopy (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/specObj-dr12.fits )
-- HDU3 - SDSS/DR12 photometry (http://data.sdss3.org/sas/dr12/sdss/spectro/redux/photoPosPlate-dr12.fits)
+decals-dr2-Superset_DR12Q.fits
+------------------------------
+HDU1 (the only HDU) contains Tractored DECaLS
+photometry catalog that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
+confirmed objects that were visually inspected as possible quasars 
+(Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
+such that the photometric parameters in row "N" of 
+decals-dr2-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
+Superset_DR12Q.fits. The structure of the DECaLS photometric catalog file is documented on the
+`catalogs page`_ and the spectroscopic file
+is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
+
+.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
+.. _`catalogs page`: ../catalogs
+.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 ZeroPoints-DR2.fits
 -------------------

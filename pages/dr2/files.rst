@@ -145,7 +145,54 @@ Includes everything listed in the decals-ccds.fits file plus the following:
 ================ ========= ======================================================
 Column           Type      Description
 ================ ========= ======================================================
-``expnum``        int32    Unique DECam exposure number, eg 348224.
+``photometric``  boolean   True if this CCD was considered photometric and used in the DR2 reductions
+``blacklist_ok`` boolean   We blacklisted certain programs (Proposal IDs) from other PIs where there were a large number of images covering a single patch of sky, because our pipeline code didn't handle the extreme depth very well.  True if this CCD was *not* blacklisted, ie, was used.
+``good_region``  int[4]    If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
+``ra0``          double    RA  coordinate of pixel (1,1)
+``dec0``         double    Dec coordinate of pixel (1,1)
+``ra1``          double    RA  coordinate of pixel (1,H)
+``dec1``         double    Dec coordinate of pixel (1,H)
+``ra2``          double    RA  coordinate of pixel (W,H)
+``dec2``         double    Dec coordinate of pixel (W,H)
+``ra3``          double    RA  coordinate of pixel (W,1)
+``dec3``         double    Dec coordinate of pixel (W,1)
+``dra``          float     Maximum distance from RA,Dec center to the edge midpoints, in RA
+``ddec``         float     Maximum distance from RA,Dec center to the edge midpoints, in Dec
+``ra_center``    double    RA coordinate of CCD center
+``dec_center``   double    RA coordinate of CCD center
+``sig1``         float     Median per-pixel error standard deviation, in nanomaggies.
+``meansky``      float     Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
+``stdsky``       float     Standard deviation of our sky level
+``minsky``       float     Min of our sky level
+``maxsky``       float     Max of our sky level
+``pixscale_mean`` float    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
+``pixscale_std`` float     Standard deviation of pixel scale
+``pixscale_min`` float     Min of pixel scale
+``pixscale_max`` float     Max of pixel scale
+``psfnorm_mean`` float     PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
+``psfnorm_std``  float     Standard deviation of PSF norm
+``galnorm_mean`` float     Norm of the PSF model convolved by a 0.45" exponential galaxy.
+``galnorm_std``  float     Standard deviation of galaxy norm.
+``psf_mx2``      float     PSF model second moment in x (pixels^2)
+``psf_my2``      float     PSF model second moment in y (pixels^2)
+``psf_mxy``      float     PSF model second moment in x-y (pixels^2)
+``psf_a``        float     PSF model major axis (pixels)
+``psf_b``        float     PSF model minor axis (pixels)
+``psf_theta``    float     PSF position angle (deg)
+``psf_ell``      float     PSF ellipticity 1 - minor/major
+``humidity``     float     Percent humidity outside
+``outtemp``      float     Outside temperate (deg C).
+``tileid``       int32     DECaLS tile number, if this was a DECaLS observation; or 0 for data from other programs.
+``tilepass``     uint8     DECaLS tile pass number, 1, 2 or 3, if this was a DECaLS observation, or 0 for data from other programs.  Set by the observers; pass 1 is supposed to be photometric with good seeing, pass 3 unphotometric or bad seeing, and pass 2 in between.
+``tileebv``      float     Mean SFD E(B-V) extinction in the DECaLS tile, or 0 for non-DECaLS data.
+``plver``        char[6]   Community Pipeline (CP) PLVER version string
+``ebv``          float     SFD E(B-V) extinction for CCD center
+``decam_extinction`` float[6] Extinction for DECam filters ugrizY
+``wise_extinction``  float[4] Extinction for WISE bands W1,W2,W3,W4
+``psfdepth``     float     5-sigma PSF detection depth in AB mag, using PsfEx PSF model
+``galdepth``     float     5-sigma galaxy (0.45" round exp) detection depth in AB mag
+``gausspsfdepth`` float    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
+``gaussgaldepth`` float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
 ================ ========= ======================================================
 
 

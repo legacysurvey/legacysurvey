@@ -5,7 +5,7 @@ DECaLS Principal Investigators:
      Arjun Dey dey@noao.edu and David Schlegel djschlegel@lbl.gov
 
 DESI Imaging Survey Scientist and lead Tractor developer:
-     Dustin Lang dstn@cmu.edu
+     Dustin Lang dstndstn@gmail.com
 
 Discussion forum:
      https://groups.google.com/forum/#!forum/decam-legacy-survey

@@ -92,7 +92,7 @@ step is initialized with these positions, although
 those positions can be changed during the fits and
 low-S/N sources can be removed.
 
-For source detection, cach DECam image is convolved by its PSF model,
+For source detection, each DECam image is convolved by its PSF model,
 then a weighted stack
 of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
@@ -140,12 +140,8 @@ The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR2.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters.  The discontinous properties are
-the choice for each source model: point source, "simple" galaxy,
-exponential,
-deVaucouleurs, or a composite exponential+deVauc.
-
-Five morphological types are used: point sources,
+and the shape parameters.  There is also the discrete choice of which
+model type to use.  In DR2, five morphological types are used: point sources,
 "simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
 and round profile),
 deVaucouleurs profiles
@@ -170,10 +166,13 @@ The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
-A source is retained if this penalized |chi|\ |sup2| is improved by 25;
+The "PSF" and "SIMP" models are computed for
+every source and the better of these two is used when deciding whether to keep
+the source.  A source is retained if its penalized |chi|\ |sup2| is improved by 25;
 this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
-The classification is as a point source unless the penalized |chi|\ |sup2|
+The source is classified as the better of point source or simple galaxy
+unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
 it as a deVaucouleurs or exponential profile.
 The classification is a composite of deVaucouleurs + exponential if it is both a

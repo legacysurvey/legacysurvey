@@ -49,7 +49,7 @@ DECaLS Founding Co-Is
 * Jean-Paul Kneib  jean-paul.kneib@epfl.ch
 * Richard Kron  rich@oddjob.uchicago.edu
 * Ting-Wen Lan  tingwenlan@gmail.com
-* Dustin Lang  dstn@cmu.edu
+* Dustin Lang  dstndstn@gmail.com
 * Michael Levi  MELevi@lbl.gov
 * Brice Menard  menard@jhu.edu
 * Andrea Merloni  am@mpe.mpg.de

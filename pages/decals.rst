@@ -23,13 +23,16 @@ within this footprint for the future Dark Energy Spectroscopic
 Instrument survey, which aims to provide spectra
 of additional tens of millions of galaxies and QSOs.  Given its present and
 future scientific uses, this survey will
-be among the highest impact projects if approved by the NOAO Survey Program.
+be a high impact projects of significant legacy vaule.
 
 Proposal information for 2013A-0741:
 http://www.noao.edu/perl/abstract?2013A-0741
 
+Proposal information for 2014B-0404:
+http://www.noao.edu/perl/abstract?2014B-0404
+
 Full text of proposal:
-http://localhost:8000/files/LargeSurvey.pdf
+files/LargeSurvey.pdf
 
 DECam Legacy Survey Principles:
 https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles

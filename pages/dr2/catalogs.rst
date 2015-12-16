@@ -100,11 +100,16 @@ Bit Value Name                        Description
 Goodness-of-Fits
 ================
 
-The DCHISQ values represent the penalized |chi|\ |sup2| of all the pixels compared to
-various models.  This 4-element vectorcontains the |chi|\ |sup2| difference between
-the best-fit point source, deVauc model, exponential model, and a composite model.
-The number of degrees of freedom to include as a penalty to these |chi|\ |sup2| values
-are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.
+The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
+for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
+the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
+exponential model ("EXP"), de Vaucouleurs model ("DEV"), and a composite model ("COMP"), in that order.
+The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45" and zero ellipticity (round)
+and is meant to capture slightly-extended but low signal-to-noise objects.
+The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+Note that the DCHISQ values are negated so that positive values indicate better fits.
+We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
+
 
 The DECAM_RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
@@ -115,14 +120,6 @@ computed as the following sum over pixels in the blob for each object:
 The above sum is over all images contributing to a particular filter.
 The above can be negative-valued for sources that have a flux measured as negative in some bands
 where they are not detected.
-
-SDSS_TREATED_AS_POINTSOURCE indicated whether an object was initialized as an SDSS point source
-(if "T") or galaxy (if "F").  This is based upon the SDSS morphological classifications, where SDSS_OBJTYPE=6
-indicates a point source and =3 indicates a galaxy.  However, SDSS_TREATED_AS_POINTSOURCE is also set
-to "T" for sources satisfying any of the following conditions: the effective radius is measured as S/N less than 3,
-sources with very large flux, the effective radius reported is the largest allowed, or the effective radius S/N is
-larger than expected given the measured flux of the objects.  These are almost the same conditions as
-described in Lang et al 2014 (http://arxiv.org/abs/1410.7397), and are further described there.
 
 Galactic Extinction Coefficients
 ================================

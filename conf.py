@@ -75,8 +75,8 @@ NAVIGATION_LINKS = {
             ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
         ("http://legacysurvey.org/galaxies", 'Gallery'),
-        ("/status", 'Survey Status'),
-        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Members Pages'),
+        ("/status", 'Status'),
+        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),
 #            ("http://thetractor.org", 'The Tractor'),

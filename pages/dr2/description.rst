@@ -257,7 +257,8 @@ http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
-give units consistent with the Tractor catalogs.
+give units consistent with the Tractor catalogs.  These conversion factors are recorded in the
+Tractor catalog headers ("WISEAB1", etc).
 
 
 Galactic Extinction
@@ -288,7 +289,8 @@ Image Stacks
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.
+and a scale of 0.262\ |Prime|/pix.  Note that the image stacks are computed using nearest-neighbor
+interpolation, so should not be used for precision work.
 
 
 Depths
@@ -310,9 +312,6 @@ Code Versions
 
 Glossary
 ========
-
-Astrometry.net
-    `Dustin Lang's astrometry code <https://github.com/dstndstn/astrometry.net>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -337,7 +336,8 @@ DECam
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
-    flux of 1.0 maggie.
+    flux of 1.0 maggie.  A convenient unit is the nanomaggie: a flux of 1 nanomaggie
+    corresponds to an AB magnitude of 22.5.
 
 MoG
     Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).

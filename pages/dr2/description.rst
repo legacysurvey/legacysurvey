@@ -30,14 +30,16 @@ the DECam Legacy Survey. DR2 includes DECam data primarily from z-band
 observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
 g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
 program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
-public data from other programs near the Fall celestial equator bounded by 315 <
+public data from other programs with the footprint, including data taken by the
+Dark Energy Survey that are now public, in the "stripe 82" region bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
-|deg|.  In total, the optical data covers a disjoint footprint
+|deg|.
+  In total, the optical data covers a disjoint footprint
 with 2078 deg\ |sup2| in g-band, 2141 deg\ |sup2| in r-band and 5322 deg\ |sup2|
 in z-band, of which 1807 deg\ |sup2| has been observed in all
 three optical filters.  
 
-There are approximately 260 million unique sources in DR2 spread over 97554 bricks.
+There are approximately 260 million unique sources in DR2 spread over 97,554 bricks.
 
 DR2 includes the stacked images and the Tractor-based catalogs.
 The size of the DR2 data distribution is:
@@ -46,13 +48,17 @@ The size of the DR2 data distribution is:
 Size   Directory Description
 ====== ========= ====================
 287GB  tractor   Tractor catalogs
- 33TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 ~250GB sweep     Repackages versions of the Tractor catalogs.
+ 33TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 ====== ========= ====================
 
-The co-added images and Tractor catalogs are presented in bricks of approximate
-size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections
-for each of the g,r,z filters.
+The co-added images and Tractor catalogs are presented in "bricks" of approximate
+size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
+coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
+projection around the brick center, with size 3600 |times| 3600 pixels at a scale of
+0.262 arcseconds per pixel.  The projections for the g,r,z filters are identical.  The
+images have some overlap.
+
 
 Obtaining Images and Raw Data
 ==============================
@@ -62,7 +68,7 @@ and raw data can be obtained through `the NOAO portal`_ (see also the informatio
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
-the cutout servers as follows:
+the cutout service as follows:
 
 JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
 

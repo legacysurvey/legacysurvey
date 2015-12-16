@@ -3,7 +3,7 @@
 
 .. |sup2|   unicode:: U+000B2 .. SUPERSCRIPT TWO
 
-We propose to create a public optical imaging survey to complement
+We are conducting a public optical imaging survey to complement
 the vast spectroscopic database of ~2.5 million extragalactic
 targets created by the SDSS, SDSS-II and SDSS-III/BOSS surveys and the start
 of the SDSS-IV/eBOSS survey.

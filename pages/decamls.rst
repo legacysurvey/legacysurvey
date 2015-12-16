@@ -7,7 +7,7 @@
 .. |delta|    unicode:: U+003B4 .. GREEK SMALL LETTER DELTA
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 
-We propose to create a public optical imaging survey to complement
+We are conducting a public optical imaging survey to complement
 the vast spectroscopic database of ~2.5 million extragalactic
 targets created by the `SDSS`_, `SDSS-II`_ and `SDSS-III`_/`BOSS`_ surveys and the start
 of the `SDSS-IV`_/`eBOSS`_ survey.
@@ -27,9 +27,9 @@ within this footprint for the future `Dark Energy Spectroscopic Instrument`_
 survey, which aims to provide spectra
 of additional tens of millions of galaxies and QSOs.  Given its present and
 future scientific uses, this survey will
-be among the highest impact projects if approved by the NOAO Survey Program.
+be among the highest impact projects in the NOAO Survey Program.
 
-Proposal information for 2013A-0741 and 2014B-0404: http://www.noao.edu/perl/abstract?2013A-0741, http://www.noao.edu/perl/abstract?2014B-0404
+Proposal information for 2013A-0741 and 2014B-0404: http://www.noao.edu/perl/abstract?2013A-0741 , http://www.noao.edu/perl/abstract?2014B-0404
 
 Full text of proposal:
 http://legacysurvey.org/files/LargeSurvey.pdf

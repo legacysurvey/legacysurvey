@@ -32,7 +32,7 @@ Proposal information for 2014B-0404:
 http://www.noao.edu/perl/abstract?2014B-0404
 
 Full text of proposal:
-files/LargeSurvey.pdf
+/files/LargeSurvey.pdf
 
 DECam Legacy Survey Principles:
 https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles

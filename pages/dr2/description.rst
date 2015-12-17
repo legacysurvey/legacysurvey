@@ -30,14 +30,16 @@ the DECam Legacy Survey. DR2 includes DECam data primarily from z-band
 observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
 g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
 program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
-public data from other programs near the Fall celestial equator bounded by 315 <
+public data from other programs with the footprint, including data taken by the
+Dark Energy Survey that are now public, in the "stripe 82" region bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
-|deg|.  In total, the optical data covers a disjoint footprint
+|deg|.
+  In total, the optical data covers a disjoint footprint
 with 2078 deg\ |sup2| in g-band, 2141 deg\ |sup2| in r-band and 5322 deg\ |sup2|
 in z-band, of which 1807 deg\ |sup2| has been observed in all
 three optical filters.  
 
-There are approximately 260 million unique sources in DR2 spread over 97554 bricks.
+There are approximately 260 million unique sources in DR2 spread over 97,554 bricks.
 
 DR2 includes the stacked images and the Tractor-based catalogs.
 The size of the DR2 data distribution is:
@@ -46,13 +48,17 @@ The size of the DR2 data distribution is:
 Size   Directory Description
 ====== ========= ====================
 287GB  tractor   Tractor catalogs
- 33TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 ~250GB sweep     Repackages versions of the Tractor catalogs.
+ 33TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 ====== ========= ====================
 
-The co-added images and Tractor catalogs are presented in bricks of approximate
-size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections
-for each of the g,r,z filters.
+The co-added images and Tractor catalogs are presented in "bricks" of approximate
+size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
+coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
+projection around the brick center, with size 3600 |times| 3600 pixels at a scale of
+0.262 arcseconds per pixel.  The projections for the g,r,z filters are identical.  The
+images have some overlap.
+
 
 Obtaining Images and Raw Data
 ==============================
@@ -62,7 +68,7 @@ and raw data can be obtained through `the NOAO portal`_ (see also the informatio
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
-the cutout servers as follows:
+the cutout service as follows:
 
 JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
 
@@ -86,7 +92,7 @@ step is initialized with these positions, although
 those positions can be changed during the fits and
 low-S/N sources can be removed.
 
-For source detection, cach DECam image is convolved by its PSF model,
+For source detection, each DECam image is convolved by its PSF model,
 then a weighted stack
 of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
@@ -134,12 +140,8 @@ The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR2.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters.  The discontinous properties are
-the choice for each source model: point source, "simple" galaxy,
-exponential,
-deVaucouleurs, or a composite exponential+deVauc.
-
-Five morphological types are used: point sources,
+and the shape parameters.  There is also the discrete choice of which
+model type to use.  In DR2, five morphological types are used: point sources,
 "simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
 and round profile),
 deVaucouleurs profiles
@@ -164,10 +166,13 @@ The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
-A source is retained if this penalized |chi|\ |sup2| is improved by 25;
+The "PSF" and "SIMP" models are computed for
+every source and the better of these two is used when deciding whether to keep
+the source.  A source is retained if its penalized |chi|\ |sup2| is improved by 25;
 this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
-The classification is as a point source unless the penalized |chi|\ |sup2|
+The source is classified as the better of point source or simple galaxy
+unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
 it as a deVaucouleurs or exponential profile.
 The classification is a composite of deVaucouleurs + exponential if it is both a
@@ -252,7 +257,8 @@ http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
-give units consistent with the Tractor catalogs.
+give units consistent with the Tractor catalogs.  These conversion factors are recorded in the
+Tractor catalog headers ("WISEAB1", etc).
 
 
 Galactic Extinction
@@ -283,7 +289,8 @@ Image Stacks
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.
+and a scale of 0.262\ |Prime|/pix.  Note that the image stacks are computed using nearest-neighbor
+interpolation, so should not be used for precision work.
 
 
 Depths
@@ -305,9 +312,6 @@ Code Versions
 
 Glossary
 ========
-
-Astrometry.net
-    `Dustin Lang's astrometry code <https://github.com/dstndstn/astrometry.net>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -332,7 +336,8 @@ DECam
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
-    flux of 1.0 maggie.
+    flux of 1.0 maggie.  A convenient unit is the nanomaggie: a flux of 1 nanomaggie
+    corresponds to an AB magnitude of 22.5.
 
 MoG
     Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).

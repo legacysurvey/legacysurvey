@@ -13,7 +13,7 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry. Note there is a 
-`known issue`_ regarding the fact that some Tractor files contain pixels but zero sources.
+`known issue`_ regarding the fact that some bricks contain pixels but zero sources, hence have empty (zero-row) catalog files.
 
 .. _`known issue`: ../issues
 
@@ -21,11 +21,13 @@ FITS binary table containing Tractor photometry. Note there is a
 Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 BRICKID                     int32                              Brick ID [1,662174]
-BRICKNAME                   char                               Name of brick, encoding the brick sky position
-OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
-BRICK_PRIMARY               char                               "T" if the object is within the brick boundary
-BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
-TYPE                        char                               Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
+BRICKNAME                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
+OBJID                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+BRICK_PRIMARY               boolean                            True if the object is within the brick boundary
+BLOB                        int32                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
+NINBLOB                     int32                              Number of sources in this BLOB (blend family); isolated objects have value 1.
+TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
+TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 RA                          float64      deg                   Right ascension at epoch J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
@@ -34,28 +36,30 @@ BX                          float32      pix                   X position (0-ind
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 BX0                         float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
 BY0                         float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
-LEFT_BLOB                   char                               "T" if an object center has been optimized to be outside the fitting pixel area; otherwise "F"
+LEFT_BLOB                   boolean                            True if an object center has been optimized to be outside the fitting pixel area
+OUT_OF_BOUNDS               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
+DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
 DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fluxes on the co-added residual images
 DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
 DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
-DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+DECAM_NOBS                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 DECAM_RCHI2                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
 DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
 DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
-OUT_OF_BOUNDS               bool[6]                            "T" for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
-DECAM_ANYMASK               int32[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
-DECAM_ALLMASK               int32[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
+DECAM_ANYMASK               int16[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
+DECAM_ALLMASK               int16[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
+DECAM_PSFSIZE               float32[6]   arcsec                Weighted average PSF FWHM per band
 WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
 WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
-WISE_NOBS                   int32[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+WISE_NOBS                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 WISE_RCHI2                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-DCHISQ                      float32[4]                         Difference in |chi|\ |sup2| between successfully more-complex model fits
 FRACDEV                     float32                            Fraction of model in deVauc [0,1]
 FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
 SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)
@@ -70,7 +74,8 @@ SHAPEDEV_E1                 float32                            Ellipticity compo
 SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+DEPTH                       float32      1/nanomaggies\ |sup2| PSF detection sensitivity, as (1-sigma) inverse-variance
+GALDEPTH                    float32      1/nanomaggies\ |sup2| Galaxy (0.45" exp, round) detection sensitivity, as (1-sigma) inverse-variance
 =========================== ============ ===================== ===============================================
 
 Mask Values
@@ -97,11 +102,16 @@ Bit Value Name                        Description
 Goodness-of-Fits
 ================
 
-The DCHISQ values represent the penalized |chi|\ |sup2| of all the pixels compared to
-various models.  This 4-element vectorcontains the |chi|\ |sup2| difference between
-the best-fit point source, deVauc model, exponential model, and a composite model.
-The number of degrees of freedom to include as a penalty to these |chi|\ |sup2| values
-are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.
+The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
+for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
+the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
+exponential model ("EXP"), de Vaucouleurs model ("DEV"), and a composite model ("COMP"), in that order.
+The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45" and zero ellipticity (round)
+and is meant to capture slightly-extended but low signal-to-noise objects.
+The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+Note that the DCHISQ values are negated so that positive values indicate better fits.
+We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
+
 
 The DECAM_RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
@@ -112,14 +122,6 @@ computed as the following sum over pixels in the blob for each object:
 The above sum is over all images contributing to a particular filter.
 The above can be negative-valued for sources that have a flux measured as negative in some bands
 where they are not detected.
-
-SDSS_TREATED_AS_POINTSOURCE indicated whether an object was initialized as an SDSS point source
-(if "T") or galaxy (if "F").  This is based upon the SDSS morphological classifications, where SDSS_OBJTYPE=6
-indicates a point source and =3 indicates a galaxy.  However, SDSS_TREATED_AS_POINTSOURCE is also set
-to "T" for sources satisfying any of the following conditions: the effective radius is measured as S/N less than 3,
-sources with very large flux, the effective radius reported is the largest allowed, or the effective radius S/N is
-larger than expected given the measured flux of the objects.  These are almost the same conditions as
-described in Lang et al 2014 (http://arxiv.org/abs/1410.7397), and are further described there.
 
 Galactic Extinction Coefficients
 ================================
@@ -168,63 +170,6 @@ and :math:`r, b/a, \phi`:
     |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
-
-
-Debugging Tags to Remove in the Future
-======================================
-
-The following are from the SDSS DR13 catalogs, to be released in 2016
-as the SDSS-IV/eBOSS target selection catalogs. Columns in this file are as
-documented in the SDSS DR12 `data model`_ but the column names have "SDSS\_" prepended to them.
-
-.. _`data model`: http://data.sdss3.org/datamodel/files/BOSS_PHOTOOBJ/RERUN/RUN/CAMCOL/photoObj.html
-
-
-=========================== ============ ===============================================
-Name                        Type         Description
-=========================== ============ ===============================================
-SDSS_RUN                    int32
-SDSS_CAMCOL                 byte
-SDSS_FIELD                  int32
-SDSS_ID                     int32
-SDSS_OBJID                  int64
-SDSS_PARENT                 int32
-SDSS_NCHILD                 int32
-SDSS_OBJC_TYPE              int64
-SDSS_OBJC_FLAGS             int64
-SDSS_OBJC_FLAGS2            int64
-SDSS_FLAGS                  int64[5]
-SDSS_FLAGS2                 int64[5]
-SDSS_TAI                    float64[5]
-SDSS_RA                     float64
-SDSS_DEC                    float64
-SDSS_PSF_FWHM               float32[5]
-SDSS_MJD                    int64
-SDSS_THETA_DEV              float32[5]
-SDSS_THETA_DEVERR           float32[5]
-SDSS_AB_DEV                 float32[5]
-SDSS_AB_DEVERR              float32[5]
-SDSS_THETA_EXP              float32[5]
-SDSS_THETA_EXPERR           float32[5]
-SDSS_AB_EXP                 float32[5]
-SDSS_AB_EXPERR              float32[5]
-SDSS_FRACDEV                float32[5]
-SDSS_PHI_DEV_DEG            float32[5]
-SDSS_PHI_EXP_DEG            float32[5]
-SDSS_PSFFLUX                float32[5]
-SDSS_PSFFLUX_IVAR           float32[5]
-SDSS_CMODELFLUX             float32[5]
-SDSS_CMODELFLUX_IVAR        float32[5]
-SDSS_MODELFLUX              float32[5]
-SDSS_MODELFLUX_IVAR         float32[5]
-SDSS_DEVFLUX                float32[5]
-SDSS_DEVFLUX_IVAR           float32[5]
-SDSS_EXPFLUX                float32[5]
-SDSS_EXPFLUX_IVAR           float32[5]
-SDSS_EXTINCTION             float32[5]
-SDSS_CALIB_STATUS           int64[5]
-SDSS_RESOLVE_STATUS         int64
-=========================== ============ ===============================================
 
 
 Tags to Add in the Future

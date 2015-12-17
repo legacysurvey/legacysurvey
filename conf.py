@@ -16,7 +16,7 @@ SITE_URL = "http://legacysurvey.org/"
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_small.jpg"
+LOGO_URL = "/files/logo_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -75,8 +75,8 @@ NAVIGATION_LINKS = {
             ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
         ("http://legacysurvey.org/galaxies", 'Gallery'),
-        ("/status", 'Survey Status'),
-        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Members Pages'),
+        ("/status", 'Status'),
+        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),
 #            ("http://thetractor.org", 'The Tractor'),

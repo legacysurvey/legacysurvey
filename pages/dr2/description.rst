@@ -34,7 +34,8 @@ public data from other programs with the footprint, including data taken by the
 Dark Energy Survey that are now public, in the "stripe 82" region bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
 |deg|.
-  In total, the optical data covers a disjoint footprint
+
+In total, the optical data covers a disjoint footprint
 with 2078 deg\ |sup2| in g-band, 2141 deg\ |sup2| in r-band and 5322 deg\ |sup2|
 in z-band, of which 1807 deg\ |sup2| has been observed in all
 three optical filters.  

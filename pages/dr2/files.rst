@@ -82,58 +82,59 @@ decals-ccds.fits
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
-================ ========= ======================================================
-Column           Type      Description
-================ ========= ======================================================
-``expnum``        int32    Unique DECam exposure number, eg 348224.
-``exptime``       float    Exposure time in seconds, eg 30.
-``filter``        char[1]  Filter used for observation, eg "g", "r", "z".
-``seeing``        float    Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
-``date_obs``      char[10] Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
-``mjd_obs``       double   Date of observation in MJD (in UTC system), eg
-56884.99373389.
-``ut``            char[15] Time of observation start, eg "23:50:58.608241".
-``airmass``       float    Airmass, eg 1.35.
-``propid``        char[10] NOAO Proposal ID that took this image, eg "2014B-0404".
-``zpt``           float    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
-``avsky``         float    Average sky level in this image, in ADU, eg 36.9324.
-``arawgain``      float    Average gain for this CCD, eg 4.34.
-``fwhm``          float    [use "seeing" instead]
-``crpix1``        float    Astrometric header value: X reference pixel.
-``crpix2``        float    Astrometric header value: Y reference pixel.
-``crval1``        double   Astrometric header value: RA of reference pixel.
-``crval2``        double   Astrometric header value: Dec of reference pixel.
-``cd1_1``         float    Astrometric header value: transformation matrix.
-``cd1_2``         float    Astrometric header value: transformation matrix.
-``cd2_1``         float    Astrometric header value: transformation matrix.
-``cd2_2``         float    Astrometric header value: transformation matrix.
-``ccdnum``        int16    CCD number (see DECam layout), eg 1.
-``ccdname``       char[3]  CCD name (see DECam layout), eg "N10", "S7".
-``ccdzpt``        float    Zeropoint for the CCD (AB mag).
-``ccdzpta``       float    Zeropoint for amp A (AB mag).
-``ccdzptb``       float    Zeropoint for amp B (AB mag).
-``ccdphoff``      float
-``ccdphrms``      float    Photometric rms for the CCD (in mag).
-``ccdskyrms``     float    Sky rms (in counts).
-``ccdraoff``      float    Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
-``ccddecoff``     float    Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
-``ccdtransp``     float
-``ccdnstar``      int16    Number of stars found on the CCD.
-``ccdnmatch``     int16    Number of stars matched to PS1 (and used to compute the photometric zero points and astrometric offsets).
-``ccdnmatcha``    int16    Number of stars in amp A matched.
-``ccdnmatchb``    int16    Number of stars in amp B matched.
-``ccdmdncol``     float    Median (g-i) color from the PS1 catalog of the matched stars.
-``camera``        char[5]  The camera that took this image; "decam".
-``expid``         char[12] Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
-``image_hdu``     int16    FITS HDU number in the ``image_filename`` file where this image can be found.
-``image_filename`` char[61] Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz".
-``width``          int16   Width in pixels of this image, eg 2046.
-``height``         int16   Height in pixels of this image, eg 4096.
-``ra_bore``        double  Telescope boresight RA  of this exposure (deg).
-``dec_bore``       double  Telescope boresight Dec of this exposure (deg).
-``ra``             double  Approximate RA  center of this CCD (deg).
-``dec``            double  Approximate Dec center of this CCD (deg).
-================ ========= ======================================================
+================== =========  ======================================================
+Column             Type       Description
+================== =========  ======================================================
+``expnum``         int32      Unique DECam exposure number, eg 348224.
+``exptime``        float      Exposure time in seconds, eg 30.
+``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
+``seeing``         float      Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
+``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
+``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
+``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
+``airmass``        float      Airmass, eg 1.35.
+``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
+``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
+``avsky``          float      Average sky level in this image, in ADU, eg 36.9324.
+``arawgain``       float      Average gain for this CCD, eg 4.34.
+``fwhm``           float      [use "seeing" instead]
+``crpix1``         float      Astrometric header value: X reference pixel.
+``crpix2``         float      Astrometric header value: Y reference pixel.
+``crval1``         double     Astrometric header value: RA of reference pixel.
+``crval2``         double     Astrometric header value: Dec of reference pixel.
+``cd1_1``          float      Astrometric header value: transformation matrix.
+``cd1_2``          float      Astrometric header value: transformation matrix.
+``cd2_1``          float      Astrometric header value: transformation matrix.
+``cd2_2``          float      Astrometric header value: transformation matrix.
+``ccdnum``         int16      CCD number (see DECam layout), eg 1.
+``ccdname``        char[3]    CCD name (see DECam layout), eg "N10", "S7".
+``ccdzpt``         float      Zeropoint for the CCD (AB mag).
+``ccdzpta``        float      Zeropoint for amp A (AB mag).
+``ccdzptb``        float      Zeropoint for amp B (AB mag).
+``ccdphoff``       float      
+``ccdphrms``       float      Photometric rms for the CCD (in mag).
+``ccdskyrms``      float      Sky rms (in counts).
+``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
+``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
+``ccdtransp``      float      
+``ccdnstar``       int16      Number of stars found on the CCD.
+``ccdnmatch``      int16      Number of stars matched to PS1 (and used to compute the photometric zero points and astrometric offsets).
+``ccdnmatcha``     int16      Number of stars in amp A matched.
+``ccdnmatchb``     int16      Number of stars in amp B matched.
+``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
+``camera``         char[5]    The camera that took this image; "decam".
+``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
+``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.
+``image_filename`` char[61]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz".
+``width``          int16      Width in pixels of this image, eg 2046.
+``height``         int16      Height in pixels of this image, eg 4096.
+``ra_bore``        double     Telescope boresight RA  of this exposure (deg).
+``dec_bore``       double     Telescope boresight Dec of this exposure (deg).
+``ra``             double     Approximate RA  center of this CCD (deg).
+``dec``            double     Approximate Dec center of this CCD (deg).
+================== =========  ======================================================
+
+
 
 FITS binary table with almanac information (seeing, sky-brighness, etc.) about
 each individual CCD image.
@@ -148,58 +149,59 @@ reductions.
 
 Includes everything listed in the decals-ccds.fits file plus the following:
 
-================ ========= ======================================================
-Column           Type      Description
-================ ========= ======================================================
-``photometric``  boolean   True if this CCD was considered photometric and used in the DR2 reductions
-``blacklist_ok`` boolean   We blacklisted certain programs (Proposal IDs) from other PIs where there were a large number of images covering a single patch of sky, because our pipeline code didn't handle the extreme depth very well.  True if this CCD was *not* blacklisted, ie, was used.
-``good_region``  int[4]    If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
-``ra0``          double    RA  coordinate of pixel (1,1)
-``dec0``         double    Dec coordinate of pixel (1,1)
-``ra1``          double    RA  coordinate of pixel (1,H)
-``dec1``         double    Dec coordinate of pixel (1,H)
-``ra2``          double    RA  coordinate of pixel (W,H)
-``dec2``         double    Dec coordinate of pixel (W,H)
-``ra3``          double    RA  coordinate of pixel (W,1)
-``dec3``         double    Dec coordinate of pixel (W,1)
-``dra``          float     Maximum distance from RA,Dec center to the edge midpoints, in RA
-``ddec``         float     Maximum distance from RA,Dec center to the edge midpoints, in Dec
-``ra_center``    double    RA coordinate of CCD center
-``dec_center``   double    RA coordinate of CCD center
-``sig1``         float     Median per-pixel error standard deviation, in nanomaggies.
-``meansky``      float     Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
-``stdsky``       float     Standard deviation of our sky level
-``minsky``       float     Min of our sky level
-``maxsky``       float     Max of our sky level
-``pixscale_mean`` float    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
-``pixscale_std`` float     Standard deviation of pixel scale
-``pixscale_min`` float     Min of pixel scale
-``pixscale_max`` float     Max of pixel scale
-``psfnorm_mean`` float     PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
-``psfnorm_std``  float     Standard deviation of PSF norm
-``galnorm_mean`` float     Norm of the PSF model convolved by a 0.45" exponential galaxy.
-``galnorm_std``  float     Standard deviation of galaxy norm.
-``psf_mx2``      float     PSF model second moment in x (pixels^2)
-``psf_my2``      float     PSF model second moment in y (pixels^2)
-``psf_mxy``      float     PSF model second moment in x-y (pixels^2)
-``psf_a``        float     PSF model major axis (pixels)
-``psf_b``        float     PSF model minor axis (pixels)
-``psf_theta``    float     PSF position angle (deg)
-``psf_ell``      float     PSF ellipticity 1 - minor/major
-``humidity``     float     Percent humidity outside
-``outtemp``      float     Outside temperate (deg C).
-``tileid``       int32     DECaLS tile number, if this was a DECaLS observation; or 0 for data from other programs.
-``tilepass``     uint8     DECaLS tile pass number, 1, 2 or 3, if this was a DECaLS observation, or 0 for data from other programs.  Set by the observers; pass 1 is supposed to be photometric with good seeing, pass 3 unphotometric or bad seeing, and pass 2 in between.
-``tileebv``      float     Mean SFD E(B-V) extinction in the DECaLS tile, or 0 for non-DECaLS data.
-``plver``        char[6]   Community Pipeline (CP) PLVER version string
-``ebv``          float     SFD E(B-V) extinction for CCD center
+==================== ======== ======================================================
+Column               Type      Description
+==================== ======== ======================================================
+``photometric``      boolean  True if this CCD was considered photometric and used in the DR2 reductions
+``blacklist_ok``     boolean  We blacklisted certain programs (Proposal IDs) from other PIs where there were a large number of images covering a single patch of sky, because our pipeline code didn't handle the extreme depth very well.  True if this CCD was *not* blacklisted, ie, was used.
+``good_region``      int[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
+``ra0``              double   RA  coordinate of pixel (1,1)
+``dec0``             double   Dec coordinate of pixel (1,1)
+``ra1``              double   RA  coordinate of pixel (1,H)
+``dec1``             double   Dec coordinate of pixel (1,H)
+``ra2``              double   RA  coordinate of pixel (W,H)
+``dec2``             double   Dec coordinate of pixel (W,H)
+``ra3``              double   RA  coordinate of pixel (W,1)
+``dec3``             double   Dec coordinate of pixel (W,1)
+``dra``              float    Maximum distance from RA,Dec center to the edge midpoints, in RA
+``ddec``             float    Maximum distance from RA,Dec center to the edge midpoints, in Dec
+``ra_center``        double   RA coordinate of CCD center
+``dec_center``       double   RA coordinate of CCD center
+``sig1``             float    Median per-pixel error standard deviation, in nanomaggies.
+``meansky``          float    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
+``stdsky``           float    Standard deviation of our sky level
+``minsky``           float    Min of our sky level
+``maxsky``           float    Max of our sky level
+``pixscale_mean``    float    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
+``pixscale_std``     float    Standard deviation of pixel scale
+``pixscale_min``     float    Min of pixel scale
+``pixscale_max``     float    Max of pixel scale
+``psfnorm_mean``     float    PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
+``psfnorm_std``      float    Standard deviation of PSF norm
+``galnorm_mean``     float    Norm of the PSF model convolved by a 0.45" exponential galaxy.
+``galnorm_std``      float    Standard deviation of galaxy norm.
+``psf_mx2``          float    PSF model second moment in x (pixels^2)
+``psf_my2``          float    PSF model second moment in y (pixels^2)
+``psf_mxy``          float    PSF model second moment in x-y (pixels^2)
+``psf_a``            float    PSF model major axis (pixels)
+``psf_b``            float    PSF model minor axis (pixels)
+``psf_theta``        float    PSF position angle (deg)
+``psf_ell``          float    PSF ellipticity 1 - minor/major
+``humidity``         float    Percent humidity outside
+``outtemp``          float    Outside temperate (deg C).
+``tileid``           int32    DECaLS tile number, if this was a DECaLS observation; or 0 for data from other programs.
+``tilepass``         uint8    DECaLS tile pass number, 1, 2 or 3, if this was a DECaLS observation, or 0 for data from other programs.  Set by the observers; pass 1 is supposed to be photometric with good seeing, pass 3 unphotometric or bad seeing, and pass 2 in between.
+``tileebv``          float    Mean SFD E(B-V) extinction in the DECaLS tile, or 0 for non-DECaLS data.
+``plver``            char[6]  Community Pipeline (CP) PLVER version string
+``ebv``              float    SFD E(B-V) extinction for CCD center
 ``decam_extinction`` float[6] Extinction for DECam filters ugrizY
 ``wise_extinction``  float[4] Extinction for WISE bands W1,W2,W3,W4
-``psfdepth``     float     5-sigma PSF detection depth in AB mag, using PsfEx PSF model
-``galdepth``     float     5-sigma galaxy (0.45" round exp) detection depth in AB mag
-``gausspsfdepth`` float    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
-``gaussgaldepth`` float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
-================ ========= ======================================================
+``psfdepth``         float    5-sigma PSF detection depth in AB mag, using PsfEx PSF model
+``galdepth``         float    5-sigma galaxy (0.45" round exp) detection depth in AB mag
+``gausspsfdepth``    float    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
+``gaussgaldepth``    float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
+==================== ======== ======================================================
+
 
 
 

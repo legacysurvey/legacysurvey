@@ -280,7 +280,30 @@ coadd/<AAA>/<brick>/decals-<brick>-ccds.fits
 --------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
-Same columns as decals-ccds.fits.
+Same columns as decals-ccds.fits, plus:
+
+================ ========= ======================================================
+Column           Type      Description
+================ ========= ======================================================
+``ccd_x0``       int16     Minimum x image coordinate overlapping this brick
+``ccd_x1``       int16     Maximum x image coordinate overlapping this brick
+``ccd_y0``       int16     Minimum y image coordinate overlapping this brick
+``ccd_y1``       int16     Maximum y image coordinate overlapping this brick
+``brick_x0``     int16     Minimum x brick image coordinate overlapped by this image
+``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
+``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
+``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
+``psfnorm``      float     Same as ``psfnorm`` in decals-ccds-annotated.fits
+``galnorm``      float     Same as ``galnorm`` in decals-ccds-annotated.fits
+``plver``        char[6]   Community Pipeline (CP) version
+``skyver``       char[16]  Git version of the sky calibration code
+``wcsver``       char[16]  Git version of the WCS calibration code
+``psfver``       char[16]  Git version of the PSF calibration code
+``skyplver``     char[16]  CP version of the input to sky calibration
+``wcsplver``     char[16]  CP version of the input to WCS calibration
+``psfplver``     char[16]  CP version of the input to PSF calibration
+================ ========= ======================================================
+
 
 coadd/<AAA>/<brick>/decals-<brick>-image-<filter>.fits
 ------------------------------------------------------

@@ -111,12 +111,12 @@ Column             Type       Description
 ``ccdzpt``         float      Zeropoint for the CCD (AB mag).
 ``ccdzpta``        float      Zeropoint for amp A (AB mag).
 ``ccdzptb``        float      Zeropoint for amp B (AB mag).
-``ccdphoff``       float      
+``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
 ``ccdskyrms``      float      Sky rms (in counts).
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
-``ccdtransp``      float      
+``ccdtransp``      float      (ignore)
 ``ccdnstar``       int16      Number of stars found on the CCD.
 ``ccdnmatch``      int16      Number of stars matched to PS1 (and used to compute the photometric zero points and astrometric offsets).
 ``ccdnmatcha``     int16      Number of stars in amp A matched.

@@ -52,7 +52,7 @@ decals-bricks-dr2.fits
 
 A FITS binary table with information about what is included in DR2.
 
-***FIXME***
+This table contains only rows (bricks) for which we have some imaging coverage.
 
 =============== ======= ======================================================
 Column          Type    Description
@@ -68,6 +68,12 @@ Column          Type    Description
 ``ra2``         double  Upper RA boundary.
 ``dec1``        double  Lower Dec boundary.
 ``dec2``        double  Upper Dec boundary.
+``nobs_med_g``  uint8   Median number of observations in g
+``nobs_med_r``  uint8   Median number of observations in r
+``nobs_med_z``  uint8   Median number of observations in z
+``nobs_max_g``  uint8   Maximum number of observations in g
+``nobs_max_r``  uint8   Maximum number of observations in r
+``nobs_max_z``  uint8   Maximum number of observations in z
 =============== ======= ======================================================
 
 

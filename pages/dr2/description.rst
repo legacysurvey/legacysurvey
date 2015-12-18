@@ -71,7 +71,7 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=5126&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
 
 FITS: http://legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
 
@@ -243,10 +243,8 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
    r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} - 0.09939 (g-i) + 0.04509 (g-i)^2 - 0.01488 (g-i)^3 \\
    z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} - 0.13404 (g-i) + 0.06591 (g-i)^2 - 0.01695 (g-i)^3 \\
 
-The brightness of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
-from linear fluxes to magnitudes is as follows:
-:math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`
-These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
+The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
+from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
 
@@ -254,7 +252,7 @@ The DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the recommended conversions by
 the WISE team documented here
-http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
+http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab. Namely, 
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to

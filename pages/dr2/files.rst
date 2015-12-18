@@ -77,8 +77,10 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-decals-ccds.fits
-----------------
+decals-ccds.fits.gz
+--------------------
+
+A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. Note that this is the only file in the top-level directory that is gzipped (it is slightly larger than other such files and is gzipped for compliance with the legacysurvey github repository).
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
@@ -133,11 +135,6 @@ Column             Type       Description
 ``ra``             double     Approximate RA  center of this CCD (deg).
 ``dec``            double     Approximate Dec center of this CCD (deg).
 ================== =========  ======================================================
-
-
-
-FITS binary table with almanac information (seeing, sky-brighness, etc.) about
-each individual CCD image.
 
 
 decals-ccds-annotated.fits
@@ -265,8 +262,8 @@ FITS binary table containing Tractor photometry, documented on the
 Sweep Catalogs
 ==============
 
-tractor-sweep-<AAA>.fits
-------------------------
+sweep/2.0/sweep-<AAA>*.fits
+----------------------------
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec.

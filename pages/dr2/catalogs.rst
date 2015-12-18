@@ -175,6 +175,8 @@ and :math:`r, b/a, \phi`:
 Tags to Add in the Future
 =========================
 
+This is a list of tags that we are intending to (ultimately) supply in the catalogs. This table is included so that users can see if information they require for their science will be part of a future data release.
+
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================

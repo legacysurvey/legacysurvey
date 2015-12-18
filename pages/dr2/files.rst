@@ -84,6 +84,15 @@ A FITS binary table with almanac information (e.g. seeing, etc.) about each indi
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
+The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
+are magnitude-like numbers like 25.04, and
+indicate the magnitude of a source that would contribute one count per
+second to the image.  For example, in an image with zeropoint of 25.04
+and exposure time of 30 seconds, a source of magnitude 22.5 would
+contribute
+:math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
+counts.
+
 ================== =========  ======================================================
 Column             Type       Description
 ================== =========  ======================================================

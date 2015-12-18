@@ -58,7 +58,7 @@ size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box i
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
 projection around the brick center, with size 3600 |times| 3600 pixels at a scale of
 0.262 arcseconds per pixel.  The projections for the g,r,z filters are identical.  The
-images have some overlap.
+brick images have some overlap.
 
 
 Obtaining Images and Raw Data

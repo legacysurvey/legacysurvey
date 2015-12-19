@@ -85,7 +85,7 @@ A FITS binary table with almanac information (e.g. seeing, etc.) about each indi
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
-are magnitude-like numbers like 25.04, and
+are magnitude-like numbers (e.g. 25.04), and
 indicate the magnitude of a source that would contribute one count per
 second to the image.  For example, in an image with zeropoint of 25.04
 and exposure time of 30 seconds, a source of magnitude 22.5 would
@@ -260,6 +260,18 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 Tractor Catalogs
 ================
 
+In the file listings outlined below:
+
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
+
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the previous bullet point. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
+
+- sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
+
+- **<filter>** denotes the `g`, `r` or `z` band, using the corresponding letter.
+
+Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `decals-bricks.fits` file (i.e. ``brickname``, ``ra``, ``dec``).
+
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
@@ -271,8 +283,8 @@ FITS binary table containing Tractor photometry, documented on the
 Sweep Catalogs
 ==============
 
-sweep/2.0/sweep-<AAA>*.fits
-----------------------------
+sweep/2.0/sweep-<brickmin>-<brickmax>.fits
+------------------------------------------
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec.

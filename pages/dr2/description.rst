@@ -28,7 +28,7 @@ the Blanco Telescope.
 Data Release 2 (DR2) is the second public data release of images and catalogs for
 the DECam Legacy Survey. DR2 includes DECam data primarily from z-band
 observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
-g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
+g,r,z-band observations from August 2014 through June 2015 for an NOAO survey
 program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
 public data from other programs with the footprint, including data taken by the
 Dark Energy Survey that are now public, in the "stripe 82" region bounded by 315 <
@@ -328,7 +328,7 @@ DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
 
 DR2
-    DECam Legacy Survey Data Release 2, December 2015.
+    DECam Legacy Survey Data Release 2, January 2016.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

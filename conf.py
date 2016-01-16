@@ -74,7 +74,7 @@ NAVIGATION_LINKS = {
             ("http://unwise.me", 'unWISE'),
             ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
-        ("http://legacysurvey.org/galaxies", 'Gallery'),
+        ("/galaxies", 'Gallery'),
         ("/status", 'Status'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((

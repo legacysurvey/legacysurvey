@@ -209,7 +209,14 @@ Column               Type      Description
 ==================== ======== ======================================================
 
 
+External Files
+==============
 
+The DECaLS photometric catalogs have been matched to the following three external spectroscopic files from the SDSS, which can be accessed through the web at:
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/external/
+
+Or on the NERSC computers (for collaborators) at:
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr2/external/
 
 
 decals-dr2-specObj-dr12.fits
@@ -218,7 +225,7 @@ HDU1 (the only HDU) contains Tractored DECaLS
 photometry that is row-by-row-matched to the SDSS DR12 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
 decals-dr2-specObj-dr12.fits matches the spectroscopic parameters in row "N" of
-specObj-dr12.fits. The structure of the DECaLS photometric catalog file is documented on the
+specObj-dr12.fits. The structure of the DECaLS photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file 
 is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
 
@@ -232,7 +239,7 @@ photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
 such that the photometric parameters in row "N" of 
 decals-dr2-DR12Q.fits matches the spectroscopic parameters in row "N" of
-DR12Q.fits. The structure of the DECaLS photometric catalog file is documented on the
+DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
@@ -248,7 +255,7 @@ confirmed objects that were visually inspected as possible quasars
 (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
 such that the photometric parameters in row "N" of 
 decals-dr2-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
-Superset_DR12Q.fits. The structure of the DECaLS photometric catalog file is documented on the
+Superset_DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
@@ -397,14 +404,14 @@ images taken by the dedicated DECam Legacy Survey project, as well as other
 DECam images, and images from other surveys.  These instructions are for
 obtaining raw images from the DECam Legacy Survey *only*.
 
+
 1. Visit the `NOAO Science Archive`_.
 2. Click on `General Search for NOAO data (all users)`_.
-3. In the Simple Query Form, enter "2014B-0404" in the Program number box.
-4. Check "Raw" under All instruments.
-5. Click Search
-6. Once the query finishes, you can "Categorize by"  "Observation type".  The "object"
-   images are actual on-sky data.  Other Observation types are flats, darks, etc.
-7. The Results page offers several different ways to download the detail.  See
+3. From the menu of "Available Collections" at left, select the desired DECaLS data release (e.g. DECaLS-DR2).
+4. Under "Data products - Raw data" check "Object".
+5. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
+6. Click Search.
+7. The Results page offers several different ways to download the detail. See 
    `the Tutorials page`_ for details.
 
 .. _`NOAO Science Archive`: http://portal-nvo.noao.edu

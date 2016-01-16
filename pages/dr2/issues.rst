@@ -1,5 +1,5 @@
-Known Issues and fixes
-======================
+Known Issues and Workarounds
+============================
 
 Some Tractor catalogs contain pixels but zero sources
 

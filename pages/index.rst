@@ -37,8 +37,12 @@
 
 .. container::
 
-   *Acknowledgements:
-   The LBNL Physics Division is supported by the U.S. Department of
+   .. raw:: html
+
+      <h2>Acknowledgements</h2>
+
+
+   *The LBNL Physics Division is supported by the U.S. Department of
    Energy Office of Science High Energy Physics.*
 
    *The Cerro Tololo Inter-American Observatory and the National

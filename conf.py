@@ -10,7 +10,7 @@ BLOG_AUTHOR = "Legacy Survey"
 BLOG_TITLE = "Legacy Survey"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://legacysurvey.org/"
+SITE_URL = "http://legacysurvey.org/test/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
@@ -74,7 +74,7 @@ NAVIGATION_LINKS = {
             ("http://unwise.me", 'unWISE'),
             ), 'Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
-        ("/galaxies", 'Gallery'),
+        ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/gallery/", 'Gallery'),
         ("/status", 'Status'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((
@@ -82,7 +82,7 @@ NAVIGATION_LINKS = {
 #            ("http://thetractor.org", 'The Tractor'),
 #            ), 'Code'),
         ('/contact', 'Contacts'),
-        
+
     ),
 }
 
@@ -270,7 +270,7 @@ ARCHIVE_PATH = "archive"
 # Use an external gzip command? None means no.
 # Example: GZIP_COMMAND = "pigz -k {filename}"
 # GZIP_COMMAND = None
-# Make sure the server does not return a "Accept-Ranges: bytes" header for 
+# Make sure the server does not return a "Accept-Ranges: bytes" header for
 # files compressed by this option! OR make sure that a ranged request does not
 # return partial content of another representation for these resources. Do not
 # use this feature if you do not understand what this means.
@@ -284,15 +284,15 @@ ARCHIVE_PATH = "archive"
 # "source/" and the results will be located in
 # "OUTPUT_PATH/relative_destination/gallery_name"
 # Default is:
-GALLERY_FOLDERS = {"galleries/galaxies": "galaxies"}
+# GALLERY_FOLDERS = {"galleries/galaxies": "galaxies"}
 # More gallery options:
-THUMBNAIL_SIZE = 512
-MAX_IMAGE_SIZE = 2048
-USE_FILENAME_AS_TITLE = True
+# THUMBNAIL_SIZE = 512
+# MAX_IMAGE_SIZE = 2048
+# USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
 #
 # If set to False, it will sort by filename instead. Defaults to True
-GALLERY_SORT_BY_DATE = False
+# GALLERY_SORT_BY_DATE = False
 #
 # Folders containing images to be used in normal posts or
 # pages. Images will be scaled down according to IMAGE_THUMBNAIL_SIZE
@@ -300,7 +300,7 @@ GALLERY_SORT_BY_DATE = False
 # to be visible on the site. The format is a dictionary of {source:
 # relative destination}.
 #
-IMAGE_FOLDERS = {'images': 'images'}
+# IMAGE_FOLDERS = {'images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
 
 
@@ -369,11 +369,11 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
-CONTENT_FOOTER = """<hr>
-Contents &copy; {date}  <a href="mailto:{email}">{author}</a> | 
-Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> | 
+CONTENT_FOOTER = """<hr/>
+<p class="text-muted">Contents &copy; {date}  <a href="mailto:{email}">{author}</a> |
+Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> |
 Theme is <a href="http://bootswatch.com/readable/">Readable</a> |
-<a href="http://github.com/djschlegel/legacysurvey">Source</a>
+<a href="http://github.com/legacysurvey/legacysurvey">Source</a></p>
 """
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,

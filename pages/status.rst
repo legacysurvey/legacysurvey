@@ -12,4 +12,4 @@ reductions of data from other programs in the same filters that overlap this foo
 The image below depicts the status of the survey as of early December 2015.
 
 .. image:: /files/covplot-2015-12-07.jpg
-
+    :alt: Coverage Plots

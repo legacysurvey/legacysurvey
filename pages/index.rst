@@ -61,16 +61,22 @@
 
 .. image:: /files/Berkeley_Lab_Logo_Small.png
    :height: 80px
+   :alt: Berkeley Lab Logo
 .. image:: /files/doeOOS.jpg
    :height: 40px
+   :alt: Department of Energy Logo
 .. image:: /files/nersc-logo.png
    :height: 40px
+   :alt: NERSC Logo
 .. image:: /files/3.5inch_72dpi.jpg
    :height: 80px
+   :alt: NOAO Logo
 .. image:: /files/AURAlogo.jpg
    :height: 40px
+   :alt: AURA Logo
 .. image:: /files/nsf1.jpg
    :height: 40px
+   :alt: NSF Logo
 
 .. .. slides::
 

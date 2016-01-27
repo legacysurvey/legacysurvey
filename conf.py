@@ -10,7 +10,7 @@ BLOG_AUTHOR = "Legacy Survey"
 BLOG_TITLE = "Legacy Survey"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://legacysurvey.org/test/"
+SITE_URL = "http://legacysurvey.org/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"

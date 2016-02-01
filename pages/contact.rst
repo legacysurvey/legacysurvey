@@ -121,7 +121,7 @@ DECaLS New Co-Is
 * Mark Ma ma@astro.utoronto.ca - student of Carlberg, 29 Jan 2015
 * Karen Masters karen.masters@port.ac.uk - Portsmouth, 30 Jan 2015
 * Beth Willman bwillman@haverford.edu - Haverford, 4 Feb 2015
-* Aaron Meisner ameisner@fas.harvard.edu - Harvard -> Berkeley, 20 Feb 2015
+* Aaron Meisner ameisner@berkeley.edu - Harvard -> Berkeley, 20 Feb 2015
 * Yu Feng yfeng1@berkeley.edu - UC Berkeley, 27 Feb 2015
 * Ana Bonaca ana.bonaca@yale.edu - Yale, 12 March 2015
 * Chris Bonnett c.bonnett@gmail.com - IFAE, 24 March 2015
@@ -140,4 +140,7 @@ DECaLS New Co-Is
 * Jundan Nie jdnie@bao.ac.cn - NAOC, 18 Aug 2015
 * Linhua Jiang jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015
 * Qian Yang qianyang.astro@pku.edu.cn - student of Fan, University of Arizona, 5 Sep 2015
+* Paul Martini martini.10@osu.edu - Ohio State University, 15 Sep 2015
+* Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
+* Michael Schneider - LLNL, 1 Feb 2016
 

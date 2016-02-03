@@ -594,6 +594,16 @@ BODY_END = """
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # BODY_END = ""
+ANALYTICS = """
+        <!-- Start of Google Analytics -->
+            <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+            </script>
+            <script type="text/javascript">
+            _uacct = "UA-5565065-29";
+            urchinTracker();
+            </script>
+        <!-- End of Google Analytics -->
+    """
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.

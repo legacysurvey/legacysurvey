@@ -142,5 +142,6 @@ DECaLS New Co-Is
 * Qian Yang qianyang.astro@pku.edu.cn - student of Fan, University of Arizona, 5 Sep 2015
 * Paul Martini martini.10@osu.edu - Ohio State University, 15 Sep 2015
 * Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
-* Michael Schneider - LLNL, 1 Feb 2016
+* Michael Schneider schneider42@llnl.gov - LLNL, 1 Feb 2016
+* Michael Brown mbrown@caltech.edu - Caltech, 2 Feb 2016
 

@@ -144,4 +144,6 @@ DECaLS New Co-Is
 * Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
 * Michael Schneider schneider42@llnl.gov - LLNL, 1 Feb 2016
 * Michael Brown mbrown@caltech.edu - Caltech, 2 Feb 2016
+* Gautham Narayan gnarayan@noao.edu - NOAO, 9 Feb 2016
+* Annalisa Calamida calamida@noao.edu - NOAO, 9 Feb 2016
 

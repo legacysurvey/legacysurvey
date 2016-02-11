@@ -146,4 +146,6 @@ DECaLS New Co-Is
 * Michael Brown mbrown@caltech.edu - Caltech, 2 Feb 2016
 * Gautham Narayan gnarayan@noao.edu - NOAO, 9 Feb 2016
 * Annalisa Calamida calamida@noao.edu - NOAO, 9 Feb 2016
+* Wenting Wang wenting.wang@durham.ac.uk - Durham, 10 Feb 2016
+* David Herrera herrera@noao.edu - NOAO 10 Feb 2016
 

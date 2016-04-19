@@ -145,7 +145,7 @@ Column             Type       Description
 ``dec``            double     Approximate Dec center of this CCD (deg).
 ================== =========  ======================================================
 
-.. _`detailed more here`: /dr2/avsky
+.. _`detailed more here`: ../avsky
 
 decals-ccds-annotated.fits
 --------------------------

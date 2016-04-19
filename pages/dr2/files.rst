@@ -106,7 +106,7 @@ Column             Type       Description
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
-``avsky``          float      Average sky level in this image, in ADU, eg 36.9324.
+``avsky``          float      Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``       float      Average gain for this CCD, eg 4.34.
 ``fwhm``           float      [use "seeing" instead]
 ``crpix1``         float      Astrometric header value: X reference pixel.
@@ -145,6 +145,7 @@ Column             Type       Description
 ``dec``            double     Approximate Dec center of this CCD (deg).
 ================== =========  ======================================================
 
+.. _`detailed more here`: ../avsky
 
 decals-ccds-annotated.fits
 --------------------------

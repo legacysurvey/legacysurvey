@@ -74,8 +74,8 @@ SHAPEDEV_E1                 float32                            Ellipticity compo
 SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-DEPTH                       float32      1/nanomaggies\ |sup2| PSF detection sensitivity, as (1-sigma) inverse-variance
-GALDEPTH                    float32      1/nanomaggies\ |sup2| Galaxy (0.45" exp, round) detection sensitivity, as (1-sigma) inverse-variance
+DECAM_DEPTH                 float32      1/nanomaggies\ |sup2| PSF detection sensitivity, as (1-sigma) inverse-variance
+DECAM_GALDEPTH              float32      1/nanomaggies\ |sup2| Galaxy (0.45" exp, round) detection sensitivity, as (1-sigma) inverse-variance
 =========================== ============ ===================== ===============================================
 
 Mask Values

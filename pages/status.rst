@@ -9,7 +9,13 @@ This strategy will ensure a photometric solution across the full survey area.
 
 In addition to the DECam Legacy observations, data releases will include
 reductions of data from other programs in the same filters that overlap this footprint.
-The image below depicts the status of the survey as of early December 2015.
+The image below depicts the status of the survey as of April 2016. The color-coding for
+the passes is:
 
-.. image:: /files/covplot-2015-12-07.jpg
+- *pass one:* filled blue circle
+- *pass two:* filled green circle
+- *pass three:* open black circle
+
+.. image:: /files/covplot-2016-april.pdf
     :alt: Coverage Plots
+

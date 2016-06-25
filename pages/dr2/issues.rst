@@ -1,5 +1,5 @@
 .. title: Known Issues and Workarounds
-.. slug: caveats
+.. slug: issues
 .. tags: mathjax
 
 Catalogs with Zero Sources

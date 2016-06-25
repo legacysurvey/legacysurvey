@@ -295,7 +295,47 @@ sweep/2.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
-Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec.
+Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec. Includes:
+
+=============================== ============ ===================== ===============================================
+Name                            Type         Units                 Description
+=============================== ============ ===================== ===============================================
+``BRICK_PRIMARY``               boolean                            True if the object is within the brick boundary
+``BRICKID``                     int32                              Brick ID [1,662174]
+``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
+``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
+``RA``                          float64      deg                   Right ascension at epoch J2000
+``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
+``DEC``                         float64      deg                   Declination at epoch J2000
+``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
+``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in ugrizY
+``DECAM_FLUX_IVAR``             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
+``DECAM_MW_TRANSMISSION``       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
+``DECAM_NOBS``                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+``DECAM_RCHI2``                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+``DECAM_PSFSIZE``               float32[6]   arcsec                Weighted average PSF FWHM per band
+``DECAM_FRACFLUX``              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
+``DECAM_FRACMASKED``            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
+``DECAM_FRACIN``                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
+``DECAM_DEPTH``                 float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
+``DECAM_GALDEPTH``              float32      1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
+``OUT_OF_BOUNDS``               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
+``DECAM_ANYMASK``               int16[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
+``DECAM_ALLMASK``               int16[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
+``WISE_FLUX``                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
+``WISE_FLUX_IVAR``              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
+``WISE_MW_TRANSMISSION``        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
+``WISE_NOBS``                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
+``WISE_FRACFLUX``               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
+``WISE_RCHI2``                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+``FRACDEV``                     float32                            Fraction of model in deVauc [0,1]
+``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
+``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)
+``SHAPEEXP_R``                  float32      arcsec                Half-light radius of exponential model (>0)
+``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+=============================== ============ ===================== ===============================================
 
 
 Image Stacks

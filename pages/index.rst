@@ -32,7 +32,7 @@
 
    .. raw:: html
 
-   <h2><a href="http://www.legacysurvey.org/viewer?ra=266&dec=-29&zoom=3&layer=unwise-neo1" >Interactive Map</a></h2>
+      <h2><a href="http://www.legacysurvey.org/viewer?ra=266&dec=-29&zoom=3&layer=unwise-neo1" >Interactive Map</a></h2>
 
       <h2>Current Release: Data Release 2</h2>
       <p>January 2016</p>

@@ -34,9 +34,9 @@
 
       <h2><a href="http://www.legacysurvey.org/viewer?ra=266&dec=-29&zoom=3&layer=unwise-neo1" >Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 2</h2>
-      <p>January 2016</p>
-      <p><a class="btn btn-primary btn-lg" href="dr2">DR2</a></p>
+      <h2>Current Release: Data Release 3</h2>
+      <p>September 2016</p>
+      <p><a class="btn btn-primary btn-lg" href="dr3">DR3</a></p>
 
 .. container::
 

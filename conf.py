@@ -68,6 +68,7 @@ NAVIGATION_LINKS = {
         ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
+            ("/dr3", 'Data Release 3'),
             ("/decamls", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),

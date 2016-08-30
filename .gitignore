@@ -56,5 +56,5 @@ docs/_build/
 target/
 
 # Nikola files
-.doit.db
+.doit.db*
 my_conf.py

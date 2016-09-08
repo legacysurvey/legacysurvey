@@ -12,10 +12,10 @@
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
-FITS binary table containing Tractor photometry. Note there is a 
-`known issue`_ regarding the fact that some bricks contain pixels but zero sources, hence have empty (zero-row) catalog files.
+FITS binary table containing Tractor photometry. Before using these catalogs, note that there are 
+`known issues`_ regarding their content and derivation.
 
-.. _`known issue`: ../issues
+.. _`known issues`: ../issues
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description

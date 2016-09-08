@@ -183,23 +183,3 @@ and :math:`r, b/a, \phi`:
     |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
-
-
-Tags to Add in the Future
-=========================
-
-This is a list of tags that we are intending to (ultimately) supply in the catalogs. This table is included so that users can see if information they require for their science will be part of a future data release.
-
-=========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description
-=========================== ============ ===================== ===============================================
-TAI_MIN                     float64      sec                   TAI timestamp for the earliest DECam image contributing to this brick (any filter)
-TAI_MAX                     float64      sec                   TAI timestamp for the latest DECam image contributing to this brick (any filter)
-EPOCH                       float64      year                  Epoch for RA,DEC coordinates, equal to the Julian Date of observation if only 1 epoch
-PM_RA                       float32      mas/year              Proper motion in RA (actual milli-arcsec per year, not cos(dec) units as done in Hipparcos catalog
-PM_RA_IVAR                  float32      1/(mas/year)\ |sup2|  Inverse variance of PM_RA
-PM_DEC                      float32      mas/year              Proper motion in DEC
-PM_DEC_ISIG                 float32      1/(mas/year)\ |sup2|  Inverse variance of PM_DEC
-PARALLAX                    float32      mas                   Trigonometric parallax in milliarcsec; distance in parsecs equals 1000/PARALLAX
-PARALLAX_IVAR               float32      1/mas\ |sup2|         Inverse variance of PARALLAX
-=========================== ============ ===================== ===============================================

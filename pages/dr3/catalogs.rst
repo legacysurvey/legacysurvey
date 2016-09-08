@@ -25,7 +25,7 @@ BRICKNAME                   char                               Name of brick, en
 OBJID                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 BRICK_PRIMARY               boolean                            True if the object is within the brick boundary
 BLOB                        int32                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
-NINBLOB                     int32                              Number of sources in this BLOB (blend family); isolated objects have value 1.
+NINBLOB                     int16                              Number of sources in this BLOB (blend family); isolated objects have value 1.
 TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 RA                          float64      deg                   Right ascension at epoch J2000
@@ -40,6 +40,13 @@ LEFT_BLOB                   boolean                            True if an object
 OUT_OF_BOUNDS               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+CPU_SOURCE                  float32      seconds               CPU time used for fitting this source
+CPU_BLOB                    float32      seconds               CPU time used for fitting this blob of sources (all sources in this brick with the same blob number)
+BLOB_WIDTH                  int16                              size of this blob of pixels in brick coordinates, bounding box width
+BLOB_HEIGHT                 int16                              size of this blob of pixels in brick coordinates, bounding box height
+BLOB_NPIX                   int32                              size of this blob of pixels in brick coordinates, number of brick pixels
+BLOB_NIMAGES                int16                              number of images overlapping this blob
+BLOB_TOTALPIX               int32                              total number of pixels from all the images overlapping this blob 
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
@@ -60,6 +67,12 @@ WISE_MW_TRANSMISSION        float32[4]                         Galactic transmis
 WISE_NOBS                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 WISE_RCHI2                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+WISE_LC_FLUX                float32[5,2] nanomaggies           analog of WISE_FLUX, for each of up to five unWISE coadd epochs; W1 and W2 only
+WISE_LC_FLUX_IVAR           float32[5,2] 1/nanomaggies\ |sup2| analog of WISE_FLUX_IVAR, for each of up to five unWISE coadd epochs; W1 and W2 only
+WISE_LC_NOBS                int16[5,2]                         analog of WISE_NOBS, for each of up to five unWISE coadd epochs; W1 and W2 only
+WISE_LC_FRACFLUX            float32[5,2]                       analog of WISE_FRACFLUX, for each of up to five unWISE coadd epochs; W1 and W2 only
+WISE_LC_RCHI2               float32[5,2]                       analog of WISE_RCHI2, for each of up to five unWISE coadd epochs; W1 and W2 only
+WISE_LC_MJD                 float32[5,2]                       mean MJD in W1 and W2, for up to five unWISE coadd epochs; 0 means epoch unavailable
 FRACDEV                     float32                            Fraction of model in deVauc [0,1]
 FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
 SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)

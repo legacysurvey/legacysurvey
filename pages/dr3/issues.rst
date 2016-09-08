@@ -1,6 +1,7 @@
 .. title: Known Issues and Workarounds
 .. slug: issues
 .. tags: mathjax
+.. description: 
 
 Catalogs with Zero Sources
 ==========================

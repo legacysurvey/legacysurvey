@@ -80,7 +80,7 @@ Column          Type    Description
 survey-ccds-decals.fits.gz
 --------------------------
 
-A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. Note that this is the only file in the top-level directory that is gzipped (it is slightly larger than other such files and is gzipped for compliance with the legacysurvey github repository).
+A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
@@ -163,10 +163,10 @@ survey-ccds-extra.fits.gz
 As for survey-ccds-decals.fits.gz, but for areas of the sky covered with ???
 
 
-decals-ccds-annotated.fits
---------------------------
+ccds-annotated-decals.fits.gz
+-----------------------------
 
-A version of the decals-ccds.fits file with additional information
+A version of the survey-ccds-decals.fits.gz file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
@@ -193,12 +193,12 @@ Column               Type      Description
 ``sig1``             float    Median per-pixel error standard deviation, in nanomaggies.
 ``meansky``          float    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
 ``stdsky``           float    Standard deviation of our sky level
-``minsky``           float    Min of our sky level
 ``maxsky``           float    Max of our sky level
+``minsky``           float    Min of our sky level
 ``pixscale_mean``    float    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
 ``pixscale_std``     float    Standard deviation of pixel scale
-``pixscale_min``     float    Min of pixel scale
 ``pixscale_max``     float    Max of pixel scale
+``pixscale_min``     float    Min of pixel scale
 ``psfnorm_mean``     float    PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
 ``psfnorm_std``      float    Standard deviation of PSF norm
 ``galnorm_mean``     float    Norm of the PSF model convolved by a 0.45" exponential galaxy.
@@ -225,6 +225,15 @@ Column               Type      Description
 ``gaussgaldepth``    float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
 ==================== ======== ======================================================
 
+ccds-annotated-nondecals.fits.gz
+--------------------------------
+
+As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
+
+ccds-annotated-extra.fits.gz
+-----------------------------
+
+As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by ???
 
 External Files
 ==============

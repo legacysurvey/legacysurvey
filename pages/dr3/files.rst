@@ -21,7 +21,7 @@ Top level directory local to NERSC computers (for collaborators):
 Summary Files
 =============
 
-decals-bricks.fits
+survey-bricks.fits
 ------------------
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
@@ -47,7 +47,7 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-decals-bricks-dr3.fits
+survey-bricks-dr3.fits
 ----------------------
 
 A FITS binary table with information about what is included in DR3.
@@ -77,10 +77,10 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-decals-ccds.fits.gz
---------------------
+survey-ccds-decals.fits.gz
+--------------------------
 
-A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. Note that this is the only file in the top-level directory that is gzipped (it is slightly larger than other such files and is gzipped for compliance with the legacysurvey github repository).
+A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
 
@@ -96,6 +96,7 @@ counts.
 ================== =========  ======================================================
 Column             Type       Description
 ================== =========  ======================================================
+``object``         char[35]
 ``expnum``         int32      Unique DECam exposure number, eg 348224.
 ``exptime``        float      Exposure time in seconds, eg 30.
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
@@ -103,6 +104,7 @@ Column             Type       Description
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
 ``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
+``ha``             char[13]
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
@@ -124,7 +126,9 @@ Column             Type       Description
 ``ccdzptb``        float      Zeropoint for amp B (AB mag).
 ``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
-``ccdskyrms``      float      Sky rms (in counts).
+``ccdskyrms``      float      Sky rms (in counts)
+``ccdskymag``      float
+``ccdskycounts``   float
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
 ``ccdtransp``      float      (ignore)
@@ -133,6 +137,7 @@ Column             Type       Description
 ``ccdnmatcha``     int16      Number of stars in amp A matched.
 ``ccdnmatchb``     int16      Number of stars in amp B matched.
 ``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
+``temp``           float
 ``camera``         char[5]    The camera that took this image; "decam".
 ``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.
@@ -147,10 +152,21 @@ Column             Type       Description
 
 .. _`detailed more here`: ../avsky
 
-decals-ccds-annotated.fits
---------------------------
+survey-ccds-nondecals.fits.gz
+-----------------------------
 
-A version of the decals-ccds.fits file with additional information
+As for survey-ccds-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
+
+survey-ccds-extra.fits.gz
+-----------------------------
+
+As for survey-ccds-decals.fits.gz, but for areas of the sky covered with ???
+
+
+ccds-annotated-decals.fits.gz
+-----------------------------
+
+A version of the survey-ccds-decals.fits.gz file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
@@ -177,12 +193,12 @@ Column               Type      Description
 ``sig1``             float    Median per-pixel error standard deviation, in nanomaggies.
 ``meansky``          float    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
 ``stdsky``           float    Standard deviation of our sky level
-``minsky``           float    Min of our sky level
 ``maxsky``           float    Max of our sky level
+``minsky``           float    Min of our sky level
 ``pixscale_mean``    float    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
 ``pixscale_std``     float    Standard deviation of pixel scale
-``pixscale_min``     float    Min of pixel scale
 ``pixscale_max``     float    Max of pixel scale
+``pixscale_min``     float    Min of pixel scale
 ``psfnorm_mean``     float    PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
 ``psfnorm_std``      float    Standard deviation of PSF norm
 ``galnorm_mean``     float    Norm of the PSF model convolved by a 0.45" exponential galaxy.
@@ -209,6 +225,15 @@ Column               Type      Description
 ``gaussgaldepth``    float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
 ==================== ======== ======================================================
 
+ccds-annotated-nondecals.fits.gz
+--------------------------------
+
+As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
+
+ccds-annotated-extra.fits.gz
+-----------------------------
+
+As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by ???
 
 External Files
 ==============

@@ -21,7 +21,7 @@ Top level directory local to NERSC computers (for collaborators):
 Summary Files
 =============
 
-decals-bricks.fits
+survey-bricks.fits
 ------------------
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
@@ -47,7 +47,7 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-decals-bricks-dr3.fits
+survey-bricks-dr3.fits
 ----------------------
 
 A FITS binary table with information about what is included in DR3.

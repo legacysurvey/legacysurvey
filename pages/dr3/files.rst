@@ -160,8 +160,7 @@ As for survey-ccds-decals.fits.gz, but for areas of the sky covered with DECam b
 survey-ccds-extra.fits.gz
 -----------------------------
 
-As for survey-ccds-decals.fits.gz, but for areas of the sky covered with ???
-
+As for survey-ccds-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" files are currently split up simply to make them easier to store on github.
 
 ccds-annotated-decals.fits.gz
 -----------------------------
@@ -233,7 +232,8 @@ As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECa
 ccds-annotated-extra.fits.gz
 -----------------------------
 
-As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by ???
+As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on github.
+
 
 External Files
 ==============

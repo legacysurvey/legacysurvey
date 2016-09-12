@@ -148,4 +148,5 @@ DECaLS New Co-Is
 * Annalisa Calamida calamida@noao.edu - NOAO, 9 Feb 2016
 * Wenting Wang wenting.wang@durham.ac.uk - Durham, 10 Feb 2016
 * David Herrera herrera@noao.edu - NOAO 10 Feb 2016
+* Martin Landriau mlandriau@lbl.gov - LBNL 27 May 2016
 

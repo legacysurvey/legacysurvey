@@ -81,9 +81,9 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr3/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout-decals-dr3?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
+FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
 
 where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
 maximum size for cutouts (in number of pixels) is 512.

@@ -335,7 +335,7 @@ sweep/3.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
-Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec. Includes:
+Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. Includes:
 
 =============================== ============ ===================== ===============================================
 Name                            Type         Units                 Description

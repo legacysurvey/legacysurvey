@@ -316,7 +316,7 @@ FITS binary table containing Tractor photometry, documented on the
 Sweep Catalogs
 ==============
 
-sweep/2.0/sweep-<brickmin>-<brickmax>.fits
+sweep/3.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 Light-weight FITS binary tables (containing a subset of the most commonly used
@@ -325,7 +325,6 @@ Tractor measurements) of all the Tractor catalogs in rectangles of RA,Dec. Inclu
 =============================== ============ ===================== ===============================================
 Name                            Type         Units                 Description
 =============================== ============ ===================== ===============================================
-``BRICK_PRIMARY``               boolean                            True if the object is within the brick boundary
 ``BRICKID``                     int32                              Brick ID [1,662174]
 ``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
@@ -358,10 +357,19 @@ Name                            Type         Units                 Description
 ``FRACDEV``                     float32                            Fraction of model in deVauc [0,1]
 ``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 ``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)
+``SHAPEDEV_R_IVAR``             float32      1/arcsec\ |sup2|      Inverse variance of SHAPEDEV_R
+``SHAPEDEV_E1``                 float32                            Ellipticity component 1 (documented on the `catalogs page`_) 
+``SHAPEDEV_E1_IVAR``            float32                            Inverse variance of SHAPEDEV_E1
+``SHAPEDEV_E2``                 float32                            Ellipticity component 2 (documented on the `catalogs page`_)
+``SHAPEDEV_E2_IVAR``            float32                            Inverse variance of SHAPEDEV_E2
 ``SHAPEEXP_R``                  float32      arcsec                Half-light radius of exponential model (>0)
+``SHAPEEXP_R_IVAR``             float32      1/arcsec\ |sup2|      Inverse variance of R_EXP
+``SHAPEEXP_E1``                 float32                            Ellipticity component 1 (documented on the `catalogs page`_)
+``SHAPEEXP_E1_IVAR``            float32                            Inverse variance of SHAPEEXP_E1
+``SHAPEEXP_E2``                 float32                            Ellipticity component 2 (documented on the `catalogs page`_)
+``SHAPEEXP_E2_IVAR``            float32                            Inverse variance of SHAPEEXP_E2
 ``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 =============================== ============ ===================== ===============================================
-
 
 Image Stacks
 ============

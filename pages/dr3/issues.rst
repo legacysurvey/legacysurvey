@@ -18,7 +18,7 @@ Workaround
    Bricks with timestamps before June 6 were processed slightly differently to subsequent bricsk.
    All of these "pre-6/6" bricks are within a region bounded by Right Ascenscions of 315 to 45 
    degrees and Declinations of  -5 to +7 degrees (a region in which the eBOSS survey is targeting
-   Emission Line Galaxies. Not every brick in that region was run with Tractor-on-Bricks but
+   Emission Line Galaxies). Not every brick in that region was run with Tractor-on-Bricks but
    no brick outside of that region was run with Tractor-on-Bricks.
 
 Blacklisted Frames

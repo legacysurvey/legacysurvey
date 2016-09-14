@@ -247,11 +247,11 @@ Or on the NERSC computers (for collaborators) at:
 
 survey-dr3-specObj-dr13.fits
 ----------------------------
-HDU1 (the only HDU) contains Tractored DECaLS
+HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
 survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
-specObj-dr13.fits. The structure of the DECaLS photometric catalog files is documented on the
+specObj-dr13.fits. The structure of the photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
@@ -260,12 +260,12 @@ is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 survey-dr3-DR12Q.fits
 ---------------------
-HDU1 (the only HDU) contains Tractored DECaLS 
+HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
 visually inspected quasar catalog (`Paris et al. 2016`_)
 such that the photometric parameters in row "N" of 
-decals-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
-DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
+survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
+DR12Q.fits. The structure of the photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
@@ -275,13 +275,13 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 survey-dr3-Superset_DR12Q.fits
 ------------------------------
-HDU1 (the only HDU) contains Tractored DECaLS
-photometry catalog that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
+HDU1 (the only HDU) contains Tractored survey
+photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
 (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
 such that the photometric parameters in row "N" of 
-decals-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
-Superset_DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
+survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
+Superset_DR12Q.fits. The structure of the photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
@@ -291,12 +291,12 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 survey-dr3-DR7Q.fits
 ---------------------
-HDU1 (the only HDU) contains Tractored DECaLS
+HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-decals-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
-DR7qso.fit. The structure of the DECaLS photometric catalog files is documented on the
+survey-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
+DR7qso.fit. The structure of the photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 

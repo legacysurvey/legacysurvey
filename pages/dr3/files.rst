@@ -47,35 +47,40 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-survey-bricks-dr3.fits
-----------------------
+survey-bricks-dr3.fits.gz
+--------------------------
 
-A FITS binary table with information about what is included in DR3.
+A FITS binary table with information that summarizes the contents of each brick,
+as of DR3.
 
-This table contains only rows (bricks) for which we have some imaging coverage.
+=============== ======== =========================================================================
+Column          Type     Description
+=============== ======== =========================================================================
+``brickname``   char[8]  Name of the brick.
+``ra``          double   RA of the center of the brick.
+``dec``         double   Dec of the center of the brick.
+``nexp_g``      int16    Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band.
+``nexp_r``      int16    Median number of exposures in the unique area of the brick in r-band.
+``nexp_z``      int16    Median number of exposures in the unique area of the brick in z-band.
+``nexphist_g``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g
+``nexphist_r``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r
+``nexphist_z``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
+``nobjs``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of all types.
+``npsf``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``PSF``.
+``nsimp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``SIMP``.
+``nexp``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``EXP``.
+``ndev``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``DEV``.
+``ncomp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``COMP``.
+``psfsize_g``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in g-band.
+``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in r-band.
+``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in z-band.
+``ebv``         float32  Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick.
+``trans_g``     float32  Median Milky Way dust transparency in g-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+=============== ======== =========================================================================
 
-=============== ======= ======================================================
-Column          Type    Description
-=============== ======= ======================================================
-``brickname``   char[8] Name of the brick.
-``brickid``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
-``brickq``      int16   A "priority" factor used for processing.
-``brickrow``    int32   Dec row number.
-``brickcol``    int32   Number of the brick within a Dec row.
-``ra``          double  RA of the center of the brick.
-``dec``         double  Dec of the center of the brick.
-``ra1``         double  Lower RA boundary.
-``ra2``         double  Upper RA boundary.
-``dec1``        double  Lower Dec boundary.
-``dec2``        double  Upper Dec boundary.
-``nobs_med_g``  uint8   Median number of observations in g
-``nobs_med_r``  uint8   Median number of observations in r
-``nobs_med_z``  uint8   Median number of observations in z
-``nobs_max_g``  uint8   Maximum number of observations in g
-``nobs_max_r``  uint8   Maximum number of observations in r
-``nobs_max_z``  uint8   Maximum number of observations in z
-=============== ======= ======================================================
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
+.. _`catalogs page`: ../catalogs
 
 survey-ccds-decals.fits.gz
 --------------------------
@@ -96,7 +101,7 @@ counts.
 ================== =========  ======================================================
 Column             Type       Description
 ================== =========  ======================================================
-``object``         char[35]
+``object``         char[35]   Tile, field, or object name populated in the header at the telescope
 ``expnum``         int32      Unique DECam exposure number, eg 348224.
 ``exptime``        float      Exposure time in seconds, eg 30.
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
@@ -104,7 +109,7 @@ Column             Type       Description
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
 ``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
-``ha``             char[13]
+``ha``             char[13]   Hour angle of the observation
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
@@ -127,8 +132,8 @@ Column             Type       Description
 ``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
 ``ccdskyrms``      float      Sky rms (in counts)
-``ccdskymag``      float
-``ccdskycounts``   float
+``ccdskymag``      float      Average sky surface brightness (in mag/arcsec^2)
+``ccdskycounts``   float      Mean sky value (in electrons)
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
 ``ccdtransp``      float      (ignore)
@@ -137,7 +142,7 @@ Column             Type       Description
 ``ccdnmatcha``     int16      Number of stars in amp A matched.
 ``ccdnmatchb``     int16      Number of stars in amp B matched.
 ``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
-``temp``           float
+``temp``           float      Temperature (in K)
 ``camera``         char[5]    The camera that took this image; "decam".
 ``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.
@@ -390,7 +395,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
 coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
---------------------------------------------
+---------------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
 Same columns as ``survey-ccds-*.fits.gz``, plus:

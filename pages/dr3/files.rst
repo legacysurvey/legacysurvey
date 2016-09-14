@@ -245,7 +245,7 @@ Or on the NERSC computers (for collaborators) at:
   /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
 
 
-survey-dr3-specObj-dr12.fits
+survey-dr3-specObj-dr13.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored DECaLS
 photometry that is row-by-row-matched to the SDSS DR12 spectrosopic

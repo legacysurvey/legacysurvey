@@ -244,6 +244,7 @@ The DECaLS photometric catalogs have been matched to the following external spec
 Or on the NERSC computers (for collaborators) at:
   /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
 
+In each case, the matching radius used was 1 arcsec.
 
 survey-dr3-specObj-dr13.fits
 ----------------------------

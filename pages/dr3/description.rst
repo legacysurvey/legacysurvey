@@ -36,7 +36,7 @@ with ???? deg\ |sup2| in g-band, ???? deg\ |sup2| in r-band and ???? deg\ |sup2|
 in z-band, of which ???? deg\ |sup2| has been observed in all
 three optical filters.
 
-There are approximately ??? million unique sources in DR3 spread over ???,??? bricks.
+There are approximately ??? million unique sources in DR3 spread over 149,464 bricks.
 
 DR3 includes the stacked images and the Tractor-based catalogs.
 The size of the DR3 data distribution is:
@@ -320,11 +320,11 @@ This can be compared to the predicted proposed depths for 2 observations at 1.5\
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions starting with "dr2p" tag; documented in all file headers.
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
 * NOAO Community Pipeline: mixture of versions; recorded as PLVER.
 * SourceExtractor 2.19.5, PSFEx 3.17.1
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.64
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr2.2
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
+* `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr3
 
 Glossary
 ========

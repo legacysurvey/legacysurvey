@@ -21,8 +21,8 @@ Top level directory local to NERSC computers (for collaborators):
 Summary Files
 =============
 
-survey-bricks.fits
-------------------
+survey-bricks.fits.gz
+---------------------
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with

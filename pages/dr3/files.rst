@@ -390,7 +390,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
 coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
---------------------------------------------
+---------------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
 Same columns as ``survey-ccds-*.fits.gz``, plus:

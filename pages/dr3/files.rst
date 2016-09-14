@@ -244,7 +244,11 @@ The DECaLS photometric catalogs have been matched to the following external spec
 Or on the NERSC computers (for collaborators) at:
   /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
 
-In each case, the matching radius used was 1 arcsec.
+Each row of each external-match file contains the full record of the nearest object in our Tractored survey
+imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
+is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is set to -1.
+
+.. _`catalogs page`: ../catalogs
 
 survey-dr3-specObj-dr13.fits
 ----------------------------
@@ -252,11 +256,9 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
 survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
-specObj-dr13.fits. The structure of the photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file 
+specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
-.. _`catalogs page`: ../catalogs
 .. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr3-DR12Q.fits
@@ -266,12 +268,10 @@ photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2016`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
-DR12Q.fits. The structure of the photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file 
+DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
-.. _`catalogs page`: ../catalogs
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr3-Superset_DR12Q.fits
@@ -282,12 +282,10 @@ confirmed objects that were visually inspected as possible quasars
 (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
-Superset_DR12Q.fits. The structure of the photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file
+Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
-.. _`catalogs page`: ../catalogs
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr3-DR7Q.fits
@@ -297,12 +295,10 @@ photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
 survey-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
-DR7qso.fit. The structure of the photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file
+DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
 .. _`Schneider et al. 2010`: http://adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`catalogs page`: ../catalogs
 .. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 

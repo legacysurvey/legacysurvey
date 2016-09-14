@@ -36,7 +36,7 @@ with ???? deg\ |sup2| in g-band, ???? deg\ |sup2| in r-band and ???? deg\ |sup2|
 in z-band, of which ???? deg\ |sup2| has been observed in all
 three optical filters.
 
-There are approximately ??? million unique sources in DR3 spread over ???,??? bricks.
+There are approximately ??? million unique sources in DR3 spread over 149,464 bricks.
 
 DR3 includes the stacked images and the Tractor-based catalogs.
 The size of the DR3 data distribution is:

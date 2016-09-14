@@ -101,7 +101,7 @@ counts.
 ================== =========  ======================================================
 Column             Type       Description
 ================== =========  ======================================================
-``object``         char[35]
+``object``         char[35]   Tile, field, or object name populated in the header at the telescope
 ``expnum``         int32      Unique DECam exposure number, eg 348224.
 ``exptime``        float      Exposure time in seconds, eg 30.
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
@@ -109,7 +109,7 @@ Column             Type       Description
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
 ``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
-``ha``             char[13]
+``ha``             char[13]   Hour angle of the observation
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
@@ -132,8 +132,8 @@ Column             Type       Description
 ``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
 ``ccdskyrms``      float      Sky rms (in counts)
-``ccdskymag``      float
-``ccdskycounts``   float
+``ccdskymag``      float      Average sky surface brightness (in mag/arcsec^2)
+``ccdskycounts``   float      Mean sky value (in electrons)
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
 ``ccdtransp``      float      (ignore)
@@ -142,7 +142,7 @@ Column             Type       Description
 ``ccdnmatcha``     int16      Number of stars in amp A matched.
 ``ccdnmatchb``     int16      Number of stars in amp B matched.
 ``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
-``temp``           float
+``temp``           float      Temperature (in K)
 ``camera``         char[5]    The camera that took this image; "decam".
 ``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.

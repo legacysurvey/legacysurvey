@@ -36,7 +36,7 @@ with ???? deg\ |sup2| in g-band, ???? deg\ |sup2| in r-band and ???? deg\ |sup2|
 in z-band, of which ???? deg\ |sup2| has been observed in all
 three optical filters.
 
-There are approximately ??? million unique sources in DR3 spread over 149,464 bricks.
+There are approximately 478 million unique sources in DR3 spread over 149,464 bricks.
 
 DR3 includes the stacked images and the Tractor-based catalogs.
 The size of the DR3 data distribution is:
@@ -147,8 +147,6 @@ and fits to data points without the complication of pixel covariances.
 Morphological classification
 ============================
 
-???
-
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR3.
@@ -162,21 +160,16 @@ deVaucouleurs profiles
 profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR3 are:
 
-???
-
 ================= ==================
 Number of Sources Type
 ================= ==================
-   288,347,865    All objects
-   262,426,862    Objects in a Primary brick
-   149,084,610    PSF
-    69,164,070    SIMP
-    31,300,725    EXP
-    11,610,513    DEV
-     1,266,944    COMP
+   478,918,959    Objects in a Primary brick
+   271,437,526    PSF
+   121,505,252    SIMP
+    63,568,420    EXP
+    20,141,591    DEV
+     2,266,170    COMP
 ================= ==================
-
-???
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized

@@ -28,7 +28,7 @@ FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky
 This includes all bricks on the sky, not just the ones in our footprint or with
 coverage in DR3.  For that information, see the next file description.
 
-- HDU1 (only HDU) - tags in the ``decals-bricks.fits`` file
+- HDU1 (only HDU) - tags in the ``survey-bricks.fits.gz`` file
 
 =============== ======= ======================================================
 Column          Type    Description
@@ -169,7 +169,7 @@ A version of the survey-ccds-decals.fits.gz file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
-Includes everything listed in the decals-ccds.fits file plus the following:
+Includes everything listed in the survey-ccds-decals.fits.gz files plus the following:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -315,7 +315,7 @@ In the file listings outlined below:
 
 - **<filter>** denotes the `g`, `r` or `z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `decals-bricks.fits` file (i.e. ``brickname``, ``ra``, ``dec``).
+Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `survey-bricks.fits.gz` file (i.e. ``brickname``, ``ra``, ``dec``).
 
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------

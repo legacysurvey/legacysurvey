@@ -248,15 +248,15 @@ Or on the NERSC computers (for collaborators) at:
 survey-dr3-specObj-dr13.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored DECaLS
-photometry that is row-by-row-matched to the SDSS DR12 spectrosopic
+photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
-decals-dr3-specObj-dr12.fits matches the spectroscopic parameters in row "N" of
-specObj-dr12.fits. The structure of the DECaLS photometric catalog files is documented on the
+survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
+specObj-dr13.fits. The structure of the DECaLS photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file 
-is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
+is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 .. _`catalogs page`: ../catalogs
-.. _`data model for specObj-dr12.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr3-DR12Q.fits
 ---------------------

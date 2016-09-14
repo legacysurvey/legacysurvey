@@ -21,14 +21,14 @@ Top level directory local to NERSC computers (for collaborators):
 Summary Files
 =============
 
-survey-bricks.fits
-------------------
+survey-bricks.fits.gz
+---------------------
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
 coverage in DR3.  For that information, see the next file description.
 
-- HDU1 (only HDU) - tags in the ``decals-bricks.fits`` file
+- HDU1 (only HDU) - tags in the ``survey-bricks.fits.gz`` file
 
 =============== ======= ======================================================
 Column          Type    Description
@@ -169,7 +169,7 @@ A version of the survey-ccds-decals.fits.gz file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
-Includes everything listed in the decals-ccds.fits file plus the following:
+Includes everything listed in the survey-ccds-decals.fits.gz files plus the following:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -315,7 +315,7 @@ In the file listings outlined below:
 
 - **<filter>** denotes the `g`, `r` or `z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `decals-bricks.fits` file (i.e. ``brickname``, ``ra``, ``dec``).
+Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `survey-bricks.fits.gz` file (i.e. ``brickname``, ``ra``, ``dec``).
 
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
@@ -389,11 +389,11 @@ Image Stacks
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
-coadd/<AAA>/<brick>/decals-<brick>-ccds.fits
+coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
 --------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
-Same columns as decals-ccds.fits, plus:
+Same columns as ``survey-ccds-*.fits.gz``, plus:
 
 ================ ========= ======================================================
 Column           Type      Description
@@ -418,8 +418,8 @@ Column           Type      Description
 ================ ========= ======================================================
 
 
-coadd/<AAA>/<brick>/decals-<brick>-image-<filter>.fits
-------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits
+------------------------------------------------------------
 
 Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
 |deg|.  The primary HDU contains the coadded image (inverse-variance weighted coadd), in
@@ -428,11 +428,10 @@ units of nanomaggies per pixel.
 - NOTE: These are not the images used by Tractor, which operates on the
   single-epoch images.
 
-- NOTE: that these images are resampled using nearest-neighbor
-  resampling, so should not be used for numerical purposes (eg, photometry)
+- NOTE: that these images are resampled using Lanczos-3 resampling.
 
-coadd/<AAA>/<brick>/decals-<brick>-invvar-<filter>.fits
--------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits
+-------------------------------------------------------------
 
 Corresponding stacked inverse variance image based on the sum of the
 inverse-variances of the individual input images in units of 1/(nanomaggies)\
@@ -441,42 +440,50 @@ inverse-variances of the individual input images in units of 1/(nanomaggies)\
 - NOTE: These are not the inverse variance maps used by Tractor, which operates
   on the single-epoch images.
 
-coadd/<AAA>/<brick>/decals-<brick>-model-<filter>.fits.gz
----------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.gz
+---------------------------------------------------------------
 
 Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
 
 - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
-coadd/<AAA>/<brick>/decals-<brick>-chi2-<filter>.fits
------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits
+-----------------------------------------------------------
 
 Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
 
-coadd/<AAA>/<brick>/decals-<brick>-depth-<filter>.fits.gz
----------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.gz
+---------------------------------------------------------------
 
-Stacked depth map in units of the point-source inverse-variance at each pixel.
+Stacked depth map in units of the point-source flux inverse-variance at each pixel.
 
 - The 5\ |sigma| point-source depth can be computed as 5 / sqrt(depth_ivar) .
 
-coadd/<AAA>/<brick>/decals-<brick>-nexp-<filter>.fits.gz
---------------------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.gz
+------------------------------------------------------------------
+
+Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
+The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
+
+- The 5\ |sigma| galaxy depth can be computed as 5 / sqrt(galdepth_ivar) .
+
+coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
+--------------------------------------------------------------
 
 Number of exposures contributing to each pixel of the stacked images.
 
-coadd/<AAA>/<brick>/decals-<brick>-image.jpg
---------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
+--------------------------------------------------
 
 JPEG image of calibrated image using the g,r,z filters as the colors.
 
-coadd/<AAA>/<brick>/decals-<brick>-model.jpg
---------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
+--------------------------------------------------
 
 JPEG image of the Tractor's model image using the g,r,z filters as the colors.
 
-coadd/<AAA>/<brick>/decals-<brick>-resid.jpg
---------------------------------------------
+coadd/<AAA>/<brick>/legacysurvey-<brick>-resid.jpg
+--------------------------------------------------
 
 JPEG image of the residual image (data minus model) using the g,r,z filters as
 the colors.

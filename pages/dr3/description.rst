@@ -32,8 +32,8 @@ are included from August 2014 through March 2016. DR3 also includes DECam data f
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
 In total, the optical data covers a disjoint footprint
-with ???? deg\ |sup2| in g-band, ???? deg\ |sup2| in r-band and ???? deg\ |sup2|
-in z-band, of which ???? deg\ |sup2| has been observed in all
+with 4300 deg\ |sup2| in g-band, 4600 deg\ |sup2| in r-band and 8100 deg\ |sup2|
+in z-band, of which 4200 deg\ |sup2| has been observed in all
 three optical filters.
 
 There are approximately 478 million unique sources in DR3 spread over 149,464 bricks.
@@ -296,8 +296,8 @@ Image Stacks
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.  Note that the image stacks are computed using nearest-neighbor
-interpolation, so should not be used for precision work.
+and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
+interpolation.  Stacks should not be used for precision work.
 
 
 Depths

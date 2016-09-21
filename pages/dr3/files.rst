@@ -239,16 +239,16 @@ ccds-annotated-extra.fits.gz
 
 As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on github.
 
-dr3-depth.fits
---------------
+dr3-depth.fits.gz
+-----------------
 
 A concatenation of the depth histograms for each brick, from the
 ``coadd/*/*/*-depth.fits`` tables.  These histograms describe the
 number of pixels in each brick with a 5-sigma AB depth in the given
 magnitude bin.
 
-dr3-depth-summary.fits
-----------------------
+dr3-depth-summary.fits.gz
+-------------------------
 
 A summary of the depth histogram of the whole DR3 survey.  FITS table with the following columns:
 

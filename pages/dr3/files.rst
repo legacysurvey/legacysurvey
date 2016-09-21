@@ -235,9 +235,44 @@ ccds-annotated-nondecals.fits.gz
 As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
 
 ccds-annotated-extra.fits.gz
------------------------------
+----------------------------
 
 As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on github.
+
+dr3-depth.fits
+--------------
+
+A concatenation of the depth histograms for each brick, from the
+``coadd/*/*/*-depth.fits`` tables.  These histograms describe the
+number of pixels in each brick with a 5-sigma AB depth in the given
+magnitude bin.
+
+dr3-depth-summary.fits
+----------------------
+
+A summary of the depth histogram of the whole DR3 survey.  FITS table with the following columns:
+
+==================== ======== ======================================================
+Column               Type      Description
+==================== ======== ======================================================
+``depthlo``          float    Lower limit of the depth bin
+``depthhi``          float    Upper limit of the depth bin
+``counts_ptsrc_g``   int      Number of pixels in histogram for point source depth in g band
+``counts_gal_g``     int      Number of pixels in histogram for canonical galaxy depth in g band
+``counts_ptsrc_r``   int      Number of pixels in histogram for point source depth in r band
+``counts_gal_r``     int      Number of pixels in histogram for canonical galaxy depth in r band
+``counts_ptsrc_z``   int      Number of pixels in histogram for point source depth in z band
+``counts_gal_z``     int      Number of pixels in histogram for canonical galaxy depth in z band
+==================== ======== ======================================================
+
+The depth histogram goes from magnitude of 20.1 to 24.9 in steps of
+0.1 mag.  The first and last bins are "catch-all" bins: 0 to 20.1 and
+24.9 to 100, respectively.  The histograms count the number of pixels
+in each brick's unique area with the given depth.  These numbers can
+be turned into values in square degrees using the brick pixel area of
+0.262 arcseconds square.  These depth estimates take into account the
+small-scale masking (cosmic rays, edges, saturated pixels) and
+detailed PSF model.
 
 
 External Files

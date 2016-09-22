@@ -87,7 +87,7 @@ survey-ccds-decals.fits.gz
 
 A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and

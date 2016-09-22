@@ -66,14 +66,19 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
         ((
+            ("/dr3/description", 'Description'),
+            ("/dr2/files", 'Files'),
+            ("/dr3/catalogs", 'Catalogs'),
+            ("/dr3/issues", 'Known Issues and Workarounds'),
+            ), 'DR3'),
+        ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
-            ("/dr3", 'Data Release 3'),
             ("/decamls", 'DECaLS'),
             ("http://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
-            ), 'Data'),
+            ), 'Other Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
         ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/gallery/", 'Gallery'),
         ("/status", 'Status'),

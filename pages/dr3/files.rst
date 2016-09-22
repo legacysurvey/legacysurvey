@@ -87,7 +87,7 @@ survey-ccds-decals.fits.gz
 
 A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -101,7 +101,7 @@ counts.
 ================== =========  ======================================================
 Column             Type       Description
 ================== =========  ======================================================
-``object``         char[35]   Tile, field, or object name populated in the header at the telescope
+``object``         char[35]   Name listed in the object tag from the CCD header. For propid 2014B-0404, in most cases, this has the form: *DECaLS_<tile_number>_<filter>*, but this can differ for older and non-DECaLS data.
 ``expnum``         int32      Unique DECam exposure number, eg 348224.
 ``exptime``        float      Exposure time in seconds, eg 30.
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
@@ -109,7 +109,7 @@ Column             Type       Description
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
 ``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
-``ha``             char[13]   Hour angle of the observation
+``ha``             char[13]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
@@ -132,8 +132,8 @@ Column             Type       Description
 ``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
 ``ccdskyrms``      float      Sky rms (in counts)
-``ccdskymag``      float      Average sky surface brightness (in mag/arcsec^2)
-``ccdskycounts``   float      Mean sky value (in electrons)
+``ccdskymag``      float      Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``zpt``
+``ccdskycounts``   float      Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
 ``ccdtransp``      float      (ignore)
@@ -142,7 +142,7 @@ Column             Type       Description
 ``ccdnmatcha``     int16      Number of stars in amp A matched.
 ``ccdnmatchb``     int16      Number of stars in amp B matched.
 ``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
-``temp``           float      Temperature (in K)
+``temp``           float      Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header.
 ``camera``         char[5]    The camera that took this image; "decam".
 ``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.
@@ -365,6 +365,8 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
+Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
+
 Sweep Catalogs
 ==============
 
@@ -531,22 +533,48 @@ the colors.
 Raw Data
 ========
 
-Raw Legacy Survey images are available through the NOAO Science Archive.  The
-*input* data used to create the stacked images, Tractor catalogs, etc. comprises
-images taken by the dedicated DECam Legacy Survey project, as well as other
-DECam images, and images from other surveys.  These instructions are for
-obtaining raw images from the DECam Legacy Survey *only*.
+Raw and Calibrated Legacy Survey images are available through ftp servers from the NOAO Science Archive. 
+The input data used to create the stacked images, Tractor catalogs, etc. comprise images 
+taken by the dedicated DECam Legacy Survey project, as well as other DECam images. 
+
+Following the organization of the Stacked images, Raw and Calibrated DECam images are organized 
+by survey brick, which are defined in the file *survey-bricks-dr3.fits.gz* for DR3. Both the main Tractor 
+catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
+format ``<AAAa>c<BBB>)``. 
+
+- Raw: ftp://archive.noao.edu/public/hlsp/decals/dr3/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/decals/dr3/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/decals/dr3/coadd/``<AAA>/<brick>``
+
+For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
+from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 
+contains an ASCII file 
+with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
+(*legacysurvey*-``<brick>``-*image_filename.txt*; see the example below). 
+``EXPID`` contains the exposure number and the CCD name (Nxx or Sxx) with the format ``EXPNUM-ccd``. 
+There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 
+fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
+file contains the number of unique images in the last row (File Count).
+
+For the Raw CCD images, the file naming convention has evolved during the survey. The 
+corresponding files can be reconciled through the original DECam filename: 
+DECam_<``EXPNUM``>.fits.fz where ``EXPNUM`` needs to be in format ``I08`` and can be retrieved 
+from *legacysurvey*-``<brick>``-*ccds.fits* for each brick, and from the keyword ``DTNSANAM`` 
+in ``hdr[0]`` from each calibrated file.
+
+Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060p147/legacysurvey-0060p147-image_filename.txt*
+
+::
+
+   expid                                                image_filename 
+   1 00483709-N25 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
+   2 00483709-N26 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
+   3 00483709-N29 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
+   4 00483710-N25 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
+   5 00483710-N26 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
+   6 00483710-N29 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
+   File Count: 2
+
+In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.
 
 
-1. Visit the `NOAO Science Archive`_.
-2. Click on `General Search for NOAO data (all users)`_.
-3. From the menu of "Available Collections" at left, select the desired DECaLS data release (e.g. DECaLS-DR3).
-4. Under "Data products - Raw data" check "Object".
-5. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
-6. Click Search.
-7. The Results page offers several different ways to download the detail. See 
-   `the Tutorials page`_ for details.
-
-.. _`NOAO Science Archive`: http://portal-nvo.noao.edu
-.. _`General Search for NOAO data (all users)`: http://portal-nvo.noao.edu/search/query
-.. _`the Tutorials page`: http://portal-nvo.noao.edu/tutorials/query

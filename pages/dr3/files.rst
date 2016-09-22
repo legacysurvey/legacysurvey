@@ -132,7 +132,7 @@ Column             Type       Description
 ``ccdphoff``       float      (ignore)
 ``ccdphrms``       float      Photometric rms for the CCD (in mag).
 ``ccdskyrms``      float      Sky rms (in counts)
-``ccdskymag``      float      Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``zpt``
+``ccdskymag``      float      Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
 ``ccdskycounts``   float      Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
 ``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
 ``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
@@ -193,7 +193,7 @@ Column               Type      Description
 ``dra``              float    Maximum distance from RA,Dec center to the edge midpoints, in RA
 ``ddec``             float    Maximum distance from RA,Dec center to the edge midpoints, in Dec
 ``ra_center``        double   RA coordinate of CCD center
-``dec_center``       double   RA coordinate of CCD center
+``dec_center``       double   Dec coordinate of CCD center
 ``sig1``             float    Median per-pixel error standard deviation, in nanomaggies.
 ``meansky``          float    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
 ``stdsky``           float    Standard deviation of our sky level

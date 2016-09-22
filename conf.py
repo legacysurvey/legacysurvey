@@ -77,6 +77,7 @@ NAVIGATION_LINKS = {
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
         ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/gallery/", 'Gallery'),
         ("/status", 'Status'),
+        ("/pubs", 'Publications'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),

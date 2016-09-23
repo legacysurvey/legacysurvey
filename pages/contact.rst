@@ -92,61 +92,65 @@ DECaLS Founding Co-Is
 DECaLS New Co-Is
 ================
 
-* Anna Patej apatej@physics.harvard.edu - student of Eisenstein, 3 July 2014
-* Shan Huanyuan huanyuan.shan@epfl.ch - postdoc with JP Kneib, 9 July 2014
-* Richard D'Souza rdsouza@mpa-garching.mpg.de - student of Kauffmann, 11 July 2014
-* David James djj@ctio.noao.edu - NOAO, 11 July 2014
-* Bob Blum rblum@noao.edu - NOAO, 17 July 2014
-* Joseph Findlay joseph.findlay@durham.ac.uk - postdoc of Adam Myers, 5 Sep 2014
-* Anand Raichoor anand.raichoor@cea.fr - postdoc of Palanque-Delabrouille, 25 Sep 2014
-* Andrew Miller acm@seas.harvard.edu - Inference team, 25 Sep 2014
 * Ryan P. Adams rpa@seas.harvard.edu - Inference team, 25 Sep 2014
-* Jon McAuliffe jon@stat.berkeley.edu - Inference team, 25 Sep 2014
-* Jeffrey Regier jeff@stat.berkeley.edu - Inference team, 25 Sep 2014
-* Prabhat prabhat@lbl.gov - Inference team, 25 Sep 2014
-* Yushu Yao yao.yushu@gmail.com - Inference team, 25 Sep 2014
-* Mohit Singh mohit1007@gmail.com - Inference team, 25 Sep 2014
-* Nikhil Padmanabhan nikhil.padmanabhan@yale.edu - Yale, 28 Oct 2014
-* Koshy George koshy@iiap.res.in - IIA, 30 Oct 2014
-* Tom Shanks tom.shanks@durham.ac.uk - Durham, 19 Nov 2014
-* Ben Chehade ben.chehade@durham.ac.uk - Durham, 19 Nov 2014
-* James Lowenthal james@ast.smith.edu - Smith College, 3 Dec 2014
-* Ian McGreer imcgreer@as.arizona.edu - University of Arizona, 9 Dec 2014
-* Shaun Cole shaun.cole@durham.ac.uk - Durham, 20 Jan 2015
-* Carlos Frenk c.s.frenk@durham.ac.uk - Durham, 20 Jan 2015
-* Nigel Metcalfe nigel.metcalfe@durham.ac.uk - Durham, 20 Jan 2015
-* Peder Norberg peder.norberg@durham.ac.uk - Durham, 20 Jan 2015
-* Zhou Xu zhouxu@bao.ac.cn - NOAC / BASS team, 22 Jan 2015
-* Zou Hu zouhu@nao.cas.cn - NOAC / BASS team, 22 Jan 2015
-* Mark Ma ma@astro.utoronto.ca - student of Carlberg, 29 Jan 2015
-* Karen Masters karen.masters@port.ac.uk - Portsmouth, 30 Jan 2015
-* Beth Willman bwillman@haverford.edu - Haverford, 4 Feb 2015
-* Aaron Meisner ameisner@berkeley.edu - Harvard -> Berkeley, 20 Feb 2015
-* Yu Feng yfeng1@berkeley.edu - UC Berkeley, 27 Feb 2015
+* Jim Annis annis@fnal.gov - FNAL, 15 Jun 2015
+* Bob Blum rblum@noao.edu - NOAO, 17 July 2014
 * Ana Bonaca ana.bonaca@yale.edu - Yale, 12 March 2015
 * Chris Bonnett c.bonnett@gmail.com - IFAE, 24 March 2015
-* Andras Kovacs andraspankasz@gmail.com - IFAE , 24 March 2015
-* Jaime Ernesto Forero Romero je.forero@uniandes.edu.co - Andes, 17 Apr 2015
-* Adrian Price-Whelan adrianmpw@gmail.com - Columbia, 15 Jun 2015
-* Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC, 15 Jun 2015
-* Jim Annis annis@fnal.gov - FNAL, 15 Jun 2015
-* James Jee mkjee@physics.ucdavis.edu - Davis, 24 Jun 2015
-* Stephanie Juneau stephanie.juneau@cea.fr - Saclay, 24 Jun 2015
-* Knut Olsen kolsen@noao.edu - NOAO, 15 April 2015
-* Alexander Mendez ajmendez@jhu.edu - JHU, 8 July 2015
-* Kyle Willett willett@physics.umn.edu - UMN, 22 July 2015
-* Feige Wang feigewang@email.arizona.edu - University of Arizona, 30 July 2015
-* David Gerdes gerdes@umich.edu - Michigan, 7 Aug 2015
-* Jundan Nie jdnie@bao.ac.cn - NAOC, 18 Aug 2015
-* Linhua Jiang jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015
-* Qian Yang qianyang.astro@pku.edu.cn - student of Fan, University of Arizona, 5 Sep 2015
-* Paul Martini martini.10@osu.edu - Ohio State University, 15 Sep 2015
-* Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
-* Michael Schneider schneider42@llnl.gov - LLNL, 1 Feb 2016
 * Michael Brown mbrown@caltech.edu - Caltech, 2 Feb 2016
-* Gautham Narayan gnarayan@noao.edu - NOAO, 9 Feb 2016
 * Annalisa Calamida calamida@noao.edu - NOAO, 9 Feb 2016
-* Wenting Wang wenting.wang@durham.ac.uk - Durham, 10 Feb 2016
+* Ben Chehade ben.chehade@durham.ac.uk - Durham, 19 Nov 2014
+* Shaun Cole shaun.cole@durham.ac.uk - Durham, 20 Jan 2015
+* Richard D'Souza rdsouza@mpa-garching.mpg.de - student of Kauffmann, 11 July 2014
+* Yu Feng yfeng1@berkeley.edu - UC Berkeley, 27 Feb 2015
+* Joseph Findlay joseph.findlay@durham.ac.uk - postdoc of Adam Myers, 5 Sep 2014
+* Jaime Ernesto Forero Romero je.forero@uniandes.edu.co - Andes, 17 Apr 2015
+* Carlos Frenk c.s.frenk@durham.ac.uk - Durham, 20 Jan 2015
+* Koshy George koshy@iiap.res.in - IIA, 30 Oct 2014
+* David Gerdes gerdes@umich.edu - Michigan, 7 Aug 2015
 * David Herrera herrera@noao.edu - NOAO 10 Feb 2016
+* Zou Hu zouhu@nao.cas.cn - NOAC / BASS team, 22 Jan 2015
+* Shan Huanyuan huanyuan.shan@epfl.ch - postdoc with JP Kneib, 9 July 2014
+* David James djj@ctio.noao.edu - NOAO, 11 July 2014
+* James Jee mkjee@physics.ucdavis.edu - Davis, 24 Jun 2015
+* Linhua Jiang jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015
+* Stephanie Juneau stephanie.juneau@cea.fr - Saclay, 24 Jun 2015
+* Andras Kovacs andraspankasz@gmail.com - IFAE , 24 March 2015
 * Martin Landriau mlandriau@lbl.gov - LBNL 27 May 2016
+* James Lowenthal james@ast.smith.edu - Smith College, 3 Dec 2014
+* Mark Ma ma@astro.utoronto.ca - student of Carlberg, 29 Jan 2015
+* Paul Martini martini.10@osu.edu - Ohio State University, 15 Sep 2015
+* Karen Masters karen.masters@port.ac.uk - Portsmouth, 30 Jan 2015
+* Jon McAuliffe jon@stat.berkeley.edu - Inference team, 25 Sep 2014
+* Ian McGreer imcgreer@as.arizona.edu - University of Arizona, 9 Dec 2014
+* Aaron Meisner ameisner@berkeley.edu - Harvard -> Berkeley, 20 Feb 2015
+* Alexander Mendez ajmendez@jhu.edu - JHU, 8 July 2015
+* Nigel Metcalfe nigel.metcalfe@durham.ac.uk - Durham, 20 Jan 2015
+* Andrew Miller acm@seas.harvard.edu - Inference team, 25 Sep 2014
+* Gautham Narayan gnarayan@noao.edu - NOAO, 9 Feb 2016
+* Jundan Nie jdnie@bao.ac.cn - NAOC, 18 Aug 2015
+* Peder Norberg peder.norberg@durham.ac.uk - Durham, 20 Jan 2015
+* Knut Olsen kolsen@noao.edu - NOAO, 15 April 2015
+* Nikhil Padmanabhan nikhil.padmanabhan@yale.edu - Yale, 28 Oct 2014
+* Anna Patej apatej@physics.harvard.edu - student of Eisenstein, 3 July 2014
+* Prabhat prabhat@lbl.gov - Inference team, 25 Sep 2014
+* Adrian Price-Whelan adrianmpw@gmail.com - Columbia, 15 Jun 2015
+* Anand Raichoor anand.raichoor@cea.fr - postdoc of Palanque-Delabrouille, 25 Sep 2014
+* Jeffrey Regier jeff@stat.berkeley.edu - Inference team, 25 Sep 2014
+* Michael Schneider schneider42@llnl.gov - LLNL, 1 Feb 2016
+* Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
+* Tom Shanks tom.shanks@durham.ac.uk - Durham, 19 Nov 2014
+* Mohit Singh mohit1007@gmail.com - Inference team, 25 Sep 2014
+* Feige Wang feigewang@email.arizona.edu - University of Arizona, 30 July 2015
+* Wenting Wang wenting.wang@durham.ac.uk - Durham, 10 Feb 2016
+* Kyle Willett willett@physics.umn.edu - UMN, 22 July 2015
+* Beth Willman bwillman@haverford.edu - Haverford, 4 Feb 2015
+* Zhou Xu zhouxu@bao.ac.cn - NOAC / BASS team, 22 Jan 2015
+* Qian Yang qianyang.astro@pku.edu.cn - student of Fan, University of Arizona, 5 Sep 2015
+* Yushu Yao yao.yushu@gmail.com - Inference team, 25 Sep 2014
+* Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC, 15 Jun 2015
+
+
+
+
 

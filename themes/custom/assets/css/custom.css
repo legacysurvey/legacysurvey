@@ -1,5 +1,10 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
+body {
+    padding-top: 70px;
+    /* See http://stackoverflow.com/questions/22948843/why-is-my-header-getting-covered-by-nav-bar-bootstrap */
+}
+
 .navbar {
     font-family: "Raleway","Helvetica Neue", Helvetica, Arial, sans-serif, "FontAwesome";
 }

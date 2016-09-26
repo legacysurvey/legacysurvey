@@ -304,9 +304,7 @@ interpolation.  Stacks should not be used for precision work.
 Depths
 ======
 
-???
-
-The median 5\ |sigma| point source depths for areas in DR3 with 3 observations is g=24.65, r=23.61, z=22.84.
+As of DR2, the median 5\ |sigma| point source depths for areas with 3 observations was g=24.65, r=23.61, z=22.84. DR3 should reach similar depths.
 This is based upon the formal errors in the Tractor catalogs for point sources; those errors need further confirmation.
 This can be compared to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of g=24.7, r=23.9, z=23.0.
 
@@ -337,6 +335,9 @@ CP
 
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
+
+DR2
+    DECam Legacy Survey Data Release 2.
 
 DR3
     DECam Legacy Survey Data Release 3.

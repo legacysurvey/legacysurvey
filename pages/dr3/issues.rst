@@ -1,22 +1,21 @@
 .. title: Known Issues and Workarounds
 .. slug: issues
 .. tags: mathjax
-.. description: 
+.. description:
 
 Tractor-on-Bricks
 ==================
 
 Issue
-   Tractor-on-Bricks is a slightly different implementation of the Tractor source extraction code in 
+   Tractor-on-Bricks is a slightly different implementation of the Tractor source extraction code in
    which a fraction of bricks that don't touch are run through Tractor, and then sources that
-   are BRICK_PRIMARY are fixed so that additional bricks run through Tractor don't produce 
-   duplicate "edge" sources where bricks overlap. This has the advantage of producing rigorus
+   are BRICK_PRIMARY are fixed so that additional bricks run through Tractor don't produce
+   duplicate "edge" sources where bricks overlap. This has the advantage of producing rigorous
    brick boundaries, but the disadvantage of slowing down processing through being harder to
    parallelize. In DR3, tractor-on-bricks was enforced until June 6.
-
 Workaround
-   Bricks with timestamps before June 6 were processed slightly differently to subsequent bricsk.
-   All of these "pre-6/6" bricks are within a region bounded by Right Ascenscions of 315 to 45 
+   Bricks with timestamps before June 6 were processed slightly differently to subsequent bricks.
+   All of these "pre-6/6" bricks are within a region bounded by Right Ascensions of 315 to 45
    degrees and Declinations of  -5 to +7 degrees (a region in which the eBOSS survey is targeting
    Emission Line Galaxies). Not every brick in that region was run with Tractor-on-Bricks but
    no brick outside of that region was run with Tractor-on-Bricks.
@@ -34,7 +33,7 @@ Issue
    available to the full depth that you expect.
 Workaround
    Which proposal IDs were considered in which brick can be obtained from the ccds files that
-   are documented on the `catalogs page`_. 
+   are documented on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
@@ -49,7 +48,6 @@ Issue
    fraction of the NaNs (~1%) correspond to measurements with non-zero
    DECAM_NOBS. In these cases, the relevant band's flux is identically
    zero, suggesting that no such measurement was actually performed.
-
 Workaround
    We suggest that users simply ignore all measurements
    which correspond to NaN values of

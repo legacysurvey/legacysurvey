@@ -8,11 +8,12 @@
 .. |epsilon|  unicode:: U+003B5 .. GREEK SMALL LETTER EPSILON
 .. |phi|      unicode:: U+003D5 .. GREEK PHI SYMBOL
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
+.. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
-FITS binary table containing Tractor photometry. Before using these catalogs, note that there are 
+FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
 `known issues`_ regarding their content and derivation.
 
 .. _`known issues`: ../issues
@@ -46,7 +47,7 @@ BLOB_WIDTH                  int16                              size of this blob
 BLOB_HEIGHT                 int16                              size of this blob of pixels in brick coordinates, bounding box height
 BLOB_NPIX                   int32                              size of this blob of pixels in brick coordinates, number of brick pixels
 BLOB_NIMAGES                int16                              number of images overlapping this blob
-BLOB_TOTALPIX               int32                              total number of pixels from all the images overlapping this blob 
+BLOB_TOTALPIX               int32                              total number of pixels from all the images overlapping this blob
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
 DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
@@ -92,7 +93,7 @@ DECAM_GALDEPTH              float32      1/nanomaggies\ |sup2| As for DECAM_DEPT
 =========================== ============ ===================== ===============================================
 
 Mask Values
-===========
+-----------
 
 The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
 from the CP Data Quality bits.
@@ -100,26 +101,27 @@ from the CP Data Quality bits.
 === ===== =========================== ==================================================
 Bit Value Name                        Description
 === ===== =========================== ==================================================
-  0     1 detector bad pixel/no data  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  1     2 saturated                   detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  2     4 interpolated                detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  4    16 single exposure cosmic ray  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  6    64 bleed trail                 detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  8   256 edge                        detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  9   512 edge2                       detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
- 10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, e.g, satellite trails.
+  0     1 detector bad pixel/no data  See the `CP Data Quality bit description`_.
+  1     2 saturated                   See the `CP Data Quality bit description`_.
+  2     4 interpolated                See the `CP Data Quality bit description`_.
+  4    16 single exposure cosmic ray  See the `CP Data Quality bit description`_.
+  6    64 bleed trail                 See the `CP Data Quality bit description`_.
+  7   128 multi-exposure transient    See the `CP Data Quality bit description`_.
+  8   256 edge                        See the `CP Data Quality bit description`_.
+  9   512 edge2                       See the `CP Data Quality bit description`_.
+ 10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
 === ===== =========================== ==================================================
 
+.. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 Goodness-of-Fits
-================
+----------------
 
 The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
 the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
 exponential model ("EXP"), de Vaucouleurs model ("DEV"), and a composite model ("COMP"), in that order.
-The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45" and zero ellipticity (round)
+The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
 The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
 Note that the DCHISQ values are negated so that positive values indicate better fits.
@@ -137,7 +139,7 @@ The above can be negative-valued for sources that have a flux measured as negati
 where they are not detected.
 
 Galactic Extinction Coefficients
-================================
+--------------------------------
 
 The Galactic extinction values are derived from the SFD98 maps, but with updated coefficients to
 convert E(B-V) to the extinction in each filter.  These are reported in linear units of transmission,
@@ -160,7 +162,7 @@ considered better than either the Cardelli et al 1989 curves or the newer Fitzpa
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
 Ellipticities
-=============
+-------------
 
 The ellipticity, |epsilon|, is different from the usual
 eccentricity, :math:`e \equiv \sqrt{1 - (b/a)^2}`.  In gravitational lensing

@@ -533,9 +533,28 @@ the colors.
 Raw Data
 ========
 
-Raw and Calibrated Legacy Survey images are available through ftp servers from the NOAO Science Archive. 
-The input data used to create the stacked images, Tractor catalogs, etc. comprise images 
-taken by the dedicated DECam Legacy Survey project, as well as other DECam images. 
+Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
+portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
+stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
+project, as well as other DECam images. 
+
+(i) Web interface
+-----------------
+
+1. Query the `NOAO Science Archive`_.
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR3).
+3. Under "Data products - Raw data" check "Object".
+4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
+5. Click "Search".
+6. For DECaLS only images, refine the search by Proposal ID (2014B-0404) in the "Refine" tab.
+7. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
+
+.. _`NOAO Science Archive`: http://archive.noao.edu/search/query
+.. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
+
+
+(ii) ftp sites
+--------------
 
 Following the organization of the Stacked images, Raw and Calibrated DECam images are organized 
 by survey brick, which are defined in the file *survey-bricks-dr3.fits.gz* for DR3. Both the main Tractor 

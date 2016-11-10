@@ -15,8 +15,16 @@
 Top level directory for web access:
   http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/
 
+Top level directory for web access to dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/dr3.1/
+
+.. _`known issues`: ../issues
+
 Top level directory local to NERSC computers (for collaborators):
   /global/project/projectdirs/cosmo/data/legacysurvey/dr3/
+
+Top level directory local to NERSC computers for dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/sweep/dr3.1/
 
 Summary Files
 =============
@@ -370,10 +378,15 @@ Users interested in database access to the Tractor Catalogs can contact the NOAO
 Sweep Catalogs
 ==============
 
-sweep/3.0/sweep-<brickmin>-<brickmax>.fits
+sweep/3.1/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
-Light-weight FITS binary tables (containing a subset of the most commonly used
+Note that previous versions of the sweeps are available in sweep/3.0/sweep-<brickmin>-<brickmax>.fits
+for reasons detailed on the `known issues`_ page.
+
+.. _`known issues`: ../issues
+
+The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. Includes:
 
 =============================== ============ ===================== ===============================================

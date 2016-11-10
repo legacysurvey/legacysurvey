@@ -1,7 +1,8 @@
 # legacysurvey Change Log
 
-- Added new locations for DR3.1 sweeps and tractor files
-- Added known issues describing changes to these files
+## 3.1.0 (DR3.1, unreleased)
+
+- Add Caveat about tractor and sweep files with bad or corrupted data.
 
 ## 3.0.0 (DR3, 2016-09-26)
 

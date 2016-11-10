@@ -61,7 +61,7 @@ Workaround
   Which proposal IDs were considered in which brick can be obtained from the ccds files that
   are documented on the `catalogs page`_.
 
-  .. _`catalogs page`: ../catalogs
+.. _`catalogs page`: ../catalogs
 
 NANs in Tractor Catalogs
 ========================

@@ -22,7 +22,7 @@ Issue
 
 Workaround
 ----------
-   These files have been re-processed and are included in a "DR3.1" directory structure,
+   These files have been reprocessed and are included in a "DR3.1" directory structure,
    which is now the default to which DR3 directories point. The one exception to the overall
    directory structure is the sweeps files, for which the uncorrupted versions are available at
    legacysurvey/dr3/sweep/3.1 (instead of at legacysurvey/dr3/sweep/3.0). Note that users who

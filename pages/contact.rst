@@ -19,6 +19,7 @@ DECaLS Founding Co-Is
 * Michael Blanton  michael.blanton@gmail.com
 * Adam Bolton  bolton@astro.utah.edu
 * Mark Brodwin  brodwinm@umkc.edu
+* Ben Bromley bromley@physics.utah.edu - Utah - 12 May 2016
 * Kevin Bundy  kevin.bundy@ipmu.jp
 * Raymond Carlberg  raymond.carlberg@utoronto.ca
 * Francisco Castander  fjcastander@gmail.com
@@ -58,6 +59,7 @@ DECaLS Founding Co-Is
 * David Monet  dgm@nofs.navy.mil
 * John Moustakas  jmoustakas@siena.edu
 * Adam Myers  geordiemyers@gmail.com
+* Joan Najita najita@noao.edu - NOAO - 17 Feb 2016
 * Kirpal Nandra  knandra@mpe.mpg.de
 * Jeffrey Newman  janewman@pitt.edu
 * Peder Norberg  peder.norberg@durham.ac.uk
@@ -108,6 +110,7 @@ DECaLS New Co-Is
 * Carlos Frenk c.s.frenk@durham.ac.uk - Durham, 20 Jan 2015
 * Koshy George koshy@iiap.res.in - IIA, 30 Oct 2014
 * David Gerdes gerdes@umich.edu - Michigan, 7 Aug 2015
+* Quan Guo guotsuan@gmail.com - Potsdam - 28 April 2016
 * David Herrera herrera@noao.edu - NOAO 10 Feb 2016
 * Zou Hu zouhu@nao.cas.cn - NOAC / BASS team, 22 Jan 2015
 * Shan Huanyuan huanyuan.shan@epfl.ch - postdoc with JP Kneib, 9 July 2014
@@ -115,6 +118,7 @@ DECaLS New Co-Is
 * James Jee mkjee@physics.ucdavis.edu - Davis, 24 Jun 2015
 * Linhua Jiang jiangKIAA@pku.edu.cn - Peking University, 24 Aug 2015
 * Stephanie Juneau stephanie.juneau@cea.fr - Saclay, 24 Jun 2015
+* Mukremin Kilic mukreminkilic@gmail.com - Oklahoma U - 17 Feb 2016
 * Andras Kovacs andraspankasz@gmail.com - IFAE , 24 March 2015
 * Martin Landriau mlandriau@lbl.gov - LBNL 27 May 2016
 * James Lowenthal james@ast.smith.edu - Smith College, 3 Dec 2014
@@ -133,10 +137,13 @@ DECaLS New Co-Is
 * Knut Olsen kolsen@noao.edu - NOAO, 15 April 2015
 * Nikhil Padmanabhan nikhil.padmanabhan@yale.edu - Yale, 28 Oct 2014
 * Anna Patej apatej@physics.harvard.edu - student of Eisenstein, 3 July 2014
+* Xiyan Peng xypeng@bao.ac.cn - NAOC - 18 Nov 2016
+* Will Percival will.percival@port.ac.uk - Portsmouth - 29 April 2016
 * Prabhat prabhat@lbl.gov - Inference team, 25 Sep 2014
 * Adrian Price-Whelan adrianmpw@gmail.com - Columbia, 15 Jun 2015
 * Anand Raichoor anand.raichoor@cea.fr - postdoc of Palanque-Delabrouille, 25 Sep 2014
 * Jeffrey Regier jeff@stat.berkeley.edu - Inference team, 25 Sep 2014
+* Destry Saul destrys@gmail.com - Tucson, AZ - 28 April 2016
 * Michael Schneider schneider42@llnl.gov - LLNL, 1 Feb 2016
 * Hee-Jong Seo sheejong7@gmail.com - Ohio University, 21 Oct 2015
 * Tom Shanks tom.shanks@durham.ac.uk - Durham, 19 Nov 2014
@@ -148,9 +155,6 @@ DECaLS New Co-Is
 * Zhou Xu zhouxu@bao.ac.cn - NOAC / BASS team, 22 Jan 2015
 * Qian Yang qianyang.astro@pku.edu.cn - student of Fan, University of Arizona, 5 Sep 2015
 * Yushu Yao yao.yushu@gmail.com - Inference team, 25 Sep 2014
+* Tianmeng Zhang zhangtm@nao.cas.cn - NAOC, 15 Nov 2016
 * Zhi-Min Zhou zmzhou@bao.ac.cn - NAOC, 15 Jun 2015
-
-
-
-
 

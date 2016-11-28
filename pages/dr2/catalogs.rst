@@ -27,7 +27,7 @@ BRICK_PRIMARY               boolean                            True if the objec
 BLOB                        int32                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
 NINBLOB                     int32                              Number of sources in this BLOB (blend family); isolated objects have value 1.
 TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
-TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
+TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 RA                          float64      deg                   Right ascension at epoch J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
@@ -38,7 +38,7 @@ BX0                         float32      pix                   Initialized X pos
 BY0                         float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
 LEFT_BLOB                   boolean                            True if an object center has been optimized to be outside the fitting pixel area
 OUT_OF_BOUNDS               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
-DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
 DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
@@ -104,8 +104,8 @@ Goodness-of-Fits
 
 The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
-the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
-exponential model ("EXP"), de Vaucouleurs model ("DEV"), and a composite model ("COMP"), in that order.
+the best-fit point source (type="PSF"), simple galaxy model ("SIMP"), de Vaucouleurs model ("DEV"), 
+exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45" and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
 The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.

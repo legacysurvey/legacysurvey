@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 3.1.1 (2016-11-28)
+
+- Fix order of DEV and EXP in TYPE column ([PR#69](https://github.com/legacysurvey/legacysurvey/pull/69)).
+
 ## 3.1.0 (DR3.1, 2016-11-15)
 
 - Add Caveat about tractor and sweep files with bad or corrupted data.

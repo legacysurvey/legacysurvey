@@ -17,12 +17,12 @@
 Contents of DR4
 ===============
 
-The Legacy Surveys will produce an inference model of the 14,000 square degrees
+The Legacy Surveys are producing an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (g,r,z) and four infrared bands.  The sky coverage is approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
-|deg| in Galactic coordinates. To achieve this goals, the Legacy Surveys comprises
-3 surveys on different telescopes, described in more depth at the following links:
+|deg| in Galactic coordinates. To achieve this goal, the Legacy Surveys are conducting
+3 imaging projects on different telescopes, described in more depth at the following links:
 
 ========================================== ===================================== ===========================================
 *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)

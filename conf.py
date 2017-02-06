@@ -75,7 +75,7 @@ NAVIGATION_LINKS = {
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
             ("/dr3", 'Data Release 3'),
-            ("bass", 'BASS'),
+            ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),
             ("http://www.darkenergysurvey.org", 'DES'),

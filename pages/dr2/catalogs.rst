@@ -74,8 +74,8 @@ SHAPEDEV_E1                 float32                            Ellipticity compo
 SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-DECAM_DEPTH                 float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
-DECAM_GALDEPTH              float32      1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
+DECAM_DEPTH                 float32[6]   1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
+DECAM_GALDEPTH              float32[6]   1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
 =========================== ============ ===================== ===============================================
 
 Mask Values

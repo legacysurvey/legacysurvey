@@ -35,6 +35,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
 .. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
+.. _`GAIA Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html 
 
 Contents of DR4
 ===============
@@ -52,12 +53,12 @@ are included from August 2014 through ?? 20??. Images from BASS are included fro
 DR4 also includes DECam data from a range of 
 non-DECaLS surveys, including observations that were conducted from September 2012 to ?? 20??.
 
-In total, the DECaLS data covers a disjoint footprint
+In total, the DECaLS imaging included in this release covers a disjoint footprint
 with about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| in :math:`r`-band and ??00 deg\ |sup2|
 in :math:`z`-band, of which ??00 deg\ |sup2| has been observed in all
-three optical filters. The BASS data covers 
+three optical filters. The BASS imaging covers 
 about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| and ??00 deg\ |sup2|
-in :math:`r`-band. The MzLS data covers about 3000 deg\ |sup2| in :math:`z`-band.
+in :math:`r`-band. The MzLS imaging covers about 3000 deg\ |sup2| in :math:`z`-band.
 
 Across all of the Legacy Surveys, there are approximately ?? million unique sources in DR4 
 spread over ??,?? bricks.
@@ -321,17 +322,13 @@ at airmass=1 and 3.202 at airmass=2.
 Astrometry
 ==========
 
-??ADM now GAIA
+??ADM I believe we shifted to GAIA for DR4, but is what is written OK
 
-The astrometry is currently tied to star positions in Pan-STARRS-1,
-so the epoch is implicitly at the time of observation for Pan-STARRS-1.
-We keep the polynomial distortion model provided by the Community Pipeline,
-computing a simple RA,Dec offset for each CCD to align it with Pan-STARRS-1.
+As of DR4, astrometry uses the `GAIA Data Release 1`_ system.
+Positions of sources are tied to predicted GAIA positions at
+the epoch of the corresponding Legacy Survey observation.
 The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-In the future, the plan is to tie the astrometry to the GAIA astrometry,
-at which point we will use the predicted stellar positions at the
-DECam epoch of observation.
 
 Image Stacks
 ============

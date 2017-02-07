@@ -81,6 +81,7 @@ Column          Type     Description
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
+.. _`github`: https://github.com
 
 survey-ccds-decals.fits.gz
 --------------------------
@@ -104,7 +105,7 @@ Column             Type       Description
 ``object``         char[35]   Name listed in the object tag from the CCD header. For propid 2014B-0404, in most cases, this has the form: *DECaLS_<tile_number>_<filter>*, but this can differ for older and non-DECaLS data.
 ``expnum``         int32      Unique DECam exposure number, eg 348224.
 ``exptime``        float      Exposure time in seconds, eg 30.
-``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
+``filter``         char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`".
 ``seeing``         float      Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
 ``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
@@ -165,7 +166,7 @@ As for survey-ccds-decals.fits.gz, but for areas of the sky covered with DECam b
 survey-ccds-extra.fits.gz
 -----------------------------
 
-As for survey-ccds-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" files are currently split up simply to make them easier to store on github.
+As for survey-ccds-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" files are currently split up simply to make them easier to store on `github`_.
 
 ccds-annotated-decals.fits.gz
 -----------------------------
@@ -221,7 +222,7 @@ Column               Type      Description
 ``tileebv``          float    Mean SFD E(B-V) extinction in the DECaLS tile, or 0 for non-DECaLS data.
 ``plver``            char[6]  Community Pipeline (CP) PLVER version string
 ``ebv``              float    SFD E(B-V) extinction for CCD center
-``decam_extinction`` float[6] Extinction for DECam filters ugrizY
+``decam_extinction`` float[6] Extinction for DECam filters :math:`ugrizY`
 ``wise_extinction``  float[4] Extinction for WISE bands W1,W2,W3,W4
 ``psfdepth``         float    5-sigma PSF detection depth in AB mag, using PsfEx PSF model
 ``galdepth``         float    5-sigma galaxy (0.45" round exp) detection depth in AB mag
@@ -237,7 +238,7 @@ As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECa
 ccds-annotated-extra.fits.gz
 ----------------------------
 
-As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on github.
+As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on `github`_.
 
 dr4-depth.fits.gz
 -----------------
@@ -257,12 +258,12 @@ Column               Type      Description
 ==================== ======== ======================================================
 ``depthlo``          float    Lower limit of the depth bin
 ``depthhi``          float    Upper limit of the depth bin
-``counts_ptsrc_g``   int      Number of pixels in histogram for point source depth in g band
-``counts_gal_g``     int      Number of pixels in histogram for canonical galaxy depth in g band
-``counts_ptsrc_r``   int      Number of pixels in histogram for point source depth in r band
-``counts_gal_r``     int      Number of pixels in histogram for canonical galaxy depth in r band
-``counts_ptsrc_z``   int      Number of pixels in histogram for point source depth in z band
-``counts_gal_z``     int      Number of pixels in histogram for canonical galaxy depth in z band
+``counts_ptsrc_g``   int      Number of pixels in histogram for point source depth in :math:`g` band
+``counts_gal_g``     int      Number of pixels in histogram for canonical galaxy depth in :math:`g` band
+``counts_ptsrc_r``   int      Number of pixels in histogram for point source depth in :math:`r` band
+``counts_gal_r``     int      Number of pixels in histogram for canonical galaxy depth in :math:`r` band
+``counts_ptsrc_z``   int      Number of pixels in histogram for point source depth in :math:`z` band
+``counts_gal_z``     int      Number of pixels in histogram for canonical galaxy depth in :math:`z` band
 ==================== ======== ======================================================
 
 The depth histogram goes from magnitude of 20.1 to 24.9 in steps of
@@ -353,7 +354,7 @@ In the file listings outlined below:
 
 - sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
 
-- **<filter>** denotes the `g`, `r` or `z` band, using the corresponding letter.
+- **<filter>** denotes the :math:`g`, :math:`r` or :math:`z` band, using the corresponding letter.
 
 Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `survey-bricks.fits.gz` file (i.e. ``brickname``, ``ra``, ``dec``).
 
@@ -370,13 +371,8 @@ Users interested in database access to the Tractor Catalogs can contact the NOAO
 Sweep Catalogs
 ==============
 
-sweep/3.1/sweep-<brickmin>-<brickmax>.fits
+sweep/4.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
-
-Note that previous versions of the sweeps are available in sweep/3.0/sweep-<brickmin>-<brickmax>.fits
-for reasons detailed on the `known issues`_ page.
-
-.. _`known issues`: ../issues
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. Includes:
@@ -392,9 +388,9 @@ Name                            Type         Units                 Description
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 ``DEC``                         float64      deg                   Declination at epoch J2000
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
-``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in ugrizY
+``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in :math:`ugrizY`
 ``DECAM_FLUX_IVAR``             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
-``DECAM_MW_TRANSMISSION``       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
+``DECAM_MW_TRANSMISSION``       float32[6]                         Galactic transmission in :math:`ugrizY` filters in linear units [0,1]
 ``DECAM_NOBS``                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 ``DECAM_RCHI2``                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
 ``DECAM_PSFSIZE``               float32[6]   arcsec                Weighted average PSF FWHM per band

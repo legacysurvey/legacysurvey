@@ -3,6 +3,9 @@
 .. tags: mathjax
 .. description:
 
+.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
+
+
 DR3.1 Update to sweeps and Tractor Files
 ========================================
 Issue
@@ -36,12 +39,12 @@ Issue
   are BRICK_PRIMARY are fixed so that additional bricks run through Tractor don't produce
   duplicate "edge" sources where bricks overlap. This has the advantage of producing rigorous
   brick boundaries, but the disadvantage of slowing down processing through being harder to
-  parallelize. In DR3, tractor-on-bricks was enforced until June 6.
+  parallelize. In DR3, tractor-on-bricks was enforced until June 6, 2016.
 
 Workaround
-  Bricks with timestamps before June 6 were processed slightly differently to subsequent bricks.
-  All of these "pre-6/6" bricks are within a region bounded by Right Ascensions of 315 to 45
-  degrees and Declinations of  -5 to +7 degrees (a region in which the eBOSS survey is targeting
+  Bricks with timestamps before June 6, 2016 were processed slightly differently to subsequent bricks.
+  All of these "pre-6/6/16" bricks are within a region bounded by Right Ascensions of 315\ |deg| 
+  to 45\ |deg| and Declinations of -5\ |deg| to +7\ |deg| (a region in which the eBOSS survey is targeting
   Emission Line Galaxies). Not every brick in that region was run with Tractor-on-Bricks but
   no brick outside of that region was run with Tractor-on-Bricks.
 

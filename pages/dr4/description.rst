@@ -29,13 +29,22 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
+.. _`NOAO Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Ceres solver`: http://ceres-solver.org
+.. _`SciPy`: http://www.scipy.org
+.. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
+.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
+.. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 
 Contents of DR4
 ===============
 
 Data Release 4 (DR4) is the fourth public data release of images and catalogs for
 `DECaLS`_ and the first release of the Legacy Surveys to contain data from `BASS`_ and `MzLS`_
-reduced in a manner consistent with `DECaLS`_ using the `Tractor`_.
+reduced in a manner consistent with `DECaLS`_ using the `Tractor`_. Each of the imaging
+datasets is first reduced through its native pipeline (currently the `NOAO Community Pipeline`_
+for all of the Legacy Surveys) before being processed using the `Tractor`_.
+??ADM is it true that BASS is being processed through the CP? 
 
 Images from DECaLS :math:`g,r,z`-band observations 
 are included from August 2014 through ?? 20??. Images from BASS are included from
@@ -82,7 +91,8 @@ For all of the Legacy Surveys, the co-added images and Tractor catalogs are
 presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
-projection around the brick center, with size 3600 |times| 3600 pixels at a scale of
+projection around the brick center, with size 3600 |times| 3600 pixels at a scale of 
+ADM?? should be different sampling for each survey?
 0.262 arcseconds per pixel.  The projections for the :math:`g,r,z` filters are identical.  
 There are 662174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . As 3600\ :sup:`2` |times| 0.262\ :sup:`2` arcsec\ :sup:`2` is
@@ -92,7 +102,7 @@ used with caution, as noted below in the *Image Stacks* section.
 Obtaining Images and Raw Data
 ==============================
 
-Images, for all 3 of the Legacy Surveys (??ADM is all 3 True??) can be viewed 
+Images, for all 3 of the Legacy Surveys (??ADM is "all 3" True??) can be viewed 
 directly using `the Sky viewer`_
 and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
@@ -117,14 +127,16 @@ Pixscale=0.262 will return (approximately) the native DECam pixels.
 Source Detection
 ================
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The source detection uses a PSF- and SED-matched-filter detection on
-the DECam stacked images, with a 6\ |sigma| detection limit.
+the stacked images, with a 6\ |sigma| detection limit.
 The Tractor fitting
 step is initialized with these positions, although
 those positions can be changed during the fits and
 low-S/N sources can be removed.
 
-For source detection, each DECam image is convolved by its PSF model,
+For source detection, each image is convolved by its PSF model,
 then a weighted stack
 of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
@@ -135,6 +147,8 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The Tractor makes use of the PSF on each individual exposure. The PSF for 
 the individual exposures are first computed independently for each CCD
 using PSFEx, generating spatially-varying pixelized models.
@@ -142,9 +156,11 @@ using PSFEx, generating spatially-varying pixelized models.
 Sky Level
 =========
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single scaled fringe pattern.  These steps are described here:
-http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+and a single scaled fringe pattern.  These steps are described on the `NOAO Community Pipeline`_
+page.
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
 
@@ -156,6 +172,8 @@ removed.
 Tractor Catalogs
 ================
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The Tractor code runs within the geometrical region
 of a brick.  This fitting is performed on the individual exposures
 that overlap the brick, without making use of the image stacks.
@@ -166,28 +184,30 @@ and fits to data points without the complication of pixel covariances.
 Morphological Classification
 ============================
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
-Only the source properties were allowed to float in DR3.
+Only the source properties were allowed to float in DR4 (??ADM is this still true).
 These are continuous properties for the object centers, fluxes,
 and the shape parameters.  There is also the discrete choice of which
-model type to use.  In DR3, five morphological types are used: point sources,
+model type to use. In DR4, five morphological types are used: point sources (??ADM is this still true),
 "simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
 and round profile),
 deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The total numbers of the different morphological types in DR3 are:
+The total numbers of the different morphological types in DR4 are:
 
 ================= ==================
 Number of Sources Type
 ================= ==================
-   478,918,959    Objects in a Primary brick
-   271,437,526    PSF
-   121,505,252    SIMP
-    63,568,420    EXP
-    20,141,591    DEV
-     2,266,170    COMP
+    ??, ??, ??    Objects in a Primary brick
+    ??, ??, ??    PSF
+    ??, ??, ??    SIMP
+    ??, ??, ??    EXP
+    ??, ??, ??    DEV
+    ??, ??, ??    COMP
 ================= ==================
 
 The decision to retain an object in the catalog and to re-classify it using
@@ -199,7 +219,7 @@ every source and the better of these two is used when deciding whether to keep
 the source.  A source is retained if its penalized |chi|\ |sup2| is improved by 25;
 this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
-The source is classified as the better of point source or simple galaxy
+The source is classified as the better of "point source (PSF)" or "simple galaxy (SIMP)"
 unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
 it as a deVaucouleurs or exponential profile.
@@ -220,15 +240,14 @@ Tractor Implementation Details
 
 Tractor fundamentally treats the fitting as a |chi|\ |sup2| minimization
 problem.  The current core routine uses the sparse least squares
-solver from the scipy (scientific python) package, or the open source
-Ceres solver (http://ceres-solver.org), originally developed by
-Google.
+solver from the `SciPy`_ package, or the open source
+`Ceres solver`_, originally developed by Google.
 
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
 under *Morphological Classification*) are approximated
-with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563)
+with `mixture-of-gaussian`_ (MoG) models
 and are convolved by the pixelized PSF models using a new Fourier-space
-method (Lang, in prep).
+method (Lang, in prep ??ADM is this still in prep).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
 The PSF models are treated as pixel-convolved quantities,
@@ -248,7 +267,7 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for DR3 is on the AB natural system of the DECam instrument.
+The flux calibration for DR4 is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
@@ -256,6 +275,7 @@ would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
+??ADM need more input on whether this has been done the same way for BASS/MzLS
 Zero point magnitudes for the CP version 2 reductions of the DECam images
 were computed by comparing 7\ |Prime| diameter aperture photometry to PS1
 photometry, where the latter was modified with color terms
@@ -278,9 +298,8 @@ expect many such cases for the faintest objects.
 
 The DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
-We have converted these to an AB system using the recommended conversions by
-the WISE team documented here
-http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab. Namely,
+We have converted these to an AB system using the `recommended conversions by
+the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
@@ -291,14 +310,18 @@ Tractor catalog headers ("WISEAB1", etc).
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for ugrizY, and are applied
-to the SFD98 E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only have small changes, with the largest effect in g-band where the coefficient would be 3.219
+??ADM what about MzLS and BASS?
+
+Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
+Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
+to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
+only have small changes, with the largest effect in :math:`g`-band where the coefficient would be 3.219
 at airmass=1 and 3.202 at airmass=2.
 
 Astrometry
 ==========
+
+??ADM now GAIA
 
 The astrometry is currently tied to star positions in Pan-STARRS-1,
 so the epoch is implicitly at the time of observation for Pan-STARRS-1.
@@ -313,6 +336,8 @@ DECam epoch of observation.
 Image Stacks
 ============
 
+??ADM same pixel scale for MzLS/BASS
+
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
@@ -323,19 +348,25 @@ interpolation.  Stacks should not be used for precision work.
 Depths
 ======
 
-As of DR2, the median 5\ |sigma| point source depths for areas with 3 observations was g=24.65, r=23.61, z=22.84. DR3 should reach similar depths.
-This is based upon the formal errors in the Tractor catalogs for point sources; those errors need further confirmation.
-This can be compared to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of g=24.7, r=23.9, z=23.0.
+As of DR2, the median 5\ |sigma| point source (AB) depths for areas with 3 observations 
+in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. DR4 should reach similar depths.
+This is based upon the formal errors in the Tractor catalogs for point sources; those 
+errors need further confirmation. This can be compared to the predicted proposed 
+depths for 2 observations at 1.5\ |Prime| seeing of g=24.7, r=23.9, z=23.0.
 
+For MzLS, the median 5\ |sigma| point source (AB) depth for areas with 3 observations is  
+:math:`z=23.04`. 90% of the individual CCDs are deeper than :math:`z=22.81`.
 
 Code Versions
 =============
+
+??ADM new code versions
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
 * NOAO Community Pipeline: mixture of versions; recorded as PLVER.
 * SourceExtractor 2.19.5, PSFEx 3.17.1
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
-* `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr3
+* `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr4
 
 Glossary
 ========

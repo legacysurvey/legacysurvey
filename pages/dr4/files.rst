@@ -13,18 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/
-
-Top level directory for web access to dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/3.1/
-
-.. _`known issues`: ../issues
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/
-
-Top level directory local to NERSC computers for dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/
 
 Summary Files
 =============
@@ -34,7 +26,7 @@ survey-bricks.fits.gz
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
-coverage in DR3.  For that information, see the next file description.
+coverage in DR4.  For that information, see the next file description.
 
 - HDU1 (only HDU) - tags in the ``survey-bricks.fits.gz`` file
 
@@ -55,11 +47,11 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-survey-bricks-dr3.fits.gz
+survey-bricks-dr4.fits.gz
 --------------------------
 
 A FITS binary table with information that summarizes the contents of each brick,
-as of DR3.
+as of DR4.
 
 =============== ======== =========================================================================
 Column          Type     Description
@@ -95,7 +87,7 @@ survey-ccds-decals.fits.gz
 
 A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every Legacy Survey image that is part of DR4. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -187,7 +179,7 @@ Includes everything listed in the survey-ccds-decals.fits.gz files plus the foll
 ==================== ======== ======================================================
 Column               Type      Description
 ==================== ======== ======================================================
-``photometric``      boolean  True if this CCD was considered photometric and used in the DR3 reductions
+``photometric``      boolean  True if this CCD was considered photometric and used in the DR4 reductions
 ``blacklist_ok``     boolean  We blacklisted certain programs (Proposal IDs) from other PIs where there were a large number of images covering a single patch of sky, because our pipeline code didn't handle the extreme depth very well.  True if this CCD was *not* blacklisted, ie, was used.
 ``good_region``      int[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
 ``ra0``              double   RA  coordinate of pixel (1,1)
@@ -247,7 +239,7 @@ ccds-annotated-extra.fits.gz
 
 As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on github.
 
-dr3-depth.fits.gz
+dr4-depth.fits.gz
 -----------------
 
 A concatenation of the depth histograms for each brick, from the
@@ -255,10 +247,10 @@ A concatenation of the depth histograms for each brick, from the
 number of pixels in each brick with a 5-sigma AB depth in the given
 magnitude bin.
 
-dr3-depth-summary.fits.gz
+dr4-depth-summary.fits.gz
 -------------------------
 
-A summary of the depth histogram of the whole DR3 survey.  FITS table with the following columns:
+A summary of the depth histogram of the whole DR4 survey.  FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -287,10 +279,10 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/external/
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
@@ -298,51 +290,51 @@ is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is s
 
 .. _`catalogs page`: ../catalogs
 
-survey-dr3-specObj-dr13.fits
+survey-dr4-specObj-dr13.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
-survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
+survey-dr4-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
 specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 .. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr3-DR12Q.fits
+survey-dr4-DR12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
 visually inspected quasar catalog (`Paris et al. 2016`_)
 such that the photometric parameters in row "N" of 
-survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr4-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr3-Superset_DR12Q.fits
+survey-dr4-Superset_DR12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
 (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
 such that the photometric parameters in row "N" of 
-survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr4-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr3-DR7Q.fits
+survey-dr4-DR7Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-survey-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr4-DR7Q.fits matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
@@ -555,7 +547,7 @@ project, as well as other DECam images.
 -----------------
 
 1. Query the `NOAO Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR3).
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR4).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
@@ -570,13 +562,13 @@ project, as well as other DECam images.
 --------------
 
 Following the organization of the Stacked images, Raw and Calibrated DECam images are organized 
-by survey brick, which are defined in the file *survey-bricks-dr3.fits.gz* for DR3. Both the main Tractor 
+by survey brick, which are defined in the file *survey-bricks-dr4.fits.gz* for DR4. Both the main Tractor 
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
 format ``<AAAa>c<BBB>)``. 
 
-- Raw: ftp://archive.noao.edu/public/hlsp/decals/dr3/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/decals/dr3/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/decals/dr3/coadd/``<AAA>/<brick>``
+- Raw: ftp://archive.noao.edu/public/hlsp/decals/dr4/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/decals/dr4/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/decals/dr4/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 

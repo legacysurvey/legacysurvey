@@ -43,9 +43,7 @@ Contents of DR4
 Data Release 4 (DR4) is the fourth public data release of images and catalogs for
 `DECaLS`_ and the first release of the Legacy Surveys to contain data from `BASS`_ and `MzLS`_
 reduced in a manner consistent with `DECaLS`_ using the `Tractor`_. Each of the imaging
-datasets is first reduced through its native pipeline (currently the `NOAO Community Pipeline`_
-for all of the Legacy Surveys) before being processed using the `Tractor`_.
-??ADM is it true that BASS is being processed through the CP? 
+datasets is first reduced through the `NOAO Community Pipeline`_ before being processed using the `Tractor`_.
 
 Images from DECaLS :math:`g,r,z`-band observations 
 are included from August 2014 through ?? 20??. Images from BASS are included from

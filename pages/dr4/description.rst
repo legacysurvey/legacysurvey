@@ -53,9 +53,9 @@ prior to June 6, 2016. For the latest `DECaLS`_ images, see
 The `BASS`_ and `MzLS`_ data in DR4 are reduced in a manner that is largely
 consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases. 
 
-In total, the BASS imaging included in DR4 covers 
+In total, the `BASS`_ imaging included in DR4 covers 
 about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| and ??00 deg\ |sup2|
-in :math:`r`-band. The MzLS imaging covers about 3000 deg\ |sup2| in :math:`z`-band.
+in :math:`r`-band. The `MzLS`_ imaging covers about 3000 deg\ |sup2| in :math:`z`-band.
 Across all of the Legacy Surveys, there are approximately ?? million unique sources in DR4 
 spread over ??,?? bricks.
 
@@ -84,12 +84,11 @@ Size    Directory    Description
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/tractor/
 
-For all of the Legacy Surveys, the co-added images and Tractor catalogs are 
+For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, the co-added images and Tractor catalogs are 
 presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
 projection around the brick center, with size 3600 |times| 3600 pixels at a scale of 
-ADM?? should be different sampling for each survey?
 0.262 arcseconds per pixel.  The projections for the :math:`g,r,z` filters are identical.  
 There are 662174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . As 3600\ :sup:`2` |times| 0.262\ :sup:`2` arcsec\ :sup:`2` is

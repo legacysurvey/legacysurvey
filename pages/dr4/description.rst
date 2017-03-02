@@ -167,8 +167,6 @@ removed.
 Tractor Catalogs
 ================
 
-??ADM is this the same for all of the Legacy Surveys?
-
 The Tractor code runs within the geometrical region
 of a brick.  This fitting is performed on the individual exposures
 that overlap the brick, without making use of the image stacks.

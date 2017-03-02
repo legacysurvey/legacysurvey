@@ -84,7 +84,7 @@ Size    Directory    Description
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/tractor/
 
-For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, the co-added images and Tractor catalogs are 
+For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, the co-added images and the `Tractor`_ catalogs are 
 presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
@@ -112,8 +112,8 @@ FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=m
 
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native pixels used by Tractor.
-For information on how to recover DECaLS cutouts, see the `DR3 description`_ page.
+Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
+For information on how to recover `DECaLS_` cutouts, see the `DR3 description`_ page.
 
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
@@ -123,13 +123,10 @@ For information on how to recover DECaLS cutouts, see the `DR3 description`_ pag
 Source Detection
 ================
 
-??ADM is this the same for all of the Legacy Surveys?
-
 The source detection uses a PSF- and SED-matched-filter detection on
 the stacked images, with a 6\ |sigma| detection limit.
-The Tractor fitting
-step is initialized with these positions, although
-those positions can be changed during the fits and
+The `Tractor`_ fitting step is initialized with these positions, although
+these positions can be changed during the fits and
 low-S/N sources can be removed.
 
 For source detection, each image is convolved by its PSF model,
@@ -143,11 +140,11 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
-??ADM is this the same for all of the Legacy Surveys?
-
 The Tractor makes use of the PSF on each individual exposure. The PSF for 
 the individual exposures are first computed independently for each CCD
-using PSFEx, generating spatially-varying pixelized models.
+using PSFEx_, generating spatially-varying pixelized models.
+
+.. _`PSFEx`: http://www.astromatic.net/software/psfex
 
 Sky Level
 =========

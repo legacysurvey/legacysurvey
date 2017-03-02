@@ -36,28 +36,26 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`GAIA Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html 
+.. _`DR3`: ../../dr3
 
 Contents of DR4
 ===============
 
-Data Release 4 (DR4) is the fourth public data release of images and catalogs for
-`DECaLS`_ and the first release of the Legacy Surveys to contain data from `BASS`_ and `MzLS`_
-reduced in a manner consistent with `DECaLS`_ using the `Tractor`_. Each of the imaging
-datasets is first reduced through the `NOAO Community Pipeline`_ before being processed using the `Tractor`_.
+Data Release 4 (DR4) is the fourth public data release of the Legacy Surveys. It consists of the
+first release of data from `BASS`_ and `MzLS`_
+reduced using the `Tractor`_. Each of the imaging
+datasets is first reduced through the `NOAO Community Pipeline`_ before being processed 
+using the `Tractor`_.
 
-Images from DECaLS :math:`g,r,z`-band observations 
-are included from August 2014 through ?? 20??. Images from BASS are included from
-?? 20?? through ??? 20??. Images from MzLS are included from ??? 20?? through ??? 20??.
-DR4 also includes DECam data from a range of 
-non-DECaLS surveys, including observations that were conducted from September 2012 to ?? 20??.
+DR4 includes `BASS`_ images taken prior to July 13, 2016 and `MzLS`_ images taken
+prior to June 6, 2016. For the latest `DECaLS`_ images, see 
+`DR3`_ of the Legacy Surveys.
+The `BASS`_ and `MzLS`_ data in DR4 are reduced in a manner that is largely
+consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases. 
 
-In total, the DECaLS imaging included in this release covers a disjoint footprint
-with about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| in :math:`r`-band and ??00 deg\ |sup2|
-in :math:`z`-band, of which ??00 deg\ |sup2| has been observed in all
-three optical filters. The BASS imaging covers 
+In total, the BASS imaging included in DR4 covers 
 about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| and ??00 deg\ |sup2|
 in :math:`r`-band. The MzLS imaging covers about 3000 deg\ |sup2| in :math:`z`-band.
-
 Across all of the Legacy Surveys, there are approximately ?? million unique sources in DR4 
 spread over ??,?? bricks.
 

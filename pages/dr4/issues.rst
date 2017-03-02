@@ -6,65 +6,29 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 
 
-DR3.1 Update to sweeps and Tractor Files
-========================================
-Issue
-  During final processing checks on DR3 it was noticed that 36 bricks had been corrupted in a
-  read/write error. The corrupted files corresponding to these 36 bricks were::
+For issues relevant to `DECaLS`_ imaging, consult the `DR3 issues`_ page.
 
-    tractor-1763p240.fits tractor-1821p295.fits tractor-1888p270.fits tractor-1916p295.fits
-    tractor-1934p255.fits tractor-1942p130.fits tractor-1942p255.fits tractor-1942p320.fits
-    tractor-1951p237.fits tractor-1896p300.fits tractor-1985p267.fits tractor-1986p237.fits
-    tractor-1986p272.fits tractor-1965p300.fits tractor-2030p270.fits tractor-2040p287.fits 
-    tractor-2049p237.fits tractor-2054p187.fits tractor-2063p300.fits tractor-2087p305.fits
-    tractor-2087p272.fits tractor-2109p317.fits tractor-2115p317.fits tractor-2116p302.fits
-    tractor-2117p307.fits tractor-2176p097.fits tractor-2204p252.fits tractor-2224p285.fits
-    tractor-2254p290.fits tractor-2261p257.fits tractor-2290p292.fits tractor-2295p320.fits
-    tractor-2310p320.fits tractor-2318p302.fits tractor-2334p200.fits tractor-2496p257.fits
+.. _`DR3 issues`: ../../dr3/issues
+.. _`DECaLS`: ../../decamls
 
-Workaround
-  These files have been reprocessed and are included in a "DR3.1" directory structure,
-  which is now the default to which DR3 directories point. The one exception to the overall
-  directory structure is the sweeps files, for which the uncorrupted versions are available at
-  legacysurvey/dr3/sweep/3.1 (instead of at legacysurvey/dr3/sweep/3.0). Note that users who
-  want access to the original version of the legacysurvey directory structure can still 
-  find it at legacysurvey/dr3.0.
-
-Tractor-on-Bricks
-==================
-
-Issue
-  Tractor-on-Bricks is a slightly different implementation of the Tractor source extraction code in
-  which a fraction of bricks that don't touch are run through Tractor, and then sources that 
-  are BRICK_PRIMARY are fixed so that additional bricks run through Tractor don't produce
-  duplicate "edge" sources where bricks overlap. This has the advantage of producing rigorous
-  brick boundaries, but the disadvantage of slowing down processing through being harder to
-  parallelize. In DR3, tractor-on-bricks was enforced until June 6, 2016.
-
-Workaround
-  Bricks with timestamps before June 6, 2016 were processed slightly differently to subsequent bricks.
-  All of these "pre-6/6/16" bricks are within a region bounded by Right Ascensions of 315\ |deg| 
-  to 45\ |deg| and Declinations of -5\ |deg| to +7\ |deg| (a region in which the eBOSS survey is targeting
-  Emission Line Galaxies). Not every brick in that region was run with Tractor-on-Bricks but
-  no brick outside of that region was run with Tractor-on-Bricks.
 
 Blacklisted Frames
 ==================
 
 Issue
-  We attempt to process all available DECam imaging, regardless of whether such
-  data was specifically taken as part of the legacy survey. Some imaging surveys revisit
-  certain areas of the sky many times, and processing the coaddition of such data can severely
-  slow down the Tractor pipeline. Because of this, some proposal IDs are "blacklisted" to
-  prevent Tractor from dwelling on those regions. The upshot of this is that if you're looking
-  for coadded DECam imaging from a specific set of surveys in a certain region of the sky, it may not be
-  available to the full depth that you expect.
+  We attempt to process all available `BASS`_ and `MzLS`_ imaging, regardless of whether such
+  data was specifically taken as part of the Legacy Surveys. Some imaging is conducted
+  during multiple revisits to certain areas of the sky, and processing the coaddition of such data can severely
+  slow down the Tractor pipeline. Because of this, some observations are "blacklisted" to
+  prevent Tractor from dwelling on those regions. 
 
 Workaround
   Which proposal IDs were considered in which brick can be obtained from the ccds files that
   are documented on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
+.. _`MzLS`: ../../mzls  
+.. _`BASS`: ../../bass
 
 NANs in Tractor Catalogs
 ========================

@@ -324,13 +324,11 @@ The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 Image Stacks
 ============
 
-??ADM same pixel scale for MzLS/BASS
-
 The image stacks are provided for convenience, but were not used in the Tractor fits.
 These images are oversized by approximately 260 pixels in each dimension.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
 and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
-interpolation.  Stacks should not be used for precision work.
+interpolation. These stacks should not be used for "precision" work.
 
 
 Depths

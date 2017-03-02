@@ -179,17 +179,14 @@ and fits to data points without the complication of pixel covariances.
 Morphological Classification
 ============================
 
-??ADM is this the same for all of the Legacy Surveys?
-
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
-Only the source properties were allowed to float in DR4 (??ADM is this still true).
+Only the source properties were allowed to float in DR4.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters.  There is also the discrete choice of which
-model type to use. In DR4, five morphological types are used: point sources (??ADM is this still true),
-"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
-and round profile),
-deVaucouleurs profiles
+and the shape parameters. There is also the discrete choice of which
+model type to use. In DR4, five morphological types are used: point sources,
+"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius 
+and round profile), deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR4 are:

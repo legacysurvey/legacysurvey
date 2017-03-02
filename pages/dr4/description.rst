@@ -101,24 +101,24 @@ used with caution, as noted below in the *Image Stacks* section.
 Obtaining Images and Raw Data
 ==============================
 
-Images, for all 3 of the Legacy Surveys (??ADM is "all 3" True??) can be viewed 
+Images, for all 3 of the Legacy Surveys can be viewed 
 directly using `the Sky viewer`_
 and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
-Sections of DECaLS can be obtained as JPEGs or FITS files using
+Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr4&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr4&pixscale=0.27&bands=grz
+FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native DECam pixels.
+Pixscale=0.262 will return (approximately) the native pixels used by Tractor.
+For information on how to recover DECaLS cutouts, see the `DR3 description`_ page.
 
-???ADM do we need to add anything about MzLS or BASS cutouts?
-
+.. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query

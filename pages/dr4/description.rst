@@ -113,7 +113,7 @@ FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=m
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
-For information on how to recover `DECaLS_` cutouts, see the `DR3 description`_ page.
+For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ page.
 
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files

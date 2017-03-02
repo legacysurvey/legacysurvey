@@ -140,6 +140,8 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
+??ADM is this the same for all of the Legacy Surveys?
+
 The Tractor makes use of the PSF on each individual exposure. The PSF for 
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.

@@ -239,7 +239,7 @@ The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
 under *Morphological Classification*) are approximated
 with `mixture-of-gaussian`_ (MoG) models
 and are convolved by the pixelized PSF models using a new Fourier-space
-method (Lang, in prep ??ADM is this still in prep).
+method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
 The PSF models are treated as pixel-convolved quantities,

@@ -10,7 +10,24 @@ For issues relevant to `DECaLS`_ imaging, consult the `DR3 issues`_ page.
 
 .. _`DR3 issues`: ../../dr3/issues
 .. _`DECaLS`: ../../decamls
+.. _`files`: ../files
 
+
+MzLS Repeat Observations
+========================
+
+Issue
+  Due to a bug in the `MzLS`_ scheduling code, approximately 3500 `MzLS`_ exposures were
+  unintentionally repeated between February 2nd, 2017 and March 27, 2017. Certain `MzLS`_
+  fields have therefore been covered more than the expected ~3-4 times. In fact, about 
+  100 fields were observed of order 10 times.
+  
+Workaround
+  There is no need to do anything to circumvent this issue. It is worth remembering
+  though, that in some fields `MzLS`_ observations are deeper than is typical (potentially 
+  much deeper). Objects in these fields will therefore have different noise characteristics
+  than in the typical field. For example the ``_NOBS`` and ``_DEPTH`` values in the sweeps
+  `files`_ can be quite different for objects in these "deep" fields.
 
 Blacklisted Frames
 ==================

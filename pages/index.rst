@@ -31,9 +31,9 @@
    *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
    ========================================== ===================================== ===========================================
 
-   .. _`BASS`: ../bass
-   .. _`DECaLS`: ../decamls
-   .. _`MzLS`: ../mzls
+   .. _`BASS`: ./bass
+   .. _`DECaLS`: ./decamls
+   .. _`MzLS`: ./mzls
 
 .. container:: col-md-6 col-right
 

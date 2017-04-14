@@ -58,11 +58,12 @@ Issue
   fraction of the NaNs (~1%) correspond to measurements with non-zero
   DECAM_NOBS. In these cases, the relevant band's flux is identically
   zero, suggesting that no such measurement was actually performed.
+  See https://github.com/legacysurvey/legacypipe/issues/140 for a
+  partial list of files that contain NaNs.
 
 Workaround
   We suggest that users simply ignore all measurements
   which correspond to NaN values of
   DECAM_RCHI2/DECAM_FRACFLUX/DECAM_FRACMASKED, although we have not
   determined whether there are unintended negative consequences of this
-  prescription. ~7% of all Tractor catalog rows contain a nonzero number
-  of NaNs. The root cause of these NaNs is being investigated.
+  prescription. The root cause of these NaNs is being investigated.

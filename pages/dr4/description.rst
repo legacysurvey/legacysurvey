@@ -300,13 +300,14 @@ Tractor catalog headers ("WISEAB1", etc).
 Galactic Extinction
 ===================
 
-??ADM what about MzLS and BASS?
+For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam filter system.
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
 Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
 to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
 only have small changes, with the largest effect in :math:`g`-band where the coefficient would be 3.219
 at airmass=1 and 3.202 at airmass=2.
+
 
 Astrometry
 ==========

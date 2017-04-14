@@ -147,15 +147,17 @@ with 1 representing a fully transparent region of the Milky Way and 0 representi
 The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
-by Schlafly & Finkbeiner 2011 (http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
+by Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
 extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
-Extinction coefficients for the DECam filters also use the Schlafly & Finkbeiner 2011 values,
+For DR4, we calculate Galactic extinction for BASS and MzLS as if they were on the DECam filter system.
+
+Extinction coefficients for the DECam filters use the Schlafly & Finkbeiner (2011) values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
 These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in Schlafly & Finkbeiner (http://arxiv.org/abs/1012.4804).)
+(These are slightly different than the ones in Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804).)
 
 The coefficients for the four WISE filters are derived from Fitzpatrick 1999, as recommended by Schafly & Finkbeiner,
 considered better than either the Cardelli et al 1989 curves or the newer Fitzpatrick & Massa 2009 NIR curve not vetted beyond 2 micron).

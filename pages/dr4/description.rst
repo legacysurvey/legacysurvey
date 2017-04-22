@@ -35,8 +35,9 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
 .. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-.. _`GAIA Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html 
+.. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html 
 .. _`DR3`: ../../dr3
+.. _`DR2`: ../../dr2
 
 Contents of DR4
 ===============
@@ -267,7 +268,7 @@ applied color terms to any of the photometry, but report fluxes as observed in t
 
 ??ADM need more input on whether this has been done the same way for BASS/MzLS
 Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to PS1
+were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
 photometry, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
@@ -312,12 +313,14 @@ at airmass=1 and 3.202 at airmass=2.
 Astrometry
 ==========
 
-??ADM I believe we shifted to GAIA for DR4, but is what is written OK
+As of DR4, astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to predicted Gaia positions at
+the epoch of the corresponding Legacy Survey observation. The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-As of DR4, astrometry uses the `GAIA Data Release 1`_ system.
-Positions of sources are tied to predicted GAIA positions at
-the epoch of the corresponding Legacy Survey observation.
-The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
+Astrometric calibration of MzLS data is conducted using Gaia astrometric positions of stars matched to Pan-STARRS-1 (PS1). 
+The same matched objects are used for both astrometric and photometric calibration. There are some areas of sky where Gaia 
+has "holes," i.e., where stars brighter than the Gaia magnitude limit are missing from the Gaia catalog. As a result, in 
+some regions of the survey there are fewer matches to a given bright magnitude limit in the PS1-Gaia catalog than there 
+are in the PS1 catalog that was used for astrometric calibration in, e.g., `DR3`_ of the Legacy Surveys.
 
 
 Image Stacks
@@ -333,11 +336,11 @@ interpolation. These stacks should not be used for "precision" work.
 Depths
 ======
 
-As of DR2, the median 5\ |sigma| point source (AB) depths for areas with 3 observations 
+As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for areas with 3 observations 
 in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. DR4 should reach similar depths.
 This is based upon the formal errors in the Tractor catalogs for point sources; those 
 errors need further confirmation. This can be compared to the predicted proposed 
-depths for 2 observations at 1.5\ |Prime| seeing of g=24.7, r=23.9, z=23.0.
+depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
 For MzLS, the median 5\ |sigma| point source (AB) depth for areas with 3 observations is  
 :math:`z=23.04`. 90% of the individual CCDs are deeper than :math:`z=22.81`.

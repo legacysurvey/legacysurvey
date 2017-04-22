@@ -51,19 +51,26 @@ NANs in Tractor Catalogs
 ========================
 
 Issue
-  Occasionally, measurements of an object in a particular band will have
-  NaNs in all of the following columns: DECAM_RCHI2, DECAM_FRACFLUX and
-  DECAM_FRACMASKED. No other columns ever have NaNs. The vast majority
-  of NaNs correspond to measurements which have DECAM_NOBS of 0. A small
-  fraction of the NaNs (~1%) correspond to measurements with non-zero
-  DECAM_NOBS. In these cases, the relevant band's flux is identically
-  zero, suggesting that no such measurement was actually performed.
-  See https://github.com/legacysurvey/legacypipe/issues/140 for a
-  partial list of files that contain NaNs.
+  Occasionally, some measurements of an object in a particular band will have
+  NaNs in some columns. In DR4, 7 Tractor catalogs are affected, and all of the 
+  NaNs are in the RCHI2 and DCHISQ columns:
+
+  ================================= =========== ==========
+  File                              DCHISQ NaNs RCHI2 NaNs
+  ================================= =========== ==========
+  tractor/234/tractor-2346p535.fits 8           6
+  tractor/254/tractor-2547p540.fits 2           2
+  tractor/281/tractor-2819p415.fits 8           6
+  tractor/179/tractor-1798p450.fits 28          0
+  tractor/131/tractor-1312p457.fits 4           5
+  tractor/248/tractor-2484p402.fits 8           5
+  tractor/207/tractor-2076p525.fits 12          17
+  ================================= =========== ==========
+
+  See also https://github.com/legacysurvey/legacypipe/issues/140.
 
 Workaround
   We suggest that users simply ignore all measurements
-  which correspond to NaN values of
-  DECAM_RCHI2/DECAM_FRACFLUX/DECAM_FRACMASKED, although we have not
+  which correspond to NaN values, although we have not
   determined whether there are unintended negative consequences of this
-  prescription. The root cause of these NaNs is being investigated.
+  prescription. Investigations of the root cause of these NaNs are ongoing.

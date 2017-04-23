@@ -11,7 +11,9 @@ For issues relevant to `DECaLS`_ imaging, consult the `DR3 issues`_ page.
 .. _`DR3 issues`: ../../dr3/issues
 .. _`DECaLS`: ../../decamls
 .. _`files`: ../files
-
+.. _`catalogs page`: ../catalogs
+.. _`MzLS`: ../../mzls  
+.. _`BASS`: ../../bass
 
 MzLS Repeat Observations
 ========================
@@ -28,24 +30,6 @@ Workaround
   much deeper). Objects in these fields will therefore have different noise characteristics
   than in the typical field. For example the ``_NOBS`` and ``_DEPTH`` values in the sweeps
   `files`_ can be quite different for objects in these "deep" fields.
-
-Blacklisted Frames
-==================
-
-Issue
-  We attempt to process all available `BASS`_ and `MzLS`_ imaging, regardless of whether such
-  data was specifically taken as part of the Legacy Surveys. Some imaging is conducted
-  during multiple revisits to certain areas of the sky, and processing the coaddition of such data can severely
-  slow down the Tractor pipeline. Because of this, some observations are "blacklisted" to
-  prevent Tractor from dwelling on those regions. 
-
-Workaround
-  Which proposal IDs were considered in which brick can be obtained from the ccds files that
-  are documented on the `catalogs page`_.
-
-.. _`catalogs page`: ../catalogs
-.. _`MzLS`: ../../mzls  
-.. _`BASS`: ../../bass
 
 NANs in Tractor Catalogs
 ========================

@@ -83,12 +83,13 @@ Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Communi
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
 
-survey-ccds-decals.fits.gz
---------------------------
+survey-ccds-dr4-90prime.fits.gz and survey-ccds-dr4-mzlsv2.fits.gz
+------------------------------------------------------------------
 
-A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
+FITS binary tables with almanac information (e.g. seeing, etc.) about each individual CCD image for
+`BASS`_ and `MzLS`_, respectively.
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every Legacy Survey image that is part of DR4. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
+These files contain information regarding the photometric and astrometric zero points for each CCD of every Legacy Survey image that is part of DR4. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in Pan-STARRS, as outlined further on the `description page`_.
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -98,6 +99,11 @@ and exposure time of 30 seconds, a source of magnitude 22.5 would
 contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
+
+.. _`BASS`: ../../bass  
+.. _`MzLS`: ../../mzls
+.. _`description page`: ../description
+
 
 ================== =========  ======================================================
 Column             Type       Description

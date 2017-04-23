@@ -13,7 +13,6 @@
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-
 The Legacy Surveys are producing an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (:math:`g,r,z`) and four infrared bands.  The sky coverage is approximately bounded by
@@ -54,11 +53,12 @@ prior to June 6, 2016. For the latest `DECaLS`_ images, see
 The `BASS`_ and `MzLS`_ data in DR4 are reduced in a manner that is largely
 consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases. 
 
-In total, the `BASS`_ imaging included in DR4 covers 
-about ??00 deg\ |sup2| in :math:`g`-band, ??00 deg\ |sup2| and ??00 deg\ |sup2|
-in :math:`r`-band. The `MzLS`_ imaging covers about 3000 deg\ |sup2| in :math:`z`-band.
-Across all of the Legacy Surveys, there are approximately ?? million unique sources in DR4 
-spread over ??,?? bricks.
+In total, the `BASS`_ imaging included in DR4 covers 58,341 bricks in either 
+:math:`g`-band or :math:`r`-band. The `MzLS`_ imaging in DR4 covers 57,943
+bricks in :math:`z`-band. Bricks average 0.0623 deg\ |sup2| in size. 
+Both `BASS`_ and `MzLS`_ therefore cover about 3600 deg\ |sup2| in
+unique area, although they do not necessarily cover the *same* area. There are 
+approximately ?? million unique sources in DR4.
 
 DR4 includes the stacked images and the Tractor-based catalogs.
 The size of the DR4 data distribution is:
@@ -85,15 +85,14 @@ Size    Directory    Description
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/tractor/
 
-For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, the co-added images and the `Tractor`_ catalogs are 
-presented in "bricks" of approximate
+For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, co-added images and 
+`Tractor`_ catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
-projection around the brick center, with size 3600 |times| 3600 pixels at a scale of 
-0.262 arcseconds per pixel.  The projections for the :math:`g,r,z` filters are identical.  
-There are 662174 bricks spread over the sky, meaning that each brick has an average
-area of 0.0623 deg\ :sup:`2`\ . As 3600\ :sup:`2` |times| 0.262\ :sup:`2` arcsec\ :sup:`2` is
-~0.0686 deg\ :sup:`2`\ , the brick images have some overlap. The co-added images should be
+projection around the brick center. The projections for the :math:`g,r,z` filters are identical.  
+There are 662,174 bricks spread over the sky, meaning that each brick has an average
+area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
+The co-added images should be
 used with caution, as noted below in the *Image Stacks* section.
 
 Obtaining Images and Raw Data
@@ -141,18 +140,22 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
-??ADM is this the same for all of the Legacy Surveys?
-
 The Tractor makes use of the PSF on each individual exposure. The PSF for 
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.
+The same pixelized PSF from PSFex is used for `BASS`_ and `MzLS`_ in order to
+match the PSF used to extract `DECaLS`_ sources for `DR3`_.
+
+For DECaLS and MzLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
+7\ |Prime| diameter aperture for normalization. For BASS we adopt a 31 x 31 pixel image size and
+a 0.470 pixel scale and use a 7\ |Prime| diameter aperture for normalization 
+The configuaration files for SExtractor and PSFex are available `on our github page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
+.. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config
 
 Sky Level
 =========
-
-??ADM is this the same for all of the Legacy Surveys?
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described on the `NOAO Community Pipeline`_
@@ -258,7 +261,8 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for DR4 is on the AB natural system of the DECam instrument.
+The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_ 
+and `Mosaic-3`_ cameras, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
@@ -266,37 +270,39 @@ would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
-??ADM need more input on whether this has been done the same way for BASS/MzLS
-Zero point magnitudes for the CP version 2 reductions of the DECam images
+Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
 were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
 photometry, where the latter was modified with color terms
-to place the PS1 photometry on the DECam system.  The same color terms
-are applied to all CCDs.
+to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
+The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
-The color terms to convert from PS1 to DECam were computed for stars
+The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and 
+`Mosaic-3`_ (for `MzLS`_)  were computed for stars
 in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
 .. math::
-                (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
-   g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.04709 (g-i) + 0.00084 (g-i)^2 - 0.00340 (g-i)^3 \\
-   r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} - 0.09939 (g-i) + 0.04509 (g-i)^2 - 0.01488 (g-i)^3 \\
-   z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} - 0.13404 (g-i) + 0.06591 (g-i)^2 - 0.01695 (g-i)^3 \\
+               (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
+   g_{\mathrm{BASS}} & = & g_{\mathrm{PS}} + 0.06630 (g-i) + 0.00958 (g-i)^2 - 0.00672 (g-i)^3 \\
+   r_{\mathrm{BASS}} & = & r_{\mathrm{PS}} - 0.04836 (g-i) + 0.01100 (g-i)^2 - 0.00563 (g-i)^3 \\
+   z_{\mathrm{MzLS}} & = & z_{\mathrm{PS}} - 0.12315 (g-i) + 0.04608 (g-i)^2 - 0.01164 (g-i)^3 \\
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
 
-The DECam and WISE fluxes are all within a few percent of being on an AB system.
+DR4 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by
 the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
-give units consistent with the Tractor catalogs.  These conversion factors are recorded in the
+give units consistent with the Tractor catalogs. These conversion factors are recorded in the
 Tractor catalog headers ("WISEAB1", etc).
 
+.. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
+.. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 
 Galactic Extinction
 ===================

@@ -33,7 +33,7 @@ MzLS
 The figure below depicts the status of `MzLS`_ as of the end of April 2017 (roughly the time 
 of Data Release 4) in Mollweide projection. Each panel depicts a different pass. 
 
-.. image:: /files/coverage_mollweide_mzls_2017apr.pdf
+.. image:: /files/coverage_mollweide_mzls_2017apr.png
 
 BASS
 ====
@@ -42,8 +42,8 @@ The figures below depict the status of `BASS`_ as of the end of April 2017 (roug
 of Data Release 4) in Mollweide projection. The first figure is for :math:`g` and the second
 figure is for :math:`r`. Each panel of each figure depicts a different pass. 
 
-.. image:: /files/coverage_mollweide_bass_g_apr2017.pdf
-.. image:: /files/coverage_mollweide_bass_r_apr2017.pdf
+.. image:: /files/coverage_mollweide_bass_g_apr2017.png
+.. image:: /files/coverage_mollweide_bass_r_apr2017.png
 
 DECaLS
 ======

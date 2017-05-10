@@ -15,9 +15,15 @@
 Legacy Survey observations began in August 2014. For each of the Legacy Surveys 
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
 will be observed in three "passes" in each of three filters (:math:`g`, :math:`r`, :math:`z`).
-"Pass 1" is observed in photometric, good-seeing conditions.
-"Pass 2" and "Pass 3" are observed in progressively worse conditions.
-This strategy will ensure a photometric solution across the full survey area.
+The passes are observed according to the following criteria:
+
+==== ==========
+Pass Conditions
+==== ==========
+1    Photometric and seeing < 1.3 arcsec 
+2    (Photometric and seeing < 2.0 arcsec) OR (seeing < 1.3 arcsec) OR (all Pass 1 tiles completed) 
+3    Unphotometric OR seeing > 1.3 arc sec 
+==== ==========
 
 `MzLS`_ and `BASS`_ mostly observe regions at Dec |geq| 32\ |deg| whereas `DECaLS`_ mostly
 observes regions at Dec |leq| 32\ |deg|. `MzLS`_ observes solely in :math:`z`, `BASS`_

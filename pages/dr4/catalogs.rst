@@ -17,86 +17,134 @@ FITS binary table containing Tractor photometry. Before using these catalogs, no
 `known issues`_ regarding their content and derivation.
 
 .. _`known issues`: ../issues
+.. _`RELEASE is documented here`: ../../release
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
+RELEASE			    int16	 		       Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 OBJID                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 BRICK_PRIMARY               boolean                            True if the object is within the brick boundary
-BLOB                        int32                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
-NINBLOB                     int16                              Number of sources in this BLOB (blend family); isolated objects have value 1.
-TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 RA                          float64      deg                   Right ascension at epoch J2000
-RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
+RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
-BX0                         float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
-BY0                         float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
-LEFT_BLOB                   boolean                            True if an object center has been optimized to be outside the fitting pixel area
-OUT_OF_BOUNDS               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
-CPU_SOURCE                  float32      seconds               CPU time used for fitting this source
-CPU_BLOB                    float32      seconds               CPU time used for fitting this blob of sources (all sources in this brick with the same blob number)
-BLOB_WIDTH                  int16                              size of this blob of pixels in brick coordinates, bounding box width
-BLOB_HEIGHT                 int16                              size of this blob of pixels in brick coordinates, bounding box height
-BLOB_NPIX                   int32                              size of this blob of pixels in brick coordinates, number of brick pixels
-BLOB_NIMAGES                int16                              number of images overlapping this blob
-BLOB_TOTALPIX               int32                              total number of pixels from all the images overlapping this blob
-DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
-DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
-DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
-DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fluxes on the co-added residual images
-DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
-DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
-DECAM_NOBS                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
-DECAM_RCHI2                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-DECAM_FRACFLUX              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-DECAM_FRACMASKED            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
-DECAM_FRACIN                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
-DECAM_ANYMASK               int16[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
-DECAM_ALLMASK               int16[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
-DECAM_PSFSIZE               float32[6]   arcsec                Weighted average PSF FWHM per band
-WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
-WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
-WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
-WISE_NOBS                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
-WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
-WISE_RCHI2                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-WISE_LC_FLUX                float32[5,2] nanomaggies           analog of WISE_FLUX, for each of up to five unWISE coadd epochs; W1 and W2 only
-WISE_LC_FLUX_IVAR           float32[5,2] 1/nanomaggies\ |sup2| analog of WISE_FLUX_IVAR, for each of up to five unWISE coadd epochs; W1 and W2 only
-WISE_LC_NOBS                int16[5,2]                         analog of WISE_NOBS, for each of up to five unWISE coadd epochs; W1 and W2 only
-WISE_LC_FRACFLUX            float32[5,2]                       analog of WISE_FRACFLUX, for each of up to five unWISE coadd epochs; W1 and W2 only
-WISE_LC_RCHI2               float32[5,2]                       analog of WISE_RCHI2, for each of up to five unWISE coadd epochs; W1 and W2 only
-WISE_LC_MJD                 float32[5,2]                       mean MJD in W1 and W2, for up to five unWISE coadd epochs; 0 means epoch unavailable
-FRACDEV                     float32                            Fraction of model in deVauc [0,1]
-FRACDEV_IVAR                float32                            Inverse variance of FRACDEV
-SHAPEEXP_R                  float32      arcsec                Half-light radius of exponential model (>0)
-SHAPEEXP_R_IVAR             float32      1/arcsec\ |sup2|      Inverse variance of R_EXP
-SHAPEEXP_E1                 float32                            Ellipticity component 1
-SHAPEEXP_E1_IVAR            float32                            Inverse variance of SHAPEEXP_E1
-SHAPEEXP_E2                 float32                            Ellipticity component 2
-SHAPEEXP_E2_IVAR            float32                            Inverse variance of SHAPEEXP_E2
-SHAPEDEV_R                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)
-SHAPEDEV_R_IVAR             float32      1/arcsec\ |sup2|      Inverse variance of R_DEV
-SHAPEDEV_E1                 float32                            Ellipticity component 1
-SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
-SHAPEDEV_E2                 float32                            Ellipticity component 2
-SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-DECAM_DEPTH                 float32[6]   1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
-DECAM_GALDEPTH              float32[6]   1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
+MJD_MIN			    float64	 days		       Minimum Modified Julian Date of observations used to construct the model of this object
+MJD_MAX			    float64	 days		       Maximum Modified Julian Date of observations used to construct the model of this object
+FLUX_G			    float32	 nanomaggies	       model flux in :math:`g`
+FLUX_R			    float32	 nanomaggies	       model flux in :math:`r`
+FLUX_Z			    float32	 nanomaggies	       model flux in :math:`z`
+FLUX_W1                     float32      nanomaggies           WISE model flux in :math:`W1`
+FLUX_W2                     float32      nanomaggies           WISE model flux in :math:`W2`
+FLUX_W3                     float32      nanomaggies           WISE model flux in :math:`W3`
+FLUX_W4                     float32      nanomaggies           WISE model flux in :math:`W4`
+FLUX_IVAR_G		    float32	 1/nanomaggies\ |sup2| Inverse variance of FLUX_G
+FLUX_IVAR_R		    float32	 1/nanomaggies\ |sup2| Inverse variance of FLUX_R
+FLUX_IVAR_Z		    float32	 1/nanomaggies\ |sup2| Inverse variance of FLUX_Z
+FLUX_IVAR_W1                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W1
+FLUX_IVAR_W2                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W2
+FLUX_IVAR_W3                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W3
+FLUX_IVAR_W4                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W4
+APFLUX_G		    float32[8]	 nanomaggies	       aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`g`
+APFLUX_R		    float32[8]	 nanomaggies	       aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`r`
+APFLUX_Z		    float32[8]	 nanomaggies	       aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`z`
+APFLUX_RESID_G              float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
+APFLUX_RESID_R              float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
+APFLUX_RESID_Z              float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
+APFLUX_IVAR_G               float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_G
+APFLUX_IVAR_R               float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_R
+APFLUX_IVAR_Z               float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_Z
+MW_TRANSMISSION_G	    float32                            Galactic transmission in :math:`g` filter in linear units [0,1]
+MW_TRANSMISSION_R	    float32                            Galactic transmission in :math:`r` filter in linear units [0,1]
+MW_TRANSMISSION_Z	    float32                            Galactic transmission in :math:`z` filter in linear units [0,1]
+MW_TRANSMISSION_W1	    float32                            Galactic transmission in :math:`W1` filter in linear units [0,1]
+MW_TRANSMISSION_W2	    float32                            Galactic transmission in :math:`W2` filter in linear units [0,1]
+MW_TRANSMISSION_W3	    float32                            Galactic transmission in :math:`W3` filter in linear units [0,1]
+MW_TRANSMISSION_W4	    float32                            Galactic transmission in :math:`W4` filter in linear units [0,1]
+NOBS_G                      int16                              Number of images that contribute to the central pixel in :math:`g`: filter for this object (not profile-weighted)
+NOBS_R                      int16                              Number of images that contribute to the central pixel in :math:`r`: filter for this object (not profile-weighted)
+NOBS_Z                      int16                              Number of images that contribute to the central pixel in :math:`z`: filter for this object (not profile-weighted)
+NOBS_W1                     int16                              Number of images that contribute to the central pixel in :math:`W1`: filter for this object (not profile-weighted)
+NOBS_W2                     int16                              Number of images that contribute to the central pixel in :math:`W2`: filter for this object (not profile-weighted)
+NOBS_W3                     int16                              Number of images that contribute to the central pixel in :math:`W3`: filter for this object (not profile-weighted)
+NOBS_W4                     int16                              Number of images that contribute to the central pixel in :math:`W4`: filter for this object (not profile-weighted)
+RCHI2_G                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`g`
+RCHI2_R                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`r`
+RCHI2_Z                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`z`
+RCHI2_W1                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W1`
+RCHI2_W2                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W2`
+RCHI2_W3                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W3`
+RCHI2_W4                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W4`
+FRACFLUX_G                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`g` (typically [0,1])
+FRACFLUX_R                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`r` (typically [0,1])
+FRACFLUX_Z                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`z` (typically [0,1])
+FRACFLUX_W1                 float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`W1` (typically [0,1])
+FRACFLUX_W2                 float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`W2` (typically [0,1])
+FRACFLUX_W3                 float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`W3` (typically [0,1])
+FRACFLUX_W4                 float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`W4` (typically [0,1])
+FRACMASKED_G                float32                            Profile-weighted fraction of pixels masked from all observations of this object in :math:`g`, strictly between [0,1]
+FRACMASKED_R                float32                            Profile-weighted fraction of pixels masked from all observations of this object in :math:`r`, strictly between [0,1]
+FRACMASKED_Z                float32                            Profile-weighted fraction of pixels masked from all observations of this object in :math:`z`, strictly between [0,1]
+FRACIN_G                    float32                            Fraction of a source's flux within the blob in :math:`g`, near unity for real sources
+FRACIN_R                    float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
+FRACIN_Z                    float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
+ANYMASK_G                   int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g`
+ANYMASK_R                   int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r`
+ANYMASK_Z                   int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z`
+ALLMASK_G                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` 
+ALLMASK_R                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` 
+ALLMASK_Z                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` 
+WISEMASK_W1		    uint8			       ?
+WISEMASK_W2		    uint8			       ?
+PSFSIZE_G                   float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
+PSFSIZE_R                   float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
+PSFSIZE_Z                   float32      arcsec                Weighted average PSF FWHM in the :math:`z` band
+PSFDEPTH_G                  float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{PSFDEPTH\_G}) - 9)` gives corresponding magnitude
+PSFDEPTH_R                  float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{PSFDEPTH\_R}) - 9)` gives corresponding magnitude
+PSFDEPTH_Z                  float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{PSFDEPTH\_Z}) - 9)` gives corresponding magnitude
+GALDEPTH_G                  float32      1/nanomaggies\ |sup2| As for PSFDEPTH_G but for a galaxy (0.45" exp, round) detection sensitivity
+GALDEPTH_R                  float32      1/nanomaggies\ |sup2| As for PSFDEPTH_R but for a galaxy (0.45" exp, round) detection sensitivity
+GALDEPTH_Z                  float32      1/nanomaggies\ |sup2| As for PSFDEPTH_Z but for a galaxy (0.45" exp, round) detection sensitivity
+WISE_COADD_ID		    char[8]	 		       unWISE coadd file name for the center of each object
+LC_FLUX_W1		    float32[7]	 nanomaggies           FLUX_W1 in each of up to five unWISE coadd epochs
+LC_FLUX_W2		    float32[7]	 nanomaggies           FLUX_W2 in each of up to five unWISE coadd epochs
+LC_FLUX_IVAR_W1		    float32[7]	 1/nanomaggies2	       Inverse variance of LC_FLUX_W1
+LC_FLUX_IVAR_W2		    float32[7]	 1/nanomaggies2	       Inverse variance of LC_FLUX_W2
+LC_NOBS_W1		    int16[7]			       NOBS_W1 in each of up to five unWISE coadd epochs
+LC_NOBS_W2		    int16[7]		               NOBS_W2 in each of up to five unWISE coadd epochs
+LC_FRACFLUX_W1		    float32[7]	                       FRACFLUX_W1 in each of up to five unWISE coadd epochs
+LC_FRACFLUX_W2		    float32[7]			       FRACFLUX_W2 in each of up to five unWISE coadd epochs
+LC_RCHI2_W1		    float32[7]			       RCHI2_W1 in each of up to five unWISE coadd epochs
+LC_RCHI2_W2		    float32[7]		      	       RCHI2_W2 in each of up to five unWISE coadd epochs
+LC_MJD_W1		    float32[7]			       MJD_W1 in each of up to five unWISE coadd epochs
+LC_MJD_W2		    float32[7]			       MJD_W2 in each of up to five unWISE coadd epochs
+FRACDEV			    float32			       Fraction of model in deVauc [0,1]
+FRACDEV_IVAR		    float32			       Inverse variance of FRACDEV
+SHAPEEXP_R		    float32	 arcsec  	       Half-light radius of exponential model (>0)
+SHAPEEXP_R_IVAR		    float32	 1/arcsec2	       Inverse variance of R_EXP
+SHAPEEXP_E1		    float32         		       Ellipticity component 1
+SHAPEEXP_E1_IVAR	    float32		   	       Inverse variance of SHAPEEXP_E1
+SHAPEEXP_E2		    float32		               Ellipticity component 2
+SHAPEEXP_E2_IVAR	    float32	       		       Inverse variance of SHAPEEXP_E2
+SHAPEDEV_R		    float32	 arcsec	               Half-light radius of deVaucouleurs model (>0)
+SHAPEDEV_R_IVAR		    float32	 1/arcsec	       Inverse variance of R_DEV
+SHAPEDEV_E1		    float32		               Ellipticity component 1
+SHAPEDEV_E1_IVAR	    float32	   		       Inverse variance of SHAPEDEV_E1
+SHAPEDEV_E2		    float32			       Ellipticity component 2
+SHAPEDEV_E2_IVAR	    float32			       Inverse variance of SHAPEDEV_E2
 =========================== ============ ===================== ===============================================
 
 Mask Values
 -----------
 
-The DECAM_ANYMASK and DECAM_ALLMASK bit masks are defined as follows
-from the CP Data Quality bits.
+The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
 
 === ===== =========================== ==================================================
 Bit Value Name                        Description
@@ -128,7 +176,7 @@ Note that the DCHISQ values are negated so that positive values indicate better 
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 
 
-The DECAM_RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
+The RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
 
 .. math::

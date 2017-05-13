@@ -83,7 +83,9 @@ Column          Type     Description
 ``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in r-band.
 ``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in z-band.
 ``ebv``         float32  Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick.
-``trans_g``     float32  Median Milky Way dust transparency in g-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_g``     float32  Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_r``     float32  Median Milky Way dust transparency in :math:`r`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_z``     float32  Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 =============== ======== =========================================================================
 
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.

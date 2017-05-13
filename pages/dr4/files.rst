@@ -47,7 +47,7 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-survey-bricks-dr4.fits.gz
+brick-summary-dr4.fits.gz
 --------------------------
 
 A FITS binary table with information that summarizes the contents of each brick,
@@ -83,8 +83,8 @@ Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Communi
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
 
-survey-ccds-dr4-90prime.fits.gz and survey-ccds-dr4-mzlsv2.fits.gz
-------------------------------------------------------------------
+survey-ccds-bass.fits.gz and survey-ccds-mzls.fits.gz
+------------------------------------------------------
 
 FITS binary tables with almanac information (e.g. seeing, etc.) about each individual CCD image for
 `BASS`_ and `MzLS`_, respectively.
@@ -103,7 +103,6 @@ counts.
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
 .. _`description page`: ../description
-
 
 ================== =========  ======================================================
 Column             Type       Description
@@ -164,24 +163,13 @@ Column             Type       Description
 
 .. _`detailed more here`: ../avsky
 
-survey-ccds-nondecals.fits.gz
------------------------------
+ccds-annotated-dr4-90prime.fits.gz and ccds-annotated-dr4-mzls.fits.gz
+----------------------------------------------------------------------
 
-As for survey-ccds-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
+Versions of the survey-ccds* files for `BASS`_ and `MzLS`_, respectively. These files contain additional information
+gathered during calibration pre-processing before running the Tractor reductions.
 
-survey-ccds-extra.fits.gz
------------------------------
-
-As for survey-ccds-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" files are currently split up simply to make them easier to store on `github`_.
-
-ccds-annotated-decals.fits.gz
------------------------------
-
-A version of the survey-ccds-decals.fits.gz file with additional information
-gathered during calibration pre-processing before running the Tractor
-reductions.
-
-Includes everything listed in the survey-ccds-decals.fits.gz files plus the following:
+Includes everything listed in the survey-ccds* files plus the following:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -235,16 +223,6 @@ Column               Type      Description
 ``gausspsfdepth``    float    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
 ``gaussgaldepth``    float    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
 ==================== ======== ======================================================
-
-ccds-annotated-nondecals.fits.gz
---------------------------------
-
-As for ccds-annotated-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
-
-ccds-annotated-extra.fits.gz
-----------------------------
-
-As for ccds-annotated-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" ccds files are currently split up simply to make them easier to store on `github`_.
 
 dr4-depth.fits.gz
 -----------------

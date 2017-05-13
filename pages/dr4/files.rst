@@ -47,8 +47,8 @@ Column          Type    Description
 =============== ======= ======================================================
 
 
-brick-summary-dr4.fits.gz
---------------------------
+brick-summary-dr4.fits
+----------------------
 
 A FITS binary table with information that summarizes the contents of each brick,
 as of DR4.
@@ -121,62 +121,78 @@ counts.
 .. _`MzLS`: ../../mzls
 .. _`description page`: ../description
 
-================== =========  ======================================================
-Column             Type       Description
-================== =========  ======================================================
-``object``         char[35]   Name listed in the object tag from the CCD header. For propid 2014B-0404, in most cases, this has the form: *DECaLS_<tile_number>_<filter>*, but this can differ for older and non-DECaLS data.
-``expnum``         int32      Unique DECam exposure number, eg 348224.
-``exptime``        float      Exposure time in seconds, eg 30.
-``filter``         char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`".
-``seeing``         float      Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
-``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
-``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
-``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
-``ha``             char[13]   Hour angle of the observation (HH:MM:SS)  
-``airmass``        float      Airmass, eg 1.35.
-``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
-``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
-``avsky``          float      Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
-``arawgain``       float      Average gain for this CCD, eg 4.34.
-``fwhm``           float      [use "seeing" instead]
-``crpix1``         float      Astrometric header value: X reference pixel.
-``crpix2``         float      Astrometric header value: Y reference pixel.
-``crval1``         double     Astrometric header value: RA of reference pixel.
-``crval2``         double     Astrometric header value: Dec of reference pixel.
-``cd1_1``          float      Astrometric header value: transformation matrix.
-``cd1_2``          float      Astrometric header value: transformation matrix.
-``cd2_1``          float      Astrometric header value: transformation matrix.
-``cd2_2``          float      Astrometric header value: transformation matrix.
-``ccdnum``         int16      CCD number (see DECam layout), eg 1.
-``ccdname``        char[3]    CCD name (see DECam layout), eg "N10", "S7".
-``ccdzpt``         float      Zeropoint for the CCD (AB mag).
-``ccdzpta``        float      Zeropoint for amp A (AB mag).
-``ccdzptb``        float      Zeropoint for amp B (AB mag).
-``ccdphoff``       float      (ignore)
-``ccdphrms``       float      Photometric rms for the CCD (in mag).
-``ccdskyrms``      float      Sky rms (in counts)
-``ccdskymag``      float      Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
-``ccdskycounts``   float      Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
-``ccdraoff``       float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec.
-``ccddecoff``      float      Median astrometric offset for the CCD <PS1-DECaLS> in arcsec
-``ccdtransp``      float      (ignore)
-``ccdnstar``       int16      Number of stars found on the CCD.
-``ccdnmatch``      int16      Number of stars matched to PS1 (and used to compute the photometric zero points and astrometric offsets).
-``ccdnmatcha``     int16      Number of stars in amp A matched.
-``ccdnmatchb``     int16      Number of stars in amp B matched.
-``ccdmdncol``      float      Median (g-i) color from the PS1 catalog of the matched stars.
-``temp``           float      Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header.
-``camera``         char[5]    The camera that took this image; "decam".
-``expid``          char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
-``image_hdu``      int16      FITS HDU number in the ``image_filename`` file where this image can be found.
-``image_filename`` char[61]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz".
-``width``          int16      Width in pixels of this image, eg 2046.
-``height``         int16      Height in pixels of this image, eg 4096.
-``ra_bore``        double     Telescope boresight RA  of this exposure (deg).
-``dec_bore``       double     Telescope boresight Dec of this exposure (deg).
-``ra``             double     Approximate RA  center of this CCD (deg).
-``dec``            double     Approximate Dec center of this CCD (deg).
-================== =========  ======================================================
+extname telfocus (only in bass)   third_pix (only in mzls)
+
+==================== ========= =======================================================
+Column               Type      Description
+==================== ========= =======================================================
+``object``           char[24]  Name listed in the object tag from the CCD header
+``expnum``           int32     Exposure number, eg 348224
+``exptime``          float32   Exposure time in seconds, eg 30
+``filter``           char[1]   Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
+``seeing``           float32   Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019
+``date_obs``         char[10]  Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead
+``mjd_obs``          float64   Date of observation in MJD (in UTC system), eg 56884.99373389
+``ut``               char[8]   Time of observation start, eg "23:50:58.608241"
+``ha``               char[12]  Hour angle of the observation (HH:MM:SS)  
+``airmass``          float32   Airmass, eg 1.35
+``propid``           char[10]  NOAO Proposal ID that took this image, eg "2014B-0404"
+``zpt``              float32   Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
+``avsky``            float32   Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
+``arawgain``         float32   Average gain for this CCD, eg 4.34
+``fwhm``             float32   (use "seeing" instead)
+``crpix1``           float32   Astrometric header value: X reference pixel
+``crpix2``           float32   Astrometric header value: Y reference pixel
+``crval1``           float64   Astrometric header value: RA of reference pixel
+``crval2``           float64   Astrometric header value: Dec of reference pixel
+``cd1_1``            float32   Astrometric header value: transformation matrix
+``cd1_2``            float32   Astrometric header value: transformation matrix
+``cd2_1``            float32   Astrometric header value: transformation matrix
+``cd2_2``            float32   Astrometric header value: transformation matrix
+``ccdnum``           int16     CCD number (see Legacy Survey camera layout), eg 1
+``ccdname``          char[4]   CCD name (see Legacy Survey camera layout), eg "N10", "S7"
+``ccdzpt``           float32   Zeropoint for the CCD (AB mag)
+``ccdzpta``          float32   Zeropoint for amp A (AB mag)
+``ccdzptb``          float32   Zeropoint for amp B (AB mag)
+``ccdzptc``          float32   Zeropoint for amp C (AB mag)
+``ccdzptd``          float32   Zeropoint for amp D (AB mag)
+``ccdphoff``         float32   (ignore)
+``ccdphrms``         float32   Photometric rms for the CCD (in mag)
+``ccdskyrms``        float32   Sky rms (in counts)
+``ccdskymag``        float32   Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
+``ccdskycounts``     float32   Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdraoff``         float32   Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
+``ccddecoff``        float32   Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
+``ccdrarms``	     float32   rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec   
+``ccddecrms``	     float32   rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
+``ccdtransp``        float32   (ignore)
+``ccdnstar``         int16     Number of stars found on the CCD
+``ccdnmatch``        int16     Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
+``ccdnmatcha``       int16     Number of stars in amp A matched
+``ccdnmatchb``       int16     Number of stars in amp B matched
+``ccdnmatchc``       int16     Number of stars in amp C matched
+``ccdnmatchd``       int16     Number of stars in amp D matched
+``ccdmdncol``        float32   Median (g-i) color from the PS1 catalog of the matched stars
+``psfab``	     float32   (ignore)
+``psfpa``	     float32   (ignore)
+``temp``             float32   Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
+``badimg``	     int16     (ignore)
+``camera``           char[6]   The camera that took this image
+``expid``            char[13]  Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
+``image_hdu``        int16     FITS HDU number in the ``image_filename`` file where this image can be found
+``image_filename``   char[35]  Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
+``width``            int16     Width in pixels of this image, eg 2046
+``height``           int16     Height in pixels of this image, eg 4096
+``ra_bore``          float64   Telescope boresight RA  of this exposure (deg)
+``dec_bore``         float64   Telescope boresight Dec of this exposure (deg)
+``ra``               float64   Approximate RA center of this CCD (deg)
+``dec``              float64   Approximate Dec center of this CCD (deg)
+``photometric``      boolean   (ignore) 
+``bad_expid``        boolean   (ignore)
+``ccd_hdu_mismatch`` boolean   (ignore)   
+``zpts_bad_astrom``  boolean   (ignore)
+``third_pix``        boolean   (ignore) **only in survey-ccds-mzls.fits.gz file**
+==================== ========= =======================================================
 
 .. _`detailed more here`: ../avsky
 

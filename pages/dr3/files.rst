@@ -67,9 +67,9 @@ Column          Type     Description
 ``brickname``   char[8]  Name of the brick.
 ``ra``          double   RA of the center of the brick.
 ``dec``         double   Dec of the center of the brick.
-``nexp_g``      int16    Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band.
-``nexp_r``      int16    Median number of exposures in the unique area of the brick in r-band.
-``nexp_z``      int16    Median number of exposures in the unique area of the brick in z-band.
+``nexp_g``      int16    Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in :math:`g`-band.
+``nexp_r``      int16    Median number of exposures in the unique area of the brick in :math:`r`-band.
+``nexp_z``      int16    Median number of exposures in the unique area of the brick in :math:`z`-band.
 ``nexphist_g``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g
 ``nexphist_r``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r
 ``nexphist_z``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z

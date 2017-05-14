@@ -251,7 +251,7 @@ Column               Type       Description
 ``humidity``         float32    Percent humidity outside
 ``outtemp``          float32    Outside temperate (deg C).
 ``tileid``           int32      tile number, 0 for data from programs other than MzLS or DECaLS
-``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an MzLS or DECaLS observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_ 
+``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an MzLS or DECaLS observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
 ``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than BASS, MzLS or DECaLS
 ``plver``            char[6]    Community Pipeline (CP) PLVER version string
 ``ebv``              float32    SFD E(B-V) extinction for CCD center

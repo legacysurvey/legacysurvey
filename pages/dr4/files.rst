@@ -156,7 +156,7 @@ Column               Type       Description
 ``ccdzptb``          float32    Zeropoint for amp B (AB mag)
 ``ccdzptc``          float32    Zeropoint for amp C (AB mag)
 ``ccdzptd``          float32    Zeropoint for amp D (AB mag)
-``ccdphoff``         float32    (ignore)
+``ccdphoff``         float32    (ignore; depends on the nominal zeropoint, measured at the start of each survey rather than now)
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag)
 ``ccdskyrms``        float32    Sky rms (in counts)
 ``ccdskymag``        float32    Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
@@ -165,7 +165,7 @@ Column               Type       Description
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccdrarms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec   
 ``ccddecrms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdtransp``        float32    (ignore)
+``ccdtransp``        float32    (ignore; depends on the nominal zeropoint, measured at the the start of survey rather than now)
 ``ccdnstar``         int16      Number of stars found on the CCD
 ``ccdnmatch``        int16      Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
 ``ccdnmatcha``       int16      Number of stars in amp A matched
@@ -178,7 +178,7 @@ Column               Type       Description
 ``temp``             float32    Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
 ``telfocus``	     float32[3] (ignore) **only in the survey-ccds-bass.fits.gz file**
 ``badimg``	     int16      (ignore)
-``extname``	     char[4]    (ignore) **only in the survey-ccds-bass.fits.gz file**
+``extname``	     char[4]    (ignore; a unique number assigned to a CCD to run legacypipe/tractor code) **only in the survey-ccds-bass.fits.gz file**
 ``camera``           char       The camera that took this image
 ``expid``            char       Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found

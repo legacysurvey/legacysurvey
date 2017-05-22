@@ -101,8 +101,8 @@ ANYMASK_Z                   int16                              Bitwise mask set 
 ALLMASK_G                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` 
 ALLMASK_R                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` 
 ALLMASK_Z                   int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` 
-WISEMASK_W1		    uint8			       W1 bright star bitmask, :math:`2^0` :math:`(2^1)` for northward (southward) scans
-WISEMASK_W2		    uint8			       W2 bright star bitmask, :math:`2^0` :math:`(2^1)` for northward (southward) scans
+WISEMASK_W1		    uint8			       W1 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
+WISEMASK_W2		    uint8			       W2 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
 PSFSIZE_G                   float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 PSFSIZE_R                   float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 PSFSIZE_Z                   float32      arcsec                Weighted average PSF FWHM in the :math:`z` band

@@ -121,8 +121,8 @@ LC_NOBS_W1		    int16[7]			       NOBS_W1 in each of up to seven unWISE coadd ep
 LC_NOBS_W2		    int16[7]		               NOBS_W2 in each of up to seven unWISE coadd epochs
 LC_FRACFLUX_W1		    float32[7]	                       FRACFLUX_W1 in each of up to seven unWISE coadd epochs
 LC_FRACFLUX_W2		    float32[7]			       FRACFLUX_W2 in each of up to seven unWISE coadd epochs
-LC_RCHI2_W1		    float32[7]			       RCHI2_W1 in each of up to seven unWISE coadd epochs
-LC_RCHI2_W2		    float32[7]		      	       RCHI2_W2 in each of up to seven unWISE coadd epochs
+LC_RCHISQ_W1		    float32[7]			       RCHISQ_W1 in each of up to seven unWISE coadd epochs
+LC_RCHISQ_W2		    float32[7]		      	       RCHISQ_W2 in each of up to seven unWISE coadd epochs
 LC_MJD_W1		    float32[7]			       MJD_W1 in each of up to seven unWISE coadd epochs
 LC_MJD_W2		    float32[7]			       MJD_W2 in each of up to seven unWISE coadd epochs
 FRACDEV			    float32			       Fraction of model in deVauc [0,1]
@@ -176,7 +176,7 @@ Note that the DCHISQ values are negated so that positive values indicate better 
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 
 
-The RCHI2 values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
+The RCHISQ values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
 
 .. math::

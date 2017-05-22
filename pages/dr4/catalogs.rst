@@ -75,13 +75,13 @@ NOBS_W1                     int16                              Number of images 
 NOBS_W2                     int16                              Number of images that contribute to the central pixel in :math:`W2`: filter for this object (not profile-weighted)
 NOBS_W3                     int16                              Number of images that contribute to the central pixel in :math:`W3`: filter for this object (not profile-weighted)
 NOBS_W4                     int16                              Number of images that contribute to the central pixel in :math:`W4`: filter for this object (not profile-weighted)
-RCHI2_G                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`g`
-RCHI2_R                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`r`
-RCHI2_Z                     float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`z`
-RCHI2_W1                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W1`
-RCHI2_W2                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W2`
-RCHI2_W3                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W3`
-RCHI2_W4                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W4`
+RCHISQ_G                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`g`
+RCHISQ_R                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`r`
+RCHISQ_Z                    float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`z`
+RCHISQ_W1                   float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W1`
+RCHISQ_W2                   float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W2`
+RCHISQ_W3                   float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W3`
+RCHISQ_W4                   float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`W4`
 FRACFLUX_G                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`g` (typically [0,1])
 FRACFLUX_R                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`r` (typically [0,1])
 FRACFLUX_Z                  float32                            Profile-weighted fraction of the flux from other sources divided by the total flux in :math:`z` (typically [0,1])

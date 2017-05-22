@@ -405,17 +405,60 @@ Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T``
 =============================== ============ ===================== ===============================================
 Name                            Type         Units                 Description
 =============================== ============ ===================== ===============================================
+``RELEASE``                     int16                              Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 ``BRICKID``                     int32                              Brick ID [1,662174]
 ``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 ``RA``                          float64      deg                   Right ascension at epoch J2000
-``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 ``DEC``                         float64      deg                   Declination at epoch J2000
+``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
-``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in :math:`ugrizY`
-``DECAM_FLUX_IVAR``             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
-``DECAM_MW_TRANSMISSION``       float32[6]                         Galactic transmission in :math:`ugrizY` filters in linear units [0,1]
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+``FLUX_U``                      float32      nanomaggies           model flux in :math:`u`
+``FLUX_G``                      float32      nanomaggies           model flux in :math:`g`
+``FLUX_R``                      float32      nanomaggies           model flux in :math:`r`
+``FLUX_I``                      float32      nanomaggies           model flux in :math:`i`
+``FLUX_Z``                      float32      nanomaggies           model flux in :math:`z`
+``FLUX_Y``                      float32      nanomaggies           model flux in :math:`Y`
+``FLUX_W1``                     float32      nanomaggies           WISE model flux in :math:`W1`
+``FLUX_W2``                     float32      nanomaggies           WISE model flux in :math:`W2`
+``FLUX_W3``                     float32      nanomaggies           WISE model flux in :math:`W3`
+``FLUX_W4``                     float32      nanomaggies           WISE model flux in :math:`W4`
+``FLUX_IVAR_U``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_U
+``FLUX_IVAR_G``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_G
+``FLUX_IVAR_R``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_R
+``FLUX_IVAR_I``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_I
+``FLUX_IVAR_Z``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_Z
+``FLUX_IVAR_Y``                 float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_Y
+``FLUX_IVAR_W1``                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W1
+``FLUX_IVAR_W2``                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W2
+``FLUX_IVAR_W3``                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W3
+``FLUX_IVAR_W4``                float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W4
+``MW_TRANSMISSION_U``           float32                            Galactic transmission in :math:`u` filter in linear units [0,1]
+``MW_TRANSMISSION_G``           float32                            Galactic transmission in :math:`g` filter in linear units [0,1]
+``MW_TRANSMISSION_R``           float32                            Galactic transmission in :math:`r` filter in linear units [0,1]
+``MW_TRANSMISSION_I``           float32                            Galactic transmission in :math:`i` filter in linear units [0,1]
+``MW_TRANSMISSION_Z``           float32                            Galactic transmission in :math:`z` filter in linear units [0,1]
+``MW_TRANSMISSION_Y``           float32                            Galactic transmission in :math:`Y` filter in linear units [0,1]
+``MW_TRANSMISSION_W1``          float32                            Galactic transmission in :math:`W1` filter in linear units [0,1]
+``MW_TRANSMISSION_W2``          float32                            Galactic transmission in :math:`W2` filter in linear units [0,1]
+``MW_TRANSMISSION_W3``          float32                            Galactic transmission in :math:`W3` filter in linear units [0,1]
+``MW_TRANSMISSION_W4``          float32                            Galactic transmission in :math:`W4` filter in linear units [0,1]
+``NOBS_U``                      int16                              Number of images that contribute to the central pixel in :math:`u`: filter for this object (not profile-weighted)
+``NOBS_G``                      int16                              Number of images that contribute to the central pixel in :math:`g`: filter for this object (not profile-weighted)
+``NOBS_R``                      int16                              Number of images that contribute to the central pixel in :math:`r`: filter for this object (not profile-weighted)
+``NOBS_I``                      int16                              Number of images that contribute to the central pixel in :math:`i`: filter for this object (not profile-weighted)
+``NOBS_Z``                      int16                              Number of images that contribute to the central pixel in :math:`z`: filter for this object (not profile-weighted)
+``NOBS_Y``                      int16                              Number of images that contribute to the central pixel in :math:`Y`: filter for this object (not profile-weighted)
+``NOBS_W1``                     int16                              Number of images that contribute to the central pixel in :math:`W1`: filter for this object (not profile-weighted)
+``NOBS_W2``                     int16                              Number of images that contribute to the central pixel in :math:`W2`: filter for this object (not profile-weighted)
+``NOBS_W3``                     int16                              Number of images that contribute to the central pixel in :math:`W3`: filter for this object (not profile-weighted)
+``NOBS_W4``                     int16                              Number of images that contribute to the central pixel in :math:`W4`: filter for this object (not profile-weighted)
+
+
+
 ``DECAM_NOBS``                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 ``DECAM_RCHI2``                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
 ``DECAM_PSFSIZE``               float32[6]   arcsec                Weighted average PSF FWHM per band
@@ -433,7 +476,6 @@ Name                            Type         Units                 Description
 ``WISE_NOBS``                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 ``WISE_FRACFLUX``               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 ``WISE_RCHI2``                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
 ``FRACDEV``                     float32                            Fraction of model in deVauc [0,1]
 ``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 ``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)
@@ -448,7 +490,6 @@ Name                            Type         Units                 Description
 ``SHAPEEXP_E1_IVAR``            float32                            Inverse variance of SHAPEEXP_E1
 ``SHAPEEXP_E2``                 float32                            Ellipticity component 2 (documented on the `catalogs page`_)
 ``SHAPEEXP_E2_IVAR``            float32                            Inverse variance of SHAPEEXP_E2
-``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 =============================== ============ ===================== ===============================================
 
 Image Stacks

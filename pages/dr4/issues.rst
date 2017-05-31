@@ -88,3 +88,16 @@ Workaround
   which correspond to NaN or Inf values, although we have not
   determined whether there are unintended negative consequences of this
   prescription. Investigations of the root cause of these NaNs and Infs are ongoing.
+
+NaNs in the MJD_MIN and MJD_MAX columns
+=======================================
+
+Issue
+  In addition to the NaNs outlined above, there are 3,017 bricks that have NaN in both of the MJD_MIN and
+  MJD_MAX columns. This issue is carefully documented at https://github.com/legacysurvey/legacypipe/issues/154
+  (note that 3,017 not 3,024 bricks are affected).
+  
+Workaround
+  Users working with MJD columns should be careful to remove sources for which the MJD columns are NaN. These
+  sources do not appear to be astrophysical in nature.
+

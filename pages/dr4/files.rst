@@ -610,18 +610,19 @@ Raw Data
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
-stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
-project, as well as other DECam images. 
+stacked images, Tractor catalogs, etc. comprise images 
+taken from the Mayall :math:`z`-band Legacy Survey (MzLS) in the :math:`z` band, and from 
+the Beijing-Arizona Sky Survey (BASS) in the :math:`g` & :math:`r` bands.
 
 (i) Web interface
 -----------------
 
 1. Query the `NOAO Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR4).
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR4).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
-6. For DECaLS only images, refine the search by Proposal ID (2014B-0404) in the "Refine" tab.
+6. For MzLS-only images, refine the search by Proposal ID (2016A-0453; PI Arjun Dey) in the "Refine" tab. For BASS images, the Proposal ID is 2015A-0801 (PI Xiaohui Fan).
 7. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
 .. _`NOAO Science Archive`: http://archive.noao.edu/search/query
@@ -631,14 +632,14 @@ project, as well as other DECam images.
 (ii) ftp sites
 --------------
 
-Following the organization of the Stacked images, Raw and Calibrated DECam images are organized 
+Following the organization of the Stacked images, Raw and Calibrated images are organized 
 by survey brick, which are defined in the file *survey-bricks-dr4.fits.gz* for DR4. Both the main Tractor 
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
 format ``<AAAa>c<BBB>)``. 
 
-- Raw: ftp://archive.noao.edu/public/hlsp/decals/dr4/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/decals/dr4/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/decals/dr4/coadd/``<AAA>/<brick>``
+- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr4/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr4/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr4/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 

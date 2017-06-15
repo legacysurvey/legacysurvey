@@ -316,7 +316,7 @@ is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 .. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr4-DR12Q.fits
+survey-dr4-dr12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
@@ -329,7 +329,7 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr4-Superset_DR12Q.fits
+survey-dr4-superset-dr12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
@@ -343,7 +343,7 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 .. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr4-DR7Q.fits
+survey-dr4-dr7Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7

@@ -117,7 +117,6 @@ contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
 
-Note that some of the lengths of the ``character`` types differ between the `BASS`_ and `MzLS`_ files.
 
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls

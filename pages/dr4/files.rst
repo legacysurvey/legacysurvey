@@ -55,8 +55,8 @@ A FITS binary table with information that summarizes the contents of each brick 
 Column          Type       Description
 =============== ========== =========================================================================
 ``brickname``   char[8]    Name of the brick
-``ra``          double     RA of the center of the brick
-``dec``         double     Dec of the center of the brick
+``ra``          float64    RA of the center of the brick
+``dec``         float64    Dec of the center of the brick
 ``nexp_g``      int16      Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band
 ``nexp_r``      int16      Median number of exposures in the unique area of the brick in r-band
 ``nexp_z``      int16      Median number of exposures in the unique area of the brick in z-band

@@ -33,25 +33,23 @@ coverage in DR4.  For that information, see the next file description.
 =============== ======= ======================================================
 Column          Type    Description
 =============== ======= ======================================================
-``brickname``   char[8] Name of the brick.
-``brickid``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
-``brickq``      int16   A "priority" factor used for processing.
-``brickrow``    int32   Dec row number.
-``brickcol``    int32   Number of the brick within a Dec row.
-``ra``          double  RA of the center of the brick.
-``dec``         double  Dec of the center of the brick.
-``ra1``         double  Lower RA boundary.
-``ra2``         double  Upper RA boundary.
-``dec1``        double  Lower Dec boundary.
-``dec2``        double  Upper Dec boundary.
+``BRICKNAME``   char[8] Name of the brick.
+``BRICKID``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
+``BRICKQ``      int16   A "priority" factor used for processing.
+``BRICKROW``    int32   Dec row number.
+``BRICKCOL``    int32   Number of the brick within a Dec row.
+``RA``          double  RA of the center of the brick.
+``DEC``         double  Dec of the center of the brick.
+``RA1``         double  Lower RA boundary.
+``RA2``         double  Upper RA boundary.
+``DEC1``        double  Lower Dec boundary.
+``DEC2``        double  Upper Dec boundary.
 =============== ======= ======================================================
 
+survey-bricks-dr4.fits.gz
+--------------------------
 
-brick-summary-dr4.fits
-----------------------
-
-A FITS binary table with information that summarizes the contents of each brick,
-as of DR4.
+A FITS binary table with information that summarizes the contents of each brick for DR4.
 
 =============== ========== =========================================================================
 Column          Type       Description
@@ -272,14 +270,14 @@ A summary of the depth histogram of the whole DR4 survey.  FITS table with the f
 ==================== ======== ======================================================
 Column               Type      Description
 ==================== ======== ======================================================
-``depthlo``          float    Lower limit of the depth bin
-``depthhi``          float    Upper limit of the depth bin
-``counts_ptsrc_g``   int      Number of pixels in histogram for point source depth in :math:`g` band
-``counts_gal_g``     int      Number of pixels in histogram for canonical galaxy depth in :math:`g` band
-``counts_ptsrc_r``   int      Number of pixels in histogram for point source depth in :math:`r` band
-``counts_gal_r``     int      Number of pixels in histogram for canonical galaxy depth in :math:`r` band
-``counts_ptsrc_z``   int      Number of pixels in histogram for point source depth in :math:`z` band
-``counts_gal_z``     int      Number of pixels in histogram for canonical galaxy depth in :math:`z` band
+``depthlo``          float32  Lower limit of the depth bin
+``depthhi``          float32  Upper limit of the depth bin
+``counts_ptsrc_g``   int64    Number of pixels in histogram for point source depth in :math:`g` band
+``counts_gal_g``     int64    Number of pixels in histogram for canonical galaxy depth in :math:`g` band
+``counts_ptsrc_r``   int64    Number of pixels in histogram for point source depth in :math:`r` band
+``counts_gal_r``     int64    Number of pixels in histogram for canonical galaxy depth in :math:`r` band
+``counts_ptsrc_z``   int64    Number of pixels in histogram for point source depth in :math:`z` band
+``counts_gal_z``     int64    Number of pixels in histogram for canonical galaxy depth in :math:`z` band
 ==================== ======== ======================================================
 
 The depth histogram goes from magnitude of 20.1 to 24.9 in steps of
@@ -662,5 +660,3 @@ Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060
    File Count: 2
 
 In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.
-
-

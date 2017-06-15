@@ -202,12 +202,12 @@ The total numbers of the different morphological types in DR4 are:
 ================= ==================
 Number of Sources Type
 ================= ==================
-    ??, ??, ??    Objects in a Primary brick
-    ??, ??, ??    PSF
-    ??, ??, ??    SIMP
-    ??, ??, ??    EXP
-    ??, ??, ??    DEV
-    ??, ??, ??    COMP
+   183,489,859    Objects in a Primary brick
+    90,683,489    ``PSF``
+    58,829,887    ``SIMP``
+    22,653,067    ``EXP``
+    10,492,773    ``DEV``
+       830,643    ``COMP``
 ================= ==================
 
 The decision to retain an object in the catalog and to re-classify it using

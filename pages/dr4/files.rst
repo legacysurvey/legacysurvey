@@ -126,17 +126,17 @@ Note that some of the lengths of the ``character`` types differ between the `BAS
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``object``           char       Name listed in the object tag from the CCD header
+``object``           char[24]   Name listed in the object tag from the CCD header
 ``expnum``           int32      Exposure number, eg 348224
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``seeing``           float32    Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019
 ``date_obs``         char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
-``ut``               char       Time of observation start, eg "23:50:58.608241"
-``ha``               char       Hour angle of the observation (HH:MM:SS)  
+``ut``               char[12]   Time of observation start, eg "23:50:58.608241"
+``ha``               char[12]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``          float32    Airmass, eg 1.35
-``propid``           char       NOAO Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[12]   NOAO Proposal ID that took this image, eg "2014B-0404"
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``avsky``            float32    Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``         float32    Average gain for this CCD, eg 4.34
@@ -176,13 +176,11 @@ Column               Type       Description
 ``psfab``	     float32    (ignore)
 ``psfpa``	     float32    (ignore)
 ``temp``             float32    Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
-``telfocus``	     float32[3] (ignore) **only in the survey-ccds-bass.fits.gz file**
 ``badimg``	     int16      (ignore)
-``extname``	     char[4]    (ignore; a unique number assigned to a CCD to run legacypipe/tractor code) **only in the survey-ccds-bass.fits.gz file**
-``camera``           char       The camera that took this image
-``expid``            char       Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
+``camera``           char[7]    The camera that took this image
+``expid``            char[15]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
-``image_filename``   char       Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
+``image_filename``   char[55]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
 ``width``            int16      Width in pixels of this image, eg 2046
 ``height``           int16      Height in pixels of this image, eg 4096
 ``ra_bore``          float64    Telescope boresight RA  of this exposure (deg)
@@ -190,10 +188,8 @@ Column               Type       Description
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
 ``photometric``      boolean    True if this CCD was considered photometric and used in the DR4 reductions
-``bad_expid``        boolean    (ignore)
-``ccd_hdu_mismatch`` boolean    (ignore)   
-``zpts_bad_astrom``  boolean    (ignore)
-``third_pix``        boolean    (ignore) **only in the survey-ccds-mzls.fits.gz file**
+``bitmask``	     uint8      (ignore)
+``telfocus``	     float32[3] (ignore)
 ==================== ========== =======================================================
 
 .. _`detailed more here`: ../avsky

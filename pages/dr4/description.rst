@@ -360,13 +360,13 @@ For MzLS, the median 5\ |sigma| point source (AB) depth for areas with 3 observa
 Code Versions
 =============
 
-??ADM new code versions
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from ``dr3e-834-g419c0ff`` to ``dr3e-887-g068df7a`` (these are git version strings). The version used is documented in the Tractor header card ``LEGPIPEV``. The date range of the versions is 3/15/2017 to 4/19/2017.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67, git versions ``0.67-188-gfcdd3c0`` to ``0.67-152-gfa03658`` (dates 3/6/2017 to 4/15/2017).
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr4, git versions ``dr4.1-9-gc73f1ab`` to ``dr4.1-9-ga5cfaa3`` (dates 2/22/2017 to 3/31/2017).
+* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
-* NOAO Community Pipeline: mixture of versions; recorded as PLVER.
-* SourceExtractor 2.19.5, PSFEx 3.17.1
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
-* `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr4
+.. * SourceExtractor 2.19.5, PSFEx 3.17.1
+
 
 Glossary
 ========

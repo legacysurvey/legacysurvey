@@ -201,10 +201,6 @@ gathered during calibration pre-processing before running the Tractor reductions
 
 Includes everything listed in the survey-ccds* files plus the following:
 
-only in bass file:
-telfocus, expid
-
-
 ==================== ========== ======================================================
 Column               Type       Description
 ==================== ========== ======================================================

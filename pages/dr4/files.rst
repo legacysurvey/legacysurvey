@@ -38,12 +38,12 @@ Column          Type    Description
 ``BRICKQ``      int16   A "priority" factor used for processing.
 ``BRICKROW``    int32   Dec row number.
 ``BRICKCOL``    int32   Number of the brick within a Dec row.
-``RA``          double  RA of the center of the brick.
-``DEC``         double  Dec of the center of the brick.
-``RA1``         double  Lower RA boundary.
-``RA2``         double  Upper RA boundary.
-``DEC1``        double  Lower Dec boundary.
-``DEC2``        double  Upper Dec boundary.
+``RA``          float64 RA of the center of the brick.
+``DEC``         float64 Dec of the center of the brick.
+``RA1``         float64  Lower RA boundary.
+``RA2``         float64  Upper RA boundary.
+``DEC1``        float64  Lower Dec boundary.
+``DEC2``        float64  Upper Dec boundary.
 =============== ======= ======================================================
 
 survey-bricks-dr4.fits.gz

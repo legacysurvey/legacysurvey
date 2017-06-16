@@ -83,7 +83,7 @@ NAVIGATION_LINKS = {
             ("http://unwise.me", 'unWISE'),
             ), 'Other Data'),
         ("http://legacysurvey.org/viewer", 'Sky Viewer'),
-        ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/gallery/", 'Gallery'),
+        ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/", 'Gallery'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),

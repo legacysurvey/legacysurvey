@@ -14,7 +14,9 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
-`known issues`_ regarding their content and derivation.
+`known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data 
+also have u, i and Y-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
+zeros in DR4.
 
 .. _`known issues`: ../issues
 .. _`RELEASE is documented here`: ../../release

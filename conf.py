@@ -69,7 +69,7 @@ NAVIGATION_LINKS = {
             ("/dr4/description", 'Description'),
             ("/dr4/files", 'Files'),
             ("/dr4/catalogs", 'Catalogs'),
-            ("/dr4/issues", 'Known Issues and Workarounds'),
+            ("/dr4/issues", 'Known Issues'),
             ), 'DR4'),
         ((
             ("/dr1", 'Data Release 1'),

@@ -499,11 +499,14 @@ coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
 ---------------------------------------------------
 
 FITS binary table with the list of CCD images that were used in this brick.
-Same columns as ``survey-ccds-*.fits.gz``, plus:
+Same columns as ``survey-ccds-*.fits.gz``, except for ``photometric`` and
+``bitmask``, and with the additional columns:
 
 ================ ========= ======================================================
 Column           Type      Description
 ================ ========= ======================================================
+``extname``	 char[4]   (ignore)
+``ccd_cuts``	 int32	   (ignore)
 ``ccd_x0``       int16     Minimum x image coordinate overlapping this brick
 ``ccd_x1``       int16     Maximum x image coordinate overlapping this brick
 ``ccd_y0``       int16     Minimum y image coordinate overlapping this brick
@@ -512,15 +515,16 @@ Column           Type      Description
 ``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
 ``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
 ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
-``psfnorm``      float     Same as ``psfnorm`` in decals-ccds-annotated.fits
-``galnorm``      float     Same as ``galnorm`` in decals-ccds-annotated.fits
-``plver``        char[6]   Community Pipeline (CP) version
-``skyver``       char[16]  Git version of the sky calibration code
-``wcsver``       char[16]  Git version of the WCS calibration code
-``psfver``       char[16]  Git version of the PSF calibration code
-``skyplver``     char[16]  CP version of the input to sky calibration
-``wcsplver``     char[16]  CP version of the input to WCS calibration
-``psfplver``     char[16]  CP version of the input to PSF calibration
+``sig1``         float64   (ignore)
+``psfnorm``      float32   Same as ``psfnorm`` in decals-ccds-annotated.fits
+``galnorm``      float64   Same as ``galnorm`` in decals-ccds-annotated.fits
+``plver``        char[4]   Community Pipeline (CP) version
+``skyver``       char[17]  Git version of the sky calibration code
+``wcsver``       char[1]   Git version of the WCS calibration code
+``psfver``       char[12]  Git version of the PSF calibration code
+``skyplver``     char[4]   CP version of the input to sky calibration
+``wcsplver``     char[4]   CP version of the input to WCS calibration
+``psfplver``     char[4]   CP version of the input to PSF calibration
 ================ ========= ======================================================
 
 

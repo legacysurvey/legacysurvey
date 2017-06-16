@@ -6,10 +6,10 @@
    | `Description`_
    | `Files`_
    | `Catalogs`_
-   | `Known Issues and Workarounds`_
+   | `Known Issues`_
 
 .. _`Description`: /dr4/description
 .. _`Files`: /dr4/files
 .. _`Catalogs`: /dr4/catalogs
-.. _`Known Issues and Workarounds`: /dr4/issues
+.. _`Known Issues`: /dr4/issues
 

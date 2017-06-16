@@ -72,7 +72,7 @@ The size of the DR4 data distribution is:
 ======= ============ =======================
 Size    Directory    Description
 ======= ============ =======================
- 3 TB  `calib/`_    Calibration files.
+ 3 TB   `calib/`_    Calibration files.
 ?? TB   `coadd/`_    Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and Quality Assurance PNG plots
  ?? GB  `external/`_ Matches to other catalogs (SDSS, etc.).
  ?? MB  `gallery/`_  Images of notable galaxies (NGC, etc.).

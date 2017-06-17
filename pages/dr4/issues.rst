@@ -77,7 +77,7 @@ Finally, "survey-bricks-dr4.fits.gz" tabulates ``galdepth_*`` using the tractor 
  
 In the second case, model fitting (for optimization reasons) uses slightly different code for sub-images (roughly the size of the blob that contains possible sources) 
 that are small (height or width :math:`< 400` pixels) versus large (height and width :math:`> 400` pixels). The threshold for large versus small is hardcoded so 
-that large sub-images correspond to blobs larger than :math:`400 \times 0.455 / 0.262 ~ 694` pixels. Sources in small blobs use the correct pixel scale 
+that large sub-images correspond to blobs larger than :math:`400 \times 0.455 / 0.262 \sim 694` pixels. Sources in small blobs use the correct pixel scale 
 and have no further issues; however, sources in large blobs use the incorrect pixel scale and end up with incorrect values for: 
 
   - ``ra_ivar``

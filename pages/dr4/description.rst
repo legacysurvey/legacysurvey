@@ -58,7 +58,7 @@ In total, the `BASS`_ imaging included in DR4 covers 58,341 bricks in either
 bricks in :math:`z`-band. Bricks average 0.0623 deg\ |sup2| in size. 
 Both `BASS`_ and `MzLS`_ therefore cover about 3600 deg\ |sup2| in
 unique area, although they do not necessarily cover the *same* area. There are 
-approximately ?? million unique sources in DR4.
+approximately 183 million unique sources in DR4.
 
 DR4 includes the Right Ascension (RA) range of 55 to 301 degrees, and
 Declination (Dec) range of +29 to +82 degrees.  There are two small

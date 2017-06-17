@@ -44,7 +44,7 @@
       <h2><a href="http://legacysurvey.org/viewer">Interactive Map</a></h2>
 
       <h2>Current Release: Data Release 4</h2>
-      <p>May 2017</p>
+      <p>June 2017</p>
       <p><a class="btn btn-primary btn-lg" href="dr4">DR4</a></p>
 
 .. container::

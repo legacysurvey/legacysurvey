@@ -11,6 +11,7 @@
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
 .. _`DR3`: ../dr3
+.. _`DR4`: ../dr4
 
 Legacy Survey observations began in August 2014. For each of the Legacy Surveys 
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
@@ -33,34 +34,22 @@ In addition to observations carried out as part of the Legacy Survey, data relea
 reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that overlap the 
 Legacy Survey footprint.
 
-MzLS
-====
+The figures below depict the status of `MzLS`_ and `BASS`_ as of Data Release 4 (`DR4`_), the
+most recent release of `MzLS`_ and `BASS`_ imaging. The coverage is color-coded by the number of passes. 
+Area that is yet to be observed is marked in light gray.
 
-The figure below depicts the status of `MzLS`_ as of the end of April 2017 (roughly the time 
-of Data Release 4) in Mollweide projection. Each panel depicts a different pass. 
+.. image:: /files/nexp-g-dr4.png
+.. image:: /files/nexp-r-dr4.png
+.. image:: /files/nexp-z-dr4.png
+    :alt: DR4 Coverage Plots
 
-.. image:: /files/coverage_mollweide_mzls_2017apr.png
-
-BASS
-====
-
-The figures below depict the status of `BASS`_ as of the end of April 2017 (roughly the time 
-of Data Release 4) in Mollweide projection. The first figure is for :math:`g` and the second
-figure is for :math:`r`. Each panel of each figure depicts a different pass. 
-
-.. image:: /files/coverage_mollweide_bass_g_apr2017.png
-.. image:: /files/coverage_mollweide_bass_r_apr2017.png
-
-DECaLS
-======
-
-The images below depict the status of `DECaLS`_ in each band as of Data Release 3 (`DR3`_), the
+The figures below depict the status of `DECaLS`_ as of Data Release 3 (`DR3`_), the
 most recent release of `DECaLS`_ imaging. The coverage is color-coded by the number of passes. 
-`DESI`_ area that is yet to be observed is marked in light gray. The lines track Galactic 
+Area that is yet to be observed is marked in light gray. The lines track Galactic 
 latitudes of 0\ |deg|, -10\ |deg| and +10\ |deg|.
 
 .. image:: /files/nexp-g.png
 .. image:: /files/nexp-r.png
 .. image:: /files/nexp-z.png
-    :alt: Coverage Plots
+    :alt: DR3 Coverage Plots
 

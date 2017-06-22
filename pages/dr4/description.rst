@@ -297,6 +297,10 @@ from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
 
+The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_ and
+`MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere (at airmass=1.0).
+The derivation of the BASS filter responses is described on the `BASS website`_.
+
 DR4 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by
@@ -307,6 +311,11 @@ For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
 Tractor catalog headers ("WISEAB1", etc).
 
+.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
+.. _`BASS g-band`: ../../files/bass-g.txt
+.. _`BASS r-band`: ../../files/bass-r.txt
+.. _`MzLS z-band`: ../../files/kpzd.txt
+.. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 

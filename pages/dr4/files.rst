@@ -185,12 +185,13 @@ Column               Type       Description
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
 ``photometric``      boolean    True if this CCD was considered photometric and used in the DR4 reductions
-``bitmask``	     uint8      (ignore)
+``bitmask``	     uint8      `bitmask is documented here`_
 ``telfocus``	     float32[3] (ignore)
 ==================== ========== =======================================================
 
 .. _`detailed more here`: ../avsky
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
+.. _`bitmask is documented here`: ../../bitmask
 
 ccds-annotated-dr4-90prime.fits.gz and ccds-annotated-dr4-mzls.fits.gz
 ----------------------------------------------------------------------

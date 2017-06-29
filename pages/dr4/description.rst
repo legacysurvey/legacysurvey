@@ -37,6 +37,8 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html 
 .. _`DR3`: ../../dr3
 .. _`DR2`: ../../dr2
+.. _`DESI`: http://desi.lbl.gov
+
 
 Contents of DR4
 ===============
@@ -100,6 +102,11 @@ There are 662,174 bricks spread over the sky, meaning that each brick has an ave
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 The co-added images should be
 used with caution, as noted below in the *Image Stacks* section.
+
+For `DESI`_ members with access to DocDB, a further overview of DR4 is available in `Kaylan Burleigh's presentation`_ from the June, 2017 `DESI`_ collaboration meeting.
+
+.. _`Kaylan Burleigh's presentation`: https://desi.lbl.gov/DocDB/cgi-bin/private/ShowDocument?docid=3026 
+
 
 Obtaining Images and Raw Data
 ==============================

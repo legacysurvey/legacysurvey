@@ -190,6 +190,7 @@ Column               Type       Description
 ==================== ========== =======================================================
 
 .. _`detailed more here`: ../avsky
+.. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 
 ccds-annotated-dr4-90prime.fits.gz and ccds-annotated-dr4-mzls.fits.gz
 ----------------------------------------------------------------------
@@ -205,7 +206,7 @@ Column               Type       Description
 ``ccd_cuts``         int32      (ignore)
 ``annotated``	     boolean    (ignore)
 ``good_region``      int16      If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
-``ra0``              float64    RA  coordinate of pixel (1,1)
+``ra0``              float64    RA  coordinate of pixel (1,1)...Note that the `ordering of the CCD corners is detailed here`_
 ``dec0``             float64    Dec coordinate of pixel (1,1)
 ``ra1``              float64    RA  coordinate of pixel (1,H)
 ``dec1``             float64    Dec coordinate of pixel (1,H)

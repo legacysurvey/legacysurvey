@@ -202,7 +202,7 @@ Includes everything listed in the survey-ccds* files plus the following:
 ==================== ========== ======================================================
 Column               Type       Description
 ==================== ========== ======================================================
-``blacklist_ok``     boolean    We blacklisted certain programs (Proposal IDs) from other PIs where there were a large number of images covering a single patch of sky, because our pipeline code didn't handle the extreme depth very well.  True if this CCD was *not* blacklisted, ie, was used.
+``ccd_cuts``         int32      (ignore)
 ``annotated``	     boolean    (ignore)
 ``good_region``      int16      If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
 ``ra0``              float64    RA  coordinate of pixel (1,1)
@@ -226,6 +226,7 @@ Column               Type       Description
 ``pixscale_std``     float32    Standard deviation of pixel scale
 ``pixscale_max``     float32    Max of pixel scale
 ``pixscale_min``     float32    Min of pixel scale
+``psf_sampling``     float32    (ignore)
 ``psfnorm_mean``     float32    PSF norm = 1/sqrt of N_eff = sqrt(sum(psf_i^2)) for normalized PSF pixels i; mean of the PSF model evaluated on a 5x5 grid of points across the image.  Point-source detection standard deviation is ``sig1 / psfnorm``.
 ``psfnorm_std``      float32    Standard deviation of PSF norm
 ``galnorm_mean``     float32    Norm of the PSF model convolved by a 0.45" exponential galaxy.

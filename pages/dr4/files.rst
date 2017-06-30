@@ -604,11 +604,13 @@ the colors.
 Raw Data
 ========
 
+NOAO access to raw and calibrated images will be available starting on July 10, 2017.
+
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images 
-taken from the Mayall :math:`z`-band Legacy Survey (MzLS) in the :math:`z` band, and from 
-the Beijing-Arizona Sky Survey (BASS) in the :math:`g` & :math:`r` bands.
+taken from the Mayall :math:`z`-band Legacy Survey (`MzLS`_) in the :math:`z` band, and from 
+the Beijing-Arizona Sky Survey (`BASS`_) in the :math:`g` & :math:`r` bands.
 
 (i) Web interface
 -----------------
@@ -616,10 +618,9 @@ the Beijing-Arizona Sky Survey (BASS) in the :math:`g` & :math:`r` bands.
 1. Query the `NOAO Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR4).
 3. Under "Data products - Raw data" check "Object".
-4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
+4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
-6. For MzLS-only images, refine the search by Proposal ID (2016A-0453; PI Arjun Dey) in the "Refine" tab. For BASS images, the Proposal ID is 2015A-0801 (PI Xiaohui Fan).
-7. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
+6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
 .. _`NOAO Science Archive`: http://archive.noao.edu/search/query
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
@@ -641,29 +642,8 @@ For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 
 contains an ASCII file 
 with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
-(*legacysurvey*-``<brick>``-*image_filename.txt*; see the example below). 
-``EXPID`` contains the exposure number and the CCD name (Nxx or Sxx) with the format ``EXPNUM-ccd``. 
+(*legacysurvey*-``<brick>``-*image_filename.txt*). 
+``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``. 
 There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).
-
-For the Raw CCD images, the file naming convention has evolved during the survey. The 
-corresponding files can be reconciled through the original DECam filename: 
-DECam_<``EXPNUM``>.fits.fz where ``EXPNUM`` needs to be in format ``I08`` and can be retrieved 
-from *legacysurvey*-``<brick>``-*ccds.fits* for each brick, and from the keyword ``DTNSANAM`` 
-in ``hdr[0]`` from each calibrated file.
-
-Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060p147/legacysurvey-0060p147-image_filename.txt*
-
-::
-
-   expid                                                image_filename 
-   1 00483709-N25 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   2 00483709-N26 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   3 00483709-N29 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   4 00483710-N25 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
-   5 00483710-N26 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
-   6 00483710-N29 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
-   File Count: 2
-
-In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.

@@ -119,9 +119,9 @@ the bottom of the `files`_ page).
 Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
@@ -281,7 +281,7 @@ constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
-applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
+applied color terms to any of the photometry, but report fluxes as observed in the DECam filters (e.g., see `DR3`_).
 
 Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
 were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
@@ -329,7 +329,7 @@ Tractor catalog headers ("WISEAB1", etc).
 Galactic Extinction
 ===================
 
-For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam filter system.
+For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam filter system (e.g., see `DR3`_).
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
 Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
@@ -399,20 +399,20 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (DECam reduction pipeline operated by NOAO;
+    Community Pipeline (reduction pipeline operated by NOAO;
     http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
 
 DR2
-    DECam Legacy Survey Data Release 2.
+    Legacy Survey Data Release 2.
 
 DR3
-    DECam Legacy Survey Data Release 3.
+    Legacy Survey Data Release 3.
 
 DR4
-    DECam Legacy Survey Data Release 4.
+    Legacy Survey Data Release 4.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

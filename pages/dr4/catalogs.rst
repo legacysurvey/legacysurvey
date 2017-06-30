@@ -15,11 +15,15 @@ tractor/<AAA>/tractor-<brick>.fits
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
 `known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data 
-also have u, i and Y-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
+also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
 zeros in DR4.
 
 .. _`known issues`: ../issues
 .. _`RELEASE is documented here`: ../../release
+.. _`BASS`: ../../bass
+.. _`DECaLS`: ../../decamls
+.. _`MzLS`: ../../mzls
+.. _`DR3`: ../../dr3
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
@@ -167,18 +171,18 @@ Bit Value Name                        Description
 Goodness-of-Fits
 ----------------
 
-The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
+The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
 the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
-The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
-Note that the DCHISQ values are negated so that positive values indicate better fits.
+The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+Note that the ``dchisq`` values are negated so that positive values indicate better fits.
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 
 
-The RCHISQ values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
+The ``rchisq`` values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
 
 .. math::
@@ -202,16 +206,18 @@ extinction curve at R_V = 3.1 and their improved overall calibration of the SFD9
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
-For DR4, we calculate Galactic extinction for BASS and MzLS as if they were on the DECam filter system.
+For DR4, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they were on the DECam filter system (e.g. see `DR3`_).
 
-Extinction coefficients for the DECam filters use the Schlafly & Finkbeiner (2011) values,
+Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
 These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
 (These are slightly different than the ones in Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804).)
 
-The coefficients for the four WISE filters are derived from Fitzpatrick 1999, as recommended by Schafly & Finkbeiner,
-considered better than either the Cardelli et al 1989 curves or the newer Fitzpatrick & Massa 2009 NIR curve not vetted beyond 2 micron).
+The coefficients for the four WISE filters are derived from Fitzpatrick (1999), as recommended by Schafly & Finkbeiner,
+considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
+
+.. _`Schlafly & Finkbeiner (2011)`: http://arxiv.org/abs/1012.4804
 
 Ellipticities
 -------------

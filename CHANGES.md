@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 4.0.1 (unreleased)
+
+- No changes yet.
+
 ## 4.0.0 (2017-06-30)
 
 - Updated to release version for DR4 ([PR#72](https://github.com/legacysurvey/legacysurvey/pull/72)).

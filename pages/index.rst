@@ -11,20 +11,29 @@
 .. raw:: html
 
 
-   <h1>The DECam Legacy Survey</h1>
+   <h1>The Legacy Surveys</h1>
 
 
 .. container:: col-md-6 col-left
 
-   The Legacy Survey is producing an inference model catalog of the sky
+
+   The Legacy Surveys are producing an inference model catalog of the sky
    from a set of optical and infrared imaging data, comprising
    14,000 deg\ |sup2| of extragalactic sky
-   visible from the northern hemisphere in three optical bands (g,r,z)
-   and four infrared bands.
+   visible from the northern hemisphere in three optical bands 
+   (:math:`g,r,z`) and four infrared bands.
    The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
    in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
-   The DECam Legacy Survey is providing these data in the equatorial
-   region at |delta| < +30\ |deg| using the Dark Energy Camera on the Blanco Telescope.
+   To achieve this goal, the Legacy Surveys are conducting
+   3 imaging projects on different telescopes, described in more depth at the following links:
+
+   ========================================== ===================================== ===========================================
+   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
+   ========================================== ===================================== ===========================================
+
+   .. _`BASS`: ./bass
+   .. _`DECaLS`: ./decamls
+   .. _`MzLS`: ./mzls
 
 .. container:: col-md-6 col-right
 
@@ -34,9 +43,9 @@
 
       <h2><a href="http://legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 3</h2>
-      <p>September 2016</p>
-      <p><a class="btn btn-primary btn-lg" href="dr3">DR3</a></p>
+      <h2>Current Release: Data Release 4</h2>
+      <p>June 2017</p>
+      <p><a class="btn btn-primary btn-lg" href="dr4">DR4</a></p>
 
 .. container::
 

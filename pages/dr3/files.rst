@@ -67,23 +67,25 @@ Column          Type     Description
 ``brickname``   char[8]  Name of the brick.
 ``ra``          double   RA of the center of the brick.
 ``dec``         double   Dec of the center of the brick.
-``nexp_g``      int16    Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band.
-``nexp_r``      int16    Median number of exposures in the unique area of the brick in r-band.
-``nexp_z``      int16    Median number of exposures in the unique area of the brick in z-band.
-``nexphist_g``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g
-``nexphist_r``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r
-``nexphist_z``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
+``nexp_g``      int16    Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in :math:`g`-band.
+``nexp_r``      int16    Median number of exposures in the unique area of the brick in :math:`r`-band.
+``nexp_z``      int16    Median number of exposures in the unique area of the brick in :math:`z`-band.
+``nexphist_g``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`g`
+``nexphist_r``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`r`
+``nexphist_z``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`z`
 ``nobjs``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of all types.
 ``npsf``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``PSF``.
 ``nsimp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``SIMP``.
 ``nexp``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``EXP``.
 ``ndev``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``DEV``.
 ``ncomp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``COMP``.
-``psfsize_g``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in g-band.
-``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in r-band.
-``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in z-band.
+``psfsize_g``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`g`-band.
+``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`r`-band.
+``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`z`-band.
 ``ebv``         float32  Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick.
-``trans_g``     float32  Median Milky Way dust transparency in g-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_g``     float32  Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_r``     float32  Median Milky Way dust transparency in :math:`r`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
+``trans_z``     float32  Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 =============== ======== =========================================================================
 
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
@@ -409,8 +411,8 @@ Name                            Type         Units                 Description
 ``DECAM_FRACFLUX``              float32[6]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 ``DECAM_FRACMASKED``            float32[6]                         Profile-weighted fraction of pixels masked from all observations of this object, strictly between [0,1]
 ``DECAM_FRACIN``                float32[6]                         Fraction of a source's flux within the blob, near unity for real sources
-``DECAM_DEPTH``                 float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
-``DECAM_GALDEPTH``              float32      1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
+``DECAM_DEPTH``                 float32[6]   1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5(\log_{10}((5 / \sqrt(\mathrm{DECAM\_DEPTH}) - 9)` gives corresponding magnitude
+``DECAM_GALDEPTH``              float32[6]   1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
 ``OUT_OF_BOUNDS``               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 ``DECAM_ANYMASK``               int16[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
 ``DECAM_ALLMASK``               int16[6]                           Bitwise mask set if the central pixel from all images satisfy each condition

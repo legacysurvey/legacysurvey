@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 3.1.2 (2017-06-30)
+## 4.0.0 (2017-06-30)
 
 - Updated to release version for DR4 ([PR#72](https://github.com/legacysurvey/legacysurvey/pull/72)).
 - Extensive changes reflecting the new Legacy Survey Data Model.

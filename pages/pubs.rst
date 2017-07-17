@@ -3,6 +3,8 @@
 .. tags: mathjax
 .. description: 
 
+When using data from the Legacy Surveys in papers, please include the `text on the acknowledgement page`_.
+
 2014
 ====
 #. Lang, `unWISE: Unblurred Coadds of the WISE Imaging`_
@@ -19,6 +21,9 @@
 #. Meisner et al., `Searching for Planet Nine with Coadded WISE and NEOWISE-Reactivation Images`_
 #. Raichoor et al., `The SDSS-IV Extended Baryon Oscillation Spectroscopic Survey: final Emission Line Galaxy Target Selection`_
 #. Meisner, Lang & Schlegel, `Deep Full-sky Coadds from Three Years of WISE and NEOWISE Observations`_
+
+
+.. _`text on the acknowledgement page`: ../acknowledgment
 
 .. _`unWISE: Unblurred Coadds of the WISE Imaging`: http://adsabs.harvard.edu/abs/2014AJ....147..108L
 

@@ -43,15 +43,15 @@
 
       <h2><a href="http://legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 4</h2>
+      <h2>Current Release: Data Release 5</h2>
       <p>June 2017</p>
-      <p><a class="btn btn-primary btn-lg" href="dr4">DR4</a></p>
+      <p><a class="btn btn-primary btn-lg" href="dr5">DR5</a></p>
 
 .. container::
 
    .. raw:: html
 
-      <h2>Acknowledgements</h2>
+      <h2>Acknowledgements</h2> <h3>(see also the <a href="acknowledgment">formal acknowledgment for publications</a>)</h3>
 
 
    *The LBNL Physics Division is supported by the U.S. Department of

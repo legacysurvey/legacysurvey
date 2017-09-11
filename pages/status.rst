@@ -12,6 +12,7 @@
 .. _`DESI`: http://desi.lbl.gov
 .. _`DR3`: ../dr3
 .. _`DR4`: ../dr4
+.. _`DR5`: ../dr5
 
 Legacy Survey observations began in August 2014. For each of the Legacy Surveys 
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)

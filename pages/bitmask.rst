@@ -11,7 +11,7 @@
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
 .. _`DR3`: ../dr3
-.. _`files page`: ../dr4/files
+.. _`files page`: ../dr5/files
 .. _`legacypipe`: https://github.com/legacysurvey/legacypipe
 
 The ``ccds-`` and ``survey-`` files described on the `files page`_ contain a column ``bitmask``, which is defined as:

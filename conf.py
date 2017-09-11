@@ -66,15 +66,16 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
         ((
-            ("/dr4/description", 'Description'),
-            ("/dr4/files", 'Files'),
-            ("/dr4/catalogs", 'Catalogs'),
-            ("/dr4/issues", 'Known Issues'),
-            ), 'DR4'),
+            ("/dr5/description", 'Description'),
+            ("/dr5/files", 'Files'),
+            ("/dr5/catalogs", 'Catalogs'),
+            ("/dr5/issues", 'Known Issues'),
+            ), 'DR5'),
         ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
             ("/dr3", 'Data Release 3'),
+            ("/dr4", 'Data Release 4'),
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),

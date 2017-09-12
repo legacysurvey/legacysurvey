@@ -308,8 +308,7 @@ detailed PSF model.
 External Files
 ==============
 
-The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be 
-accessed through the web at:
+The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
   http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/external/
 
 Or on the NERSC computers (for collaborators) at:
@@ -377,18 +376,11 @@ Tractor Catalogs
 
 In the file listings outlined below:
 
-- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the 
-letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four 
-digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), 
-followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` 
-corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
 
-- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the 
-previous bullet point. For example `000m010-010m005` would correspond to a survey region limited 
-by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the previous bullet point. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
-- sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. 
-For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
+- sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
 
 - **<filter>** denotes the :math:`g`, :math:`r` or :math:`z` band, using the corresponding letter.
 
@@ -639,8 +631,7 @@ project, as well as other DECam images.
 1. Query the `NOAO Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR5).
 3. Under "Data products - Raw data" check "Object".
-4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing 
-date, or exposure time.
+4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 

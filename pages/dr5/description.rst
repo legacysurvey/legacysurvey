@@ -192,7 +192,7 @@ model type to use. In DR5, five morphological types are used: point sources,
 and round profile), deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The total numbers of the different morphological types in DR4 are:
+The total numbers of the different morphological types in DR5 are:
 
 ================= ==================
 Number of Sources Type
@@ -359,7 +359,7 @@ Code Versions
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from ``dr3e-834-g419c0ff`` to ``dr3e-887-g068df7a`` (these are git version strings). The version used is documented in the Tractor header card ``LEGPIPEV``. The date range of the versions is 3/15/2017 to 4/19/2017.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67, git versions ``0.67-188-gfcdd3c0`` to ``0.67-152-gfa03658`` (dates 3/6/2017 to 4/15/2017).
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr4, git versions ``dr4.1-9-gc73f1ab`` to ``dr4.1-9-ga5cfaa3`` (dates 2/22/2017 to 3/31/2017).
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr5, git versions ``dr4.1-9-gc73f1ab`` to ``dr4.1-9-ga5cfaa3`` (dates 2/22/2017 to 3/31/2017).
 * NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
 .. * SourceExtractor 2.19.5, PSFEx 3.17.1

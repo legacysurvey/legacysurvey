@@ -3,7 +3,7 @@
 .. tags: mathjax
 .. description: 
 
-When using data from the Legacy Surveys in papers, please include the `text on the acknowledgement page`_.
+When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
 2014
 ====
@@ -25,7 +25,7 @@ When using data from the Legacy Surveys in papers, please include the `text on t
 #. Meisner, Lang & Schlegel, `Deep Full-sky Coadds from Three Years of WISE and NEOWISE Observations`_
 
 
-.. _`text on the acknowledgement page`: ../acknowledgment
+.. _`text on the acknowledgment page`: ../acknowledgment
 
 .. _`unWISE: Unblurred Coadds of the WISE Imaging`: http://adsabs.harvard.edu/abs/2014AJ....147..108L
 

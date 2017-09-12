@@ -46,7 +46,7 @@ Coadd images (all)
 - legacysurvey-\*-model.jpg
 - legacysurvey-\*-resid.jpg
 
-Survey-bricks-dr4.fits.gz (all)
+survey-bricks-dr5.fits.gz (all)
 
 - galdepth_{g,r}
 
@@ -67,7 +67,7 @@ Model rendering is also used to compute the ``galdepth`` and ``apflux_resid`` co
 - galdepth_{g,r}
 - apflux_resid_{g,r}
 
-Finally, "survey-bricks-dr4.fits.gz" tabulates ``galdepth_*`` using the tractor catalogues, so all of its corresponding columns are incorrect:
+Finally, "survey-bricks-dr5.fits.gz" tabulates ``galdepth_*`` using the tractor catalogues, so all of its corresponding columns are incorrect:
 
 - galdepth_{g,r}
 

@@ -82,9 +82,9 @@ Column          Type       Description
 ``trans_g``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``
 ``trans_r``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``
 ``trans_z``     float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``
-``ext_g``       float32    Extinction (calculated, for DR4, assuming BASS and MzLS are on the DECam filter system) in :math:`g`-band
-``ext_r``       float32    Extinction (calculated, for DR4, assuming BASS and MzLS are on the DECam filter system) in :math:`r`-band
-``ext_z``       float32    Extinction (calculated, for DR4, assuming BASS and MzLS are on the DECam filter system) in :math:`z`-band
+``ext_g``       float32    Extinction in :math:`g`-band
+``ext_r``       float32    Extinction in :math:`r`-band
+``ext_z``       float32    Extinction in :math:`z`-band
 ``wise_nobs``   int16[4]   Number of images that contributed to WISE calculations in each filter (not profile-weighted)
 ``trans_wise``  float32[4] Median Milky Way dust transparency in WISE bands, based on ``ebv``. See also, e.g., ``MW_TRANSMISSION_W1``
 ``ext_w1``      float32    Extinction in :math:`W1`-band
@@ -106,7 +106,7 @@ survey-ccds-decals.fits.gz
 
 A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DR5 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -185,7 +185,7 @@ Column               Type       Description
 ``dec_bore``         float64    Telescope boresight Dec of this exposure (deg)
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
-``photometric``      boolean    True if this CCD was considered photometric and used in the DR4 reductions
+``photometric``      boolean    True if this CCD was considered photometric and used in the DR5 reductions
 ``bitmask``	     uint8      `bitmask is documented here`_
 ``telfocus``	     float32[3] (ignore)
 ==================== ========== =======================================================
@@ -325,7 +325,7 @@ survey-dr5-specObj-dr13.fits
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
-survey-dr4-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
+survey-dr5-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
 specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
@@ -350,7 +350,7 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
 (`Paris et al. 2017`_) such that the photometric parameters in row "N" of 
-survey-dr4-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr5-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
@@ -363,7 +363,7 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-survey-dr4-DR7Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr5-DR7Q.fits matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 

@@ -6,27 +6,19 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-For issues relevant to `DECaLS`_ imaging, consult the `DR3 issues`_ page.
+For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR4 issues`_ page.
 
-.. _`DR3 issues`: ../../dr3/issues
+.. _`DR4 issues`: ../../dr4/issues
 .. _`DECaLS`: ../../decamls
 .. _`files`: ../files
 .. _`catalogs page`: ../catalogs
 .. _`MzLS`: ../../mzls
 .. _`BASS`: ../../bass
 
-MzLS Repeat Observations
-========================
-
-Due to a bug in the `MzLS`_ scheduling code, approximately 3500 `MzLS`_ exposures were
-unintentionally repeated between February 2nd, 2017 and March 27, 2017. Certain `MzLS`_
-fields have therefore been covered more than the expected ~3-4 times. In fact, about
-100 fields were observed of order 10 times.
-
 Galdepth
 ========
 
-Due to a bug in PSF fitting, columns related to ``GALDEPTH`` are incorrect in DR4.
+Due to a bug in PSF fitting, columns related to ``GALDEPTH`` are incorrect in DR5.
 Corrupted files and entries include:
 
 Tractor catalogues (all)
@@ -114,3 +106,29 @@ There are three places where "Inf" or "NaN" can occur in the tractor catalogues.
 - ``MJD_{MIN,MAX}``: "NaN", 3,024 bricks, object is at a CCD edge, we could remove quite a few cutting on "sum(NOBS_*) = 0" but not for all of the
   cases. The fix in "legacypipe" would be to compute ``NOBS`` and ``MJD_MIN/MAX`` consistently. Currently, ``NOBS`` are derived from the pixel in
   resampled brick space, while ``MJD_MIN/MAX`` are derived from the pixel in the CCD image. See https://github.com/legacysurvey/legacypipe/issues/154
+
+Blacklisted Frames
+==================
+
+We attempt to process all available DECam imaging, regardless of whether such
+data was specifically taken as part of the legacy survey. Some imaging surveys revisit
+certain areas of the sky many times, and processing the coaddition of such data can severely
+slow down the Tractor pipeline. Because of this, some proposal IDs are "blacklisted" to
+prevent Tractor from dwelling on those regions. The upshot of this is that if you're looking
+for coadded DECam imaging from a specific set of surveys in a certain region of the sky, it may not be
+available to the full depth that you expect.
+
+Which proposal IDs were considered in which brick can be obtained from the ccds files that
+are documented on the `catalogs page`_.
+
+.. _`catalogs page`: ../catalogs
+
+Tractor-on-Bricks
+==================
+
+Tractor-on-Bricks is a slightly different implementation of the Tractor source extraction code in
+which a fraction of bricks that don't touch are run through Tractor, and then sources that 
+are BRICK_PRIMARY are fixed so that additional bricks run through Tractor don't produce
+duplicate "edge" sources where bricks overlap. This has the advantage of producing rigorous
+brick boundaries, but the disadvantage of slowing down processing through being harder to
+parallelize. In DR5, tractor-on-bricks was enforced???.

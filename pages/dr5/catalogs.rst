@@ -14,16 +14,15 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
-`known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data 
-also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
-zeros in DR4.
+`known issues`_ regarding their content and derivation. In DR5, the columns pertaining to optical data 
+also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``), but these contain only
+zeros.
 
 .. _`known issues`: ../issues
 .. _`RELEASE is documented here`: ../../release
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
-.. _`DR3`: ../../dr3
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
@@ -188,25 +187,22 @@ computed as the following sum over pixels in the blob for each object:
 .. math::
     \chi^2 = \frac{\sum \left[ \left(\mathrm{image} - \mathrm{model}\right)^2 \times \mathrm{model} \times \mathrm{inverse\, variance}\right]}{\sum \left[ \mathrm{model} \right]}
 
-The above sum is over all images contributing to a particular filter.
-The above can be negative-valued for sources that have a flux measured as negative in some bands
-where they are not detected.
+The above sum is over all images contributing to a particular filter, and can be negative-valued for sources 
+that have a flux measured as negative in some bands where they are not detected.
 
 Galactic Extinction Coefficients
 --------------------------------
 
-The Galactic extinction values are derived from the SFD98 maps, but with updated coefficients to
+The Galactic extinction values are derived from the `SFD98`_ maps, but with updated coefficients to
 convert E(B-V) to the extinction in each filter.  These are reported in linear units of transmission,
 with 1 representing a fully transparent region of the Milky Way and 0 representing a fully opaque region.
 The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
 by Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
-extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.
+extinction curve at R_V = 3.1 and their improved overall calibration of the `SFD98`_ maps.
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
-
-For DR4, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they were on the DECam filter system (e.g. see `DR3`_).
 
 Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
@@ -217,6 +213,7 @@ The coefficients for the four WISE filters are derived from Fitzpatrick (1999), 
 considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
+.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`Schlafly & Finkbeiner (2011)`: http://arxiv.org/abs/1012.4804
 
 Ellipticities

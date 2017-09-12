@@ -65,7 +65,7 @@ Column          Type       Description
 ``nexphist_z``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
 ``nobjs``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of all types
 ``npsf``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``PSF``
-``nsimp``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``SIMP``
+``nrex``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``REX``
 ``nexp``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``EXP``
 ``ndev``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``DEV``
 ``ncomp``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``COMP``
@@ -416,12 +416,12 @@ Name                            Type         Units                 Description
 ``BRICKID``                     int32                              Brick ID [1,662174]
 ``BRICKNAME``                   char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
-``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
+``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 ``RA``                          float64      deg                   Right ascension at epoch J2000
 ``DEC``                         float64      deg                   Declination at epoch J2000
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of ``RA``, excluding astrometric calibration errors
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of ``DEC`` (no cos term!), excluding astrometric calibration errors
-``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, EXP, DEV, COMP.  The difference is versus no source.
 ``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute ``MW_TRANSMISSION``
 ``FLUX_G``                      float32      nanomaggies           model flux in :math:`g`
 ``FLUX_R``                      float32      nanomaggies           model flux in :math:`r`

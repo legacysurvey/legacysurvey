@@ -209,6 +209,9 @@ Number of Sources Type
        XXX,XXX    ``COMP``
 ================= ==================
 
+Note that the "REX" model replaces the "SIMP" model used in 
+`DR4`_, `DR3`_ and earlier data releases.
+
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for

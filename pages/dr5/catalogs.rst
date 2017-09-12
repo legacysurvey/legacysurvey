@@ -32,14 +32,14 @@ Name                        Type         Units                 Description
 ``brickname``               char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                   int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``           boolean                            True if the object is within the brick boundary
-``type``                    char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
+``type``                    char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                      float64      deg                   Right ascension at epoch J2000
 ``dec``                     float64      deg                   Declination at epoch J2000
 ``ra_ivar``                 float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 ``dec_ivar``                float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 ``bx``                      float32      pix                   X position (0-indexed) of coordinates in brick image stack
 ``by``                      float32      pix                   Y position (0-indexed) of coordinates in brick image stack
-``dchisq``                  float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
+``dchisq``                  float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
 ``ebv``                     float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 ``mjd_min``		    float64	 days		       Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		    float64	 days		       Maximum Modified Julian Date of observations used to construct the model of this object
@@ -172,9 +172,9 @@ Goodness-of-Fits
 
 The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
-the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
+the best-fit point source (type="PSF"), round exponential galaxy model ("REX"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
-The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
+The "REX" model is a round exponential galaxy profile with a variable radius
 and is meant to capture slightly-extended but low signal-to-noise objects.
 The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
 Note that the ``dchisq`` values are negated so that positive values indicate better fits.

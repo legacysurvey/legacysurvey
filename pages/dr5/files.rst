@@ -13,10 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/
 
 Summary Files
 =============
@@ -26,7 +26,7 @@ survey-bricks.fits.gz
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
-coverage in DR4.  For that information, see the next file description.
+coverage in DR5.  For that information, see the next file description.
 
 - HDU1 (only HDU) - tags in the ``survey-bricks.fits.gz`` file
 
@@ -46,10 +46,10 @@ Column          Type    Description
 ``DEC2``        float64  Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr4.fits.gz
+survey-bricks-dr5.fits.gz
 --------------------------
 
-A FITS binary table with information that summarizes the contents of each brick for DR4.
+A FITS binary table with information that summarizes the contents of each brick for DR5.
 
 =============== ========== =========================================================================
 Column          Type       Description
@@ -93,18 +93,20 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on the `catalogs page`_.
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do 
+NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on 
+the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
 
-survey-ccds-bass.fits.gz and survey-ccds-mzls.fits.gz
-------------------------------------------------------
 
-FITS binary tables with almanac information (e.g. seeing, etc.) about each individual CCD image for
-`BASS`_ and `MzLS`_, respectively.
+survey-ccds-decals.fits.gz
+--------------------------
 
-These files contain information regarding the photometric and astrometric zero points for each CCD of every Legacy Survey image that is part of DR4. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in Pan-STARRS, as outlined further on the `description page`_.
+A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
+
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -114,7 +116,6 @@ and exposure time of 30 seconds, a source of magnitude 22.5 would
 contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
-
 
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
@@ -193,13 +194,24 @@ Column               Type       Description
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 .. _`bitmask is documented here`: ../../bitmask
 
-ccds-annotated-dr4-90prime.fits.gz and ccds-annotated-dr4-mzls.fits.gz
-----------------------------------------------------------------------
+survey-ccds-nondecals.fits.gz
+-----------------------------
 
-Versions of the survey-ccds* files for `BASS`_ and `MzLS`_, respectively. These files contain additional information
-gathered during calibration pre-processing before running the Tractor reductions.
+As for survey-ccds-decals.fits.gz, but for areas of the sky covered with DECam by surveys other than DECaLS.
 
-Includes everything listed in the survey-ccds* files plus the following:
+survey-ccds-extra.fits.gz
+-----------------------------
+
+As for survey-ccds-nondecals.fits.gz but for some additional regions of the sky. The "nondecals" and "extra" files are currently split up simply to make them easier to store on github.
+
+ccds-annotated-decals.fits.gz
+-----------------------------
+
+A version of the survey-ccds-decals.fits.gz file with additional information
+gathered during calibration pre-processing before running the Tractor
+reductions.
+
+Includes everything listed in the survey-ccds-decals.fits.gz files plus the following:
 
 ==================== ========== ======================================================
 Column               Type       Description
@@ -257,7 +269,7 @@ Column               Type       Description
 
 .. _`status page`: ../../status
 
-dr4-depth.fits.gz
+dr5-depth.fits.gz
 -----------------
 
 A concatenation of the depth histograms for each brick, from the
@@ -265,10 +277,10 @@ A concatenation of the depth histograms for each brick, from the
 number of pixels in each brick with a 5-sigma AB depth in the given
 magnitude bin.
 
-dr4-depth-summary.fits.gz
+dr5-depth-summary.fits.gz
 -------------------------
 
-A summary of the depth histogram of the whole DR4 survey.  FITS table with the following columns:
+A summary of the depth histogram of the whole DR5 survey.  FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -296,11 +308,12 @@ detailed PSF model.
 External Files
 ==============
 
-The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/external/
+The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be 
+accessed through the web at:
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/external/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
@@ -308,7 +321,7 @@ is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is s
 
 .. _`catalogs page`: ../catalogs
 
-survey-dr4-specObj-dr13.fits
+survey-dr5-specObj-dr13.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
@@ -319,20 +332,20 @@ is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 .. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr4-dr12Q.fits
+survey-dr5-dr12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
 visually inspected quasar catalog (`Paris et al. 2016`_)
 such that the photometric parameters in row "N" of 
-survey-dr4-DR12Q.fits matches the spectroscopic parameters in row "N" of
+survey-dr5-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr4-superset-dr12Q.fits
+survey-dr5-superset-dr12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
@@ -345,7 +358,7 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 .. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr4-dr7Q.fits
+survey-dr5-dr7Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
@@ -364,15 +377,24 @@ Tractor Catalogs
 
 In the file listings outlined below:
 
-- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the 
+letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four 
+digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), 
+followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` 
+corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
 
-- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the previous bullet point. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the 
+previous bullet point. For example `000m010-010m005` would correspond to a survey region limited 
+by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
-- sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
+- sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. 
+For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
 
 - **<filter>** denotes the :math:`g`, :math:`r` or :math:`z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `survey-bricks.fits.gz` file (i.e. ``brickname``, ``ra``, ``dec``).
+Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid 
+lines). The exact brick center for a given brick name can be derived from columns in the 
+`survey-bricks.fits.gz` file (i.e. ``brickname``, ``ra``, ``dec``).
 
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
@@ -387,7 +409,7 @@ Users interested in database access to the Tractor Catalogs can contact the NOAO
 Sweep Catalogs
 ==============
 
-sweep/4.0/sweep-<brickmin>-<brickmax>.fits
+sweep/5.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
@@ -603,21 +625,22 @@ the colors.
 Raw Data
 ========
 
-NOAO access to raw and calibrated images will be available starting on July 10, 2017.
+NOAO access to raw and calibrated images will be available starting on October XX, 2017.
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
-portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
-stacked images, Tractor catalogs, etc. comprise images 
-taken from the Mayall :math:`z`-band Legacy Survey (`MzLS`_) in the :math:`z` band, and from 
-the Beijing-Arizona Sky Survey (`BASS`_) in the :math:`g` & :math:`r` bands.
+portal (http://archive.noao.edu/search/query) and an ftp server. 
+The input data used to create the 
+stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
+project, as well as other DECam images. 
 
 (i) Web interface
 -----------------
 
 1. Query the `NOAO Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR4).
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR5).
 3. Under "Data products - Raw data" check "Object".
-4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
+4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing 
+date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
@@ -629,13 +652,13 @@ the Beijing-Arizona Sky Survey (`BASS`_) in the :math:`g` & :math:`r` bands.
 --------------
 
 Following the organization of the Stacked images, Raw and Calibrated images are organized 
-by survey brick, which are defined in the file *survey-bricks-dr4.fits.gz* for DR4. Both the main Tractor 
+by survey brick, which are defined in the file *survey-bricks-dr5.fits.gz* for DR5. Both the main Tractor 
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
 format ``<AAAa>c<BBB>)``. 
 
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr4/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr4/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr4/coadd/``<AAA>/<brick>``
+- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr5/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr5/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr5/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 

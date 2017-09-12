@@ -110,9 +110,9 @@ the bottom of the `files`_ page).
 Sections of `DECaLS` for DR5 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
+FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
@@ -140,6 +140,11 @@ efficiency.  Next, SED-matched combinations of the three bands are
 created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
 are detected in each of these two SED-matched filters, as well as in each band independently.
+
+As of DR5, source detection is run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
+and finally in "red". In `DR4`_, `DR3`_ and earlier data releases, 
+source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
+and finally in "red".
 
 PSF
 ===
@@ -188,8 +193,7 @@ Only the source properties were allowed to float in DR5.
 These are continuous properties for the object centers, fluxes,
 and the shape parameters. There is also the discrete choice of which
 model type to use. In DR5, five morphological types are used: point sources,
-"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius 
-and round profile), deVaucouleurs profiles
+round exponential galaxies with a variable radius ("REX"), deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR5 are:
@@ -199,7 +203,7 @@ Number of Sources Type
 ================= ==================
    XXX,XXX,XXX    Objects in a Primary brick
     XX,XXX,XXX    ``PSF``
-    XX,XXX,XXX    ``SIMP``
+    XX,XXX,XXX    ``REX``
     XX,XXX,XXX    ``EXP``
     XX,XXX,XXX    ``DEV``
        XXX,XXX    ``COMP``
@@ -209,12 +213,12 @@ The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
-The "PSF" and "SIMP" models are computed for
+The "PSF" and "REX" models are computed for
 every source and the better of these two is used when deciding whether to keep
 the source. A source is retained if its penalized |chi|\ |sup2| is improved by 25;
 this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.
-The source is classified as the better of "point source (PSF)" or "simple galaxy (SIMP)"
+The source is classified as the better of "point source (PSF)" or "round exponential galaxy (REX)"
 unless the penalized |chi|\ |sup2|
 is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
 it as a deVaucouleurs or exponential profile.

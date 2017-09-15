@@ -52,8 +52,8 @@ using the `Tractor`_.
 
 Images from `DECaLS`_
 g,r,z-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
-are included from August 2014 through XXXXX 20XX. DR5 also includes DECam data from a range of 
-non-DECaLS surveys, including observations that were conducted from XXXXX 20XX to XXXXX 20XX.
+are included from August 2014 through May 2017. DR5 also includes DECam data from a range of 
+non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
 In total, the optical data covers a disjoint footprint
 with XXXX deg\ |sup2| in g-band, XXXX deg\ |sup2| in r-band and XXXX deg\ |sup2|

@@ -83,7 +83,10 @@ NAVIGATION_LINKS = {
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
             ), 'Other Data'),
-        ("http://legacysurvey.org/viewer", 'Sky Viewer'),
+        ((
+        ("http://legacysurvey.org/viewer", 'Go to the Sky Viewer'),
+        ("/svtips", 'Sky Viewer Tips & Tricks'),
+        ), 'Sky Viewer'),
         ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/", 'Gallery'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),

@@ -371,6 +371,10 @@ Code Versions
 
 .. * SourceExtractor 2.19.5, PSFEx 3.17.1
 
+.. _`Legacy Survey Data Release 2`: ../../dr2
+.. _`Legacy Survey Data Release 3`: ../../dr3
+.. _`Legacy Survey Data Release 4`: ../../dr4
+.. _`Legacy Survey Data Release 5`: ../../dr5
 
 Glossary
 ========
@@ -394,16 +398,16 @@ DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
 
 DR2
-    Legacy Survey Data Release 2.
+    `Legacy Survey Data Release 2`_.
 
 DR3
-    Legacy Survey Data Release 3.
+    `Legacy Survey Data Release 3`_.
 
 DR4
-    Legacy Survey Data Release 4.
+    `Legacy Survey Data Release 4`_.
 
 DR5
-    Legacy Survey Data Release 4.
+    `Legacy Survey Data Release 5`_.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

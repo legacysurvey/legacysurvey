@@ -12,6 +12,10 @@
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
+.. class:: alert alert-info pull-right
+
+.. contents::
+
 Top level directory for web access:
   http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/
 
@@ -398,6 +402,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
 
+
 Sweep Catalogs
 ==============
 
@@ -511,108 +516,85 @@ Image Stacks
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
----------------------------------------------------
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
+    FITS binary table with the list of CCD images that were used in this brick.
+    Same columns as ``survey-ccds-*.fits.gz``, except for ``photometric`` and
+    ``bitmask``, and with the additional columns:
 
-FITS binary table with the list of CCD images that were used in this brick.
-Same columns as ``survey-ccds-*.fits.gz``, except for ``photometric`` and
-``bitmask``, and with the additional columns:
+    ================ ========= ======================================================
+    Column           Type      Description
+    ================ ========= ======================================================
+    ``extname``	     char[4]   (ignore)
+    ``ccd_cuts``     int32     (ignore)
+    ``ccd_x0``       int16     Minimum x image coordinate overlapping this brick
+    ``ccd_x1``       int16     Maximum x image coordinate overlapping this brick
+    ``ccd_y0``       int16     Minimum y image coordinate overlapping this brick
+    ``ccd_y1``       int16     Maximum y image coordinate overlapping this brick
+    ``brick_x0``     int16     Minimum x brick image coordinate overlapped by this image
+    ``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
+    ``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
+    ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
+    ``sig1``         float64   (ignore)
+    ``psfnorm``      float32   Same as ``psfnorm`` in the ``ccds-annotated-`` file
+    ``galnorm``      float64   Same as ``galnorm`` in the ``ccds-annotated-`` file
+    ``plver``        char[4]   Community Pipeline (CP) version
+    ``skyver``       char[17]  Git version of the sky calibration code
+    ``wcsver``       char[1]   Git version of the WCS calibration code
+    ``psfver``       char[12]  Git version of the PSF calibration code
+    ``skyplver``     char[4]   CP version of the input to sky calibration
+    ``wcsplver``     char[4]   CP version of the input to WCS calibration
+    ``psfplver``     char[4]   CP version of the input to PSF calibration
+    ================ ========= ======================================================
 
-================ ========= ======================================================
-Column           Type      Description
-================ ========= ======================================================
-``extname``	 char[4]   (ignore)
-``ccd_cuts``	 int32	   (ignore)
-``ccd_x0``       int16     Minimum x image coordinate overlapping this brick
-``ccd_x1``       int16     Maximum x image coordinate overlapping this brick
-``ccd_y0``       int16     Minimum y image coordinate overlapping this brick
-``ccd_y1``       int16     Maximum y image coordinate overlapping this brick
-``brick_x0``     int16     Minimum x brick image coordinate overlapped by this image
-``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
-``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
-``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
-``sig1``         float64   (ignore)
-``psfnorm``      float32   Same as ``psfnorm`` in the ``ccds-annotated-`` file
-``galnorm``      float64   Same as ``galnorm`` in the ``ccds-annotated-`` file
-``plver``        char[4]   Community Pipeline (CP) version
-``skyver``       char[17]  Git version of the sky calibration code
-``wcsver``       char[1]   Git version of the WCS calibration code
-``psfver``       char[12]  Git version of the PSF calibration code
-``skyplver``     char[4]   CP version of the input to sky calibration
-``wcsplver``     char[4]   CP version of the input to WCS calibration
-``psfplver``     char[4]   CP version of the input to PSF calibration
-================ ========= ======================================================
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits
+    Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
+    |deg|.  The primary HDU contains the coadded image (inverse-variance weighted coadd), in
+    units of nanomaggies per pixel.
 
+    - NOTE: These are not the images used by Tractor, which operates on the
+      single-epoch images.
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits
-------------------------------------------------------------
+    - NOTE: that these images are resampled using Lanczos-3 resampling.
 
-Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
-|deg|.  The primary HDU contains the coadded image (inverse-variance weighted coadd), in
-units of nanomaggies per pixel.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits
+    Corresponding stacked inverse variance image based on the sum of the
+    inverse-variances of the individual input images in units of 1/(nanomaggies)\
+    |sup2| per pixel.
 
-- NOTE: These are not the images used by Tractor, which operates on the
-  single-epoch images.
+    - NOTE: These are not the inverse variance maps used by Tractor, which operates
+      on the single-epoch images.
 
-- NOTE: that these images are resampled using Lanczos-3 resampling.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.gz
+    Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits
--------------------------------------------------------------
+    - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
-Corresponding stacked inverse variance image based on the sum of the
-inverse-variances of the individual input images in units of 1/(nanomaggies)\
-|sup2| per pixel.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits
+    Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
 
-- NOTE: These are not the inverse variance maps used by Tractor, which operates
-  on the single-epoch images.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.gz
+    Stacked depth map in units of the point-source flux inverse-variance at each pixel.
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.gz
----------------------------------------------------------------
+    - The 5\ |sigma| point-source depth can be computed as 5 / sqrt(depth_ivar) .
 
-Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.gz
+    Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
+    The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
 
-- The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
+    - The 5\ |sigma| galaxy depth can be computed as 5 / sqrt(galdepth_ivar) .
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits
------------------------------------------------------------
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
+    Number of exposures contributing to each pixel of the stacked images.
 
-Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
+    JPEG image of calibrated image using the g,r,z filters as the colors.
 
-coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.gz
----------------------------------------------------------------
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
+    JPEG image of the Tractor's model image using the g,r,z filters as the colors.
 
-Stacked depth map in units of the point-source flux inverse-variance at each pixel.
-
-- The 5\ |sigma| point-source depth can be computed as 5 / sqrt(depth_ivar) .
-
-coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.gz
-------------------------------------------------------------------
-
-Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
-The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
-
-- The 5\ |sigma| galaxy depth can be computed as 5 / sqrt(galdepth_ivar) .
-
-coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
---------------------------------------------------------------
-
-Number of exposures contributing to each pixel of the stacked images.
-
-coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
---------------------------------------------------
-
-JPEG image of calibrated image using the g,r,z filters as the colors.
-
-coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
---------------------------------------------------
-
-JPEG image of the Tractor's model image using the g,r,z filters as the colors.
-
-coadd/<AAA>/<brick>/legacysurvey-<brick>-resid.jpg
---------------------------------------------------
-
-JPEG image of the residual image (data minus model) using the g,r,z filters as
-the colors.
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-resid.jpg
+    JPEG image of the residual image (data minus model) using the g,r,z filters as
+    the colors.
 
 Raw Data
 ========

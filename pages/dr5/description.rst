@@ -48,13 +48,13 @@ Contents of DR5
 ===============
 
 Data Release 5 (DR5) is the fifth public data release of the Legacy Surveys. It is the
-fourth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_)
-(DR4 comprised the first release of data from `BASS`_ and `MzLS`_). 
+fourth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
+DR4 comprised the first release of data from `BASS`_ and `MzLS`_). 
 DR5 imaging is first reduced through the `NOAO Community Pipeline`_ before being processed 
 using the `Tractor`_.
 
 Images from `DECaLS`_
-g,r,z-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+:math:`g,r,z`-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
 are included from August 2014 through May 2017. DR5 also includes DECam data from a range of 
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
@@ -158,9 +158,8 @@ The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.
 
-For `DECaLS`_ we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
-7\ |Prime| diameter aperture for normalization. 
-The configuaration files for SExtractor and PSFex are available `on our github page`_.
+The configuaration files for SExtractor and PSFex that we used for a given
+iteration of our codebase are available `on our github page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config
@@ -312,7 +311,7 @@ the WISE team`_. Namely,
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
-Tractor catalog headers ("WISEAB1", etc). The results is that 
+Tractor catalog headers ("WISEAB1", etc). The result is that 
 the DECam and WISE fluxes we provide should all be within a few percent of being on an AB system.
 
 
@@ -327,11 +326,11 @@ the DECam and WISE fluxes we provide should all be within a few percent of being
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3
+Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
 Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
 to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only have small changes, with the largest effect in :math:`g`-band where the coefficient would be 3.219
-at airmass=1 and 3.202 at airmass=2.
+only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would 
+be 3.219 at airmass=1 and 3.202 at airmass=2.
 
 
 Astrometry

@@ -59,9 +59,11 @@ are included from August 2014 through May 2017. DR5 also includes DECam data fro
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
 In total, the optical data covers a disjoint footprint
-with XXXX deg\ |sup2| in g-band, XXXX deg\ |sup2| in r-band and XXXX deg\ |sup2|
-in z-band, of which XXXX deg\ |sup2| has been observed in all
-three optical filters.
+with XXXX deg\ |sup2| having at least one observation
+in :math:`g`-band, XXXX deg\ |sup2| having at least one observation
+in :math:`r`-band and XXXX deg\ |sup2| having at least one observation
+in :math:`z`-band. A total of XXXX deg\ |sup2| is covered by at least one observation in 
+*all three* optical filters.
 
 There are approximately XXX million unique sources in DR5 spread over XXX,XXX bricks.
 
@@ -91,7 +93,7 @@ XXX GB     `tractor/`_  Tractor catalogs.
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/tractor/
 
-For all of the Legacy Surveys, including `DECaLS`, co-added images and 
+For all of the Legacy Surveys, including `DECaLS`_, co-added images and 
 `Tractor`_ catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
@@ -110,7 +112,7 @@ directly using `the Sky viewer`_
 and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
-Sections of `DECaLS` for DR5 can be obtained as JPEGs or FITS files using
+Sections of `DECaLS`_ for DR5 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
 JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
@@ -156,7 +158,7 @@ The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.
 
-For DECaLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
+For `DECaLS`_ we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
 7\ |Prime| diameter aperture for normalization. 
 The configuaration files for SExtractor and PSFex are available `on our github page`_.
 

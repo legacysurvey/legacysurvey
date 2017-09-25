@@ -599,7 +599,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 Raw Data
 ========
 
-NOAO access to raw and calibrated images will be available starting on October XX, 2017.
+NOAO access to raw and calibrated images will be available a few weeks after the DR5 release date.
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. 

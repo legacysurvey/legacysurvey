@@ -32,8 +32,6 @@ FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky
 This includes all bricks on the sky, not just the ones in our footprint or with
 coverage in DR5.  For that information, see the next file description.
 
-- HDU1 (only HDU) - tags in the **survey-bricks.fits.gz** file
-
 =============== ======= ======================================================
 Column          Type    Description
 =============== ======= ======================================================
@@ -111,7 +109,7 @@ survey-ccds-nocuts.fits.gz
 
 A FITS binary table with almanac information about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DR5 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR5 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
 to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
@@ -508,7 +506,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Same columns as **survey-ccds-dr5.kd.fits**, and with the additional columns:
+    Contains the same columns as **survey-ccds-dr5.kd.fits**, and also contains
+    the additional columns:
 
     ================ ========= ======================================================
     Column           Type      Description
@@ -523,8 +522,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
     ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
     ``sig1``         float64   (ignore)
-    ``psfnorm``      float32   Same as ``psfnorm`` in the ``ccds-annotated-`` file
-    ``galnorm``      float64   Same as ``galnorm`` in the ``ccds-annotated-`` file
+    ``psfnorm``      float32   Same as ``psfnorm`` in the **ccds-annotated-** file
+    ``galnorm``      float64   Same as ``galnorm`` in the **ccds-annotated-** file
     ``plver``        char[6]   Community Pipeline (CP) version
     ``skyver``       char[17]  Git version of the sky calibration code
     ``wcsver``       char[1]   Git version of the WCS calibration code

@@ -40,9 +40,9 @@ most recent release of `DECaLS`_ imaging. The coverage is color-coded by the num
 Area that is yet to be observed is marked in light gray. The lines track Galactic 
 latitudes of 0\ |deg|, -10\ |deg| and +10\ |deg|.
 
-.. image:: /files/nexp-g.png
-.. image:: /files/nexp-r.png
-.. image:: /files/nexp-z.png
+.. image:: /files/nexp-g-dr5.png
+.. image:: /files/nexp-r-dr5.png
+.. image:: /files/nexp-z-dr5.png
     :alt: DR3 Coverage Plots
 
 The figures below depict the status of `MzLS`_ and `BASS`_ as of Data Release 4 (`DR4`_), the

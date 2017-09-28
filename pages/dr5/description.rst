@@ -59,13 +59,13 @@ are included from August 2014 through May 2017. DR5 also includes DECam data fro
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
 In total, the optical data covers a disjoint footprint
-with XXXX deg\ |sup2| having at least one observation
-in :math:`g`-band, XXXX deg\ |sup2| having at least one observation
-in :math:`r`-band and XXXX deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of XXXX deg\ |sup2| is covered by at least one observation in 
+with, roughly, 7400 deg\ |sup2| having at least one observation
+in :math:`g`-band, 8000 deg\ |sup2| having at least one observation
+in :math:`r`-band and 10200 deg\ |sup2| having at least one observation
+in :math:`z`-band. A total of 6800 deg\ |sup2| is covered by at least one observation in 
 *all three* optical filters.
 
-There are approximately XXX million unique sources in DR5 spread over XXX,XXX bricks.
+There are approximately 680 million unique sources in DR5 spread over 176,811 bricks.
 
 DR5 includes the stacked images and the Tractor-based catalogs.
 The size of the DR5 data distribution is:
@@ -205,12 +205,12 @@ The total numbers of the different morphological types in DR5 are:
 ================= ==================
 Number of Sources Type
 ================= ==================
-   XXX,XXX,XXX    Objects in a Primary brick
-    XX,XXX,XXX    ``PSF``
-    XX,XXX,XXX    ``REX``
-    XX,XXX,XXX    ``EXP``
-    XX,XXX,XXX    ``DEV``
-       XXX,XXX    ``COMP``
+   679,755,904    Objects in a Primary brick
+   371,088,269    ``PSF``
+   222,184,611    ``REX``
+    61,380,049    ``EXP``
+    22,036,854    ``DEV``
+     3,066,121    ``COMP``
 ================= ==================
 
 Note that the "REX" model replaces the "SIMP" model used in 

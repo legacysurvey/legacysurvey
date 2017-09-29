@@ -421,7 +421,9 @@ sweep/5.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
-Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. Includes:
+Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. In addition to the columns listed below, the columns pertaining to optical data 
+also have :math:`U`, :math:`I` and :math:`Y`-band entries (e.g. ``FLUX_U``, ``FLUX_I``, ``FLUX_Y``), but, in DR5, these extra columns contain only zeros.
+
 
 .. _`RELEASE is documented here`: ../../release
 

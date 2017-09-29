@@ -120,8 +120,8 @@ Name                        Type         Units                 Description
 ``wise_coadd_id``	    char[8]	 		       unWISE coadd file name for the center of each object
 ``lc_flux_w1``		    float32[7]	 nanomaggies           FLUX_W1 in each of up to seven unWISE coadd epochs
 ``lc_flux_w2``		    float32[7]	 nanomaggies           FLUX_W2 in each of up to seven unWISE coadd epochs
-``lc_flux_ivar_w1``	    float32[7]	 1/nanomaggies2	       Inverse variance of LC_FLUX_W1
-``lc_flux_ivar_w2``	    float32[7]	 1/nanomaggies2	       Inverse variance of LC_FLUX_W2
+``lc_flux_ivar_w1``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
+``lc_flux_ivar_w2``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
 ``lc_nobs_w1``		    int16[7]			       NOBS_W1 in each of up to seven unWISE coadd epochs
 ``lc_nobs_w2``		    int16[7]		               NOBS_W2 in each of up to seven unWISE coadd epochs
 ``lc_fracflux_w1``	    float32[7]	                       FRACFLUX_W1 in each of up to seven unWISE coadd epochs
@@ -133,13 +133,13 @@ Name                        Type         Units                 Description
 ``fracdev``		    float32			       Fraction of model in deVauc [0,1]
 ``fracdev_ivar``	    float32			       Inverse variance of FRACDEV
 ``shapeexp_r``		    float32	 arcsec  	       Half-light radius of exponential model (>0)
-``shapeexp_r_ivar``	    float32	 1/arcsec2	       Inverse variance of R_EXP
+``shapeexp_r_ivar``	    float32	 1/arcsec\ |sup2|      Inverse variance of R_EXP
 ``shapeexp_e1``		    float32         		       Ellipticity component 1
 ``shapeexp_e1_ivar``	    float32		   	       Inverse variance of SHAPEEXP_E1
 ``shapeexp_e2``		    float32		               Ellipticity component 2
 ``shapeexp_e2_ivar``	    float32	       		       Inverse variance of SHAPEEXP_E2
 ``shapedev_r``		    float32	 arcsec	               Half-light radius of deVaucouleurs model (>0)
-``shapedev_r_ivar``	    float32	 1/arcsec	       Inverse variance of R_DEV
+``shapedev_r_ivar``	    float32	 1/arcsec\ |sup2|      Inverse variance of R_DEV
 ``shapedev_e1``		    float32		               Ellipticity component 1
 ``shapedev_e1_ivar``	    float32	   		       Inverse variance of SHAPEDEV_E1
 ``shapedev_e2``		    float32			       Ellipticity component 2

@@ -265,9 +265,32 @@ dr5-depth.fits.gz
 -----------------
 
 A concatenation of the depth histograms for each brick, from the
-``coadd/*/*/*-depth.fits`` tables.  These histograms describe the
-number of pixels in each brick with a 5-sigma AB depth in the given
-magnitude bin.
+``coadd/*/*/*-depth.fits`` tables.  HDU1 contains histograms that describe the
+number of pixels in each brick with a 5-sigma AB depth in the given magnitude
+bin. HDU2 contains the bin edges of the histograms.
+
+- HDU1
+
+==================== =========  ======================================================
+Column               Type       Description
+==================== =========  ======================================================
+``counts_ptsrc_g``   int32[50]  Histogram of pixels for point source depth in :math:`g` band
+``counts_gal_g``     int32[50]  Histogram of pixels for canonical galaxy depth in :math:`g` band
+``counts_ptsrc_r``   int32[50]  Histogram of pixels for point source depth in :math:`r` band
+``counts_gal_r``     int32[50]  Histogram of pixels for canonical galaxy depth in :math:`r` band
+``counts_ptsrc_z``   int32[50]  Histogram of pixels for point source depth in :math:`z` band
+``counts_gal_z``     int32[50]  Histogram of pixels for canonical galaxy depth in :math:`z` band
+``brickname``        char[8]    Name of the brick
+==================== =========  ======================================================
+
+- HDU2
+
+==================== =========  ============================================================
+Column               Type       Description
+==================== =========  ============================================================
+``depthlo``          float32    Lower bin edge for each histogram in HDU1 (5-sigma AB depth)
+``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
+==================== =========  ============================================================
 
 dr5-depth-summary.fits.gz
 -------------------------

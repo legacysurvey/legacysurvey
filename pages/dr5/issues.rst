@@ -38,4 +38,4 @@ survey (that isn't in the file **survey-bricks-dr5.fits.gz**). The brick ``0351m
 processing, so doesn't have a Tractor catalog. However the coadds did run to completion for
 brick ``0351m025``, so that brick *does* have depth information!
 
-http://legacysurvey.org/viewer-dev/dr5?brick=0351m025&bricks&zoom=11
+http://legacysurvey.org/viewer/dr5?brick=0351m025&bricks&zoom=11

@@ -16,20 +16,6 @@ For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR4 issues`_ pag
 .. _`BASS`: ../../bass
 
 
-"Infs" and "NaNs" in Tractor Catalogues
-=======================================
-
-There are three places where "Inf" or "NaN" can occur in the tractor catalogues. Note, any Inf or Nan in ``flux_ivar`` measurements were replaced with "0".
-
-- ``{RA,DEC,*shape*}_IVAR:`` "Inf", 37 bricks, object's center is a masked pixel, in some cases "Inf" appears in the corresponding ``{shape}_IVAR``.
-  See https://github.com/legacysurvey/legacypipe/issues/148
-- ``{D,R}CHISQ``: "NaN", 7 bricks, occurs near boundary with masked region, at the boundary the image is fine but the model is rendered with very
-  positive or negative outliers. See https://github.com/legacysurvey/legacypipe/issues/147
-- ``MJD_{MIN,MAX}``: "NaN", 3,024 bricks, object is at a CCD edge, we could remove quite a few cutting on "sum(NOBS_*) = 0" but not for all of the
-  cases. The fix in "legacypipe" would be to compute ``NOBS`` and ``MJD_MIN/MAX`` consistently. Currently, ``NOBS`` are derived from the pixel in
-  resampled brick space, while ``MJD_MIN/MAX`` are derived from the pixel in the CCD image. See https://github.com/legacysurvey/legacypipe/issues/154
-
-
 One brick has depth information but isn't listed as being in DR5
 ================================================================
 

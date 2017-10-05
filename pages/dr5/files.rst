@@ -335,28 +335,28 @@ is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is s
 
 .. _`catalogs page`: ../catalogs
 
-survey-dr5-specObj-dr13.fits
+survey-dr5-specObj-dr14.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
+photometry that is row-by-row-matched to the SDSS DR14 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
-**survey-dr5-specObj-dr13.fits** matches the spectroscopic parameters in row "N" of
-specObj-dr13.fits. The spectroscopic file 
-is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
+**survey-dr5-specObj-dr14.fits** matches the spectroscopic parameters in row "N" of
+specObj-dr14.fits. The spectroscopic file 
+is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
-.. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr5-dr12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
-visually inspected quasar catalog (`Paris et al. 2016`_)
+visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
-**survey-dr5-DR12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr5-dr12Q.fits** matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
+.. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr5-superset-dr12Q.fits
@@ -365,11 +365,10 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
 (`Paris et al. 2017`_) such that the photometric parameters in row "N" of 
-**survey-dr5-Superset_DR12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr5-Superset_dr12Q.fits** matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr5-dr7Q.fits
@@ -378,7 +377,7 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-**survey-dr5-DR7Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr5-dr7Q.fits** matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 

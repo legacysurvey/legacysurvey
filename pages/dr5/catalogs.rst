@@ -199,22 +199,26 @@ with 1 representing a fully transparent region of the Milky Way and 0 representi
 The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
-by Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
+by `Schlafly & Finkbeiner (2011)`_ using the `Fitzpatrick (1999)`_
 extinction curve at R_V = 3.1 and their improved overall calibration of the `SFD98`_ maps.
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in :math:`ugriz`,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
 Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
 with :math:`u`-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-These are slightly different than the coefficients in Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804).
+These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 (note that these are 
+*slightly* different from the coefficients in `Schlafly & Finkbeiner 2011`_).
 
-The coefficients for the four WISE filters are derived from Fitzpatrick (1999), as recommended by Schafly & Finkbeiner,
-considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).
+The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`_, as recommended by `Schlafly & Finkbeiner (2011)`_,
+considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
-.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
-.. _`Schlafly & Finkbeiner (2011)`: http://arxiv.org/abs/1012.4804
+.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
+.. _`Schlafly & Finkbeiner (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
+.. _`Schlafly & Finkbeiner 2011`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
+.. _`Fitzpatrick (1999)`: http://adsabs.harvard.edu/abs/1999PASP..111...63F
+.. _`Cardelli et al. (1989)`: http://adsabs.harvard.edu/abs/1989ApJ...345..245C
+.. _`Fitzpatrick & Massa (2009)`: http://adsabs.harvard.edu/abs/2009ApJ...699.1209F
 
 Ellipticities
 -------------

@@ -592,7 +592,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
     The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
 
-    - The 5\ |sigma| galaxy depth can be computed as :math:`5 / \sqrt(\mathrm{galdepth_ivar})` .
+    - The 5\ |sigma| galaxy depth can be computed as :math:`5 / \sqrt(\mathrm{galdepth\_ivar})` .
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
     Number of exposures contributing to each pixel of the stacked images.

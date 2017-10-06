@@ -586,25 +586,25 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.gz
     Stacked depth map in units of the point-source flux inverse-variance at each pixel.
 
-    - The 5\ |sigma| point-source depth can be computed as 5 / sqrt(depth_ivar) .
+    - The 5\ |sigma| point-source depth can be computed as :math:`5 / \sqrt(\mathrm{depth\_ivar})` .
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.gz
     Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
     The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
 
-    - The 5\ |sigma| galaxy depth can be computed as 5 / sqrt(galdepth_ivar) .
+    - The 5\ |sigma| galaxy depth can be computed as :math:`5 / \sqrt(\mathrm{galdepth_ivar})` .
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
     Number of exposures contributing to each pixel of the stacked images.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
-    JPEG image of calibrated image using the g,r,z filters as the colors.
+    JPEG image of calibrated image using the :math:`g,r,z` filters as the colors.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
-    JPEG image of the Tractor's model image using the g,r,z filters as the colors.
+    JPEG image of the Tractor's model image using the :math:`g,r,z` filters as the colors.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-resid.jpg
-    JPEG image of the residual image (data minus model) using the g,r,z filters as
+    JPEG image of the residual image (data minus model) using the :math:`g,r,z` filters as
     the colors.
 
 Raw Data

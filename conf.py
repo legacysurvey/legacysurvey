@@ -87,7 +87,7 @@ NAVIGATION_LINKS = {
         ("http://legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
         ), 'Sky Viewer'),
-        ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/", 'Gallery'),
+        ("http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/gallery/", 'Gallery'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),

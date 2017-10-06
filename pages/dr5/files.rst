@@ -12,7 +12,7 @@
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-.. class:: alert alert-warning pull-right
+.. class:: pull-right well
 
 .. contents::
 

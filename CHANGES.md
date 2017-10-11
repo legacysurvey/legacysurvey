@@ -2,7 +2,7 @@
 
 ## 5.0.0 (unreleased)
 
-- Updated to release version for DR4 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).
+- Updated to release version for DR5 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).
 - New Data Model where appropriate
 - Added `RELEASE=5000` description
 - Contents toolbars for quick-links on longer pages

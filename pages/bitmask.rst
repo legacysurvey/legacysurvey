@@ -29,5 +29,5 @@ The CCDs used by `legacypipe`_ can be determined via:
  
 ``photometric == True AND bitmask == 0``
 
-Note that ``photometric``, ``ccdrarms``, ``ccddecrms`` and ``ccdphrms`` are all columns in the ``ccds-`` and ``survey-`` files described on the `files page`_.
+Note that ``photometric``, ``ccdrarms``, ``ccddecrms`` and ``ccdphrms`` are all columns in the ``ccds-`` and ``survey-`` files described on the DR4 `files page`_.
 

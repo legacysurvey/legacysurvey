@@ -333,6 +333,8 @@ Each row of each external-match file contains the full record of the nearest obj
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
 is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is set to -1.
 
+In addition to the columns from the Tractor catalogs, we have added columns from the SDSS files that can be used to track objects uniquely. These are typically some combination of ``PLATE``, ``FIBER``, ``MJD`` (or ``SMJD``) and, in some cases, ``RERUN``.
+
 .. _`catalogs page`: ../catalogs
 
 survey-dr5-specObj-dr14.fits

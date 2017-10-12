@@ -70,9 +70,8 @@ There are approximately 680 million unique sources in DR5 spread over 176,811 br
 DR5 includes the stacked images and the Tractor-based catalogs.
 The size of the DR5 data distribution is:
 
-
 ========== ============ =======================
-Size       Directory    Description
+Size*      Directory    Description
 ========== ============ =======================
 249 GB     `calib/`_    Calibration files.
 18 TB      `coadd/`_    Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and Quality Assurance PNG plots
@@ -83,6 +82,8 @@ Size       Directory    Description
 318 GB     `sweep/`_    Repackaged versions of the Tractor catalogs.
 990 GB     `tractor/`_  Tractor catalogs.
 ========== ============ =======================
+
+\*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/coadd/

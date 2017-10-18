@@ -14,7 +14,7 @@
 .. _`files page`: ../dr4/files
 .. _`legacypipe`: https://github.com/legacysurvey/legacypipe
 
-The ``ccds-`` and ``survey-`` files described on the `files page`_ contain a column ``bitmask``, which is defined as:
+The ``ccds-`` and ``survey-`` files described on the DR4 `files page`_ contain a column ``bitmask``, which is defined as:
 
 
 ==== ========
@@ -29,5 +29,5 @@ The CCDs used by `legacypipe`_ can be determined via:
  
 ``photometric == True AND bitmask == 0``
 
-Note that ``photometric``, ``ccdrarms``, ``ccddecrms`` and ``ccdphrms`` are all columns in the ``ccds-`` and ``survey-`` files described on the `files page`_.
+Note that ``photometric``, ``ccdrarms``, ``ccddecrms`` and ``ccdphrms`` are all columns in the ``ccds-`` and ``survey-`` files described on the DR4 `files page`_.
 

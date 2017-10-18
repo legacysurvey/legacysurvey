@@ -52,9 +52,6 @@ completed 50% of its survey in 116 scheduled nights
 in the 2016A semester (February-June).
 MzLS is expected to complete observations in July 2017 with
 an additional 115 nights in 2017A.
-The Mayall telescope will be taken offline for installation
-of the `DESI`_ instrument in Fall 2017, which defines a clear
-end to the MzLS imaging program.
 
 .. _`SDSS`: http://classic.sdss.org
 .. _`SDSS-II`: http://classic.sdss.org

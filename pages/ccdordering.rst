@@ -10,7 +10,7 @@
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
-.. _`files page`: ../dr4/files
+.. _`files page`: ../dr5/files
 
 The ordering of the CCD vertices is different for `BASS`_, `MzLS`_ and `DECaLS`_. For each individual survey, the CCD corners are ordered as in the table below, in which RA increases to the right and Dec increases upwards.
 

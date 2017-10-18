@@ -26,4 +26,14 @@ RELEASE	CAMERA FILTER     PRIMARY
 4000	wise   :math:`W4` 0
 ======= ====== ========== =======
 
-
+======= ====== ========== =======
+RELEASE	CAMERA FILTER     PRIMARY
+======= ====== ========== =======
+5000	decam  :math:`g`  1
+5000	decam  :math:`r`  1
+5000	decam  :math:`z`  1
+5000	wise   :math:`W1` 0
+5000    wise   :math:`W2` 0
+5000	wise   :math:`W3` 0
+5000	wise   :math:`W4` 0
+======= ====== ========== =======

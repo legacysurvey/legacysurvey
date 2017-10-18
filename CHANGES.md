@@ -1,8 +1,15 @@
 # legacysurvey Change Log
 
-## 4.0.1 (unreleased)
+## 5.0.0 (unreleased)
 
-- No changes yet.
+- Updated to release version for DR5 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).
+- New Data Model where appropriate
+- Added `RELEASE=5000` description
+- Contents toolbars for quick-links on longer pages
+- Additional drop-down menus (e.g., there are now tips and tricks for the viewer)
+- `SIMP` has been deprecated by `REX`
+- ordering of bands for photometric model fits has changed
+- acknowledgment is now consistent with NOAO page
 
 ## 4.0.0 (2017-06-30)
 

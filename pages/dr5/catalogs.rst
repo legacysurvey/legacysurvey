@@ -14,16 +14,15 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
-`known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data 
-also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
-zeros in DR4.
+`known issues`_ regarding their content and derivation. In DR5, the columns pertaining to optical data 
+also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``), but these contain only
+zeros.
 
 .. _`known issues`: ../issues
 .. _`RELEASE is documented here`: ../../release
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
-.. _`DR3`: ../../dr3
 
 =========================== ============ ===================== ===============================================
 Name                        Type         Units                 Description
@@ -33,14 +32,14 @@ Name                        Type         Units                 Description
 ``brickname``               char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                   int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``           boolean                            True if the object is within the brick boundary
-``type``                    char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
+``type``                    char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                      float64      deg                   Right ascension at epoch J2000
 ``dec``                     float64      deg                   Declination at epoch J2000
 ``ra_ivar``                 float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
 ``dec_ivar``                float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 ``bx``                      float32      pix                   X position (0-indexed) of coordinates in brick image stack
 ``by``                      float32      pix                   Y position (0-indexed) of coordinates in brick image stack
-``dchisq``                  float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
+``dchisq``                  float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
 ``ebv``                     float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 ``mjd_min``		    float64	 days		       Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		    float64	 days		       Maximum Modified Julian Date of observations used to construct the model of this object
@@ -173,9 +172,9 @@ Goodness-of-Fits
 
 The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
-the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
+the best-fit point source (type="PSF"), round exponential galaxy model ("REX"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
-The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
+The "REX" model is a round exponential galaxy profile with a variable radius
 and is meant to capture slightly-extended but low signal-to-noise objects.
 The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
 Note that the ``dchisq`` values are negated so that positive values indicate better fits.
@@ -188,36 +187,38 @@ computed as the following sum over pixels in the blob for each object:
 .. math::
     \chi^2 = \frac{\sum \left[ \left(\mathrm{image} - \mathrm{model}\right)^2 \times \mathrm{model} \times \mathrm{inverse\, variance}\right]}{\sum \left[ \mathrm{model} \right]}
 
-The above sum is over all images contributing to a particular filter.
-The above can be negative-valued for sources that have a flux measured as negative in some bands
-where they are not detected.
+The above sum is over all images contributing to a particular filter, and can be negative-valued for sources 
+that have a flux measured as negative in some bands where they are not detected.
 
 Galactic Extinction Coefficients
 --------------------------------
 
-The Galactic extinction values are derived from the SFD98 maps, but with updated coefficients to
+The Galactic extinction values are derived from the `SFD98`_ maps, but with updated coefficients to
 convert E(B-V) to the extinction in each filter.  These are reported in linear units of transmission,
 with 1 representing a fully transparent region of the Milky Way and 0 representing a fully opaque region.
 The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
-by Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
-extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.
-These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
+by `Schlafly & Finkbeiner (2011)`_ using the `Fitzpatrick (1999)`_
+extinction curve at R_V = 3.1 and their improved overall calibration of the `SFD98`_ maps.
+These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in :math:`ugriz`,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
-For DR4, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they were on the DECam filter system (e.g. see `DR3`_).
-
 Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
-with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in Schlafly & Finkbeiner (2011; http://arxiv.org/abs/1012.4804).)
+with :math:`u`-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
+These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 (note that these are 
+*slightly* different from the coefficients in `Schlafly & Finkbeiner 2011`_).
 
-The coefficients for the four WISE filters are derived from Fitzpatrick (1999), as recommended by Schafly & Finkbeiner,
-considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).
+The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`_, as recommended by `Schlafly & Finkbeiner (2011)`_,
+considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
-.. _`Schlafly & Finkbeiner (2011)`: http://arxiv.org/abs/1012.4804
+.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
+.. _`Schlafly & Finkbeiner (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
+.. _`Schlafly & Finkbeiner 2011`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
+.. _`Fitzpatrick (1999)`: http://adsabs.harvard.edu/abs/1999PASP..111...63F
+.. _`Cardelli et al. (1989)`: http://adsabs.harvard.edu/abs/1989ApJ...345..245C
+.. _`Fitzpatrick & Massa (2009)`: http://adsabs.harvard.edu/abs/2009ApJ...699.1209F
 
 Ellipticities
 -------------

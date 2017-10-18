@@ -46,12 +46,14 @@ DR1 includes the stacked images and the Tractor-based catalogs.
 The size of this data distribution is:
 
 ===== ========= ==============================================
-Size  Directory Description
+Size* Directory Description
 ===== ========= ==============================================
-235GB tractor   Tractor catalogs
+238GB tractor   Tractor catalogs
 15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
 41GB  sweep     Light-weight versions of the Tractor catalogs.
 ===== ========= ==============================================
+
+\*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
 The co-added images and Tractor catalogs are presented in bricks of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  These images are identical projections

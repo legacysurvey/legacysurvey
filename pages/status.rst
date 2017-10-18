@@ -12,6 +12,7 @@
 .. _`DESI`: http://desi.lbl.gov
 .. _`DR3`: ../dr3
 .. _`DR4`: ../dr4
+.. _`DR5`: ../dr5
 
 Legacy Survey observations began in August 2014. For each of the Legacy Surveys 
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
@@ -34,6 +35,16 @@ In addition to observations carried out as part of the Legacy Survey, data relea
 reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that overlap the 
 Legacy Survey footprint.
 
+The figures below depict the status of `DECaLS`_ as of Data Release 5 (`DR5`_), the
+most recent release of `DECaLS`_ imaging. The coverage is color-coded by the number of passes. 
+Area that is yet to be observed is marked in light gray. The lines track Galactic 
+latitudes of 0\ |deg|, -10\ |deg| and +10\ |deg|.
+
+.. image:: /files/nexp-g-dr5.png
+.. image:: /files/nexp-r-dr5.png
+.. image:: /files/nexp-z-dr5.png
+    :alt: DR3 Coverage Plots
+
 The figures below depict the status of `MzLS`_ and `BASS`_ as of Data Release 4 (`DR4`_), the
 most recent release of `MzLS`_ and `BASS`_ imaging. The coverage is color-coded by the number of passes. 
 Area that is yet to be observed is marked in light gray.
@@ -43,13 +54,5 @@ Area that is yet to be observed is marked in light gray.
 .. image:: /files/nexp-z-dr4.png
     :alt: DR4 Coverage Plots
 
-The figures below depict the status of `DECaLS`_ as of Data Release 3 (`DR3`_), the
-most recent release of `DECaLS`_ imaging. The coverage is color-coded by the number of passes. 
-Area that is yet to be observed is marked in light gray. The lines track Galactic 
-latitudes of 0\ |deg|, -10\ |deg| and +10\ |deg|.
 
-.. image:: /files/nexp-g.png
-.. image:: /files/nexp-r.png
-.. image:: /files/nexp-z.png
-    :alt: DR3 Coverage Plots
 

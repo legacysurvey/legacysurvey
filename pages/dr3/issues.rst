@@ -60,8 +60,16 @@ Issue
 Workaround
   Which proposal IDs were considered in which brick can be obtained from the ccds files that
   are documented on the `catalogs page`_.
+  Unfortunately, however, the final ``dr3e`` code used to generate DR3 catalogs has a 
+  blacklist cut that does *not* match the ``blacklist_ok`` 
+  column in the DR3 ``ccds-annotated`` files. This implies that the 
+  ``ccds-annotated`` files were generated with an earlier version of the code (seemingly
+  the ``dr3c`` version). The easiest
+  way to handle these discrepancies is to use the newer `Data Release 5`_ of the
+  Legacy Surveys.
 
 .. _`catalogs page`: ../catalogs
+.. _`Data Release 5`: ../../dr5
 
 NANs in Tractor Catalogs
 ========================

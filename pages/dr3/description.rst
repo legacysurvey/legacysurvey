@@ -42,7 +42,7 @@ DR3 includes the stacked images and the Tractor-based catalogs.
 The size of the DR3 data distribution is:
 
 ======= ============ =======================
-Size    Directory    Description
+Size*   Directory    Description
 ======= ============ =======================
 112 GB  `calib/`_    Calibration files.
 57 TB   `coadd/`_    Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and Quality Assurance PNG plots
@@ -53,6 +53,8 @@ Size    Directory    Description
 215 GB  `sweep/`_    Repackaged versions of the Tractor catalogs.
 663 GB  `tractor/`_  Tractor catalogs.
 ======= ============ =======================
+
+\*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/coadd/

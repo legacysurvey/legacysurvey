@@ -9,6 +9,32 @@ The Legacy Surveys consist of three individual and complementary projects: the D
 
 NOAO is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation. 
 
+This project used data obtained with the Dark Energy Camera (DECam), which was constructed by    
+the Dark Energy Survey (DES) collaboration. Funding for the DES Projects has been provided by    
+the U.S. Department of Energy, the U.S. National Science Foundation, the Ministry of Science     
+and Education of Spain, the Science and Technology Facilities Council of the United Kingdom,     
+the Higher Education Funding Council for England, the National Center for Supercomputing 
+Applications at the University of Illinois at Urbana-Champaign, the Kavli Institute of 
+Cosmological Physics at the University of Chicago, Center for Cosmology and Astro-Particle 
+Physics at the Ohio State University, the Mitchell Institute for Fundamental Physics and 
+Astronomy at Texas A&M University, Financiadora de Estudos e Projetos, Fundacao Carlos 
+Chagas Filho de Amparo, Financiadora de Estudos e Projetos, Fundacao Carlos Chagas Filho
+de Amparo a Pesquisa do Estado do Rio de Janeiro, Conselho Nacional de Desenvolvimento
+Cientifico e Tecnologico and the Ministerio da Ciencia, Tecnologia e Inovacao, the 
+Deutsche Forschungsgemeinschaft and the Collaborating Institutions in the Dark Energy Survey.    
+The Collaborating Institutions are Argonne National Laboratory, the University of California     
+at Santa Cruz, the University of Cambridge, Centro de Investigaciones Energeticas,
+Medioambientales y Tecnologicas-Madrid, the University of Chicago, University College
+London, the DES-Brazil Consortium, the University of Edinburgh, the Eidgenossische
+Technische Hochschule (ETH) Zurich, Fermi National Accelerator Laboratory, the University
+of Illinois at Urbana-Champaign, the Institut de Ciencies de l'Espai (IEEC/CSIC), the
+Institut de Fisica d'Altes Energies, Lawrence Berkeley National Laboratory, the 
+Ludwig-Maximilians Universitat Munchen and the associated Excellence Cluster Universe,
+the University of Michigan, the National Optical Astronomy Observatory, the University 
+of Nottingham, the Ohio State University, the University of Pennsylvania, the University 
+of Portsmouth, SLAC National Accelerator Laboratory, Stanford University, the University of 
+Sussex, and Texas A&M University.
+
 BASS is a key project of the Telescope Access Program (TAP), which has been funded by the National Astronomical Observatories of China, the Chinese Academy of Sciences (the Strategic Priority Research Program "The Emergence of Cosmological Structures" Grant # XDB09000000), and the Special Fund for Astronomy from the Ministry of Finance. The BASS is also supported by the External Cooperation Program of Chinese Academy of Sciences (Grant # 114A11KYSB20160057), and Chinese National Natural Science Foundation (Grant # 11433005). 
 
 The Legacy Survey team makes use of data products from the Near-Earth Object Wide-field Infrared Survey Explorer (NEOWISE), which is a project of the Jet Propulsion Laboratory/California Institute of Technology. NEOWISE is funded by the National Aeronautics and Space Administration.

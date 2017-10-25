@@ -36,11 +36,11 @@ DR3 zeropoints were based on comparisons to stars from PanSTARRS Data Release 1 
 the DR5 zeropoints are based on comparisons to the subset of PS1 stars that are also in the 
 Gaia Data Release 1 catalog. DR1 of Gaia has "holes" in its coverage, with large spatial regions 
 missing PS1 stars. An example is shown in the figure below, which plots the PS1 calibrators 
-(black dots) and the PS1-Gaia calibrators (blue dots) with the outlines of the Mosaic3 CCDs. 
+(black dots) and the PS1-Gaia calibrators (blue dots) with the outlines of the DECam CCDs. 
 Since only CCDs with > 20 matched calibrators are retained in the DR5 version of the catalog, 
-CCDs covering regions like CCD4 in the figure would be dropped from DR5.
+CCDs covering regions like CCD N26 in the figure would be dropped from DR5.
 
 .. image:: /files/DR5missingCCDs.png
    :height: 500
-   :width: 500
-   :scale: 75
+   :width: 700
+   :scale: 85

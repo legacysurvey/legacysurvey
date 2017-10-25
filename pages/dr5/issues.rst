@@ -16,12 +16,31 @@ For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR4 issues`_ pag
 .. _`BASS`: ../../bass
 
 
-One brick has depth information but isn't listed as being in DR5
-================================================================
+Brick ``0351m025``
+==================
 
-The depth file (**dr5-depth.fits.gz**) contains one brick that isn't listed as being in the 
-survey (that isn't in the file **survey-bricks-dr5.fits.gz**). The brick ``0351m025`` failed during
+Brick ``0351m025`` failed during
 processing, so doesn't have a Tractor catalog. However the coadds did run to completion for
-brick ``0351m025``, so that brick *does* have depth information!
+brick ``0351m025``. We've tried to redact brick ``0351m025`` from all of the relevant
+files, but we may not have completely removed it from all possible places in DR5. It could,
+for instance, still appear in the viewer:
+
 
 http://legacysurvey.org/viewer/dr5?brick=0351m025&bricks&zoom=11
+
+Missing CCDs in the region of Gaia bright stars
+===============================================
+
+Some DECam CCDs that are included in DR3 are not included in the DR5 release. This is because the 
+DR3 zeropoints were based on comparisons to stars from PanSTARRS Data Release 1 (PS1), whereas 
+the DR5 zeropoints are based on comparisons to the subset of PS1 stars that are also in the 
+Gaia Data Release 1 catalog. DR1 of Gaia has "holes" in its coverage, with large spatial regions 
+missing PS1 stars. An example is shown in the figure below, which plots the PS1 calibrators 
+(black dots) and the PS1-Gaia calibrators (blue dots) with the outlines of the Mosaic3 CCDs. 
+Since only CCDs with > 20 matched calibrators are retained in the DR5 version of the catalog, 
+CCDs covering regions like CCD4 in the figure would be dropped from DR5.
+
+.. image:: /files/DR5missingCCDs.png
+   :height: 500
+   :width: 500
+   :scale: 75

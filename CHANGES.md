@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 6.0.0 (DR6, unreleased)
+
+- No changes yet.
+
 ## 5.0.0 (DR5, 2017-10-25)
 
 - Updated to release version for DR5 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).

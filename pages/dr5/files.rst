@@ -257,9 +257,12 @@ Column               Type       Description
 ``psf_sampling``     float32    (ignore)
 ``ccd_cuts``         int32      (ignore)
 ``annotated``	     boolean    (ignore)
+``new_photometric``  boolean    see the ``Update to ccds-annotated- file...`` note on the `issues page`_
 ==================== ========== ======================================================
 
 .. _`status page`: ../../status
+.. _`issues page`: ../issues
+
 
 dr5-depth.fits.gz
 -----------------

@@ -4,6 +4,10 @@
 
 - No changes yet.
 
+## 5.0.1 (DR5, 2017-12-7)
+
+- Update to ccds-annotated file to fix which CCDs were used in DR5.
+
 ## 5.0.0 (DR5, 2017-10-25)
 
 - Updated to release version for DR5 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).

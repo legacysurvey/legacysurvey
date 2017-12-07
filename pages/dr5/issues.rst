@@ -46,7 +46,7 @@ CCDs covering regions like CCD N26 in the figure would be dropped from DR5.
    :scale: 85
 
 Update to ``ccds-annotated-`` file in early December, 2017
-=====================================================================
+==========================================================
 
 The ``ccds-annotated-dr5.fits.gz`` file provided with the original DR5 release included a 
 ``photometric`` binary column that was computed based on zeropoints from our "traditional" IDL 
@@ -55,7 +55,7 @@ code to produce zeropoints, and we performed a photometric cut based on those ze
 result, some CCDs that appeared in the original ``ccds-annotated-dr5.fits.gz`` file with 
 the ``photometric`` flag set to ``True`` were *not* actually used in the DR5 reductions.
 
-The updated ``ccds-annotated-dr5.fitz.gz`` file (replaced in early December 2017)
+The updated ``ccds-annotated-dr5.fits.gz`` file (replaced in early December 2017)
 includes a new column, ``new_photometric``, that contains the correct set of CCDs used in
 the DR5 reductions. In addition, there were 228 CCDs for which annotations were not 
 computed in the original file, and these are added in the update.

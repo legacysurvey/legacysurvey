@@ -55,7 +55,10 @@ code to produce zeropoints, and we performed a photometric cut based on those ze
 result, some CCDs that appeared in the original ``ccds-annotated-dr5.fits.gz`` file with 
 the ``photometric`` flag set to ``True`` were *not* actually used in the DR5 reductions.
 
-The updated ``ccds-annotated-dr5.fits.gz`` file (replaced in early December 2017)
+The updated ``ccds-annotated-dr5.fits.gz`` file (replaced on December 7th, 2017)
 includes a new column, ``new_photometric``, that contains the correct set of CCDs used in
 the DR5 reductions. In addition, there were 228 CCDs for which annotations were not 
 computed in the original file, and these are added in the update.
+
+The original ``ccds-annotated-`` file is still available in the DR5 release directory. It
+has been renamed to ``ccds-annotated-dr5-2017-12-07.fits.gz``.

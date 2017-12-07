@@ -4,7 +4,7 @@
 
 - No changes yet.
 
-## 5.0.1 (DR5, 2017-12-7)
+## 5.0.1 (DR5, 2017-12-07)
 
 - Update to ccds-annotated file to fix which CCDs were used in DR5.
 

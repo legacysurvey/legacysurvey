@@ -10,7 +10,6 @@
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
-.. _`DR3`: ../dr3
 .. _`files page`: ../dr4/files
 .. _`legacypipe`: https://github.com/legacysurvey/legacypipe
 

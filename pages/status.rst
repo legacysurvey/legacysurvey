@@ -10,9 +10,8 @@
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
-.. _`DR3`: ../dr3
-.. _`DR4`: ../dr4
 .. _`DR5`: ../dr5
+.. _`DR6`: ../dr6
 
 Legacy Survey observations began in August 2014. For each of the Legacy Surveys 
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
@@ -43,16 +42,16 @@ latitudes of 0\ |deg|, -10\ |deg| and +10\ |deg|.
 .. image:: /files/nexp-g-dr5.png
 .. image:: /files/nexp-r-dr5.png
 .. image:: /files/nexp-z-dr5.png
-    :alt: DR3 Coverage Plots
+    :alt: DR5 Coverage Plots
 
-The figures below depict the status of `MzLS`_ and `BASS`_ as of Data Release 4 (`DR4`_), the
+The figures below depict the status of `MzLS`_ and `BASS`_ as of Data Release 6 (`DR6`_), the
 most recent release of `MzLS`_ and `BASS`_ imaging. The coverage is color-coded by the number of passes. 
 Area that is yet to be observed is marked in light gray.
 
-.. image:: /files/nexp-g-dr4.png
-.. image:: /files/nexp-r-dr4.png
-.. image:: /files/nexp-z-dr4.png
-    :alt: DR4 Coverage Plots
+.. image:: /files/nexp-g-dr6.png
+.. image:: /files/nexp-r-dr6.png
+.. image:: /files/nexp-z-dr6.png
+    :alt: DR6 Coverage Plots
 
 
 

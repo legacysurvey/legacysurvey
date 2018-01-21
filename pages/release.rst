@@ -10,7 +10,6 @@
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
-.. _`DR3`: ../dr3
 
 This table contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
 

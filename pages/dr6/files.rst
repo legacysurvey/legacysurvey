@@ -17,10 +17,10 @@
 .. contents::
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr6/
 
 Summary Files
 =============
@@ -30,7 +30,7 @@ survey-bricks.fits.gz
 
 FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
-coverage in DR5.  For that information, see the next file description.
+coverage in DR6.  For that information, see the next file description.
 
 =============== ======= ======================================================
 Column          Type    Description
@@ -48,10 +48,10 @@ Column          Type    Description
 ``DEC2``        float64  Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr5.fits.gz
+survey-bricks-dr6.fits.gz
 --------------------------
 
-A FITS binary table with information that summarizes the contents of each brick for DR5.
+A FITS binary table with information that summarizes the contents of each brick for DR6.
 
 =============== ========== =========================================================================
 Column          Type       Description
@@ -109,7 +109,7 @@ survey-ccds-nocuts.fits.gz
 
 A FITS binary table with almanac information about each individual CCD image. 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR5 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR6 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
 to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
@@ -165,19 +165,19 @@ Column               Type       Description
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 .. _`bitmask is documented here`: ../../bitmask
 
-survey-ccds-dr5.kd.fits
+survey-ccds-dr6.kd.fits
 -----------------------
 
-As for the **survey-ccds-nocuts.fits.gz** file but limited by the depth of each observation. This file contains the CCDs actually used for the DR5 reductions. Columns are the same as for **survey-ccds-nocuts.fits.gz** except for two additional boolean columns ``depth_cut_ok`` and ``has_zeropoint``, which are always ``True`` for this file.
+As for the **survey-ccds-nocuts.fits.gz** file but limited by the depth of each observation. This file contains the CCDs actually used for the DR6 reductions. Columns are the same as for **survey-ccds-nocuts.fits.gz** except for two additional boolean columns ``depth_cut_ok`` and ``has_zeropoint``, which are always ``True`` for this file.
 
-ccds-annotated-dr5.fits.gz
+ccds-annotated-dr6.fits.gz
 --------------------------
 
 A version of the **survey-ccds-nocuts.fits.gz** file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
-Includes all of the columns in the **survey-ccds-dr5.kd.fits** file plus the following:
+Includes all of the columns in the **survey-ccds-dr6.kd.fits** file plus the following:
 
 ==================== ========== ======================================================
 Column               Type       Description
@@ -206,7 +206,7 @@ Column               Type       Description
 ``ccdmdncol``        float32    Median (g-i) color from the PS1 catalog of the matched stars
 ``temp``             char[32]    Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
 ``expid``            char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
-``photometric``      boolean    True if this CCD was considered photometric and used in the DR5 reductions
+``photometric``      boolean    True if this CCD was considered photometric and used in the DR6 reductions
 ``blacklist_ok``     boolean	For processing purposes, certain programs (Proposal IDs) are blacklisted if they include many images over a single patch of sky. ``True`` if this CCD was *not* blacklisted.
 ``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
 ``ra0``              float64    RA  coordinate of pixel (1,1)...Note that the `ordering of the CCD corners is detailed here`_
@@ -261,7 +261,7 @@ Column               Type       Description
 
 .. _`status page`: ../../status
 
-dr5-depth.fits.gz
+dr6-depth.fits.gz
 -----------------
 
 A concatenation of the depth histograms for each brick, from the
@@ -292,10 +292,10 @@ Column               Type       Description
 ``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
 ==================== =========  ============================================================
 
-dr5-depth-summary.fits.gz
+dr6-depth-summary.fits.gz
 -------------------------
 
-A summary of the depth histogram of the whole DR5 survey.  FITS table with the following columns:
+A summary of the depth histogram of the whole DR6 survey.  FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -324,10 +324,10 @@ External Files
 ==============
 
 The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/external/
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/external/
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr6/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
@@ -337,49 +337,49 @@ In addition to the columns from the Tractor catalogs, we have added columns from
 
 .. _`catalogs page`: ../catalogs
 
-survey-dr5-specObj-dr14.fits
+survey-dr6-specObj-dr14.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR14 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
-**survey-dr5-specObj-dr14.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr6-specObj-dr14.fits** matches the spectroscopic parameters in row "N" of
 specObj-dr14.fits. The spectroscopic file 
 is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
 .. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr5-dr12Q.fits
+survey-dr6-dr12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
 visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
-**survey-dr5-dr12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr6-dr12Q.fits** matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr5-superset-dr12Q.fits
+survey-dr6-superset-dr12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
 (`Paris et al. 2017`_) such that the photometric parameters in row "N" of 
-**survey-dr5-Superset_dr12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr6-Superset_dr12Q.fits** matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr5-dr7Q.fits
+survey-dr6-dr7Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-**survey-dr5-dr7Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr6-dr7Q.fits** matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
@@ -423,7 +423,7 @@ sweep/5.0/sweep-<brickmin>-<brickmax>.fits
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor catalogs for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec. In addition to the columns listed below, the columns pertaining to optical data 
-also have :math:`U`, :math:`I` and :math:`Y`-band entries (e.g. ``FLUX_U``, ``FLUX_I``, ``FLUX_Y``), but, in DR5, these extra columns contain only zeros.
+also have :math:`U`, :math:`I` and :math:`Y`-band entries (e.g. ``FLUX_U``, ``FLUX_I``, ``FLUX_Y``), but, in DR6, these extra columns contain only zeros.
 
 
 .. _`RELEASE is documented here`: ../../release
@@ -532,7 +532,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-dr5.kd.fits**, and also contains
+    Contains the same columns as **survey-ccds-dr6.kd.fits**, and also contains
     the additional columns:
 
     ================ ========= ======================================================
@@ -612,7 +612,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 Raw Data
 ========
 
-NOAO access to raw and calibrated images will be available a few weeks after the DR5 release date.
+NOAO access to raw and calibrated images will be available a few weeks after the DR6 release date.
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. 
@@ -624,7 +624,7 @@ project, as well as other DECam images.
 -----------------
 
 1. Query the `NOAO Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR5).
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR6).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
@@ -638,13 +638,13 @@ project, as well as other DECam images.
 --------------
 
 Following the organization of the Stacked images, Raw and Calibrated images are organized 
-by survey brick, which are defined in the file **survey-bricks-dr5.fits.gz** for DR5. Both the main Tractor 
+by survey brick, which are defined in the file **survey-bricks-dr6.fits.gz** for DR6. Both the main Tractor 
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
 format ``<AAAa>c<BBB>)``. 
 
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr5/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr5/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr5/coadd/``<AAA>/<brick>``
+- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr6/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr6/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr6/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 

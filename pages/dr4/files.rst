@@ -189,7 +189,7 @@ Column               Type       Description
 ``telfocus``	     float32[3] (ignore)
 ==================== ========== =======================================================
 
-.. _`detailed more here`: ../avsky
+.. _`detailed more here`: ../../avsky
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 .. _`bitmask is documented here`: ../../bitmask
 

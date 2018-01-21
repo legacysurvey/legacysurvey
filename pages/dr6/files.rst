@@ -161,7 +161,7 @@ Column               Type       Description
 ``ccdnmatch``        int16      Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
 ==================== ========== =======================================================
 
-.. _`detailed more here`: ../avsky
+.. _`detailed more here`: ../../avsky
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 .. _`bitmask is documented here`: ../../bitmask
 

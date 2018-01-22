@@ -253,10 +253,9 @@ solver from the `SciPy`_ package, or the open source
 `Ceres solver`_, originally developed by Google.
 
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
-under *Morphological Classification*) are approximated
-with `mixture-of-gaussian`_ (MoG) models
-and are convolved by the pixelized PSF models using a new Fourier-space
-method (Lang, in prep).
+under *Morphological Classification*) are approximated with `mixture-of-gaussian`_ 
+(MoG) models and are convolved by the pixelized PSF models using a new 
+Fourier-space method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
 The PSF models are treated as pixel-convolved quantities,
@@ -276,37 +275,44 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for `DECaLS`_ is on the AB natural system of the DECam instrument.
+The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_ 
+and `Mosaic-3`_ cameras, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
-applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
+applied color terms to any of the photometry, but report fluxes as 
+observed in the DECam filters (e.g., see `DR5`_).
 
-Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to PS1
+Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
+were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
 photometry, where the latter was modified with color terms
-to place the PS1 photometry on the DECam system.  The same color terms
-are applied to all CCDs.
+to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
+The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
-The color terms to convert from PS1 to DECam were computed for stars
+The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and 
+`Mosaic-3`_ (for `MzLS`_)  were computed for stars
 in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
-
 .. math::
-                (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
-   g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.04709 (g-i) + 0.00084 (g-i)^2 - 0.00340 (g-i)^3 \\
-   r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} - 0.09939 (g-i) + 0.04509 (g-i)^2 - 0.01488 (g-i)^3 \\
-   z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} - 0.13404 (g-i) + 0.06591 (g-i)^2 - 0.01695 (g-i)^3 \\
+               (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
+   g_{\mathrm{BASS}} & = & g_{\mathrm{PS}} + 0.06630 (g-i) + 0.00958 (g-i)^2 - 0.00672 (g-i)^3 \\
+   r_{\mathrm{BASS}} & = & r_{\mathrm{PS}} - 0.04836 (g-i) + 0.01100 (g-i)^2 - 0.00563 (g-i)^3 \\
+   z_{\mathrm{MzLS}} & = & z_{\mathrm{PS}} - 0.12315 (g-i) + 0.04608 (g-i)^2 - 0.01164 (g-i)^3 \\
 
-The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
-from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. These linear fluxes
-are well-defined even at the faint end, and the errors on the linear fluxes should
-be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
-expect many such cases for the faintest objects.
+The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The 
+conversion from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`.
+These linear fluxes are well-defined even at the faint end, and the errors on the linear 
+fluxes should be very close to a normal distribution.  The fluxes can be negative for faint 
+objects, and indeed we expect many such cases for the faintest objects.
 
-DR5 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
+The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_ and
+`MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere 
+(at airmass=1.0).
+The derivation of the BASS filter responses is described on the `BASS website`_.
+
+DR6 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by
 the WISE team`_. Namely,
@@ -314,8 +320,8 @@ the WISE team`_. Namely,
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
-Tractor catalog headers ("WISEAB1", etc). The result is that
-the DECam and WISE fluxes we provide should all be within a few percent of being on an AB system.
+Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
+we provide should all be within a few percent of being on an AB system.
 
 
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
@@ -329,54 +335,68 @@ the DECam and WISE fluxes we provide should all be within a few percent of being
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
-to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
-be 3.219 at airmass=1 and 3.202 at airmass=2.
+For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam 
+filter system (e.g., see `DR5`_).
+
+Eddie Schlafly has computed the extinction coefficients for the DECam filters through 
+airmass=1.3. Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for 
+:math:`ugrizY`, and are applied to the `SFD98`_ E(B-V) values at the coordinate of 
+each object.  The coefficients at different airmasses only have small changes, with 
+the largest effect in :math:`g`-band where the coefficient would be 3.219
+at airmass=1 and 3.202 at airmass=2.
 
 
 Astrometry
 ==========
 
-Our astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to predicted Gaia positions at
-the epoch of the corresponding Legacy Survey observation. The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
+Our astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to 
+predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. The 
+residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-Astrometric calibration of `DECaLS`_ data is conducted using Gaia astrometric positions of stars matched to Pan-STARRS-1 (PS1).
-The same matched objects are used for both astrometric and photometric calibration. There are some areas of sky where Gaia
-has "holes," i.e., where stars brighter than the Gaia magnitude limit are missing from the Gaia catalog. As a result, in
-some regions of the survey there are fewer matches to a given bright magnitude limit in the PS1-Gaia catalog than there
-are in the PS1 catalog that was used for astrometric calibration in, e.g., `DR3`_ of the Legacy Surveys.
+Astrometric calibration of all optical Legacy Survey data is conducted using Gaia 
+astrometric positions of stars matched to Pan-STARRS-1 (PS1).
+The same matched objects are used for both astrometric and photometric calibration. There 
+are some areas of sky where Gaia has "holes," i.e., where stars brighter than the Gaia 
+magnitude limit are missing from the Gaia catalog. As a result, in
+some regions of the survey there are fewer matches to a given bright magnitude limit in 
+the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric 
+calibration in, e.g., `DR4`_ of the Legacy Surveys.
 
 
 Image Stacks
 ============
 
 The image stacks are provided for convenience, but were not used in the Tractor fits.
-These images are oversized by approximately 260 pixels in each dimension.
-These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
-interpolation. These stacks should not be used for "precision" work.
+These images are oversized by approximately 260 pixels in each dimension. These are 
+tangent projections centered at each brick center, North up, with dimensions of 
+3600 |times| 3600 and a scale of 0.262\ |Prime|/pix.  The image stacks are computed 
+using Lanczos-3 interpolation. These stacks should not be used for "precision" work.
 
 
 Depths
 ======
 
-As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for areas with 3 observations
-in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. DR5 should reach similar depths.
-This is based upon the formal errors in the Tractor catalogs for point sources; those
-errors need further confirmation. This can be compared to the predicted proposed
-depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
+As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for 
+areas with 3 observations in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. 
+DR6 should reach similar depths. This is based upon the formal errors in the Tractor 
+catalogs for point sources; those errors need further confirmation. This can be compared 
+to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of 
+:math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
+
 
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr5.0 versions ranging from git version string ``7e360d0`` (26/7/2017) to (untagged) version ``0a71f89`` (28/8/2017). The version used is documented in the Tractor header card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git version ``d0af7bf`` (11/7/2017)
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr5.2, git version ``5df5875`` (18/7/2017)
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr6.0 versions 
+ranging from git version string ``7e360d0`` (??/?/20??) to (untagged) version 
+``0a71f89`` (??/?/??17). The version used is documented in the Tractor header 
+card ``LEGPIPEV``.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git 
+version ``d0af7bf`` (??/?/20??)
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr6.?, git version ``5df5875`` (??/?/20??)
 * NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
-.. * SourceExtractor 2.19.5, PSFEx 3.17.1
+.. * SourceExtractor 2.19.5, PSFEx 3.17.1 ???
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 .. _`Legacy Survey Data Release 3`: ../../dr3

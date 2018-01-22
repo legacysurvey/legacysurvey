@@ -143,15 +143,14 @@ The `Tractor`_ fitting step is initialized with these positions, although
 these positions can be changed during the fits and
 low-S/N sources can be removed.
 
-For source detection, each image is convolved by its PSF model,
-then a weighted stack
+For source detection, each image is convolved by its PSF model, then a weighted stack
 of these is created in order to optimize the point-source detection
 efficiency.  Next, SED-matched combinations of the three bands are
 created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
 are detected in each of these two SED-matched filters, as well as in each band independently.
 
-As of DR5, source detection is run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
+As of `DR5`_, source detection is run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
@@ -172,16 +171,15 @@ iteration of our codebase are available `on our github page`_.
 Sky Level
 =========
 
-The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single scaled fringe pattern. These steps are described on the `NOAO Community Pipeline`_
-page.
-This makes the sky level in the processed images near zero, and removes most pattern artifacts.
-A constant sky level is then added back to the image that is the mean of what was removed.
+The Community Pipeline removes a sky level that includes a sky pattern, an illumination 
+correction, and a single scaled fringe pattern. These steps are described on the 
+`NOAO Community Pipeline`_ page. This makes the sky level in the processed images near 
+zero, and removes most pattern artifacts. A constant sky level is then added back to the 
+image that is the mean of what was removed.
 
 Additionally, we compute and remove a spatially varying (spline) sky
 model, by detecting and masking sources, then computing medians in
-sliding 512-pixel boxes. The stacked images have this sky level
-removed.
+sliding 512-pixel boxes. 
 
 Tractor Catalogs
 ================
@@ -198,52 +196,52 @@ Morphological Classification
 
 The Tractor fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
-Only the source properties were allowed to float in DR5.
+Only the source properties were allowed to float in DR6.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters. There is also the discrete choice of which
-model type to use. In DR5, five morphological types are used: point sources,
+and the shape parameters. 
+
+There is also the discrete choice of which
+model type to use. In DR6, five morphological types are used: point sources,
 round exponential galaxies with a variable radius ("REX"), deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The total numbers of the different morphological types in DR5 are:
+The total numbers of the different morphological types in DR6 are:
 
 ================= ==================
 Number of Sources Type
 ================= ==================
-   679,755,904    Objects in a Primary brick
-   371,088,269    ``PSF``
-   222,184,611    ``REX``
-    61,380,049    ``EXP``
-    22,036,854    ``DEV``
-     3,066,121    ``COMP``
+   ???,???,???    Objects in a Primary brick
+   ???,???,???    ``PSF``
+   ???,???,???    ``REX``
+    ??,???,???    ``EXP``
+    ??,???,???    ``DEV``
+     ?,???,???    ``COMP``
 ================= ==================
 
-Note that the "REX" model replaces the "SIMP" model used in
+Note that, as of `DR5`_, the "REX" model replaced the "SIMP" model used in
 `DR4`_, `DR3`_ and earlier data releases.
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
-changes to |chi|\ |sup2| in the image after subtracting the models for
-other sources.
-The "PSF" and "REX" models are computed for
-every source and the better of these two is used when deciding whether to keep
-the source. A source is retained if its penalized |chi|\ |sup2| is improved by 25;
-this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
-of 2 for the source centroid).  Sources below this threshold are removed.
-The source is classified as the better of "point source (PSF)" or "round exponential galaxy (REX)"
-unless the penalized |chi|\ |sup2|
-is improved by 9 (*i.e.*, approximately a 3\ |sigma| improvement) by treating
-it as a deVaucouleurs or exponential profile.
-The classification is a composite of deVaucouleurs + exponential if it is both a
-better fit to a single profile over the point source, and the composite improves
-the penalized |chi|\ |sup2| by another 9.  These choices implicitly mean
+changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
+The "PSF" and "REX" models are computed for every source and the better of these 
+two is used when deciding whether to keep the source. A source is retained if its 
+penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2| 
+difference of 27 (because of the penalty of 2 for the source centroid). Sources 
+below this threshold are removed. 
+
+The source is classified as the better of "point source (PSF)" or "round exponential 
+galaxy (REX)" unless the penalized |chi|\ |sup2| is improved by 9 (*i.e.*, 
+approximately a 3\ |sigma| improvement) by treating it as a deVaucouleurs or 
+exponential profile. The classification is a composite of deVaucouleurs + exponential 
+if it is both a better fit to a single profile over the point source, and the composite 
+improves the penalized |chi|\ |sup2| by another 9. These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections
 and that composite profiles must be at least 6.5\ |sigma| detections.
 
-The fluxes are not constrained to be positive-valued.  This allows
-the fitting of very low signal-to-noise sources without introducing
-biases at the faint end.  It also allows the stacking of fluxes
-at the catalog level.
+The fluxes are not constrained to be positive-valued.  This allows the fitting of 
+very low signal-to-noise sources without introducing biases at the faint end.  It 
+also allows the stacking of fluxes at the catalog level.
 
 
 Tractor Implementation Details

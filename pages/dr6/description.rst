@@ -52,7 +52,7 @@ Contents of DR6
 
 Data Release 6 (DR6) is the sixth public data release of the Legacy Surveys. It is the
 second public release of images and catalogs that combine the Beijing-Arizona Sky Survey
-and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; DR5 comprised the fourth 
+and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the fourth 
 release of data from `DECaLS`_). Imaging from the Legacy Surveys is first reduced
 through the `NOAO Community Pipeline`_ before being processed using the `Tractor`_.
 
@@ -62,12 +62,12 @@ Surveys. The `BASS`_ and `MzLS`_ data in DR6 are reduced in a manner that is lar
 consistent with `DECaLS`_ reductions in `DR5`_.
 
 In total, the optical data in DR6 covers a disjoint footprint
-with, roughly, 7400 deg\ |sup2| having at least one observation
-in :math:`g`-band, 8000 deg\ |sup2| having at least one observation
-in :math:`r`-band and 10200 deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of 6800 deg\ |sup2| is covered by at least one observation in
+with, roughly, ??00 deg\ |sup2| having at least one observation
+in :math:`g`-band, ??00 deg\ |sup2| having at least one observation
+in :math:`r`-band and ???00 deg\ |sup2| having at least one observation
+in :math:`z`-band. A total of ??00 deg\ |sup2| is covered by at least one observation in
 *all three* optical filters.
-The area included in DR6 is depicted on the `status page`_
+The area included in DR6 is depicted on the `status page`_.
 
 DR6 includes the stacked images and the Tractor-based catalogs.
 The size of the DR6 data distribution is:
@@ -85,7 +85,9 @@ Size*      Directory    Description
 ??? GB     `tractor/`_  Tractor catalogs.
 ========== ============ =======================
 
-\*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
+Note that although the *contents* of a directory should be fixed for each Data Release, 
+the *size* of a directory can change. This is typically due to updated file compression. 
+So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/coadd/
@@ -96,7 +98,7 @@ Size*      Directory    Description
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/tractor/
 
-For all of the Legacy Surveys, including `BASS`_ and `MzLS`, co-added images and
+For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, co-added images and
 `Tractor`_ catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
@@ -158,7 +160,7 @@ and finally in "red".
 PSF
 ===
 
-The Tractor makes use of the PSF on each individual exposure. The PSF for
+The `Tractor`_ makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.
 
@@ -184,7 +186,7 @@ sliding 512-pixel boxes.
 Tractor Catalogs
 ================
 
-The Tractor code runs within the geometrical region
+The `Tractor`_ code runs within the geometrical region
 of a brick. This fitting is performed on the individual exposures
 that overlap the brick, without making use of the image stacks.
 This preserves the full information content of the data set in the fits,
@@ -194,7 +196,7 @@ and fits to data points without the complication of pixel covariances.
 Morphological Classification
 ============================
 
-The Tractor fitting can allow any of the source properties or
+The `Tractor`_ fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR6.
 These are continuous properties for the object centers, fluxes,
@@ -247,7 +249,7 @@ also allows the stacking of fluxes at the catalog level.
 Tractor Implementation Details
 ==============================
 
-Tractor fundamentally treats the fitting as a |chi|\ |sup2| minimization
+`Tractor`_ fundamentally treats the fitting as a |chi|\ |sup2| minimization
 problem.  The current core routine uses the sparse least squares
 solver from the `SciPy`_ package, or the open source
 `Ceres solver`_, originally developed by Google.
@@ -285,7 +287,7 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as 
 observed in the DECam filters (e.g., see `DR5`_).
 
-Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
+Zero point magnitudes for the CP reductions of the `90Prime`_ and `Mosaic-3`_ images
 were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
 photometry, where the latter was modified with color terms
 to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
@@ -387,12 +389,8 @@ to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr6.0 versions 
-ranging from git version string ``7e360d0`` (??/?/20??) to (untagged) version 
-``0a71f89`` (??/?/??17). The version used is documented in the Tractor header 
-card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git 
-version ``d0af7bf`` (??/?/20??)
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr6.0 versions ranging from git version string ``7e360d0`` (??/?/20??) to (untagged) version ``0a71f89`` (??/?/??17). The version used is documented in the Tractor header card ``LEGPIPEV``.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git version ``d0af7bf`` (??/?/20??)
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr6.?, git version ``5df5875`` (??/?/20??)
 * NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
 

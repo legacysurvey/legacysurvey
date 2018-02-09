@@ -240,7 +240,10 @@ and :math:`r, b/a, \phi`:
     r           & = & r \\
     |\epsilon|  & = & \sqrt{\epsilon_1^2 + \epsilon_2^2} \\
     \frac{b}{a} & = & \frac{1 - |\epsilon|}{1 + |\epsilon|} \\
-    \phi        & = & \frac{1}{2} \arctan \frac{\epsilon_2}{\epsilon_1} \\
+    \phi        & = & \frac{1}{2} \arctan \hskip -1.1mm 2(\epsilon_2,\epsilon_1) \\
     |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
+
+Note that it is critical to use :math:`\arctan \hskip -1.1mm 2`, here, to ensure that |phi|
+is between -90\ |deg| and 90\ |deg|.

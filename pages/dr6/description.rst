@@ -398,12 +398,20 @@ to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr6.0 versions ranging from git version string ``7e360d0`` (??/?/20??) to (untagged) version ``0a71f89`` (??/?/??17). The version used is documented in the Tractor header card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git version ``d0af7bf`` (??/?/20??)
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr6.?, git version ``5df5875`` (??/?/20??)
-* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
+* `desiconda/20170818-1.1.12-img` was used, except for the following three packages, for which a local build was created to bypass the desiconda build:
 
-.. * SourceExtractor 2.19.5, PSFEx 3.17.1 ???
+  - `fitsio <https://github.com/esheldon/fitsio>`_: git commit 844055b00de464ed87e1e7560d9e9c2a2e4dc138, tag v0.9.12rc1-21-g844055b
+  - `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: git commit: a5cb17a742cf0e66e5d0e09675b8c7e614aabcb9, tag 0.73-1-ga5cb17a
+  - `Tractor  <https://github.com/dstndstn/tractor>`_: git commit bc042691d58f6d684642cade435bdd2eff3a241e, tag dr6.2
+
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_ was upgraded twice to fix small bugs, but the bulk of the processing was done with the first version: 
+
+  - git commit 02a4d874a957c66da8d4a9b079299f74c9456a53, tag dr6.rc1 
+  - git commit 536e466dbb0d022e767835810858a50ffe0fe0fc, tag dr6.rc1.1
+  - git commit 1b741bbd35e30d16f4d56ef673d3583baa335645, tag dr6.rc1.2
+
+* Note that Brick `1228p810` was processed with a different stack: `desiconda 20170719-1.1.9-imaging`, `legacypipe dr6.rc1.1-18-g80be603`
+* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 .. _`Legacy Survey Data Release 3`: ../../dr3

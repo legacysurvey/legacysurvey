@@ -104,19 +104,23 @@ the `catalogs page`_.
 .. _`github`: https://github.com
 
 
-survey-ccds-nocuts.fits.gz
---------------------------
+survey-ccds-\*fits.gz
+---------------------
 
-A FITS binary table with almanac information about each individual CCD image. 
+FITS binary table with almanac information about each individual CCD image in each band. There is one file for each of:
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR6 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
+* *90prime-g*: `BASS`_ :math:`g`-band
+* *90prime-r*: `BASS`_ :math:`r`-band  
+* *mosaic-z*: `MZLS`_ :math:`z`-band 
+* *dr6plus*: Additional `MZLS`_ images
+
+These files contain information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR6 
+data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
 to color-selected stars in the PanSTARRS "qz" catalog. 
 
-The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
-are magnitude-like numbers (e.g. 25.04), and
-indicate the magnitude of a source that would contribute one count per
-second to the image.  For example, in an image with zeropoint of 25.04
-and exposure time of 30 seconds, a source of magnitude 22.5 would
+The photometric zeropoints (``zpt``, ``ccdzpt``, etc) are magnitude-like numbers (e.g. 25.04), and
+indicate the magnitude of a source that would contribute one count per second to the image.  For example, in an image with 
+zeropoint of 25.04 and exposure time of 30 seconds, a source of magnitude 22.5 would
 contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
@@ -128,17 +132,17 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[65]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
+``image_filename``   char[55]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
 ``camera``           char[7]    The camera that took this image
 ``expnum``           int32      Exposure number, eg 348224
 ``ccdname``          char[4]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
-``object``           char[35]   Name listed in the object tag from the CCD header
+``object``           char[24]   Name listed in the object tag from the CCD header
 ``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
-``fwhm``             float32    (use "seeing" instead)
+``fwhm``             float32    FWHM of observation
 ``width``            int16      Width in pixels of this image, eg 2046
 ``height``           int16      Height in pixels of this image, eg 4096
 ``ra_bore``          float64    Telescope boresight RA  of this exposure (deg)
@@ -154,61 +158,47 @@ Column               Type       Description
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
 ``skyrms``           float32    Sky rms for the entire image (in counts)
+``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag)
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
-``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdnmatch``        int16      Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
+``ccdraoff``         float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
+``ccddecoff``        float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
+``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdrarms``	     float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec   
+``ccddecrms``	     float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
+``ccdphrms``         float32    Photometric rms for the CCD (in mag)
+``ccd_cuts``         int32      (ignore)
 ==================== ========== =======================================================
 
 .. _`detailed more here`: ../../avsky
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 .. _`bitmask is documented here`: ../../bitmask
 
-survey-ccds-dr6.kd.fits
------------------------
+survey-ccds-dr6plus.kd.fits
+---------------------------
 
-As for the **survey-ccds-nocuts.fits.gz** file but limited by the depth of each observation. This file contains the CCDs actually used for the DR6 reductions. Columns are the same as for **survey-ccds-nocuts.fits.gz** except for two additional boolean columns ``depth_cut_ok`` and ``has_zeropoint``, which are always ``True`` for this file.
+As for the **survey-ccds-*.fits.gz** files but limited by the depth of each observation. This file contains the CCDs actually used for the DR6 reductions. 
+Columns are the same as for **survey-ccds-*.fits.gz** files.
 
-ccds-annotated-dr6.fits.gz
---------------------------
+ccds-annotated-\*.fits.gz
+-------------------------
 
-A version of the **survey-ccds-nocuts.fits.gz** file with additional information
+Versions of each of the **survey-ccds-*.fits.gz** file with additional information
 gathered during calibration pre-processing before running the Tractor
-reductions.
+reductions. One each for
 
-Includes all of the columns in the **survey-ccds-dr6.kd.fits** file plus the following:
+* *90prime-g*: `BASS`_ :math:`g`-band
+* *90prime-r*: `BASS`_ :math:`r`-band  
+* *mosaic-z*: `MZLS`_ :math:`z`-band 
+* *mosaic-dr6plus*: Additional `MZLS`_ images
+
+Includes all of the columns in the **survey-ccds-*.fits.gz** file plus the following:
 
 ==================== ========== ======================================================
 Column               Type       Description
 ==================== ========== ======================================================
-``seeing``           float32    Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019
-``date_obs``         char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead
-``ut``               char[15]   Time of observation start, eg "23:50:58.608241"
-``ha``               char[13]   Hour angle of the observation (HH:MM:SS)  
-``airmass``          float32    Airmass, eg 1.35
-``avsky``            float32    Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
-``arawgain``         float32    Average gain for this CCD, eg 4.34
-``ccdnum``           int16      CCD number (see Legacy Survey camera layout), eg 1
-``ccdzpta``          float32    Zeropoint for amp A (AB mag)
-``ccdzptb``          float32    Zeropoint for amp B (AB mag)
-``ccdphoff``         float32    (ignore; depends on the nominal zeropoint, measured at the start of each survey rather than now)
-``ccdphrms``         float32    Photometric rms for the CCD (in mag)
-``ccdskyrms``        float32    Sky rms for the CCD (in counts)
-``ccdskymag``        float32    Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
-``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
-``ccdrarms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec   
-``ccddecrms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdtransp``        float32    (ignore; depends on the nominal zeropoint, measured at the the start of survey rather than now)
-``ccdnstar``         int16      Number of stars found on the CCD
-``ccdnmatcha``       int16      Number of stars in amp A matched
-``ccdnmatchb``       int16      Number of stars in amp B matched
-``ccdmdncol``        float32    Median (g-i) color from the PS1 catalog of the matched stars
-``temp``             char[32]    Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
-``expid``            char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
-``photometric``      boolean    True if this CCD was considered photometric and used in the DR6 reductions
-``blacklist_ok``     boolean	For processing purposes, certain programs (Proposal IDs) are blacklisted if they include many images over a single patch of sky. ``True`` if this CCD was *not* blacklisted.
-``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
+``annotated``	     boolean    (ignore)
+``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs)
 ``ra0``              float64    RA  coordinate of pixel (1,1)...Note that the `ordering of the CCD corners is detailed here`_
 ``dec0``             float64    Dec coordinate of pixel (1,1)
 ``ra1``              float64    RA  coordinate of pixel (1,H)
@@ -221,7 +211,6 @@ Column               Type       Description
 ``ddec``             float32    Maximum distance from RA,Dec center to the edge midpoints, in Dec
 ``ra_center``        float64    RA coordinate of CCD center
 ``dec_center``       float64    Dec coordinate of CCD center
-``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies.
 ``meansky``          float32    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
 ``stdsky``           float32    Standard deviation of our sky level
 ``maxsky``           float32    Max of our sky level
@@ -254,10 +243,11 @@ Column               Type       Description
 ``galdepth``         float32    5-sigma galaxy (0.45" round exp) detection depth in AB mag
 ``gausspsfdepth``    float32    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
 ``gaussgaldepth``    float32    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
-``psf_sampling``     float32    (ignore)
-``ccd_cuts``         int32      (ignore)
-``annotated``	     boolean    (ignore)
 ==================== ========== ======================================================
+
+Note that two columns have different formats between the **survey-ccds-\*.fits.gz** and **ccds-annotated-\*.fits.gz** files.
+The ``camera`` column is char[6] and the ``object`` column is char[37].
+
 
 .. _`status page`: ../../status
 
@@ -545,7 +535,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-dr6.kd.fits**, and also contains
+    Contains the same columns as **survey-ccds-dr6plus.kd.fits**, and also contains
     the additional columns:
 
     ================ ========= ======================================================
@@ -560,16 +550,15 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
     ``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
     ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
-    ``sig1``         float64   (ignore)
     ``psfnorm``      float32   Same as ``psfnorm`` in the **ccds-annotated-** file
-    ``galnorm``      float64   Same as ``galnorm`` in the **ccds-annotated-** file
-    ``plver``        char[6]   Community Pipeline (CP) version
-    ``skyver``       char[17]  Git version of the sky calibration code
+    ``galnorm``      float32   Same as ``galnorm`` in the **ccds-annotated-** file
+    ``plver``        char[4]   Community Pipeline (CP) version
+    ``skyver``       char[19]  Git version of the sky calibration code
     ``wcsver``       char[1]   Git version of the WCS calibration code
-    ``psfver``       char[17]  Git version of the PSF calibration code
-    ``skyplver``     char[8]   CP version of the input to sky calibration
-    ``wcsplver``     char[6]   CP version of the input to WCS calibration
-    ``psfplver``     char[6]   CP version of the input to PSF calibration
+    ``psfver``       char[12]  Git version of the PSF calibration code
+    ``skyplver``     char[4]   CP version of the input to sky calibration
+    ``wcsplver``     char[4]   CP version of the input to WCS calibration
+    ``psfplver``     char[4]   CP version of the input to PSF calibration
     ================ ========= ======================================================
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits

@@ -132,7 +132,7 @@ writing of this documentation the maximum size for cutouts (in number of pixels)
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `DECaLS`_ cutouts, see the `DR5 description`_ page.
 
-.. _`DR5 description`: ../../dr4/description
+.. _`DR5 description`: ../../dr5/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query

@@ -314,6 +314,10 @@ The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band
 (at airmass=1.0).
 The derivation of the BASS filter responses is described on the `BASS website`_.
 
+For the first time in the Legacy Surveys, DR6 PSF photometry uses the same PSF models 
+(and sky background subtraction) for zeropoint-fitting as is later used in cataloging.  
+So, starting with DR6, the measured fluxes for PS1 stars should be completely self-consistent.
+
 DR6 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by
@@ -364,6 +368,10 @@ some regions of the survey there are fewer matches to a given bright magnitude l
 the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric 
 calibration in, e.g., `DR4`_ of the Legacy Surveys.
 
+For the first time in the Legacy Surveys, DR6 PSF photometry uses the same PSF models 
+(and sky background subtraction) for zero-point-fitting as is later used in cataloging.  
+So, starting with DR6, the measured positions for Gaia stars
+should be completely self-consistent.
 
 Image Stacks
 ============

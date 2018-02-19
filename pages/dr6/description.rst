@@ -45,7 +45,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DR2`: ../../dr2
 .. _`DESI`: http://desi.lbl.gov
 .. _`status page`: ../../status
-
+.. _`HEALPixels`: https://healpix.jpl.nasa.gov
 
 Contents of DR6
 ===============
@@ -56,24 +56,25 @@ and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the f
 release of data from `DECaLS`_). Imaging from the Legacy Surveys is first reduced
 through the `NOAO Community Pipeline`_ before being processed using the `Tractor`_.
 
-DR6 includes `BASS`_ images taken prior to ??? ??, 20?? and `MzLS`_ images taken
-prior to ??? ??, 20??. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy 
+DR6 includes `BASS`_ images taken prior to June 25, 2017 and `MzLS`_ images taken
+prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy 
 Surveys. The `BASS`_ and `MzLS`_ data in DR6 are reduced in a manner that is largely
 consistent with `DECaLS`_ reductions in `DR5`_.
 
 In total, the optical data in DR6 covers a disjoint footprint
-with, roughly, ??00 deg\ |sup2| having at least one observation
-in :math:`g`-band, ??00 deg\ |sup2| having at least one observation
-in :math:`r`-band and ???00 deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of ??00 deg\ |sup2| is covered by at least one observation in
-*all three* optical filters.
+with, roughly, 4400 deg\ |sup2| having at least one observation
+in :math:`g`-band, 4400 deg\ |sup2| having at least one observation
+in :math:`r`-band and 5300 deg\ |sup2| having at least one observation
+in :math:`z`-band. A total of about 3900 deg\ |sup2| is covered by at least one 
+observation in *all three* optical filters. These are coarse estimates based
+on intersections with `HEALPixels`_ of *NSIDE=4096* (about 0.74 arcmin\ |sup2|).
 The area included in DR6 is depicted on the `status page`_.
 
 DR6 includes the stacked images and the Tractor-based catalogs.
 The size of the DR6 data distribution is:
 
 ========== ============ =======================
-Size*      Directory    Description
+Size*       Directory    Description
 ========== ============ =======================
 ??? GB     `calib/`_    Calibration files.
 ?? TB      `coadd/`_    Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and Quality Assurance PNG plots
@@ -85,7 +86,7 @@ Size*      Directory    Description
 ??? GB     `tractor/`_  Tractor catalogs.
 ========== ============ =======================
 
-Note that although the *contents* of a directory should be fixed for each Data Release, 
+\*Note that although the *contents* of a directory should be fixed for each Data Release, 
 the *size* of a directory can change. This is typically due to updated file compression. 
 So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
@@ -108,7 +109,7 @@ area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 The co-added images should be
 used with caution, as noted below in the *Image Stacks* section.
 
-There are approximately ??? million unique sources in DR6 spread over ???,??? bricks.
+There are approximately ??? million unique sources in DR6 spread over 65,541 bricks.
 
 
 Obtaining Images and Raw Data
@@ -284,8 +285,8 @@ constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
-applied color terms to any of the photometry, but report fluxes as 
-observed in the DECam filters (e.g., see `DR5`_).
+applied color terms to any of the photometry, but report fluxes as observed in the
+`90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP reductions of the `90Prime`_ and `Mosaic-3`_ images
 were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
@@ -370,8 +371,8 @@ calibration in, e.g., `DR4`_ of the Legacy Surveys.
 
 For the first time in the Legacy Surveys, DR6 PSF photometry uses the same PSF models 
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.  
-So, starting with DR6, the measured positions for Gaia stars
-should be completely self-consistent.
+So, starting with DR6, the measured positions for Gaia stars should be completely 
+self-consistent, substantially reducing any systematic errors in astrometry.
 
 Image Stacks
 ============

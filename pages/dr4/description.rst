@@ -283,7 +283,8 @@ constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
-applied color terms to any of the photometry, but report fluxes as observed in the DECam filters (e.g., see `DR3`_).
+applied color terms to any of the photometry, but report fluxes as observed in the 
+`90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
 were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)

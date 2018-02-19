@@ -315,8 +315,9 @@ The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band
 (at airmass=1.0).
 The derivation of the BASS filter responses is described on the `BASS website`_.
 
-For the first time in the Legacy Surveys, DR6 PSF photometry uses the same PSF models 
+As of DR6, PSF photometry uses the same PSF models 
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.  
+This was not the case for `DR5`_ or before.
 So, starting with DR6, the measured fluxes for PS1 stars should be completely self-consistent.
 
 DR6 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
@@ -342,7 +343,7 @@ we provide should all be within a few percent of being on an AB system.
 Galactic Extinction
 ===================
 
-For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam 
+For DR6, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they are on the DECam
 filter system (e.g., see `DR5`_).
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through 
@@ -369,10 +370,12 @@ some regions of the survey there are fewer matches to a given bright magnitude l
 the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric 
 calibration in, e.g., `DR4`_ of the Legacy Surveys.
 
-For the first time in the Legacy Surveys, DR6 PSF photometry uses the same PSF models 
+As of DR6, PSF photometry uses the same PSF models 
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.  
+This was not the case for `DR5`_ or before.
 So, starting with DR6, the measured positions for Gaia stars should be completely 
 self-consistent, substantially reducing any systematic errors in astrometry.
+
 
 Image Stacks
 ============

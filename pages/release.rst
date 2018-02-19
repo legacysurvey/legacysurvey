@@ -36,3 +36,15 @@ RELEASE	CAMERA FILTER     PRIMARY
 5000	wise   :math:`W3` 0
 5000	wise   :math:`W4` 0
 ======= ====== ========== =======
+
+======= ====== ========== =======
+RELEASE	CAMERA FILTER     PRIMARY
+======= ====== ========== =======
+6000	bok    :math:`g`  1
+6000	bok    :math:`r`  1
+6000	mosaic :math:`z`  1
+6000	wise   :math:`W1` 0
+6000    wise   :math:`W2` 0
+6000	wise   :math:`W3` 0
+6000	wise   :math:`W4` 0
+======= ====== ========== =======

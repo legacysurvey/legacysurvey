@@ -109,7 +109,7 @@ area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 The co-added images should be
 used with caution, as noted below in the *Image Stacks* section.
 
-There are approximately ??? million unique sources in DR6 spread over 65,541 bricks.
+There are approximately 310 million unique sources in DR6 spread over 92,287 bricks.
 
 
 Obtaining Images and Raw Data

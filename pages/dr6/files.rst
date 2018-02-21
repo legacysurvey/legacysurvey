@@ -125,10 +125,10 @@ contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
 
-DR6 zero points were originally calculated with a cut-off date of late June 2017. CCDs that used
-these zero points are in the *90prime-g* *90prime-r* and *mosaic-z* 
-files. A new set of PSF-normalized zero points were computed for `MZLS`_ images taken from late June
-2017 up to the end of September. These are included in the *dr6plus* file.
+DR6 zero points were originally calculated with a cut-off date of late June, 2017. CCDs that used
+these zero points are in the *90prime-g*, *90prime-r* and *mosaic-z* 
+files. A new set of PSF-normalized zero points were computed for `MZLS`_ images taken from late June,
+2017 up to the end of September, 2017. These are included in the *dr6plus* file.
 
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls

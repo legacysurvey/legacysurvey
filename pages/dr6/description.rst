@@ -213,12 +213,12 @@ The total numbers of the different morphological types in DR6 are:
 ================= ==================
 Number of Sources Type
 ================= ==================
-   ???,???,???    Objects in a Primary brick
-   ???,???,???    ``PSF``
-   ???,???,???    ``REX``
-    ??,???,???    ``EXP``
-    ??,???,???    ``DEV``
-     ?,???,???    ``COMP``
+   313,512,903    Objects in a Primary brick
+   121,854,427    ``PSF``
+   139,736,335    ``REX``
+    26,804,729    ``EXP``
+    22,741,635    ``DEV``
+     2,375,777    ``COMP``
 ================= ==================
 
 Note that, as of `DR5`_, the "REX" model replaced the "SIMP" model used in

@@ -394,14 +394,14 @@ The histograms below depict the median 5\ |sigma| point source (AB) depths for a
 different numbers of observations in DR6.
 
 .. image:: ../../files/depth-hist-g.png
-    :height: 250
-    :width: 380
+    :height: 375
+    :width: 570
 .. image:: ../../files/depth-hist-r.png
-    :height: 250
-    :width: 380
+    :height: 375
+    :width: 570
 .. image:: ../../files/depth-hist-z.png
-    :height: 250
-    :width: 380
+    :height: 375
+    :width: 570
     :alt: DR6 Depth Plots
 
 These histograms are based upon the formal errors in the Tractor 

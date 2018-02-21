@@ -112,7 +112,7 @@ FITS binary table with almanac information about each individual CCD image in ea
 * *90prime-g*: `BASS`_ :math:`g`-band
 * *90prime-r*: `BASS`_ :math:`r`-band  
 * *mosaic-z*: `MZLS`_ :math:`z`-band 
-* *dr6plus*: Additional `MZLS`_ images
+* *dr6plus*: Additional `MZLS`_ CCDs
 
 These files contain information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR6 
 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
@@ -124,6 +124,11 @@ zeropoint of 25.04 and exposure time of 30 seconds, a source of magnitude 22.5 w
 contribute
 :math:`30 * 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
+
+DR6 zero points were originally calculated with a cut-off date of late June 2017. CCDs that used
+these zero points are in the *90prime-g* *90prime-r* and *mosaic-z* 
+files. A new set of PSF-normalized zero points were computed for `MZLS`_ images taken from late June
+2017 up to the end of September. These are included in the *dr6plus* file.
 
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
@@ -177,7 +182,8 @@ Column               Type       Description
 survey-ccds-dr6plus.kd.fits
 ---------------------------
 
-As for the **survey-ccds-*.fits.gz** files but limited by the depth of each observation. This file contains the CCDs actually used for the DR6 reductions. 
+As for the **survey-ccds-*.fits.gz** files but limited by the depth of each observation. This file contains
+all of the CCDs actually used for the DR6 reductions. 
 Columns are the same as for **survey-ccds-*.fits.gz** files.
 
 ccds-annotated-\*.fits.gz

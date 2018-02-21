@@ -390,10 +390,22 @@ using Lanczos-3 interpolation. These stacks should not be used for "precision" w
 Depths
 ======
 
-As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for 
-areas with 3 observations in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. 
-DR6 should reach similar depths. This is based upon the formal errors in the Tractor 
-catalogs for point sources; those errors need further confirmation. This can be compared 
+The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
+different numbers of observations in DR6.
+
+.. image:: ../../files/depth-hist-g.png
+    :height: 250
+    :width: 380
+.. image:: ../../files/depth-hist-r.png
+    :height: 250
+    :width: 380
+.. image:: ../../files/depth-hist-z.png
+    :height: 250
+    :width: 380
+    :alt: DR6 Depth Plots
+
+These histograms are based upon the formal errors in the Tractor 
+catalogs for point sources, which need further confirmation. These depths can be compared 
 to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of 
 :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 

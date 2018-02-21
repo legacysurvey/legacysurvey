@@ -127,6 +127,7 @@ counts.
 
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
+.. _`DECaLS`: ../../decamls
 .. _`description page`: ../description
 
 ==================== ========== =======================================================
@@ -233,9 +234,9 @@ Column               Type       Description
 ``psf_ell``          float32    PSF ellipticity 1 - minor/major
 ``humidity``         float32    Percent humidity outside
 ``outtemp``          float32    Outside temperate (deg C).
-``tileid``           int32      tile number, 0 for data from programs other than MzLS or DECaLS
-``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an MzLS or DECaLS observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
-``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than BASS, MzLS or DECaLS
+``tileid``           int32      tile number, 0 for data from programs other than `MzLS`_ or `DECaLS`_
+``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an `MzLS`_ or `DECaLS`_ observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
+``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than `BASS`_, `MzLS`_ or `DECaLS`_
 ``plver``            char[6]    Community Pipeline (CP) PLVER version string
 ``ebv``              float32    SFD E(B-V) extinction for CCD center
 ``decam_extinction`` float32[6] Extinction for optical filters :math:`ugrizY`

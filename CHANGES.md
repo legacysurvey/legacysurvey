@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 6.0.0 (DR6, )
+## 6.0.0 (DR6, 2018-2-23)
 
 - Updated to release version for DR6 ([PR#77](https://github.com/legacysurvey/legacysurvey/pull/77)).
 - Latest Data Model.

@@ -1,19 +1,24 @@
 # legacysurvey Change Log
 
-## 6.0.0 (DR6, unreleased)
+## 6.0.0 (DR6, )
 
-- No changes yet.
+- Updated to release version for DR6 ([PR#77](https://github.com/legacysurvey/legacysurvey/pull/77)).
+- Latest Data Model.
+- Latest status plots.
+- Added histogram plots for depth instead of referring back to DR2 calculations.
+- General updates to the description page for area/number of sources, etc.
+- Links to NOAO's publications page for the LS in addition to updating publications from the LS team.
 
 ## 5.0.0 (DR5, 2017-10-25)
 
 - Updated to release version for DR5 ([PR#73](https://github.com/legacysurvey/legacysurvey/pull/73)).
-- New Data Model where appropriate
-- Added `RELEASE=5000` description
-- Contents toolbars for quick-links on longer pages
-- Additional drop-down menus (*e.g.*, there are now tips and tricks for the viewer)
-- `SIMP` has been deprecated by `REX`
-- ordering of bands for photometric model fits has changed
-- acknowledgment is now consistent with NOAO page
+- New Data Model where appropriate.
+- Added `RELEASE=5000` description.
+- Contents toolbars for quick-links on longer pages.
+- Additional drop-down menus (*e.g.*, there are now tips and tricks for the viewer).
+- `SIMP` has been deprecated by `REX`.
+- ordering of bands for photometric model fits has changed.
+- acknowledgment is now consistent with NOAO page.
 
 ## 4.0.0 (DR4, 2017-06-30)
 

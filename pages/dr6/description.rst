@@ -120,16 +120,19 @@ Images from all 3 of the Legacy Surveys can be viewed directly using
 (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
-Sections of `DECaLS`_ for DR6 can be obtained as JPEGs or FITS files using
+Sections of the coadd images in DR6 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-???&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-???&pixscale=0.27&bands=grz
+FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the
-writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
+writing of this documentation the maximum size for cutouts (in number of pixels) is 3000.
+Pixscale=0.262 (arcseconds per pixel) will return (approximately) the pixel scale used in
+the coadds.  The native pixel scale of the Mosaic camera (used for :math:`z` band) is
+approximately 0.262, and for the 90prime camera (used for :math:`g` and :math:`r` bands)
+it is approximately 0.454.
 For information on how to recover `DECaLS`_ cutouts, see the `DR5 description`_ page.
 
 .. _`DR5 description`: ../../dr5/description

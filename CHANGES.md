@@ -1,5 +1,10 @@
 # legacysurvey Change Log
 
+## 6.0.1 (DR6, 2018-02-27)
+
+- Correct "layer" argument in cutout server example URLs.
+- List pixel scales of the coadds, and native Mosaic and 90prime pixel scales.
+
 ## 6.0.0 (DR6, 2018-02-23)
 
 - Updated to release version for DR6 ([PR#77](https://github.com/legacysurvey/legacysurvey/pull/77)).

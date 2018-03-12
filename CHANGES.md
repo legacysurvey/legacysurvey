@@ -2,7 +2,7 @@
 
 ## 6.0.2 (DR6, 2018-03-12)
 
-- Fix typos regarding how to convert depths to magnitudes
+- Fix typos regarding how to convert depths to magnitudes.
 
 ## 6.0.1 (DR6, 2018-02-27)
 

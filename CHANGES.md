@@ -1,8 +1,9 @@
 # legacysurvey Change Log
 
-## 6.0.2 (DR6, 2018-03-12)
+## 6.0.2 (DR6, 2018-04-20)
 
 - Fix typos regarding how to convert depths to magnitudes.
+- Added extra command options to the DR5/DR6 cutouts.
 
 ## 6.0.1 (DR6, 2018-02-27)
 

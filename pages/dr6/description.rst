@@ -127,7 +127,7 @@ JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=m
 
 FITS: http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
-where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. Note that the
+where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
 size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 

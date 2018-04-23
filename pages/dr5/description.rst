@@ -120,11 +120,23 @@ JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=de
 
 FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
 
-where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the
-writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
+where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
+size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
+
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr5&pixscale=0.3&bands=grz
+
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr5&pixscale=0.3&bands=grz
+
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr5&pixscale=0.3&bands=grz
+
+It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
+
+As of the writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR4 description`_ page.
 
+.. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR4 description`: ../../dr4/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer

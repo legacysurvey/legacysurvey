@@ -421,7 +421,7 @@ Users interested in database access to the Tractor Catalogs can contact the NOAO
 Sweep Catalogs
 ==============
 
-sweep/5.0/sweep-<brickmin>-<brickmax>.fits
+sweep/7.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used

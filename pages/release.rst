@@ -56,3 +56,15 @@ RELEASE	CAMERA FILTER PRIMARY
 6000	wise   |W3|   0
 6000	wise   |W4|   0
 ======= ====== ====== =======
+
+======= ====== ====== =======
+RELEASE	CAMERA FILTER PRIMARY
+======= ====== ====== =======
+7000	decam  |g|    1
+7000	decam  |r|    1
+7000	decam  |z|    1
+7000	wise   |W1|   0
+7000    wise   |W2|   0
+7000	wise   |W3|   0
+7000	wise   |W4|   0
+======= ====== ====== =======

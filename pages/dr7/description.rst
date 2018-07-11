@@ -39,6 +39,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html
+.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
 .. _`DR6`: ../../dr6
 .. _`DR5`: ../../dr5
 .. _`DR4`: ../../dr4

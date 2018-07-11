@@ -408,13 +408,13 @@ Depths
 The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
 different numbers of observations in DR6.
 
-.. image:: ../../files/depth-hist-g.png
+.. image:: ../../files/depth-hist-g-dr6.png
     :height: 375
     :width: 570
-.. image:: ../../files/depth-hist-r.png
+.. image:: ../../files/depth-hist-r-dr6.png
     :height: 375
     :width: 570
-.. image:: ../../files/depth-hist-z.png
+.. image:: ../../files/depth-hist-z-dr6.png
     :height: 375
     :width: 570
     :alt: DR6 Depth Plots

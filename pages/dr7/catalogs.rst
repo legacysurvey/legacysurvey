@@ -146,18 +146,18 @@ Name                        Type         Units                 Description
 ``galdepth_r``              float32      1/nanomaggies\ |sup2| As for PSFDEPTH_R but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``              float32      1/nanomaggies\ |sup2| As for PSFDEPTH_Z but for a galaxy (0.45" exp, round) detection sensitivity
 ``wise_coadd_id``	    char[8]	 		       unWISE coadd file name for the center of each object
-``lc_flux_w1``		    float32[7]	 nanomaggies           FLUX_W1 in each of up to seven unWISE coadd epochs
-``lc_flux_w2``		    float32[7]	 nanomaggies           FLUX_W2 in each of up to seven unWISE coadd epochs
-``lc_flux_ivar_w1``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
-``lc_flux_ivar_w2``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
-``lc_nobs_w1``		    int16[7]			       NOBS_W1 in each of up to seven unWISE coadd epochs
-``lc_nobs_w2``		    int16[7]		               NOBS_W2 in each of up to seven unWISE coadd epochs
-``lc_fracflux_w1``	    float32[7]	                       FRACFLUX_W1 in each of up to seven unWISE coadd epochs
-``lc_fracflux_w2``	    float32[7]			       FRACFLUX_W2 in each of up to seven unWISE coadd epochs
-``lc_rchisq_w1``	    float32[7]			       RCHISQ_W1 in each of up to seven unWISE coadd epochs
-``lc_rchisq_w2``	    float32[7]		      	       RCHISQ_W2 in each of up to seven unWISE coadd epochs
-``lc_mjd_w1``		    float32[7]			       MJD_W1 in each of up to seven unWISE coadd epochs
-``lc_mjd_w2``		    float32[7]			       MJD_W2 in each of up to seven unWISE coadd epochs
+``lc_flux_w1``		    float32[11]	 nanomaggies           FLUX_W1 in each of up to eleven unWISE coadd epochs
+``lc_flux_w2``		    float32[11]	 nanomaggies           FLUX_W2 in each of up to eleven unWISE coadd epochs
+``lc_flux_ivar_w1``	    float32[11]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
+``lc_flux_ivar_w2``	    float32[11]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
+``lc_nobs_w1``		    int16[11]			       NOBS_W1 in each of up to eleven unWISE coadd epochs
+``lc_nobs_w2``		    int16[11]		               NOBS_W2 in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w1``	    float32[11]	                       FRACFLUX_W1 in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w2``	    float32[11]			       FRACFLUX_W2 in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w1``	    float32[11]			       RCHISQ_W1 in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w2``	    float32[11]		      	       RCHISQ_W2 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w1``		    float32[11]			       MJD_W1 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w2``		    float32[11]			       MJD_W2 in each of up to eleven unWISE coadd epochs
 ``fracdev``		    float32			       Fraction of model in deVauc [0,1]
 ``fracdev_ivar``	    float32			       Inverse variance of FRACDEV
 ``shapeexp_r``		    float32	 arcsec  	       Half-light radius of exponential model (>0)

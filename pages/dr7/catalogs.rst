@@ -44,6 +44,33 @@ Name                        Type         Units                 Description
 ``ebv``                     float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 ``mjd_min``		    float64	 days		       Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		    float64	 days		       Maximum Modified Julian Date of observations used to construct the model of this object
+
+``ref_cat``                 char[2]                            Reference catalog source for this star: "T2" for Tycho-2, "G2" for Gaia DR2, empty otherwise
+``ref_id``                    int64                            Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2
+``pmra``                      float32     mas/yr               Reference catalog proper motion in the RA direction
+``pmdec``.....................float32     mas/yr               Reference catalog proper motion in the Dec direction
+``parallax``                  float32     mas                  Reference catalog parallax
+``pmra_ivar``                 float32     1/(mas/yr)\ |sup2|   Reference catalog inverse-variance on ``pmra``
+``pmdec_ivar``                float32     1/(mas/yr)\ |sup2|   Reference catalog inverse-variance on ``pmdec``
+``parallax_ivar``             float32     1/(mas)\ |sup2|      Reference catalog inverse-variance on ``parallax``
+``ref_epoch``                 float32     yr                   Reference catalog reference epoch (eg, 2015.5 for Gaia-DR2)
+``gaia_pointsource``          bool                             This Gaia-DR2 source is believed to be a star, not a galaxy
+``gaia_phot_g_mean_mag``      float32     mag                  Gaia G band mag
+``gaia_phot_g_mean_flux_over_error``  float32                  Gaia G band signal-to-noise
+``gaia_phot_g_n_obs``         int16                            Gaia G band number of observations
+``gaia_phot_bp_mean_mag``     float32     mag                  Gaia BP mag
+``gaia_phot_bp_mean_flux_over_error``   float32                Gaia BP signal-to-noise
+``gaia_phot_bp_n_obs``        int16                            Gaia BP number of observations
+``gaia_phot_rp_mean_mag``     float32     mag                  Gaia RP mag
+``gaia_phot_rp_mean_flux_over_error``   float32                Gaia RP signal-to-noise
+``gaia_phot_rp_n_obs``        int16                            Gaia RP number of observations
+``gaia_phot_variable_flag``   bool                             Gaia photometric variable flag
+``gaia_astrometric_excess_noise``  float32                     Gaia astrometric excess noise
+``gaia_astrometric_excess_noise_sig``   float32                Gaia astrometric excess noise uncertainty
+``gaia_astrometric_n_obs_al`` int16                            Gaia number of astrometric observations along scan direction
+``gaia_astrometric_n_good_obs_al``   int16                     Gaia number of good astrometric observations along scan direction
+``gaia_astrometric_weight_al``       float32                   Gaia astrometric weight along scan direction
+``gaia_duplicated_source``    bool                             Gaia duplicated source flag
 ``flux_g``		    float32	 nanomaggies	       model flux in :math:`g`
 ``flux_r``		    float32	 nanomaggies	       model flux in :math:`r`
 ``flux_z``		    float32	 nanomaggies	       model flux in :math:`z`

@@ -429,9 +429,9 @@ depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr5.0 versions ranging from git version string ``7e360d0`` (26/7/2017) to (untagged) version ``0a71f89`` (28/8/2017). The version used is documented in the Tractor header card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git version ``d0af7bf`` (11/7/2017)
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr5.2, git version ``5df5875`` (18/7/2017)
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Most bricks were run with dr7v3.31. A few were finished with dr7v3.32. The version used is documented in the Tractor header card ``LEGPIPEV``.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.74.
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr7.0.
 * NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
 .. * SourceExtractor 2.19.5, PSFEx 3.17.1

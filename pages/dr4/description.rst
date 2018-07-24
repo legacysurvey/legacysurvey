@@ -12,6 +12,7 @@
 .. |times|  unicode:: U+000D7 .. MULTIPLICATION SIGN
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. |geq|    unicode:: U+02265 .. GREATER THAN OR EQUAL TO
 
 The Legacy Surveys are producing an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
@@ -57,9 +58,23 @@ consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases.
 
 In total, the `BASS`_ imaging included in DR4 covers 58,341 bricks in either 
 :math:`g`-band or :math:`r`-band. The `MzLS`_ imaging in DR4 covers 57,943
-bricks in :math:`z`-band. Bricks average 0.0623 deg\ |sup2| in size. 
-Both `BASS`_ and `MzLS`_ therefore cover about 3600 deg\ |sup2| in
-unique area, although they do not necessarily cover the *same* area. There are 
+bricks in :math:`z`-band. The table below indicates the area covered 
+in DR4 for different numbers of passes and in different filters.
+These are precise area estimates derived from the geometry of
+CCDs that contribute to the Legacy Surveys footprint.
+
+===================== ========= ========= ========
+Band/Number of Passes |geq| 1   |geq| 2   |geq| 3
+===================== ========= ========= ========
+:math:`g`-band        3222 |d2| 1642 |d2| 424 |d2|
+:math:`r`-band        2862 |d2| 1883 |d2| 792 |d2|
+:math:`z`-band        3267 |d2| 2009 |d2| 671 |d2|
+All bands jointly     2249 |d2| 763 |d2|  65 |d2|
+===================== ========= ========= ========
+
+.. |d2| replace:: deg\ :sup:`2`
+
+There are 
 approximately 183 million unique sources in DR4.
 
 DR4 includes the Right Ascension (RA) range of 55 to 301 degrees, and

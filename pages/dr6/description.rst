@@ -12,6 +12,7 @@
 .. |times|  unicode:: U+000D7 .. MULTIPLICATION SIGN
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. |geq|    unicode:: U+02265 .. GREATER THAN OR EQUAL TO
 
 .. class:: pull-right well
 
@@ -61,14 +62,21 @@ prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Le
 Surveys. The `BASS`_ and `MzLS`_ data in DR6 are reduced in a manner that is largely
 consistent with `DECaLS`_ reductions in `DR5`_.
 
-In total, the optical data in DR6 covers a disjoint footprint
-with, roughly, 4400 deg\ |sup2| having at least one observation
-in :math:`g`-band, 4400 deg\ |sup2| having at least one observation
-in :math:`r`-band and 5300 deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of about 3900 deg\ |sup2| is covered by at least one 
-observation in *all three* optical filters. These are coarse estimates based
-on intersections with `HEALPixels`_ of *NSIDE=4096* (about 0.74 arcmin\ |sup2|).
-The area included in DR6 is depicted on the `status page`_.
+The table below indicates the area covered in DR6 for different
+numbers of passes and in different filters.
+These are precise area estimates derived from the geometry of
+CCDs that contribute to the Legacy Surveys footprint.
+
+===================== ========= ========= =========
+Band/Number of Passes |geq| 1   |geq| 2   |geq| 3
+===================== ========= ========= =========
+:math:`g`-band        4380 |d2| 3708 |d2| 2376 |d2|
+:math:`r`-band        4374 |d2| 3719 |d2| 2649 |d2|
+:math:`z`-band        5231 |d2| 4853 |d2| 3622 |d2|
+All bands jointly     3823 |d2| 3110 |d2| 1441 |d2|
+===================== ========= ========= =========
+
+.. |d2| replace:: deg\ :sup:`2`
 
 DR6 includes the stacked images and the Tractor-based catalogs.
 The size of the DR6 data distribution is:

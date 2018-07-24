@@ -12,6 +12,7 @@
 .. |times|  unicode:: U+000D7 .. MULTIPLICATION SIGN
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. |geq|    unicode:: U+02265 .. GREATER THAN OR EQUAL TO
 
 .. class:: pull-right well
 
@@ -58,12 +59,22 @@ Images from `DECaLS`_
 are included from August 2014 through May 2017. DR5 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
-In total, the optical data covers a disjoint footprint
-with, roughly, 7400 deg\ |sup2| having at least one observation
-in :math:`g`-band, 8000 deg\ |sup2| having at least one observation
-in :math:`r`-band and 10200 deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of 6800 deg\ |sup2| is covered by at least one observation in
-*all three* optical filters.
+
+The table below indicates the area covered in DR5 for different
+numbers of passes and in different filters.
+These are precise area estimates derived from the geometry of
+CCDs that contribute to the Legacy Surveys footprint.
+
+===================== ========= ========= =========
+Band/Number of Passes |geq| 1   |geq| 2   |geq| 3
+===================== ========= ========= =========
+:math:`g`-band        7107 |d2| 4807 |d2| 2808 |d2|
+:math:`r`-band        7700 |d2| 5406 |d2| 3364 |d2|
+:math:`z`-band        9972 |d2| 7867 |d2| 5333 |d2|
+All bands jointly     6473 |d2| 3931 |d2| 1930 |d2|
+===================== ========= ========= =========
+
+.. |d2| replace:: deg\ :sup:`2`
 
 There are approximately 680 million unique sources in DR5 spread over 176,811 bricks.
 

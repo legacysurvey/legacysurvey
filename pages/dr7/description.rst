@@ -12,6 +12,7 @@
 .. |times|  unicode:: U+000D7 .. MULTIPLICATION SIGN
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. |geq|    unicode:: U+02265 .. GREATER THAN OR EQUAL TO
 
 .. class:: pull-right well
 
@@ -61,13 +62,22 @@ Images from `DECaLS`_
 are included from August 2014 through XXX 20XX. DR7 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to XXX 20XX.
 
-In total, the optical data covers a disjoint footprint
-with, roughly, XXXX deg\ |sup2| having at least one observation
-in :math:`g`-band, XXXX deg\ |sup2| having at least one observation
-in :math:`r`-band and XXXXX deg\ |sup2| having at least one observation
-in :math:`z`-band. A total of XXXX deg\ |sup2| is covered by at least one observation in
-*all three* optical filters. These are precise area estimates derived from the geometry of
-CCDs that contribute to the `DECaLS`_ footprint.
+The table below indicates the area covered in DR7 for different
+numbers of passes and in different filters.
+These are precise area estimates derived from the geometry of
+CCDs that contribute to the Legacy Surveys footprint.
+
+===================== ========== ========= =========
+Band/Number of Passes |geq| 1    |geq| 2   |geq| 3
+===================== ========== ========= =========
+:math:`g`-band        9766 |d2|  8049 |d2| 5430 |d2|
+:math:`r`-band        9853 |d2|  8152 |d2| 5588 |d2|
+:math:`z`-band        10610 |d2| 9135 |d2| 6615 |d2|
+All bands jointly     9298 |d2|  7180 |d2| 4355 |d2|
+===================== ========== ========= =========
+
+.. |d2| replace:: deg\ :sup:`2`
+
 
 DR7 includes the stacked images and the Tractor-based catalogs.
 The size of the DR7 data distribution is:

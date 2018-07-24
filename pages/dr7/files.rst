@@ -602,6 +602,24 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
     Number of exposures contributing to each pixel of the stacked images.
 
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz
+    Bit mask of possible problems with pixels in this brick.
+    ========= ================= ======================================================
+    Bit value        Name       Description
+    ========= ================= ======================================================
+    0x1       NOT_PRIMARY       This pixel is outside the PRIMARY region of this brick
+    0x2       BRIGHT            This pixel is in a blob containing a bright (Tycho-2) star
+    0x4       SATUR_G           This pixel was saturated in at least one g-band image
+    0x8       SATUR_R           This pixel was saturated in at least one r-band image
+    0x10      SATUR_Z           This pixel was saturated in at least one z-band image
+    0x20      ALLMASK_G         This pixel had a mask bit set in all g-band images
+    0x40      ALLMASK_R         This pixel had a mask bit set in all r-band images
+    0x80      ALLMASK_Z         This pixel had a mask bit set in all z-band images
+    0x100     WISEM1            This pixel is masked in the WISE W1 images
+    0x200     WISEM2            This pixel is masked in the WISE W2 images
+    0x400     BAILOUT           This pixel is in a blob where we "bailed out" of source fitting
+    ========= ================= ======================================================
+
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
     JPEG image of calibrated image using the :math:`g,r,z` filters as the colors.
 

@@ -32,7 +32,8 @@ Name                        Type         Units                 Description
 ``brickname``               char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                   int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``           boolean                            True if the object is within the brick boundary
-``type``                    char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
+``brightstarinblob``        boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
+``type``                    char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                      float64      deg                   Right ascension at epoch J2000
 ``dec``                     float64      deg                   Declination at epoch J2000
 ``ra_ivar``                 float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
@@ -43,6 +44,33 @@ Name                        Type         Units                 Description
 ``ebv``                     float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 ``mjd_min``		    float64	 days		       Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		    float64	 days		       Maximum Modified Julian Date of observations used to construct the model of this object
+
+``ref_cat``                 char[2]                            Reference catalog source for this star: "T2" for Tycho-2, "G2" for Gaia DR2, empty otherwise
+``ref_id``                    int64                            Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2
+``pmra``                      float32     mas/yr               Reference catalog proper motion in the RA direction
+``pmdec``.....................float32     mas/yr               Reference catalog proper motion in the Dec direction
+``parallax``                  float32     mas                  Reference catalog parallax
+``pmra_ivar``                 float32     1/(mas/yr)\ |sup2|   Reference catalog inverse-variance on ``pmra``
+``pmdec_ivar``                float32     1/(mas/yr)\ |sup2|   Reference catalog inverse-variance on ``pmdec``
+``parallax_ivar``             float32     1/(mas)\ |sup2|      Reference catalog inverse-variance on ``parallax``
+``ref_epoch``                 float32     yr                   Reference catalog reference epoch (eg, 2015.5 for Gaia-DR2)
+``gaia_pointsource``          bool                             This Gaia-DR2 source is believed to be a star, not a galaxy
+``gaia_phot_g_mean_mag``      float32     mag                  Gaia G band mag
+``gaia_phot_g_mean_flux_over_error``  float32                  Gaia G band signal-to-noise
+``gaia_phot_g_n_obs``         int16                            Gaia G band number of observations
+``gaia_phot_bp_mean_mag``     float32     mag                  Gaia BP mag
+``gaia_phot_bp_mean_flux_over_error``   float32                Gaia BP signal-to-noise
+``gaia_phot_bp_n_obs``        int16                            Gaia BP number of observations
+``gaia_phot_rp_mean_mag``     float32     mag                  Gaia RP mag
+``gaia_phot_rp_mean_flux_over_error``   float32                Gaia RP signal-to-noise
+``gaia_phot_rp_n_obs``        int16                            Gaia RP number of observations
+``gaia_phot_variable_flag``   bool                             Gaia photometric variable flag
+``gaia_astrometric_excess_noise``  float32                     Gaia astrometric excess noise
+``gaia_astrometric_excess_noise_sig``   float32                Gaia astrometric excess noise uncertainty
+``gaia_astrometric_n_obs_al`` int16                            Gaia number of astrometric observations along scan direction
+``gaia_astrometric_n_good_obs_al``   int16                     Gaia number of good astrometric observations along scan direction
+``gaia_astrometric_weight_al``       float32                   Gaia astrometric weight along scan direction
+``gaia_duplicated_source``    bool                             Gaia duplicated source flag
 ``flux_g``		    float32	 nanomaggies	       model flux in :math:`g`
 ``flux_r``		    float32	 nanomaggies	       model flux in :math:`r`
 ``flux_z``		    float32	 nanomaggies	       model flux in :math:`z`
@@ -118,18 +146,18 @@ Name                        Type         Units                 Description
 ``galdepth_r``              float32      1/nanomaggies\ |sup2| As for PSFDEPTH_R but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``              float32      1/nanomaggies\ |sup2| As for PSFDEPTH_Z but for a galaxy (0.45" exp, round) detection sensitivity
 ``wise_coadd_id``	    char[8]	 		       unWISE coadd file name for the center of each object
-``lc_flux_w1``		    float32[7]	 nanomaggies           FLUX_W1 in each of up to seven unWISE coadd epochs
-``lc_flux_w2``		    float32[7]	 nanomaggies           FLUX_W2 in each of up to seven unWISE coadd epochs
-``lc_flux_ivar_w1``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
-``lc_flux_ivar_w2``	    float32[7]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
-``lc_nobs_w1``		    int16[7]			       NOBS_W1 in each of up to seven unWISE coadd epochs
-``lc_nobs_w2``		    int16[7]		               NOBS_W2 in each of up to seven unWISE coadd epochs
-``lc_fracflux_w1``	    float32[7]	                       FRACFLUX_W1 in each of up to seven unWISE coadd epochs
-``lc_fracflux_w2``	    float32[7]			       FRACFLUX_W2 in each of up to seven unWISE coadd epochs
-``lc_rchisq_w1``	    float32[7]			       RCHISQ_W1 in each of up to seven unWISE coadd epochs
-``lc_rchisq_w2``	    float32[7]		      	       RCHISQ_W2 in each of up to seven unWISE coadd epochs
-``lc_mjd_w1``		    float32[7]			       MJD_W1 in each of up to seven unWISE coadd epochs
-``lc_mjd_w2``		    float32[7]			       MJD_W2 in each of up to seven unWISE coadd epochs
+``lc_flux_w1``		    float32[11]	 nanomaggies           FLUX_W1 in each of up to eleven unWISE coadd epochs
+``lc_flux_w2``		    float32[11]	 nanomaggies           FLUX_W2 in each of up to eleven unWISE coadd epochs
+``lc_flux_ivar_w1``	    float32[11]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
+``lc_flux_ivar_w2``	    float32[11]	 1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
+``lc_nobs_w1``		    int16[11]			       NOBS_W1 in each of up to eleven unWISE coadd epochs
+``lc_nobs_w2``		    int16[11]		               NOBS_W2 in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w1``	    float32[11]	                       FRACFLUX_W1 in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w2``	    float32[11]			       FRACFLUX_W2 in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w1``	    float32[11]			       RCHISQ_W1 in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w2``	    float32[11]		      	       RCHISQ_W2 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w1``		    float32[11]			       MJD_W1 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w2``		    float32[11]			       MJD_W2 in each of up to eleven unWISE coadd epochs
 ``fracdev``		    float32			       Fraction of model in deVauc [0,1]
 ``fracdev_ivar``	    float32			       Inverse variance of FRACDEV
 ``shapeexp_r``		    float32	 arcsec  	       Half-light radius of exponential model (>0)

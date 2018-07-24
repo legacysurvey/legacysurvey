@@ -3,6 +3,7 @@
 .. tags: mathjax
 .. description: 
 
+.. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
 .. |geq|    unicode:: U+2265 .. GREATER-THAN-OR-EQUAL-TO SIGN
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
@@ -30,14 +31,22 @@ https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
 #. Montero-Dorta et al., `The Dependence of Galaxy Clustering on Stellar-mass Assembly History for LRGs`_
 #. Mazzucchelli et al., `Physical Properties of 15 Quasars at z > 6.5`_
 #. Raichoor et al., `The SDSS-IV Extended Baryon Oscillation Spectroscopic Survey: final Emission Line Galaxy Target Selection`_
+#. Calafut, Bean & Yu, `Cluster mislocation in kinematic Sunyaev-Zel'dovich effect extraction`_
 #. Yang et al., `Quasar Photometric Redshifts and Candidate Selection: A New Algorithm Based on Optical and Mid-infrared Photometric Data`_
 
 2018
 ====
-#. Banados et al., `An 800 million solar mass black hole in a significantly neutral universe at redshift 7.5`_
+#. Banados et al., `An 800 million solar mass black hole in a significantly neutral universe at a redshift of 7.5`_
+#. Holman et al., `A Dwarf Planet Class Object in the 21:5 Resonance with Neptune`_
+#. Hood et al., `The Origin of Faint Tidal Features around Galaxies in the RESOLVE Survey`_
+#. Timlin et al., `The Clustering of High-redshift (2.9 < z < 5.1) Quasars in SDSS Stripe 82`_
+#. van de Voort et al., `An ALMA view of star formation efficiency suppression in early-type galaxies after gas-rich minor mergers`_
+#. Morales et al., `Systematic search for tidal features around nearby galaxies. I. Enhanced SDSS imaging of the Local Volume`_
+#. Li et al., `The Ensemble Photometric Variability of Over 10000 Quasars in the Dark Energy Camera Legacy Survey and the Sloan Digital Sky Survey`_
+#. Zhou et al., `Photometric Calibration for the Beijing-Arizona Sky Survey and Mayall z-band Legacy Survey`_
 #. Meisner, Lang & Schlegel, `Time-resolved WISE/NEOWISE Coadds`_
 #. Zou et al., `The Second Data Release of the Beijing-Arizona Sky Survey`_
-
+#. Dey et al., `Overview of the DESI Legacy Imaging Surveys`_
 
 .. _`text on the acknowledgment page`: ../acknowledgment
 
@@ -55,8 +64,17 @@ https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
 .. _`Deep Full-sky Coadds from Three Years of WISE and NEOWISE Observations`: http://adsabs.harvard.edu/abs/2017AJ....154..161M
 .. _`The Dependence of Galaxy Clustering on Stellar-mass Assembly History for LRGs`: http://adsabs.harvard.edu/abs/2017ApJ...848L...2M
 .. _`Physical Properties of 15 Quasars at z > 6.5`: http://adsabs.harvard.edu/abs/2017ApJ...849...91M
+.. _`Cluster mislocation in kinematic Sunyaev-Zel'dovich effect extraction`: http://adsabs.harvard.edu/abs/2017PhRvD..96l3529C
 .. _`Quasar Photometric Redshifts and Candidate Selection: A New Algorithm Based on Optical and Mid-infrared Photometric Data`: http://adsabs.harvard.edu/abs/2017AJ....154..269Y
 
-.. _`An 800 million solar mass black hole in a significantly neutral universe at redshift 7.5`: http://adsabs.harvard.edu/abs/2018Natur.553..473B
+.. _`An 800 million solar mass black hole in a significantly neutral universe at a redshift of 7.5`: http://adsabs.harvard.edu/abs/2018Natur.553..473B
+.. _`A Dwarf Planet Class Object in the 21:5 Resonance with Neptune`: http://adsabs.harvard.edu/abs/2018ApJ...855L...6H
+.. _`The Origin of Faint Tidal Features around Galaxies in the RESOLVE Survey`: http://adsabs.harvard.edu/abs/2018ApJ...857..144H
+.. _`The Clustering of High-redshift (2.9 < z < 5.1) Quasars in SDSS Stripe 82`: http://adsabs.harvard.edu/abs/2018ApJ...859...20T
+.. _`An ALMA view of star formation efficiency suppression in early-type galaxies after gas-rich minor mergers`: http://adsabs.harvard.edu/abs/2018MNRAS.476..122V
+.. _`Systematic search for tidal features around nearby galaxies. I. Enhanced SDSS imaging of the Local Volume`: http://adsabs.harvard.edu/abs/2018A%26A...614A.143M
+.. _`The Ensemble Photometric Variability of Over 10000 Quasars in the Dark Energy Camera Legacy Survey and the Sloan Digital Sky Survey`: http://adsabs.harvard.edu/abs/2018ApJ...861....6L
+.. _`Photometric Calibration for the Beijing-Arizona Sky Survey and Mayall z-band Legacy Survey`: http://adsabs.harvard.edu/abs/2018PASP..130h5001Z
 .. _`Time-resolved WISE/NEOWISE Coadds`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1710.02526
 .. _`The Second Data Release of the Beijing-Arizona Sky Survey`: http://adsabs.harvard.edu/abs/2017arXiv171209165Z
+.. _`Overview of the DESI Legacy Imaging Surveys`: http://adsabs.harvard.edu/abs/2018arXiv180408657D

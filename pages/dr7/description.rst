@@ -372,9 +372,12 @@ be 3.219 at airmass=1 and 3.202 at airmass=2.
 Astrometry
 ==========
 
-Our astrometry uses the `Gaia Data Release 2`_ system. Positions of sources are tied to 
-predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. The 
-residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
+DR7 astrometry is tied to Gaia, but in an inconsistent fashion. Each image is calibrated to
+`Gaia Data Release 1`_, yielding an astrometric solution that is offset by the average difference between
+the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR6 image. Source
+extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to 
+predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. Despite
+these inconsistencies, astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
 Astrometric calibration of all optical Legacy Survey data is conducted using Gaia
 astrometric positions of stars matched to Pan-STARRS-1 (PS1).
@@ -382,14 +385,12 @@ The same matched objects are used for both astrometric and photometric calibrati
 are some areas of sky where Gaia has "holes," i.e., where stars brighter than the Gaia
 magnitude limit are missing from the Gaia catalog. As a result, in
 some regions of the survey there are fewer matches to a given bright magnitude limit in
-the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric
+the PS1-Gaia catalog than there are in the PS1-only catalog that was used for astrometric
 calibration in, e.g., `DR3`_ of the Legacy Surveys.
 
 As of DR6, PSF photometry uses the same PSF models
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
-So, for DR7, the measured positions for Gaia stars should be completely
-self-consistent, substantially reducing any systematic errors in astrometry.
 
 
 Image Stacks

@@ -59,8 +59,8 @@ processed using the `Tractor`_.
 
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
-are included from August 2014 through XXX 20XX. DR7 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from September 2012 to XXX 20XX.
+are included from 12th August 2013 through 18th March 2018. DR7 also includes DECam data from a range of
+non-DECaLS surveys, including observations that were conducted from September 2012 to March 2018.
 
 The table below indicates the area covered in DR7 for different
 numbers of passes and in different filters.

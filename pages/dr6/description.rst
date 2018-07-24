@@ -417,7 +417,7 @@ different numbers of observations in DR6.
 .. image:: ../../files/depth-hist-z-dr6.png
     :height: 375
     :width: 570
-    :alt: DR6 Depth Plots
+    :alt: DR6 Depth Histograms
 
 These histograms are based upon the formal errors in the Tractor 
 catalogs for point sources, which need further confirmation. These depths can be compared 

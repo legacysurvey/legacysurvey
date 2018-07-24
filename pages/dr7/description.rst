@@ -410,7 +410,7 @@ different numbers of observations in DR7.
 .. image:: ../../files/depth-hist-z-dr7.png
     :height: 375
     :width: 570
-    :alt: DR6 Depth Plots
+    :alt: DR7 Depth Histograms
 
 This is based upon the formal errors in the Tractor catalogs for point sources; those
 errors need further confirmation. This can be compared to the predicted proposed

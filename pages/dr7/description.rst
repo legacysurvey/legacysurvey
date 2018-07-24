@@ -116,7 +116,7 @@ area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 The co-added images should be
 used with caution, as noted below in the *Image Stacks* section.
 
-There are approximately XXX million unique sources in DR7 spread over XXX,XXX bricks.
+There are approximately 835 million unique sources in DR7 spread over XXX,XXX bricks.
 
 Obtaining Images and Raw Data
 ==============================
@@ -233,12 +233,12 @@ The total numbers of the different morphological types in DR7 are:
 ================= ==================
 Number of Sources Type
 ================= ==================
-   XXX,XXX,XXX    Objects in a Primary brick
-   XXX,XXX,XXX    ``PSF``
-   XXX,XXX,XXX    ``REX``
-    XX,XXX,XXX    ``EXP``
-    XX,XXX,XXX    ``DEV``
-     X,XXX,XXX    ``COMP``
+   834,782,188    Objects in a Primary brick
+   400,038,485    ``PSF``
+   329,081,955    ``REX``
+    73,989,292    ``EXP``
+    29,713,159    ``DEV``
+     1,959,297    ``COMP``
 ================= ==================
 
 Note that the "REX" model replaces the "SIMP" model used in

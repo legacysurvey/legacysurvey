@@ -390,7 +390,7 @@ some regions of the survey there are fewer matches to a given bright magnitude l
 the PS1-Gaia catalog than there are in the PS1-only catalog that was used for astrometric
 calibration in, e.g., `DR3`_ of the Legacy Surveys.
 
-As of DR6, PSF photometry uses the same PSF models
+As of `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
 
@@ -408,9 +408,6 @@ interpolation. These stacks should not be used for "precision" work.
 Depths
 ======
 
-As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for areas with 3 observations
-in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. DR7 should reach similar depths.
-
 The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
 different numbers of observations in DR7.
 
@@ -425,8 +422,8 @@ different numbers of observations in DR7.
     :width: 570
     :alt: DR7 Depth Histograms
 
-This is based upon the formal errors in the Tractor catalogs for point sources; those
-errors need further confirmation. This can be compared to the predicted proposed
+These are based upon the formal errors in the Tractor catalogs for point sources; those
+errors need further confirmation. These can be compared to the predicted proposed
 depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
 Code Versions
@@ -477,6 +474,9 @@ DR4
 
 DR5
     `Legacy Survey Data Release 5`_.
+
+DR6
+    `Legacy Survey Data Release 6`_.
 
 DECam
     Dark Energy Camera on the NOAO Blanco 4-meter telescope.

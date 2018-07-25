@@ -42,14 +42,14 @@ Column          Type    Description
 ``BRICKCOL``    int32   Number of the brick within a Dec row.
 ``RA``          float64 RA of the center of the brick.
 ``DEC``         float64 Dec of the center of the brick.
-``RA1``         float64  Lower RA boundary.
-``RA2``         float64  Upper RA boundary.
-``DEC1``        float64  Lower Dec boundary.
-``DEC2``        float64  Upper Dec boundary.
+``RA1``         float64 Lower RA boundary.
+``RA2``         float64 Upper RA boundary.
+``DEC1``        float64 Lower Dec boundary.
+``DEC2``        float64 Upper Dec boundary.
 =============== ======= ======================================================
 
 survey-bricks-dr7.fits.gz
---------------------------
+-------------------------
 
 A FITS binary table with information that summarizes the contents of each brick for DR7.
 
@@ -105,7 +105,7 @@ the `catalogs page`_.
 
 
 survey-ccds-dr7.fits.gz
---------------------------
+-----------------------
 
 A FITS binary table with almanac information about each individual CCD image. 
 
@@ -292,7 +292,7 @@ Column               Type      Description
 ``counts_gal_z``     int64    Number of pixels in histogram for canonical galaxy depth in :math:`z` band
 ==================== ======== ======================================================
 
-The depth histogram goes from magnitude of 20.1 to 24.9 in steps of
+The depth histogram runs from magnitude of 20.1 to 24.9 in steps of
 0.1 mag.  The first and last bins are "catch-all" bins: 0 to 20.1 and
 24.9 to 100, respectively.  The histograms count the number of pixels
 in each brick's unique area with the given depth.  These numbers can
@@ -301,6 +301,41 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
+randoms-dr7.fits
+----------------
+
+A file of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
+were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
+about the survey was extracted from pixels at each location in the *coadd* files (see below, e.g.
+*coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp/depth/galdepth/maskbits-<filter>.fits.gz*). Contains
+the following columns:
+
+==================== ======== ======================================================
+Column               Type     Description
+==================== ======== ======================================================
+``RA``               float64  Right ascension at epoch J2000
+``DEC``              float64  Declination at epoch J2000
+``BRICKNAME``        char[8]  Name of the brick
+``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
+``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)   
+``NOBS_Z``           int16    Number of images that contribute to the central pixel in the :math:`z` filter for this location (not profile-weighted)
+``PSFDEPTH_G``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
+``PSFDEPTH_R``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
+``PSFDEPTH_Z``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
+
+``GALDEPTH_G``       float32  As for ``PSFDEPTH_G`` but for a galaxy (0.45" exp, round) detection sensitivity
+``GALDEPTH_R``       float32  As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
+``GALDEPTH_Z``       float32  As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``MASKBITS``         int16    Bit mask of possible problems with pixels in this brick (as documented below under *coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz*)
+``EBV``              float32  Galactic extinction E(B-V) reddening from SFD98
+``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
+==================== ======== ======================================================
+
+.. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
+.. _`desitarget GitHub page`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
+
+The code to generate similar random catalogs is available on the `desitarget GitHub page`_ (see also `here`_).
 
 External Files
 ==============

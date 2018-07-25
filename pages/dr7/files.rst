@@ -604,6 +604,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz
     Bit mask of possible problems with pixels in this brick.
+
     ========= ================= ======================================================
     Bit value        Name       Description
     ========= ================= ======================================================

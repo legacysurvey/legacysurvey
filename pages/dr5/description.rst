@@ -182,7 +182,7 @@ The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using PSFEx_, generating spatially-varying pixelized models.
 
-The configuaration files for SExtractor and PSFex that we used for a given
+The configuration files for SExtractor and PSFex that we used for a given
 iteration of our codebase are available `on our github page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex

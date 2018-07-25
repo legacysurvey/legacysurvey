@@ -179,7 +179,7 @@ match the PSF used to extract `DECaLS`_ sources for `DR3`_.
 For DECaLS and MzLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
 7\ |Prime| diameter aperture for normalization. For BASS we adopt a 31 x 31 pixel image size and
 a 0.470 pixel scale and use a 7\ |Prime| diameter aperture for normalization 
-The configuaration files for SExtractor and PSFex are available `on our github page`_.
+The configuration files for SExtractor and PSFex are available `on our github page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config

@@ -318,9 +318,9 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
 .. math::
                 (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
-   g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.04709 (g-i) + 0.00084 (g-i)^2 - 0.00340 (g-i)^3 \\
-   r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} - 0.09939 (g-i) + 0.04509 (g-i)^2 - 0.01488 (g-i)^3 \\
-   z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} - 0.13404 (g-i) + 0.06591 (g-i)^2 - 0.01695 (g-i)^3 \\
+   g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.00062 + 0.03604 (g-i) + 0.01028 (g-i)^2 - 0.00613 (g-i)^3 \\
+   r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} + 0.00495 - 0.08435 (g-i) + 0.03222 (g-i)^2 - 0.01140 (g-i)^3 \\
+   z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} + 0.02583 - 0.07690 (g-i) + 0.02824 (g-i)^2 - 0.00898 (g-i)^3 \\
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 
@@ -328,7 +328,7 @@ These linear fluxes are well-defined even at the faint end, and the errors on th
 fluxes should be very close to a normal distribution.  The fluxes can be negative for faint 
 objects, and indeed we expect many such cases for the faintest objects.
 
-??? The filter curves are available for `DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_.
+The filter curves are available for `DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_.
 
 As of `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.
@@ -352,9 +352,9 @@ we provide should all be within a few percent of being on an AB system.
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
-.. _`DECaLS g-band`: ../../files/decals-g.txt
-.. _`DECaLS r-band`: ../../files/decals-r.txt
-.. _`DECaLS z-band`: ../../files/decals-z.txt
+.. _`DECaLS g-band`: ../../files/decam.g.am1p4.dat.txt
+.. _`DECaLS r-band`: ../../files/decam.r.am1p4.dat.txt
+.. _`DECaLS z-band`: ../../files/decam.z.am1p4.dat.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 

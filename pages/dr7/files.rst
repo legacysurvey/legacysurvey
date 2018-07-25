@@ -586,13 +586,12 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-dr7.kd.fits**, and also contains
+    Contains the same columns as **survey-ccds-dr7.fits**, and also contains
     the additional columns:
 
     ================ ========= ======================================================
     Column           Type      Description
     ================ ========= ======================================================
-    ``ccd_cuts``     int32     (ignore)
     ``ccd_x0``       int16     Minimum x image coordinate overlapping this brick
     ``ccd_y0``       int16     Minimum y image coordinate overlapping this brick
     ``ccd_x1``       int16     Maximum x image coordinate overlapping this brick
@@ -601,13 +600,12 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``brick_x1``     int16     Maximum x brick image coordinate overlapped by this image
     ``brick_y0``     int16     Minimum y brick image coordinate overlapped by this image
     ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
-    ``sig1``         float64   (ignore)
-    ``psfnorm``      float32   Same as ``psfnorm`` in the **ccds-annotated-** file
-    ``galnorm``      float64   Same as ``galnorm`` in the **ccds-annotated-** file
+    ``psfnorm``      float32   Same as ``psfnorm`` in the *ccds-annotated-* file
+    ``galnorm``      float32   Same as ``galnorm`` in the *ccds-annotated-* file
     ``plver``        char[6]   Community Pipeline (CP) version
-    ``skyver``       char[17]  Git version of the sky calibration code
+    ``skyver``       char[21]  Git version of the sky calibration code
     ``wcsver``       char[1]   Git version of the WCS calibration code
-    ``psfver``       char[17]  Git version of the PSF calibration code
+    ``psfver``       char[21]  Git version of the PSF calibration code
     ``skyplver``     char[8]   CP version of the input to sky calibration
     ``wcsplver``     char[6]   CP version of the input to WCS calibration
     ``psfplver``     char[6]   CP version of the input to PSF calibration
@@ -659,17 +657,17 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ========= ================= ======================================================
     Bit value        Name       Description
     ========= ================= ======================================================
-    0x1       NOT_PRIMARY       This pixel is outside the PRIMARY region of this brick
-    0x2       BRIGHT            This pixel is in a blob containing a bright (Tycho-2) star
-    0x4       SATUR_G           This pixel was saturated in at least one g-band image
-    0x8       SATUR_R           This pixel was saturated in at least one r-band image
-    0x10      SATUR_Z           This pixel was saturated in at least one z-band image
-    0x20      ALLMASK_G         This pixel had a mask bit set in all g-band images
-    0x40      ALLMASK_R         This pixel had a mask bit set in all r-band images
-    0x80      ALLMASK_Z         This pixel had a mask bit set in all z-band images
-    0x100     WISEM1            This pixel is masked in the WISE W1 images
-    0x200     WISEM2            This pixel is masked in the WISE W2 images
-    0x400     BAILOUT           This pixel is in a blob where we "bailed out" of source fitting
+    0x1       ``NOT_PRIMARY``   This pixel is outside the PRIMARY region of this brick
+    0x2       ``BRIGHT``        This pixel is in a blob containing a bright (Tycho-2) star
+    0x4       ``SATUR_G``       This pixel was saturated in at least one g-band image
+    0x8       ``SATUR_R``       This pixel was saturated in at least one r-band image
+    0x10      ``SATUR_Z``       This pixel was saturated in at least one z-band image
+    0x20      ``ALLMASK_G``     This pixel had a mask bit set in all g-band images
+    0x40      ``ALLMASK_R``     This pixel had a mask bit set in all r-band images
+    0x80      ``ALLMASK_Z``     This pixel had a mask bit set in all z-band images
+    0x100     ``WISEM1``        This pixel is masked in the WISE W1 images
+    0x200     ``WISEM2``        This pixel is masked in the WISE W2 images
+    0x400     ``BAILOUT``       This pixel is in a blob where we "bailed out" of source fitting
     ========= ================= ======================================================
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg

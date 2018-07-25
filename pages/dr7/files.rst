@@ -81,7 +81,7 @@ Column          Type       Description
 ``galdepth_g``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`g`-band (AB) mag
 ``galdepth_r``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`r`-band (AB) mag
 ``galdepth_z``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`z`-band (AB) mag
-``ebv``         float32    Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick
+``ebv``         float32    Median `SFD98`_ dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick
 ``trans_g``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``
 ``trans_r``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``
 ``trans_z``     float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``
@@ -228,9 +228,9 @@ Column               Type       Description
 ``outtemp``          float32    Outside temperate (deg C).
 ``tileid``           int32      tile number, 0 for data from programs other than `MzLS`_ or `DECaLS`_
 ``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an `MzLS`_ or `DECaLS`_ observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
-``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than `BASS`_, `MzLS`_ or `DECaLS`_
+``tileebv``          float32    Mean `SFD98`_ E(B-V) extinction in the tile, 0 for data from programs other than `BASS`_, `MzLS`_ or `DECaLS`_
 ``plver``            char[6]    Community Pipeline (CP) PLVER version string
-``ebv``              float32    SFD E(B-V) extinction for CCD center
+``ebv``              float32    `SFD98`_ E(B-V) extinction for CCD center
 ``decam_extinction`` float32[6] Extinction for optical filters :math:`ugrizY`
 ``wise_extinction``  float32[4] Extinction for WISE bands W1,W2,W3,W4
 ``psfdepth``         float32    5-sigma PSF detection depth in AB mag, using PsfEx PSF model
@@ -306,8 +306,9 @@ randoms-dr7.fits
 
 A file of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
 were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
-about the survey was extracted from pixels at each location in the *coadd* files (see below, e.g.
-*coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp/depth/galdepth/maskbits-<filter>.fits.gz*). Contains
+about the survey was extracted from pixels at each random location in the **coadd** files (see below, e.g.
+``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
+``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains
 the following columns:
 
 ==================== ======== ======================================================
@@ -327,7 +328,7 @@ Column               Type     Description
 ``GALDEPTH_R``       float32  As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_Z``       float32  As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``MASKBITS``         int16    Bit mask of possible problems with pixels in this brick (as documented below under *coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz*)
-``EBV``              float32  Galactic extinction E(B-V) reddening from SFD98
+``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
 ==================== ======== ======================================================
 
@@ -457,6 +458,7 @@ also have :math:`U`, :math:`I` and :math:`Y`-band entries (e.g. ``FLUX_U``, ``FL
 
 
 .. _`RELEASE is documented here`: ../../release
+.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
@@ -471,7 +473,7 @@ Name                                  Type         Units                 Descrip
 ``RA_IVAR``                           float32      1/deg\ |sup2|         Inverse variance of ``RA`` (no cosine term!), excluding astrometric calibration errors
 ``DEC_IVAR``                          float32      1/deg\ |sup2|         Inverse variance of ``DEC``, excluding astrometric calibration errors
 ``DCHISQ``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, EXP, DEV, COMP.  The difference is versus no source.
-``EBV``                               float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute ``MW_TRANSMISSION``
+``EBV``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute ``MW_TRANSMISSION``
 ``FLUX_G``                            float32      nanomaggies           model flux in :math:`g`
 ``FLUX_R``                            float32      nanomaggies           model flux in :math:`r`
 ``FLUX_Z``                            float32      nanomaggies           model flux in :math:`z`

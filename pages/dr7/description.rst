@@ -342,7 +342,9 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
    r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} + 0.00495 - 0.08435 (g-i) + 0.03222 (g-i)^2 - 0.01140 (g-i)^3 \\
    z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} + 0.02583 - 0.07690 (g-i) + 0.02824 (g-i)^2 - 0.00898 (g-i)^3 \\
 
-Note that these zero points have been updated since `DR5`_.
+Note that these zero points have been `updated since DR5`_.
+
+.. _`updated since DR5`: ../../dr5/description
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 

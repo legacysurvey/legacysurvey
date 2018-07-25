@@ -41,7 +41,7 @@ Name                                  Type         Units                 Descrip
 ``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack
 ``by``                                float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 ``dchisq``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
-``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
 ``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, empty otherwise
@@ -233,7 +233,7 @@ Galactic Extinction Coefficients
 The Galactic extinction values are derived from the `SFD98`_ maps, but with updated coefficients to
 convert E(B-V) to the extinction in each filter.  These are reported in linear units of transmission,
 with 1 representing a fully transparent region of the Milky Way and 0 representing a fully opaque region.
-The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
+The value can slightly exceed unity owing to noise in the `SFD98`_ maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
 by `Schlafly & Finkbeiner (2011)`_ using the `Fitzpatrick (1999)`_

@@ -177,6 +177,26 @@ and finally in "red". In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
 
+As of DR7 we relaxed some of the criteria for deciding whether a
+flux peak is a distinct source. We reduced the minimum possible distance between
+neighboring peaks, and also reduced the "saddle" depth (dip in flux) necessary
+to model neighboring peaks as distinct sources.
+
+As of DR7, Gaia stars are extracted as independent sources. Stars from `Tycho-2`_
+and `Gaia Data Release 2`_ are matched, and their Gaia information is retained.
+Such stars are then fixed at their Gaia positions shifted by their
+proper motions in order to determine their positions at the epoch of their 
+Legacy Surveys image. Gaia stars are forced to remain stars (galaxy models are
+never considered as an option for such sources) but their fluxes are extracted from the
+Legacy Surveys images. `Tycho-2`_ stars have ``brightstarinblob`` set (see the `catalogs`_
+page) and all other sources that share a blob with the star are fit as point sources.
+The reasoning behind this choice is that `Tycho-2`_ stars, at 12th magnitude and
+brighter, have large halos that are not include in our model choices and are best fit
+by misleading (and computationally expensive) diffuse galaxy models.
+
+.. _`catalogs`: ../catalogs
+.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+
 PSF
 ===
 

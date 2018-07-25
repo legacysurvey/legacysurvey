@@ -378,6 +378,19 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
+survey-dr7-dr14Q_v4_4.fits
+--------------------------
+HDU1 (the only HDU) contains Tractored survey
+photometry that is row-by-row-matched to the SDSS DR14 
+visually inspected quasar catalog (`Paris et al. 2018`_)
+such that the photometric parameters in row "N" of 
+**survey-dr7-dr14Q_v4_4.fits** matches the spectroscopic parameters in row "N" of
+DR14Q_v4_4.fits. The spectroscopic file 
+is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
+
+.. _`Paris et al. 2018`: http://adsabs.harvard.edu/abs/2018A%26A...613A..51P
+.. _`data model for DR14Q_v4_4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR14Q/DR14Q_v4_4.html
+
 survey-dr7-superset-dr12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey

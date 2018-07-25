@@ -182,42 +182,17 @@ the **survey-ccds-dr7.fits.gz** file.
 ccds-annotated-dr7.fits.gz
 --------------------------
 
-A version of the **survey-ccds-nocuts.fits.gz** file with additional information
+A version of the **survey-ccds-dr7.fits.gz** file with additional information
 gathered during calibration pre-processing before running the Tractor
 reductions.
 
-Includes all of the columns in the **survey-ccds-dr7.kd.fits** file plus the following:
+Includes all of the columns in the **survey-ccds-dr7.fits.gz** file plus the following:
 
 ==================== ========== ======================================================
 Column               Type       Description
 ==================== ========== ======================================================
-``seeing``           float32    Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019
-``date_obs``         char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead
-``ut``               char[15]   Time of observation start, eg "23:50:58.608241"
-``ha``               char[13]   Hour angle of the observation (HH:MM:SS)  
-``airmass``          float32    Airmass, eg 1.35
-``avsky``            float32    Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
-``arawgain``         float32    Average gain for this CCD, eg 4.34
-``ccdnum``           int16      CCD number (see Legacy Survey camera layout), eg 1
-``ccdzpta``          float32    Zeropoint for amp A (AB mag)
-``ccdzptb``          float32    Zeropoint for amp B (AB mag)
-``ccdphoff``         float32    (ignore; depends on the nominal zeropoint, measured at the start of each survey rather than now)
-``ccdphrms``         float32    Photometric rms for the CCD (in mag)
-``ccdskyrms``        float32    Sky rms for the CCD (in counts)
-``ccdskymag``        float32    Mean sky background in AB mag/arcsec\ :sup:`2` on each CCD; measured from the CP-processed frames as -2.5*alog10(``ccdskycounts``/``pixscale``/``pixscale``/``exptime``) + ``ccdzpt``
-``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
-``ccdrarms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec   
-``ccddecrms``	     float32    rms in astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdtransp``        float32    (ignore; depends on the nominal zeropoint, measured at the the start of survey rather than now)
-``ccdnstar``         int16      Number of stars found on the CCD
-``ccdnmatcha``       int16      Number of stars in amp A matched
-``ccdnmatchb``       int16      Number of stars in amp B matched
-``ccdmdncol``        float32    Median (g-i) color from the PS1 catalog of the matched stars
-``temp``             char[32]    Outside temperature in :sup:`o`\ C listed in the ``OUTTEMP`` tag in the CCD image header
-``expid``            char[12]   Exposure ID string, eg "00348224-S29" (from ``expnum`` and ``ccdname``)
-``photometric``      boolean    True if this CCD was considered photometric and used in the DR7 reductions
-``blacklist_ok``     boolean	For processing purposes, certain programs (Proposal IDs) are blacklisted if they include many images over a single patch of sky. ``True`` if this CCD was *not* blacklisted.
-``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs).
+``annotated``        boolean    (ignore)
+``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs)
 ``ra0``              float64    RA  coordinate of pixel (1,1)...Note that the `ordering of the CCD corners is detailed here`_
 ``dec0``             float64    Dec coordinate of pixel (1,1)
 ``ra1``              float64    RA  coordinate of pixel (1,H)
@@ -230,7 +205,6 @@ Column               Type       Description
 ``ddec``             float32    Maximum distance from RA,Dec center to the edge midpoints, in Dec
 ``ra_center``        float64    RA coordinate of CCD center
 ``dec_center``       float64    Dec coordinate of CCD center
-``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies.
 ``meansky``          float32    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
 ``stdsky``           float32    Standard deviation of our sky level
 ``maxsky``           float32    Max of our sky level
@@ -252,9 +226,9 @@ Column               Type       Description
 ``psf_ell``          float32    PSF ellipticity 1 - minor/major
 ``humidity``         float32    Percent humidity outside
 ``outtemp``          float32    Outside temperate (deg C).
-``tileid``           int32      tile number, 0 for data from programs other than MzLS or DECaLS
-``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an MzLS or DECaLS observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
-``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than BASS, MzLS or DECaLS
+``tileid``           int32      tile number, 0 for data from programs other than `MzLS`_ or `DECaLS`_
+``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an `MzLS`_ or `DECaLS`_ observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
+``tileebv``          float32    Mean SFD E(B-V) extinction in the tile, 0 for data from programs other than `BASS`_, `MzLS`_ or `DECaLS`_
 ``plver``            char[6]    Community Pipeline (CP) PLVER version string
 ``ebv``              float32    SFD E(B-V) extinction for CCD center
 ``decam_extinction`` float32[6] Extinction for optical filters :math:`ugrizY`
@@ -263,10 +237,6 @@ Column               Type       Description
 ``galdepth``         float32    5-sigma galaxy (0.45" round exp) detection depth in AB mag
 ``gausspsfdepth``    float32    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
 ``gaussgaldepth``    float32    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
-``psf_sampling``     float32    (ignore)
-``ccd_cuts``         int32      (ignore)
-``annotated``	     boolean    (ignore)
-``new_photometric``  boolean    see the ``Update to ccds-annotated- file...`` note on the `issues page`_
 ==================== ========== ======================================================
 
 .. _`status page`: ../../status

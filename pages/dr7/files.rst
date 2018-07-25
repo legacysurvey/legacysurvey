@@ -241,7 +241,7 @@ Column               Type       Description
 
 .. _`status page`: ../../status
 .. _`issues page`: ../issues
-
+.. _`DECaLS`: ../../decamls
 
 dr7-depth.fits.gz
 -----------------

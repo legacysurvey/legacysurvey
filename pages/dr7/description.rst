@@ -306,9 +306,9 @@ would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
-Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
-photometry, where the latter was modified with color terms
+Zero point magnitudes for the CP reductions of the DECam images
+were computed by comparing Legacy Survey PSF photometry to Pan-STARRS-1 (PS1)
+PSF photometry, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.

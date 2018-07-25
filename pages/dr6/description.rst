@@ -312,8 +312,8 @@ applied color terms to any of the photometry, but report fluxes as observed in t
 `90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP reductions of the `90Prime`_ and `Mosaic-3`_ images
-were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
-photometry, where the latter was modified with color terms
+were computed by comparing Legacy Survey PSF photometry to Pan-STARRS-1 (PS1)
+PSF photometry, where the latter was modified with color terms
 to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
 The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.

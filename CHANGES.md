@@ -2,12 +2,12 @@
 
 ## 7.0.0 (DR7, 2018-XX-XX)
 
-- Updated to release version for DR7 ([PR#80](https://github.com/legacysurvey/legacysurvey/pull/80))
-- Latest data model (new random catalog, new Gaia and fiber flux columns)
-- Latest status and depth histogram plots
-- New more accurate calculations of area using random catalogs for DR7 (and for previous DRs)
+- Updated to release version for DR7 ([PR#80](https://github.com/legacysurvey/legacysurvey/pull/80)).
+- Latest data model (new random catalog, new Gaia and fiber flux columns).
+- Latest status and depth histogram plots.
+- New more accurate calculations of area using random catalogs for DR7 (and for previous DRs).
 - General updates to the description page for area/number of sources/new techniques/zeropoints, etc.
-- Updates to publications
+- Updates to publications.
 
 ## 6.0.2 (DR6, 2018-04-23)
 

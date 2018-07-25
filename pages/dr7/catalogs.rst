@@ -13,7 +13,7 @@
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
-FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
+FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
 `known issues`_ regarding their content and derivation. The columns pertaining to optical data 
 also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``), but these contain only
 zeros.
@@ -27,7 +27,7 @@ zeros.
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
-``release``		              int32	 		         Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``release``		              int16	 		         Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
@@ -84,6 +84,12 @@ Name                                  Type         Units                 Descrip
 ``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W2
 ``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W3
 ``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W4
+``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
+``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
+``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
+``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
 ``apflux_g``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`g`
 ``apflux_r``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`r`
 ``apflux_z``    	              float32[8]   nanomaggies	         aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`z`
@@ -155,8 +161,8 @@ Name                                  Type         Units                 Descrip
 ``lc_fracflux_w2``	              float32[11]                        FRACFLUX_W2 in each of up to eleven unWISE coadd epochs
 ``lc_rchisq_w1``	              float32[11]                        RCHISQ_W1 in each of up to eleven unWISE coadd epochs
 ``lc_rchisq_w2``	              float32[11]                        RCHISQ_W2 in each of up to eleven unWISE coadd epochs
-``lc_mjd_w1``		              float32[11]                        MJD_W1 in each of up to eleven unWISE coadd epochs
-``lc_mjd_w2``		              float32[11]                        MJD_W2 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w1``		              float64[11]                        MJD_W1 in each of up to eleven unWISE coadd epochs
+``lc_mjd_w2``		              float64[11]                        MJD_W2 in each of up to eleven unWISE coadd epochs
 ``fracdev``		              float32                            Fraction of model in deVauc [0,1]
 ``fracdev_ivar``	              float32                            Inverse variance of FRACDEV
 ``shapeexp_r``		              float32      arcsec                Half-light radius of exponential model (>0)

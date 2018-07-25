@@ -175,7 +175,9 @@ Column               Type       Description
 survey-ccds-dr7.kd.fits
 -----------------------
 
-As for the **survey-ccds-nocuts.fits.gz** file but limited by the depth of each observation. This file contains the CCDs actually used for the DR7 reductions. Columns are the same as for **survey-ccds-nocuts.fits.gz** except for two additional boolean columns ``depth_cut_ok`` and ``has_zeropoint``, which are always ``True`` for this file.
+As for the **survey-ccds-dr7.fits.gz** file but limited by the depth of each observation. This file 
+contains the CCDs actually used for the DR7 reductions. Columns are the same as for 
+the **survey-ccds-dr7.fits.gz** file.
 
 ccds-annotated-dr7.fits.gz
 --------------------------

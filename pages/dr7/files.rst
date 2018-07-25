@@ -104,7 +104,7 @@ the `catalogs page`_.
 .. _`github`: https://github.com
 
 
-survey-ccds-nocuts.fits.gz
+survey-ccds-dr7.fits.gz
 --------------------------
 
 A FITS binary table with almanac information about each individual CCD image. 
@@ -128,11 +128,11 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[65]   Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
+``image_filename``   char[100]  Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
-``camera``           char[7]    The camera that took this image
-``expnum``           int32      Exposure number, eg 348224
-``ccdname``          char[4]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
+``camera``           char[5]    The camera that took this image
+``expnum``           int64      Exposure number, eg 348224
+``ccdname``          char[3]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
 ``object``           char[35]   Name listed in the object tag from the CCD header
 ``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
@@ -151,14 +151,21 @@ Column               Type       Description
 ``cd1_2``            float32    Astrometric header value: transformation matrix
 ``cd2_1``            float32    Astrometric header value: transformation matrix
 ``cd2_2``            float32    Astrometric header value: transformation matrix
+``yshift``	     boolean	(ignore; it's always ``False``)
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
 ``skyrms``           float32    Sky rms for the entire image (in counts)
+``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag)
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
+``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
+``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
+``ccdphrms``         float32    Photometric rms for the CCD (in mag)
 ``ccdnmatch``        int16      Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
+``ccd_cuts``         int64      (ignore)
 ==================== ========== =======================================================
 
 .. _`detailed more here`: ../../avsky

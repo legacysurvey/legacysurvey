@@ -331,8 +331,8 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP reductions of the DECam images
-were computed by comparing Legacy Survey PSF photometry to Pan-STARRS-1 (PS1)
-PSF photometry, where the latter was modified with color terms
+were computed by comparing Legacy Survey PSF photometry to 
+`Pan-STARRS-1 (PS1) PSF photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
@@ -349,6 +349,7 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 Note that these zero points have been `updated since DR5`_.
 
 .. _`updated since DR5`: ../../dr5/description
+.. _`Pan-STARRS-1 (PS1) PSF photometry`: http://adsabs.harvard.edu/abs/2016ApJ...822...66F
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 
@@ -365,8 +366,7 @@ So, for DR7, the measured fluxes for PS1 stars should be completely self-consist
 
 DR7 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
-We have converted these to an AB system using the `recommended conversions by
-the WISE team`_. Namely,
+We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to

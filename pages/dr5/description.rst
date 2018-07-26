@@ -306,8 +306,8 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to PS1
-photometry, where the latter was modified with color terms
+were computed by comparing 7\ |Prime| diameter aperture photometry to 
+`PS1 photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
@@ -326,6 +326,8 @@ from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux
 are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
+
+.. _`PS1 photometry`: http://adsabs.harvard.edu/abs/2016ApJ...822...66F
 
 DR5 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.

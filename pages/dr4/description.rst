@@ -302,8 +302,8 @@ applied color terms to any of the photometry, but report fluxes as observed in t
 `90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
-were computed by comparing 7\ |Prime| diameter aperture photometry to Pan-STARRS-1 (PS1)
-photometry, where the latter was modified with color terms
+were computed by comparing 7\ |Prime| diameter aperture photometry to 
+`Pan-STARRS-1 (PS1) photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
 The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
@@ -321,6 +321,8 @@ The brightnesses of objects are all stored as linear fluxes in units of nanomagg
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. These linear fluxes are well-defined even at the faint end, and the errors on the linear fluxes should
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
+
+.. _`Pan-STARRS-1 (PS1) photometry`: http://adsabs.harvard.edu/abs/2016ApJ...822...66F
 
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_ and
 `MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere (at airmass=1.0).

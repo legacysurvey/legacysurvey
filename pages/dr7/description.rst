@@ -365,7 +365,7 @@ This was not the case for `DR5`_ or before.
 So, for DR7, the measured fluxes for PS1 stars should be completely self-consistent.
 
 DR7 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
-The WISE Level 1 images and the unWISE image stacks are on a Vega system.
+The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
@@ -374,7 +374,7 @@ give units consistent with the Tractor catalogs. These conversion factors are re
 Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
 we provide should all be within a few percent of being on an AB system.
 
-
+.. _`unWISE`: https://arxiv.org/abs/1801.03566 
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt

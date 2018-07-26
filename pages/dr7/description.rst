@@ -402,11 +402,13 @@ be 3.219 at airmass=1 and 3.202 at airmass=2.
 
 .. _`Schlafly et al (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S 
 
+A similar process was conducted to derive the Galactic Extinction in the WISE bands.
+
 
 Astrometry
 ==========
 
-DR7 astrometry is tied to Gaia, but in an inconsistent fashion. Each image is calibrated to
+DR7 astrometry is tied to Gaia, but in a (very slightly) inconsistent fashion. Each image is calibrated to
 `Gaia Data Release 1`_, yielding an astrometric solution that is offset by the average difference between
 the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR6 image. Source
 extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to 
@@ -415,12 +417,7 @@ these inconsistencies, astrometric residuals are typically smaller than |plusmn|
 
 Astrometric calibration of all optical Legacy Survey data is conducted using Gaia
 astrometric positions of stars matched to Pan-STARRS-1 (PS1).
-The same matched objects are used for both astrometric and photometric calibration. There
-are some areas of sky where Gaia has "holes," i.e., where stars brighter than the Gaia
-magnitude limit are missing from the Gaia catalog. As a result, in
-some regions of the survey there are fewer matches to a given bright magnitude limit in
-the PS1-Gaia catalog than there are in the PS1-only catalog that was used for astrometric
-calibration in, e.g., `DR3`_ of the Legacy Surveys.
+The same matched objects are used for both astrometric and photometric calibration. 
 
 As of `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.

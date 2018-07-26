@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 7.0.0 (DR7, 2018-XX-XX)
+## 7.0.0 (DR7, 2018-07-26)
 
 - Updated to release version for DR7 ([PR#80](https://github.com/legacysurvey/legacysurvey/pull/80)).
 - Latest data model (new random catalog, new Gaia and fiber flux columns).

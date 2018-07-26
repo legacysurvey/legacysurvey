@@ -458,7 +458,7 @@ also have :math:`U`, :math:`I` and :math:`Y`-band entries (e.g. ``FLUX_U``, ``FL
 
 
 .. _`RELEASE is documented here`: ../../release
-.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
+.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description

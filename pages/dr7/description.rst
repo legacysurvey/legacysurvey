@@ -41,7 +41,7 @@ An overview of the surveys is available in `Dey et al. (2018)`_.
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: http://www.scipy.org
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
-.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
+.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html
 .. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
@@ -391,10 +391,16 @@ Galactic Extinction
 ===================
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
-to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
+Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`,
+computed for a 7000K source spectrum as was done in the Appendix of `Schlafly et al (2011)`_.
+These coefficients are multiplied 
+by the `SFD98`_ E(B-V) values at the coordinate of each object to derive the ``MW_TRANSMISSION``
+values in the Legacy Surveys `catalogs`_.
+The coefficients at different airmasses
 only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
 be 3.219 at airmass=1 and 3.202 at airmass=2.
+
+.. _`Schlafly et al (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S 
 
 
 Astrometry

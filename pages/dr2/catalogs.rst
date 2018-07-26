@@ -29,9 +29,9 @@ NINBLOB                     int32                              Number of sources
 TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 RA                          float64      deg                   Right ascension at epoch J2000
-RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
+RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 DEC                         float64      deg                   Declination at epoch J2000
-DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
+DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 BX0                         float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack

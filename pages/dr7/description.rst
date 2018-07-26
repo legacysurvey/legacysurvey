@@ -402,7 +402,7 @@ be 3.219 at airmass=1 and 3.202 at airmass=2.
 
 .. _`Schlafly et al (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S 
 
-A similar process was conducted to derive the Galactic Extinction in the WISE bands.
+A similar process was conducted to derive ``MW_TRANSMISSION`` in the WISE bands.
 
 
 Astrometry

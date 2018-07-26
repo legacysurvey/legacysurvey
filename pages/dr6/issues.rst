@@ -45,24 +45,11 @@ Attribute   Source 1    Source 2
 
 (i.e. fluxes and coordinates are identical but ``OBJID`` is different).
 
-In DR6, we estimate that there are many thousands of duplicates, based on identifying
-a handful of bricks with many repeat sources. For example:
+In DR6, we estimate that there are many thousands of duplicates spread across
+264 bricks. The full list of DR6 bricks that contain duplicates, and the number of
+duplicates in each brick, is available `here`_.
 
-======== ====
-Brick    |N|
-======== ====
-0892p592  194
-0895p587  197
-0900p595  152
-0972p425   84
-0972p502  921
-0978p407 1013
-0985p800   85
-0989p645  390
-0993p480  421
-======== ====
-
-.. |N| replace:: Number of Repeats
+.. _`here`: ../../files/dups_bricks_dr6.dat
 
 One brick was processed with a different pipeline version
 =========================================================

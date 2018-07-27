@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 7.0.1 (DR7, 2018-07-26)
+
+- A few more additions for DR7 ([PR#81](https://github.com/legacysurvey/legacysurvey/pull/81)).
+
 ## 7.0.0 (DR7, 2018-07-26)
 
 - Updated to release version for DR7 ([PR#80](https://github.com/legacysurvey/legacysurvey/pull/80)).

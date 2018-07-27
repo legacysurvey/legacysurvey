@@ -50,7 +50,7 @@ Size* Directory Description
 ===== ========= ==============================================
 238GB tractor   Tractor catalogs
 15TB  coadd     Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and PNG quality-assurance plots
-41GB  sweep     Light-weight versions of the Tractor catalogs.
+41GB  sweep     Light-weight versions of the Tractor catalogs
 ===== ========= ==============================================
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.

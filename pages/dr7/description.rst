@@ -149,7 +149,7 @@ http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
-As of the writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
+The maximum size for cutouts (in number of pixels) is currently 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR6 description`_ page.
 
@@ -176,17 +176,17 @@ created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
 are detected in each of these two SED-matched filters, as well as in each band independently.
 
-As of `DR5`_, source detection is run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
+In `DR5`_, `DR6`_ and `DR7`_, source detection was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
 
-As of DR7 we relaxed some of the criteria for deciding whether a
+Starting with DR7 we relaxed some of the criteria for deciding whether a
 flux peak is a distinct source. We reduced the minimum possible distance between
 neighboring peaks, and also reduced the "saddle" depth (dip in flux) necessary
 to model neighboring peaks as distinct sources.
 
-As of DR7, Gaia stars are extracted as independent sources. Stars from `Tycho-2`_
+Starting with DR7, Gaia stars are extracted as independent sources. Stars from `Tycho-2`_
 and `Gaia Data Release 2`_ are matched, and their Gaia information is retained.
 Such stars are then fixed at their Gaia positions shifted by their
 proper motions in order to determine their positions at the epoch of their 
@@ -359,7 +359,7 @@ objects, and indeed we expect many such cases for the faintest objects.
 
 The filter curves are available for `DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_.
 
-As of `DR6`_, PSF photometry uses the same PSF models
+Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
 So, for DR7, the measured fluxes for PS1 stars should be completely self-consistent.
@@ -419,7 +419,7 @@ Astrometric calibration of all optical Legacy Survey data is conducted using Gai
 astrometric positions of stars matched to Pan-STARRS-1 (PS1).
 The same matched objects are used for both astrometric and photometric calibration. 
 
-As of `DR6`_, PSF photometry uses the same PSF models
+Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
 

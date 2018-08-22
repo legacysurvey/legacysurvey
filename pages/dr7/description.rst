@@ -180,18 +180,19 @@ The locations of the peak fluxes of extracted sources are used to determine wher
 are photometered and how the initial parameters for an object are seeded. When a source is detected 
 in multiple bands a choice of filter must be made to seed the initial extraction. 
 Sources detected in other bands beyond the initial filter are only kept if they are 
-sufficiently separated from object extracted in previous bands.
+sufficiently separated from an object that was extracted in previous bands.
 In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
-In `DR5`_, `DR6`_ and `DR7`_, source detection 
+In `DR5`_, `DR6`_ and DR7, source detection 
 was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". :math:`z` was chosen as the "primary" detection image
 to take advantage of the better PSF in that band.
 
 Starting with DR7 we relaxed some of the criteria for deciding whether a
 flux peak is a distinct source. We reduced the minimum possible distance between
-neighboring peaks, and also reduced the "saddle" depth (dip in flux) necessary
+neighboring peaks from 6 pixels (about 1.5 arcseconds) to 4 pixels (about 1 arcsecond). 
+We also reduced the "saddle" depth (dip in flux) necessary
 to model neighboring peaks as distinct sources.
 
 Starting with DR7, Gaia stars are extracted as independent sources. Stars from `Tycho-2`_

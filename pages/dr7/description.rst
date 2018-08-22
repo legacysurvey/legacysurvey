@@ -176,10 +176,18 @@ created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
 are detected in each of these two SED-matched filters, as well as in each band independently.
 
-In `DR5`_, `DR6`_ and `DR7`_, source detection was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
-and finally in "red". In `DR4`_, `DR3`_ and earlier data releases,
+The locations of the peak fluxes of extracted sources are used to determine where objects 
+are photometered and how the initial parameters for an object are seeded. When a source is detected 
+in multiple bands a choice of filter must be made to seed the initial extraction. 
+Sources detected in other bands beyond the initial filter are only kept if they are 
+sufficiently separated from object extracted in previous bands.
+In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
+In `DR5`_, `DR6`_ and `DR7`_, source detection 
+was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
+and finally in "red". :math:`z` was chosen as the "primary" detection image
+to take advantage of the better PSF in that band.
 
 Starting with DR7 we relaxed some of the criteria for deciding whether a
 flux peak is a distinct source. We reduced the minimum possible distance between

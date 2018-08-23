@@ -9,7 +9,10 @@
 DR7.1 update to sweeps files
 ============================
 The column ``BRIGHTSTARINBLOB`` was not initially included in the DR7 sweeps
-files. The DR7.1 sweeps files were provided as an update to include this column.
+files. In addition, the ``GAIA_DUPLICATED_SOURCE`` column in the DR7 sweeps
+was initially included as type *int8* rather than being passed through as a 
+*boolean* from the Tractor files. The DR7.1 sweeps files were provided as an 
+update to rectify these issues.
 
 Smaller subsets of files of random points
 =========================================

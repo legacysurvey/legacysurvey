@@ -17,7 +17,7 @@ Explanation
 DR2 coadd files have been deprecated
 ====================================
 
-As of August 23rd, 2018, the DR2 coadd directory has been removed to save space.
+On August 23rd, 2018, the DR2 coadd directory was removed to save space.
 Data from that directory is still available via FTP from the `NOAO archive`_
 
 .. _`NOAO archive`: ftp://archive.noao.edu/public/hlsp/decals/dr2/coadd/

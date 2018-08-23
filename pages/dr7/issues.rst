@@ -25,8 +25,8 @@ For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR6 issues`_ pag
 DR1 and DR2 coadd files have been deprecated
 ============================================
 
-As of August 23rd, 2018, the DR1 and DR2 coadd directories has been removed 
-from earlier data released to save space. Data from those directories is still 
+On August 23rd, 2018, the DR1 and DR2 coadd directories were removed to
+save space. Data from those directories is still 
 available via FTP from the NOAO archive for `DR1`_ and `DR2`_.
 
 .. _`DR1`: ftp://archive.noao.edu/public/hlsp/decals/dr1/coadd/

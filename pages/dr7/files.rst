@@ -19,8 +19,16 @@
 Top level directory for web access:
   http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/
 
+Top level directory for web access to dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/7.1/
+
+.. _`known issues`: ../issues
+
 Top level directory local to NERSC computers (for collaborators):
   /global/project/projectdirs/cosmo/data/legacysurvey/dr7/
+
+Top level directory local to NERSC computers for dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr7/sweep/7.1/
 
 Summary Files
 =============
@@ -301,10 +309,10 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-randoms-dr7.fits
-----------------
+randoms/randoms-dr7.1-0.22.0-\*.fits
+------------------------------------
 
-A file of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
+Files of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
 were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location in the **coadd** files (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
@@ -333,10 +341,11 @@ Column               Type     Description
 ==================== ======== ======================================================
 
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
-.. _`desitarget GitHub page`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The code to generate similar random catalogs is available on the `desitarget GitHub page`_ (see also `here`_).
+The **0.22.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_).
 
 External Files
 ==============
@@ -568,13 +577,14 @@ Name                                  Type         Units                 Descrip
 ``GAIA_PHOT_RP_MEAN_MAG``             float32      mag                   `Gaia`_ RP magnitude
 ``GAIA_PHOT_RP_MEAN_FLUX_OVER_ERROR`` float32                            `Gaia`_ RP signal-to-noise
 ``GAIA_ASTROMETRIC_EXCESS_NOISE``     float32                            `Gaia`_ astrometric excess noise
-``GAIA_DUPLICATED_SOURCE``            int8                               `Gaia`_ duplicated source flag (1/0 for True/False)
+``GAIA_DUPLICATED_SOURCE``            boolean                            `Gaia`_ duplicated source flag (1/0 for True/False)
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
 ``PARALLAX_IVAR``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
 ``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
 ``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
 ``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``BRIGHTSTARINBLOB``                  boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html

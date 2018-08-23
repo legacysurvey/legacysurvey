@@ -440,7 +440,7 @@ The image stacks are provided for convenience, but were not used in the Tractor 
 These images overlap adjacent images by approximately 130 pixels in each direction.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
 and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
-interpolation. These stacks should not be used for "precision" work.
+interpolation. These stacks have not been designed for "precision" work.
 
 
 Depths

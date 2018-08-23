@@ -111,6 +111,7 @@ XXX GB	   `randoms/`_  Catalogs of random points with meta data sample across th
 .. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/
 .. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/logs/
 .. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/metrics/
+.. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/randoms/
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/
 .. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/tractor/
 

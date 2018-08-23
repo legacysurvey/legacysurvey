@@ -2,7 +2,7 @@
 
 ## 7.1.0 (DR7, 2018-08-23)
 
-- Additions to address DR7 [issues](https://github.com/legacysurvey/legacysurvey/issues/82) (([PR#83](https://github.com/legacysurvey/legacysurvey/pull/83)). Main changes:
+- Additions to address DR7 [issues](https://github.com/legacysurvey/legacysurvey/issues/82) ([PR#83](https://github.com/legacysurvey/legacysurvey/pull/83)). Main changes:
     - Split random files into smaller subsets and place in dedicated directory.
     - Document 7.1 versions of the sweeps file.
 

@@ -10,3 +10,4 @@
 .. _`Description`: /dr1/description
 .. _`Files`: /dr1/files
 .. _`Catalogs`: /dr1/catalogs
+.. _`Known Issues and Workarounds`: /dr1/issues

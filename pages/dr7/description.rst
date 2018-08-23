@@ -215,7 +215,7 @@ PSF
 
 The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
-using PSFEx_, generating spatially-varying pixelized models.
+using `PSFEx`_, generating spatially-varying pixelized models.
 
 The configuration files for SExtractor and PSFex that we used for a given
 iteration of our codebase are available `on our github page`_.
@@ -470,9 +470,9 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Most bricks were run with dr7v3.31. A few were finished with dr7v3.32. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.74.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr7.0.
-* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
-
-.. * SourceExtractor 2.19.5, PSFEx 3.17.1
+* `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded as ``PLVER``.
+* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.19.5.
+* `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.17.1.
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 .. _`Legacy Survey Data Release 3`: ../../dr3

@@ -51,6 +51,8 @@ An overview of the surveys is available in `Dey et al. (2018)`_.
 .. _`DR3`: ../../dr3
 .. _`DR2`: ../../dr2
 .. _`DESI`: http://desi.lbl.gov
+.. _`WISE`: http://wise.ssl.berkeley.edu
+
 
 Contents of DR7
 ===============
@@ -59,7 +61,12 @@ Data Release 7 (DR7) is the seventh public data release of the Legacy Surveys. I
 fifth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
 `DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
 Imaging from the Legacy Surveys is first reduced through the `NOAO Community Pipeline`_ before being 
-processed using the `Tractor`_.
+processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes force-photometered at
+the locations of Legacy Surveys optical sources The WISE data included in each Data Release of 
+the Legacy Surveys is included in `this table`_.
+
+.. _`this table`: ../../files/unwise_w1_w2_dr_table.pdf
+
 
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
@@ -373,7 +380,6 @@ Starting with `DR6`_, PSF photometry uses the same PSF models
 This was not the case for `DR5`_ or before.
 So, for DR7, the measured fluxes for PS1 stars should be completely self-consistent.
 
-DR7 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`

@@ -52,7 +52,7 @@ An overview of the surveys is available in `Dey et al. (2018)`_.
 .. _`DR2`: ../../dr2
 .. _`DESI`: http://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
-
+.. _`year 4 of NEOWISE`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2018_release_intro.html
 
 Contents of DR7
 ===============
@@ -61,12 +61,8 @@ Data Release 7 (DR7) is the seventh public data release of the Legacy Surveys. I
 fifth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
 `DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
 Imaging from the Legacy Surveys is first reduced through the `NOAO Community Pipeline`_ before being 
-processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes force-photometered at
-the locations of Legacy Surveys optical sources The WISE data included in each Data Release of 
-the Legacy Surveys is included in `this table`_.
-
-.. _`this table`: ../../files/unwise_w1_w2_dr_table.pdf
-
+processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes from `year 4 of NEOWISE`_
+force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources. 
 
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
@@ -389,7 +385,7 @@ give units consistent with the Tractor catalogs. These conversion factors are re
 Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
 we provide should all be within a few percent of being on an AB system.
 
-.. _`unWISE`: https://arxiv.org/abs/1801.03566 
+.. _`unWISE`: http://adsabs.harvard.edu/abs/2018RNAAS...2a...1M
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt

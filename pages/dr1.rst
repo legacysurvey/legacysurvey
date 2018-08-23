@@ -6,6 +6,7 @@
    | `Description`_
    | `Files`_
    | `Catalogs`_
+   | `Known Issues and Workarounds`_
 
 .. _`Description`: /dr1/description
 .. _`Files`: /dr1/files

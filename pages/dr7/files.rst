@@ -19,8 +19,16 @@
 Top level directory for web access:
   http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/
 
+Top level directory for web access to dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
+  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/7.1/
+
+.. _`known issues`: ../issues
+
 Top level directory local to NERSC computers (for collaborators):
   /global/project/projectdirs/cosmo/data/legacysurvey/dr7/
+
+Top level directory local to NERSC computers for dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
+  /global/project/projectdirs/cosmo/data/legacysurvey/dr7/sweep/7.1/
 
 Summary Files
 =============

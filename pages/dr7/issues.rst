@@ -6,7 +6,16 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-There are currently no known issues for DR7.
+DR7.1 update to sweeps files
+============================
+The column ``BRIGHTSTARINBLOB`` was not initially included in the DR7 sweeps
+files. The DR7.1 sweeps files were provided as an update to include this column.
+
+Smaller subsets of files of random points
+=========================================
+On August 23, 2018, the ``randoms-dr7.fits`` file initially supplied with DR7
+was split into 10 smaller files for ease of use.
+
 For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR6 issues`_ page.
 
 .. _`DR6 issues`: ../../dr6/issues

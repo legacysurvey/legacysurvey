@@ -309,10 +309,10 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-randoms-dr7.fits
-----------------
+randoms/randoms-dr7.1-0.22.0-\*.fits
+------------------------------------
 
-A file of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
+Files of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
 were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location in the **coadd** files (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
@@ -341,10 +341,11 @@ Column               Type     Description
 ==================== ======== ======================================================
 
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
-.. _`desitarget GitHub page`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The code to generate similar random catalogs is available on the `desitarget GitHub page`_ (see also `here`_).
+The 0.22.0 in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_).
 
 External Files
 ==============

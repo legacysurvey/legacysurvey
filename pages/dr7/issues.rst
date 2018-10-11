@@ -6,6 +6,8 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
+For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR6 issues`_ page.
+
 DR7.1 update to sweeps files
 ============================
 The column ``BRIGHTSTARINBLOB`` was not initially included in the DR7 sweeps
@@ -18,8 +20,6 @@ Smaller subsets of files of random points
 =========================================
 On August 23, 2018, the ``randoms-dr7.fits`` file initially supplied with DR7
 was split into smaller files in a dedicated ``randoms`` directory for ease of use.
-
-For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR6 issues`_ page.
 
 DR1 and DR2 coadd files have been deprecated
 ============================================

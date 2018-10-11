@@ -21,13 +21,26 @@ was split into smaller files in a dedicated ``randoms`` directory for ease of us
 
 For issues relevant to `BASS`_ or `MzLS`_ imaging, consult the `DR6 issues`_ page.
 
-
 DR1 and DR2 coadd files have been deprecated
 ============================================
 
 On August 23rd, 2018, the DR1 and DR2 coadd directories were removed to
 save space. Data from those directories is still 
 available via FTP from the NOAO archive for `DR1`_ and `DR2`_.
+
+Spurious extended sources exist across brick boundaries
+=======================================================
+
+In DR7, sources in a blob that touched a bright star were forced to ``type=PSF`` and
+the ``BRIGHTSTARINBLOB`` column was set for these sources. However, sources for
+which the blob crossed brick boundaries were *not* forced to ``type=PSF``. This is
+illustrated in the figure below, where objects labeled ``BGS_BRIGHT`` are
+extended sources that lie across a brick boundary that touches a bright star.
+
+.. image:: /files/brickcrossDR7.png
+   :height: 500
+   :width: 575
+   :scale: 85
 
 .. _`DR1`: ftp://archive.noao.edu/public/hlsp/decals/dr1/coadd/
 .. _`DR2`: ftp://archive.noao.edu/public/hlsp/decals/dr2/coadd/

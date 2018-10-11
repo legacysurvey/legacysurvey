@@ -333,8 +333,8 @@ will be considered and tested for future data releases.
 Another practical issue is that the current PSF models may allow
 too much freedom.
 
-Photometry
-==========
+grz Photometry
+==============
 
 The flux calibration for `DECaLS`_ is on the AB natural system of the DECam instrument.
 An AB system reports the same flux in any band for a source whose spectrum is
@@ -378,6 +378,9 @@ Starting with `DR6`_, PSF photometry uses the same PSF models
 This was not the case for `DR5`_ or before.
 So, for DR7, the measured fluxes for PS1 stars should be completely self-consistent.
 
+WISE Photometry
+===============
+
 The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
@@ -386,6 +389,16 @@ For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
 Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
 we provide should all be within a few percent of being on an AB system.
+
+Aaron Meisner has carefully studied the stability of the WISE instrument. He finds that 
+there is small, but measurable, change to the instrument with time. Most noticeably, 
+the PSF has broadened by 1.1% (0.9%) in W1 (W2) in the NEO4 full-depth coadds
+used for DR7 relative to the NEO2 full-depth coadds used for `DR4`_ and `DR5`_.
+These values are reasonably consistent with a finding from Aaron that the W1/W2
+full-depth fluxes from DR7 are roughly 8-12 mmag fainter than in `DR5`_
+(Meisner, priv. comm. decam-chatter list 7423).
+Note that any broadening will be accounted for in the Tractor PSF, and internal
+systematics are stable at the 0.1% level.
 
 .. _`unWISE`: http://adsabs.harvard.edu/abs/2018RNAAS...2a...1M
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters

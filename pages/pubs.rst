@@ -14,9 +14,11 @@ https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
 
 2018
 ====
-#. Stern et al., `A Mid-IR Selected Changing-Look Quasar and Physical Scenarios for Abrupt AGN Fading`_
-#. Ross et al., `A new physical interpretation of optical and infrared variability in quasars`_
+
 #. Dey et al., `Overview of the DESI Legacy Imaging Surveys`_
+#. Shu et al., `SDSS J0909+4449: A large-separation strongly lensed quasar at z ~ 2.8 with three images`_
+#. Ross et al., `A new physical interpretation of optical and infrared variability in quasars`_
+#. Stern et al., `A Mid-IR Selected Changing-Look Quasar and Physical Scenarios for Abrupt AGN Fading`_
 #. Zou et al., `The Second Data Release of the Beijing-Arizona Sky Survey`_
 #. Meisner, Lang & Schlegel, `Time-resolved WISE/NEOWISE Coadds`_
 #. Zhou et al., `Photometric Calibration for the Beijing-Arizona Sky Survey and Mayall z-band Legacy Survey`_
@@ -56,11 +58,12 @@ https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
 
 .. _`text on the acknowledgment page`: ../acknowledgment
 
-.. _`A Mid-IR Selected Changing-Look Quasar and Physical Scenarios for Abrupt AGN Fading`: http://adsabs.harvard.edu/abs/2018arXiv180506920S
-.. _`A new physical interpretation of optical and infrared variability in quasars`: http://adsabs.harvard.edu/abs/2018arXiv180506921R
 .. _`Overview of the DESI Legacy Imaging Surveys`: http://adsabs.harvard.edu/abs/2018arXiv180408657D
-.. _`The Second Data Release of the Beijing-Arizona Sky Survey`: http://adsabs.harvard.edu/abs/2017arXiv171209165Z
-.. _`Time-resolved WISE/NEOWISE Coadds`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1710.02526
+.. _`SDSS J0909+4449: A large-separation strongly lensed quasar at z ~ 2.8 with three images`: http://adsabs.harvard.edu/abs/2018MNRAS.481L.136S
+.. _`A new physical interpretation of optical and infrared variability in quasars`: http://adsabs.harvard.edu/abs/2018MNRAS.480.4468R
+.. _`A Mid-IR Selected Changing-Look Quasar and Physical Scenarios for Abrupt AGN Fading`: http://adsabs.harvard.edu/abs/2018ApJ...864...27S
+.. _`The Second Data Release of the Beijing-Arizona Sky Survey`: http://adsabs.harvard.edu/abs/2018ApJS..237...37Z
+.. _`Time-resolved WISE/NEOWISE Coadds`: http://adsabs.harvard.edu/abs/2018AJ....156...69M
 .. _`Photometric Calibration for the Beijing-Arizona Sky Survey and Mayall z-band Legacy Survey`: http://adsabs.harvard.edu/abs/2018PASP..130h5001Z
 .. _`The Ensemble Photometric Variability of Over 10000 Quasars in the Dark Energy Camera Legacy Survey and the Sloan Digital Sky Survey`: http://adsabs.harvard.edu/abs/2018ApJ...861....6L
 .. _`catsHTM: A Tool for Fast Accessing and Cross-matching Large Astronomical Catalogs`: http://adsabs.harvard.edu/abs/2018PASP..130g5002S

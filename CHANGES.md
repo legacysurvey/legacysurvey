@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 7.1.1 (DR7, 2018-10-12)
+
+- A few more updates to correct DR7 [issues](https://github.com/legacysurvey/legacysurvey/issues/84) ([PR#85](https://github.com/legacysurvey/legacysurvey/pull/85)).
+
 ## 7.1.0 (DR7, 2018-08-23)
 
 - Additions to address DR7 [issues](https://github.com/legacysurvey/legacysurvey/issues/82) ([PR#83](https://github.com/legacysurvey/legacysurvey/pull/83)). Main changes:

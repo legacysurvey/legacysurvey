@@ -45,7 +45,7 @@ Name                                  Type         Units                 Descrip
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
 ``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, empty otherwise
-``ref_id``                            int64                              Reference catalog identifier for this star; :math:`Tyc1*1,000,000+Tyc2*10+Tyc3` for Tycho2; "sourceid" for Gaia-DR2
+``ref_id``                            int64                              Reference catalog identifier for this star; :math:`\mathrm{Tyc1} \times 1,000,000 + \mathrm{Tyc2} \times 10 + \mathrm{Tyc3}` for Tycho2; "sourceid" for Gaia-DR2
 ``pmra``                              float32      mas/yr                Reference catalog proper motion in the RA direction
 ``pmdec``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``parallax``                          float32      mas                   Reference catalog parallax

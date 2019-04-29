@@ -79,7 +79,7 @@ NAVIGATION_LINKS = {
             ("/dr4", 'Data Release 4'),
             ("/dr5", 'Data Release 5'),
             ("/dr6", 'Data Release 6'),
-            ("/dr6", 'Data Release 7'),
+            ("/dr7", 'Data Release 7'),
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),

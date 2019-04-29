@@ -11,22 +11,22 @@
 .. |AA|    unicode:: U+212B .. ANGSTROM SYMBOL
 .. |mu|    unicode:: U+00B5 .. MICRO SIGN
 
-The Mayall :math:`z`-band Legacy Survey (MzLS) will image the 
+The Mayall :math:`z`-band Legacy Survey (MzLS) imaged the 
 Dec |geq| 32\ |deg| region of the Dark Energy Spectroscopic Instrument (`DESI`_)
-footprint. It will use the MOSAIC-3 camera at the prime focus of the 4-meter
-Mayall telescope at Kitt Peak National Observatory. MzLS will be scheduled for
+footprint. It used the MOSAIC-3 camera at the prime focus of the 4-meter
+Mayall telescope at Kitt Peak National Observatory. MzLS was scheduled over
 230 nights during semesters 2016A and 2017A through an agreement
 between the National Science Foundation and the Department of Energy.
-The imaging camera has undergone a major upgrade in 2015 to improve
+The imaging camera underwent a major upgrade in 2015 to improve
 its :math:`z`-band efficiency.
 The KPNO 4m telescope control system and the imaging camera
-software have been upgraded for improved operational efficiency.
-NOAO has purchased a new :math:`z`-band filter to match the DECam filter
+software were upgraded for improved operational efficiency.
+NOAO purchased a new :math:`z`-band filter to match the DECam filter
 bandpass and to thereby minimize any differences between the `DECaLs`_
-and MOSAIC :math:`z`-band surveys. 
+and MOSAIC :math:`z`-band surveys.
 
 The MOSAIC-3 camera is a new version of the prime focus imaging
-system. This upgrade has made use of the dewar from the MOSAIC-2
+system. This upgrade made use of the dewar from the MOSAIC-2
 camera at CTIO and the MOSAIC-1.1 mechanical system and guider
 from KPNO. Yale University designed and built a new cold plate for the dewar
 which it populated with four super-thick (00\ |mu|\ m-thick) fully depleted
@@ -44,14 +44,14 @@ been measured to be improved by 60% as compared to the MOSAIC-1.1 camera.
 
 The MzLS survey tiles the sky in three passes, similar to
 the `DECaLS`_ survey strategy.  At least one of these passes
-will be observed in both photometric conditions and in seeing
+was observed in both photometric conditions and in seeing
 conditions better than 1.3 arcsec.
 
-MzLS began survey operations on February 2, 2016, and
-completed 50% of its survey in 116 scheduled nights
-in the 2016A semester (February-June).
-MzLS is expected to complete observations in July 2017 with
-an additional 115 nights in 2017A.
+MzLS  began  official  survey  operations  on  February  2,  2016,  and  ended  on  February  12,  2018.
+During this period,  MzLS used a total of 382.7 nights,  276.8 of which were clear enough to allow
+observations.
+
+Additional information is available in the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 .. _`SDSS`: http://classic.sdss.org
 .. _`SDSS-II`: http://classic.sdss.org
@@ -62,5 +62,6 @@ an additional 115 nights in 2017A.
 .. _`Pan-STARRS`: http://pan-starrs.ifa.hawaii.edu/public/
 .. _`DESI`: http://desi.lbl.gov
 .. _`DES`: http://www.darkenergysurvey.org
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`BASS`: http://batc.bao.ac.cn/BASS/doku.php
 .. _`DECaLS`: ../decamls

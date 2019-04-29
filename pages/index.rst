@@ -25,7 +25,8 @@
    The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
    in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
    To achieve this goal, the Legacy Surveys are conducting
-   3 imaging projects on different telescopes, described in more depth at the following links:
+   3 imaging projects on different telescopes, described in more detail at the following links and
+   in the `DESI Legacy Imaging Surveys Overview Paper.`_
 
    ========================================== ===================================== ===========================================
    *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
@@ -34,6 +35,7 @@
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
+   .. _`DESI Legacy Imaging Surveys Overview Paper.`: http://adsabs.harvard.edu/abs/2019AJ....157..168D
 
 .. container:: col-md-6 col-right
 

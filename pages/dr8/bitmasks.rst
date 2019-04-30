@@ -2,9 +2,9 @@
 .. slug: bitmasks
 .. tags: mathjax
 
-.. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
-.. |geq|    unicode:: U+2265 .. GREATER-THAN-OR-EQUAL-TO SIGN
-.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
+.. class:: pull-right well
+
+.. contents::
 
 
 This page details the meaning of several of the optical bitmasks, circa Data Release 8 of the Legacy Surveys. The bits are

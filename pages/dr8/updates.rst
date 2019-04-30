@@ -1,10 +1,10 @@
 .. title: Major updates since DR7
 .. slug: updates
 .. tags: mathjax
-.. description:
 
-.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
-.. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. class:: pull-right well
+
+.. contents::
 
 DR8 was the first release to integrate data from all of the individual Legacy Surveys (`BASS`_, `DECaLS`_ and `MzLS`_).
 In addition, observations for the Legacy Surveys were completed in March 2019, before the release of DR8.
@@ -15,22 +15,21 @@ This page briefly documents those updates.
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 
-
 Algorithmic changes for optical data
 ====================================
 * Data from DECam has been trimmed to only observations after 2014-03-14 (to avoid problems with scattered light).
 * Contaminating foreground sources have been treated more consistently: 
-   - Such forground sources include bright stars, medium-bright stars, globular clusters and large galaxies
-   - Pre-defined geometrical masks (elliptical for galaxies)
-   - Ignore these mask regions in the local sky fitting calibration code
-   - Within some mask regions for bright stars + globulars + large gals, object fitting is only type=PSF (except for the large galaxies themselves)
-   - Within all mask regions, fit for a constant sky level in the blob for each exposure; this appears to preferentially classify sources as TYPE=PSF around GAIA stars
-* Multi-image detection of cosmic rays & other artifacts
-* Partial subtraction of PSF wings around bright stars
-* Fix positions for all GAIA sources after applying proper motion + parallax
-* Fix TYPE=PSF if pass star/galaxy cut in GAIA catalog using the excess noise parameter as follows:
-     - astrometric_excess_noise < 10^0.5^ for G <= 18
-     - astrometric_excess_noise < 10^(0.5 + 0.2*(G-18))^ for G >= 18
+   - Such foreground sources include bright stars, medium-bright stars, globular clusters and large galaxies.
+   - The foreground sources consist of pre-defined geometrical masks (which are elliptical for galaxies).
+   - These mask regions are ignored in the local-sky-fitting calibration code.
+   - Within the mask regions for bright stars, globular clusters and large galaxies, source fitting is forced to only be ``type=PSF`` (except for the large galaxies themselves).
+   - Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this appears to preferentially classify sources as ``TYPE=PSF`` around GAIA stars.
+* Cosmic rays & other artifacts are now detected across multiple images.
+* PSF wings around bright stars are now partially subtracted.
+* All Gaia sources are forced to have fixes positions after accounting for proper motion + parallax.
+* Sources that pass a star/galaxy cut in the Gaia catalog are forced to be ``TYPE=PSF`` using the Gaia excess noise parameter as follows:
+     - for :math:`G < 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{0.5}`
+     - for :math:`G \geq 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{(0.5 + 0.2(G-18))}`
 
 Algorithmic changes for WISE
 ============================

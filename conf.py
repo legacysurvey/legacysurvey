@@ -70,6 +70,7 @@ NAVIGATION_LINKS = {
             ("/dr8/files", 'Files'),
             ("/dr8/catalogs", 'Catalogs'),
             ("/dr8/updates", 'Updates'),
+            ("/dr8/bitmasks", 'Bitmasks'),
             ("/dr8/issues", 'Known Issues'),
             ), 'DR8'),
         ((

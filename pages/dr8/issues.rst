@@ -6,6 +6,10 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-There are currently no known issues with Data Release 8.
+The most up-to-date issues and in-progress fixes moving from DR8 to DR9 are 
+available on the GitHub issues pages for the `Legacy Surveys website`_ or the `legacypipe pipeline`_.
+
+.. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
+.. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
 
 

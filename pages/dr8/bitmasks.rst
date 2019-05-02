@@ -20,7 +20,7 @@ Note that the difference between bits 1, 11, 12 and 13 for ``MASKBITS`` as compa
 fitting has finished (i.e., on the final brick pixel position).
 
 === ==============================================================
-Bit Meaning
+Bit Description
 === ==============================================================
 0   ``NPRIMARY``  (not brick primary)
 1   ``BRIGHT``    (bright star in blob)
@@ -48,7 +48,7 @@ Note that the difference between bits 1, 11, 12 and 13 for ``MASKBITS`` as compa
 fitting has finished (i.e., on the final brick pixel position).
 
 === ==============================================================
-Bit Meaning
+Bit Description
 === ==============================================================
 0   source lies in the pixels that define a bright star (Tycho)
 1   source lies in the pixels that define medium bright star (GAIA)
@@ -57,11 +57,11 @@ Bit Meaning
 === ==============================================================
 
 
-``ALLMASK/ANYMASK``
-===================
+``ALLMASK``/``ANYMASK``
+=======================
 
 === ===========
-Bit Meaning
+Bit Description
 === ===========
 0   ``badpix``
 1   ``satur``
@@ -78,3 +78,45 @@ Bit Meaning
 === ===========
 
 
+``WISEMASK_W1``/``WISEMASK_W2``
+===============================
+
+=== ===================================
+Bit Description
+=== ===================================
+0   W1 bright star, southward scan
+1   W1 bright star, northward scan
+2   W2 bright star, southward scan
+3   W2 bright star, northward scan
+4   W1 bright star saturation
+5   W2 bright star saturation
+6   center of pixel not primary
+7   W1 bright star, centroid off edge
+8   W2 bright star, centroid off edge
+9   resolved galaxy
+10  big object (LMC, SMC, M31)
+11  W2 optical ghost, southward scan
+12  W2 optical ghost, northward scan
+13  W1 first latent, southward scan
+14  W1 first latent, northward scan
+15  W2 first latent, southward scan
+16  W2 first latent, northward scan
+17  W1 second latent, southward scan
+18  W1 second latent, northward scan
+19  W2 second latent, southward scan
+20  W2 second latent, northward scan
+21  may contain W1 bright star centroid
+22  may contain W2 bright star centroid
+23  AllWISE-like W1 circular halo
+24  AllWISE-like W2 circular halo
+25  W1 optical ghost, southward scan
+26  W1 optical ghost, northward scan
+27  PSF-based W1 diffraction spike
+28  PSF-based W2 diffraction spike
+29  geometric W1 diffraction spike
+30  geometric W2 diffraction spike
+=== ===================================
+
+See `Aaron Meisner's unWISE documentation`_ for further details.
+
+.. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf

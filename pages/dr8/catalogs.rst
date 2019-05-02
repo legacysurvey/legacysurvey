@@ -10,19 +10,18 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
-tractor/<AAA>/tractor-<brick>.fits
-----------------------------------
+<camera>/tractor/<AAA>/tractor-<brick>.fits
+-------------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
-`known issues`_ regarding their content and derivation. The columns pertaining to optical data 
-also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``), but these contain only
-zeros.
+`known issues`_ regarding their content and derivation.
 
 .. _`known issues`: ../issues
 .. _`RELEASE is documented here`: ../../release
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
+.. _`DR8 bitmasks page`: ../bitmasks
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
@@ -32,8 +31,8 @@ Name                                  Type         Units                 Descrip
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``                     boolean                            True if the object is within the brick boundary
-``brightstarinblob``                  boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
-``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
+``brightblob``                        int16                              bitmask set if an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
+``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite, "DUP"=Gaia source.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                                float64      deg                   Right ascension at epoch J2000
 ``dec``                               float64      deg                   Declination at epoch J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
@@ -70,6 +69,11 @@ Name                                  Type         Units                 Descrip
 ``gaia_astrometric_n_good_obs_al``    int16                              `Gaia`_ number of good astrometric observations along scan direction
 ``gaia_astrometric_weight_al``        float32                            `Gaia`_ astrometric weight along scan direction
 ``gaia_duplicated_source``            bool                               `Gaia`_ duplicated source flag
+``gaia_a_g_val``		      float32	   magnitudes		 `Gaia`_ line-of-sight extinction in the G band
+``gaia_e_bp_min_rp_val``	      float32	   magnitudes		 `Gaia`_ line-of-sight reddening E(BP-RP)
+``gaia_phot_bp_rp_excess_factor``     float32	   			 `Gaia`_ BP/RP excess factor
+``gaia_astrometric_sigma5d_max``      float32	   mas			 `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
+``gaia_astrometric_params_solved``    uint8				 which astrometric parameters were estimated for a `Gaia`_ source
 ``flux_g``		              float32      nanomaggies           model flux in :math:`g`
 ``flux_r``		              float32      nanomaggies           model flux in :math:`r`
 ``flux_z``		              float32      nanomaggies           model flux in :math:`z`
@@ -133,23 +137,27 @@ Name                                  Type         Units                 Descrip
 ``fracin_g``                          float32                            Fraction of a source's flux within the blob in :math:`g`, near unity for real sources
 ``fracin_r``                          float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
 ``fracin_z``                          float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
-``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g`
-``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r`
-``anymask_z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z`
-``allmask_g``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` 
-``allmask_r``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` 
-``allmask_z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` 
-``wisemask_w1``                       uint8                              W1 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
-``wisemask_w2``		              uint8                              W2 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
+``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` as cataloged on the `DR8 bitmasks page`_
+``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` as cataloged on the `DR8 bitmasks page`_
+``anymask_z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z` as cataloged on the `DR8 bitmasks page`_
+``allmask_g``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` as cataloged on the `DR8 bitmasks page`_
+``allmask_r``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` as cataloged on the `DR8 bitmasks page`_
+``allmask_z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` as cataloged on the `DR8 bitmasks page`_
+``wisemask_w1``                       uint8                              W1 bitmask as cataloged on the `DR8 bitmasks page`_
+``wisemask_w2``		              uint8                              W2 bitmask as cataloged on the `DR8 bitmasks page`_
 ``psfsize_g``                         float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 ``psfsize_r``                         float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 ``psfsize_z``                         float32      arcsec                Weighted average PSF FWHM in the :math:`z` band
 ``psfdepth_g``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
 ``psfdepth_r``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
 ``psfdepth_z``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
-``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for PSFDEPTH_G but for a galaxy (0.45" exp, round) detection sensitivity
-``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for PSFDEPTH_R but for a galaxy (0.45" exp, round) detection sensitivity
-``galdepth_z``                        float32      1/nanomaggies\ |sup2| As for PSFDEPTH_Z but for a galaxy (0.45" exp, round) detection sensitivity
+``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
+``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
+``galdepth_z``                        float3       1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| 
+``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| 
+``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| 
+``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| 
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
 ``lc_flux_w1``	     	              float32[11]  nanomaggies           FLUX_W1 in each of up to eleven unWISE coadd epochs
 ``lc_flux_w2``                        float32[11]  nanomaggies           FLUX_W2 in each of up to eleven unWISE coadd epochs
@@ -204,8 +212,8 @@ Bit Value Name                        Description
 
 .. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
-Goodness-of-Fits
-----------------
+Goodness-of-Fits and Morphological type
+---------------------------------------
 
 The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
@@ -217,7 +225,6 @@ The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this 
 Note that the ``dchisq`` values are negated so that positive values indicate better fits.
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 
-
 The ``rchisq`` values are interpreted as the reduced |chi|\ |sup2| pixel-weighted by the model fit,
 computed as the following sum over pixels in the blob for each object:
 
@@ -226,6 +233,10 @@ computed as the following sum over pixels in the blob for each object:
 
 The above sum is over all images contributing to a particular filter, and can be negative-valued for sources 
 that have a flux measured as negative in some bands where they are not detected.
+
+The final, additional moropholigical type is "DUP". This type is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
+No optical flux is assigned to ``DUP`` sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if Tractor prefers an alternate fit.
+
 
 Galactic Extinction Coefficients
 --------------------------------

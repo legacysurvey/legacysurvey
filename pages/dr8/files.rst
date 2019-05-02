@@ -16,19 +16,35 @@
 
 .. contents::
 
-Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/
+Directory Structures
+=====================
 
-Top level directory for web access to dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/7.1/
+For Web Access
+--------------
 
-.. _`known issues`: ../issues
+| **Top level directory:**
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/
+| **Top level directory for** `DECaLS`_ **data**:
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/
+| **Top level directory for** `MzLS`_/`BASS`_ **data:**
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/
+| **Top level directories for sweeps catalogs:**
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/sweep/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/sweep/
 
-Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr7/
 
-Top level directory local to NERSC computers for dr7.1 sweeps (see `known issues`_ for a description of dr7.1):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr7/sweep/7.1/
+At NERSC (for collaborators)
+----------------------------
+
+| **Top level directory:**
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/
+| **Top level directory for** `DECaLS`_ **data:**
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/decam/
+| **Top level directory for** `MzLS`_/`BASS`_ **data:**
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/90prime-mosaic/
+| **Top level directories for sweeps catalogs:**
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/decam/sweep/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/90prime-mosaic/sweep/
 
 Summary Files
 =============
@@ -36,9 +52,9 @@ Summary Files
 survey-bricks.fits.gz
 ---------------------
 
-FITS binary table with the RA, DEC bounds of each geometrical "brick" on the sky.
+FITS binary table with the RA, Dec bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
-coverage in DR7.  For that information, see the next file description.
+coverage in DR8.  For that information, see the next file description.
 
 =============== ======= ======================================================
 Column          Type    Description
@@ -56,10 +72,10 @@ Column          Type    Description
 ``DEC2``        float64 Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr7.fits.gz
+survey-bricks-dr8.fits.gz
 -------------------------
 
-A FITS binary table with information that summarizes the contents of each brick for DR7.
+A FITS binary table with information that summarizes the contents of each brick for DR8.XXX
 
 =============== ========== =========================================================================
 Column          Type       Description
@@ -104,18 +120,19 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do 
-NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on 
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation
+(see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR8 bitmasks page`_), do 
+*not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on 
 the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
+.. _`DR8 bitmasks page`: ../bitmasks
 
+survey-ccds-<camera>-dr8.fits.gz
+---------------------------------
 
-survey-ccds-dr7.fits.gz
------------------------
-
-A FITS binary table with almanac information about each individual CCD image. 
+A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR7 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
 to color-selected stars in the PanSTARRS "qz" catalog. 

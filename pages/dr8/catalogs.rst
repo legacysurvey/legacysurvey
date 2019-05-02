@@ -32,8 +32,8 @@ Name                                  Type         Units                 Descrip
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``                     boolean                            True if the object is within the brick boundary
-``brightblob``                        int16                              object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
-``maskbits``                          int16                              object is in a pixel masked in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
+``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
+``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
 ``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite, "DUP"=Gaia source.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                                float64      deg                   Right ascension at epoch J2000
 ``dec``                               float64      deg                   Declination at epoch J2000

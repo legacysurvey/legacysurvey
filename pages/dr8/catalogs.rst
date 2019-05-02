@@ -17,21 +17,23 @@ FITS binary table containing Tractor photometry. Before using these catalogs, no
 `known issues`_ regarding their content and derivation.
 
 .. _`known issues`: ../issues
-.. _`RELEASE is documented here`: ../../release
+.. _`as documented here`: ../../release
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8 bitmasks page`: ../bitmasks
+.. _`LSLGA`: ../external
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
-``release``		              int16	 		         Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``release``		              int16	 		         Unique integer denoting the camera and filter set used (`as documented here`_)
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``                     boolean                            True if the object is within the brick boundary
-``brightblob``                        int16                              bitmask set if an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
+``brightblob``                        int16                              object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
+``maskbits``                          int16                              object is in a pixel masked in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
 ``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite, "DUP"=Gaia source.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
 ``ra``                                float64      deg                   Right ascension at epoch J2000
 ``dec``                               float64      deg                   Declination at epoch J2000
@@ -40,19 +42,19 @@ Name                                  Type         Units                 Descrip
 ``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack
 ``by``                                float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 ``dchisq``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
-``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
+``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute the ``mw_transmission_`` columns
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
-``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, empty otherwise
-``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2
+``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, "L2" for the `LSLGA`_, empty otherwise
+``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2 and `LSLGA`_
 ``pmra``                              float32      mas/yr                Reference catalog proper motion in the RA direction
 ``pmdec``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``parallax``                          float32      mas                   Reference catalog parallax
 ``pmra_ivar``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
 ``pmdec_ivar``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``parallax_ivar``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
-``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for Gaia-DR2)
-``gaia_pointsource``                  bool                               This Gaia-DR2 source is believed to be a star, not a galaxy
+``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
+``gaia_pointsource``                  bool                               This `Gaia`_ DR2 source is believed to be a star, not a galaxy
 ``gaia_phot_g_mean_mag``              float32      mag                   `Gaia`_ G band mag
 ``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia`_ G band signal-to-noise
 ``gaia_phot_g_n_obs``                 int16                              `Gaia`_ G band number of observations
@@ -81,13 +83,13 @@ Name                                  Type         Units                 Descrip
 ``flux_w2``                           float32      nanomaggies           WISE model flux in :math:`W2`
 ``flux_w3``                           float32      nanomaggies           WISE model flux in :math:`W3`
 ``flux_w4``                           float32      nanomaggies           WISE model flux in :math:`W4`
-``flux_ivar_g``		              float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_G
-``flux_ivar_r``		              float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_R
-``flux_ivar_z``		              float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_Z
-``flux_ivar_w1``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W1
-``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W2
-``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W3
-``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W4
+``flux_ivar_g``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_g``
+``flux_ivar_r``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_r``
+``flux_ivar_z``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_z``
+``flux_ivar_w1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w1``
+``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w2``
+``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w3``
+``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w4``
 ``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
@@ -100,9 +102,9 @@ Name                                  Type         Units                 Descrip
 ``apflux_resid_g``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
 ``apflux_resid_r``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
 ``apflux_resid_z``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
-``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_G
-``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_R
-``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of APFLUX_RESID_Z
+``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``
+``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``
+``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``
 ``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0,1]
 ``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0,1]
 ``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0,1]
@@ -148,9 +150,9 @@ Name                                  Type         Units                 Descrip
 ``psfsize_g``                         float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 ``psfsize_r``                         float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 ``psfsize_z``                         float32      arcsec                Weighted average PSF FWHM in the :math:`z` band
-``psfdepth_g``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
-``psfdepth_r``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
-``psfdepth_z``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
+``psfdepth_g``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{psfdepth\_g})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
+``psfdepth_r``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{psfdepth\_r})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
+``psfdepth_z``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{psfdepth\_z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
 ``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``                        float3       1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
@@ -159,61 +161,39 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| 
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| 
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
-``lc_flux_w1``	     	              float32[11]  nanomaggies           FLUX_W1 in each of up to eleven unWISE coadd epochs
-``lc_flux_w2``                        float32[11]  nanomaggies           FLUX_W2 in each of up to eleven unWISE coadd epochs
+``lc_flux_w1``	     	              float32[11]  nanomaggies           ``flux_w1`` in each of up to eleven unWISE coadd epochs
+``lc_flux_w2``                        float32[11]  nanomaggies           ``flux_w2`` in each of up to eleven unWISE coadd epochs
 ``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
 ``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
-``lc_nobs_w1``		              int16[11]                          NOBS_W1 in each of up to eleven unWISE coadd epochs
-``lc_nobs_w2``		              int16[11]                          NOBS_W2 in each of up to eleven unWISE coadd epochs
-``lc_fracflux_w1``	              float32[11]                        FRACFLUX_W1 in each of up to eleven unWISE coadd epochs
-``lc_fracflux_w2``	              float32[11]                        FRACFLUX_W2 in each of up to eleven unWISE coadd epochs
-``lc_rchisq_w1``	              float32[11]                        RCHISQ_W1 in each of up to eleven unWISE coadd epochs
-``lc_rchisq_w2``	              float32[11]                        RCHISQ_W2 in each of up to eleven unWISE coadd epochs
-``lc_mjd_w1``		              float64[11]                        MJD_W1 in each of up to eleven unWISE coadd epochs
-``lc_mjd_w2``		              float64[11]                        MJD_W2 in each of up to eleven unWISE coadd epochs
+``lc_nobs_w1``		              int16[11]                          ``nobs_w1`` in each of up to eleven unWISE coadd epochs
+``lc_nobs_w2``		              int16[11]                          ``nobs_w2`` in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w1``	              float32[11]                        ``fracflux_w1`` in each of up to eleven unWISE coadd epochs
+``lc_fracflux_w2``	              float32[11]                        ``fracflux_w2`` in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w1``	              float32[11]                        ``rchisq_w1`` in each of up to eleven unWISE coadd epochs
+``lc_rchisq_w2``	              float32[11]                        ``rchisq_w2`` in each of up to eleven unWISE coadd epochs
+``lc_mjd_w1``		              float64[11]                        ``mjd_w1`` in each of up to eleven unWISE coadd epochs
+``lc_mjd_w2``		              float64[11]                        ``mjd_w2`` in each of up to eleven unWISE coadd epochs
 ``fracdev``		              float32                            Fraction of model in deVauc [0,1]
-``fracdev_ivar``	              float32                            Inverse variance of FRACDEV
+``fracdev_ivar``	              float32                            Inverse variance of ``fracdev``
 ``shapeexp_r``		              float32      arcsec                Half-light radius of exponential model (>0)
-``shapeexp_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of R_EXP
+``shapeexp_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shapeexp_r``
 ``shapeexp_e1``		              float32                            Ellipticity component 1
-``shapeexp_e1_ivar``	              float32                            Inverse variance of SHAPEEXP_E1
+``shapeexp_e1_ivar``	              float32                            Inverse variance of ``shapeexp_e1``
 ``shapeexp_e2``		              float32                            Ellipticity component 2
-``shapeexp_e2_ivar``	              float32                            Inverse variance of SHAPEEXP_E2
+``shapeexp_e2_ivar``	              float32                            Inverse variance of ``shapeexp_e2``
 ``shapedev_r``		              float32      arcsec                Half-light radius of deVaucouleurs model (>0)
-``shapedev_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of R_DEV
+``shapedev_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shapedev_r``
 ``shapedev_e1``		              float32                            Ellipticity component 1
-``shapedev_e1_ivar``	              float32                            Inverse variance of SHAPEDEV_E1
+``shapedev_e1_ivar``	              float32                            Inverse variance of ``shapedev_e1``
 ``shapedev_e2``		              float32                            Ellipticity component 2
-``shapedev_e2_ivar``	              float32                            Inverse variance of SHAPEDEV_E2
+``shapedev_e2_ivar``	              float32                            Inverse variance of ``shapedev_e2``
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 
-
-Mask Values
------------
-
-The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
-
-=== ===== =========================== ==================================================
-Bit Value Name                        Description
-=== ===== =========================== ==================================================
-  0     1 detector bad pixel/no data  See the `CP Data Quality bit description`_.
-  1     2 saturated                   See the `CP Data Quality bit description`_.
-  2     4 interpolated                See the `CP Data Quality bit description`_.
-  4    16 single exposure cosmic ray  See the `CP Data Quality bit description`_.
-  6    64 bleed trail                 See the `CP Data Quality bit description`_.
-  7   128 multi-exposure transient    See the `CP Data Quality bit description`_.
-  8   256 edge                        See the `CP Data Quality bit description`_.
-  9   512 edge2                       See the `CP Data Quality bit description`_.
- 10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
-=== ===== =========================== ==================================================
-
-.. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-
-Goodness-of-Fits and Morphological type
----------------------------------------
+Goodness-of-Fits and Morphological ``type``
+-------------------------------------------
 
 The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
@@ -234,7 +214,7 @@ computed as the following sum over pixels in the blob for each object:
 The above sum is over all images contributing to a particular filter, and can be negative-valued for sources 
 that have a flux measured as negative in some bands where they are not detected.
 
-The final, additional moropholigical type is "DUP". This type is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
+The final, additional moropholigical type is "DUP." This type is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to ``DUP`` sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if Tractor prefers an alternate fit.
 
 
@@ -271,7 +251,7 @@ These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 Ellipticities
 -------------
 
-The ellipticity, |epsilon|, is different from the usual
+The ellipticities (e.g. ``shapeexp_e1``, ``shapeexp_e2``, ``shapedev_e1``, ``shapedev_e2``) are different from the usual
 eccentricity, :math:`e \equiv \sqrt{1 - (b/a)^2}`.  In gravitational lensing
 studies, the ellipticity is taken to be a complex number:
 

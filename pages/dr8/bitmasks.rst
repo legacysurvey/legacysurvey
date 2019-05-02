@@ -10,73 +10,76 @@
 This page details the meaning of several of the optical bitmasks, circa Data Release 8 of the Legacy Surveys. The bits are
 enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-power-of-7`).
 
-``MASKBITS``
-============
-
-These definitions apply to both the values in the ``*maskbits*`` *files* and to ``MASKBITS`` *columns*.
-See also https://github.com/legacysurvey/legacypipe/blob/976d2ed6d3ebfad7feb7745560802e64e46caccc/py/legacypipe/survey.py#L34-L49.
-Note that the difference between bits 1, 11, 12 and 13 for ``MASKBITS`` as compared to bits 0, 1, 2, 3 for ``BRIGHTBLOB`` is that
-``BRIGHTBLOB`` is set based on an *initial* position (the source detection integer pixel peak), while ``MASKBITS`` is set *after* 
-fitting has finished (i.e., on the final brick pixel position).
-
-=== ==============================================================
-Bit Description
-=== ==============================================================
-0   ``NPRIMARY``  (not brick primary)
-1   ``BRIGHT``    (bright star in blob)
-2   ``SATUR_G``   (g saturated + margin)
-3   ``SATUR_R``   (r saturated + margin)
-4   ``SATUR_Z``   (z saturated + margin)
-5   ``ALLMASK_G`` (any ``ALLMASK_G`` bit is set)
-6   ``ALLMASK_R`` (any ``ALLMASK_R`` bit is set)
-7   ``ALLMASK_Z`` (any ``ALLMASK_Z`` bit is set)
-8   ``WISEM1``    (in the WISE W1 bright star mask)
-9   ``WISEM2``    (in the WISE W2 bright star mask)
-10  ``BAILOUT``   (Bailed out of during processing)
-11  ``MEDIUM``    (in a medium-bright star)
-12  ``GALAXY``    (in an LSLGA large galaxy)
-13  ``CLUSTER``   (in a globular luster)
-=== ==============================================================
-
-
 ``BRIGHTBLOB``
 ==============
 
-See also https://github.com/legacysurvey/legacypipe/blob/976d2ed6d3ebfad7feb7745560802e64e46caccc/py/legacypipe/survey.py#L51-L57.
-Note that the difference between bits 1, 11, 12 and 13 for ``MASKBITS`` as compared to bits 0, 1, 2, 3 for ``BRIGHTBLOB`` is that
+See also the  `legacypipe definition of BRIGHTBLOB`_.
+Note that the difference between bits 0, 1, 2, 3 for ``BRIGHTBLOB`` as compared to bits 1, 11, 12 and 13 for ``MASKBITS`` is that
 ``BRIGHTBLOB`` is set based on an *initial* position (the source detection integer pixel peak), while ``MASKBITS`` is set *after* 
-fitting has finished (i.e., on the final brick pixel position).
+fitting has finished (i.e., on the final brick pixel position). This can lead to slight differences (~0.15%) in the areas
+covered by the ``MASKBITS`` and ``BRIGHTBLOB`` masks.
 
-=== ==============================================================
-Bit Description
-=== ==============================================================
-0   source lies in the pixels that define a bright star (Tycho)
-1   source lies in the pixels that define medium bright star (GAIA)
-2   source lies in the pixels that define a globular cluster
-3   source lies in the pixels that define a large galaxy
-=== ==============================================================
+.. _`legacypipe definition of BRIGHTBLOB`: https://github.com/legacysurvey/legacypipe/blob/976d2ed6d3ebfad7feb7745560802e64e46caccc/py/legacypipe/survey.py#L51-L57
 
+=== =========== ===============================================================
+Bit Name        Description
+=== =========== ===============================================================
+0   ``BRIGHT``  source lies in the pixels that define a bright star (Tycho)
+1   ``MEDIUM``  source lies in the pixels that define medium bright star (GAIA)
+2   ``CLUSTER`` source lies in the pixels that define a globular cluster
+3   ``GALAXY``  source lies in the pixels that define an `LSLGA`_ large galaxy
+=== =========== ===============================================================
+
+``MASKBITS``
+============
+
+These definitions apply to both the values in the ``coadd/*/*/*maskbits*`` *files* and to ``MASKBITS`` *columns* in the Tractor
+and sweeps catalogs. See also the `legacypipe definition of MASKBITS`_.
+
+.. _`legacypipe definition of MASKBITS`: https://github.com/legacysurvey/legacypipe/blob/976d2ed6d3ebfad7feb7745560802e64e46caccc/py/legacypipe/survey.py#L34-L49.
+
+=== ============= ===============================
+Bit Name          Description
+=== ============= ===============================
+0   ``NPRIMARY``  not brick primary
+1   ``BRIGHT``    bright star in blob
+2   ``SATUR_G``   :math:`g` saturated + margin
+3   ``SATUR_R``   :math:`r` saturated + margin
+4   ``SATUR_Z``   :math:`z` saturated + margin
+5   ``ALLMASK_G`` any ``ALLMASK_G`` bit is set
+6   ``ALLMASK_R`` any ``ALLMASK_R`` bit is set
+7   ``ALLMASK_Z`` any ``ALLMASK_Z`` bit is set
+8   ``WISEM1``    in the WISE W1 bright star mask
+9   ``WISEM2``    in the WISE W2 bright star mask
+10  ``BAILOUT``   Bailed out of during processing
+11  ``MEDIUM``    in a medium-bright star
+12  ``GALAXY``    in an `LSLGA`_ large galaxy
+13  ``CLUSTER``   in a globular cluster
+=== ============= ===============================
+
+.. _`LSLGA`: ../external
 
 ``ALLMASK``/``ANYMASK``
 =======================
 
-=== ===========
-Bit Description
-=== ===========
-0   ``badpix``
-1   ``satur``
-2   ``interp``
-3
-4   ``cr``
-5
-6   ``bleed``
-7   ``trans``
-8   ``edge``
-9   ``edge2``
-10
-11  ``outlier``
-=== ===========
+The ``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
 
+=== =========================== ==================================================
+Bit Attribute                   Description
+=== =========================== ==================================================
+  0 detector bad pixel/no data  See the `CP Data Quality bit description`_.
+  1 saturated                   See the `CP Data Quality bit description`_.
+  2 interpolated                See the `CP Data Quality bit description`_.
+  4 single exposure cosmic ray  See the `CP Data Quality bit description`_.
+  6 bleed trail                 See the `CP Data Quality bit description`_.
+  7 multi-exposure transient    See the `CP Data Quality bit description`_.
+  8 edge                        See the `CP Data Quality bit description`_.
+  9 edge2                       See the `CP Data Quality bit description`_.
+ 10 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
+ 11 outlier
+=== =========================== ==================================================
+
+.. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 ``WISEMASK_W1``/``WISEMASK_W2``
 ===============================

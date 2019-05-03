@@ -134,8 +134,7 @@ survey-ccds-<camera>-dr8.fits.gz
 
 A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR7 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes 
-to color-selected stars in the PanSTARRS "qz" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in the PanSTARRS "qz" catalog. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -153,17 +152,21 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[100]  Path to FITS image, eg "decam/CP20140810_g_v2/c4d_140815_235218_ooi_g_v2.fits.fz"
+``image_filename``   char[120]  Path to FITS image, e.g. "decam/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz"
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
-``camera``           char[5]    The camera that took this image
+``camera``           char[9]    The camera that took this image e.g. "90prime"
 ``expnum``           int64      Exposure number, eg 348224
-``ccdname``          char[3]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
+``plver``	     char[8]	Community Processing (CP) version number
+``procdate``	     char[19]	CP processing date
+``plprocid``	     char[7]	Unique CP processing hash
+``ccdname``          char[5]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
 ``object``           char[35]   Name listed in the object tag from the CCD header
 ``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
-``fwhm``             float32    (use "seeing" instead)
+``airmass``	     float32	Airmass of observation (measured at the telescope bore-sight)
+``fwhm``             float32    FWHM (in pixels) measured by the CP
 ``width``            int16      Width in pixels of this image, eg 2046
 ``height``           int16      Height in pixels of this image, eg 4096
 ``ra_bore``          float64    Telescope boresight RA  of this exposure (deg)
@@ -186,32 +189,30 @@ Column               Type       Description
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2)
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag)
-``ccdnmatch``        int16      Number of stars matched to Pan-STARRS (and used to compute the photometric zero points)
-``ccd_cuts``         int64      (ignore)
+``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction
+``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five
+``ccd_cuts``         int32      (ignore)
 ==================== ========== =======================================================
 
-.. _`detailed more here`: ../../avsky
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
-.. _`bitmask is documented here`: ../../bitmask
 
-survey-ccds-dr7.kd.fits
------------------------
+survey-ccds-<camera>-dr8.kd.fits
+--------------------------------
 
-As for the **survey-ccds-dr7.fits.gz** file but limited by the depth of each observation. This file 
-contains the CCDs actually used for the DR7 reductions. Columns are the same as for 
-the **survey-ccds-dr7.fits.gz** file.
+As for the **survey-ccds-<camera>-dr8.fits.gz** files but limited by the depth of each observation. These files 
+contain the CCDs actually used for the DR8 reductions. Columns are the same as for the **survey-ccds-<camera>-dr8.fits.gz** file.
 
-ccds-annotated-dr7.fits.gz
---------------------------
+ccds-annotated-<camera>-dr8.fits.gz
+-----------------------------------
 
-A version of the **survey-ccds-dr7.fits.gz** file with additional information
-gathered during calibration pre-processing before running the Tractor
-reductions.
+Versions of the **survey-ccds-<camera>-dr8.fits.gz** files with additional information
+gathered during calibration pre-processing before running the Tractorreductions.
 
-Includes all of the columns in the **survey-ccds-dr7.fits.gz** file plus the following:
+Includes all of the columns in the **survey-ccds-<camera>-dr8.fits.gz** files plus the following:
 
 ==================== ========== ======================================================
 Column               Type       Description
@@ -254,7 +255,6 @@ Column               Type       Description
 ``tileid``           int32      tile number, 0 for data from programs other than `MzLS`_ or `DECaLS`_
 ``tilepass``         uint8      tile pass number, 1, 2 or 3, if this was an `MzLS`_ or `DECaLS`_ observation, or 0 for data from other programs. Set by the observers (the meaning of ``tilepass`` is on the `status page`_)
 ``tileebv``          float32    Mean `SFD98`_ E(B-V) extinction in the tile, 0 for data from programs other than `BASS`_, `MzLS`_ or `DECaLS`_
-``plver``            char[6]    Community Pipeline (CP) PLVER version string
 ``ebv``              float32    `SFD98`_ E(B-V) extinction for CCD center
 ``decam_extinction`` float32[6] Extinction for optical filters :math:`ugrizY`
 ``wise_extinction``  float32[4] Extinction for WISE bands W1,W2,W3,W4
@@ -268,8 +268,10 @@ Column               Type       Description
 .. _`issues page`: ../issues
 .. _`DECaLS`: ../../decamls
 
-dr7-depth.fits.gz
+dr8-depth.fits.gz
 -----------------
+
+XXX doesn't exist for DR8 yet.
 
 A concatenation of the depth histograms for each brick, from the
 ``coadd/*/*/*-depth.fits`` tables.  HDU1 contains histograms that describe the
@@ -299,10 +301,12 @@ Column               Type       Description
 ``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
 ==================== =========  ============================================================
 
-dr7-depth-summary.fits.gz
+dr8-depth-summary.fits.gz
 -------------------------
 
-A summary of the depth histogram of the whole DR7 survey.  FITS table with the following columns:
+XXX doesn't exist for DR8 yet.
+
+A summary of the depth histogram of the whole DR8 survey.  FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type      Description
@@ -326,15 +330,15 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-randoms/randoms-dr7.1-0.22.0-\*.fits
+randoms/randoms-dr8-0.29.1-\*.fits
 ------------------------------------
+XXX check version is 0.29.1.
 
-Files of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
+Files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
 were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
-about the survey was extracted from pixels at each random location in the **coadd** files (see below, e.g.
+about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
-``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains
-the following columns:
+``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -348,12 +352,21 @@ Column               Type     Description
 ``PSFDEPTH_G``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
 ``PSFDEPTH_R``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
 ``PSFDEPTH_Z``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
-
 ``GALDEPTH_G``       float32  As for ``PSFDEPTH_G`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_R``       float32  As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_Z``       float32  As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``PSFSIZE_G``	     float32  Weighted average PSF FWHM in arcsec in the :math:`g` band
+``PSFSIZE_R``	     float32  Weighted average PSF FWHM in arcsec in the :math:`r` band
+``PSFSIZE_Z``	     float32  Weighted average PSF FWHM in arcsec in the :math:`z` band
+``APFLUX_G``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`g` band at this location
+``APFLUX_R``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`r` band at this location
+``APFLUX_Z``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`z` band at this location
+``APFLUX_IVAR_G``    float32  Inverse variance of ``APFLUX_G``
+``APFLUX_IVAR_R``    float32  Inverse variance of ``APFLUX_R``
+``APFLUX_IVAR_Z``    float32  Inverse variance of ``APFLUX_Z``
 ``MASKBITS``         int16    Bit mask of possible problems with pixels in this brick (as documented below under *coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz*)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
+``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
 ==================== ======== ======================================================
 
@@ -362,7 +375,9 @@ Column               Type     Description
 .. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The **0.22.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_).
+The **0.29.1** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_).
+The randoms are resolved at a Declination of 32.375|deg| and by the Galactic plane, such that locations at Dec > 32.375|deg| that are north of the Galactic Plane have
+``PHOTSYS`` set to "N".
 
 External Files
 ==============

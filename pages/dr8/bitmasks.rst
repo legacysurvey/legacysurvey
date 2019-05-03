@@ -41,28 +41,31 @@ and sweeps catalogs. See also the `legacypipe definition of MASKBITS`_.
 === ============= ===============================
 Bit Name          Description
 === ============= ===============================
-0   ``NPRIMARY``  not brick primary
-1   ``BRIGHT``    bright star in blob
-2   ``SATUR_G``   :math:`g` saturated + margin
-3   ``SATUR_R``   :math:`r` saturated + margin
-4   ``SATUR_Z``   :math:`z` saturated + margin
-5   ``ALLMASK_G`` any ``ALLMASK_G`` bit is set
-6   ``ALLMASK_R`` any ``ALLMASK_R`` bit is set
-7   ``ALLMASK_Z`` any ``ALLMASK_Z`` bit is set
-8   ``WISEM1``    in the WISE W1 bright star mask
-9   ``WISEM2``    in the WISE W2 bright star mask
-10  ``BAILOUT``   Bailed out of during processing
-11  ``MEDIUM``    in a medium-bright star
-12  ``GALAXY``    in an `LSLGA`_ large galaxy
-13  ``CLUSTER``   in a globular cluster
+0   ``NPRIMARY``  touches a pixel that is outside the PRIMARY region of a brick
+1   ``BRIGHT``    touches a pixel in a blob containing a bright (Tycho-2) star
+2   ``SATUR_G``   touches a pixel that was saturated in at least one :math:`g`-band image
+3   ``SATUR_R``   touches a pixel that was saturated in at least one :math:`r`-band image
+4   ``SATUR_Z``   touches a pixel that was saturated in at least one :math:`z`-band image
+5   ``ALLMASK_G`` touches a pixel that had an ``ALLMASK_G`` bit set
+6   ``ALLMASK_R`` touches a pixel that had an ``ALLMASK_R`` bit set
+7   ``ALLMASK_Z`` touches a pixel that had an ``ALLMASK_Z`` bit set
+8   ``WISEM1``    touches a pixel that is in the WISE W1 bright star mask
+9   ``WISEM2``    touches a pixel that is in the WISE W2 bright star mask
+10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
+11  ``MEDIUM``    touches a pixel in a medium-bright (`Gaia`_ DR2) star
+12  ``GALAXY``    touches a pixel in an `LSLGA`_ large galaxy
+13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
 
+.. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`LSLGA`: ../external
 
-``ALLMASK``/``ANYMASK``
-=======================
+``ALLMASK_X``/``ANYMASK_X``
+===========================
 
-The ``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
+``ANYMASK_X`` denotes a source that touches a bad pixel in *any* of a set of overlapping :math:`X`-band images whereas
+``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images. The 
+``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
 
 === =========================== ==================================================
 Bit Attribute                   Description

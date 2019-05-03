@@ -130,7 +130,7 @@ the `catalogs page`_.
 .. _`DR8 bitmasks page`: ../bitmasks
 
 survey-ccds-<camera>-dr8.fits.gz
----------------------------------
+--------------------------------
 
 A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
 
@@ -641,8 +641,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-dr7.fits**, and also contains
-    the additional columns:
+    Contains the same columns as **survey-ccds-<camera>-dr8.fits.gz**, and also contains
+    the additional columns (XXX char columns are different for decam vs. 90prime-mosaic...see https://github.com/legacysurvey/legacypipe/issues/379):
 
     ================ ========= ======================================================
     Column           Type      Description
@@ -657,16 +657,29 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``brick_y1``     int16     Maximum y brick image coordinate overlapped by this image
     ``psfnorm``      float32   Same as ``psfnorm`` in the *ccds-annotated-* file
     ``galnorm``      float32   Same as ``galnorm`` in the *ccds-annotated-* file
-    ``plver``        char[6]   Community Pipeline (CP) version
-    ``skyver``       char[21]  Git version of the sky calibration code
+    ``skyver``       char[8]   Git version of the sky calibration code
     ``wcsver``       char[1]   Git version of the WCS calibration code
-    ``psfver``       char[21]  Git version of the PSF calibration code
-    ``skyplver``     char[8]   CP version of the input to sky calibration
-    ``wcsplver``     char[6]   CP version of the input to WCS calibration
-    ``psfplver``     char[6]   CP version of the input to PSF calibration
+    ``psfver``       char[7]   Git version of the PSF calibration code
+    ``skyplver``     char[8]   Community Pipeline (CP) version of the input to sky calibration
+    ``wcsplver``     char[5]   CP version of the input to WCS calibration
+    ``psfplver``     char[8]   CP version of the input to PSF calibration
     ================ ========= ======================================================
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits.fz
+    Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
+
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.fz
+    Stacked depth map in units of the point-source flux inverse-variance at each pixel.
+
+    - The 5\ |sigma| point-source depth can be computed as :math:`5 / \sqrt(\mathrm{depth\_ivar})` .
+
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.fz
+    Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
+    The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
+
+    - The 5\ |sigma| galaxy depth can be computed as :math:`5 / \sqrt(\mathrm{galdepth\_ivar})` .
+
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits.fz
     Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
     |deg|.  The primary HDU contains the coadded image (inverse-variance weighted coadd), in
     units of nanomaggies per pixel.
@@ -676,7 +689,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
     - NOTE: that these images are resampled using Lanczos-3 resampling.
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz
     Corresponding stacked inverse variance image based on the sum of the
     inverse-variances of the individual input images in units of 1/(nanomaggies)\
     |sup2| per pixel.
@@ -684,49 +697,22 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     - NOTE: These are not the inverse variance maps used by Tractor, which operates
       on the single-epoch images.
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.gz
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.fz
+    Bitmask of possible problems with pixels in this brick. As defined on the `DR8 bitmasks page`_.
+
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz
     Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
 
     - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits
-    Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.
-
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-depth-<filter>.fits.gz
-    Stacked depth map in units of the point-source flux inverse-variance at each pixel.
-
-    - The 5\ |sigma| point-source depth can be computed as :math:`5 / \sqrt(\mathrm{depth\_ivar})` .
-
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-galdepth-<filter>.fits.gz
-    Stacked depth map in units of the canonical galaxy flux inverse-variance at each pixel.
-    The canonical galaxy is an exponential profile with effective radius 0.45" and round shape.
-
-    - The 5\ |sigma| galaxy depth can be computed as :math:`5 / \sqrt(\mathrm{galdepth\_ivar})` .
-
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.gz
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.fz
     Number of exposures contributing to each pixel of the stacked images.
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.gz
-    Bit mask of possible problems with pixels in this brick.
-
-    ========= ================= ======================================================
-    Bit value        Name       Description
-    ========= ================= ======================================================
-    0x1       ``NOT_PRIMARY``   This pixel is outside the PRIMARY region of this brick
-    0x2       ``BRIGHT``        This pixel is in a blob containing a bright (Tycho-2) star
-    0x4       ``SATUR_G``       This pixel was saturated in at least one g-band image
-    0x8       ``SATUR_R``       This pixel was saturated in at least one r-band image
-    0x10      ``SATUR_Z``       This pixel was saturated in at least one z-band image
-    0x20      ``ALLMASK_G``     This pixel had a mask bit set in all g-band images
-    0x40      ``ALLMASK_R``     This pixel had a mask bit set in all r-band images
-    0x80      ``ALLMASK_Z``     This pixel had a mask bit set in all z-band images
-    0x100     ``WISEM1``        This pixel is masked in the WISE W1 images
-    0x200     ``WISEM2``        This pixel is masked in the WISE W2 images
-    0x400     ``BAILOUT``       This pixel is in a blob where we "bailed out" of source fitting
-    ========= ================= ======================================================
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-psfsize-<filter>.fits.fz
+    Number of exposures contributing to each pixel of the stacked images.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
-    JPEG image of calibrated image using the :math:`g,r,z` filters as the colors.
+    JPEG image of the calibrated image using the :math:`g,r,z` filters as the colors.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
     JPEG image of the Tractor's model image using the :math:`g,r,z` filters as the colors.
@@ -735,22 +721,38 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     JPEG image of the residual image (data minus model) using the :math:`g,r,z` filters as
     the colors.
 
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-wise.jpg
+    JPEG image of the calibrated image using the WISE filters as the colors.
+
+- coadd/<AAA>/<brick>/legacysurvey-<brick>-wisemodel.jpg
+    JPEG image of the model image using the WISE filters as the colors.
+
+Other files
+===========
+
+Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories, 
+statistics of the Tractor fits (**metrics**), code outputs from the fitting processes (**logs**) and files detailing the calibrations (**calib**).
+We don't expect that most users will need a description of these files, but `contact`_ us if you require more information. 
+
+.. _`contact`: ../../contact
+.. _`DESI`: http://desi.lbl.gov
+
 Raw Data
 ========
-
-NOAO access to raw and calibrated images will be available a few weeks after the DR7 release date.
+XXX still applies?
+NOAO access to raw and calibrated images will be available a few weeks after the DR8 release date.
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. 
 The input data used to create the 
-stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
-project, as well as other DECam images. 
+stacked images, Tractor catalogs, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
+project, as well as other images from NOAO telescopes.
 
 (i) Web interface
 -----------------
 
 1. Query the `NOAO Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR7).
+2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR8).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
@@ -764,18 +766,17 @@ project, as well as other DECam images.
 --------------
 
 Following the organization of the Stacked images, Raw and Calibrated images are organized 
-by survey brick, which are defined in the file **survey-bricks-dr7.fits.gz** for DR7. Both the main Tractor 
+by survey brick, which are defined in the file **survey-bricks-dr8.fits.gz** for DR8. Both the main Tractor 
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
 format ``<AAAa>c<BBB>)``. 
 
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr7/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr7/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr7/coadd/``<AAA>/<brick>``
+- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr8/raw/``<AAA>/<brick>``
+- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr8/calibrated/``<AAA>/<brick>``
+- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr8/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 
-contains an ASCII file 
-with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
+contains an ASCII file with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
 (*legacysurvey*-``<brick>``-*image_filename.txt*). 
 ``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``. 
 There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 

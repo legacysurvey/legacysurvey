@@ -322,8 +322,8 @@ the following columns:
 ==================== ======== ======================================================
 Column               Type     Description
 ==================== ======== ======================================================
-``RA``               float64  Right ascension at epoch J2000
-``DEC``              float64  Declination at epoch J2000
+``RA``               float64  Right ascension at equinox J2000
+``DEC``              float64  Declination at equinox J2000
 ``BRICKNAME``        char[8]  Name of the brick
 ``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
 ``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)   
@@ -477,8 +477,8 @@ Name                                  Type         Units                 Descrip
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
-``RA``                                float64      deg                   Right ascension at epoch J2000
-``DEC``                               float64      deg                   Declination at epoch J2000
+``RA``                                float64      deg                   Right ascension at equinox J2000
+``DEC``                               float64      deg                   Declination at equinox J2000
 ``RA_IVAR``                           float32      1/deg\ |sup2|         Inverse variance of ``RA`` (no cosine term!), excluding astrometric calibration errors
 ``DEC_IVAR``                          float32      1/deg\ |sup2|         Inverse variance of ``DEC``, excluding astrometric calibration errors
 ``DCHISQ``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, EXP, DEV, COMP.  The difference is versus no source.

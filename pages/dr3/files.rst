@@ -398,9 +398,9 @@ Name                            Type         Units                 Description
 ``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
-``RA``                          float64      deg                   Right ascension at epoch J2000
+``RA``                          float64      deg                   Right ascension at equinox J2000
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
-``DEC``                         float64      deg                   Declination at epoch J2000
+``DEC``                         float64      deg                   Declination at equinox J2000
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in ugrizY
 ``DECAM_FLUX_IVAR``             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX

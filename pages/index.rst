@@ -11,20 +11,20 @@
 .. raw:: html
 
 
-   <h1>The Legacy Surveys</h1>
+   <h1>DESI Legacy Imaging Surveys</h1>
 
 
 .. container:: col-md-6 col-left
 
 
-   The Legacy Surveys are producing an inference model catalog of the sky
+   The DESI Legacy Imaging Surveys are producing an inference model catalog of the sky
    from a set of optical and infrared imaging data, comprising
    14,000 deg\ |sup2| of extragalactic sky
    visible from the northern hemisphere in three optical bands 
    (:math:`g,r,z`) and four infrared bands.
    The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
    in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
-   To achieve this goal, the Legacy Surveys are conducting
+   To achieve this goal, the DESI Legacy Imaging Surveys are conducting
    3 imaging projects on different telescopes, described in more detail at the following links and
    in the `DESI Legacy Imaging Surveys Overview Paper.`_
 

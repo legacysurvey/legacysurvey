@@ -33,8 +33,8 @@ Name                        Type         Units                 Description
 ``objid``                   int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``brick_primary``           boolean                            True if the object is within the brick boundary
 ``type``                    char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
-``ra``                      float64      deg                   Right ascension at epoch J2000
-``dec``                     float64      deg                   Declination at epoch J2000
+``ra``                      float64      deg                   Right ascension at equinox J2000
+``dec``                     float64      deg                   Declination at equinox J2000
 ``ra_ivar``                 float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``bx``                      float32      pix                   X position (0-indexed) of coordinates in brick image stack

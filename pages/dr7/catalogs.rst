@@ -34,8 +34,8 @@ Name                                  Type         Units                 Descrip
 ``brick_primary``                     boolean                            True if the object is within the brick boundary
 ``brightstarinblob``                  boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
 ``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
-``ra``                                float64      deg                   Right ascension at epoch J2000
-``dec``                               float64      deg                   Declination at epoch J2000
+``ra``                                float64      deg                   Right ascension at equinox J2000
+``dec``                               float64      deg                   Declination at equinox J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack

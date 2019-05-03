@@ -35,8 +35,8 @@ Name                                  Type         Units                 Descrip
 ``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
 ``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
 ``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite, "DUP"=Gaia source fit by different model.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
-``ra``                                float64      deg                   Right ascension at epoch J2000
-``dec``                               float64      deg                   Declination at epoch J2000
+``ra``                                float64      deg                   Right ascension at equinox J2000
+``dec``                               float64      deg                   Declination at equinox J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack
@@ -156,15 +156,15 @@ Name                                  Type         Units                 Descrip
 ``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``                        float3       1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
-``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| 
-``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| 
-``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| 
-``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| 
+``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for WISE W1
+``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for WISE W2
+``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for WISE W3
+``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
 ``lc_flux_w1``	     	              float32[11]  nanomaggies           ``flux_w1`` in each of up to eleven unWISE coadd epochs
 ``lc_flux_w2``                        float32[11]  nanomaggies           ``flux_w2`` in each of up to eleven unWISE coadd epochs
-``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W1
-``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of LC_FLUX_W2
+``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1``
+``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2``
 ``lc_nobs_w1``		              int16[11]                          ``nobs_w1`` in each of up to eleven unWISE coadd epochs
 ``lc_nobs_w2``		              int16[11]                          ``nobs_w2`` in each of up to eleven unWISE coadd epochs
 ``lc_fracflux_w1``	              float32[11]                        ``fracflux_w1`` in each of up to eleven unWISE coadd epochs

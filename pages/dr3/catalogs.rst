@@ -29,9 +29,9 @@ BLOB                        int32                              Blend family; obj
 NINBLOB                     int16                              Number of sources in this BLOB (blend family); isolated objects have value 1.
 TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
-RA                          float64      deg                   Right ascension at epoch J2000
+RA                          float64      deg                   Right ascension at equinox J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
-DEC                         float64      deg                   Declination at epoch J2000
+DEC                         float64      deg                   Declination at equinox J2000
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack

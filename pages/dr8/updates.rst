@@ -40,8 +40,16 @@ Algorithmic changes for WISE
 * WISE bitmasks are now much more richly featured, as detailed in `Aaron Meisner's unWISE documentation`_.
 * The unWISE inverse variance map has been regularized.
 
+
+Other algorithmic changes
+=========================
+* External catalogs are now matched to using a 1.5 arcsecond radius (the matching radius was 1.0 arcsec prior to DR8).
+
 Data model changes
 ==================
+* The directory structure is now split into two distinct sub-directories:
+    - ``dr8/decam/`` for `DECaLS`_ data
+    - ``dr8/90prime-mosaic/`` for `MzLS`_/`BASS`_ data
 * A new morphological type ``TYPE=DUP`` has been added for Gaia sources that are coincident with an extended source.
     - No optical flux is assigned to ``DUP`` sources, but they are retained such that all Gaia sources appear in the source catalogs.
 * The ``maskbits-*`` files have been updated with extra bits as documented on the `DR8 bitmasks page`_.
@@ -53,6 +61,21 @@ Data model changes
 * Additional Gaia columns have been propagated from the Tractor catalogs to the sweeps catalogs:
    - ``REF_CAT``
    - ``REF_EPOCH``
+* Additional columns now appear in the random catalogs:
+   - ``PSFSIZE_G/R/Z``
+   - ``APFLUX_G/R/Z``
+   - ``APFLUX_IVAR_G/R/Z``
+   - ``PHOTSYS``
+* Additional columns now appear in the ``survey-ccds-`` files:
+   - ``plver`` (this was previously only in the ``ccds-annotated-`` files)
+   - ``procdate``
+   - ``plprocid``
+   - ``airmass``
+   - ``ccdskysb``
+   - ``ccdnastrom``
+   - ``ccdnphotom``
+* A column has been removed from the ``survey-ccds-`` files:
+   - ``ccdnmatch``
 * Any columns denoting quantities in :math:`u`, :math:`i` or :math:`Y` filters have been removed from the Tractor catalogs (e.g. ``flux_u``, ``flux_i``, ``flux_Y``).
 * The ``calib/*/splinesky`` files now contain many additional statistics characterizing the sky fitting.
 * New metrics files have been added in the metrics directories:

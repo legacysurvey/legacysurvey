@@ -35,7 +35,7 @@
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
-   .. _`DESI Legacy Imaging Surveys Overview Paper.`: http://adsabs.harvard.edu/abs/2019AJ....157..168D
+   .. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
 
 .. container:: col-md-6 col-right
 

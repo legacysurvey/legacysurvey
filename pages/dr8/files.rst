@@ -633,8 +633,8 @@ Name                                  Type         Units                 Descrip
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`LSLGA`: ../external
 
-Image Stacks
-============
+Image Stacks (``coadd/*``)
+==========================
 
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
@@ -698,7 +698,11 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
       on the single-epoch images.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.fz
-    Bitmask of possible problems with pixels in this brick. As defined on the `DR8 bitmasks page`_.
+    Bitmask of possible problems with pixels in this brick.
+
+    - HDU1: The optical bitmasks, corresponding to ``MASKBITS`` on the `DR8 bitmasks page`_.
+    - HDU2: The WISE W1 bitmasks, corresponding to ``WISEMASK_W1`` on the `DR8 bitmasks page`_.
+    - HDU3: The WISE W2 bitmasks, corresponding to ``WISEMASK_W2`` on the `DR8 bitmasks page`_.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz
     Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.

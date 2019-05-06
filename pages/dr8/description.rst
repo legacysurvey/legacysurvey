@@ -18,7 +18,7 @@
 
 .. contents::
 
-The Legacy Surveys are producing an inference model of the 14,000 square degrees
+The DESI Legacy Imaging Surveys are producing an inference model of the 14,000 square degrees
 of extragalactic sky visible from the northern hemisphere in three optical bands
 (:math:`g,r,z`) and four infrared bands.  The sky coverage is approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
@@ -29,10 +29,10 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
 ========================================== ===================================== ===========================================
 
-An overview of the surveys is available in `Dey et al. (2018)`_.
+An overview of the surveys is available in `Dey et al. (2019)`_.
 
 
-.. _`Dey et al. (2018)`: http://adsabs.harvard.edu/abs/2018arXiv180408657D
+.. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
@@ -41,10 +41,11 @@ An overview of the surveys is available in `Dey et al. (2018)`_.
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: http://www.scipy.org
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
-.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
+.. _`SFD98`: http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html
 .. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`DR7`: ../../dr7
 .. _`DR6`: ../../dr6
 .. _`DR5`: ../../dr5
 .. _`DR4`: ../../dr4
@@ -53,79 +54,92 @@ An overview of the surveys is available in `Dey et al. (2018)`_.
 .. _`DESI`: http://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 4 of NEOWISE`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2018_release_intro.html
+.. _`NOAO survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
 
-Contents of DR7
+Contents of DR8
 ===============
 
-Data Release 7 (DR7) is the seventh public data release of the Legacy Surveys. It is the
-fifth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
-`DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
+Data Release 8 (DR8) is the eighth public data release of the Legacy Surveys. It is the
+sixth public data release of images and catalogs from `DECaLS` (`DR7`_ comprised the fifth release of data from `DECaLS`_)
+and the third release of data from `BASS`_ and `MzLS`_ (`DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
+DR8 is the first release to include images and catalogs from all three of the Legacy Surveys in a single release.
 Imaging from the Legacy Surveys is first reduced through the `NOAO Community Pipeline`_ before being 
-processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes from `year 4 of NEOWISE`_
-force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources. 
+processed using the `Tractor`_. DR8 also includes `WISE`_ fluxes from `year 4 of NEOWISE`_ (XXX)
+force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
+
+DR8 includes `BASS`_ (:math:`g,r`-band) images taken prior to XXX XXX, 20XXX and `MzLS`_ (:math:`z`-band) images taken prior to XXX XXX, 20XXX. 
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
-are included from 12th August 2013 through 18th March 2018. DR7 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from August 2013 to March 2018.
+:math:`g,r,z`-band observations (`NOAO survey program 0404`_)
+are included from XXX XXX 20XXX through XXX XXX 20XXX. DR8 also includes DECam data from a range of
+non-DECaLS surveys, including observations that were conducted from XXX 20XXX to XXX 20XXX.
 
-The table below indicates the area covered in DR7 for different
-numbers of passes and in different filters.
-These are precise area estimates derived from the geometry of
-CCDs that contribute to the Legacy Surveys footprint.
+The table below indicates the area covered in DR8 for different
+numbers of passes and in different filters across the entire *unique* survey area. Unique area is resolved
+by only including `BASS`_ and `MzLS`_ images if they are at Declination > 32.375\ |deg| and are north of the Galactic Plane.
+These are precise area estimates derived from the geometry of CCDs that contribute to the Legacy Surveys footprint.
 
 ===================== ========== ========= =========
 Band/Number of Passes |geq| 1    |geq| 2   |geq| 3
 ===================== ========== ========= =========
-:math:`g`-band        9766 |d2|  8049 |d2| 5430 |d2|
-:math:`r`-band        9853 |d2|  8152 |d2| 5588 |d2|
-:math:`z`-band        10610 |d2| 9135 |d2| 6615 |d2|
-All bands jointly     9298 |d2|  7180 |d2| 4355 |d2|
+:math:`g`-band        XXX |d2|   XXX |d2|  XXX |d2|
+:math:`r`-band        XXX |d2|   XXX |d2|  XXX |d2|
+:math:`z`-band        XXX |d2|   XXX |d2|  XXX |d2|
+All bands jointly     XXX |d2|   XXX |d2|  XXX |d2|
 ===================== ========== ========= =========
 
 .. |d2| replace:: deg\ :sup:`2`
 
 
-DR7 includes the stacked images and the Tractor-based catalogs.
-The size of the DR7 data distribution is:
+DR8 includes the stacked images and the Tractor-based catalogs. Many of these
+files are described in greater detail on the `files`_ page
+The size of the DR8 data distribution, split out into contributions from
+`BASS`_/`MzLS`_ and `DECaLS`_ to match the directory structure of DR8 is:
 
-========== ============ =======================
-Size*      Directory    Description
-========== ============ =======================
-326 GB     `calib/`_    Calibration files
-21 TB      `coadd/`_    Co-added images, including |chi|\ |sup2|, depth, image, model, nexp, and Quality Assurance PNG plots
-11 GB      `external/`_ Matches to other catalogs (SDSS, etc.)
-59 MB      `gallery/`_  Images of notable galaxies (NGC, etc.)
-55 GB      `logs/`_     Log files generated by Tractor processing
-468 GB     `metrics/`_  Metrics
-72 GB	   `randoms/`_  Catalogs of random points with meta data sampled across the footprint
-951 GB     `sweep/`_    Repackaged versions of the Tractor catalogs
-1.5 TB     `tractor/`_  Tractor catalogs
-========== ============ =======================
+============= ================================================= =================================
+Size*         Directory                                         Description
+============= ================================================= =================================
+XXX GB        `calib/`_                                         Calibration files
+XXX + XXX TB  `90prime-mosaic/coadd/`_ + `decam/coadd/`_        Co-added images
+XXX + XXX GB  `90prime-mosaic/external/`_ + `decam/external/`_  Matches to other catalogs (SDSS, etc.)
+XXX MB        `gallery/`_                                       Notable images (e.g. NGC galaxies)
+XXX TB        `images/`_                                        Raw and reduced image files for each camera
+XXX + XXX GB  `90prime-mosaic/logs/`_ + `decam/logs/`_          Log files generated by `Tractor`_ processing
+XXX + XXX GB  `90prime-mosaic/metrics/`_ + `decam/metrics/`_    Metrics and statisics of Tractor fits
+XXX GB	      `randoms/`_                                       Catalogs of random points
+XXX + XXX GB  `90prime-mosaic/sweep/`_ + `decam/sweep/`_        Subsets of the Tractor `catalogs`_
+XXX + XXX TB  `90prime-mosaic/tractor/`_ + `decam/tractor/`_    The Tractor `catalogs`_
+============= ================================================= =================================
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/calib/
-.. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/coadd/
-.. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/
-.. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/logs/
-.. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/metrics/
-.. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/randoms/
-.. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/
-.. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/tractor/
+.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/calib/
+.. _`90prime-mosaic/coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/coadd/
+.. _`decam/coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/coadd/
+.. _`90prime-mosaic/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/external/
+.. _`decam/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/external/
+.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/
+.. _`images/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/images/
+.. _`90prime-mosaic/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/logs/
+.. _`decam/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/logs/
+.. _`90prime-mosaic/metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/metrics/
+.. _`decam/metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/metrics/
+.. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/randoms/
+.. _`90prime-mosaic/sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/sweep/
+.. _`decam/sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/sweep/
+.. _`90prime-mosaic/tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/tractor/
+.. _`decam/tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/tractor/
 
-For all of the Legacy Surveys, including `DECaLS`_, co-added images and
-`Tractor`_ catalogs are presented in "bricks" of approximate
+
+For all of the DESI Legacy Imaging Surveys, coadded images and
+Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
 projection around the brick center. The projections for the :math:`g,r,z` filters are identical.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
-The co-added images should be
-used with caution, as noted below in the *Image Stacks* section.
 
-There are approximately 835 million unique sources in DR7 spread over 180,102 bricks.
+There are approximately XXX million unique sources in DR8 spread over XXX,XXX bricks.
 
 Obtaining Images and Raw Data
 ==============================
@@ -135,32 +149,35 @@ directly using `the Sky viewer`_
 and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
-Sections of `DECaLS`_ for DR7 can be obtained as JPEGs or FITS files using
-the cutout service, as follows:
+Sections of the Legacy Surveys  for DR8 can be obtained as JPEGs or FITS files using
+the cutout service, for example, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.27&bands=grz
+JPEG (`DECaLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr8&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.27&bands=grz
+FITS (`DECaLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr8&pixscale=0.27&bands=grz
+
+JPEG (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr8&pixscale=0.27&bands=grz
+
+FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr8&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
 size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr7&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr8&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr7&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr8&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr7&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr8&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
 The maximum size for cutouts (in number of pixels) is currently 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
-For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR6 description`_ page.
 
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
-.. _`DR6 description`: ../../dr6/description
 .. _`files`: ../files
+.. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query
 
@@ -189,7 +206,7 @@ sufficiently separated from an object that was extracted in previous bands.
 In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
-In `DR5`_, `DR6`_ and DR7, source detection 
+Starting with `DR5`_, source detection 
 was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". :math:`z` was chosen as the "primary" detection image
 to take advantage of the better PSF in that band.
@@ -206,12 +223,23 @@ Such stars are then fixed at their Gaia positions shifted by their
 proper motions in order to determine their positions at the epoch of their 
 Legacy Surveys image. Gaia stars are forced to remain stars (galaxy models are
 never considered as an option for such sources) but their fluxes are extracted from the
-Legacy Surveys images. `Tycho-2`_ stars have ``brightstarinblob`` set (see the `catalogs`_
-page) and all other sources that share a blob with the star are fit as point sources.
-The reasoning behind this choice is that `Tycho-2`_ stars, at 12th magnitude and
-brighter, have large halos that are not include in our model choices and are best fit
-by misleading (and computationally expensive) diffuse galaxy models.
+Legacy Surveys images. 
 
+Starting with DR8, many different "foreground" sources are treated in a similar fashion to
+bright stars. These include bright (12th magnitude or brighter `Tycho-2`_) stars, medium-bright (XXX magnitude or brighter `Gaia Data Release 2`_
+stars), globular clusters and large galaxies. The provenance of these foreground sources is
+detailed on the `external catalogs page`_. The foreground sources consist of pre-defined 
+geometrical masks (which are elliptical for galaxies). These mask regions are ignored in the local-sky-fitting calibration code
+and within the mask regions for bright stars, globular clusters and large galaxies, sources are forced to be ``TYPE=PSF`` 
+(except for the large galaxies themselves). Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this 
+appears to preferentially classify sources as ``TYPE=PSF`` around Gaia stars. Sources within
+a mask region have ``BRIGHTBLOB`` set (see the `DR8 bitmasks page`_)
+The reasoning behind treating bright foreground sources as special cases is that many of them
+have large halos or include diffuse light that is not include in our model choices. Such sources 
+are typically best fit by misleading (and computationally expensive) diffuse galaxy models.
+
+.. _`DR8 bitmasks page`: ../bitmasks
+.. _`external catalogs page`: ../external
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 
@@ -363,7 +391,7 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 Note that these zero points have been `updated since DR5`_.
 
 .. _`updated since DR5`: ../../dr5/description
-.. _`Pan-STARRS-1 (PS1) PSF photometry`: http://adsabs.harvard.edu/abs/2016ApJ...822...66F
+.. _`Pan-STARRS-1 (PS1) PSF photometry`: http://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 
@@ -387,7 +415,7 @@ give units consistent with the Tractor catalogs. These conversion factors are re
 Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
 we provide should all be within a few percent of being on an AB system.
 
-.. _`unWISE`: http://adsabs.harvard.edu/abs/2018RNAAS...2a...1M
+.. _`unWISE`: http://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
@@ -413,7 +441,7 @@ The coefficients at different airmasses
 only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
 be 3.219 at airmass=1 and 3.202 at airmass=2.
 
-.. _`Schlafly et al (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S 
+.. _`Schlafly et al (2011)`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S 
 
 A similar process was conducted to derive ``MW_TRANSMISSION`` in the WISE bands.
 
@@ -563,7 +591,7 @@ SourceExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://adsabs.harvard.edu/abs/1998ApJ...500..525S).
+    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S).
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.

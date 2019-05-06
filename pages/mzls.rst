@@ -62,6 +62,6 @@ Additional information is available in the `DESI Legacy Imaging Surveys Overview
 .. _`Pan-STARRS`: http://pan-starrs.ifa.hawaii.edu/public/
 .. _`DESI`: http://desi.lbl.gov
 .. _`DES`: http://www.darkenergysurvey.org
-.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://adsabs.harvard.edu/abs/2019AJ....157..168D
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`BASS`: http://batc.bao.ac.cn/BASS/doku.php
 .. _`DECaLS`: ../decamls

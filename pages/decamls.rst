@@ -63,7 +63,7 @@ and the `DESI Legacy Imaging Surveys Overview Paper.`_
 .. _`Pan-STARRS`: http://pan-starrs.ifa.hawaii.edu/public/
 .. _`DESI`: http://desi.lbl.gov
 .. _`DES`: http://www.darkenergysurvey.org
-.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://adsabs.harvard.edu/abs/2019AJ....157..168D
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`2013A-0741`: http://www.noao.edu/perl/abstract?2013A-0741
 .. _`2014B-0404`: http://www.noao.edu/perl/abstract?2014B-0404
 .. _`full proposal text`: http://legacysurvey.org/files/LargeSurvey.pdf

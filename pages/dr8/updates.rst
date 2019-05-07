@@ -14,6 +14,7 @@ This page briefly documents those updates.
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
+.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
 
 Algorithmic changes for optical data
 ====================================
@@ -30,6 +31,7 @@ Algorithmic changes for optical data
 * Sources that pass a star/galaxy cut in the Gaia catalog are forced to be ``TYPE=PSF`` using the Gaia excess noise parameter as follows:
     - For :math:`G < 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{0.5}`
     - For :math:`G \geq 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{(0.5 + 0.2(G-18))}`
+* Astrometry is now tied entirely to `Gaia Data Release 2`_.
 
 Algorithmic changes for WISE
 ============================

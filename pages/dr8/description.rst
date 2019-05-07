@@ -390,17 +390,21 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 .. math::
 
                (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
-   g_{\mathrm{90Prime}}  & = & g_{\mathrm{PS}} - 0.00464 - 0.08672 (g-i) + 0.00668 (g-i)^2 + 0.00255 (g-i)^3 \\
-   r_{\mathrm{90Prime}}  & = & r_{\mathrm{PS}} - 0.00110 + 0.06875 (g-i) - 0.02480 (g-i)^2 + 0.00855 (g-i)^3 \\
-   z_{\mathrm{Mosaic3}} & = & z_{\mathrm{PS}}  - 0.03664 + 0.11084 (g-i) - 0.04477 (g-i)^2 + 0.01223 (g-i)^3 \\
+   g_{\mathrm{90Prime}}  & = & g_{\mathrm{PS}} + 0.00464 + 0.08672 (g-i) - 0.00668 (g-i)^2 - 0.00255 (g-i)^3 \\
+   r_{\mathrm{90Prime}}  & = & r_{\mathrm{PS}} + 0.00110 - 0.06875 (g-i) + 0.02480 (g-i)^2 - 0.00855 (g-i)^3 \\
+   z_{\mathrm{Mosaic3}} & = & z_{\mathrm{PS}}  + 0.03664 - 0.11084 (g-i) + 0.04477 (g-i)^2 - 0.01223 (g-i)^3 \\
    g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.00062 + 0.03604 (g-i) + 0.01028 (g-i)^2 - 0.00613 (g-i)^3 \\
    r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} + 0.00495 - 0.08435 (g-i) + 0.03222 (g-i)^2 - 0.01140 (g-i)^3 \\
    z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} + 0.02583 - 0.07690 (g-i) + 0.02824 (g-i)^2 - 0.00898 (g-i)^3 \\
 
-Note that the DECam zero points have been `updated since DR5`_.
+Note that the `DECam`_ zero points have been significantly `updated since DR5`_ and the `90Prime`_ and `Mosaic-3`_
+zero points have been significantly `updated since DR6`_. Functions to perform the conversions are
+available `in the legacypipe code`_.
 
 .. _`updated since DR5`: http://www.legacysurvey.org/dr5/description/#photometry
+.. _`updated since DR6`: http://www.legacysurvey.org/dr6/description/#photometry
 .. _`Pan-STARRS-1 (PS1) PSF photometry`: http://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F
+.. _`in the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/ps1cat.py
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 

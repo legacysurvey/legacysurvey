@@ -364,7 +364,9 @@ Column               Type     Description
 ``APFLUX_IVAR_G``    float32  Inverse variance of ``APFLUX_G``
 ``APFLUX_IVAR_R``    float32  Inverse variance of ``APFLUX_R``
 ``APFLUX_IVAR_Z``    float32  Inverse variance of ``APFLUX_Z``
-``MASKBITS``         int16    Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR8 bitmasks page`_)
+``MASKBITS``         int16    Bitwise mask for optical data in the ``coadd/*/*/*maskbits*`` maps (see the `DR8 bitmasks page`_)
+``WISEMASK_W1``      uint8    Bitwise mask for WISE W1 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR8 bitmasks page`_)
+``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR8 bitmasks page`_)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme

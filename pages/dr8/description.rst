@@ -379,7 +379,7 @@ that fluxes are reported as observed in the `90Prime`_, `Mosaic-3`_ and `DECam`_
 
 Zero point magnitudes for the CP reductions of the `90Prime`_, `Mosaic-3`_ and `DECam`_ images
 were computed by comparing Legacy Survey PSF photometry to 
-`Pan-STARRS-1 (PS1) PSF photometry`_, where the latter was modified with color terms
+`Pan-STARRS1 (PS1) PSF photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the `90Prime`_, `Mosaic-3`_ or `DECam`_ system.  The same color terms
 are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
@@ -403,7 +403,7 @@ available `in the legacypipe code`_.
 
 .. _`updated since DR5`: http://www.legacysurvey.org/dr5/description/#photometry
 .. _`updated since DR6`: http://www.legacysurvey.org/dr6/description/#photometry
-.. _`Pan-STARRS-1 (PS1) PSF photometry`: http://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F
+.. _`Pan-STARRS1 (PS1) PSF photometry`: http://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F
 .. _`in the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/ps1cat.py
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
@@ -472,7 +472,7 @@ predicted Gaia positions at the epoch of the corresponding Legacy Surveys observ
 Astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
 Astrometric calibration of all optical Legacy Survey data is conducted using Gaia
-astrometric positions of stars matched to Pan-STARRS-1 (PS1).
+astrometric positions of stars matched to Pan-STARRS1 (PS1).
 The same matched objects are used for both astrometric and photometric calibration. 
 
 

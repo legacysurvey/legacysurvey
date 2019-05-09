@@ -736,24 +736,24 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     JPEG image of the model image using the WISE filters as the colors.
 
 Splinesky Files (``calib/<camera>/splinesky-*``)
-========================================================================
+=================================================
 
 - calib/<camera>/splinesky-merged/<EXPOS>/<camera>-<EXPOSURE>.fits
     Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``, <EXPOSURE> is the exposure number as an 8-character string and <EXPOS> is the first 5 characters of <EXPOSURE>.
-    
+
     This file contains all of the sky models for a given exposure number, as a single FITS binary table with 60 rows, one per CCD.  Each row in this table contains the sky model for a single CCD.
     The splinesky files describe a smooth 2-dimensional function, implemented using the scipy `RectBivariateSpline function`_.
     This is defined by a number of grid cell locations and function values at those locations, interpolated with a cubic spline.
     The spline grid cells for DR8 are ~256 pixels in size, and extend from edge to edge, so, for example DECam images (~2048 x 4096 pixels) have 9 x 17 cells.
-    
-    For `MzLS`_ (``mosaic``) files, some early exposures lack an ``EXPNUM`` in the headers; these have a fake exposure number like 160125082555 corresponding 
-    to the date and time the image was taken (2016-01-25T08:25:55). For `BASS`_ (``90prime``) files, the exposure number comes from the ``DTACQNAM`` header card; 
+
+    For `MzLS`_ (``mosaic``) files, some early exposures lack an ``EXPNUM`` in the headers; these have a fake exposure number like 160125082555 corresponding
+    to the date and time the image was taken (2016-01-25T08:25:55). For `BASS`_ (``90prime``) files, the exposure number comes from the ``DTACQNAM`` header card;
     for example, 20160710/d7580.0144.fits becomes exposure number 75800144.
 
     ================ ========= ======================================================
     Column           Type      Description
     ================ ========= ======================================================
-    ``gridw``        int64     The number of grid cells in the horizontal direction 
+    ``gridw``        int64     The number of grid cells in the horizontal direction
     ``gridh``        int64     The number of grid cells in the vertical direction
     ``gridvals``     float32   The spline values (an array of size ``gridh`` :math:`\times` ``gridw``)
     ``xgrid``        int32     The horizontal locations of the grid cells (an array of length ``gridw``)

@@ -738,25 +738,34 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 Splinesky Files (``calib/<camera>/splinesky-*``)
 ========================================================================
 
-- calib/<camera>/splinesky-merged/`*`/<camera>-`*`.fits
-    Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``. (XXX) further description of both missing columns (``gridw``, ``gridh`` etc.) and `*` in the directory name (what is `*` in the data model).
+- calib/<camera>/splinesky-merged/<EXPOS>/<camera>-<EXPOSURE>.fits
+    Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``, <EXPOSURE> is the exposure number as an 8-character string and <EXPOS> is the first 5 characters of <EXPOSURE>.
+    
+    This file contains all of the sky models for a given exposure number, as a single FITS binary table with 60 rows, one per CCD.  Each row in this table contains the sky model for a single CCD.
+    The splinesky files describe a smooth 2-dimensional function, implemented using the scipy `RectBivariateSpline function`_.
+    This is defined by a number of grid cell locations and function values at those locations, interpolated with a cubic spline.
+    The spline grid cells for DR8 are ~256 pixels in size, and extend from edge to edge, so, for example DECam images (~2048 x 4096 pixels) have 9 x 17 cells.
+    
+    For `MzLS`_ (``mosaic``) files, some early exposures lack an ``EXPNUM`` in the headers; these have a fake exposure number like 160125082555 corresponding 
+    to the date and time the image was taken (2016-01-25T08:25:55). For `BASS`_ (``90prime``) files, the exposure number comes from the ``DTACQNAM`` header card; 
+    for example, 20160710/d7580.0144.fits becomes exposure number 75800144.
 
     ================ ========= ======================================================
     Column           Type      Description
     ================ ========= ======================================================
-    ``gridw``        int64      
-    ``gridh``        int64     
-    ``gridvals``     float32   
-    ``xgrid``        int32     
-    ``ygrid``        int32     
-    ``order``        uint8     
-    ``x0``           int32     
-    ``y0``           int32     
-    ``skyclass``     char[27]  
+    ``gridw``        int64     The number of grid cells in the horizontal direction 
+    ``gridh``        int64     The number of grid cells in the vertical direction
+    ``gridvals``     float32   The spline values (an array of size ``gridh`` :math:`\times` ``gridw``)
+    ``xgrid``        int32     The horizontal locations of the grid cells (an array of length ``gridw``)
+    ``ygrid``        int32     The vertical locations of the grid cells (an array of length ``gridh``)
+    ``order``        uint8     The order of the spline (i.e. 3 = cubic)
+    ``x0``           int32     Pixel offset of the model in the x direction (always 0 for these files)
+    ``y0``           int32     Pixel offset of the model in the y direction (always 0 for these files)
+    ``skyclass``     char[27]  Always set to ``tractor.splinesky.SplineSky`` (the name of a Python class that is used to read the model)
     ``legpipev``     char[19]  Version of legacypipe used for this reduction
     ``plver``        char[4]   Community Pipeline (CP) version number
     ``plprocid``     char[7]   Unique CP processing hash
-    ``imgdsum``      int64     
+    ``imgdsum``      int64     The `DATASUM` value from the image header (a checksum)
     ``procdate``     char[19]  CP processing date
     ``sig1``         float32   Estimated per-pixel noise in CP image units, from :math:`1/\sqrt(\mathrm{median}(wt[good]))` where :math:`wt` is the weight map and :math:`good` are un-masked pixels
     ``sky_mode``     float32   Scalar mode of the image, estimated by fitting a quadratic to the histogram of unmasked pixels
@@ -779,6 +788,8 @@ Splinesky Files (``calib/<camera>/splinesky-*``)
     ``expnum``       int64     Exposure number, eg 348224
     ``ccdname``      char[4]   CCD name, e.g. "N10", "S7" for DECam
     ================ ========= ======================================================
+
+.. _`RectBivariateSpline function`: https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline
 
 Other Files
 ===========

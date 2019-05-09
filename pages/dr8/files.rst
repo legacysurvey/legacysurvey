@@ -156,7 +156,7 @@ Column               Type       Description
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
 ``camera``           char[9]    The camera that took this image e.g. "90prime"
 ``expnum``           int64      Exposure number, eg 348224
-``plver``	     char[8]	Community Processing (CP) version number
+``plver``	     char[8]	Community Pipeline (CP) version number
 ``procdate``	     char[19]	CP processing date
 ``plprocid``	     char[7]	Unique CP processing hash
 ``ccdname``          char[5]    CCD name, e.g. "N10", "S7" for DECam
@@ -587,6 +587,8 @@ Name                                  Type         Units                 Descrip
 ``GALDEPTH_G``                        float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_R``                        float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_Z``                        float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``PSFDEPTH_W1``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
+``PSFDEPTH_W2``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
 ``WISE_COADD_ID``                     char[8]                            unWISE coadd file name for the center of each object
 ``FRACDEV``                           float32                            Fraction of model in deVauc [0,1]
 ``FRACDEV_IVAR``                      float32                            Inverse variance of ``FRACDEV``
@@ -733,11 +735,57 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-wisemodel.jpg
     JPEG image of the model image using the WISE filters as the colors.
 
-Other files
+Splinesky Files (``calib/<camera>/splinesky-*``)
+========================================================================
+
+- calib/<camera>/splinesky-merged/`*`/<camera>-`*`.fits
+    Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``. (XXX) further description of both missing columns (``gridw``, ``gridh`` etc.) and `*` in the directory name (what is `*` in the data model).
+
+    ================ ========= ======================================================
+    Column           Type      Description
+    ================ ========= ======================================================
+    ``gridw``        int64      
+    ``gridh``        int64     
+    ``gridvals``     float32   
+    ``xgrid``        int32     
+    ``ygrid``        int32     
+    ``order``        uint8     
+    ``x0``           int32     
+    ``y0``           int32     
+    ``skyclass``     char[27]  
+    ``legpipev``     char[19]  Version of legacypipe used for this reduction
+    ``plver``        char[4]   Community Pipeline (CP) version number
+    ``plprocid``     char[7]   Unique CP processing hash
+    ``imgdsum``      int64     
+    ``procdate``     char[19]  CP processing date
+    ``sig1``         float32   Estimated per-pixel noise in CP image units, from :math:`1/\sqrt(\mathrm{median}(wt[good]))` where :math:`wt` is the weight map and :math:`good` are un-masked pixels
+    ``sky_mode``     float32   Scalar mode of the image, estimated by fitting a quadratic to the histogram of unmasked pixels
+    ``sky_med``      float32   Scalar median of the image, based on unmasked pixels
+    ``sky_cmed``     float32   Median of the :math:`2\sigma`-clipped image pixel values, based on unmasked pixels
+    ``sky_john``     float32   Starting from a 5-pixel boxcar average over the ``sky_cmed``-subtracted pixels, find and mask :math:`3\sigma` sources (dilated by 3 pixels), then take the median of :math:`2\sigma`-clipped pixels
+    ``sky_fmasked``  float32   Total fraction of pixels masked by the source mask, the reference-source mask, and where the weightmap is 0
+    ``sky_fine``     float32   RMS difference between a splinesky model at normal and at twice the resolution, to characterize the splinesky model had it more freedom
+    ``sky_p0``       float32   Identical to ``sky_fine``
+    ``sky_p10``      float32   0th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p20``      float32   10th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p30``      float32   20th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p40``      float32   30th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p50``      float32   40th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p60``      float32   50th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p70``      float32   60th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p80``      float32   70th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p90``      float32   80th percentile of unmasked image pixels minus the splinesky model
+    ``sky_p100``     float32   90th percentile of unmasked image pixels minus the splinesky model
+    ``expnum``       int64     Exposure number, eg 348224
+    ``ccdname``      char[4]   CCD name, e.g. "N10", "S7" for DECam
+    ================ ========= ======================================================
+
+Other Files
 ===========
 
 Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories, 
-statistics of the Tractor fits (**metrics**), code outputs from the fitting processes (**logs**) and files detailing the calibrations (**calib**).
+statistics of the Tractor fits (**metrics**), code outputs from the fitting processes (**logs**) and additional files 
+detailing the calibrations (**calib**).
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information. 
 
 .. _`contact`: ../../contact

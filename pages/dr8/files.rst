@@ -217,7 +217,7 @@ Includes all of the columns in the **survey-ccds-<camera>-dr8.fits.gz** files pl
 ==================== ========== ======================================================
 Column               Type       Description
 ==================== ========== ======================================================
-``annotated``        boolean    (ignore)
+``annotated``        boolean    ``True`` unless there is an error when computing the "annotated" quantities in this row of the file
 ``good_region``      int16[4]   If only a subset of the CCD images was used, this array of x0,x1,y0,y1 values gives the coordinates that were used, [x0,x1), [y0,y1).  -1 for no cut (most CCDs)
 ``ra0``              float64    RA  coordinate of pixel (1,1)...Note that the `ordering of the CCD corners is detailed here`_
 ``dec0``             float64    Dec coordinate of pixel (1,1)

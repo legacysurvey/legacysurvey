@@ -23,7 +23,7 @@ DESI Imaging Survey Scientist and Lead Tractor Developer:
     * Dustin Lang dstndstn@gmail.com
 
 BASS Survey:
-    * http://batc.bao.ac.cn/BASS/doku.php     
+    * http://batc.bao.ac.cn/BASS/doku.php
 
 Other Experts
 -------------
@@ -31,7 +31,7 @@ Other Experts
     * Dustin Lang  dstndstn@gmail.com
     * John Moustakas  jmoustakas@siena.edu
 
-NOAO Community Pipeline: 
+NOAO Community Pipeline:
     * David Herrera  herrera@noao.edu
     * Frank Valdes  valdes@noao.edu
 
@@ -39,7 +39,7 @@ WISE Reductions:
     * Aaron Meisner  ameisner@noao.edu
 
 Run Manager (for DR7 and DR8)
-    * Martin Landriau  mlandriau@lbl.gov 
+    * Martin Landriau  mlandriau@lbl.gov
 
 BASS Contact:
     * Jinyi Yang  jinyiyang@email.arizona.edu
@@ -51,14 +51,14 @@ NOAO Data Lab Contact:
     * Stephanie Juneau  juneau@noao.edu
 
 Additional NOAO/CTIO Support:
-    * Alistair Walker  awalker@ctio.noao.edu 
+    * Alistair Walker  awalker@ctio.noao.edu
     * Bob Blum  RBlum@lsst.org
 
 Website and Documentation:
     * Adam Myers  geordiemyers@gmail.com
     * Benjamin Weaver  baweaver@lbl.gov
 
-Image Gallery: 
+Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
     * Benjamin Weaver  baweaver@lbl.gov
 

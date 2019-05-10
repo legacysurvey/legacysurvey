@@ -30,7 +30,7 @@ Tycho-2
 | **/global/project/projectdirs/cosmo/staging/tycho2/tycho2.kd.fits**
 |    This file corresponds to the `Tycho-2`_ star catalog, produced from the original binary .dat files, and augmented with an ``isgalaxy`` column, plus :math:`J`, :math:`H`, :math:`K` and estimated :math:`z` magnitudes. How these extra columns were derived is detailed in ``/global/project/projectdirs/cosmo/staging/tycho2/README``.
 
-.. _`Doug Finkbeiner`: ../../contacts
+.. _`Doug Finkbeiner`: ../../contact
 .. _`Gaia DR2 data model`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 

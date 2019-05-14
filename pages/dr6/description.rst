@@ -420,7 +420,7 @@ using Lanczos-3 interpolation. These stacks should not be used for "precision" w
 Depths
 ======
 
-The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
+The histograms below depict the median 5\ |sigma| (AB) depths for *galaxies* in areas with
 different numbers of observations in DR6.
 
 .. image:: ../../files/depth-hist-g-dr6.png

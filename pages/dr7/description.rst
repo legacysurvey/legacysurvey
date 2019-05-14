@@ -450,7 +450,7 @@ interpolation. These stacks have not been designed for "precision" work.
 Depths
 ======
 
-The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
+The histograms below depict the median 5\ |sigma| (AB) depths for *galaxies* in areas with
 different numbers of observations in DR7.
 
 .. image:: ../../files/depth-hist-g-dr7.png

@@ -158,7 +158,7 @@ Column               Type       Description
 ``expnum``           int64      Exposure number, eg 348224
 ``plver``	     char[8]	Community Pipeline (CP) version number
 ``procdate``	     char[19]	CP processing date
-``plprocid``	     char[7]	Unique CP processing hash
+``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
 ``ccdname``          char[5]    CCD name, e.g. "N10", "S7" for DECam
 ``object``           char[35]   Name listed in the object tag from the CCD header
 ``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
@@ -764,7 +764,7 @@ Splinesky Files (``calib/<camera>/splinesky-*``)
     ``skyclass``     char[27]  Always set to ``tractor.splinesky.SplineSky`` (the name of a Python class that is used to read the model)
     ``legpipev``     char[19]  Version of legacypipe used for this reduction
     ``plver``        char[4]   Community Pipeline (CP) version number
-    ``plprocid``     char[7]   Unique CP processing hash
+    ``plprocid``     char[7]   Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
     ``imgdsum``      int64     The `DATASUM` value from the image header (a checksum)
     ``procdate``     char[19]  CP processing date
     ``sig1``         float32   Estimated per-pixel noise in CP image units, from :math:`1/\sqrt(\mathrm{median}(wt[good]))` where :math:`wt` is the weight map and :math:`good` are un-masked pixels
@@ -801,6 +801,7 @@ We don't expect that most users will need a description of these files, but `con
 
 .. _`contact`: ../../contact
 .. _`DESI`: http://desi.lbl.gov
+.. _`plprocid page`: ../../plprocid
 
 Raw Data
 ========

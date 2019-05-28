@@ -37,7 +37,7 @@ At the Python prompt:
 
     import datetime
     datetime.datetime.fromtimestamp(0x91adb7f * 10)
-    
+
     Output: datetime.datetime(2018, 5, 28, 16, 38, 30)
 
 (tested on ``Python 3.6.6 |Anaconda, Inc.| (default, Jun 28 2018, 17:14:51)``)

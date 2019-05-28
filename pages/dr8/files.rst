@@ -134,7 +134,7 @@ survey-ccds-<camera>-dr8.fits.gz
 
 A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in the PanSTARRS "qz" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_. 
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -148,6 +148,7 @@ counts.
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
 .. _`description page`: ../description
+.. _`the PanSTARRS "qz" catalog`: ../external
 
 ==================== ========== =======================================================
 Column               Type       Description

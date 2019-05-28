@@ -218,8 +218,8 @@ distinct sources was reduced.
 
 Starting with DR8, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_. 
-These include bright (12th magnitude or brighter `Tycho-2`_) stars, medium-bright (XXX magnitude or brighter `Gaia Data Release 2`_
-stars), globular clusters and large galaxies. The foreground objects consist of pre-defined 
+These include bright stars, medium-bright stars, globular clusters and large galaxies
+(as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined 
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
 and parallax in `Gaia Data Release 2`_. These mask regions are ignored in the local-sky-fitting calibration code.

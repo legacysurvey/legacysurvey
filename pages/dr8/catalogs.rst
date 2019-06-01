@@ -101,22 +101,22 @@ Name                                  Type         Units                 Descrip
 ``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
 ``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
 ``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``apflux_g``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`g`
-``apflux_r``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`r`
-``apflux_z``    	              float32[8]   nanomaggies	         aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`z`
+``apflux_g``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`g`
+``apflux_r``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`r`
+``apflux_z``    	              float32[8]   nanomaggies	         aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`z`
 ``apflux_resid_g``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
 ``apflux_resid_r``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
 ``apflux_resid_z``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
 ``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``
 ``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``
 ``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``
-``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0,1]
-``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0,1]
-``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0,1]
-``mw_transmission_w1``	              float32                            Galactic transmission in :math:`W1` filter in linear units [0,1]
-``mw_transmission_w2``	              float32                            Galactic transmission in :math:`W2` filter in linear units [0,1]
-``mw_transmission_w3``	              float32                            Galactic transmission in :math:`W3` filter in linear units [0,1]
-``mw_transmission_w4``	              float32                            Galactic transmission in :math:`W4` filter in linear units [0,1]
+``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0, 1]
+``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0, 1]
+``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0, 1]
+``mw_transmission_w1``	              float32                            Galactic transmission in :math:`W1` filter in linear units [0, 1]
+``mw_transmission_w2``	              float32                            Galactic transmission in :math:`W2` filter in linear units [0, 1]
+``mw_transmission_w3``	              float32                            Galactic transmission in :math:`W3` filter in linear units [0, 1]
+``mw_transmission_w4``	              float32                            Galactic transmission in :math:`W4` filter in linear units [0, 1]
 ``nobs_g``                            int16                              Number of images that contribute to the central pixel in :math:`g`: filter for this object (not profile-weighted)
 ``nobs_r``                            int16                              Number of images that contribute to the central pixel in :math:`r`: filter for this object (not profile-weighted)
 ``nobs_z``                            int16                              Number of images that contribute to the central pixel in :math:`z`: filter for this object (not profile-weighted)
@@ -231,16 +231,15 @@ convert E(B-V) to the extinction in each filter.  These are reported in linear u
 with 1 representing a fully transparent region of the Milky Way and 0 representing a fully opaque region.
 The value can slightly exceed unity owing to noise in the `SFD98`_ maps, although it is never below 0.
 
-Extinction coefficients for the SDSS filters have been changed to the values recommended
-by `Schlafly & Finkbeiner (2011)`_ using the `Fitzpatrick (1999)`_
-extinction curve at R_V = 3.1 and their improved overall calibration of the `SFD98`_ maps.
-These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in :math:`ugriz`,
-which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
-
-Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
-with :math:`u`-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 (note that these are 
+Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3, computed for a 7000K source spectrum as was
+done in the Appendix of `Schlafly & Finkbeiner (2011)`_. 
+These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 (note that these are
 *slightly* different from the coefficients in `Schlafly & Finkbeiner 2011`_).
+The coefficients are multiplied by the SFD98 E(B-V) values at the coordinates
+of each object to derive the :math:`g`, :math:`r` and :math:`z` ``mw_transmission`` values in the Legacy Surveys catalogs. The coefficients at different airmasses 
+only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would be 3.219 at airmass=1 and 3.202 at airmass=2.
+
+We calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they are on the DECam filter system.
 
 The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`_, as recommended by `Schlafly & Finkbeiner (2011)`_,
 considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).

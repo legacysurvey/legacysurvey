@@ -219,7 +219,7 @@ distinct sources was reduced.
 Starting with DR8, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_. 
 These include bright stars, medium-bright stars, globular clusters and large galaxies
-(as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined 
+(as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
 and parallax in `Gaia Data Release 2`_. These mask regions are ignored in the local-sky-fitting calibration code.
@@ -441,24 +441,13 @@ we provide should all be within a few percent of being on an AB system.
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DECam`: http://www.ctio.noao.edu/noao/node/1033
 .. _`Dark Energy Camera`: http://www.ctio.noao.edu/noao/node/1033
+.. _`DR8 catalogs`: ../../dr8/catalogs
 
 
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`,
-computed for a 7000K source spectrum as was done in the Appendix of `Schlafly & Finkbeiner (2011)`_.
-These coefficients are multiplied 
-by the `SFD98`_ E(B-V) values at the coordinates of each object to derive the :math:`g`, :math:`r` and :math:`z`
-``mw_transmission`` values in the Legacy Surveys `catalogs`_.
-The coefficients at different airmasses
-only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
-be 3.219 at airmass=1 and 3.202 at airmass=2.
-
-.. _`Schlafly & Finkbeiner (2011)`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S 
-
-A similar process was conducted to derive ``mw_transmission`` in the WISE bands.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
 
 
 Astrometry

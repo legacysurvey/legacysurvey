@@ -348,15 +348,12 @@ the DECam and WISE fluxes we provide should all be within a few percent of being
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
+.. _`DR8 catalogs`: ../../dr8/catalogs
 
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
-to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
-be 3.219 at airmass=1 and 3.202 at airmass=2.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
 
 
 Astrometry

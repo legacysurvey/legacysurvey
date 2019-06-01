@@ -134,7 +134,7 @@ survey-ccds-<camera>-dr8.fits.gz
 
 A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_.
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -513,7 +513,7 @@ Tractor measurements) of all the `Tractor catalogs`_ for which ``BRICK_PRIMARY==
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
 ``RELEASE``                           int16                              Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
-``BRICKID``                           int32                              Brick ID [1,662174]
+``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite, "DUP"==Gaia source fit by different model.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
@@ -638,8 +638,47 @@ Name                                  Type         Units                 Descrip
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`LSLGA`: ../external
 
+Forced photometry (``forced/*``)
+=========================================
+
+Files containing forced photometry are formatted like ``forced/<EXPOS>/forced-<EXPOSURE>.fits``,
+where ``<EXPOSURE>`` is the exposure number as an 8-character string and ``<EXPOS>`` is the first 5 characters of ``<EXPOSURE>``.
+
+Forced photometry is conducted at the locations of sources as inferred by the Tractor.
+
+================ ========= ======================================================
+Column           Type      Description
+================ ========= ======================================================
+``flux``         float32   Model flux in nanomaggies
+``flux_ivar``    float32   Inverse variance of ``flux`` in 1/nanomaggies\ |sup2|
+``fracflux``     float32   Profile-weighted fraction of the flux from other sources divided by the total ``flux``
+``rchi2``        float32   Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+``fracmasked``   float32   Profile-weighted fraction of pixels that were masked
+``apflux``       float32   Fluxes in nanomaggies extracted at this location in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
+``apflux_ivar``  float32   Inverse variance of ``apflux`` in 1/nanomaggies\ |sup2|
+``release``      int16     Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``brickid``      int32     Unique Brick ID (in the range [1, 662174])
+``brickname``    char[8]   Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
+``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``brickid,objid``
+``camera``       char[5]   The camera that took this image e.g. "decam"
+``expnum``       int32     Exposure number, eg 574299
+``ccdname``      char[3]   CCD name for this camera, e.g. "N10", "S7" for DECam
+``filter``       char[1]   The filter for this observation (e.g. "g", "r", "z")
+``mjd``          float64   Date of observation in MJD (in UTC system), eg 57644.31537588
+``exptime``      float32   Exposure time in seconds, eg 90
+``psfsize``      float32   PSF size, in arcsec, at this location
+``sky``          float32   Sky flux in nanomaggies/arcsec\ |sup2|
+``psfdepth``     float32   For a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
+``galdepth``     float32   As for ``psfdepth`` but for a galaxy (0.45" exp, round) detection sensitivity
+``ra``           float64   Right ascension at equinox J2000 in degrees
+``dec``          float64   Declination at equinox J2000 in degrees
+``x``            float32   Horizontal central pixel location at (``ra``, ``dec``)
+``y``            float32   Vertical central pixel location at (``ra``, ``dec``)
+``mask``         int16     
+================ ========= ======================================================
+
 Image Stacks (``coadd/*``)
-==========================
+===================================
 
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.

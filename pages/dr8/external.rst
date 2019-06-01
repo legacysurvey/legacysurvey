@@ -61,7 +61,7 @@ Globular Clusters
 LSLGA Large Galaxies
 --------------------
 | **/global/project/projectdirs/cosmo/staging/largegalaxies/v2.0**
-|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Legacy Survey Large Galaxy Atlas (LSLGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_. 
+|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Legacy Survey Large Galaxy Atlas (LSLGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_.
 
 
 .. _`bitmasks page`: ../bitmasks

@@ -674,7 +674,7 @@ Column           Type      Description
 ``dec``          float64   Declination at equinox J2000 in degrees
 ``x``            float32   Horizontal central pixel location at (``ra``, ``dec``)
 ``y``            float32   Vertical central pixel location at (``ra``, ``dec``)
-``mask``         int16     
+``mask``         int16     Bitmask indicating if a "bad" pixel touches the source (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
 ================ ========= ======================================================
 
 Image Stacks (``coadd/*``)

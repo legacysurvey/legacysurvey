@@ -176,7 +176,7 @@ the best-fit point source (type="PSF"), round exponential galaxy model ("REX"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "REX" model is a round exponential galaxy profile with a variable radius
 and is meant to capture slightly-extended but low signal-to-noise objects.
-The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a traditional notion of detection significance.
 Note that the ``dchisq`` values are negated so that positive values indicate better fits.
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 

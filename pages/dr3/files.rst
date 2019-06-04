@@ -422,7 +422,7 @@ Name                            Type         Units                 Description
 ``WISE_NOBS``                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 ``WISE_FRACFLUX``               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 ``WISE_RCHI2``                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
 ``FRACDEV``                     float32                            Fraction of model in deVauc [0,1]
 ``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 ``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)

@@ -90,7 +90,7 @@ Goodness-of-Fits
 ================
 
 The DCHISQ values represent the penalized |chi|\ |sup2| of all the pixels compared to
-various models.  This 4-element vectorcontains the |chi|\ |sup2| difference between
+various models.  This 4-element vector contains the |chi|\ |sup2| difference between
 the best-fit point source, deVauc model, exponential model, and a composite model.
 The number of degrees of freedom to include as a penalty to these |chi|\ |sup2| values
 are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.

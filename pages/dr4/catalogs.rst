@@ -177,7 +177,7 @@ the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
-The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a traditional notion of detection significance.
 Note that the ``dchisq`` values are negated so that positive values indicate better fits.
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 

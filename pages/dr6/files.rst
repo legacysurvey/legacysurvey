@@ -445,7 +445,7 @@ Name                            Type         Units                 Description
 ``DEC``                         float64      deg                   Declination at equinox J2000
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of ``RA`` (no cosine term!), excluding astrometric calibration errors
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of ``DEC``, excluding astrometric calibration errors
-``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, EXP, DEV, COMP.  The difference is versus no source.
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
 ``EBV``                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute ``MW_TRANSMISSION``
 ``FLUX_G``                      float32      nanomaggies           model flux in :math:`g`
 ``FLUX_R``                      float32      nanomaggies           model flux in :math:`r`

@@ -14,8 +14,9 @@ When using data from the Legacy Surveys in papers, please include the `text on t
 
 This page is likely to be incomplete and has been updated through the end of April, 2019. For additional publications, see also the NOAO publications lists for `2018`_ and `2019`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
-2019 (16 publications)
-======================
+2019 (17 publications so far)
+=============================
+#. Huang et al., `Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`_
 #. Sridhar et al., `Cosmic distance determination from photometric redshift samples using BAO peaks only`_
 #. Simon et al., `Dynamical Masses for a Complete Census of Local Dwarf Galaxies`_
 #. Comparat et al., `Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`_
@@ -101,6 +102,7 @@ This page is likely to be incomplete and has been updated through the end of Apr
 .. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
 .. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
 
+.. _`Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`: https://ui.adsabs.harvard.edu/abs/2019arXiv190600970H
 .. _`Cosmic distance determination from photometric redshift samples using BAO peaks only`: https://ui.adsabs.harvard.edu/abs/2019arXiv190309651S
 .. _`Dynamical Masses for a Complete Census of Local Dwarf Galaxies`: https://ui.adsabs.harvard.edu/abs/2019arXiv190304743S
 .. _`Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`: https://ui.adsabs.harvard.edu/abs/2019arXiv190110866C

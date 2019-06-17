@@ -515,7 +515,7 @@ Name                                  Type         Units                 Descrip
 ``RELEASE``                           int16                              Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 ``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite, "DUP"==Gaia source fit by different model.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 ``RA``                                float64      deg                   Right ascension at equinox J2000
 ``DEC``                               float64      deg                   Declination at equinox J2000
@@ -659,7 +659,7 @@ Column           Type      Description
 ``release``      int16     Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 ``brickid``      int32     Unique Brick ID (in the range [1, 662174])
 ``brickname``    char[8]   Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``brickid,objid``
+``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
 ``camera``       char[5]   The camera that took this image e.g. "decam"
 ``expnum``       int32     Exposure number, eg 574299
 ``ccdname``      char[3]   CCD name for this camera, e.g. "N10", "S7" for DECam

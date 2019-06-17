@@ -303,7 +303,7 @@ Name                            Type         Units                 Description
 ``BRICK_PRIMARY``               boolean                            True if the object is within the brick boundary
 ``BRICKID``                     int32                              Brick ID [1,662174]
 ``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is ``BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
 ``RA``                          float64      deg                   Right ascension at equinox J2000
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors

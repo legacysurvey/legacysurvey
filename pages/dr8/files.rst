@@ -399,10 +399,10 @@ Each row of each external-match file contains the full record of the nearest obj
 imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files 
 is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is set to -1.
 
-In addition to the columns from the `Tractor catalogs`_, we have added columns from the SDSS files that can be used to track objects uniquely. These are typically some combination of ``PLATE``, ``FIBER``, ``MJD`` (or ``SMJD``) and, in some cases, ``RERUN``.
+In addition to the columns from the Tractor `catalogs`_, we have added columns from the SDSS files that can be used to track objects uniquely. These are typically some combination of ``PLATE``, ``FIBER``, ``MJD`` (or ``SMJD``) and, in some cases, ``RERUN``.
 
 .. _`catalogs page`: ../catalogs
-.. _`Tractor catalogs`: ../catalogs
+.. _`catalogs`: ../catalogs
 
 survey-dr8-specObj-dr14.fits
 ----------------------------
@@ -472,15 +472,15 @@ Tractor Catalogs
 
 In the file listings outlined below:
 
-- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four digits are :math:`int(\mathrm{RA} \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(\mathrm{Dec} \times 10)`. For example the case `1126p222` corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|).
 
-- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the previous bullet point. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq \mathrm{RA} < 10^\circ` and :math:`-10^\circ \leq \mathrm{Dec} < -5^\circ`.
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in (RA, Dec). Explicitly, **<brickmin>** has the format `<AAA>c<BBB>` where `<AAA>` denotes three digits of the minimum :math:`int(RA)` in degrees, <BBB> denotes three digits of the minimum :math:`int(Dec)` in degrees, and `c` uses the `p`/`m` ("plus"/"minus") format outlined in the previous bullet point. The convention is similar for  **<brickmax>** and the maximum RA and Dec. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
 - sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
 
 - **<filter>** denotes the :math:`g`, :math:`r` or :math:`z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid 
+Note that it is not possible to go from a brick name back to an *exact* (RA, Dec) center (the bricks are not on 0.1\ |deg| grid 
 lines). The exact brick center for a given brick name can be derived from columns in the 
 **survey-bricks.fits.gz** file (i.e. ``brickname``, ``ra``, ``dec``).
 
@@ -492,7 +492,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
+Users interested in database access to the Tractor `catalogs`_ can contact the NOAO Data Lab at datalab@noao.edu.
 
 
 Sweep Catalogs
@@ -504,7 +504,7 @@ sweep/8.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
-Tractor measurements) of all the `Tractor catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
+Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
 
 .. _`RELEASE is documented here`: ../../release
 .. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
@@ -851,7 +851,7 @@ NOAO access to raw and calibrated images will be available a few weeks after the
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. 
 The input data used to create the 
-stacked images, Tractor catalogs, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
+stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from NOAO telescopes.
 
 (i) Web interface

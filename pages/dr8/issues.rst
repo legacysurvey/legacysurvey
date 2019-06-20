@@ -41,13 +41,13 @@ WISE images are reported on the Vega system
 -------------------------------------------
 
 We attempt to report all flux-related quantities in DR8 on the AB system, and all such *catalog-level* quantities are AB. However, the pixel-level
-images are on the Vega system. This effects `coadd files`_ of the form:
+images in the `coadd files`_:
 
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits.fz`
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz`
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz`
 
-(where `<filter>` is a WISE filter).
+(where `<filter>` is a WISE filter) are on the Vega system.
 
 As also noted on the `description`_ page, WISE quantities can be converted to the AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} \times 10^{-(\Delta m/2.5)}`

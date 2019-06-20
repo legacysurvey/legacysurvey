@@ -686,7 +686,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
     Contains the same columns as **survey-ccds-<camera>-dr8.fits.gz**, and also contains
-    the additional columns (XXX char columns are different for decam vs. 90prime-mosaic...see https://github.com/legacysurvey/legacypipe/issues/379):
+    the additional columns (XXX char columns are different for decam vs. 90prime-mosaic...see `legacypipe issue #379`_).
 
     ================ ========= ======================================================
     Column           Type      Description
@@ -708,6 +708,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``wcsplver``     char[5]   CP version of the input to WCS calibration
     ``psfplver``     char[8]   CP version of the input to PSF calibration
     ================ ========= ======================================================
+
+.. _`legacypipe issue #379`: https://github.com/legacysurvey/legacypipe/issues/379
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-chi2-<filter>.fits.fz
     Stacked |chi|\ |sup2| image, which is approximately the summed |chi|\ |sup2| values from the single-epoch images.

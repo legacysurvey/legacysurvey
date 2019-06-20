@@ -339,7 +339,8 @@ Ten files of random points sampled across the CCDs that comprise the geometry of
 were generated in the survey footprint at a density of 10,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
-``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains the following columns:
+``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``), 
+``legacysurvey-<brick>-invvar-<filter>.fits.fz``. Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -356,6 +357,8 @@ Column               Type     Description
 ``GALDEPTH_G``       float32  As for ``PSFDEPTH_G`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_R``       float32  As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``GALDEPTH_Z``       float32  As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``PSFDEPTH_W1``      float32  As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
+``PSFDEPTH_W2``      float32  As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
 ``PSFSIZE_G``	     float32  Weighted average PSF FWHM in arcsec in the :math:`g` band
 ``PSFSIZE_R``	     float32  Weighted average PSF FWHM in arcsec in the :math:`r` band
 ``PSFSIZE_Z``	     float32  Weighted average PSF FWHM in arcsec in the :math:`z` band

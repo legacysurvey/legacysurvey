@@ -312,8 +312,8 @@ detailed PSF model.
 randoms/randoms-dr7.1-0.22.0-\*.fits
 ------------------------------------
 
-Files of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
-were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
+Ten files of random points sampled across the CCDs that comprise the geometry of DR7. Random locations
+were generated in the survey footprint at a density of 10,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location in the **coadd** files (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
 ``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains

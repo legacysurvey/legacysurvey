@@ -335,8 +335,8 @@ randoms/randoms-dr8-0.29.1-\*.fits
 ------------------------------------
 XXX check version is 0.29.1 (used below, too).
 
-Files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
-were generated in the survey footprint at a density of 100,000 per square degree and meta-information 
+Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
+were generated in the survey footprint at a density of 10,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.gz``, ``coadd/*/*/*-galdepth-<filter>.fits.gz``, 
 ``coadd/*/*/*-nexp-<filter>.fits.gz``, ``coadd/*/*/*-maskbits.fits.gz``). Contains the following columns:

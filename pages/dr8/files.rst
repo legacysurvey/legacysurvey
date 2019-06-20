@@ -526,17 +526,17 @@ Name                                  Type         Units                 Descrip
 ``FLUX_G``                            float32      nanomaggies           model flux in :math:`g`
 ``FLUX_R``                            float32      nanomaggies           model flux in :math:`r`
 ``FLUX_Z``                            float32      nanomaggies           model flux in :math:`z`
-``FLUX_W1``                           float32      nanomaggies           WISE model flux in :math:`W1`
-``FLUX_W2``                           float32      nanomaggies           WISE model flux in :math:`W2`
-``FLUX_W3``                           float32      nanomaggies           WISE model flux in :math:`W3`
-``FLUX_W4``                           float32      nanomaggies           WISE model flux in :math:`W4`
+``FLUX_W1``                           float32      nanomaggies           WISE model flux in :math:`W1` (AB system)
+``FLUX_W2``                           float32      nanomaggies           WISE model flux in :math:`W2` (AB)
+``FLUX_W3``                           float32      nanomaggies           WISE model flux in :math:`W3` (AB)
+``FLUX_W4``                           float32      nanomaggies           WISE model flux in :math:`W4` (AB)
 ``FLUX_IVAR_G``                       float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_G``
 ``FLUX_IVAR_R``                       float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_R``
 ``FLUX_IVAR_Z``                       float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_Z``
-``FLUX_IVAR_W1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W1``
-``FLUX_IVAR_W2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W2``
-``FLUX_IVAR_W3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W3``
-``FLUX_IVAR_W4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W4``
+``FLUX_IVAR_W1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W1`` (AB system)
+``FLUX_IVAR_W2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W2`` (AB)
+``FLUX_IVAR_W3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W3`` (AB)
+``FLUX_IVAR_W4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``FLUX_W4`` (AB)
 ``MW_TRANSMISSION_G``                 float32                            Galactic transmission in :math:`g` filter in linear units [0,1]
 ``MW_TRANSMISSION_R``                 float32                            Galactic transmission in :math:`r` filter in linear units [0,1]
 ``MW_TRANSMISSION_Z``                 float32                            Galactic transmission in :math:`z` filter in linear units [0,1]
@@ -731,7 +731,10 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     - NOTE: These are not the images used by Tractor, which operates on the
       single-epoch images.
 
-    - NOTE: that these images are resampled using Lanczos-3 resampling.
+    - NOTE: These images are resampled using Lanczos-3 resampling.
+
+    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. See the `issues page`_ for more information.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz
     Corresponding stacked inverse variance image based on the sum of the
@@ -740,6 +743,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
     - NOTE: These are not the inverse variance maps used by Tractor, which operates
       on the single-epoch images.
+
+    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. See the `issues page`_ for more information.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.fz
     Bitmask of possible problems with pixels in this brick.
@@ -753,6 +759,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
     - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
+    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. See the `issues page`_ for more information.
+
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.fz
     Number of exposures contributing to each pixel of the stacked images.
 
@@ -762,7 +771,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-image.jpg
     JPEG image of the calibrated image using the :math:`g,r,z` filters as the colors.
 
-- coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
+ - coadd/<AAA>/<brick>/legacysurvey-<brick>-model.jpg
     JPEG image of the Tractor's model image using the :math:`g,r,z` filters as the colors.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-resid.jpg

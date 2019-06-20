@@ -19,7 +19,9 @@
 -------------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
-`known issues`_ regarding their content and derivation.
+`known issues`_ regarding their content and derivation. Note that all flux-based quantities in the
+catalogs are on the AB system (we specify that WISE fluxes are AB in the table for clarity, as
+such quantities are often on the Vega system).
 
 .. _`known issues`: ../issues
 .. _`as documented here`: ../../release
@@ -84,17 +86,17 @@ Name                                  Type         Units                 Descrip
 ``flux_g``		              float32      nanomaggies           model flux in :math:`g`
 ``flux_r``		              float32      nanomaggies           model flux in :math:`r`
 ``flux_z``		              float32      nanomaggies           model flux in :math:`z`
-``flux_w1``                           float32      nanomaggies           WISE model flux in :math:`W1`
-``flux_w2``                           float32      nanomaggies           WISE model flux in :math:`W2`
-``flux_w3``                           float32      nanomaggies           WISE model flux in :math:`W3`
-``flux_w4``                           float32      nanomaggies           WISE model flux in :math:`W4`
+``flux_w1``                           float32      nanomaggies           WISE model flux in :math:`W1` (AB system)
+``flux_w2``                           float32      nanomaggies           WISE model flux in :math:`W2` (AB)
+``flux_w3``                           float32      nanomaggies           WISE model flux in :math:`W3` (AB)
+``flux_w4``                           float32      nanomaggies           WISE model flux in :math:`W4` (AB)
 ``flux_ivar_g``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_g``
 ``flux_ivar_r``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_r``
 ``flux_ivar_z``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_z``
-``flux_ivar_w1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w1``
-``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w2``
-``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w3``
-``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w4``
+``flux_ivar_w1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w1`` (AB system)
+``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w2`` (AB)
+``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w3`` (AB)
+``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w4`` (AB)
 ``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
@@ -166,10 +168,10 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
-``lc_flux_w1``	     	              float32[11]  nanomaggies           ``flux_w1`` in each of up to eleven unWISE coadd epochs
-``lc_flux_w2``                        float32[11]  nanomaggies           ``flux_w2`` in each of up to eleven unWISE coadd epochs
-``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1``
-``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2``
+``lc_flux_w1``	     	              float32[11]  nanomaggies           ``flux_w1`` in each of up to eleven unWISE coadd epochs (AB system)
+``lc_flux_w2``                        float32[11]  nanomaggies           ``flux_w2`` in each of up to eleven unWISE coadd epochs (AB)
+``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system)
+``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB)
 ``lc_nobs_w1``		              int16[11]                          ``nobs_w1`` in each of up to eleven unWISE coadd epochs
 ``lc_nobs_w2``		              int16[11]                          ``nobs_w2`` in each of up to eleven unWISE coadd epochs
 ``lc_fracflux_w1``	              float32[11]                        ``fracflux_w1`` in each of up to eleven unWISE coadd epochs

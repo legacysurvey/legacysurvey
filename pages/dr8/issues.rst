@@ -37,20 +37,19 @@ for a patched source during extraction, affecting the fitting of other sources i
 - Quantities that *will* be inconsistent as they will still use the ``DEV`` or ``EXP`` model shape:
     - ``FIBERFLUX``, ``FRACIN``, ``FRACFLUX``, ``FRACMASKED``, ``RCHISQ`` and the WISE forced photometry.
 
-WISE images and depths are reported on the Vega system
-------------------------------------------------------
+WISE images are reported on the Vega system
+-------------------------------------------
 
 We attempt to report all flux-related quantities in DR8 on the AB system, and all such *catalog-level* quantities are AB. However, the pixel-level
-images, and derived depths in the random catalogs, are on the Vega system. This effects `files`_ of the form:
+images are on the Vega system. This effects `coadd files`_ of the form:
 
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-image-<filter>.fits.fz`
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz`
 - `coadd/<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz`
 
-(where `<filter>` is a WISE filter) and the `WISEDEPTH_W1` and `WISEDEPTH_W2` quantities in the random catalogs.
+(where `<filter>` is a WISE filter).
 
-As also noted on the description page
-WISE quantities can be converted to the AB system using the `recommended conversions by the WISE team`_. Namely,
+As also noted on the `description`_ page, WISE quantities can be converted to the AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} \times 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 
@@ -60,6 +59,7 @@ where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 an
 .. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs
 .. _`DECaLS`: ../../decamls
 .. _`Tractor catalogs`: ../catalogs
+.. _`coadd files`: ../files#image-stacks-coadd
 .. _`files`: ../files
 .. _`description`: ../description
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab

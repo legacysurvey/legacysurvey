@@ -12,17 +12,33 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through the end of April, 2019. For additional publications, see also the NOAO publications lists for `2018`_ and `2019`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through mid-June, 2019. For additional publications, see also the NOAO publications lists for `2018`_ and `2019`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
-2019 (17 publications so far)
+2019 (32 publications so far)
 =============================
+#. Pearson et al., `Detecting Thin Stellar Streams in External Galaxies: Resolved Stars & Integrated Light`_
+#. Maschmann & Melchior, `Ultimate Merging at z~0.1`_
 #. Huang et al., `Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`_
+#. Wang et al., `Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`_
+#. Ross & Cross, `The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`_
+#. Goldstein et al., `GROWTH on S190426c. II. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`_
+#. Walmsley et al., `Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`_
+#. Chen et al., `The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`_
+#. Wilson & White, `Cosmology with dropout selection: Straw-man surveys and CMB lensing`_
 #. Sridhar et al., `Cosmic distance determination from photometric redshift samples using BAO peaks only`_
-#. Simon et al., `Dynamical Masses for a Complete Census of Local Dwarf Galaxies`_
-#. Comparat et al., `Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`_
 #. Chilingarian et al., `Internal dynamics and stellar content of eight ultra-diffuse galaxies in the Coma cluster prove their evolutionary link with dwarf early-type galaxies`_
+
+#. Comparat et al., `Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`_
+#. Erkal et al., `The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`_
+#. Bates et al., `Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`_
 #. Koposov et al., `Piercing the Milky Way: an all-sky view of the Orphan Stream`_
-#. Bait, Wadadekar & Barway, `Outlying H-alpha blobs in SDSS IV MaNGA`_
+#. Baltay et al., `The DESI Fiber View Camera System`_
+#. Meyer et al., `New Constraints on Quasar Evolution: Broad Line Velocity Shifts over 1.5 < z < 7.5`_
+#. Yang et al., `Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`_
+#. Meyer et al., `Quasi-stellar objects acting as potential strong gravitational lenses in the SDSS-III BOSS survey`_
+#. Bait, Wadadekar & Barway, `Outlying H-alpha emitters in SDSS IV MaNGA`_
+#. Zou et al., `Photometric Redshifts and Stellar Masses for Galaxies from the DESI Legacy Imaging Surveys`_
+#. Simon et al., `Dynamical Masses for a Complete Census of Local Dwarf Galaxies`_
 #. Dey et al., `Overview of the DESI Legacy Imaging Surveys`_
 #. Chen et al., `Characterizing circumgalactic gas around massive ellipticals at z ~ 0.4 - III. The galactic environment of a chemically pristine Lyman limit absorber`_
 #. Dominguez-Sanchez et al., `Transfer learning for galaxy morphology from one survey to another`_
@@ -34,12 +50,11 @@ This page is likely to be incomplete and has been updated through the end of Apr
 #. Zaritsky et al., `Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`_
 #. Wold et al., `The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`_
 
-2018 (34 publications)
+2018 (32 publications)
 ======================
-#. Erkal et al., `The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`_
-#. Yang et al., `Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`_
 #. Wang et al., `Exploring Reionization-Era Quasars III: Discovery of 16 Quasars at 6.4 < z < 6.9 with DESI Legacy Imaging Surveys and UKIRT Hemisphere Survey and Quasar Luminosity Function at z ~ 6.7`_
-#. Bates et al., `Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`_
+#. Agnello & Spiniello, `Quasar Lenses in the South: searches over the DES public footprint`_
+
 #. Wang et al., `The Discovery of a Luminous Broad Absorption Line Quasar at a Redshift of 7.02`_
 #. Ishikawa et al., `Comprehensive Measurements of the Volume-phase Holographic Gratings for the Dark Energy Spectroscopic Instrument`_
 #. Gao et al., `Mass-Metallicity Relation and Fundamental Metallicity Relation of Metal-poor Star-forming Galaxies at 0.6 < Z < 0.9 from the eBOSS Survey`_
@@ -102,13 +117,29 @@ This page is likely to be incomplete and has been updated through the end of Apr
 .. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
 .. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
 
+.. _`Detecting Thin Stellar Streams in External Galaxies: Resolved Stars & Integrated Light`: https://ui.adsabs.harvard.edu/abs/2019arXiv190603264P
+.. _`Ultimate Merging at z~0.1`: https://ui.adsabs.harvard.edu/abs/2019arXiv190605629M
 .. _`Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`: https://ui.adsabs.harvard.edu/abs/2019arXiv190600970H
+.. _`Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`: https://ui.adsabs.harvard.edu/abs/2019arXiv190600516W
+.. _`The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`: https://ui.adsabs.harvard.edu/abs/2019arXiv190606974R
+.. _`GROWTH on S190426c. II. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`: https://ui.adsabs.harvard.edu/abs/2019arXiv190506980G
+.. _`Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`: https://ui.adsabs.harvard.edu/abs/2019arXiv190507424W
+.. _`The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`: https://ui.adsabs.harvard.edu/abs/2019arXiv190502205C
+.. _`Cosmology with dropout selection: Straw-man surveys and CMB lensing`: https://ui.adsabs.harvard.edu/abs/2019arXiv190413378W
 .. _`Cosmic distance determination from photometric redshift samples using BAO peaks only`: https://ui.adsabs.harvard.edu/abs/2019arXiv190309651S
-.. _`Dynamical Masses for a Complete Census of Local Dwarf Galaxies`: https://ui.adsabs.harvard.edu/abs/2019arXiv190304743S
-.. _`Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`: https://ui.adsabs.harvard.edu/abs/2019arXiv190110866C
 .. _`Internal dynamics and stellar content of eight ultra-diffuse galaxies in the Coma cluster prove their evolutionary link with dwarf early-type galaxies`: https://ui.adsabs.harvard.edu/abs/2019arXiv190105489C
+
+.. _`Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2005C
+.. _`The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2685E
+.. _`Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.3059B
 .. _`Piercing the Milky Way: an all-sky view of the Orphan Stream`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.4726K
-.. _`Outlying H-alpha blobs in SDSS IV MaNGA`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485..428B
+.. _`The DESI Fiber View Camera System`: https://ui.adsabs.harvard.edu/abs/2019PASP..131f5001B
+.. _`New Constraints on Quasar Evolution: Broad Line Velocity Shifts over 1.5 < z < 7.5`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.tmp.1438M
+.. _`Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..236Y
+.. _`Quasi-stellar objects acting as potential strong gravitational lenses in the SDSS-III BOSS survey`: https://ui.adsabs.harvard.edu/abs/2019A%26A...625A..56M
+.. _`Outlying H-alpha emitters in SDSS IV MaNGA`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485..428B
+.. _`Photometric Redshifts and Stellar Masses for Galaxies from the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019ApJS..242....8Z
+.. _`Dynamical Masses for a Complete Census of Local Dwarf Galaxies`: https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.409S
 .. _`Overview of the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`Characterizing circumgalactic gas around massive ellipticals at z ~ 0.4 - III. The galactic environment of a chemically pristine Lyman limit absorber`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.484..431C
 .. _`Transfer learning for galaxy morphology from one survey to another`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.484...93D
@@ -120,10 +151,10 @@ This page is likely to be incomplete and has been updated through the end of Apr
 .. _`Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....1Z
 .. _`The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....5W
 
-.. _`The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`: https://ui.adsabs.harvard.edu/abs/2018arXiv181208192E
-.. _`Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`: https://ui.adsabs.harvard.edu/abs/2018arXiv181111915Y
+
 .. _`Exploring Reionization-Era Quasars III: Discovery of 16 Quasars at 6.4 < z < 6.9 with DESI Legacy Imaging Surveys and UKIRT Hemisphere Survey and Quasar Luminosity Function at z ~ 6.7`: https://ui.adsabs.harvard.edu/abs/2018arXiv181011926W
-.. _`Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`: https://ui.adsabs.harvard.edu/abs/2018arXiv181001767B
+.. _`Quasar Lenses in the South: searches over the DES public footprint`: https://ui.adsabs.harvard.edu/abs/2018arXiv180511103A
+
 .. _`The Discovery of a Luminous Broad Absorption Line Quasar at a Redshift of 7.02`: https://ui.adsabs.harvard.edu/abs/2018ApJ...869L...9W
 .. _`Comprehensive Measurements of the Volume-phase Holographic Gratings for the Dark Energy Spectroscopic Instrument`: https://ui.adsabs.harvard.edu/abs/2018ApJ...869...24I
 .. _`Mass-Metallicity Relation and Fundamental Metallicity Relation of Metal-poor Star-forming Galaxies at 0.6 < Z < 0.9 from the eBOSS Survey`: https://ui.adsabs.harvard.edu/abs/2018ApJ...869...15G
@@ -154,6 +185,7 @@ This page is likely to be incomplete and has been updated through the end of Apr
 .. _`The Origin of Faint Tidal Features around Galaxies in the RESOLVE Survey`: https://ui.adsabs.harvard.edu/abs/2018ApJ...857..144H
 .. _`A Dwarf Planet Class Object in the 21:5 Resonance with Neptune`: https://ui.adsabs.harvard.edu/abs/2018ApJ...855L...6H
 .. _`An 800 million solar mass black hole in a significantly neutral universe at a redshift of 7.5`: https://ui.adsabs.harvard.edu/abs/2018Natur.553..473B
+
 
 .. _`Quasar Photometric Redshifts and Candidate Selection: A New Algorithm Based on Optical and Mid-infrared Photometric Data`: https://ui.adsabs.harvard.edu/abs/2017AJ....154..269Y
 .. _`Cluster mislocation in kinematic Sunyaev-Zel'dovich effect extraction`: https://ui.adsabs.harvard.edu/abs/2017PhRvD..96l3529C

@@ -336,11 +336,11 @@ randoms/randoms-dr8-0.29.1-\*.fits
 XXX check version is 0.29.1 (used below, too).
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
-were generated in the survey footprint at a density of 10,000 per square degree and meta-information 
+were generated across the footprint at a density of 10,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``, 
-``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``), 
-``coadd/*/*/*-invvar-<filter>.fits.fz``. Contains the following columns:
+``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``, 
+``coadd/*/*/*-invvar-<filter>.fits.fz``). Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -381,9 +381,28 @@ Column               Type     Description
 .. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The **0.29.1** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_).
-The randoms are resolved at a Declination of 32.375\ |deg| and by the Galactic plane, such that locations at Dec > 32.375\ |deg| that are north of the Galactic Plane have
-``PHOTSYS`` set to "N".
+The **0.29.1** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The northern and southern imaging footprints overlap, so, randoms are resolved at a Declination of 32.375\ |deg| and by the Galactic plane, such that locations at Dec > 32.375\ |deg| that are north of the Galactic Plane have ``PHOTSYS`` set to "N".
+
+randoms/supp-randoms-dr8-0.29.1.fits
+---------------------------------------
+
+A file of random points in bricks that lie `outside` of the DR8 footprint. The columns in this file
+are greatly simplified compared to the other random catalogs as the main utility of this file is
+to use ``RA`` and ``DEC`` to determine ratios of areas inside and outside of the footprint. As with
+the other random catalogs, points were generated at a density of 10,000 per square degree. Contains the following columns:
+
+==================== ======== ======================================================
+Column               Type     Description
+==================== ======== ======================================================
+``RA``               float64  Right ascension at equinox J2000
+``DEC``              float64  Declination at equinox J2000
+``BRICKNAME``        char[8]  Name of the brick
+``NOBS_G``           int16    Always zero in this file.
+``NOBS_R``           int16    Always zero in this file.
+``NOBS_Z``           int16    Always zero in this file.
+``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
+==================== ======== ======================================================
+
 
 External Files
 ==============

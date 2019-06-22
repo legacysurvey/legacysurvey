@@ -47,8 +47,8 @@ Bit Name          Description
 5   ``ALLMASK_G`` touches a pixel that has any of the ``ALLMASK_G`` bits set
 6   ``ALLMASK_R`` touches a pixel that has any of the ``ALLMASK_R`` bits set
 7   ``ALLMASK_Z`` touches a pixel that has any of the ``ALLMASK_Z`` bits set
-8   ``WISEM1``    touches a pixel that has any of the ``WISEMASK_W1`` bits set
-9   ``WISEM2``    touches a pixel that has any of the ``WISEMASK_W2`` bits set
+8   ``WISEM1``    touches a pixel in a ``WISEMASK_W1`` bright star mask
+9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
 11  ``MEDIUM``    touches a pixel in a medium-bright (`Gaia`_ DR2) star
 12  ``GALAXY``    touches a pixel in an `LSLGA`_ large galaxy
@@ -66,19 +66,19 @@ Bit Name          Description
 See, also, the `legacypipe bitmask definitions`_. The 
 ``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NOAO Community Pipeline) Data Quality bits.
 
-=== =========================== ==================================================
-Bit Attribute                   Description
-=== =========================== ==================================================
-  0 detector bad pixel/no data  See the `CP Data Quality bit description`_
-  1 saturated                   See the `CP Data Quality bit description`_
-  2 interpolated                See the `CP Data Quality bit description`_
-  4 single exposure cosmic ray  See the `CP Data Quality bit description`_
-  6 bleed trail                 See the `CP Data Quality bit description`_
-  7 multi-exposure transient    See the `CP Data Quality bit description`_
-  8 edge                        See the `CP Data Quality bit description`_
-  9 edge2                       See the `CP Data Quality bit description`_
- 11 outlier			Marked as touching an outlier pixel by ``legacypipe`` itself
-=== =========================== ==================================================
+=== =========== ==========================================================================
+Bit Name        Description
+=== =========== ==========================================================================
+  0 ``BADPIX``  bad columns, hot pixels, etc. (see the `CP Data Quality bit description`_)
+  1 ``SATUR``   saturated (see the `CP Data Quality bit description`_)
+  2 ``INTERP``  interpolated (see the `CP Data Quality bit description`_)
+  4 ``CR``      single exposure cosmic ray (see the `CP Data Quality bit description`_)
+  6 ``BLEED``   bleed trail (see the `CP Data Quality bit description`_)
+  7 ``TRANS``   multi-exposure transient (see the `CP Data Quality bit description`_)
+  8 ``EDGE``    edge pixel (see the `CP Data Quality bit description`_)
+  9 ``EDGE2``   edge pixel (see the `CP Data Quality bit description`_)
+ 11 ``OUTLIER`` marked as touching an outlier pixel by ``legacypipe`` itself
+=== =========== ==========================================================================
 
 .. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 

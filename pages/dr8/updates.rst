@@ -50,8 +50,8 @@ Other algorithmic changes
 Data model changes
 ==================
 * The directory structure is now split into two distinct sub-directories:
-    - ``dr8/decam/`` for `DECaLS`_ data
-    - ``dr8/90prime-mosaic/`` for `MzLS`_/`BASS`_ data
+    - ``dr8/south/`` for `DECaLS`_ data
+    - ``dr8/north/`` for `MzLS`_/`BASS`_ data
 * A new morphological type ``TYPE=DUP`` has been added for Gaia sources that are coincident with an extended source.
     - No optical flux is assigned to ``DUP`` sources, but they are retained such that all Gaia sources appear in the source catalogs.
 * The ``maskbits-*`` files have been updated with extra bits as documented on the `DR8 bitmasks page`_.

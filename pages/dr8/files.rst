@@ -25,12 +25,12 @@ For Web Access
 | **Top level directory:**
 | http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/
 | **Top level directory for** `DECaLS`_ **data**:
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/
 | **Top level directory for** `MzLS`_/`BASS`_ **data:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/
 | **Top level directories for sweeps catalogs:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/sweep/
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/sweep/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/sweep/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/sweep/
 
 
 At NERSC (for collaborators)
@@ -39,12 +39,12 @@ At NERSC (for collaborators)
 | **Top level directory:**
 | /global/project/projectdirs/cosmo/data/legacysurvey/dr8/
 | **Top level directory for** `DECaLS`_ **data:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/decam/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/
 | **Top level directory for** `MzLS`_/`BASS`_ **data:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/90prime-mosaic/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/
 | **Top level directories for sweeps catalogs:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/decam/sweep/
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/90prime-mosaic/sweep/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/sweep/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/sweep/
 
 Summary Files
 =============
@@ -153,7 +153,7 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[120]  Path to FITS image, e.g. "decam/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz"
+``image_filename``   char[120]  Path to FITS image, e.g. "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz"
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
 ``camera``           char[9]    The camera that took this image e.g. "90prime"
 ``expnum``           int64      Exposure number, eg 348224
@@ -410,12 +410,12 @@ External Files
 XXX check that we add "dr8" to the name of the external match files.
 
 | **The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/decam/external/
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/90prime-mosaic/external/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
+| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/external/
 
 | **Or on the NERSC computers (for collaborators) at:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/decam/external/
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/90prime-mosaic/external/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/external/
+| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files 
@@ -708,7 +708,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
     Contains the same columns as **survey-ccds-<camera>-dr8.fits.gz**, and also contains
-    the additional columns (XXX char columns are different for decam vs. 90prime-mosaic...see `legacypipe issue #379`_).
+    the additional columns (XXX char columns are different for north vs. south...see `legacypipe issue #379`_).
 
     ================ ========= ======================================================
     Column           Type      Description

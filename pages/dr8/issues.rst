@@ -23,7 +23,7 @@ Patching Morphological Models
 -----------------------------
 
 Some morphological quantities are inconsistent for PSF sources in DR8, due to a bug in the model selection function that was introduced 
-on May 13th, 2019 `to fix an issue in the DR8 90prime-mosaic reductions`_.
+on May 13th, 2019 `to fix a different bug in the reduction process`_.
 
 This issue occurs when the ``REX`` model is better than the ``PSF`` model, but not by *enough*.  In this case, instead of reverting to ``PSF``, the modeling code reverts to NONE.
 
@@ -41,6 +41,8 @@ for a patched source during extraction, affecting the fitting of other sources i
 - Quantities that *will* be inconsistent as they will still use the ``DEV`` or ``EXP`` model shape:
     - ``FIBERFLUX``, ``FRACIN``, ``FRACFLUX``, ``FRACMASKED``, ``RCHISQ`` and the WISE forced photometry.
 
+The original "unpatched" files are available in the individual survey directories, e.g. ``/global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/unpatched-tractor``.
+
 The brightest stars are missing from models and catalogs
 --------------------------------------------------------
 
@@ -49,7 +51,12 @@ causes very bright stars to be dropped completely during model selection. An exa
 
 The fix, which will be included in DR9, is to force all reference stars (such as Gaia stars) to be retained during model fitting.
 
-.. _`to fix an issue in the DR8 90prime-mosaic reductions`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
+
+Bricks that didn't finish processing
+------------------------------------
+XXX list the missing bricks. (see DS email for telecon on Monday, June 24th).
+
+.. _`to fix a different bug in the reduction process`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
 .. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs

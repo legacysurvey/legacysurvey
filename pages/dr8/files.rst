@@ -310,7 +310,7 @@ XXX doesn't exist for DR8 yet.
 A summary of the depth histogram of the whole DR8 survey.  FITS table with the following columns:
 
 ==================== ======== ======================================================
-Column               Type      Description
+Column               Type     Description
 ==================== ======== ======================================================
 ``depthlo``          float32  Lower limit of the depth bin
 ``depthhi``          float32  Upper limit of the depth bin
@@ -757,8 +757,12 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
     - NOTE: These images are resampled using Lanczos-3 resampling.
 
-    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
-      in DR8 are reported on the AB system. See the `issues page`_ for more information.
+    - NOTE: Images in WISE bands are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. The `description`_ page lists
+      the Vega-to-AB conversions `recommended by the WISE team`_.
+
+.. _`description`: ../description/#photometry
+.. _`recommended by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz
     Corresponding stacked inverse variance image based on the sum of the
@@ -768,8 +772,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     - NOTE: These are not the inverse variance maps used by Tractor, which operates
       on the single-epoch images.
 
-    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
-      in DR8 are reported on the AB system. See the `issues page`_ for more information.
+    - NOTE: Images in WISE bands are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. The `description`_ page lists
+      the Vega-to-AB conversions `recommended by the WISE team`_.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.fz
     Bitmask of possible problems with pixels in this brick.
@@ -783,8 +788,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
     - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
 
-    - NOTE: Images in WISE filters are on the Vega system, all other flux-related quantities
-      in DR8 are reported on the AB system. See the `issues page`_ for more information.
+    - NOTE: Images in WISE bands are on the Vega system, all other flux-related quantities
+      in DR8 are reported on the AB system. The `description`_ page lists
+      the Vega-to-AB conversions `recommended by the WISE team`_.
 
 - coadd/<AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.fz
     Number of exposures contributing to each pixel of the stacked images.

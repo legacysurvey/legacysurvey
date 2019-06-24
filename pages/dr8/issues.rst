@@ -6,6 +6,10 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
+.. class:: pull-right well
+
+.. contents::
+
 General Issues
 --------------
 
@@ -52,6 +56,15 @@ images in the `coadd files`_:
 As also noted on the `description`_ page, WISE quantities can be converted to the AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} \times 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
+
+
+The brightest stars are missing from models and catalogs
+--------------------------------------------------------
+
+The cores of very bright stars are often highly saturated. This produces negative fluxes in model fits, which
+causes very bright stars to be dropped completely during model selection. An example is Tania Australis (V~3, RA~213.88\ |deg|, Dec~19.18\ |deg|).
+
+The fix, which will be included in DR9, is to add a clause to the model selection so that all reference stars (such as Gaia stars) are kept during model fitting.
 
 .. _`to fix an issue in the DR8 90prime-mosaic reductions`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues

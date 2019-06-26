@@ -136,8 +136,12 @@ JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=m
 
 FITS: http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
-where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
-size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. 
+
+Replacing `layer=mzls+bass-dr6` with `layer=mzls+bass-dr6-model` or `layer=mzls+bass-dr6-resid` will instead return
+cutouts for the model and residual images, respectively.
+
+The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
 http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
@@ -153,10 +157,11 @@ Pixscale=0.262 (arcseconds per pixel) will return (approximately) the pixel scal
 the coadds.  The native pixel scale of the Mosaic camera (used for :math:`z` band) is
 approximately 0.262, and for the 90prime camera (used for :math:`g` and :math:`r` bands)
 it is approximately 0.454.
-For information on how to recover `DECaLS`_ cutouts, see the `DR5 description`_ page.
+For information on how to recover `DECaLS`_ cutouts, see the `DR7 description`_ page.
 
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR5 description`: ../../dr5/description
+.. _`DR7 description`: ../../dr7/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query

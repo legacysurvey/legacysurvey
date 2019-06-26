@@ -158,8 +158,12 @@ JPEG (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&d
 
 FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr8&pixscale=0.27&bands=grz
 
-where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
-size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
+
+Replacing `layer=mzls+bass-dr8` (`layer=decals-dr8`) with `layer=mzls+bass-dr8-model` (`layer=decals-dr8-model`) 
+or `layer=mzls+bass-dr8-resid` (`layer=decals-dr8-resid`) will instead return cutouts for the model and residual images, respectively.
+
+The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
 http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr8&pixscale=0.3&bands=grz

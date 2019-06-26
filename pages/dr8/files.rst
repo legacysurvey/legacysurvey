@@ -72,10 +72,12 @@ Column          Type    Description
 ``DEC2``        float64 Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr8.fits.gz
--------------------------
+<region>/survey-bricks-dr8-<region>.fits.gz
+-------------------------------------------
 
-A FITS binary table with information that summarizes the contents of each brick for DR8.XXX
+Where ``<region>`` refers to either ``north`` for `BASS`_/`MzLS`_ or ``south`` for `DECaLS`_.
+
+A FITS binary table with information that summarizes the contents of each brick for a region of DR8.
 
 =============== ========== =========================================================================
 Column          Type       Description
@@ -269,12 +271,12 @@ Column               Type       Description
 .. _`issues page`: ../issues
 .. _`DECaLS`: ../../decamls
 
-dr8-depth.fits.gz
------------------
+<region>/dr8-<region>-depth.fits.gz
+-----------------------------------
 
-XXX doesn't exist for DR8 yet.
+Where ``<region>`` refers to either ``north`` for `BASS`_/`MzLS`_ or ``south`` for `DECaLS`_.
 
-A concatenation of the depth histograms for each brick, from the
+A concatenation of the depth histograms for each brick, for each region, from the
 ``coadd/*/*/*-depth.fits`` tables.  HDU1 contains histograms that describe the
 number of pixels in each brick with a 5-sigma AB depth in the given magnitude
 bin. HDU2 contains the bin edges of the histograms.
@@ -302,12 +304,12 @@ Column               Type       Description
 ``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
 ==================== =========  ============================================================
 
-dr8-depth-summary.fits.gz
--------------------------
+<region>/dr8-<region>-depth-summary.fits.gz
+-------------------------------------------
 
-XXX doesn't exist for DR8 yet.
+Where ``<region>`` refers to either ``north`` for `BASS`_/`MzLS`_ or ``south`` for `DECaLS`_.
 
-A summary of the depth histogram of the whole DR8 survey.  FITS table with the following columns:
+A summary of the depth histogram for a region of DR8.  FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description

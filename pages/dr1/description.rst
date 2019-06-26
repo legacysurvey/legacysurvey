@@ -234,7 +234,7 @@ where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 an
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs.
 
-.. _`DR8 catalogs`: ../../dr8/catalogs
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================

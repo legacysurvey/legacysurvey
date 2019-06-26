@@ -446,7 +446,7 @@ we provide should all be within a few percent of being on an AB system.
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DECam`: http://www.ctio.noao.edu/noao/node/1033
 .. _`Dark Energy Camera`: http://www.ctio.noao.edu/noao/node/1033
-.. _`DR8 catalogs`: ../../dr8/catalogs
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 
 Galactic Extinction

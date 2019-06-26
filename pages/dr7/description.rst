@@ -402,7 +402,7 @@ we provide should all be within a few percent of being on an AB system.
 .. _`DECaLS z-band`: ../../files/decam.z.am1p4.dat.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
-.. _`DR8 catalogs`: ../../dr8/catalogs
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================

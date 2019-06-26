@@ -13,7 +13,8 @@
 External Catalogs used for Astrometry and Photometry
 ====================================================
 
-Several external catalogs are used for astrometric and photometric calibration of DR8. These catalogs are available to collaborators in the indicated directories at NERSC.
+Several external catalogs are used for astrometric and photometric calibration of DR8. These catalogs are available to collaborators in the indicated directories at NERSC. We expect that these
+catalogs will be made available to the public in a static, archival state for DR9.
 
 Pan-STARRS-1 (PS1)
 ------------------

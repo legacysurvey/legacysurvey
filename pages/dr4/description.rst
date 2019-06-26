@@ -345,7 +345,7 @@ Tractor catalog headers ("WISEAB1", etc).
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
-.. _`DR8 catalogs`: ../../dr8/catalogs
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================

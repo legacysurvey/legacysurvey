@@ -275,7 +275,7 @@ For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.
 give units consistent with the Tractor catalogs.  These conversion factors are recorded in the
 Tractor catalog headers ("WISEAB1", etc).
 
-.. _`DR8 catalogs`: ../../dr8/catalogs
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================

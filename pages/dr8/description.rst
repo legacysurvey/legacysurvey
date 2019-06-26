@@ -145,7 +145,7 @@ Obtaining Images and Raw Data
 Images for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
 and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
-the bottom of the `files`_ page).
+`the bottom of the files`_ page).
 
 Sections of the Legacy Surveys  for DR8 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
@@ -179,6 +179,7 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
+.. _`the bottom of the files`: ../files#raw-data
 .. _`survey-ccds-* files`: ../files
 .. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer

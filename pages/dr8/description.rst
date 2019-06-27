@@ -90,10 +90,10 @@ All bands jointly     XXX |d2|   XXX |d2|  XXX |d2|
 .. |d2| replace:: deg\ :sup:`2`
 
 
-DR8 includes stacked (``coadd/*``) images and Tractor-based catalogs, which are described in more
+DR8 includes a variety of pixel-level and catalog-level products, which are described in more
 detail on the `files`_ page.
 The size of the DR8 data distribution, split out into contributions from
-`BASS`_/`MzLS`_ and `DECaLS`_ to match the directory structure of DR8 is:
+the north (`BASS`_/`MzLS`_) and south (`DECaLS`_) to match the directory structure of DR8 is:
 
 ================== ========================================= =================================
 Size*              Directory                                 Description

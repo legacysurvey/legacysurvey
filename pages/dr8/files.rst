@@ -215,7 +215,10 @@ ccds-annotated-<camera>-dr8.fits.gz
 Versions of the **survey-ccds-<camera>-dr8.fits.gz** files with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
 
-Includes all of the columns in the **survey-ccds-<camera>-dr8.fits.gz** files plus the following:
+Includes all of the columns in the **survey-ccds-<camera>-dr8.fits.gz** files plus the columns
+listed below. Note that string columns can have different lengths in the **survey-ccds-<camera>-dr8.fits.gz**
+and **ccds-annotated-<camera>-dr8.fits.gz** files. For example the ``camera`` column can change from
+``char[9]`` to ``char[7]`` (see, e.g. `legacypipe issue #379`_).
 
 ==================== ========== ======================================================
 Column               Type       Description
@@ -667,7 +670,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - <AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
     Contains the same columns as **survey-ccds-<camera>-dr8.fits.gz**, and also contains
-    the additional columns (XXX char columns are different for north vs. south...see `legacypipe issue #379`_).
+    the additional columns listed below. Note that string columns can have different lengths in the **survey-ccds-<camera>-dr8.fits.gz**
+    and **legacysurvey-<brick>-ccds.fits** files and can differ for ``<region>`` equal to ``<north>`` and ``<south>``. 
+    For example the ``camera`` column can change from ``char[9]`` to ``char[7]`` (see, e.g. `legacypipe issue #379`_).
 
     ================ ========= ======================================================
     Column           Type      Description

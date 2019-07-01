@@ -139,7 +139,7 @@ projection around the brick center. The projections for the :math:`g,r,z` filter
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
-There are approximately XXX million unique sources in DR8 spread over XXX,XXX bricks.
+There are approximately XXX million unique sources in DR8 spread over 326,154 unique bricks.
 
 Obtaining Images and Raw Data
 ==============================

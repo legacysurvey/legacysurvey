@@ -67,11 +67,13 @@ Imaging from the Legacy Surveys is first reduced through the `NOAO Community Pip
 processed using the `Tractor`_. DR8 also includes `WISE`_ fluxes from all imaging through `year 4 of
 NEOWISE-Reactivation`_ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
-DR8 includes `BASS`_ (:math:`g,r`-band) images taken prior to XXX XXX, 20XXX and `MzLS`_ (:math:`z`-band) images taken prior to XXX XXX, 20XXX. 
+DR8 includes `BASS`_ (:math:`g,r`-band) images taken from 12th November 2015 through 7th March 2019 and 
+`MzLS`_ (:math:`z`-band) images taken from 19th November 2015 through 12th February 2018.
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (`NOAO survey program 0404`_)
-are included from XXX XXX 20XXX through XXX XXX 20XXX. DR8 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from XXX 20XXX to XXX 20XXX.
+are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
+non-DECaLS surveys, including observations that were conducted from 14th September 2012 to 11th April 2019.
+This information was derived from the `survey-ccds-* files`_.
 
 The table below indicates the area covered in DR8 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area is resolved by including all
@@ -179,8 +181,8 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
-.. _`the bottom of the files`: ../files#raw-data
-.. _`survey-ccds-* files`: ../files
+.. _`the bottom of the files`: ../files/#raw-data
+.. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr8-fits-gz
 .. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query

@@ -335,7 +335,7 @@ detailed PSF model.
 randoms/randoms-dr8-0.31.0-\*.fits
 ------------------------------------
 
-Files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
+Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
 were generated across the footprint at a density of 5,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``, 

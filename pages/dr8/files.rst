@@ -335,12 +335,13 @@ detailed PSF model.
 randoms/randoms-dr8-0.31.0-\*.fits
 ------------------------------------
 
-Twenty files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
+Files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
 were generated across the footprint at a density of 5,000 per square degree and meta-information 
 about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``, 
 ``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``, 
-``coadd/*/*/*-invvar-<filter>.fits.fz``). Contains the following columns:
+``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within the file is also random
+(meaning that randomness is retained if just the first N rows of the file are read). Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -389,7 +390,8 @@ randoms/supp-randoms-dr8-0.31.0.fits
 A file of random points in bricks that lie `outside` of the DR8 footprint. The columns in this file
 are greatly simplified compared to the other random catalogs as the main utility of this file is
 to use ``RA`` and ``DEC`` to determine ratios of areas inside and outside of the footprint. As with
-the other random catalogs, points were generated at a density of 5,000 per square degree. Contains the following columns:
+the other random catalogs, points were generated at a density of 5,000 per square degree and
+the order of the points within the file is also random. Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -406,8 +408,6 @@ Column               Type     Description
 
 External Files (``<region>/external/*``)
 ========================================
-
-XXX check that we add "dr8" to the name of the external match files.
 
 | **The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:**
 | http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
@@ -426,8 +426,8 @@ In addition to the columns from the Tractor `catalogs`_, we have added columns f
 .. _`catalogs page`: ../catalogs
 .. _`catalogs`: ../catalogs
 
-survey-dr8-specObj-dr14.fits
-----------------------------
+survey-dr8-<region>-specObj-dr14.fits
+-------------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR14 spectrosopic
 pipeline file such that the photometric parameters in row "N" of 
@@ -437,8 +437,8 @@ is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
 .. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr8-dr12Q.fits
----------------------
+survey-dr8-<region>-dr12Q.fits
+------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
 visually inspected quasar catalog (`Paris et al. 2017`_)
@@ -450,8 +450,8 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P
 .. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr8-dr14Q_v4_4.fits
---------------------------
+survey-dr8-<region>-dr14Q_v4_4.fits
+-----------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR14 
 visually inspected quasar catalog (`Paris et al. 2018`_)
@@ -463,8 +463,8 @@ is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
 .. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P
 .. _`data model for DR14Q_v4_4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR14Q/DR14Q_v4_4.html
 
-survey-dr8-superset-dr12Q.fits
-------------------------------
+survey-dr8-<region>-superset-dr12Q.fits
+---------------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars 
@@ -475,8 +475,8 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr8-dr7Q.fits
----------------------
+survey-dr8-<region>-dr7Q.fits
+-----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)

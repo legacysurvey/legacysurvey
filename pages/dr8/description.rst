@@ -75,8 +75,8 @@ non-DECaLS surveys, including observations that were conducted from XXX 20XXX to
 
 The table below indicates the area covered in DR8 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area is resolved by including all
-`DECaLS`_ images but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
-These are precise area estimates derived from the geometry of CCDs that contribute to the Legacy Surveys footprint.
+DECam images (the majority of which are from `DECaLS`_) but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
+These are precise area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint.
 
 ===================== ========== ========= =========
 Band/Number of Passes |geq| 1    |geq| 2   |geq| 3

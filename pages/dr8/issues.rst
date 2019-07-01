@@ -41,8 +41,6 @@ for a patched source during extraction, affecting the fitting of other sources i
 - Quantities that *will* be inconsistent as they will still use the ``DEV`` or ``EXP`` model shape:
     - ``FIBERFLUX``, ``FRACIN``, ``FRACFLUX``, ``FRACMASKED``, ``RCHISQ`` and the WISE forced photometry.
 
-The original "unpatched" files are available in the individual survey directories, e.g. ``/global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/unpatched-tractor`` (XXX).
-
 The brightest stars are missing from models and catalogs
 --------------------------------------------------------
 

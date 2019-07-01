@@ -520,8 +520,6 @@ Users interested in database access to the Tractor `catalogs`_ can contact the N
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
 
-XXX check final directory structure. Is it going to retain the 8.0?
-
 8.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------
 

@@ -884,7 +884,6 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-XXX still applies?
 NOAO access to raw and calibrated images will be available a few weeks after the DR8 release date.
 
 Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 

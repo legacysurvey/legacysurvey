@@ -19,12 +19,12 @@ catalogs will be made available to the public in a static, archival state for DR
 Pan-STARRS-1 (PS1)
 ------------------
 | **/global/project/projectdirs/cosmo/work/ps1/cats/chunks-qz-star-v3**
-|    These files were produced by `Doug Finkbeiner`_ from proprietary Pan-STARRS1 (PS1) data. The data in the files should be public as of Data Release 1 of PS1. The format of the file names is ``ps1-<XXXXX>.fits`` where ``<XXXXX>`` corresponds to HEALPixel numbers in the ``nside=32``, ``NESTED`` scheme. Each file contains a FITS table of PS1 sources.
+|    These files were produced by `Doug Finkbeiner`_ from proprietary Pan-STARRS1 (PS1) data. The data in the files should be public as of Data Release 1 of PS1. The format of the file names is ``ps1-<hhhhh>.fits`` where ``<hhhhh>`` corresponds to HEALPixel numbers in the ``nside=32``, ``NESTED`` scheme. Each file contains a FITS table of PS1 sources.
 
 Gaia DR2
 --------
 | **/global/project/projectdirs/cosmo/work/gaia/chunks-gaia-dr2-astrom-2**
-|    These files contain all sources from the Gaia DR2 public data release, with columns corresponding to the `Gaia DR2 data model`_. The format of the the file names is ``chunk-<XXXXX>.fits`` where ``<XXXXX>`` corresponds to HEALPixel numbers in the ``nside=32``, ``NESTED`` scheme. The provenance of these files is documented at ``/global/project/projectdirs/cosmo/work/gaia/chunks-gaia-dr2-astrom-2/README`` and ``/global/project/projectdirs/cosmo/staging/gaia/dr2/README``.
+|    These files contain all sources from the Gaia DR2 public data release, with columns corresponding to the `Gaia DR2 data model`_. The format of the the file names is ``chunk-<hhhhh>.fits`` where ``<hhhhh>`` corresponds to HEALPixel numbers in the ``nside=32``, ``NESTED`` scheme. The provenance of these files is documented at ``/global/project/projectdirs/cosmo/work/gaia/chunks-gaia-dr2-astrom-2/README`` and ``/global/project/projectdirs/cosmo/staging/gaia/dr2/README``.
 
 Tycho-2
 -------

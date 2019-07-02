@@ -340,10 +340,10 @@ randoms/randoms-inside-dr8-0.31.0-\*.fits
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
 were generated across the footprint at a density of 5,000 per square degree and meta-information 
-about the survey was extracted from pixels at each random location from files in the **coadd** directory (see below, e.g.
+about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``, 
 ``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``, 
-``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within the file is also random
+``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
 (meaning that randomness is retained if just the first N rows of the file are read). Contains the following columns:
 
 ==================== ======== ======================================================
@@ -419,17 +419,18 @@ Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr8-
 randoms/randoms-bricks-dr8-0.31.0.fits
 --------------------------------------
 
-A similar file to the ``survey-bricks.fits.gz`` file, but with extra columns to help interpret
-the random catalogs. Contains the same columns as ``survey-bricks.fits.gz`` and the additional
+A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
+the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional
 columns:
 
 ================== ======= ======================================================
 Column             Type    Description
 ================== ======= ======================================================
-``IN_FOOT``        boolean ``True`` (``False``) for bricks in the ``randoms-inside-`` (``randoms-outside-``) file.
+``IN_FOOT``        boolean ``True`` (``False``) for bricks in the ``randoms-inside-*`` (``randoms-outside-*``) files.
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 
+.. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 
 External Files (``<region>/external/*``)
 ========================================

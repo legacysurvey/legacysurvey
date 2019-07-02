@@ -332,8 +332,11 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-randoms/randoms-dr8-0.31.0-\*.fits
-------------------------------------
+Random Catalogs
+===============
+
+randoms/randoms-inside-dr8-0.31.0-\*.fits
+-----------------------------------------
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
 were generated across the footprint at a density of 5,000 per square degree and meta-information 
@@ -384,14 +387,13 @@ Column               Type     Description
 
 The **0.31.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The northern and southern imaging footprints overlap, so, randoms are resolved at a Declination of 32.375\ |deg| and by the Galactic plane, such that locations at Dec > 32.375\ |deg| that are north of the Galactic Plane have ``PHOTSYS`` set to "N".
 
-randoms/supp-randoms-dr8-0.31.0.fits
----------------------------------------
+randoms/randoms-outside-dr8-0.31.0-\*.fits
+------------------------------------------
 
-A file of random points in bricks that lie `outside` of the DR8 footprint. The columns in this file
-are greatly simplified compared to the other random catalogs as the main utility of this file is
-to use ``RA`` and ``DEC`` to determine ratios of areas inside and outside of the footprint. As with
-the other random catalogs, points were generated at a density of 5,000 per square degree and
-the order of the points within the file is also random. Contains the following columns:
+Ten files of random points in bricks that do not contain an observation in DR8 (that are "outside" of the DR8 footprint). The columns in this file
+are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
+As with the other random catalogs, points were generated at a density of 5,000 per square degree and
+the order of the points within the file is also randomized. Contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -404,6 +406,29 @@ Column               Type     Description
 ``NOBS_Z``           int16    Always zero in this file.
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ==================== ======== ======================================================
+
+randoms/randoms-allsky-dr8-0.31.0.fits
+---------------------------------------
+
+The (randomly shuffled) combination of each of the ``randoms-inside-dr8-0.31.0-X.fits``
+and ``randoms-outside-dr8-0.31.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates 
+ten "all-sky" random catalogs (at a density of 5,000 locations per square degree)
+where each brick is either populated with observations from the
+Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr8-0.31.0-\*.fits`` files.
+
+randoms/randoms-bricks-dr8-0.31.0.fits
+--------------------------------------
+
+A similar file to the ``survey-bricks.fits.gz`` file, but with extra columns to help interpret
+the random catalogs. Contains the same columns as ``survey-bricks.fits.gz`` and the additional
+columns:
+
+================== ======= ======================================================
+Column             Type    Description
+================== ======= ======================================================
+``IN_FOOT``        boolean ``True`` (``False``) for bricks in the ``randoms-inside-`` (``randoms-outside-``) file.
+``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
+================== ======= ======================================================
 
 
 External Files (``<region>/external/*``)

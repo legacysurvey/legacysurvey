@@ -307,22 +307,24 @@ profiles that are deVaucouleurs + exponential (with the same source center).
 The sixth moropholigical type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to "DUP" sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if 
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
-The total numbers of the different morphological types in the *unique* DR8 area are:
+The total numbers of the different morphological types in DR8 are:
 
-================= ==================
-Number of Sources Type
-================= ==================
-   XXX,XXX,XXX    Objects in a Primary brick
-   XXX,XXX,XXX    ``PSF``
-   XXX,XXX,XXX    ``REX``
-    XX,XXX,XXX    ``EXP``
-    XX,XXX,XXX    ``DEV``
-     X,XXX,XXX    ``COMP``
-       XXX,XXX	  ``DUP``
-================= ==================
+========================== ======================== ==================== ====================
+Type			   Number of Unique Sources All Northern Sources All Southern Sources
+========================== ======================== ==================== ====================
+Objects in a Primary brick XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
+``PSF``                    XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
+``REX``                    XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
+``EXP``                     XX,XXX,XXX               XX,XXX,XXX           XX,XXX,XXX
+``DEV``                     XX,XXX,XXX               XX,XXX,XXX           XX,XXX,XXX
+``COMP``                     X,XXX,XXX                X,XXX,XXX            X,XXX,XXX
+``DUP``                        XXX,XXX                  XXX,XXX              XXX,XXX
+========================== ======================== ==================== ====================
 
-where unique area is resolved by including all `DECaLS`_ sources but only including `BASS`_ and `MzLS`_ sources
-that are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
+where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources are from `DECam`_
+surveys. *Unique* sources are in area that is resolved as distinct
+by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg| 
+and north of the Galactic Plane, or, otherwise counting `DECam`_ sources.
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
@@ -520,8 +522,8 @@ Code Versions
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.78.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr8.1.
 * `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
-* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: XXX.XXX.XXX.
-* `PSFEx <http://www.astromatic.net/software/psfex>`_: XXX.XXX.XXX.
+* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.0
+* `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.21.1
 
 .. _`DESI Legacy Surveys Imaging Data Release 2`: ../../dr2
 .. _`DESI Legacy Surveys Imaging Data Release 3`: ../../dr3

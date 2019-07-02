@@ -73,7 +73,7 @@ Images from `DECaLS`_
 :math:`g,r,z`-band observations (`NOAO survey program 0404`_)
 are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from 14th September 2012 to 11th April 2019.
-This information was derived from the `survey-ccds-* files`_.
+This information was derived from the Legacy Surveys `survey-ccds-* files`_.
 
 The table below indicates the area covered in DR8 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area is resolved by including all
@@ -183,6 +183,7 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 .. _`files`: ../files
 .. _`the bottom of the files`: ../files/#raw-data
 .. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr8-fits-gz
+.. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query
@@ -238,7 +239,8 @@ have large halos or include diffuse light that is not included in the Tractor mo
 to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
 
 The provenance of the foreground objects that correspond to "mask" regions, within which sources are independently extracted, is 
-detailed on the `external catalogs page`_. Sources that are within a mask region have ``BRIGHTBLOB`` set (see the `DR8 bitmasks page`_).
+detailed on the `external catalogs page`_. Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS`` 
+set (see the `DR8 bitmasks page`_).
 
 
 .. _`DR8 bitmasks page`: ../bitmasks
@@ -256,8 +258,8 @@ using `PSFEx`_, generating spatially-varying pixelized models. Note that it is p
 ``survey-*`` and ``*-annotated-*`` `files`_ could record information
 that is missing from other files in cases where `PSFex`_ fails. This is `expected behavior`_. 
 
-The configuration files for SExtractor and PSFex that we used for a given
-iteration of our codebase are available `on our GitHub page`_.
+The configuration files for SExtractor and PSFex that were used for a given
+iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
@@ -273,7 +275,7 @@ This makes the sky level in the processed images near zero, and removes most pat
 A constant sky level is then added back to the image that is the mean of what was removed.
 
 Additionally, a spatially varying (spline) sky model is computed and removed, by detecting and masking sources, then computing medians in
-sliding 512-pixel boxes. The image stacks provided on the `files`_ page have this sky level
+sliding 512-pixel boxes. The `image stacks`_ provided on the `files`_ page have this sky level
 removed. As noted under **Source Detection**, above, any regions (blobs) covered by foreground sources
 are ignored in the local-sky-fitting calibration code; a constant sky level is fit within such blobs.
 
@@ -283,7 +285,7 @@ Tractor Catalogs
 
 The Tractor code runs within the geometrical region
 of a brick to produce `catalogs`_ of extracted sources. This fitting is performed on the individual exposures
-that overlap the brick, without making use of image stacks (such as those detailed on the
+that overlap the brick, without making use of image stacks (such as the `image stacks`_ detailed on the
 `files`_ page).
 This preserves the full information content of the data set in the fits,
 handles masked pixels without the need for uncertain interpolation techniques,
@@ -521,7 +523,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr8v1.2 to dr8v3.2. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.78.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr8.1.
-* `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
+* `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.0
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.21.1
 

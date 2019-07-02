@@ -517,8 +517,8 @@ Code Versions
 =============
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr8vXXX.XXX to dr8vXXX.XXX. The version used is documented in the Tractor header card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: XXX.
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr8.0.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.78.
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr8.1.
 * `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: XXX.XXX.XXX.
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: XXX.XXX.XXX.

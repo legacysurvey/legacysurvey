@@ -78,16 +78,16 @@ This information was derived from the `survey-ccds-* files`_.
 The table below indicates the area covered in DR8 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area is resolved by including all
 DECam images (the majority of which are from `DECaLS`_) but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
-These are precise area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint.
+These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint.
 
-===================== ========== ========= =========
-Band/Number of Passes |geq| 1    |geq| 2   |geq| 3
-===================== ========== ========= =========
-:math:`g`-band        XXX |d2|   XXX |d2|  XXX |d2|
-:math:`r`-band        XXX |d2|   XXX |d2|  XXX |d2|
-:math:`z`-band        XXX |d2|   XXX |d2|  XXX |d2|
-All bands jointly     XXX |d2|   XXX |d2|  XXX |d2|
-===================== ========== ========= =========
+===================== =========== =========== ===========
+Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
+===================== =========== =========== ===========
+:math:`g`-band        19,692 |d2| 18,767 |d2| 15,430 |d2|
+:math:`r`-band        19,698 |d2| 18,759 |d2| 15,321 |d2|
+:math:`z`-band        19,852 |d2| 18,759 |d2| 15,595 |d2|
+All bands jointly     19,437 |d2| 18,036 |d2| 13,161 |d2|
+===================== =========== =========== ===========
 
 .. |d2| replace:: deg\ :sup:`2`
 

@@ -416,8 +416,8 @@ ten "all-sky" random catalogs (at a density of 5,000 locations per square degree
 where each brick is either populated with observations from the
 Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr8-0.31.0-\*.fits`` files.
 
-randoms/randoms-bricks-dr8-0.31.0.fits
---------------------------------------
+randoms/survey-bricks-dr8-randoms-0.31.0.fits
+---------------------------------------------
 
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
 the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional

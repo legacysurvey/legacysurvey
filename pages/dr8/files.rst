@@ -426,7 +426,7 @@ columns:
 ================== ======= ======================================================
 Column             Type    Description
 ================== ======= ======================================================
-``IN_FOOT``        boolean ``True`` (``False``) for bricks in the ``randoms-inside-*`` (``randoms-outside-*``) files.
+``PHOTSYS``        char[1] ``"N"``, ``"S"`` or ``" "`` for bricks resolved to be in the north, south, or outside of the footprint, respectively.
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 

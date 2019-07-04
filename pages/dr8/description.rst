@@ -139,7 +139,7 @@ projection around the brick center. The projections for the :math:`g,r,z` filter
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
-There are approximately XXX million unique sources in DR8 spread over 326,154 unique bricks.
+There are approximately 1.6 billion unique sources in DR8 spread over 326,154 unique bricks.
 
 Obtaining Images and Raw Data
 ==============================
@@ -311,22 +311,22 @@ No optical flux is assigned to "DUP" sources, but they are retained to ensure th
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
 The total numbers of the different morphological types in DR8 are:
 
-========================== ======================== ==================== ====================
-Type			   Number of Unique Sources All Northern Sources All Southern Sources
-========================== ======================== ==================== ====================
-Objects in a Primary brick XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
-``PSF``                    XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
-``REX``                    XXX,XXX,XXX              XXX,XXX,XXX          XXX,XXX,XXX
-``EXP``                     XX,XXX,XXX               XX,XXX,XXX           XX,XXX,XXX
-``DEV``                     XX,XXX,XXX               XX,XXX,XXX           XX,XXX,XXX
-``COMP``                     X,XXX,XXX                X,XXX,XXX            X,XXX,XXX
-``DUP``                        XXX,XXX                  XXX,XXX              XXX,XXX
-========================== ======================== ==================== ====================
+========================== ======================== ==================== ========================= ========================= ==============
+Type			   All Northern Sources     All Southern Sources Resolved Northern Sources Resolved Southern Sources Unique Sources
+========================== ======================== ==================== ========================= ========================= ==============
+Objects in a Primary brick       347,764,539           1,298,834,654            323,390,449              1,281,486,732        1,604,877,181
+``PSF``                          149,886,575             603,773,970            138,108,341                595,409,173          733,517,514
+``REX``                          155,668,648             532,851,020            145,663,666                525,870,732          671,534,398
+``EXP``                           25,746,175             117,234,339             24,102,538                115,835,064          139,937,602
+``DEV``                           16,195,657              43,963,922             15,266,781                 43,372,596           58,639,377
+``COMP``                             223,403                 900,231                210,422                    890,307            1,100,729
+========================== ======================== ==================== ========================= ========================= ==============
 
 where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources are from `DECam`_
-surveys. *Unique* sources are in area that is resolved as distinct
-by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg| 
-and north of the Galactic Plane, or, otherwise counting `DECam`_ sources.
+surveys. Sources are *resolved* as distinct
+by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg|
+and north of the Galactic Plane, or, otherwise counting `DECam`_ sources. *Unique* sources are 
+the total of all *resolved* sources.
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized

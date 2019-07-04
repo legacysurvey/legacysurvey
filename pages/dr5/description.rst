@@ -99,7 +99,7 @@ Size*      Directory    Description
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/coadd/
 .. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/gallery/
+.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/gallery/
 .. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/logs/
 .. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/metrics/
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/sweep/

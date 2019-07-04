@@ -52,9 +52,7 @@ The fix, which will be included in DR9, is to force all reference stars (such as
 
 Bricks that didn't finish processing
 ------------------------------------
-XXX list the missing bricks. (see DS email for telecon on Monday, June 24th). 
-
-Note that bricks that didn't complete, or that only partially
+Bricks that didn't finish processing, or that only partially
 completed because we "bailed out" of source-fitting can fail after the coadded images have been produced but before sources have been extracted.
 For such bricks, we remove any images from the ``coadd/`` directory so that the pixel-level files are consistent with the catalog-level files. This means that
 there are a small number of bricks in DR8 which have images loaded in the `viewer`_ but that do not have corresponding `files`_, `coadd files`_ 

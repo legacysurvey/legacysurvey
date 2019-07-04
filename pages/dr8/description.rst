@@ -118,7 +118,7 @@ XXX MB             `gallery/`_                               Notable images (e.g
 .. _`south/coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/coadd/
 .. _`north/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
 .. _`south/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/
+.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/
 .. _`images/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/images/
 .. _`north/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/logs/
 .. _`south/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/logs/

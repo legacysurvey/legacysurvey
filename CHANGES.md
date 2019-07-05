@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 8.0.0 (DR8, 2019-07-04)
+## 8.0.0 (DR8, 2019-07-05)
 
 - Updated to release version for DR8 ([PR#89](https://github.com/legacysurvey/legacysurvey/pull/89)).
 - Latest data model.

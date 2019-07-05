@@ -108,7 +108,7 @@ Size*      Directory    Description
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/coadd/
 .. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/
+.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/
 .. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/logs/
 .. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/metrics/
 .. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/randoms/
@@ -142,8 +142,12 @@ JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=de
 
 FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.27&bands=grz
 
-where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
-size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
+
+Replacing `layer=decals-dr7` with `layer=decals-dr7-model` or `layer=decals-dr7-resid` will instead return
+cutouts for the model and residual images, respectively.
+
+The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
 http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr7&pixscale=0.3&bands=grz
@@ -411,24 +415,12 @@ systematics are stable at the 0.1% level.
 .. _`DECaLS z-band`: ../../files/decam.z.am1p4.dat.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
-
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`,
-computed for a 7000K source spectrum as was done in the Appendix of `Schlafly et al (2011)`_.
-These coefficients are multiplied 
-by the `SFD98`_ E(B-V) values at the coordinate of each object to derive the ``MW_TRANSMISSION``
-values in the Legacy Surveys `catalogs`_.
-The coefficients at different airmasses
-only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would
-be 3.219 at airmass=1 and 3.202 at airmass=2.
-
-.. _`Schlafly et al (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S 
-
-A similar process was conducted to derive ``MW_TRANSMISSION`` in the WISE bands.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
 
 
 Astrometry
@@ -436,7 +428,7 @@ Astrometry
 
 DR7 astrometry is tied to Gaia, but in a (very slightly) inconsistent fashion. Each image is calibrated to
 `Gaia Data Release 1`_, yielding an astrometric solution that is offset by the average difference between
-the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR6 image. Source
+the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR7 image. Source
 extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to 
 predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. Despite
 these inconsistencies, astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
@@ -463,7 +455,7 @@ interpolation. These stacks have not been designed for "precision" work.
 Depths
 ======
 
-The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
+The histograms below depict the median 5\ |sigma| (AB) depths for *galaxies* in areas with
 different numbers of observations in DR7.
 
 .. image:: ../../files/depth-hist-g-dr7.png

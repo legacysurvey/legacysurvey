@@ -234,15 +234,13 @@ where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 an
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs.
 
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================
 
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for ugrizY, and are applied
-to the SFD98 E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only have small changes, with the largest effect in g-band where the coefficient would be 3.219
-at airmass=1 and 3.202 at airmass=2.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
+
 
 Astrometry
 ==========

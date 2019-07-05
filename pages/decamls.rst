@@ -15,7 +15,7 @@ footprint, covering both the North Galactic Cap region at Dec |leq| 32\ |deg|
 and the South Galactic Cap region at Dec |leq| 34\ |deg|.  Due to the
 combination of large field of view and high sensitivity from 400-1000 nm, 
 DECam is an efficient option for obtaining photometry in the
-:math:`g`, :math:`r`, and :math:`z` bands.  
+:math:`g`, :math:`r`, and :math:`z` bands.
 
 DECam can reach the required depths for `DESI`_ targets in modest total
 exposure times of 166, 134 and 200 sec in :math:`g`, :math:`r`, :math:`z` in median
@@ -35,29 +35,24 @@ was proposed to only image the existing `SDSS-III`_ equatorial footprint.
 The camera throughputs and sky brightness distribution increased
 the average exposure times from an expected 50, 50, 100 seconds
 to 87, 67, 100 seconds per pass.
-The imaging program has been supplemented to a total of 157 scheduled
+The imaging program was supplemented to a total of 157 scheduled
 nights to both account for these longer exposure times and enlarge
 the footprint to the full `DESI`_ equatorial footprint.
-This program will complete in semester 2018B.
+The program completed in March, 2019.
 
-The DECaLS program makes use of other DECam data
-within the `DESI`_ footprint as those data become public.
+The DECaLS program made use of other DECam data
+within the `DESI`_ footprint.
 The most significant of these other data sets is from
 the Dark Energy Survey (`DES`_), which includes a 5000 deg\ |sup2|
 contiguous area in the South Galactic Cap.
-DECaLS is explicitly not re-imaging that area,
-and making use of those raw data as the proprietary period of each image
-expires 12 months after the date of observation.
+DECaLS explicitly did not re-image that area, instead incorporating
+the DES imaging itself.
 Data from the early DECam science verification period has a number
 of problematic features, and is not included in our imaging releases.
 
-Proposal information for 2013A-0741 and 2014B-0404: http://www.noao.edu/perl/abstract?2013A-0741 , http://www.noao.edu/perl/abstract?2014B-0404
-
-Full text of proposal:
-http://legacysurvey.org/files/LargeSurvey.pdf
-
-DECam Legacy Survey Principles:
-https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles
+Additional information is availalble in the `2013A-0741`_ and `2014B-0404`_
+proposal abstracts, the `full proposal text`_, the `DECam Legacy Survey Principles`_
+and the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 .. _`SDSS`: http://classic.sdss.org
 .. _`SDSS-II`: http://classic.sdss.org
@@ -68,3 +63,8 @@ https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles
 .. _`Pan-STARRS`: http://pan-starrs.ifa.hawaii.edu/public/
 .. _`DESI`: http://desi.lbl.gov
 .. _`DES`: http://www.darkenergysurvey.org
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
+.. _`2013A-0741`: http://www.noao.edu/perl/abstract?2013A-0741
+.. _`2014B-0404`: http://www.noao.edu/perl/abstract?2014B-0404
+.. _`full proposal text`: http://legacysurvey.org/files/LargeSurvey.pdf
+.. _`DECam Legacy Survey Principles`: https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles

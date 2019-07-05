@@ -270,15 +270,15 @@ Tractor Catalogs
 
 In the file listings outlined below:
 
-- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the RA,Dec center of the brick. The first four digits are :math:`int(RA * 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec * 10)`. For example the case `1126p222` corresponds to RA,Dec = (112.6\ |deg|, +22.2\ |deg|). 
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|). 
 
-- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in RA,Dec using the format outlined in the previous bullet point. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in (RA, Dec). Explicitly, **<brickmin>** has the format `<AAA>c<BBB>` where `<AAA>` denotes three digits of the minimum :math:`int(RA)` in degrees, <BBB> denotes three digits of the minimum :math:`int(Dec)` in degrees, and `c` uses the `p`/`m` ("plus"/"minus") format outlined in the previous bullet point. The convention is similar for  **<brickmax>** and the maximum RA and Dec. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
 - sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
 
 - **<filter>** denotes the `g`, `r` or `z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* RA,Dec center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `decals-bricks.fits` file (i.e. ``brickname``, ``ra``, ``dec``).
+Note that it is not possible to go from a brick name back to an *exact* (RA, Dec) center (the bricks are not on 0.1\ |deg| grid lines). The exact brick center for a given brick name can be derived from columns in the `decals-bricks.fits` file (i.e. ``brickname``, ``ra``, ``dec``).
 
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
@@ -303,11 +303,11 @@ Name                            Type         Units                 Description
 ``BRICK_PRIMARY``               boolean                            True if the object is within the brick boundary
 ``BRICKID``                     int32                              Brick ID [1,662174]
 ``BRICKNAME``                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``OBJID``                       int32                              Catalog object number within this brick; a unique identifier hash is ``BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``TYPE``                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
-``RA``                          float64      deg                   Right ascension at epoch J2000
+``RA``                          float64      deg                   Right ascension at equinox J2000
 ``RA_IVAR``                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
-``DEC``                         float64      deg                   Declination at epoch J2000
+``DEC``                         float64      deg                   Declination at equinox J2000
 ``DEC_IVAR``                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``DECAM_FLUX``                  float32[6]   nanomaggies           DECam model flux in ugrizY
 ``DECAM_FLUX_IVAR``             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
@@ -329,7 +329,7 @@ Name                            Type         Units                 Description
 ``WISE_NOBS``                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 ``WISE_FRACFLUX``               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
 ``WISE_RCHI2``                  float32[4]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, EXP, DEV, COMP.  The difference is versus no source.
+``DCHISQ``                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
 ``FRACDEV``                     float32                            Fraction of model in deVauc [0,1]
 ``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 ``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)

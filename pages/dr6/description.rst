@@ -102,7 +102,7 @@ So, the listed directory sizes should be viewed as (very reasonable) estimates.
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/coadd/
 .. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/gallery/
+.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/gallery/
 .. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/logs/
 .. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/metrics/
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/sweep/
@@ -136,8 +136,12 @@ JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=m
 
 FITS: http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
-where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
-size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. 
+
+Replacing `layer=mzls+bass-dr6` with `layer=mzls+bass-dr6-model` or `layer=mzls+bass-dr6-resid` will instead return
+cutouts for the model and residual images, respectively.
+
+The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
 http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
@@ -153,10 +157,11 @@ Pixscale=0.262 (arcseconds per pixel) will return (approximately) the pixel scal
 the coadds.  The native pixel scale of the Mosaic camera (used for :math:`z` band) is
 approximately 0.262, and for the 90prime camera (used for :math:`g` and :math:`r` bands)
 it is approximately 0.454.
-For information on how to recover `DECaLS`_ cutouts, see the `DR5 description`_ page.
+For information on how to recover `DECaLS`_ cutouts, see the `DR7 description`_ page.
 
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR5 description`: ../../dr5/description
+.. _`DR7 description`: ../../dr7/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NOAO portal`: http://archive.noao.edu/search/query
@@ -369,19 +374,12 @@ we provide should all be within a few percent of being on an AB system.
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================
 
-For DR6, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they are on the DECam
-filter system (e.g., see `DR5`_).
-
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through 
-airmass=1.3. Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for 
-:math:`ugrizY`, and are applied to the `SFD98`_ E(B-V) values at the coordinate of 
-each object.  The coefficients at different airmasses only have small changes, with 
-the largest effect in :math:`g`-band where the coefficient would be 3.219
-at airmass=1 and 3.202 at airmass=2.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
 
 
 Astrometry
@@ -420,7 +418,7 @@ using Lanczos-3 interpolation. These stacks should not be used for "precision" w
 Depths
 ======
 
-The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
+The histograms below depict the median 5\ |sigma| (AB) depths for *galaxies* in areas with
 different numbers of observations in DR6.
 
 .. image:: ../../files/depth-hist-g-dr6.png

@@ -104,7 +104,7 @@ Size*   Directory    Description
 .. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/calib/
 .. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/coadd/
 .. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/external/
-.. _`gallery/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/
+.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/
 .. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/logs/
 .. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/metrics/
 .. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/sweep/
@@ -345,17 +345,12 @@ Tractor catalog headers ("WISEAB1", etc).
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
 .. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
+.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
 Galactic Extinction
 ===================
 
-For DR4, we calculate Galactic extinction for BASS and MzLS as if they are on the DECam filter system (e.g., see `DR3`_).
-
-Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3.
-Those coefficients are 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 for :math:`ugrizY`, and are applied
-to the `SFD98`_ E(B-V) values at the coordinate of each object.  The coefficients at different airmasses
-only have small changes, with the largest effect in :math:`g`-band where the coefficient would be 3.219
-at airmass=1 and 3.202 at airmass=2.
+The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
 
 
 Astrometry

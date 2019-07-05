@@ -19,30 +19,30 @@
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
 
-This table contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
+These tables contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
+
+======= ====== ======= ====== ====== =======
+RELEASE	CAMERA RELEASE CAMERA FILTER PRIMARY
+======= ====== ======= ====== ====== =======
+8000	decam  8001    bok    |g|    1
+8000	decam  8001    bok    |r|    1
+8000	decam  8001    mosaic |z|    1
+8000	wise   8001    wise   |W1|   0
+8000    wise   8001    wise   |W2|   0
+8000	wise   8001    wise   |W3|   0
+8000	wise   8001    wise   |W4|   0
+======= ====== ======= ====== ====== =======
 
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY
 ======= ====== ====== =======
-4000	bok    |g|    1
-4000	bok    |r|    1
-4000	mosaic |z|    1
-4000	wise   |W1|   0
-4000    wise   |W2|   0
-4000	wise   |W3|   0
-4000	wise   |W4|   0
-======= ====== ====== =======
-
-======= ====== ====== =======
-RELEASE	CAMERA FILTER PRIMARY
-======= ====== ====== =======
-5000	decam  |g|    1
-5000	decam  |r|    1
-5000	decam  |z|    1
-5000	wise   |W1|   0
-5000    wise   |W2|   0
-5000	wise   |W3|   0
-5000	wise   |W4|   0
+7000	decam  |g|    1
+7000	decam  |r|    1
+7000	decam  |z|    1
+7000	wise   |W1|   0
+7000    wise   |W2|   0
+7000	wise   |W3|   0
+7000	wise   |W4|   0
 ======= ====== ====== =======
 
 ======= ====== ====== =======
@@ -60,11 +60,24 @@ RELEASE	CAMERA FILTER PRIMARY
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY
 ======= ====== ====== =======
-7000	decam  |g|    1
-7000	decam  |r|    1
-7000	decam  |z|    1
-7000	wise   |W1|   0
-7000    wise   |W2|   0
-7000	wise   |W3|   0
-7000	wise   |W4|   0
+5000	decam  |g|    1
+5000	decam  |r|    1
+5000	decam  |z|    1
+5000	wise   |W1|   0
+5000    wise   |W2|   0
+5000	wise   |W3|   0
+5000	wise   |W4|   0
 ======= ====== ====== =======
+
+======= ====== ====== =======
+RELEASE	CAMERA FILTER PRIMARY
+======= ====== ====== =======
+4000	bok    |g|    1
+4000	bok    |r|    1
+4000	mosaic |z|    1
+4000	wise   |W1|   0
+4000    wise   |W2|   0
+4000	wise   |W3|   0
+4000	wise   |W4|   0
+======= ====== ====== =======
+

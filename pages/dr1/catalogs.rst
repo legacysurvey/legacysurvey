@@ -19,9 +19,9 @@ OBJID                       int64                              Catalog object nu
 BRICK_PRIMARY               char                               "T" if the object is within the brick boundary
 BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
 TYPE                        char                               Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite
-RA                          float64      deg                   Right ascension at epoch J2000
+RA                          float64      deg                   Right ascension at equinox J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA, excluding astrometric calibration errors
-DEC                         float64      deg                   Declination at epoch J2000
+DEC                         float64      deg                   Declination at equinox J2000
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC (no cos term!), excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
@@ -90,7 +90,7 @@ Goodness-of-Fits
 ================
 
 The DCHISQ values represent the penalized |chi|\ |sup2| of all the pixels compared to
-various models.  This 4-element vectorcontains the |chi|\ |sup2| difference between
+various models.  This 4-element vector contains the |chi|\ |sup2| difference between
 the best-fit point source, deVauc model, exponential model, and a composite model.
 The number of degrees of freedom to include as a penalty to these |chi|\ |sup2| values
 are 2 for a point source (ra,dec), 5 for the deVauc or exp model, and 9 for the composite model.
@@ -212,22 +212,4 @@ SDSS_EXPFLUX_IVAR           float32[5]
 SDSS_EXTINCTION             float32[5]
 SDSS_CALIB_STATUS           int64[5]
 SDSS_RESOLVE_STATUS         int64
-=========================== ============ ===================== ===============================================
-
-
-Tags to Add in the Future
-=========================
-
-=========================== ============ ===================== ===============================================
-Name                        Type         Units                 Description
-=========================== ============ ===================== ===============================================
-TAI_MIN                     float64      sec                   TAI timestamp for the earliest DECam image contributing to this brick (any filter)
-TAI_MAX                     float64      sec                   TAI timestamp for the latest DECam image contributing to this brick (any filter)
-EPOCH                       float64      year                  Epoch for RA,DEC coordinates, equal to the Julian Date of observation if only 1 epoch
-PM_RA                       float32      mas/year              Proper motion in RA (actual milli-arcsec per year, not cos(dec) units as done in Hipparcos catalog
-PM_RA_IVAR                  float32      1/(mas/year)\ |sup2|  Inverse variance of PM_RA
-PM_DEC                      float32      mas/year              Proper motion in DEC
-PM_DEC_ISIG                 float32      1/(mas/year)\ |sup2|  Inverse variance of PM_DEC
-PARALLAX                    float32      mas                   Trigonometric parallax in milliarcsec; distance in parsecs equals 1000/PARALLAX
-PARALLAX_IVAR               float32      1/mas\ |sup2|         Inverse variance of PARALLAX
 =========================== ============ ===================== ===============================================

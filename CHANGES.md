@@ -1,5 +1,23 @@
 # legacysurvey Change Log
 
+## 8.0.0 (DR8, 2019-07-04)
+
+- Updated to release version for DR8 ([PR#89](https://github.com/legacysurvey/legacysurvey/pull/89)).
+- Latest data model.
+    - In particular, partition directories by north/south.
+    - New files added to the random catalogs.
+- General language describing how MzLS/BASS/DECaLS are merged into a single release.
+- New pages, including:
+    - Updates (major changes in scope since DR7).
+    - External catalogs (decription and locations of catalogs used for masking/astrometry/photometry).
+    - Bitmasks (the data model for all of the masks in DR8).
+- Updates for publications through June, 2019.
+- Sharper depth histograms.
+- Contents side bars on most pages.
+- Address [issue(s) #86](https://github.com/legacysurvey/legacysurvey/issues/86)
+- Address [issue(s) #87](https://github.com/legacysurvey/legacysurvey/issues/87)
+- Address [issue(s) #88](https://github.com/legacysurvey/legacysurvey/issues/88)
+
 ## 7.1.1 (DR7, 2018-10-15)
 
 - A few more updates to correct DR7 [issues](https://github.com/legacysurvey/legacysurvey/issues/84) ([PR#85](https://github.com/legacysurvey/legacysurvey/pull/85)).

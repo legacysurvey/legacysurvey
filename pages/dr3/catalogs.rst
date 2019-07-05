@@ -29,9 +29,9 @@ BLOB                        int32                              Blend family; obj
 NINBLOB                     int16                              Number of sources in this BLOB (blend family); isolated objects have value 1.
 TYCHO2INBLOB                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 TYPE                        char[4]                            Morphological model: "PSF"=stellar, "SIMP"="simple galaxy" = 0.45" round EXP galaxy, "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
-RA                          float64      deg                   Right ascension at epoch J2000
+RA                          float64      deg                   Right ascension at equinox J2000
 RA_IVAR                     float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
-DEC                         float64      deg                   Declination at epoch J2000
+DEC                         float64      deg                   Declination at equinox J2000
 DEC_IVAR                    float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 BX                          float32      pix                   X position (0-indexed) of coordinates in brick image stack
 BY                          float32      pix                   Y position (0-indexed) of coordinates in brick image stack
@@ -123,7 +123,7 @@ the best-fit point source (type="PSF"), simple galaxy model ("SIMP"),
 de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45\ |Prime| and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
-The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a tradition notion of detection significance.
+The DCHISQ values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a traditional notion of detection significance.
 Note that the DCHISQ values are negated so that positive values indicate better fits.
 We penalize models with negative flux in a band by subtracting rather than adding its |chi|\ |sup2| improvement in that band.
 

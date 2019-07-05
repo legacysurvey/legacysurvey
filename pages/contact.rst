@@ -38,7 +38,7 @@ NOAO Community Pipeline:
 WISE Reductions:
     * Aaron Meisner  ameisner@noao.edu
 
-Run Manager (for DR7 and DR8)
+Run Manager (for DR5, DR6, DR7 and DR8)
     * Martin Landriau  mlandriau@lbl.gov
 
 BASS Contact:

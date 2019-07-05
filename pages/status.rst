@@ -10,6 +10,7 @@
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
 .. _`DESI`: http://desi.lbl.gov
+.. _`DR7`: ../dr7
 .. _`DR8`: ../dr8
 
 Observations for the `DESI`_ Legacy Imaging Surveys began in August 2014. For each of the Legacy Surveys 
@@ -34,8 +35,8 @@ reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that
 footprint of the Legacy Surveys.
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`z`) status of the DESI Legacy Imaging Surveys 
-as of Data Release 8 (`DR8`_). The coverage is color-coded by (extinction-corrected)
-depth. The solid line depicts the Galactic plane.
+as of Data Release 7 (`DR7`_). The coverage is color-coded by (extinction-corrected)
+depth. The solid line depicts the Galactic plane. These plots will soon be updated to depict Data Release 8 (`DR8`_).
 
 .. image:: /files/depth-g-dr6-7.png
 .. image:: /files/depth-r-dr6-7.png

@@ -186,7 +186,6 @@ This page is likely to be incomplete and has been updated through mid-June, 2019
 .. _`A Dwarf Planet Class Object in the 21:5 Resonance with Neptune`: https://ui.adsabs.harvard.edu/abs/2018ApJ...855L...6H
 .. _`An 800 million solar mass black hole in a significantly neutral universe at a redshift of 7.5`: https://ui.adsabs.harvard.edu/abs/2018Natur.553..473B
 
-
 .. _`Quasar Photometric Redshifts and Candidate Selection: A New Algorithm Based on Optical and Mid-infrared Photometric Data`: https://ui.adsabs.harvard.edu/abs/2017AJ....154..269Y
 .. _`Cluster mislocation in kinematic Sunyaev-Zel'dovich effect extraction`: https://ui.adsabs.harvard.edu/abs/2017PhRvD..96l3529C
 .. _`Physical Properties of 15 Quasars at z > 6.5`: https://ui.adsabs.harvard.edu/abs/2017ApJ...849...91M

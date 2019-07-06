@@ -35,13 +35,13 @@ reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that
 footprint of the Legacy Surveys.
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`z`) status of the DESI Legacy Imaging Surveys 
-as of Data Release 7 (`DR7`_). The coverage is color-coded by (extinction-corrected)
-depth. The solid line depicts the Galactic plane. These plots will soon be updated to depict Data Release 8 (`DR8`_).
+as of Data Release 8 (`DR8`_). The coverage is color-coded by (extinction-corrected)
+depth. The solid line depicts the Galactic plane.
 
-.. image:: /files/depth-g-dr6-7.png
-.. image:: /files/depth-r-dr6-7.png
-.. image:: /files/depth-z-dr6-7.png
-    :alt: DR7 Depth Plots
+.. image:: /files/depth-g-dr8.png
+.. image:: /files/depth-r-dr8.png
+.. image:: /files/depth-z-dr8.png
+    :alt: DR8 Depth Plots
 
 
 

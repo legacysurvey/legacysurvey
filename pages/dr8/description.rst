@@ -55,6 +55,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 4 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2018_release_intro.html
 .. _`NOAO survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
+.. _`Dark Energy Survey`: https://www.darkenergysurvey.org
 
 Contents of DR8
 ===============
@@ -73,6 +74,7 @@ Images from `DECaLS`_
 :math:`g,r,z`-band observations (`NOAO survey program 0404`_)
 are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from 14th September 2012 to 11th April 2019.
+A large portion of these observations were taken by the (`Dark Energy Survey`_).
 This information was derived from the Legacy Surveys `survey-ccds-* files`_.
 
 The table below indicates the area covered in DR8 for different

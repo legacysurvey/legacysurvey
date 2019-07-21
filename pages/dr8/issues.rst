@@ -53,10 +53,17 @@ The fix, which will be included in DR9, is to force all reference stars (such as
 Bricks that didn't finish processing
 ------------------------------------
 Bricks that didn't finish processing, or that only partially
-completed because we "bailed out" of source-fitting can fail after the coadded images have been produced but before sources have been extracted.
-For such bricks, we remove any images from the ``coadd/`` directory so that the pixel-level files are consistent with the catalog-level files. This means that
-there are a small number of bricks in DR8 which have images loaded in the `viewer`_ but that do not have corresponding `files`_, `coadd files`_ 
-or `Tractor catalogs`_.
+completed because we "bailed out" of source-fitting can fail after the coadded
+images have been produced but before sources have been extracted.
+
+Most of these cases consist of bricks containing particularly large galaxies
+(e.g., `Andromeda`_), globular clusters (e.g., `M13`_), or bright stars.
+
+For such bricks, we remove any images from the ``coadd/`` directory so that the
+pixel-level files are consistent with the catalog-level files. This means that
+there are a small number of bricks in DR8 which have images loaded in the
+`viewer`_ but that do not have corresponding `files`_, `coadd files`_ or
+`Tractor catalogs`_.
 
 .. _`to fix a different bug in the reduction process`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
@@ -67,3 +74,6 @@ or `Tractor catalogs`_.
 .. _`coadd files`: ../files/#image-stacks-region-coadd
 .. _`files`: ../files
 .. _`viewer`: http://legacysurvey.org/viewer
+.. _`Andromeda`: http://legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
+.. _`M13`: http://legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
+

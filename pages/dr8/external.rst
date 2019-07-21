@@ -38,7 +38,8 @@ Tycho-2
 External Catalogs used for Masking
 ==================================
 
-External catalogs are used for masking regions near foreground sources in DR8 (e.g. to construct ``BRIGHTBLOB`` on the `bitmasks page`_).
+External catalogs are used for masking regions near foreground sources in DR8
+(e.g. to construct ``BRIGHTBLOB`` and ``MASKBITS`` on the `bitmasks page`_).
 These catalogs are available to collaborators in the indicated directories at NERSC.
 
 "BRIGHT" stars
@@ -54,9 +55,15 @@ These catalogs are available to collaborators in the indicated directories at NE
 |     Medium-bright stars are also defined starting with all sources in the Tycho-2 catalog cut to ``MAG_VT`` < 13.  All such Tycho-2 stars have the ``MEDIUM`` bit set. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 16 have the ``MEDIUM`` bit set, provided they do not already match a Tycho-2 source (where the match accounts for proper motion). Note that this means that all ``BRIGHT`` stars also have the ``MEDIUM`` bit set. The specific (Gaia G) magnitude-radius relationship is `hardcoded in legacypipe`_.
 
 
-Globular Clusters
------------------
-| The globular cluster catalog used for foreground masking is taken from `Mattia Verga's NGC/IC objects database`_. More specifically the catalog used to set the ``CLUSTER`` bit on the `bitmasks page`_ is `embedded within the legacypipe product itself`_.
+Globular Clusters & Planetary Nebulae
+-------------------------------------
+
+| In DR8 we mask globular clusters and planetary nebulae selected from the
+`OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects
+classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken
+from the ``majax`` attribute of this catalog.  The input catalog `can be found
+in the legacypipe software product`_.  Objects in this mask are given the
+``CLUSTER`` bit on the `bitmasks page`_  
 |
 
 LSLGA Large Galaxies
@@ -66,8 +73,8 @@ LSLGA Large Galaxies
 
 
 .. _`bitmasks page`: ../bitmasks
-.. _`embedded within the legacypipe product itself`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/data/NGC-star-clusters.fits
+.. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/data/NGC-star-clusters.fits 
 .. _`hardcoded in legacypipe`: https://github.com/legacysurvey/legacypipe/blob/63d0548602a52be1134f64196d6268adc68208fb/py/legacypipe/reference.py#L196
-.. _`Mattia Verga's NGC/IC objects database`: https://github.com/mattiaverga/OpenNGC
+.. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
 .. _`Legacy Survey Large Galaxy Atlas (LSLGA) work`: https://github.com/moustakas/LSLGA
 .. _`the HyperLeda catalog`: http://leda.univ-lyon1.fr/acknowledge.html

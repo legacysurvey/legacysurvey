@@ -307,10 +307,10 @@ and the shape parameters.
 There is also the discrete choice of which
 model type to use. In DR8, six morphological types are used. Five of these
 are used in the `Tractor`_ fitting procedure: point sources,
-round exponential galaxies with a variable radius ("REX"), deVaucouleurs profiles
-(elliptical galaxies), exponential profiles (spiral galaxies), and composite
+round exponential galaxies with a variable radius ("REX"), deVaucouleurs ("DEV") profiles
+(elliptical galaxies), exponential ("EXP") profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The sixth moropholigical type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
+The sixth morphological type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to "DUP" sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if 
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
 The total numbers of the different morphological types in DR8 are:
@@ -330,7 +330,8 @@ where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources ar
 surveys. Sources are *resolved* as distinct
 by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg|
 and north of the Galactic Plane, or, otherwise counting `DECam`_ sources. *Unique* sources are 
-the total of all *resolved* sources.
+the total of all *resolved* sources. Note that ``DUP`` sources are not included as a distinct row of 
+the table but *are* included in the overall counts of *Objects in a Primary brick*.
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized

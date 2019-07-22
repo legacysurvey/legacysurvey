@@ -273,9 +273,9 @@ profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR7 are:
 
 ================= ==================
-Number of Sources Type
+Number of Sources Primary Objects of Type
 ================= ==================
-   834,782,188    Objects in a Primary brick
+   834,782,188    *All*
    400,038,485    ``PSF``
    329,081,955    ``REX``
     73,989,292    ``EXP``

@@ -137,7 +137,9 @@ For all of the DESI Legacy Imaging Surveys, coadded images and
 Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  The image stacks use a simple tangent-plane (WCS TAN)
-projection around the brick center. The projections for the :math:`g,r,z` filters are identical.
+projection around the brick center. The projections for the :math:`g,r,z` filters are identical, with
+a pixel scale of 0.262\ |Prime|/pix. The projections for the four WISE filters also identical 
+but with a pixel scale of 2.75\ |Prime|/pix.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
@@ -484,7 +486,8 @@ Image Stacks
 The image stacks (that are detailed on the `files`_ page) are provided for convenience, but were not used in the `Tractor`_ fits.
 These images overlap adjacent images by approximately 130 pixels in each direction.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
+and a scale of 0.262\ |Prime|/pix for the :math:`g,r,z` data and 2.75\ |Prime|/pix for the WISE data. 
+The image stacks are computed using Lanczos-3
 interpolation. They have not been designed for "precision" work, although they should be
 sufficient for many use cases.
 

@@ -73,7 +73,7 @@ DR8 includes `BASS`_ (:math:`g,r`-band) images taken from 12th November 2015 thr
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (`NOAO survey program 0404`_)
 are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from 14th September 2012 to 11th April 2019.
+non-DECaLS surveys, including observations that were conducted from 1st September 2013 to 7th March 2019.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
 This information was derived from the Legacy Surveys `survey-ccds-* files`_.
 

@@ -15,7 +15,7 @@ Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position
-OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+OBJID                       int64                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each brick
 BRICK_PRIMARY               char                               "T" if the object is within the brick boundary
 BLOB                        int64                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
 TYPE                        char                               Morphological model: PSF=stellar, EXP=exponential, DEV=deVauc, COMP=composite

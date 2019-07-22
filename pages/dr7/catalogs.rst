@@ -30,7 +30,7 @@ Name                                  Type         Units                 Descrip
 ``release``                           int16                              Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, *e.g.* "1126p222" near RA=112.6, Dec=+22.2
-``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each brick
 ``brick_primary``                     boolean                            True if the object is within the brick boundary
 ``brightstarinblob``                  boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
 ``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string

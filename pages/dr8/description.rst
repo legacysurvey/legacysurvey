@@ -160,7 +160,7 @@ FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr
 
 This will merge the northern (MzLS+BASS) and equatorial (DECam) images at the Dec=32.375 line.
 
-To request images from only the northern or equatorial surveys, specify :math:`dr8-north` or :math:`dr8-south`, for example:
+To request images from only the northern or equatorial surveys, specify `dr8-north` or `dr8-south`, for example:
 
 JPEG (`DECaLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
 
@@ -172,7 +172,7 @@ FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&d
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
-Replacing `layer=dr8` (or 'layer=dr8-north`) with `layer=dr8-model` (`layer=dr8-northmodel`)
+Replacing `layer=dr8` (or 'layer=dr8-north`) with `layer=dr8-model` (`layer=dr8-north-model`)
 or `layer=dr8-resid` (`layer=dr8-north-resid`) will instead return cutouts for the model and residual images, respectively.
 
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,

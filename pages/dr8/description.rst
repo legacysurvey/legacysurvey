@@ -172,7 +172,7 @@ FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&d
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
-Replacing `layer=dr8` (or 'layer=dr8-north`) with `layer=dr8-model` (`layer=dr8-north-model`)
+Replacing `layer=dr8` (or `layer=dr8-north`) with `layer=dr8-model` (`layer=dr8-north-model`)
 or `layer=dr8-resid` (`layer=dr8-north-resid`) will instead return cutouts for the model and residual images, respectively.
 
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,

@@ -11,10 +11,15 @@
 .. |AA|    unicode:: U+212B .. ANGSTROM SYMBOL
 
 
-The Beijing-Arizona Sky Survey (`BASS`_) imaged the 
-Dec |geq| +32\ |deg| region of the Dark Energy Spectroscopic Instrument (`DESI`_) 
-North Galactic footprint in the :math:`g` and :math:`r` optical bands.
-It used the 90Prime camera at the prime focus of the Bok 2.3-m telescope.
+The Beijing-Arizona Sky Survey (`BASS`_) imaged regions at
+Dec |geq| +32\ |deg| in the Dark Energy Spectroscopic Instrument (`DESI`_) 
+North Galactic footprint, in the :math:`g` and :math:`r` optical bands.
+Although the focus of the survey was Dec |geq| +32\ |deg|, about 4% of the
+observations included in the Legacy Surveys are at Dec < +32\ |deg|. Notably,
+~1% of these are in equatorial regions (to facilitate studies of 
+imaging in a region where BASS overlaps with `DECaLS`_).
+
+BASS used the 90Prime camera at the prime focus of the Bok 2.3-m telescope.
 The Bok Telescope, owned and operated by the University
 of Arizona, is located on Kitt Peak,
 adjacent to the Mayall Telescope. 

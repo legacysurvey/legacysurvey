@@ -860,41 +860,48 @@ Splinesky Files (``calib/<camera>/splinesky-*``)
 Forced photometry (``forced/*``)
 =================================
 
-Files containing forced photometry are formatted like ``forced/<EXPOS>/forced-<EXPOSURE>.fits``,
-where ``<EXPOSURE>`` is the exposure number as an 8-character string and ``<EXPOS>`` is the first 5 characters of ``<EXPOSURE>``.
+Files containing forced photometry are formatted like ``forced/<camera>/<expos>/forced-<camera>-<exposure>.fits``,
+where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_,
+``<exposure>`` is the exposure number as an 8-character string and ``<expos>`` is the first 5 characters of ``<exposure>``.
 
 Forced photometry is conducted at the locations of sources as inferred by the Tractor.
 
-================ ========= ======================================================
-Column           Type      Description
-================ ========= ======================================================
-``flux``         float32   Model flux in nanomaggies
-``flux_ivar``    float32   Inverse variance of ``flux`` in 1/nanomaggies\ |sup2|
-``fracflux``     float32   Profile-weighted fraction of the flux from other sources divided by the total ``flux``
-``rchi2``        float32   Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-``fracmasked``   float32   Profile-weighted fraction of pixels that were masked
-``apflux``       float32   Fluxes in nanomaggies extracted at this location in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
-``apflux_ivar``  float32   Inverse variance of ``apflux`` in 1/nanomaggies\ |sup2|
-``release``      int16     Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
-``brickid``      int32     Unique Brick ID (in the range [1, 662174])
-``brickname``    char[8]   Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
-``camera``       char[5]   The camera that took this image e.g. "decam"
-``expnum``       int32     Exposure number, eg 574299
-``ccdname``      char[3]   CCD name for this camera, e.g. "N10", "S7" for DECam
-``filter``       char[1]   The filter for this observation (e.g. "g", "r", "z")
-``mjd``          float64   Date of observation in MJD (in UTC system), eg 57644.31537588
-``exptime``      float32   Exposure time in seconds, eg 90
-``psfsize``      float32   PSF size, in arcsec, at this location
-``sky``          float32   Sky flux in nanomaggies/arcsec\ |sup2|
-``psfdepth``     float32   For a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
-``galdepth``     float32   As for ``psfdepth`` but for a galaxy (0.45" exp, round) detection sensitivity
-``ra``           float64   Right ascension at equinox J2000 in degrees
-``dec``          float64   Declination at equinox J2000 in degrees
-``x``            float32   Horizontal central pixel location at (``ra``, ``dec``)
-``y``            float32   Vertical central pixel location at (``ra``, ``dec``)
-``mask``         int16     Bitmask indicating if a "bad" pixel touches the source (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
-================ ========= ======================================================
+================ ========== ======================================================
+Column           Type       Description
+================ ========== ======================================================
+``release``      int16      Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``brickid``      int32      Unique Brick ID (in the range [1, 662174])
+``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
+``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
+``camera``       char[5]    The camera that took this image e.g. "decam"
+``expnum``       int32      Exposure number, eg 574299
+``ccdname``      char[3]    CCD name for this camera, e.g. "N10", "S7" for DECam
+``filter``       char[1]    The filter for this observation (e.g. "g", "r", "z")
+``mjd``          float64    Date of observation in MJD (in UTC system), eg 57644.31537588
+``exptime``      float32    Exposure time in seconds, eg 90
+``psfsize``      float32    PSF size, in arcsec, at this location
+``ccd_cuts``     int64      
+``airmass``      float32    Airmass of observation
+``sky``          float32    Sky flux in nanomaggies/arcsec\ |sup2|
+``psfdepth``     float32    For a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
+``galdepth``     float32    As for ``psfdepth`` but for a galaxy (0.45" exp, round) detection sensitivity
+``ra``           float64    Right ascension at equinox J2000 in degrees
+``dec``          float64    Declination at equinox J2000 in degrees
+``flux``         float32    Model flux in nanomaggies
+``flux_ivar``    float32    Inverse variance of ``flux`` in 1/nanomaggies\ |sup2|
+``fracflux``     float32    Profile-weighted fraction of the flux from other sources divided by the total ``flux``
+``rchisq``       float32    Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
+``fracmasked``   float32    Profile-weighted fraction of pixels that were masked
+``apflux``       float32[8] Fluxes in nanomaggies extracted at this location in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
+``apflux_ivar``  float32[8] Inverse variance of ``apflux`` in 1/nanomaggies\ |sup2|
+``x``            float32    Horizontal central pixel location at (``ra``, ``dec``)
+``y``            float32    Vertical central pixel location at (``ra``, ``dec``)
+``mask``         int16      Bitmask indicating if a "bad" pixel touches the source (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
+``dra``		 float32    
+``ddec``         float32    
+``dra_ivar``     float32    
+``ddec_ivar``    float32    
+================ ========== ======================================================
 
 Other Files
 ===========

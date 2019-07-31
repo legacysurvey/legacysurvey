@@ -1,7 +1,7 @@
 # legacysurvey Change Log
 
 
-## 8.0.1 (DR8, 2019-08-01)
+## 8.0.1 (DR8, 2019-07-31)
 
 - A few additions for outstanding DR8 issues
   ([PR#93](https://github.com/legacysurvey/legacysurvey/pull/93),

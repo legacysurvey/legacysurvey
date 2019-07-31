@@ -19,6 +19,13 @@ available on the GitHub issues pages for the `Legacy Surveys website`_ or the `l
 Issues with CCDs that may have affected the quality of DECam observations are recorded on the
 `DECam CCDs page`_.
 
+Overflow in survey-bricks-dr8-south.fits.gz
+-------------------------------------------
+
+The columns `nobjs`, `npsf`, and so on are signed 16-bit integers.  One brick, 2296p020, containing the
+globular cluster M 5, contains 32,943 PSFs (and no other types), which overflows a 16-bit sign integer.
+It therefore appears as -32,593 (off by 65,536).
+
 Patching Morphological Models
 -----------------------------
 

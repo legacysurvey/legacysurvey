@@ -156,27 +156,35 @@ and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also th
 Sections of the Legacy Surveys  for DR8 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-JPEG (`DECaLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr8&pixscale=0.27&bands=grz
+JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
 
-FITS (`DECaLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr8&pixscale=0.27&bands=grz
+FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr8&pixscale=0.27&bands=grz
+This will merge the northern (MzLS+BASS) and equatorial (DECam) images at the Dec=32.375 line.
 
-FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr8&pixscale=0.27&bands=grz
+To request images from only the northern or equatorial surveys, specify `dr8-north` or `dr8-south`, for example:
+
+JPEG (`DECaLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
+
+FITS (`DECaLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
+
+JPEG (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
+
+FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
-Replacing `layer=mzls+bass-dr8` (`layer=decals-dr8`) with `layer=mzls+bass-dr8-model` (`layer=decals-dr8-model`) 
-or `layer=mzls+bass-dr8-resid` (`layer=decals-dr8-resid`) will instead return cutouts for the model and residual images, respectively.
+Replacing `layer=dr8` (or `layer=dr8-north`) with `layer=dr8-model` (`layer=dr8-north-model`)
+or `layer=dr8-resid` (`layer=dr8-north-resid`) will instead return cutouts for the model and residual images, respectively.
 
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr8&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr8&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr8&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr8&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr8&pixscale=0.3&bands=grz
+http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr8&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 

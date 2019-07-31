@@ -13,7 +13,12 @@
 
 The Mayall :math:`z`-band Legacy Survey (MzLS) imaged the 
 Dec |geq| 32\ |deg| region of the Dark Energy Spectroscopic Instrument (`DESI`_)
-footprint. It used the MOSAIC-3 camera at the prime focus of the 4-meter
+footprint. Although the focus of the survey was Dec |geq| +32\ |deg|, a few per cent of the
+observations included in the Legacy Surveys are at Dec < +32\ |deg|. Notably,
+~2% of these are in equatorial regions (to facilitate studies of
+imaging in a region where MzLS overlaps with `DECaLS`_).
+
+MzLS used the MOSAIC-3 camera at the prime focus of the 4-meter
 Mayall telescope at Kitt Peak National Observatory. MzLS was scheduled over
 230 nights during semesters 2016A and 2017A through an agreement
 between the National Science Foundation and the Department of Energy.

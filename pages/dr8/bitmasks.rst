@@ -39,7 +39,7 @@ and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
 === ============= ===============================
 Bit Name          Description
 === ============= ===============================
-0   ``NPRIMARY``  touches a pixel that is outside the PRIMARY region of a brick
+0   ``NPRIMARY``  touches a pixel that is outside the ``BRICK_PRIMARY`` region of a brick
 1   ``BRIGHT``    touches a pixel in a blob containing a bright (Tycho-2) star
 2   ``SATUR_G``   touches a pixel that was saturated in at least one :math:`g`-band image
 3   ``SATUR_R``   touches a pixel that was saturated in at least one :math:`r`-band image

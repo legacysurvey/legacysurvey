@@ -58,13 +58,7 @@ These catalogs are available to collaborators in the indicated directories at NE
 Globular Clusters & Planetary Nebulae
 -------------------------------------
 
-| In DR8 we mask globular clusters and planetary nebulae selected from the
-`OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects
-classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken
-from the ``majax`` attribute of this catalog.  The input catalog `can be found
-in the legacypipe software product`_.  Objects in this mask are given the
-``CLUSTER`` bit on the `bitmasks page`_  
-|
+| In DR8 we mask globular clusters and planetary nebulae selected from the `OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken from the ``majax`` attribute of this catalog.  The input catalog `can be found in the legacypipe software product`_.  Objects in this mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
 
 LSLGA Large Galaxies
 --------------------

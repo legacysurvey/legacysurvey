@@ -163,14 +163,14 @@ profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR3 are:
 
 ================= ==================
-Number of Sources Type
+Number of Sources Primary Objects of Type
 ================= ==================
-   478,918,959    Objects in a Primary brick
-   271,437,526    PSF
-   121,505,252    SIMP
-    63,568,420    EXP
-    20,141,591    DEV
-     2,266,170    COMP
+   478,918,959    *All*
+   271,437,526    ``PSF``
+   121,505,252    ``SIMP``
+    63,568,420    ``EXP``
+    20,141,591    ``DEV``
+     2,266,170    ``COMP``
 ================= ==================
 
 The decision to retain an object in the catalog and to re-classify it using

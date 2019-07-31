@@ -227,9 +227,9 @@ profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR5 are:
 
 ================= ==================
-Number of Sources Type
+Number of Sources Primary Objects of Type
 ================= ==================
-   679,755,904    Objects in a Primary brick
+   679,755,904    *All*
    371,088,269    ``PSF``
    222,184,611    ``REX``
     61,380,049    ``EXP``

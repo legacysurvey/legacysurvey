@@ -73,8 +73,8 @@ DR8 includes `BASS`_ (:math:`g,r`-band) images taken from 12th November 2015 thr
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (`NOAO survey program 0404`_)
 are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from 14th September 2012 to 11th April 2019.
-A large portion of these observations were taken by the (`Dark Energy Survey`_).
+non-DECaLS surveys, including observations that were conducted from 1st September 2013 to 7th March 2019.
+A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
 This information was derived from the Legacy Surveys `survey-ccds-* files`_.
 
 The table below indicates the area covered in DR8 for different
@@ -137,7 +137,9 @@ For all of the DESI Legacy Imaging Surveys, coadded images and
 Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  The image stacks use a simple tangent-plane (WCS TAN)
-projection around the brick center. The projections for the :math:`g,r,z` filters are identical.
+projection around the brick center. The projections for the :math:`g,r,z` filters are identical, with
+a pixel scale of 0.262\ |Prime|/pix. The projections for the four WISE filters also identical 
+but with a pixel scale of 2.75\ |Prime|/pix.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
@@ -305,25 +307,25 @@ and the shape parameters.
 There is also the discrete choice of which
 model type to use. In DR8, six morphological types are used. Five of these
 are used in the `Tractor`_ fitting procedure: point sources,
-round exponential galaxies with a variable radius ("REX"), deVaucouleurs profiles
-(elliptical galaxies), exponential profiles (spiral galaxies), and composite
+round exponential galaxies with a variable radius ("REX"), deVaucouleurs ("DEV") profiles
+(elliptical galaxies), exponential ("EXP") profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
-The sixth moropholigical type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
+The sixth morphological type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to "DUP" sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if 
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
 The total numbers of the different morphological types in DR8 are:
 
-========================== ======================== ==================== ========================= ========================= ==============
-Type			   All Northern Sources     All Southern Sources Resolved Northern Sources Resolved Southern Sources Unique Sources
-========================== ======================== ==================== ========================= ========================= ==============
-Objects in a Primary brick       347,764,539           1,298,900,190            323,390,449              1,281,552,268        1,604,942,717
-``PSF``                          149,886,575             603,839,506            138,108,341                595,474,709          733,583,050
-``REX``                          155,668,648             532,851,020            145,663,666                525,870,732          671,534,398
-``EXP``                           25,746,175             117,234,339             24,102,538                115,835,064          139,937,602
-``DEV``                           16,195,657              43,963,922             15,266,781                 43,372,596           58,639,377
-``COMP``                             223,403                 900,231                210,422                    890,307            1,100,729
-``DUP``                               44,081                 111,172                 38,701                    108,860              147,561
-========================== ======================== ==================== ========================= ========================= ==============
+======================= ======================== ==================== ========================= ========================= ==============
+Primary Objects of Type All Northern Sources     All Southern Sources Resolved Northern Sources Resolved Southern Sources Unique Sources
+======================= ======================== ==================== ========================= ========================= ==============
+*All*                            347,764,539           1,298,900,190            323,390,449              1,281,552,268     1,604,942,717
+``PSF``                          149,886,575             603,839,506            138,108,341                595,474,709       733,583,050
+``REX``                          155,668,648             532,851,020            145,663,666                525,870,732       671,534,398
+``EXP``                           25,746,175             117,234,339             24,102,538                115,835,064       139,937,602
+``DEV``                           16,195,657              43,963,922             15,266,781                 43,372,596        58,639,377
+``COMP``                             223,403                 900,231                210,422                    890,307         1,100,729
+``DUP``                               44,081                 111,172                 38,701                    108,860           147,561
+======================= ======================== ==================== ========================= ========================= ==============
 
 where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources are from `DECam`_
 surveys. Sources are *resolved* as distinct
@@ -485,7 +487,8 @@ Image Stacks
 The image stacks (that are detailed on the `files`_ page) are provided for convenience, but were not used in the `Tractor`_ fits.
 These images overlap adjacent images by approximately 130 pixels in each direction.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix.  The image stacks are computed using Lanczos-3
+and a scale of 0.262\ |Prime|/pix for the :math:`g,r,z` data and 2.75\ |Prime|/pix for the WISE data. 
+The image stacks are computed using Lanczos-3
 interpolation. They have not been designed for "precision" work, although they should be
 sufficient for many use cases.
 

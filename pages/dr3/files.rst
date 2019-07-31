@@ -73,16 +73,16 @@ Column          Type     Description
 ``nexphist_g``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`g`
 ``nexphist_r``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`r`
 ``nexphist_z``  int32[6] Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in :math:`z`
-``nobjs``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of all types.
-``npsf``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``PSF``.
-``nsimp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``SIMP``.
-``nexp``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``EXP``.
-``ndev``        int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``DEV``.
-``ncomp``       int16    Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``COMP``.
-``psfsize_g``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`g`-band.
-``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`r`-band.
-``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in :math:`z`-band.
-``ebv``         float32  Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick.
+``nobjs``       int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of all types.
+``npsf``        int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``.
+``nsimp``       int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP``.
+``nexp``        int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``.
+``ndev``        int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``.
+``ncomp``       int16    Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP``.
+``psfsize_g``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`g`-band.
+``psfsize_r``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`r`-band.
+``psfsize_z``   float32  Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`z`-band.
+``ebv``         float32  Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_PRIMARY`` objects in this brick.
 ``trans_g``     float32  Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 ``trans_r``     float32  Median Milky Way dust transparency in :math:`r`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 ``trans_z``     float32  Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.

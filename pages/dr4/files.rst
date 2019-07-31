@@ -63,22 +63,22 @@ Column          Type       Description
 ``nexphist_g``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g
 ``nexphist_r``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r
 ``nexphist_z``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
-``nobjs``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of all types
-``npsf``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``PSF``
-``nsimp``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``SIMP``
-``nexp``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``EXP``
-``ndev``        int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``DEV``
-``ncomp``       int16      Total number of ``BRICK_UNIQUE`` objects in this brick, of type ``COMP``
-``psfsize_g``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in g-band
-``psfsize_r``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in r-band
-``psfsize_z``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_UNIQUE`` objects in this brick in z-band
+``nobjs``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types
+``npsf``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``
+``nsimp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP``
+``nexp``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``
+``ndev``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``
+``ncomp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP``
+``psfsize_g``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in g-band
+``psfsize_r``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in r-band
+``psfsize_z``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in z-band
 ``psfdepth_g``  float32    5-sigma PSF detection depth in :math:`g`-band (AB mag), using PsfEx PSF model
 ``psfdepth_r``  float32    5-sigma PSF detection depth in :math:`r`-band (AB mag), using PsfEx PSF model
 ``psfdepth_z``  float32    5-sigma PSF detection depth in :math:`z`-band (AB mag), using PsfEx PSF model
 ``galdepth_g``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`g`-band (AB) mag
 ``galdepth_r``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`r`-band (AB) mag
 ``galdepth_z``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`z`-band (AB) mag
-``ebv``         float32    Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_UNIQUE`` objects in this brick
+``ebv``         float32    Median SFD dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_PRIMARY`` objects in this brick
 ``trans_g``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``
 ``trans_r``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``
 ``trans_z``     float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``

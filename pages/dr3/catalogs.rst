@@ -23,7 +23,7 @@ Name                        Type         Units                 Description
 =========================== ============ ===================== ===============================================
 BRICKID                     int32                              Brick ID [1,662174]
 BRICKNAME                   char                               Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-OBJID                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each blob
+OBJID                       int32                              Catalog object number within this brick; a unique identifier hash is BRICKID,OBJID;  OBJID spans [0,N-1] and is contiguously enumerated within each brick
 BRICK_PRIMARY               boolean                            True if the object is within the brick boundary
 BLOB                        int32                              Blend family; objects with the same [BRICKID,BLOB] identifier were modeled (deblended) together; contiguously numbered from 0
 NINBLOB                     int16                              Number of sources in this BLOB (blend family); isolated objects have value 1.

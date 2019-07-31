@@ -224,9 +224,9 @@ profiles that are deVaucouleurs + exponential (with the same source center).
 The total numbers of the different morphological types in DR4 are:
 
 ================= ==================
-Number of Sources Type
+Number of Sources Primary Objects of Type
 ================= ==================
-   183,489,859    Objects in a Primary brick
+   183,489,859    *All*
     90,683,489    ``PSF``
     58,829,887    ``SIMP``
     22,653,067    ``EXP``

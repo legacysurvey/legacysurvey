@@ -171,11 +171,11 @@ Number of Sources Type
 ================= ==================
    288,347,865    All objects
    262,426,862    Objects in a Primary brick
-   149,084,610    PSF
-    69,164,070    SIMP
-    31,300,725    EXP
-    11,610,513    DEV
-     1,266,944    COMP
+   149,084,610    ``PSF`` objects in a Primary brick
+    69,164,070    ``SIMP`` objects in a Primary brick
+    31,300,725    ``EXP`` objects in a Primary brick
+    11,610,513    ``DEV`` objects in a Primary brick
+     1,266,944    ``COMP`` objects in a Primary brick
 ================= ==================
 
 

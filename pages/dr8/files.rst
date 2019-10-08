@@ -845,37 +845,35 @@ proper motion!
     ``brickid``      int32     Unique Brick ID (in the range [1, 662174]) that the catalog object came from
     ``brickname``    char[8]   Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
     ``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
-    ``camera``       char[7]   The camera for the CCD being measured
-    ``expnum``       int64     The exposure number of the CCD being mesaured
-    ``ccdname``      char[4]   The name of the CCD being measured
+    ``camera``       char[7]   The camera for the CCD being measured, eg "decam"
+    ``expnum``       int64     The exposure number of the CCD being mesaured, eg 574299
+    ``ccdname``      char[4]   The name of the CCD being measured, eg "N10" or "CCD4"
     ``filter``       char[1]   The filter of the CCD being measured ("g", "r" or "z")
-    ``mjd``          float64   The Modified Julian Date when the exposure was taken
-    ``exptime``      float32   The exposure time in seconds
+    ``mjd``          float64   The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588
+    ``exptime``      float32   The exposure time in seconds, eg 90.0
     ``psfsize``      float32   PSF FWHM in this exposure, in arcsec
     ``ccd_cuts``     int64     Bit mask describing CCD image quality
     ``airmass``      float32   Airmass of this observation
-    ``sky``          float32   Sky background surface brightness, in nanomaggies per square arcsecond
-    ``psfdepth``     float32   Inverse-variance for the flux measured from a point source
-    ``galdepth``     float32   Inverse-variance for the flux measured from a nominal galaxy source
+    ``sky``          float32   Sky background surface brightness, in nanomaggies/arcsec\ |sup2|
+    ``psfdepth``     float32   Inverse-variance for the flux measured from a point source; for a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
+    ``galdepth``     float32   Inverse-variance for the flux measured from a nominal galaxy source (0.45" round exponential galaxy)
     ``ra``           float64   Right Ascension in degrees
     ``dec``          float64   Declination in degrees
     ``flux``         float32   Measured flux for this catalog object in this CCD, in nanomaggies
-    ``flux_ivar``    float32   Inverse-variance of the `flux` measurement, in 1/nanomaggies|sup2|
+    ``flux_ivar``    float32   Inverse-variance of the `flux` measurement, in 1/nanomaggies\ |sup2|
     ``fracflux``     float32   Profile-weighted fraction of the flux from other sources over total flux
-    ``rchisq``       float32   Profile-weighted residual chi-squared per pixel
+    ``rchisq``       float32   Profile-weighted |chi|\ |sup2| residual chi-squared per pixel
     ``fracmasked``   float32   Profile-weighted fraction of pixels masked
-    ``apflux``       float32[8] Aperture fluxes in this CCD, in nanomaggies
-    ``apflux_ivar``  float32[8] Inverse-variance on `apflux`, in 1/nanomaggies|sup2|
-    ``x``            float32   Pixel position of the catalog source in this CCD, in zero-indexed pixels
-    ``y``            float32   Pixel position of the catalog source in this CCD, in zero-indexed pixels
-    ``dqmask``       int16     Data Quality mask from the CP pipeline for the center pixel
+    ``apflux``       float32[8] Aperture fluxes in this CCD, in nanomaggies, for aperture radii [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
+    ``apflux_ivar``  float32[8] Inverse-variance on `apflux`, in 1/nanomaggies\ |sup2|
+    ``x``            float32   Horizontal pixel position of the catalog source in this CCD, in zero-indexed pixels
+    ``y``            float32   Vertical pixel position of the catalog source in this CCD, in zero-indexed pixels
+    ``dqmask``       int16     Data Quality mask from the CP pipeline for the center pixel (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
     ``dra``          float32   When fitting for spatial derivatives, the motion of the source in the RA direction, in arcsec
     ``ddec``         float32   Motion of the source in the Dec direction, in arcsec
     ``dra_ivar``     float32   Inverse-variance on `dra`, in 1/arcsec|sup2|
     ``ddec_ivar``    float32   Inverse-variance on `ddec`, in 1/arcsec|sup2|
     ================ ========= ======================================================
-
-
     
     
 Splinesky Files (``calib/<camera>/splinesky-*``)
@@ -934,52 +932,6 @@ Splinesky Files (``calib/<camera>/splinesky-*``)
 
 .. _`RectBivariateSpline function`: https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline
 
-..
-   Forced photometry (``forced/*``)
-   =================================
-
-   Files containing forced photometry are formatted like ``forced/<camera>/<expos>/forced-<camera>-<exposure>.fits``,
-   where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_,
-   ``<exposure>`` is the exposure number as an 8-character string and ``<expos>`` is the first 5 characters of ``<exposure>``.
-
-   Forced photometry is conducted at the locations of sources as inferred by the Tractor.
-
-   ================ ========== ======================================================
-   Column           Type       Description
-   ================ ========== ======================================================
-   ``release``      int16      Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
-   ``brickid``      int32      Unique Brick ID (in the range [1, 662174])
-   ``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
-   ``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
-   ``camera``       char[5]    The camera that took this image e.g. "decam"
-   ``expnum``       int32      Exposure number, eg 574299
-   ``ccdname``      char[3]    CCD name for this camera, e.g. "N10", "S7" for DECam
-   ``filter``       char[1]    The filter for this observation (e.g. "g", "r", "z")
-   ``mjd``          float64    Date of observation in MJD (in UTC system), eg 57644.31537588
-   ``exptime``      float32    Exposure time in seconds, eg 90
-   ``psfsize``      float32    PSF size, in arcsec, at this location
-   ``ccd_cuts``     int64      
-   ``airmass``      float32    Airmass of observation
-   ``sky``          float32    Sky flux in nanomaggies/arcsec\ |sup2|
-   ``psfdepth``     float32    For a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
-   ``galdepth``     float32    As for ``psfdepth`` but for a galaxy (0.45" exp, round) detection sensitivity
-   ``ra``           float64    Right ascension at equinox J2000 in degrees
-   ``dec``          float64    Declination at equinox J2000 in degrees
-   ``flux``         float32    Model flux in nanomaggies
-   ``flux_ivar``    float32    Inverse variance of ``flux`` in 1/nanomaggies\ |sup2|
-   ``fracflux``     float32    Profile-weighted fraction of the flux from other sources divided by the total ``flux``
-   ``rchisq``       float32    Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
-   ``fracmasked``   float32    Profile-weighted fraction of pixels that were masked
-   ``apflux``       float32[8] Fluxes in nanomaggies extracted at this location in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
-   ``apflux_ivar``  float32[8] Inverse variance of ``apflux`` in 1/nanomaggies\ |sup2|
-   ``x``            float32    Horizontal central pixel location at (``ra``, ``dec``)
-   ``y``            float32    Vertical central pixel location at (``ra``, ``dec``)
-   ``mask``         int16      Bitmask indicating if a "bad" pixel touches the source (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
-   ``dra``          float32    
-   ``ddec``         float32    
-   ``dra_ivar``     float32    
-   ``ddec_ivar``    float32    
-   ================ ========== ======================================================
 
 Other Files
 ===========

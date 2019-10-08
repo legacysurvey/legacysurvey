@@ -354,8 +354,8 @@ THEME = 'custom'
 
 # date format used to display post dates.
 # (str used by datetime.datetime.strftime)
-DATE_FORMAT = '%Y %b %d'
-
+#DATE_FORMAT = '%Y %b %d'
+DATE_FORMAT = 'YYYY MM dd'
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>

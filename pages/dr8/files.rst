@@ -805,19 +805,21 @@ Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fi
 =====================================================================================
 
 .. _`catalog description`: ../catalog
+.. _`BASS`: ../../bass  
+.. _`MzLS`: ../../mzls
 
 These files contain *forced photometry* results, for all CCDs that
 were included in the DR8 processing.
 
-That is, after we produced the catalogs based on fitting to all images
-simultaneously, we go back to the individual CCDs, select the catalogs
-objects that overlap, and ask how bright those objects should be to
+That is, after we produce the catalogs based on fitting to all images
+simultaneously, we go back to the individual CCDs, select the catalog
+objects that overlap, and ask what fluxes those objects should have to
 best match what is observed in the CCD.  When selecting objects from
 the catalog, we *resolve* the north and south components using the
 same cut as in the sweep files and randoms.
 
 We perform two fits.  The first is regular forced photometry, where
-the position and profile of the source is fixed, and all we are
+the position and profile of the sources are fixed, and all we are
 fitting is the flux.  In the second fit, we compute the
 source-centered spatial derivatives and fit the amplitudes of those
 derivatives as well.  For sources moving less than a pixel or two,
@@ -825,8 +827,8 @@ this produces an approximate estimate of the motion of the source.
 Note that for Gaia sources, this is relative to the Gaia measured
 proper motion!
 
-- forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits Where
-    <camera> is one of ``90prime`` for `BASS_`, ``decam`` for
+- forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits
+    Where <camera> is one of ``90prime`` for `BASS`_, ``decam`` for
     `DECaLS`_ or ``mosaic`` for `MzLS`_, <EXPOSURE> is the exposure
     number (not as an 8-character string, unlike some other data
     products), and <EXPOS> is the first 5 characters of the exposure
@@ -838,42 +840,42 @@ proper motion!
     For the columns pertaining to the catalog objects, see the
     `catalog description`_ page.
 
-    ================ ========= ======================================================
-    Column           Type      Description
-    ================ ========= ======================================================
-    ``release``      int16     Unique integer denoting the camera and filter set used (`RELEASE is documented here`_) for the catalog object
-    ``brickid``      int32     Unique Brick ID (in the range [1, 662174]) that the catalog object came from
-    ``brickname``    char[8]   Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
-    ``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
-    ``camera``       char[7]   The camera for the CCD being measured, eg "decam"
-    ``expnum``       int64     The exposure number of the CCD being mesaured, eg 574299
-    ``ccdname``      char[4]   The name of the CCD being measured, eg "N10" or "CCD4"
-    ``filter``       char[1]   The filter of the CCD being measured ("g", "r" or "z")
-    ``mjd``          float64   The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588
-    ``exptime``      float32   The exposure time in seconds, eg 90.0
-    ``psfsize``      float32   PSF FWHM in this exposure, in arcsec
-    ``ccd_cuts``     int64     Bit mask describing CCD image quality
-    ``airmass``      float32   Airmass of this observation
-    ``sky``          float32   Sky background surface brightness, in nanomaggies/arcsec\ |sup2|
-    ``psfdepth``     float32   Inverse-variance for the flux measured from a point source; for a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
-    ``galdepth``     float32   Inverse-variance for the flux measured from a nominal galaxy source (0.45" round exponential galaxy)
-    ``ra``           float64   Right Ascension in degrees
-    ``dec``          float64   Declination in degrees
-    ``flux``         float32   Measured flux for this catalog object in this CCD, in nanomaggies
-    ``flux_ivar``    float32   Inverse-variance of the `flux` measurement, in 1/nanomaggies\ |sup2|
-    ``fracflux``     float32   Profile-weighted fraction of the flux from other sources over total flux
-    ``rchisq``       float32   Profile-weighted |chi|\ |sup2| residual chi-squared per pixel
-    ``fracmasked``   float32   Profile-weighted fraction of pixels masked
+    ================ ========== ======================================================
+    Column           Type       Description
+    ================ ========== ======================================================
+    ``release``      int16      Unique integer denoting the camera and filter set used (`RELEASE is documented here`_) for the catalog object
+    ``brickid``      int32      Unique Brick ID (in the range [1, 662174]) that the catalog object came from
+    ``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
+    ``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
+    ``camera``       char[7]    The camera for the CCD being measured, eg "decam"
+    ``expnum``       int64      The exposure number of the CCD being mesaured, eg 574299
+    ``ccdname``      char[4]    The name of the CCD being measured, eg "N10" or "CCD4"
+    ``filter``       char[1]    The filter of the CCD being measured ("g", "r" or "z")
+    ``mjd``          float64    The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588
+    ``exptime``      float32    The exposure time in seconds, eg 90.0
+    ``psfsize``      float32    PSF FWHM in this exposure, in arcsec
+    ``ccd_cuts``     int64      Bit mask describing CCD image quality
+    ``airmass``      float32    Airmass of this observation
+    ``sky``          float32    Sky background surface brightness, in nanomaggies/arcsec\ |sup2|
+    ``psfdepth``     float32    Inverse-variance for the flux measured from a point source; for a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude
+    ``galdepth``     float32    Inverse-variance for the flux measured from a nominal galaxy source (0.45" round exponential galaxy)
+    ``ra``           float64    Right Ascension in degrees
+    ``dec``          float64    Declination in degrees
+    ``flux``         float32    Measured flux for this catalog object in this CCD, in nanomaggies
+    ``flux_ivar``    float32    Inverse-variance of the `flux` measurement, in 1/nanomaggies\ |sup2|
+    ``fracflux``     float32    Profile-weighted fraction of the flux from other sources over total flux
+    ``rchisq``       float32    Profile-weighted |chi|\ |sup2| residual chi-squared per pixel
+    ``fracmasked``   float32    Profile-weighted fraction of pixels masked
     ``apflux``       float32[8] Aperture fluxes in this CCD, in nanomaggies, for aperture radii [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec
     ``apflux_ivar``  float32[8] Inverse-variance on `apflux`, in 1/nanomaggies\ |sup2|
-    ``x``            float32   Horizontal pixel position of the catalog source in this CCD, in zero-indexed pixels
-    ``y``            float32   Vertical pixel position of the catalog source in this CCD, in zero-indexed pixels
-    ``dqmask``       int16     Data Quality mask from the CP pipeline for the center pixel (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
-    ``dra``          float32   When fitting for spatial derivatives, the motion of the source in the RA direction, in arcsec
-    ``ddec``         float32   Motion of the source in the Dec direction, in arcsec
-    ``dra_ivar``     float32   Inverse-variance on `dra`, in 1/arcsec|sup2|
-    ``ddec_ivar``    float32   Inverse-variance on `ddec`, in 1/arcsec|sup2|
-    ================ ========= ======================================================
+    ``x``            float32    Horizontal pixel position of the catalog source in this CCD, in zero-indexed pixels
+    ``y``            float32    Vertical pixel position of the catalog source in this CCD, in zero-indexed pixels
+    ``dqmask``       int16      Data Quality mask from the CP pipeline for the center pixel (defined as for ``ALLMASK/ANYMASK`` on the `DR8 bitmasks page`_)
+    ``dra``          float32    When fitting for spatial derivatives, the motion of the source in the RA direction, in arcsec
+    ``ddec``         float32    Motion of the source in the Dec direction, in arcsec
+    ``dra_ivar``     float32    Inverse-variance on `dra`, in 1/arcsec|sup2|
+    ``ddec_ivar``    float32    Inverse-variance on `ddec`, in 1/arcsec|sup2|
+    ================ ========== ======================================================
     
     
 Splinesky Files (``calib/<camera>/splinesky-*``)

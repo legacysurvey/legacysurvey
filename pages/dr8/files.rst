@@ -804,7 +804,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
 =====================================================================================
 
-.. _`catalog description`: ../catalog
+.. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass  
 .. _`MzLS`: ../../mzls
 

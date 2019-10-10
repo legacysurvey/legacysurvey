@@ -32,7 +32,7 @@ Patching Morphological Models
 Some morphological quantities are inconsistent for PSF sources in DR8, due to a bug in the model selection function that was introduced
 on May 13th, 2019 `to fix a different bug in the reduction process`_.
 
-This issue occurs when the ``REX`` model is better than the ``PSF`` model, but not by *enough*.  In this case, instead of reverting to ``PSF``, the modeling code reverts to NONE.
+This issue occurs when the ``REX`` model is better than the ``PSF`` model, but not by more than a ``DCHISQ`` value of 1%.  In that case, instead of reverting to ``PSF``, the modeling code reverts to NONE.
 
 The upshot of this issue is that when ``REX`` is better than ``PSF``, but not by a sufficiently large margin, then the ``EXP`` or ``DEV`` model would be chosen instead of the ``PSF`` model.
 
@@ -47,6 +47,9 @@ for a patched source during extraction, affecting the fitting of other sources i
     - ``ANYMASK``, ``ALLMASK``, ``MASKBITS``, ``BRIGHTBLOB``, ``NOBS``.
 - Quantities that *will* be inconsistent as they will still use the ``DEV`` or ``EXP`` model shape:
     - ``FIBERFLUX``, ``FRACIN``, ``FRACFLUX``, ``FRACMASKED``, ``RCHISQ`` and the WISE forced photometry.
+
+DR8 was processed with several different code versions. Morphological models were only patched for a subset of the files that were
+processed with version DR8.2.1 of the code. These files can be identified by the header card: ``PATCHED`` `(= integer number of sources patched)`.
 
 The brightest stars are missing from models and catalogs
 --------------------------------------------------------

@@ -40,7 +40,7 @@ and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
 Bit Name          Description
 === ============= ===============================
 0   ``NPRIMARY``  touches a pixel that is outside the ``BRICK_PRIMARY`` region of a brick
-1   ``BRIGHT``    touches a pixel in a blob containing a bright (Tycho-2) star
+1   ``BRIGHT``    touches a pixel within the locus of a `radius-magnitude relation for Tycho-2 stars`_ or one `for (G < 13) Gaia DR2 stars`_
 2   ``SATUR_G``   touches a pixel that was saturated in at least one :math:`g`-band image
 3   ``SATUR_R``   touches a pixel that was saturated in at least one :math:`r`-band image
 4   ``SATUR_Z``   touches a pixel that was saturated in at least one :math:`z`-band image
@@ -50,11 +50,14 @@ Bit Name          Description
 8   ``WISEM1``    touches a pixel in a ``WISEMASK_W1`` bright star mask
 9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
-11  ``MEDIUM``    touches a pixel in a medium-bright (`Gaia`_ DR2) star
+11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for (13 < G < 16) Gaia DR2 stars`_
 12  ``GALAXY``    touches a pixel in an `LSLGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
 
+.. _`radius-magnitude relation for Tycho-2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L258
+.. _`for (G < 13) Gaia DR2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
+.. _`radius-magnitude relation for (13 < G < 16) Gaia DR2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`LSLGA`: ../external
 

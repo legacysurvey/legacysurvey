@@ -32,4 +32,6 @@ In the table, ``0`` denotes [``ra0``, ``dec0``], ``1`` denotes [``ra1``, ``dec1`
 | 	   |``0   1``|
 +----------+---------+
 
+Note that for 2084 MzLS exposures the column ordering is reversed. These exposures were taken when the telescope was pointing at 
+hour angles (h.a.) of more than 6 hours; specifically at locations beyond the great circle that passes through the north celestial pole and the points Dec = 0, h.a. = +/- 6h.
 

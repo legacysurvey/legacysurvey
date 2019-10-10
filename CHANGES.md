@@ -1,5 +1,10 @@
 # legacysurvey Change Log
 
+## 8.0.2 (DR8, 2019-10-10)
+
+- Add DR8 forced photometry, clarify bitmasks/CCD ordering/patching:
+  ([PR#103](https://github.com/legacysurvey/legacysurvey/pull/103),
+  [PR#104](https://github.com/legacysurvey/legacysurvey/pull/104)).
 
 ## 8.0.1 (DR8, 2019-07-31)
 

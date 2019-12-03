@@ -1,5 +1,10 @@
 # legacysurvey Change Log
 
+## 8.0.3 (DR8, unreleased)
+
+- Add documentation of photo-z files
+  ([PR#105](https://github.com/legacysurvey/legacysurvey/pull/103)).
+
 ## 8.0.2 (DR8, 2019-10-10)
 
 - Add DR8 forced photometry, clarify bitmasks/CCD ordering/patching:

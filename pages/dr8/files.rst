@@ -11,6 +11,7 @@
 .. |times|  unicode:: U+000D7 .. MULTIPLICATION SIGN
 .. |plusmn| unicode:: U+000B1 .. PLUS-MINUS SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
+.. |gtapprox| unicode:: U+02273 .. GREATER-THAN OR EQUIVALENT TO
 
 .. class:: pull-right well
 
@@ -123,8 +124,8 @@ Column          Type       Description
 =============== ========== =========================================================================
 
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation
-(see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR8 bitmasks page`_), do 
-*not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on 
+(see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR8 bitmasks page`_), do
+*not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on
 the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
@@ -134,7 +135,7 @@ the `catalogs page`_.
 survey-ccds-<camera>-dr8.fits.gz
 --------------------------------
 
-A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_). 
+A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_).
 
 This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR8 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_.
 
@@ -147,7 +148,7 @@ contribute
 :math:`30 \times 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
 
-.. _`BASS`: ../../bass  
+.. _`BASS`: ../../bass
 .. _`MzLS`: ../../mzls
 .. _`description page`: ../description
 .. _`the PanSTARRS "qz" catalog`: ../external
@@ -206,7 +207,7 @@ Column               Type       Description
 survey-ccds-<camera>-dr8.kd.fits
 --------------------------------
 
-As for the **survey-ccds-<camera>-dr8.fits.gz** files but limited by the depth of each observation. These files 
+As for the **survey-ccds-<camera>-dr8.fits.gz** files but limited by the depth of each observation. These files
 contain the CCDs actually used for the DR8 reductions. Columns are the same as for the **survey-ccds-<camera>-dr8.fits.gz** files.
 
 ccds-annotated-<camera>-dr8.fits.gz
@@ -339,10 +340,10 @@ randoms/randoms-inside-dr8-0.31.0-\*.fits
 -----------------------------------------
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR8. Random locations
-were generated across the footprint at a density of 5,000 per square degree and meta-information 
+were generated across the footprint at a density of 5,000 per square degree and meta-information
 about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
-``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``, 
-``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``, 
+``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
+``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``,
 ``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
 (meaning that randomness is retained if just the first N rows of the file are read). Contains the following columns:
 
@@ -353,7 +354,7 @@ Column               Type     Description
 ``DEC``              float64  Declination at equinox J2000
 ``BRICKNAME``        char[8]  Name of the brick
 ``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
-``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)   
+``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)
 ``NOBS_Z``           int16    Number of images that contribute to the central pixel in the :math:`z` filter for this location (not profile-weighted)
 ``PSFDEPTH_G``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
 ``PSFDEPTH_R``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
@@ -411,7 +412,7 @@ randoms/randoms-allsky-dr8-0.31.0.fits
 ---------------------------------------
 
 The (randomly shuffled) combination of each of the ``randoms-inside-dr8-0.31.0-X.fits``
-and ``randoms-outside-dr8-0.31.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates 
+and ``randoms-outside-dr8-0.31.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates
 ten "all-sky" random catalogs (at a density of 5,000 locations per square degree)
 where each brick is either populated with observations from the
 Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr8-0.31.0-\*.fits`` files.
@@ -444,7 +445,7 @@ External Files (``<region>/external/*``)
 | /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
-imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files 
+imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files
 is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is set to -1.
 
 In addition to the columns from the Tractor `catalogs`_, we have added columns from the SDSS files that can be used to track objects uniquely. These are typically some combination of ``PLATE``, ``FIBER``, ``MJD`` (or ``SMJD``) and, in some cases, ``RERUN``.
@@ -456,9 +457,9 @@ survey-dr8-<region>-specObj-dr14.fits
 -------------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR14 spectrosopic
-pipeline file such that the photometric parameters in row "N" of 
+pipeline file such that the photometric parameters in row "N" of
 **survey-dr8-specObj-dr14.fits** matches the spectroscopic parameters in row "N" of
-specObj-dr14.fits. The spectroscopic file 
+specObj-dr14.fits. The spectroscopic file
 is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
 .. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
@@ -466,11 +467,11 @@ is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 survey-dr8-<region>-dr12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR12 
+photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 **survey-dr8-dr12Q.fits** matches the spectroscopic parameters in row "N" of
-DR12Q.fits. The spectroscopic file 
+DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P
@@ -479,11 +480,11 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 survey-dr8-<region>-dr14Q_v4_4.fits
 -----------------------------------
 HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR14 
+photometry that is row-by-row-matched to the SDSS DR14
 visually inspected quasar catalog (`Paris et al. 2018`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 **survey-dr8-dr14Q_v4_4.fits** matches the spectroscopic parameters in row "N" of
-DR14Q_v4_4.fits. The spectroscopic file 
+DR14Q_v4_4.fits. The spectroscopic file
 is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
 
 .. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P
@@ -493,8 +494,8 @@ survey-dr8-<region>-superset-dr12Q.fits
 ---------------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
-confirmed objects that were visually inspected as possible quasars 
-(`Paris et al. 2017`_) such that the photometric parameters in row "N" of 
+confirmed objects that were visually inspected as possible quasars
+(`Paris et al. 2017`_) such that the photometric parameters in row "N" of
 **survey-dr8-Superset_dr12Q.fits** matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
@@ -528,15 +529,15 @@ In the file listings outlined below:
 
 - **<filter>** denotes the :math:`g`, :math:`r` or :math:`z` band, using the corresponding letter.
 
-Note that it is not possible to go from a brick name back to an *exact* (RA, Dec) center (the bricks are not on 0.1\ |deg| grid 
-lines). The exact brick center for a given brick name can be derived from columns in the 
+Note that it is not possible to go from a brick name back to an *exact* (RA, Dec) center (the bricks are not on 0.1\ |deg| grid
+lines). The exact brick center for a given brick name can be derived from columns in the
 **survey-bricks.fits.gz** file (i.e. ``brickname``, ``ra``, ``dec``).
 
 <AAA>/tractor-<brick>.fits
 --------------------------
 
 FITS binary table containing Tractor photometry, documented on the
-`catalogs page`_. 
+`catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
@@ -684,6 +685,45 @@ Name                                  Type         Units                 Descrip
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`LSLGA`: ../external
 
+Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+----------------------------------------------------------------------------
+
+The photometric redshift (photo-z) catalogs are line-matched to the DR8 sweep
+catalogs as described above.
+
+The photometric redshifts are computed using the random forest algorithm.
+Details of the photo-z training and performance can be found in arXiv:xxxx.xxxx.
+For computing the photo-z's, we require at least one exposure in
+:math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
+For objects that do not meet the NOBS cut,
+the photo-z values are filled with -99. Although we provide photo-z's for all
+objects that meet the NOBS cut, only relatively bright objects have reliable
+photo-z's. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
+are mostly reliable, whereas fainter objects are increasingly unreliable with
+large systematic offsets.
+
+The photo-z catalogs do not provide information on star-galaxy separation.
+Stars are excluded from the photo-z training data, and we do not attempt to
+identify stars. To perform star-galaxy separation, one can use the
+morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
+color cut can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
+
+================= ========== ==========================================================================
+Name              Type       Description
+================= ========== ==========================================================================
+``z_phot_mean``   float32    photo-z derived from the mean of the photo-z PDF
+``z_phot_median`` float32    (recommended) photo-z derived from the median of the photo-z PDF
+``z_phot_std``    float32    standard deviation of the photo-z derived from the photo-z PDF
+``z_phot_l68``    float32    lower 68% confidence limit derived from the photo-z PDF
+``z_phot_u68``    float32    upper 68% confidence limit derived from the photo-z PDF
+``z_phot_l95``    float32    lower 95% confidence limit derived from the photo-z PDF
+``z_phot_u95``    float32    upper 95% confidence limit derived from the photo-z PDF
+``z_spec``        float32    spectroscopic redshift, if available
+``survey``        char[10]   source of the spectroscopic redshift
+``training``      boolean    whether or not the spectroscopic redshift is used for the photo-z training
+================= ========== ==========================================================================
+
+
 Image Stacks (``<region>/coadd/*``)
 ===================================
 
@@ -694,7 +734,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     FITS binary table with the list of CCD images that were used in this brick.
     Contains the same columns as **survey-ccds-<camera>-dr8.fits.gz**, and also contains
     the additional columns listed below. Note that string columns can have different lengths in the **survey-ccds-<camera>-dr8.fits.gz**
-    and **legacysurvey-<brick>-ccds.fits** files and can differ for ``<region>`` equal to ``<north>`` and ``<south>``. 
+    and **legacysurvey-<brick>-ccds.fits** files and can differ for ``<region>`` equal to ``<north>`` and ``<south>``.
     For example the ``camera`` column can change from ``char[9]`` to ``char[7]`` (see, e.g. `legacypipe issue #379`_).
 
     ================ ========= ======================================================
@@ -805,7 +845,7 @@ Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fi
 =====================================================================================
 
 .. _`catalog description`: ../catalogs
-.. _`BASS`: ../../bass  
+.. _`BASS`: ../../bass
 .. _`MzLS`: ../../mzls
 
 These files contain *forced photometry* results, for all CCDs that
@@ -876,8 +916,8 @@ proper motion!
     ``dra_ivar``     float32    Inverse-variance on `dra`, in 1/arcsec|sup2|
     ``ddec_ivar``    float32    Inverse-variance on `ddec`, in 1/arcsec|sup2|
     ================ ========== ======================================================
-    
-    
+
+
 Splinesky Files (``calib/<camera>/splinesky-*``)
 =================================================
 
@@ -938,10 +978,10 @@ Splinesky Files (``calib/<camera>/splinesky-*``)
 Other Files
 ===========
 
-Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories, 
-statistics of the Tractor fits (``<region>/metrics``), code outputs from the fitting processes (``<region>/logs``) and additional files 
+Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories,
+statistics of the Tractor fits (``<region>/metrics``), code outputs from the fitting processes (``<region>/logs``) and additional files
 detailing the calibrations (``calib``).
-We don't expect that most users will need a description of these files, but `contact`_ us if you require more information. 
+We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 
 .. _`contact`: ../../contact
 .. _`DESI`: http://desi.lbl.gov
@@ -951,9 +991,9 @@ Raw Data
 ========
 NOAO access to raw and calibrated images will be available a few weeks after the DR8 release date.
 
-Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
-portal (http://archive.noao.edu/search/query) and an ftp server. 
-The input data used to create the 
+Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web
+portal (http://archive.noao.edu/search/query) and an ftp server.
+The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from NOAO telescopes.
 
@@ -974,20 +1014,20 @@ project, as well as other images from NOAO telescopes.
 (ii) ftp sites
 --------------
 
-Following the organization of the Stacked images, Raw and Calibrated images are organized 
-by survey brick, which are defined in the file **survey-bricks-dr8.fits.gz** for DR8. Both the main Tractor 
-catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
-format ``<AAAa>c<BBB>)``. 
+Following the organization of the Stacked images, Raw and Calibrated images are organized
+by survey brick, which are defined in the file **survey-bricks-dr8.fits.gz** for DR8. Both the main Tractor
+catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
+format ``<AAAa>c<BBB>)``.
 
 - Raw: ftp://archive.noao.edu/public/hlsp/ls/dr8/raw/``<AAA>/<brick>``
 - Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr8/calibrated/``<AAA>/<brick>``
 - Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr8/coadd/``<AAA>/<brick>``
 
-For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
-from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 
-contains an ASCII file with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
-(*legacysurvey*-``<brick>``-*image_filename.txt*). 
-``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``. 
-There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 
+For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
+from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``
+contains an ASCII file with a list of ``EXPID`` and ``IMAGE_FILENAME``
+(*legacysurvey*-``<brick>``-*image_filename.txt*).
+``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``.
+There is one entry per CCD. Often, multiple CCDs from a given file are used so there are
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).

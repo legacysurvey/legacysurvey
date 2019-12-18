@@ -685,6 +685,8 @@ Name                                  Type         Units                 Descrip
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`LSLGA`: ../external
 
+.. _photometric-redshifts:
+
 Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------------------
 

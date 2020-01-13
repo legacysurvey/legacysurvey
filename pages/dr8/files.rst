@@ -714,15 +714,15 @@ color cut can be very effective for selecting redshift |gtapprox| 0.3 galaxies) 
 Name              Type       Description
 ================= ========== ==========================================================================
 ``z_phot_mean``   float32    photo-z derived from the mean of the photo-z PDF
-``z_phot_median`` float32    (recommended) photo-z derived from the median of the photo-z PDF
-``z_phot_std``    float32    standard deviation of the photo-z derived from the photo-z PDF
-``z_phot_l68``    float32    lower 68% confidence limit derived from the photo-z PDF
-``z_phot_u68``    float32    upper 68% confidence limit derived from the photo-z PDF
-``z_phot_l95``    float32    lower 95% confidence limit derived from the photo-z PDF
-``z_phot_u95``    float32    upper 95% confidence limit derived from the photo-z PDF
+``z_phot_median`` float32    photo-z derived from the median of the photo-z PDF
+``z_phot_std``    float32    standard deviation of the photo-z's derived from the photo-z PDF
+``z_phot_l68``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF
+``z_phot_u68``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``z_phot_l95``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF
+``z_phot_u95``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
 ``z_spec``        float32    spectroscopic redshift, if available
 ``survey``        char[10]   source of the spectroscopic redshift
-``training``      boolean    whether or not the spectroscopic redshift is used for the photo-z training
+``training``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
 ================= ========== ==========================================================================
 
 Work which uses this photometric redshift catalog should cite `Zhou et al. 2020`_

@@ -690,11 +690,11 @@ Name                                  Type         Units                 Descrip
 Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------------------
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
+The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. (2020)`_)
 catalog is line-matched to the DR8 sweep catalogs as described above.
 
 The photometric redshifts are computed using the random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. 2020`_.
+Details of the photo-z training and performance can be found in `Zhou et al. (2020)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the NOBS cut,
@@ -725,13 +725,13 @@ Name              Type       Description
 ``training``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. 2020`_
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2020)`_
 and include the following acknowledgment: "The Photometric Redshifts for the
 Legacy Surveys (PRLS) catalog used in this paper was produced thanks to
 funding from the U.S. Department of Energy Office of Science, Office of
 High Energy Physics via grant DE-SC0007914."
 
-.. _`Zhou et al. 2020`: https://arxiv.org
+.. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
 
 Image Stacks (``<region>/coadd/*``)
 ===================================

@@ -1,9 +1,9 @@
 # legacysurvey Change Log
 
-## 8.0.3 (DR8, unreleased)
+## 8.0.3 (DR8, 2020-01-20)
 
 - Add documentation of photo-z files
-  ([PR#105](https://github.com/legacysurvey/legacysurvey/pull/103)).
+  ([PR#105](https://github.com/legacysurvey/legacysurvey/pull/105)).
 
 ## 8.0.2 (DR8, 2019-10-10)
 

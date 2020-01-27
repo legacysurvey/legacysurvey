@@ -897,7 +897,7 @@ proper motion!
     ``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
     ``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
     ``camera``       char[7]    The camera for the CCD being measured, eg "decam"
-    ``expnum``       int64      The exposure number of the CCD being mesaured, eg 574299
+    ``expnum``       int64      The exposure number of the CCD being measured, eg 574299
     ``ccdname``      char[4]    The name of the CCD being measured, eg "N10" or "CCD4"
     ``filter``       char[1]    The filter of the CCD being measured ("g", "r" or "z")
     ``mjd``          float64    The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588

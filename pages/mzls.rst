@@ -34,7 +34,7 @@ The MOSAIC-3 camera is a new version of the prime focus imaging
 system. This upgrade made use of the dewar from the MOSAIC-2
 camera at CTIO and the MOSAIC-1.1 mechanical system and guider
 from KPNO. Yale University designed and built a new cold plate for the dewar
-which it populated with four super-thick (00\ |mu|\ m-thick) fully depleted
+which it populated with four super-thick (500\ |mu|\ m-thick) fully depleted
 4096\ |sup2| pixel CCDs with the same 15 micron pitch.
 The readout system consists of four DESI controllers, one
 for each CCD that simultaneously reads the four quadrants of each device.

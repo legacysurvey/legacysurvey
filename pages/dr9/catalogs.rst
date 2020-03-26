@@ -38,17 +38,18 @@ Name                                  Type         Units                 Descrip
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick
-``brick_primary``                     boolean                            True if the object is within the brick boundary
+``brick_primary``                     boolean                            ``True`` if the object is within the brick boundary
 ``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
 ``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
-``type``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "COMP"=composite, "DUP"=Gaia source fit by different model.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "DEV " and "EXP " since the column data type is a 4-character string
+``iterative``                         boolean                            ``True`` if the object was inferred from a second round of fitting to the image-minus-model residuals from the first round of fitting.
+``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model.
 ``ra``                                float64      deg                   Right ascension at equinox J2000
 ``dec``                               float64      deg                   Declination at equinox J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
 ``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack
 ``by``                                float32      pix                   Y position (0-indexed) of coordinates in brick image stack
-``dchisq``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
+``dchisq``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, SER.  The difference is versus no source.
 ``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute the ``mw_transmission_`` columns
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
@@ -109,6 +110,9 @@ Name                                  Type         Units                 Descrip
 ``apflux_resid_g``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
 ``apflux_resid_r``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
 ``apflux_resid_z``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
+``apflux_blobresid_g``                float32[8]   nanomaggies           
+``apflux_blobresid_r``                float32[8]   nanomaggies           
+``apflux_blobresid_z``                float32[8]   nanomaggies           
 ``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``
 ``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``
 ``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``
@@ -168,32 +172,28 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
-``lc_flux_w1``	     	              float32[11]  nanomaggies           ``flux_w1`` in each of up to eleven unWISE coadd epochs (AB system)
-``lc_flux_w2``                        float32[11]  nanomaggies           ``flux_w2`` in each of up to eleven unWISE coadd epochs (AB)
-``lc_flux_ivar_w1``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system)
-``lc_flux_ivar_w2``	              float32[11]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB)
-``lc_nobs_w1``		              int16[11]                          ``nobs_w1`` in each of up to eleven unWISE coadd epochs
-``lc_nobs_w2``		              int16[11]                          ``nobs_w2`` in each of up to eleven unWISE coadd epochs
-``lc_fracflux_w1``	              float32[11]                        ``fracflux_w1`` in each of up to eleven unWISE coadd epochs
-``lc_fracflux_w2``	              float32[11]                        ``fracflux_w2`` in each of up to eleven unWISE coadd epochs
-``lc_rchisq_w1``	              float32[11]                        ``rchisq_w1`` in each of up to eleven unWISE coadd epochs
-``lc_rchisq_w2``	              float32[11]                        ``rchisq_w2`` in each of up to eleven unWISE coadd epochs
-``lc_mjd_w1``		              float64[11]                        ``mjd_w1`` in each of up to eleven unWISE coadd epochs
-``lc_mjd_w2``		              float64[11]                        ``mjd_w2`` in each of up to eleven unWISE coadd epochs
-``fracdev``		              float32                            Fraction of model in deVauc [0,1]
-``fracdev_ivar``	              float32                            Inverse variance of ``fracdev``
-``shapeexp_r``		              float32      arcsec                Half-light radius of exponential model (>0)
-``shapeexp_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shapeexp_r``
-``shapeexp_e1``		              float32                            Ellipticity component 1
-``shapeexp_e1_ivar``	              float32                            Inverse variance of ``shapeexp_e1``
-``shapeexp_e2``		              float32                            Ellipticity component 2
-``shapeexp_e2_ivar``	              float32                            Inverse variance of ``shapeexp_e2``
-``shapedev_r``		              float32      arcsec                Half-light radius of deVaucouleurs model (>0)
-``shapedev_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shapedev_r``
-``shapedev_e1``		              float32                            Ellipticity component 1
-``shapedev_e1_ivar``	              float32                            Inverse variance of ``shapedev_e1``
-``shapedev_e2``		              float32                            Ellipticity component 2
-``shapedev_e2_ivar``	              float32                            Inverse variance of ``shapedev_e2``
+``lc_flux_w1``	     	              float32[13]  nanomaggies           ``flux_w1`` in each of up to thirteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``lc_flux_w2``                        float32[13]  nanomaggies           ``flux_w2`` in each of up to thirteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``lc_flux_ivar_w1``	              float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
+``lc_flux_ivar_w2``	              float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
+``lc_nobs_w1``		              int16[13]                          ``nobs_w1`` in each of up to thirteen unWISE coadd epochs
+``lc_nobs_w2``		              int16[13]                          ``nobs_w2`` in each of up to thirteen unWISE coadd epochs
+``lc_fracflux_w1``	              float32[13]                        ``fracflux_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_fracflux_w2``	              float32[13]                        ``fracflux_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w1``	              float32[13]                        ``rchisq_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w2``	              float32[13]                        ``rchisq_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w1``		              float64[13]                        ``mjd_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w2``		              float64[13]                        ``mjd_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_epoch_index_w1``                 uint8[13]                          Index number of unWISE epoch for W1 (defaults to 255 for unused entries)
+``lc_epoch_index_w2``                 uint8[13]                          Index number of unWISE epoch for W2 (defaults to 255 for unused entries)
+``sersic``		              float32                            
+``sersic_ivar``	                      float32                            Inverse variance of ``sersic``
+``shape_r``		              float32      arcsec                Half-light radius of galaxy model for galaxy type ``type`` (>0)
+``shape_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shape_r``
+``shape_e1``		              float32                            Ellipticity component 1 of galaxy model for galaxy type ``type``
+``shape_e1_ivar``	              float32                            Inverse variance of ``shape_e1``
+``shape_e2``		              float32                            Ellipticity component 2 of galaxy model for galaxy type ``type``
+``shape_e2_ivar``	              float32                            Inverse variance of ``shape_e2``
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
@@ -205,7 +205,7 @@ Goodness-of-Fits and Morphological ``type``
 The ``dchisq`` values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
 the best-fit point source (type="PSF"), round exponential galaxy model ("REX"),
-de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a composite model ("COMP"), in that order.
+de Vaucouleurs model ("DEV"), exponential model ("EXP"), and a Sersic model ("SER"), in that order. Note that the Sersic model replaces the composite ("COMP") model used in `DR8`_ (and before).
 The "REX" model is a round exponential galaxy profile with a variable radius
 and is meant to capture slightly-extended but low signal-to-noise objects.
 The ``dchisq`` values are the |chi|\ |sup2| difference versus no source in this location---that is, it is the improvement from adding the given source to our model of the sky.  The first element (for PSF) corresponds to a traditional notion of detection significance.
@@ -224,6 +224,7 @@ that have a flux measured as negative in some bands where they are not detected.
 The final, additional moropholigical type is "DUP." This type is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to ``DUP`` sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if Tractor prefers an alternate fit.
 
+.. _`DR8`: ../../dr8/catalogs
 
 Galactic Extinction Coefficients
 --------------------------------
@@ -257,7 +258,7 @@ These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 Ellipticities
 -------------
 
-The ellipticities (e.g. ``shapeexp_e1``, ``shapeexp_e2``, ``shapedev_e1``, ``shapedev_e2``) are different from the usual
+The ellipticities for each galaxy ``type`` (i.e. ``shape_e1``, ``shape_e2``) are different from the usual
 eccentricity, :math:`e \equiv \sqrt{1 - (b/a)^2}`.  In gravitational lensing
 studies, the ellipticity is taken to be a complex number:
 

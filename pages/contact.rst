@@ -29,7 +29,7 @@ Other Experts
 -------------
 `Legacypipe`_ Pipeline Development
     * Dustin Lang  dstndstn@gmail.com
-    * John Moustakas  jmoustakas@siena.edu
+    * John Moustakas [#]_  jmoustakas@siena.edu
 
 NOAO Community Pipeline:
     * David Herrera  herrera@noao.edu
@@ -38,8 +38,9 @@ NOAO Community Pipeline:
 WISE Reductions:
     * Aaron Meisner  ameisner@noao.edu
 
-Run Manager (for DR5, DR6, DR7 and DR8)
-    * Martin Landriau  mlandriau@lbl.gov
+Run Managers
+    * Mark (Ziyao) Zhang  ziyaoz@berkeley.edu *(for DR9)*
+    * Martin Landriau  mlandriau@lbl.gov *(for DR5, DR6, DR7 and DR8)*
 
 BASS Contact:
     * Jinyi Yang  jinyiyang@email.arizona.edu
@@ -64,7 +65,7 @@ Image Gallery:
 
 DESI Target Selection:
     * Christophe Yeche  christophe.yeche@cea.fr
-    * Adam Myers  geordiemyers@gmail.com
+    * Adam Myers [#]_  geordiemyers@gmail.com
 
 Pan-STARRS1 Catalogs:
     * Doug Finkbeiner  dfinkbeiner@cfa.harvard.edu
@@ -75,7 +76,15 @@ Additional contributors
 -----------------------
 Many, many additional researchers have contributed to the DESI Legacy Imaging Surveys.
 See, also, the full list of co-authors on the `DESI Legacy Imaging Surveys Overview Paper`_
-and the list of `DESI team members`_.
+and the list of `DESI team members`_ and `DESI builders`_.
+
+|
+
+**Acknowledgment Footnotes**
+
+.. [#] JM was supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics under Award Number DE-SC002008 and by the National Science Foundation under grant AST-1616414.
+.. [#] ADM was supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics, under Award Number DE-SC0019022.
 
 .. _`DESI Legacy Imaging Surveys Overview Paper`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`DESI team members`: https://desi.lbl.gov/trac/wiki/PublicPages/Contacts
+.. _`DESI builders`: https://www.desi.lbl.gov/desi-builders/

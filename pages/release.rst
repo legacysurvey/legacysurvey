@@ -21,6 +21,22 @@
 
 These tables contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
 
+**DR9**
+
+========= ====== ========= ====== ====== =======
+RELEASE	  CAMERA RELEASE   CAMERA FILTER PRIMARY
+========= ====== ========= ====== ====== =======
+9000/9002 decam  9001/9003 bok    |g|    1
+9000/9002 decam  9001/9003 bok    |r|    1
+9000/9002 decam  9001/9003 mosaic |z|    1
+9000/9002 wise   9001/9003 wise   |W1|   0
+9000/9002 wise   9001/9003 wise   |W2|   0
+9000/9002 wise   9001/9003 wise   |W3|   0
+9000/9002 wise   9001/9003 wise   |W4|   0
+========= ====== ========= ====== ====== =======
+
+**DR8**
+
 ======= ====== ======= ====== ====== =======
 RELEASE	CAMERA RELEASE CAMERA FILTER PRIMARY
 ======= ====== ======= ====== ====== =======
@@ -32,6 +48,8 @@ RELEASE	CAMERA RELEASE CAMERA FILTER PRIMARY
 8000	wise   8001    wise   |W3|   0
 8000	wise   8001    wise   |W4|   0
 ======= ====== ======= ====== ====== =======
+
+**DR7**
 
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY
@@ -45,6 +63,8 @@ RELEASE	CAMERA FILTER PRIMARY
 7000	wise   |W4|   0
 ======= ====== ====== =======
 
+**DR6**
+
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY
 ======= ====== ====== =======
@@ -57,6 +77,8 @@ RELEASE	CAMERA FILTER PRIMARY
 6000	wise   |W4|   0
 ======= ====== ====== =======
 
+**DR5**
+
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY
 ======= ====== ====== =======
@@ -68,6 +90,8 @@ RELEASE	CAMERA FILTER PRIMARY
 5000	wise   |W3|   0
 5000	wise   |W4|   0
 ======= ====== ====== =======
+
+**DR4**
 
 ======= ====== ====== =======
 RELEASE	CAMERA FILTER PRIMARY

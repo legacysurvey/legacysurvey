@@ -16,7 +16,7 @@ SITE_URL = "http://legacysurvey.org/"
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_tiny.jpg"
+LOGO_URL = "/files/logo_very_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -84,18 +84,13 @@ NAVIGATION_LINKS = {
                 ("/dr8/issues", 'Known Issues'),
                 ), 'DR8'),
         ((
-                ("/dr7/description", 'Description'),
-                ("/dr7/files", 'Files'),
-                ("/dr7/catalogs", 'Catalogs'),
-                ("/dr7/issues", 'Known Issues'),
-                ), 'DR7'),
-        ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
             ("/dr3", 'Data Release 3'),
             ("/dr4", 'Data Release 4'),
             ("/dr5", 'Data Release 5'),
             ("/dr6", 'Data Release 6'),
+            ("/dr7", 'Data Release 7'),
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),

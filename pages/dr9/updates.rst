@@ -54,8 +54,8 @@ Data model changes
     - ``dr8/north/`` for `MzLS`_/`BASS`_ data
 * A new morphological type ``TYPE=DUP`` has been added for Gaia sources that are coincident with an extended source.
     - No optical flux is assigned to ``DUP`` sources, but they are retained such that all Gaia sources appear in the source catalogs.
-* The ``maskbits-*`` files have been updated with extra bits as documented on the `DR8 bitmasks page`_.
-* The ``BRIGHTSTARINBLOB`` boolean column has been dropped in favor of the integer column ``BRIGHTBLOB``, which contains extra bits as documented on the `DR8 bitmasks page`_.
+* The ``maskbits-*`` files have been updated with extra bits as documented on the `DR9 bitmasks page`_.
+* The ``BRIGHTSTARINBLOB`` boolean column has been dropped in favor of the integer column ``BRIGHTBLOB``, which contains extra bits as documented on the `DR9 bitmasks page`_.
 * Additional Gaia columns have been added to the Tractor and sweeps catalogs:
    - ``GAIA_PHOT_BP_RP_EXCESS_FACTOR``
    - ``GAIA_ASTROMETRIC_SIGMA5D_MAX``
@@ -86,5 +86,5 @@ Data model changes
 
 
 .. _`DR7`: ../../dr7/description
-.. _`DR8 bitmasks page`: ../bitmasks
+.. _`DR9 bitmasks page`: ../bitmasks
 .. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf

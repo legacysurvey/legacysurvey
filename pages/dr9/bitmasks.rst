@@ -1,4 +1,4 @@
-.. title: DR8 bitmasks
+.. title: DR9 bitmasks
 .. slug: bitmasks
 .. tags: mathjax
 
@@ -7,7 +7,7 @@
 .. contents::
 
 
-This page details the meaning of the bitmasks provided with Data Release 8 of the Legacy Surveys. The bits are
+This page details the meaning of the bitmasks provided with Data Release 9 of the Legacy Surveys. The bits are
 enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-power-of-7`).
 
 ``BRIGHTBLOB``

@@ -75,7 +75,7 @@ Column          Type       Description
 ``nexphist_z``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
 ``nobjs``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types
 ``npsf``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``
-``nsimp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``
+``nsimp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (0)
 ``nrex``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``
 ``nexp``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``
 ``ndev``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``

@@ -28,7 +28,7 @@ such quantities are often quoted on the Vega system).
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
-.. _`DR8 bitmasks page`: ../bitmasks
+.. _`DR9 bitmasks page`: ../bitmasks
 .. _`LSLGA`: ../external
 
 ===================================== ============ ===================== ===============================================
@@ -39,8 +39,8 @@ Name                                  Type         Units                 Descrip
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick
 ``brick_primary``                     boolean                            ``True`` if the object is within the brick boundary
-``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR8 bitmasks page`_
-``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR8 bitmasks page`_
+``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR9 bitmasks page`_
+``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR9 bitmasks page`_
 ``iterative``                         boolean                            ``True`` if the object was inferred from a second round of fitting to the image-minus-model residuals from the first round of fitting.
 ``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model.
 ``ra``                                float64      deg                   Right ascension at equinox J2000
@@ -150,14 +150,14 @@ Name                                  Type         Units                 Descrip
 ``fracin_g``                          float32                            Fraction of a source's flux within the blob in :math:`g`, near unity for real sources
 ``fracin_r``                          float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
 ``fracin_z``                          float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
-``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` as cataloged on the `DR8 bitmasks page`_
-``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` as cataloged on the `DR8 bitmasks page`_
-``anymask_z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z` as cataloged on the `DR8 bitmasks page`_
-``allmask_g``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` as cataloged on the `DR8 bitmasks page`_
-``allmask_r``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` as cataloged on the `DR8 bitmasks page`_
-``allmask_z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` as cataloged on the `DR8 bitmasks page`_
-``wisemask_w1``                       uint8                              W1 bitmask as cataloged on the `DR8 bitmasks page`_
-``wisemask_w2``		              uint8                              W2 bitmask as cataloged on the `DR8 bitmasks page`_
+``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` as cataloged on the `DR9 bitmasks page`_
+``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` as cataloged on the `DR9 bitmasks page`_
+``anymask_z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z` as cataloged on the `DR9 bitmasks page`_
+``allmask_g``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` as cataloged on the `DR9 bitmasks page`_
+``allmask_r``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` as cataloged on the `DR9 bitmasks page`_
+``allmask_z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` as cataloged on the `DR9 bitmasks page`_
+``wisemask_w1``                       uint8                              W1 bitmask as cataloged on the `DR9 bitmasks page`_
+``wisemask_w2``		              uint8                              W2 bitmask as cataloged on the `DR9 bitmasks page`_
 ``psfsize_g``                         float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 ``psfsize_r``                         float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 ``psfsize_z``                         float32      arcsec                Weighted average PSF FWHM in the :math:`z` band

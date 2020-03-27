@@ -163,12 +163,12 @@ Column               Type       Description
 ==================== ========== =======================================================
 ``image_filename``   char[120]  Path to FITS image, e.g. "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz"
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
-``camera``           char[9]    The camera that took this image e.g. "90prime"
+``camera``           char[X]    The camera that took this image (X is 7 for "90prime", 6 for "mosaic" and 5 for "decam")
 ``expnum``           int64      Exposure number, eg 348224
 ``plver``	     char[8]	Community Pipeline (CP) version number
 ``procdate``	     char[19]	CP processing date
 ``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
-``ccdname``          char[5]    CCD name, e.g. "N10", "S7" for DECam
+``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam)
 ``object``           char[35]   Name listed in the object tag from the CCD header
 ``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
@@ -215,8 +215,8 @@ survey-ccds-<camera>-dr9.kd.fits
 As for the **survey-ccds-<camera>-dr9.fits.gz** files but limited by the depth of each observation. These files
 contain the CCDs actually used for the DR9 reductions. Columns are the same as for the **survey-ccds-<camera>-dr9.fits.gz** files.
 
-ccds-annotated-<camera>-dr9.fits.gz
------------------------------------
+ccds-annotated-<camera>-dr9-cut.fits.gz
+---------------------------------------
 
 Versions of the **survey-ccds-<camera>-dr9.fits.gz** files with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
@@ -552,7 +552,7 @@ Users interested in database access to the Tractor `catalogs`_ can contact the N
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
 
-8.0/sweep-<brickmin>-<brickmax>.fits
+9.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
@@ -568,12 +568,12 @@ Name                                  Type         Units                 Descrip
 ``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
-``TYPE``                              char[4]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "COMP"=composite, "DUP"==Gaia source fit by different model.  Note that in some FITS readers, a trailing space may be appended for "PSF ", "EXP " and "DEV " since the column data type is a 4-character string
+``TYPE``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "SER"=Sersic, "DUP"==Gaia source fit by different model
 ``RA``                                float64      deg                   Right ascension at equinox J2000
 ``DEC``                               float64      deg                   Declination at equinox J2000
 ``RA_IVAR``                           float32      1/deg\ |sup2|         Inverse variance of ``RA`` (no cosine term!), excluding astrometric calibration errors
 ``DEC_IVAR``                          float32      1/deg\ |sup2|         Inverse variance of ``DEC``, excluding astrometric calibration errors
-``DCHISQ``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, COMP.  The difference is versus no source.
+``DCHISQ``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, SER.  The difference is versus no source.
 ``EBV``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute ``MW_TRANSMISSION``
 ``FLUX_G``                            float32      nanomaggies           model flux in :math:`g`
 ``FLUX_R``                            float32      nanomaggies           model flux in :math:`r`
@@ -643,20 +643,20 @@ Name                                  Type         Units                 Descrip
 ``PSFDEPTH_W1``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
 ``PSFDEPTH_W2``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
 ``WISE_COADD_ID``                     char[8]                            unWISE coadd file name for the center of each object
-``FRACDEV``                           float32                            Fraction of model in deVauc [0,1]
-``FRACDEV_IVAR``                      float32                            Inverse variance of ``FRACDEV``
-``SHAPEDEV_R``                        float32      arcsec                Half-light radius of deVaucouleurs model (>0)
-``SHAPEDEV_R_IVAR``                   float32      1/arcsec              Inverse variance of ``SHAPEDEV_R``
-``SHAPEDEV_E1``                       float32                            Ellipticity component 1
-``SHAPEDEV_E1_IVAR``                  float32                            Inverse variance of ``SHAPEDEV_E1``
-``SHAPEDEV_E2``                       float32                            Ellipticity component 2
-``SHAPEDEV_E2_IVAR``                  float32                            Inverse variance of ``SHAPEDEV_E2``
-``SHAPEEXP_R``                        float32      arcsec                Half-light radius of exponential model (>0)
-``SHAPEEXP_R_IVAR``                   float32      1/arcsec2             Inverse variance of ``SHAPEEXP_R``
-``SHAPEEXP_E1``                       float32                            Ellipticity component 1
-``SHAPEEXP_E1_IVAR``                  float32                            Inverse variance of ``SHAPEEXP_E1``
-``SHAPEEXP_E2``                       float32                            Ellipticity component 2
-``SHAPEEXP_E2_IVAR``                  float32                            Inverse variance of ``SHAPEEXP_E2``
+``LC_FLUX_W1``                        float32[13]  nanomaggies           ``FLUX_W1`` in each of up to thirteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``LC_FLUX_W2``                        float32[13]  nanomaggies           ``FLUX_W2`` in each of up to thirteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W1``                   float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W2``                   float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
+``LC_NOBS_W1``                        int16[13]                          ``NOBS_W1`` in each of up to thirteen unWISE coadd epochs
+``LC_NOBS_W2``                        int16[13]                          ``NOBS_W2`` in each of up to thirteen unWISE coadd epochs
+``LC_MJD_W1``                         float64[13]                        ``MJD_W1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_MJD_W2``                         float64[13]                        ``MJD_W2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``SHAPE_R``                           float32      arcsec                Half-light radius of galaxy model for galaxy type ``TYPE`` (>0)
+``SHAPE_R_IVAR``                      float32      1/arcsec\ |sup2|      Inverse variance of ``SHAPE_R``
+``SHAPE_E1``                          float32                            Ellipticity component 1 of galaxy model for galaxy type ``TYPE``
+``SHAPE_E1_IVAR``                     float32                            Inverse variance of ``SHAPE_E1``
+``SHAPE_E2``                          float32                            Ellipticity component 2 of galaxy model for galaxy type ``TYPE``
+``SHAPE_E2_IVAR``                     float32                            Inverse variance of ``SHAPE_E2``
 ``FIBERFLUX_G``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``FIBERFLUX_R``                       float32      nanomaggies		 Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
 ``FIBERFLUX_Z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
@@ -684,6 +684,8 @@ Name                                  Type         Units                 Descrip
 ``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
+``SERSIC``                            float32
+``SERSIC_IVAR``                       float32                            Inverse variance of ``SERSIC``
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
@@ -692,7 +694,7 @@ Name                                  Type         Units                 Descrip
 
 .. _photometric-redshifts:
 
-Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+Photometric Redshift files (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------------------
 
 The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. (2020)`_)

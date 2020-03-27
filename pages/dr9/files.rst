@@ -457,6 +457,7 @@ In addition to the columns from the Tractor `catalogs`_, we have added columns f
 
 .. _`catalogs page`: ../catalogs
 .. _`catalogs`: ../catalogs
+.. _`Catalogs`: ../catalogs
 
 survey-dr9-<region>-specObj-dr16.fits
 -------------------------------------
@@ -927,7 +928,7 @@ Local fits within the area of large galaxies and galaxy groups, where <GALNAME> 
     Not yet documented.
 
 - <GALNAME>-pipeline-tractor.fits
-    Not yet documented.
+    `Catalogs`_ of sources derived from the local Tractor pipeline fitting within the area of <GALNAME>.
 
 - <GALNAME>-pipeline-image-W1W2.jpg
     JPEG image, not yet documented.

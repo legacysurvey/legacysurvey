@@ -17,8 +17,27 @@ This page is likely to be incomplete and has been updated through mid-June, 2019
 2020 (X publications so far)
 =============================
 #. Ross & Cross, `The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`_
-#. Walmsley et al., `Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`_
+
+
+#. Hewitt & Treuthardt, `Comparison of galaxy spiral arm pitch angle measurements using manual and automated techniques`_
+#. Barbosa et al., `One Hundred SMUDGes in S-PLUS: Ultra-diffuse Galaxies Flourish in the Field`_
+#. Piatti & Fernandez-Trincado, `Pal 13: its moderately extended low-density halo and its accretion history`_
+#. Bhowmick, Di Matteo & Myers, `Multiplicity functions of quasars: predictions from the MassiveBlackII simulation`_
+#. Lacy et al., `The Karl G. Jansky Very Large Array Sky Survey (VLASS). Science Case and Survey Design`_
+#. Dekany et al., `The Zwicky Transient Facility: Observing System`_
+#. Meisner et al., `Expanding the Y Dwarf Census with Spitzer Follow-up of the Coldest CatWISE Solar Neighborhood Discoveries`_
+#. Bait et al., `Discovery of a large H I ring around the quiescent galaxy AGC 203001`_
+#. Oliveira, Bonvin & Clarkson, `A null test to probe the scale dependence of the growth of structure as a test of general relativity`_
+#. Miller et al., `Investigating Overdensities around z > 6 Galaxies through ALMA Observations of [C ii]`_
+#. Prieto et al., `Variable H-alpha Emission in the Nebular Spectra of the Low-luminosity Type Ia SN2018cqj/ATLAS18qtd`_
+#. Mau et al., `Two Ultra-faint Milky Way Stellar Systems Discovered in Early Data from the DECam Local Volume Exploration Survey`_
+#. Andreoni et al., `GROWTH on S190814bv: Deep Synoptic Limits on the Optical/Near-infrared Counterpart to a Neutron Star-Black Hole Merger`_
+#. Garma-Oehmichen et al., `SDSS-IV MaNGA: bar pattern speed estimates with the Tremaine-Weinberg method and their error sources`_
 #. Chen et al., `The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`_
+#. Walmsley et al., `Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`_
+#. Phriksee et al., `Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`_
+#. Bonaca et al., `Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`_
+#. Kang et al., `Early-type Host Galaxies of Type Ia Supernovae. II. Evidence for Luminosity Evolution in Supernova Cosmology`_
 
 2019 (68 publications)
 =============================
@@ -92,7 +111,7 @@ This page is likely to be incomplete and has been updated through mid-June, 2019
 #. Zaritsky et al., `Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`_
 #. Wold et al., `The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`_
 
-2018 (32 publications)
+2018 (30 publications)
 ======================
 #. Wang et al., `The Discovery of a Luminous Broad Absorption Line Quasar at a Redshift of 7.02`_
 #. Ishikawa et al., `Comprehensive Measurements of the Volume-phase Holographic Gratings for the Dark Energy Spectroscopic Instrument`_
@@ -159,8 +178,26 @@ This page is likely to be incomplete and has been updated through mid-June, 2019
 
 
 .. _`The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`: https://ui.adsabs.harvard.edu/abs/2019arXiv190606974R
-.. _`Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`: https://ui.adsabs.harvard.edu/abs/2019arXiv190507424W
-.. _`The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`: https://ui.adsabs.harvard.edu/abs/2019arXiv190502205C
+
+.. _`Comparison of galaxy spiral arm pitch angle measurements using manual and automated techniques`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.493.3854H
+.. _`One Hundred SMUDGes in S-PLUS: Ultra-diffuse Galaxies Flourish in the Field`: https://ui.adsabs.harvard.edu/abs/2020ApJS..247...46B
+.. _`Pal 13: its moderately extended low-density halo and its accretion history`: https://ui.adsabs.harvard.edu/abs/2020A%26A...635A..93P
+.. _`Multiplicity functions of quasars: predictions from the MassiveBlackII simulation`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.5620B
+.. _`The Karl G. Jansky Very Large Array Sky Survey (VLASS). Science Case and Survey Design`: https://ui.adsabs.harvard.edu/abs/2020PASP..132c5001L
+.. _`The Zwicky Transient Facility: Observing System`: https://ui.adsabs.harvard.edu/abs/2020PASP..132c8001D
+.. _`Expanding the Y Dwarf Census with Spitzer Follow-up of the Coldest CatWISE Solar Neighborhood Discoveries`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...74M
+.. _`Discovery of a large H I ring around the quiescent galaxy AGC 203001`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.492....1B
+.. _`A null test to probe the scale dependence of the growth of structure as a test of general relativity`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.492L..34O
+.. _`Investigating Overdensities around z > 6 Galaxies through ALMA Observations of [C ii]`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...98M
+.. _`Variable H-alpha Emission in the Nebular Spectra of the Low-luminosity Type Ia SN2018cqj/ATLAS18qtd`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889..100P
+.. _`Two Ultra-faint Milky Way Stellar Systems Discovered in Early Data from the DECam Local Volume Exploration Survey`: https://ui.adsabs.harvard.edu/abs/2020ApJ...890..136M
+.. _`GROWTH on S190814bv: Deep Synoptic Limits on the Optical/Near-infrared Counterpart to a Neutron Star-Black Hole Merger`: https://ui.adsabs.harvard.edu/abs/2020ApJ...890..131A
+.. _`SDSS-IV MaNGA: bar pattern speed estimates with the Tremaine-Weinberg method and their error sources`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.3655G
+.. _`The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889L...6C
+.. _`Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1554W
+.. _`Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1643P
+.. _`Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...70B
+.. _`Early-type Host Galaxies of Type Ia Supernovae. II. Evidence for Luminosity Evolution in Supernova Cosmology`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889....8K
 
 .. _`Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`: https://ui.adsabs.harvard.edu/abs/2019arXiv191208977K
 .. _`A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`: https://ui.adsabs.harvard.edu/abs/2019arXiv191204887K
@@ -231,6 +268,7 @@ This page is likely to be incomplete and has been updated through mid-June, 2019
 .. _`A High-luminosity, High-equivalent-width z ~ 3 Ly-alpha Emitter Discovered Serendipitously from the SDSS MaNGA Survey`: https://ui.adsabs.harvard.edu/abs/2019RNAAS...3a..22S
 .. _`Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....1Z
 .. _`The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....5W
+
 
 
 .. _`The Discovery of a Luminous Broad Absorption Line Quasar at a Redshift of 7.02`: https://ui.adsabs.harvard.edu/abs/2018ApJ...869L...9W

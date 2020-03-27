@@ -746,12 +746,15 @@ Image Stacks (``<region>/coadd/*``)
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
+- <AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz
+    Not yet documented.
+
 - <AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
     Contains the same columns as **survey-ccds-<camera>-dr9.fits.gz**, and also contains
     the additional columns listed below. Note that string columns can have different lengths in the **survey-ccds-<camera>-dr9.fits.gz**
     and **legacysurvey-<brick>-ccds.fits** files and can differ for ``<region>`` equal to ``<north>`` and ``<south>``.
-    For example the ``camera`` column can change from ``char[9]`` to ``char[7]`` (see, e.g. `legacypipe issue #379`_).
+    For example the ``camera`` column can change from ``char[7]`` to ``char[5]`` (see, e.g. `legacypipe issue #379`_).
 
     ================ ========= ======================================================
     Column           Type      Description
@@ -772,6 +775,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     ``skyplver``     char[8]   Community Pipeline (CP) version of the input to sky calibration
     ``wcsplver``     char[5]   CP version of the input to WCS calibration
     ``psfplver``     char[8]   CP version of the input to PSF calibration
+    ``co_sky``       float32   
     ================ ========= ======================================================
 
 .. _`legacypipe issue #379`: https://github.com/legacysurvey/legacypipe/issues/379
@@ -808,7 +812,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 .. _`recommended by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 
 - <AAA>/<brick>/legacysurvey-<brick>-invvar-<filter>.fits.fz
-    Corresponding stacked inverse variance image based on the sum of the
+    Inverse variance image corresponding to the legacysurvey-<brick>-image-<filter>.fits.fz file based on the sum of the
     inverse-variances of the individual input images in units of 1/(nanomaggies)\
     |sup2| per pixel.
 
@@ -841,6 +845,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 - <AAA>/<brick>/legacysurvey-<brick>-psfsize-<filter>.fits.fz
     Number of exposures contributing to each pixel of the stacked images.
 
+- <AAA>/<brick>/legacysurvey-<brick>-blobmodel.jpg
+    Not yet documented.
+
 - <AAA>/<brick>/legacysurvey-<brick>-image.jpg
     JPEG image of the calibrated image using the :math:`g,r,z` filters as the colors.
 
@@ -856,6 +863,86 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - <AAA>/<brick>/legacysurvey-<brick>-wisemodel.jpg
     JPEG image of the model image using the WISE filters as the colors.
+
+Large galaxy files (``largegalaxies/<AAA>/<GALNAME>/*``)
+========================================================
+
+Local fits within the area of large galaxies and galaxy groups, where <GALNAME> is the name of the galaxy or group
+(e.g. ``NGC0779`` or ``NGC0779_GROUP``). Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
+3600 pixels, at 0.262 arcseconds per pixel.
+
+- <GALNAME>-blobs.fits.gz
+    Not yet documented.
+
+- <GALNAME>-ccds-<camera>.fits
+    As for the legacysurvey-<brick>-ccds.fits file from the ``Image Stacks``, above.
+
+- <GALNAME>-depth-<filter>.fits.fz
+    Stacked depth map in units of the point-source flux inverse-variance at each pixel.
+
+    - The 5\ |sigma| point-source depth can be computed as :math:`5 / \sqrt(\mathrm{depth\_ivar})` .
+
+- <GALNAME>-image-<filter>.fits.fz
+    Where <filter> is one of W1, W2, W3 or W4. Stacked image centered on a brick location covering 0.25\ |deg| |times| 0.25\
+    |deg|.  The primary HDU contains the coadded image (inverse-variance weighted coadd), in
+    units of nanomaggies per pixel.
+
+    - NOTE: These are not the images used by Tractor, which operates on the
+      single-epoch images.
+
+    - NOTE: These images are resampled using Lanczos-3 resampling.
+
+    - NOTE: Images in WISE bands are on the Vega system, all other flux-related quantities
+      in DR9 are reported on the AB system. The `description`_ page lists
+      the Vega-to-AB conversions `recommended by the WISE team`_.
+
+- <GALNAME>-invvar-<filter>.fits.fz
+    Inverse variance image corresponding to the <GALNAME>-image-<filter>.fits.fz file based on the sum of the
+    inverse-variances of the individual input images in units of 1/(nanomaggies)\
+    |sup2| per pixel.
+
+- <GALNAME>-maskbits.fits.fz
+    Bitmask of possible problems with pixels in the area of <GALNAME>.
+
+    - HDU1: The optical bitmasks, corresponding to ``MASKBITS`` on the `DR9 bitmasks page`_.
+    - HDU2: The WISE W1 bitmasks, corresponding to ``WISEMASK_W1`` on the `DR9 bitmasks page`_.
+    - HDU3: The WISE W2 bitmasks, corresponding to ``WISEMASK_W2`` on the `DR9 bitmasks page`_.
+
+- <GALNAME>-model-<filter>.fits.fz
+    Where <filter> is one of W1, W2, W3 or W4. Stacked model image centered on bricks in the area of <GALNAME>.
+
+    - The Tractor's idea of what the coadded images should look like; the Tractor's model prediction.
+
+    - NOTE: Images in WISE bands are on the Vega system, all other flux-related quantities
+      in DR9 are reported on the AB system. The `description`_ page lists
+      the Vega-to-AB conversions `recommended by the WISE team`_.
+
+- <GALNAME>-outlier-mask.fits.fz
+    Not yet documented.
+
+- <GALNAME>-pipeline-image-<filter>.fits.fz
+    Not yet documented.
+
+- <GALNAME>-pipeline-model-<filter>.fits.fz
+    Not yet documented.
+
+- <GALNAME>-pipeline-tractor.fits
+    Not yet documented.
+
+- <GALNAME>-pipeline-image-W1W2.jpg
+    JPEG image, not yet documented.
+
+- <GALNAME>-pipeline-image-grz.jpg
+    JPEG image, not yet documented.
+
+- <GALNAME>-pipeline-model-W1W2.jpg
+    JPEG image, not yet documented.
+
+- <GALNAME>-pipeline-model-grz.jpg
+    JPEG image, not yet documented.
+
+- <GALNAME>-pipeline-resid-grz.jpg
+    JPEG image, not yet documented.
 
 Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
 =====================================================================================

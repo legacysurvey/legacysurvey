@@ -12,7 +12,16 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through early-April, 2020. For additional publications, see also the NOAO publications lists for `2018`_ and `2019`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through early-April, 2020. For additional publications, see also the NOAO publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+
+
+.. _`text on the acknowledgment page`: ../acknowledgment
+.. _`2018`: https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
+.. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
+.. _`2020`: https://www.noao.edu/noao/library/NSF-OIR-Lab-FY20-Publications.html#LegacySurveys
+.. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
+
 
 2020 (29 publications so far)
 =============================
@@ -47,7 +56,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Phriksee et al., `Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`_
 #. Bonaca et al., `Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`_
 
-2019 (68 publications)
+2019 (77 publications)
 =============================
 #. Krone-Martins et al., `Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`_
 #. Kasparova, Katkov & Chilingarian, `A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`_
@@ -100,8 +109,11 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Bates et al., `Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`_
 #. Wang et al., `Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`_
 #. Maschmann & Melchior, `Ultimate Merging at z~0.1`_
+#. He et al., `Edge-on H I-bearing Ultra-diffuse Galaxy Candidates in the 40% ALFALFA Catalog`_
 #. Baltay et al., `The DESI Fiber View Camera System`_
+#. Trujillo et al., `A distance of 13 Mpc resolves the claimed anomalies of the galaxy lacking dark matter`_
 #. Robertson et al. `Galaxy formation and evolution science in the era of the Large Synoptic Survey Telescope`_
+#. Gordon et al. `The Effect of Minor and Major Mergers on the Evolution of Low-excitation Radio Galaxies`_
 #. Koposov et al., `Piercing the Milky Way: an all-sky view of the Orphan Stream`_
 #. Yang et al., `Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`_
 #. Bait, Wadadekar & Barway, `Outlying H-alpha emitters in SDSS IV MaNGA`_
@@ -109,15 +121,21 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Dey et al., `Overview of the DESI Legacy Imaging Surveys`_
 #. Zou et al., `Photometric Redshifts and Stellar Masses for Galaxies from the DESI Legacy Imaging Surveys`_
 #. Meyer et al., `Quasi-stellar objects acting as potential strong gravitational lenses in the SDSS-III BOSS survey`_
+#. Pons et al., `A new bright z = 6.82 quasar discovered with VISTA: VHS J0411-0907`_
+#. Li et al., `Discovery of a LyA-emitting Dark Cloud within the z ~ 2.8 SMM J02399-0136 System`_
 #. Chen et al., `Characterizing circumgalactic gas around massive ellipticals at z ~ 0.4 - III. The galactic environment of a chemically pristine Lyman limit absorber`_
 #. Dominguez Sanchez et al., `Transfer learning for galaxy morphology from one survey to another`_
 #. Gonzalez et al., `The Massive and Distant Clusters of WISE Survey. I. Survey Overview and a Catalog of >2000 Galaxy Clusters at z ~ 1`_
-#. Schlafly et al., `The unWISE Catalog: Two Billion Infrared Sources from Five Years of WISE Imaging`_
+#. Duncan et al., `The LOFAR Two-metre Sky Survey. IV. First Data Release: Photometric redshifts and rest-frame magnitudes`_
+#. Schlafly, Meisner & Green, `The unWISE Catalog: Two Billion Infrared Sources from Five Years of WISE Imaging`_
+#. Tenneti et al., `A tiny host galaxy for the first giant black hole: z = 7.5 quasar in BlueTides`_
+#. Guo et al., `Evolution of Star-forming Galaxies from z = 0.7 to 1.2 with eBOSS Emission-line Galaxies`_
 #. Matsuoka et al., `Discovery of the First Low-luminosity Quasar at z > 7`_
 #. Kokubo et al., `A Long-duration Luminous Type IIn Supernova KISS15s: Strong Recombination Lines from the Inhomogeneous Ejecta-CSM Interaction Region and Hot Dust Emission from Newly Formed Dust`_
 #. Smith, `A High-luminosity, High-equivalent-width z ~ 3 Ly-alpha Emitter Discovered Serendipitously from the SDSS MaNGA Survey`_
 #. Zaritsky et al., `Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`_
 #. Wold et al., `The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`_
+#. Graham et al., `Delayed Circumstellar Interaction for Type Ia SN 2015cp Revealed by an HST Ultraviolet Imaging Survey`_
 
 2018 (30 publications)
 ======================
@@ -176,12 +194,6 @@ This page is likely to be incomplete and has been updated through early-April, 2
 2014 (1 publication)
 ====================
 #. Lang, `unWISE: Unblurred Coadds of the WISE Imaging`_
-
-.. _`text on the acknowledgment page`: ../acknowledgment
-.. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
-.. _`2018`: https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
-.. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
-.. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
 
 
 
@@ -267,8 +279,11 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.3059B
 .. _`Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`: https://ui.adsabs.harvard.edu/abs/2019ApJ...879...71W
 .. _`Ultimate Merging at z~0.1`: https://ui.adsabs.harvard.edu/abs/2019A%26A...627L...3M
+.. _`Edge-on H I-bearing Ultra-diffuse Galaxy Candidates in the 40% ALFALFA Catalog`: https://ui.adsabs.harvard.edu/abs/2019ApJ...880...30H
 .. _`The DESI Fiber View Camera System`: https://ui.adsabs.harvard.edu/abs/2019PASP..131f5001B
+.. _`A distance of 13 Mpc resolves the claimed anomalies of the galaxy lacking dark matter`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.1192T
 .. _`Galaxy formation and evolution science in the era of the Large Synoptic Survey Telescope`: https://ui.adsabs.harvard.edu/abs/2019NatRP...1..450R
+.. _`The Effect of Minor and Major Mergers on the Evolution of Low-excitation Radio Galaxies`: https://ui.adsabs.harvard.edu/abs/2019ApJ...878...88G
 .. _`Piercing the Milky Way: an all-sky view of the Orphan Stream`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.4726K
 .. _`Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..236Y
 .. _`Outlying H-alpha emitters in SDSS IV MaNGA`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485..428B
@@ -276,16 +291,21 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`Overview of the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 .. _`Photometric Redshifts and Stellar Masses for Galaxies from the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019ApJS..242....8Z
 .. _`Quasi-stellar objects acting as potential strong gravitational lenses in the SDSS-III BOSS survey`: https://ui.adsabs.harvard.edu/abs/2019A%26A...625A..56M
+.. _`A new bright z = 6.82 quasar discovered with VISTA: VHS J0411-0907`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.5142P
+.. _`Discovery of a LyA-emitting Dark Cloud within the z ~ 2.8 SMM J02399-0136 System`: https://ui.adsabs.harvard.edu/abs/2019ApJ...875..130L
 .. _`Characterizing circumgalactic gas around massive ellipticals at z ~ 0.4 - III. The galactic environment of a chemically pristine Lyman limit absorber`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.484..431C
 .. _`Transfer learning for galaxy morphology from one survey to another`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.484...93D
 .. _`The Massive and Distant Clusters of WISE Survey. I. Survey Overview and a Catalog of >2000 Galaxy Clusters at z ~ 1`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240...33G
+.. _`The LOFAR Two-metre Sky Survey. IV. First Data Release: Photometric redshifts and rest-frame magnitudes`: https://ui.adsabs.harvard.edu/abs/2019A%26A...622A...3D
 .. _`The unWISE Catalog: Two Billion Infrared Sources from Five Years of WISE Imaging`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240...30S
+.. _`A tiny host galaxy for the first giant black hole: z = 7.5 quasar in BlueTides`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.483.1388T
+.. _`Evolution of Star-forming Galaxies from z = 0.7 to 1.2 with eBOSS Emission-line Galaxies`: https://ui.adsabs.harvard.edu/abs/2019ApJ...871..147G
 .. _`Discovery of the First Low-luminosity Quasar at z > 7`: https://ui.adsabs.harvard.edu/abs/2019ApJ...872L...2M
 .. _`A Long-duration Luminous Type IIn Supernova KISS15s: Strong Recombination Lines from the Inhomogeneous Ejecta-CSM Interaction Region and Hot Dust Emission from Newly Formed Dust`: https://ui.adsabs.harvard.edu/abs/2019ApJ...872..135K
 .. _`A High-luminosity, High-equivalent-width z ~ 3 Ly-alpha Emitter Discovered Serendipitously from the SDSS MaNGA Survey`: https://ui.adsabs.harvard.edu/abs/2019RNAAS...3a..22S
 .. _`Systematically Measuring Ultra-diffuse Galaxies (SMUDGes). I. Survey Description and First Results in the Coma Galaxy Cluster and Environs`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....1Z
 .. _`The Spitzer-HETDEX Exploratory Large Area Survey. II. The Dark Energy Camera and Spitzer/IRAC Multiwavelength Catalog`: https://ui.adsabs.harvard.edu/abs/2019ApJS..240....5W
-
+.. _`Delayed Circumstellar Interaction for Type Ia SN 2015cp Revealed by an HST Ultraviolet Imaging Survey`: https://ui.adsabs.harvard.edu/abs/2019ApJ...871...62G
 
 
 .. _`The Discovery of a Luminous Broad Absorption Line Quasar at a Redshift of 7.02`: https://ui.adsabs.harvard.edu/abs/2018ApJ...869L...9W

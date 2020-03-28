@@ -23,7 +23,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 
 
-2020 (29 publications so far)
+2020 (30 publications so far)
 =============================
 #. Ross & Cross, `The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`_
 #. Anand et al., `DECam-GROWTH Search for the Faint and Distant Binary Neutron Star and Neutron Star-Black Hole Mergers in O3a`_
@@ -55,8 +55,9 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Walmsley et al., `Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`_
 #. Phriksee et al., `Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`_
 #. Bonaca et al., `Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`_
+#. Reines et al., `A New Sample of (Wandering) Massive Black Holes in Dwarf Galaxies from High-resolution Radio Observations`_
 
-2019 (77 publications)
+2019 (78 publications)
 =============================
 #. Krone-Martins et al., `Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`_
 #. Kasparova, Katkov & Chilingarian, `A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`_
@@ -87,6 +88,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Shirley et al., `HELP: a catalogue of 170 million objects, selected at 0.36-4.5 um, from 1270 deg2 of prime extragalactic fields`_
 #. Janowiecki et al., `The environment of H I-bearing ultra-diffuse galaxies in the ALFALFA survey`_
 #. Zou et al., `The Third Data Release of the Beijing-Arizona Sky Survey`_
+#. Chen et al., `Post-starburst galaxies in SDSS-IV MaNGA`_
 #. Huang et al., `The Mass-Metallicity Relation at z ~ 0.8: Redshift Evolution and Parameter Dependency`_
 #. Yang et al., `An Unusual Mid-infrared Flare in a Type 2 AGN: An Obscured Turning-on AGN or Tidal Disruption Event?`_
 #. Lopez-Sanjuan et al., `J-PLUS: photometric calibration of large-area multi-filter surveys with stellar and white dwarf loci`_
@@ -227,6 +229,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1554W
 .. _`Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1643P
 .. _`Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...70B
+.. _`A New Sample of (Wandering) Massive Black Holes in Dwarf Galaxies from High-resolution Radio Observations`: https://ui.adsabs.harvard.edu/abs/2020ApJ...888...36R
 
 .. _`Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`: https://ui.adsabs.harvard.edu/abs/2019arXiv191208977K
 .. _`A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`: https://ui.adsabs.harvard.edu/abs/2019arXiv191204887K
@@ -257,6 +260,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`HELP: a catalogue of 170 million objects, selected at 0.36-4.5 um, from 1270 deg2 of prime extragalactic fields`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.490..634S
 .. _`The environment of H I-bearing ultra-diffuse galaxies in the ALFALFA survey`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.490..566J
 .. _`The Third Data Release of the Beijing-Arizona Sky Survey`: https://ui.adsabs.harvard.edu/abs/2019ApJS..245....4Z
+.. _`Post-starburst galaxies in SDSS-IV MaNGA`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5709C
 .. _`The Mass-Metallicity Relation at z ~ 0.8: Redshift Evolution and Parameter Dependency`: https://ui.adsabs.harvard.edu/abs/2019ApJ...886...31H
 .. _`An Unusual Mid-infrared Flare in a Type 2 AGN: An Obscured Turning-on AGN or Tidal Disruption Event?`: https://ui.adsabs.harvard.edu/abs/2019ApJ...885..110Y
 .. _`J-PLUS: photometric calibration of large-area multi-filter surveys with stellar and white dwarf loci`: https://ui.adsabs.harvard.edu/abs/2019A%26A...631A.119L

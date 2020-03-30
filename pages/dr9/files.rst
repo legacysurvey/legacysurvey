@@ -204,7 +204,7 @@ Column               Type       Description
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag)
 ``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction
 ``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five
-``ccd_cuts``         int32      Bit codes for why a CCD got cut, used in
+``ccd_cuts``         int32      Bit mask describing CCD image quality (see the `DR9 bitmasks page`_)
 ==================== ========== =======================================================
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
@@ -998,7 +998,7 @@ proper motion!
     ``mjd``          float64    The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588
     ``exptime``      float32    The exposure time in seconds, eg 90.0
     ``psfsize``      float32    PSF FWHM in this exposure, in arcsec
-    ``ccd_cuts``     int64      Bit mask describing CCD image quality
+    ``ccd_cuts``     int64      Bit mask describing CCD image quality (see the `DR9 bitmasks page`_)
     ``airmass``      float32    Airmass of this observation
     ``sky``          float32    Sky background surface brightness, in nanomaggies/arcsec\ |sup2|
     ``psfdepth``     float32    Inverse-variance for the flux measured from a point source; for a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude

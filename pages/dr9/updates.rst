@@ -1,4 +1,4 @@
-.. title: Major updates since DR7
+.. title: Major updates since DR8
 .. slug: updates
 .. tags: mathjax
 
@@ -6,15 +6,12 @@
 
 .. contents::
 
-DR8 is the first release to integrate data from all of the individual Legacy Surveys (`BASS`_, `DECaLS`_ and `MzLS`_).
-In addition, observations for the Legacy Surveys were completed in March 2019, before the release of DR8.
-As such, a major push was made to update the `DR7`_ code and data model to prepare for the final Legacy Surveys Data Releases.
+DR9 will be the final release of the Legacy Surveys that is used for `DESI`_ target selection.
+As such, a major push was made to update the `DR8`_ code and data model to prepare for `DESI`_ observations.
 This page briefly documents those updates.
 
-.. _`BASS`: ../../bass
-.. _`DECaLS`: ../../decamls
-.. _`MzLS`: ../../mzls
-.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`DESI`: http://desi.lbl.gov
+.. _`DR8`: ../../dr7/description
 
 Algorithmic changes for optical data
 ====================================
@@ -35,13 +32,14 @@ Algorithmic changes for optical data
 
 Algorithmic changes for WISE
 ============================
-* PSFs are now pixelized.
-* Astrometry has been improved.
-* Sky modeling is now more accurate, which should remove biases for faint sources.
-* WISE coadds are generated on the same brick projections as for the optical (:math:`g,r,z`) imaging.
-* WISE bitmasks are now much more richly featured, as detailed in `Aaron Meisner's unWISE documentation`_.
-* The unWISE inverse variance map has been regularized.
+* WISE imaging has been updated to include observations through the `5th year of the NEOWISE W1/W2 data`_.
+* The unWISE astrometry has been re-generated, and proper motions of stars have been correctly accounted for when conducting time-resolved forced photometry.
+* unWISE epochs have been resampled to have more uniform coverage for the WISE light curves, particularly near the ecliptic poles (e.g. for columns such as ``lc_flux_w1`` on the `catalogs page`_).
+* The unWISE epoch index number is now recorded in the `Tractor catalogs`_.
 
+.. _`5th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2019_release_intro.html
+.. _`catalogs page`: ../catalogs
+.. _`Tractor catalogs`: ../catalogs
 
 Other algorithmic changes
 =========================
@@ -88,3 +86,7 @@ Data model changes
 .. _`DR7`: ../../dr7/description
 .. _`DR9 bitmasks page`: ../bitmasks
 .. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`BASS`: ../../bass
+.. _`DECaLS`: ../../decamls
+.. _`MzLS`: ../../mzls
+.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html

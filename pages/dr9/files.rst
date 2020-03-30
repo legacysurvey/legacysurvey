@@ -204,7 +204,7 @@ Column               Type       Description
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag)
 ``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction
 ``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five
-``ccd_cuts``         int32      (ignore)
+``ccd_cuts``         int32      Bit codes for why a CCD got cut, used in
 ==================== ========== =======================================================
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering

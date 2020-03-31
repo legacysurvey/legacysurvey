@@ -29,7 +29,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOAO Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: http://www.scipy.org
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
@@ -47,7 +47,7 @@ Contents of DR4
 Data Release 4 (DR4) is the fourth public data release of the Legacy Surveys. It consists of the
 first release of data from `BASS`_ and `MzLS`_
 reduced using the `Tractor`_. Each of the imaging
-datasets is first reduced through the `NOAO Community Pipeline`_ before being processed 
+datasets is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being processed 
 using the `Tractor`_.
 
 DR4 includes `BASS`_ images taken prior to July 13, 2016 and `MzLS`_ images taken
@@ -130,7 +130,7 @@ Obtaining Images and Raw Data
 
 Images, for all 3 of the Legacy Surveys can be viewed 
 directly using `the Sky viewer`_
-and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
 Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
@@ -148,7 +148,7 @@ For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ 
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
-.. _`the NOAO portal`: http://archive.noao.edu/search/query
+.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -188,7 +188,7 @@ Sky Level
 =========
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single scaled fringe pattern.  These steps are described on the `NOAO Community Pipeline`_
+and a single scaled fringe pattern.  These steps are described on the `NSF's OIR Lab Community Pipeline`_
 page.
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
@@ -394,7 +394,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from ``dr3e-834-g419c0ff`` to ``dr3e-887-g068df7a`` (these are git version strings). The version used is documented in the Tractor header card ``LEGPIPEV``. The date range of the versions is 3/15/2017 to 4/19/2017.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67, git versions ``0.67-188-gfcdd3c0`` to ``0.67-152-gfa03658`` (dates 3/6/2017 to 4/15/2017).
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr4, git versions ``dr4.1-9-gc73f1ab`` to ``dr4.1-9-ga5cfaa3`` (dates 2/22/2017 to 3/31/2017).
-* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``.
+* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
 .. * SourceExtractor 2.19.5, PSFEx 3.17.1
 
@@ -414,7 +414,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (reduction pipeline operated by NOAO;
+    Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
     http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -430,7 +430,7 @@ DR4
     Legacy Survey Data Release 4.
 
 DECam
-    Dark Energy Camera on the NOAO Blanco 4-meter telescope.
+    Dark Energy Camera on the Blanco 4-meter telescope.
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
@@ -443,8 +443,8 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <http://legacysurvey.org/mzls>`_.
 
-NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+NSF's OIR Lab
+    `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

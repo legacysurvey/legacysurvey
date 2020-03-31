@@ -67,7 +67,7 @@ Bit Name          Description
 ``ANYMASK_X`` denotes a source that touches a bad pixel in *any* of a set of overlapping :math:`X`-band images whereas
 ``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images. 
 See, also, the `legacypipe bitmask definitions`_. The 
-``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NOAO Community Pipeline) Data Quality bits.
+``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NSF's OIR Lab Community Pipeline) Data Quality bits.
 
 === =========== ==========================================================================
 Bit Name        Description

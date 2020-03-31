@@ -128,7 +128,7 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation
+Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Lab Community Pipeline as, e.g., cosmic rays or saturation
 (see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR9 bitmasks page`_), do
 *not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on
 the `catalogs page`_.
@@ -170,7 +170,7 @@ Column               Type       Description
 ``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
 ``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam)
 ``object``           char[35]   Name listed in the object tag from the CCD header
-``propid``           char[10]   NOAO Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[10]   NSF's OIR Lab Proposal ID that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
@@ -547,8 +547,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can contact the NOAO Data Lab at datalab@noao.edu.
-
+Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [1]_ at datalab@noao.edu.
 
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
@@ -1093,25 +1092,25 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-NOAO access to raw and calibrated images will be available a few weeks after the DR9 release date.
+Astro Data Lab [1]_ access to raw and calibrated images will be available a few weeks after the DR9 release date.
 
-Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server.
 The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
-project, as well as other images from NOAO telescopes.
+project, as well as other images from the NSF's OIR Lab telescopes.
 
 (i) Web interface
 -----------------
 
-1. Query the `NOAO Science Archive`_.
+1. Query the `Astro Data Lab's Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`NOAO Science Archive`: http://archive.noao.edu/search/query
+.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
@@ -1135,3 +1134,10 @@ contains an ASCII file with a list of ``EXPID`` and ``IMAGE_FILENAME``
 There is one entry per CCD. Often, multiple CCDs from a given file are used so there are
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).
+
+
+|
+
+**Footnotes**
+
+.. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.

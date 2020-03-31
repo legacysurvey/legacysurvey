@@ -27,7 +27,7 @@ the Blanco Telescope.
 
 Data Release 3 (DR3) is the third public data release of images and catalogs for
 the DECam Legacy Survey (DECaLS). Images from DECaLS
-g,r,z-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+g,r,z-band observations (NSF's OIR Lab survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
 are included from August 2014 through March 2016. DR3 also includes DECam data from a range of 
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
@@ -79,7 +79,7 @@ Obtaining Images and Raw Data
 ==============================
 
 Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
@@ -95,7 +95,7 @@ Pixscale=0.262 will return (approximately) the native DECam pixels.
 
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
-.. _`the NOAO portal`: http://archive.noao.edu/search/query
+.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -313,7 +313,7 @@ Code Versions
 =============
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
-* NOAO Community Pipeline: mixture of versions; recorded as PLVER.
+* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as PLVER.
 * SourceExtractor 2.19.5, PSFEx 3.17.1
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
 * `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr3
@@ -330,7 +330,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (DECam reduction pipeline operated by NOAO;
+    Community Pipeline (DECam reduction pipeline operated by the NSF's OIR Lab;
     http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -343,7 +343,7 @@ DR3
     DECam Legacy Survey Data Release 3.
 
 DECam
-    Dark Energy Camera on the NOAO Blanco 4-meter telescope.
+    Dark Energy Camera on the Blanco 4-meter telescope.
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
@@ -353,8 +353,8 @@ maggie
 MoG
     Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).
 
-NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+NSF's OIR Lab
+    `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

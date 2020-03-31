@@ -37,7 +37,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOAO Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: http://www.scipy.org
 .. _`mixture-of-Gaussians`: http://arxiv.org/abs/1210.6563
@@ -54,7 +54,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DESI`: http://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 4 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2018_release_intro.html
-.. _`NOAO survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
+.. _`NSF's OIR Lab survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
 .. _`Dark Energy Survey`: https://www.darkenergysurvey.org
 
 Contents of DR8
@@ -64,14 +64,14 @@ Data Release 8 (DR8) is the eighth public data release of the Legacy Surveys. It
 sixth public data release of images and catalogs from `DECaLS`_ (`DR7`_ comprised the fifth release of data from `DECaLS`_)
 and the third release of data from `BASS`_ and `MzLS`_ (`DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
 DR8 is the first release to include images and catalogs from all three of the Legacy Surveys in a single release.
-Imaging from the Legacy Surveys is first reduced through the `NOAO Community Pipeline`_ before being
+Imaging from the Legacy Surveys is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being
 processed using the `Tractor`_. DR8 also includes `WISE`_ fluxes from all imaging through `year 4 of
 NEOWISE-Reactivation`_ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 DR8 includes `BASS`_ (:math:`g,r`-band) images taken from 12th November 2015 through 7th March 2019 and
 `MzLS`_ (:math:`z`-band) images taken from 19th November 2015 through 12th February 2018.
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (`NOAO survey program 0404`_)
+:math:`g,r,z`-band observations (`NSF's OIR Lab survey program 0404`_)
 are included from 9th August 2014 through 7th March 2019. DR8 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from 1st September 2013 to 7th March 2019.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
@@ -152,7 +152,7 @@ Obtaining Images and Raw Data
 
 Images for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
-and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
 `the bottom of the files`_ page).
 
 Sections of the Legacy Surveys  for DR8 can be obtained as JPEGs or FITS files using
@@ -200,7 +200,7 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
-.. _`the NOAO portal`: http://archive.noao.edu/search/query
+.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -283,7 +283,7 @@ Sky Level
 =========
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single, scaled fringe pattern. These steps are described on the `NOAO Community Pipeline`_
+and a single, scaled fringe pattern. These steps are described on the `NSF's OIR Lab Community Pipeline`_
 page.
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
@@ -539,7 +539,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr8v1.2 to dr8v3.2. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.78.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr8.1.
-* `NOAO Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
+* `NSF's OIR Lab Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.0
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.21.1
 
@@ -565,7 +565,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (`reduction pipeline operated by NOAO <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
+    Community Pipeline (`reduction pipeline operated by the NSF's OIR Lab <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
@@ -589,7 +589,7 @@ DR7
     `DESI Legacy Surveys Imaging Data Release 7`_.
 
 DECam
-    `Dark Energy Camera`_ on the NOAO Blanco 4-meter telescope.
+    `Dark Energy Camera`_ on the Blanco 4-meter telescope.
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
@@ -602,8 +602,8 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <http://legacysurvey.org/mzls>`_.
 
-NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+NSF's OIR Lab
+    `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

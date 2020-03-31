@@ -15,7 +15,7 @@ This page documents those updates, in brief.
 
 Algorithmic changes for optical data
 ====================================
-* All raw images from Legacy Surveys observations are initially reduced using the `NSF OIR Lab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
+* All raw images from Legacy Surveys observations are initially reduced using the `NSF's OIR Lab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
    * The CP now imposes no interpolation.
    * The CP has improved fit parameters for good seeing images.
    * The CP WCS now consistently uses Gaia DR1.
@@ -44,7 +44,7 @@ Algorithmic changes for optical data
 
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
-.. _`NSF OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 Algorithmic changes for WISE
 ============================

@@ -7,7 +7,7 @@ Description of how AVSKY is calculated
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 
-(Courtesy of Frank Valdes, NOAO)
+(Courtesy of Frank Valdes, NSF's OIR Lab)
 
 ``AVSKY`` is measured in each CCD after standard detrending and before any pupil and sky 
 structure subtraction.  This is done by the Automatic Cataloging Environment (ACE) 

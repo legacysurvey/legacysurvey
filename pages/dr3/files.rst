@@ -88,7 +88,7 @@ Column          Type     Description
 ``trans_z``     float32  Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 =============== ======== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
+Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
@@ -121,7 +121,7 @@ Column             Type       Description
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
 ``ha``             char[13]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``        float      Airmass, eg 1.35.
-``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
+``propid``         char[10]   NSF OIR Lab's Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
 ``avsky``          float      Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``       float      Average gain for this CCD, eg 4.34.
@@ -375,7 +375,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
+Users interested in database access to the Tractor Catalogs can contact the Astro Data Lab [1]_ at datalab@noao.edu.
 
 Sweep Catalogs
 ==============
@@ -548,7 +548,7 @@ the colors.
 Raw Data
 ========
 
-Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web 
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
 project, as well as other DECam images. 
@@ -556,7 +556,7 @@ project, as well as other DECam images.
 (i) Web interface
 -----------------
 
-1. Query the `NOAO Science Archive`_.
+1. Query the `Astro Data Lab's Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR3).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
@@ -564,7 +564,7 @@ project, as well as other DECam images.
 6. For DECaLS only images, refine the search by Proposal ID (2014B-0404) in the "Refine" tab.
 7. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`NOAO Science Archive`: http://archive.noao.edu/search/query
+.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
@@ -610,5 +610,12 @@ Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060
    File Count: 2
 
 In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.
+
+
+|
+
+**Footnotes**
+
+.. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.
 
 

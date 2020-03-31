@@ -12,7 +12,7 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through early-April, 2020. For additional publications, see also the NOAO publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through early-April, 2020. For additional publications, see also the NSF's OIR Lab publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 
 .. _`text on the acknowledgment page`: ../acknowledgment

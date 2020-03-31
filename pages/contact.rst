@@ -31,7 +31,7 @@ Other Experts
     * Dustin Lang  dstndstn@gmail.com
     * John Moustakas [#]_  jmoustakas@siena.edu
 
-NOAO Community Pipeline:
+NSF's OIR Lab Community Pipeline:
     * David Herrera  herrera@noao.edu
     * Frank Valdes  valdes@noao.edu
 
@@ -48,10 +48,10 @@ BASS Contact:
 Image Quality:
     * Eddie Schlafly  eschlafly@gmail.com
 
-NOAO Data Lab Contact:
+Astro Data Lab [#]_ Contact:
     * Stephanie Juneau  juneau@noao.edu
 
-Additional NOAO/CTIO Support:
+Additional NSF's OIR Lab/CTIO Support:
     * Alistair Walker  awalker@ctio.noao.edu
     * Bob Blum  RBlum@lsst.org
 
@@ -83,6 +83,7 @@ and the list of `DESI team members`_ and `DESI builders`_.
 **Acknowledgment Footnotes**
 
 .. [#] JM was supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics under Award Number DE-SC002008 and by the National Science Foundation under grant AST-1616414.
+.. [#] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.
 .. [#] ADM was supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics, under Award Number DE-SC0019022.
 
 .. _`DESI Legacy Imaging Surveys Overview Paper`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D

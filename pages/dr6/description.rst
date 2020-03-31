@@ -33,7 +33,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOAO Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: http://www.scipy.org
 .. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
@@ -56,7 +56,7 @@ Data Release 6 (DR6) is the sixth public data release of the Legacy Surveys. It 
 second public release of images and catalogs that combine the Beijing-Arizona Sky Survey
 and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the fourth 
 release of data from `DECaLS`_). Imaging from the Legacy Surveys is first reduced
-through the `NOAO Community Pipeline`_ before being processed using the `Tractor`_.
+through the `NSF's OIR Lab Community Pipeline`_ before being processed using the `Tractor`_.
 
 DR6 includes `BASS`_ images taken prior to June 25, 2017 and `MzLS`_ images taken
 prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy 
@@ -125,7 +125,7 @@ Obtaining Images and Raw Data
 ==============================
 
 Images from all 3 of the Legacy Surveys can be viewed directly using 
-`the Sky viewer`_ and raw data can be obtained through `the NOAO portal`_ 
+`the Sky viewer`_ and raw data can be obtained through `the Astro Data Lab's portal`_ 
 (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
@@ -164,7 +164,7 @@ For information on how to recover `DECaLS`_ cutouts, see the `DR7 description`_ 
 .. _`DR7 description`: ../../dr7/description
 .. _`files`: ../files
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
-.. _`the NOAO portal`: http://archive.noao.edu/search/query
+.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -205,7 +205,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination 
 correction, and a single scaled fringe pattern. These steps are described on the 
-`NOAO Community Pipeline`_ page. This makes the sky level in the processed images near 
+`NSF's OIR Lab Community Pipeline`_ page. This makes the sky level in the processed images near 
 zero, and removes most pattern artifacts. A constant sky level is then added back to the 
 image that is the mean of what was removed.
 
@@ -454,7 +454,7 @@ Code Versions
   - git commit 1b741bbd35e30d16f4d56ef673d3583baa335645, tag dr6.rc1.2
 
 * Note that Brick `1228p810` was processed with a different stack: `desiconda 20170719-1.1.9-imaging`, `legacypipe dr6.rc1.1-18-g80be603`
-* NOAO Community Pipeline: mixture of versions; recorded as ``PLVER``
+* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as ``PLVER``
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 .. _`Legacy Survey Data Release 3`: ../../dr3
@@ -476,7 +476,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (reduction pipeline operated by NOAO;
+    Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
     http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -495,7 +495,7 @@ DR5
     `Legacy Survey Data Release 5`_.
 
 DECam
-    Dark Energy Camera on the NOAO Blanco 4-meter telescope.
+    Dark Energy Camera on the Blanco 4-meter telescope.
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
@@ -508,8 +508,8 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <http://legacysurvey.org/mzls>`_.
 
-NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+NSF's OIR Lab
+    `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

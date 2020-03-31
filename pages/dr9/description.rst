@@ -246,7 +246,8 @@ geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
 and parallax in `Gaia Data Release 2`_. These mask regions are ignored in the local-sky-fitting calibration code.
 Within the mask regions for bright stars, globular clusters and large galaxies, sources are forced to be ``TYPE=PSF``
-(except for the large galaxies themselves). Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this
+(except for the large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars.
+Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this
 appears to preferentially classify sources as ``TYPE=PSF`` around Gaia stars.
 The reasoning behind treating bright foreground sources as special cases is that many of them
 have large halos or include diffuse light that is not included in the Tractor model choices. This leads such sources

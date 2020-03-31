@@ -438,8 +438,8 @@ Column             Type    Description
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 
-External Files (``<region>/external/*``)
-========================================
+External Match Files (``<region>/external/*``)
+==============================================
 
 | **The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:**
 | http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9/north/external/

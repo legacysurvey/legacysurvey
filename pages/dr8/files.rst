@@ -690,7 +690,7 @@ Name                                  Type         Units                 Descrip
 Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------------------
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. (2020)`_)
+The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
 catalog is line-matched to the DR8 sweep catalogs as described above.
 
 The photometric redshifts are computed using the random forest algorithm.
@@ -708,7 +708,7 @@ The photo-z catalogs do not provide information on star-galaxy separation.
 Stars are excluded from the photo-z training data, and we do not attempt to
 identify stars. To perform star-galaxy separation, one can use the
 morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
-color cut can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
+color cut, as applied in  `Zhou et al. 2020`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
 
 ================= ========== ==========================================================================
 Name              Type       Description
@@ -732,6 +732,7 @@ funding from the U.S. Department of Energy Office of Science, Office of
 High Energy Physics via grant DE-SC0007914."
 
 .. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
+.. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
 
 Image Stacks (``<region>/coadd/*``)
 ===================================

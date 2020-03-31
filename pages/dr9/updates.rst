@@ -15,20 +15,32 @@ This page briefly documents those updates.
 
 Algorithmic changes for optical data
 ====================================
-* Data from DECam has been trimmed to only observations after 2014-03-14 (to avoid problems with scattered light in early DECam data).
-* Contaminating foreground sources have been treated more consistently: 
-    - Such foreground sources include bright stars, medium-bright stars, globular clusters and large galaxies.
-    - The foreground sources consist of pre-defined geometrical masks (which are elliptical for galaxies).
-    - These mask regions are ignored in the local-sky-fitting calibration code.
-    - Within the mask regions for bright stars, globular clusters and large galaxies, sources are forced to be ``TYPE=PSF`` (except for the large galaxies themselves).
-    - Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this appears to preferentially classify sources as ``TYPE=PSF`` around Gaia stars.
-* Cosmic rays & other artifacts are now detected across multiple images.
-* PSF wings around bright stars are now partially subtracted.
-* All Gaia sources are forced to have fixed positions after accounting for proper motion and parallax.
-* Sources that pass a star/galaxy cut in the Gaia catalog are forced to be ``TYPE=PSF`` using the Gaia excess noise parameter as follows:
-    - For :math:`G < 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{0.5}`
-    - For :math:`G \geq 18`: :math:`\mathrm{astrometric\_excess\_noise} < 10^{(0.5 + 0.2(G-18))}`
-* Astrometry is now tied entirely to `Gaia Data Release 2`_.
+* The Community Pipeline (CP) has been rerun in full on each of the raw images:
+   * The CP now imposes no interpolation.
+   * The CR has improved fit parameters for good seeing images.
+   * The CR WCS now consistently uses Gaia DR1.
+   * The CR now doesn't remove pixels in masks, rather, it just flags those pixels as having been masked.
+   * The CR now has improved star-flats fit across all of the imaging.
+* The Tractor pipeline now imposes iterative fitting:
+   * After a first round of fits, the data-model residuals are calculated and a second round of fits is conducted.
+* A modified, extended PSF model is now used to subtract the extended wings of bright stars from DECam images. The model is symmetric (which is a good approximation for DECam images), and it is a linear combination of two components:
+   * A flexible inner PSF, which is a Moffat fit to the PSFEx image:
+      * :math:`f_{\mathrm Moffat} = (\beta-1)/(\pi * \alpha^2)*(1 + (r/\alpha)^2)^(-\beta)`
+   * This formula gives a total flux of unity by definition. Its two free parameters, :math:`alpha` and :math`beta`, are obtained by fitting to the PSFEx image of each CCD. Only PSFEx pixels between 1.8 and 5 arcsec in radius (:math:`r`) are used in the fit. 
+   * A fixed outer PSF, which is either a power law (for :math:`g` and :math:`r` bands):
+      * :math:`f_g = 0.00045 * r^(-2)`
+      * :math:`f_r = 0.00033 * r^(-2)`
+   * or a Moffat profile (for :math:`z`-band):
+      * For most CCDs, the Moffat parameters (with radius in arcsec and SB in nmgy per sq arcsec) and the weight are (for a 22.5 magnitude star):
+         * :math:`\alpha, \beta, weight = 17.650, 1.7, 0.0145`
+      * However, a small subset of DECam CCDs (which are N20, S8, S10, S18, S21 and S27) have a more compact outer PSF in z band, which can be characterized using:
+         * :math:`\alpha, \beta, weight = 16, 2.3, 0.0095`
+   * A complete description of the new PSF model, with examples, is `available for DESI collaborators`_.
+   * The updated PSF model leads to different sky levels.
+* The "COMP" (composite) morphological `type` from DR8 has been replaced by a Sersic profile (``type=SER``).
+* LSLGA:
+
+.. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 
 Algorithmic changes for WISE
 ============================
@@ -36,57 +48,55 @@ Algorithmic changes for WISE
 * The unWISE astrometry has been re-generated, and proper motions of stars have been correctly accounted for when conducting time-resolved forced photometry.
 * unWISE epochs have been resampled to have more uniform coverage for the WISE light curves, particularly near the ecliptic poles (e.g. for columns such as ``lc_flux_w1`` on the `catalogs page`_).
 * The unWISE epoch index number is now recorded in the `Tractor catalogs`_.
+* Calculations of pixles that lie in some of the `WISE bright star masks`_ have been updated.
 
 .. _`5th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2019_release_intro.html
 .. _`catalogs page`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
+.. _`WISE bright star masks`: ../bitmasks/#wisemask-w1-wisemask-w2
 
 Other algorithmic changes
 =========================
-* External catalogs are now matched to using a 1.5 arcsecond radius (the matching radius was 1.0 arcsec prior to DR8).
+* DR16 and DR16Q
 
 Data model changes
 ==================
-* The directory structure is now split into two distinct sub-directories:
-    - ``dr8/south/`` for `DECaLS`_ data
-    - ``dr8/north/`` for `MzLS`_/`BASS`_ data
-* A new morphological type ``TYPE=DUP`` has been added for Gaia sources that are coincident with an extended source.
-    - No optical flux is assigned to ``DUP`` sources, but they are retained such that all Gaia sources appear in the source catalogs.
-* The ``maskbits-*`` files have been updated with extra bits as documented on the `DR9 bitmasks page`_.
-* The ``BRIGHTSTARINBLOB`` boolean column has been dropped in favor of the integer column ``BRIGHTBLOB``, which contains extra bits as documented on the `DR9 bitmasks page`_.
-* Additional Gaia columns have been added to the Tractor and sweeps catalogs:
-   - ``GAIA_PHOT_BP_RP_EXCESS_FACTOR``
-   - ``GAIA_ASTROMETRIC_SIGMA5D_MAX``
-   - ``GAIA_ASTROMETRIC_PARAMS_SOLVED``
-* Additional Gaia columns have been propagated from the Tractor catalogs to the sweeps catalogs:
-   - ``REF_CAT``
-   - ``REF_EPOCH``
-* Additional columns now appear in the random catalogs:
-   - ``PSFSIZE_G/R/Z``
-   - ``APFLUX_G/R/Z``
-   - ``APFLUX_IVAR_G/R/Z``
-   - ``PHOTSYS``
-* Additional columns now appear in the ``survey-ccds-`` files:
-   - ``plver`` (this was previously only in the ``ccds-annotated-`` files)
-   - ``procdate``
-   - ``plprocid``
-   - ``airmass``
-   - ``ccdskysb``
-   - ``ccdnastrom``
-   - ``ccdnphotom``
-* A column has been removed from the ``survey-ccds-`` files:
-   - ``ccdnmatch``
-* Any columns denoting quantities in :math:`u`, :math:`i` or :math:`Y` filters have been removed from the Tractor catalogs (e.g. ``flux_u``, ``flux_i``, ``flux_Y``).
-* The ``calib/*/splinesky`` files now contain many additional statistics characterizing the sky fitting.
-* New metrics files have been added in the metrics directories:
-   - ``metrics/*/outlier-mask*``
-   - ``metrics/*/reference*``
+* Additional WISE-variability light-curve columns have been included in the sweeps files:
+  * ``LC_MJD_W1/W2``
+  * ``LC_FLUX_W1/W2``
+  * ``LC_FLUX_IVAR_W1/W2``
+  * ``LC_NOBS_W1/W2``
+* The shape parameters in the Tractor files (and downstream) have changed, as there are now no sources of ``type=COMP`` (which corresponded to a "composite" galaxy):
+  * The `DR8 catalog`_ columns:
+    * ``fracdev``, ``fracdev_ivar``
+    * ``shapedev_e1``, ``shapedev_e1_ivar``, ``shapedev_e2``, ``shapedev_e2_ivar``, ``shapedev_r``, ``shapedev_r_ivar``
+    * ``shapeexp_e1``, ``shapeexp_e1_ivar``, ``shapeexp_e2``, ``shapeexp_e2_ivar``, ``shapeexp_r``, ``shapeexp_r_ivar``
+  * have been replaced, in DR9, by:
+    * ``shape_e1``, ``shape_e1_ivar``, ``shape_e2``, ``shape_e2_ivar``, ``shape_r``, ``shape_r_ivar``
+  * the logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile. The ``shapedev_`` and ``shapeexp_`` parameters defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated. The "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP". Every profile can now be defined by its ``type``, and the columns in ``shape_r``, ``shape_e1`` etc. are the appropriate parameters for that ``type`` (so, i.e., ``shapedev_r`` and ``shapeexp_r`` can now be collapsed to just the single ``shape_r`` column).
+  * As there are no sources of ``type=COMP``, the ``type`` column is now a 3-string (``'S3'``) rather than a 4-string (``'S4'``).
+* Three new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor files for DR9`_:
+  * ``iterative``
+  * ``sersic`` and ``sersic_ivar``
+* Five additional columns exist in the `Tractor files for DR9`_:
+  * ``lc_epoch_index_w1`` and ``lc_epoch_index_w2'``
+  * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``
+* Three additional columns exist in the `region-specific survey bricks files`_.
+  * `cosky_g`, `cosky_r` and `cosky_z`
+* LSLGA
+* As the LSLGA catalog has been updated to version 5, the ``ref_cat`` (or ``REF_CAT``) column in the `Tractor catalogs`_ and `sweep files`_ is populated with ``L5`` for LSLGA sources in DR9 (this column was populated with ``L2`` for LSLGA sources in DR8).
+* metrics?
 
 
 .. _`DR7`: ../../dr7/description
+.. _`DR8 catalog`: ../../dr8/catalogs
 .. _`DR9 bitmasks page`: ../bitmasks
 .. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`Tractor files for DR9`: ../catalogs
+.. _`Tractor catalogs`: ../catalogs
+.. _`sweep files`: ../files/#sweep-catalogs-region-sweep
+.. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz

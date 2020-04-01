@@ -618,7 +618,7 @@ Raw Data
 
 Astro Data Lab [1]_ access to raw and calibrated images will be available a few weeks after the DR6 release date.
 
-Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web 
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server. 
 The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 

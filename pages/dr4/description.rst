@@ -47,7 +47,7 @@ Contents of DR4
 Data Release 4 (DR4) is the fourth public data release of the Legacy Surveys. It consists of the
 first release of data from `BASS`_ and `MzLS`_
 reduced using the `Tractor`_. Each of the imaging
-datasets is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being processed 
+datasets is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being processed
 using the `Tractor`_.
 
 DR4 includes `BASS`_ images taken prior to July 13, 2016 and `MzLS`_ images taken

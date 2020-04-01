@@ -603,7 +603,7 @@ the colors.
 Raw Data
 ========
 
-Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web 
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images 
 taken from the Mayall :math:`z`-band Legacy Survey (`MzLS`_) in the :math:`z` band, and from 

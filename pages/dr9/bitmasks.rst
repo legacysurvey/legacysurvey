@@ -107,7 +107,7 @@ Bit Name        Description
 
 `Aaron Meisner's unWISE documentation`_ details how these masks were derived.
 
-.. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`Aaron Meisner's unWISE documentation`: ../../files/unwise_bitmask_writeup-03Dec2018.pdf
 
 ``CCD_CUTS``
 ============
@@ -124,26 +124,26 @@ In this table, the ``column`` ``names`` are as they appear in, e.g., the `survey
 === ===================== ===========================
 Bit Name                  Description
 === ===================== ===========================
-0   ``err_legacyzpts``    Some error from the `legacyzpts`_ code (e.g., the CP had a WCS error, usually due to being very shallow)
-1   ``not_grz`` 	  Not a :math:`g`-, :math:`r`- or :math:`z`-band observation
-2   ``not_third_pix``     Mosaic-3 one-third-pixel interpolation problem
-3   ``exptime_lt_30``     Exposure time < 30 seconds
-4   ``ccdnmatch_lt_20``   Number of matching CCDs < 20
-5   ``zpt_diff_avg``      Zeropoint for CCD is different than the average for the exposure: abs(``ccdzpt`` - ``zpt``) > 0.25 for DECam, 0.1 for 90Prime, 0.1 for Mosaic-3
-6   ``zpt_small`` 	  Zeropoint is too *low*: ``zpt`` < (``zpt0`` - P) where P is [0.5, 0.5, 1.0] mag for [DECam, 90Prime, Mosaic-3]
-7   ``zpt_large`` 	  Zeropoint is too *high*: ``zpt`` > (``zpt0`` + Q) where Q is [0.25, 0.18, 0.8] mag for [DECam, 90Prime, Mosaic-3]
-8   ``sky_is_bright``     Sky is too high; ``ccdskycounts`` is more than [90, 150, 180] for DECam [:math:`g, r, z`]; [200] for Mosaic-3 [:math:`z`] (no cuts are made for 90Prime)
-9   ``badexp_file``       Exposure is listed in the ``bad_expid.txt`` file (`90prime-bad_expid.txt`_, `mosaic-bad_expid.txt`_ or `decam-bad_expid.txt`_)
-10  ``phrms`` 	      	  *Photometric* calibration RMS is too large: ``ccdphrms`` > 0.2
-11  ``radecrms`` 	  *Astrometric* calibration RMS is too large: rms (:math:`\sqrt(\mathtt{ccdrarms^2 + ccddecrms^2})` > 0.4 arcsec for DECam; 0.2 arcsec for 90Prime; 0.1 arcsec for Mosaic-3
-12  ``seeing_bad`` 	  Bad seeing measure: (*seeing* < 0 arcsec OR *seeing* > 3.0 arcsec), where, e.g., ``seeing`` = ``fwhm`` :math:`\times` 0.262 for DECam
-13  ``early_decam``       Defined as ``MJD`` < 56516 (note that `DR8`_ started with ``MJD`` < 56730)
-14  ``depth_cut`` 	  Depth cut code (this is run after the other cuts)
-15  ``too_many_bad_ccds`` Remove full exposures if more than 70% of the CCDs are cut
-16  ``flagged_in_des``    Flagged as bad in DES 
+0   ``ERR_LEGACYZPTS``    Some error from the `legacyzpts`_ code (e.g., the CP had a WCS error, usually due to being very shallow)
+1   ``NOT_GRZ`` 	  Not a :math:`g`-, :math:`r`- or :math:`z`-band observation
+2   ``NOT_THIRD_PIX``     Mosaic-3 one-third-pixel interpolation problem
+3   ``EXPTIME_LT_30``     Exposure time < 30 seconds
+4   ``CCDNMATCH_LT_20``   Number of matching CCDs < 20
+5   ``ZPT_DIFF_AVG``      Zeropoint for CCD is different than the average for the exposure: abs(``ccdzpt`` - ``zpt``) > 0.25 for DECam, 0.1 for 90Prime, 0.1 for Mosaic-3
+6   ``ZPT_SMALL`` 	  Zeropoint is too *low*: ``zpt`` < (``zpt0`` - P) where P is [0.5, 0.5, 1.0] mag for [DECam, 90Prime, Mosaic-3]
+7   ``ZPT_LARGE`` 	  Zeropoint is too *high*: ``zpt`` > (``zpt0`` + Q) where Q is [0.25, 0.18, 0.8] mag for [DECam, 90Prime, Mosaic-3]
+8   ``SKY_IS_BRIGHT``     Sky is too high; ``ccdskycounts`` is more than [90, 150, 180] for DECam [:math:`g, r, z`]; [200] for Mosaic-3 [:math:`z`] (no cuts are made for 90Prime)
+9   ``BADEXP_FILE``       Exposure is listed in the ``bad_expid.txt`` file (`90prime-bad_expid.txt`_, `mosaic-bad_expid.txt`_ or `decam-bad_expid.txt`_)
+10  ``PHRMS`` 	      	  *Photometric* calibration RMS is too large: ``ccdphrms`` > 0.2
+11  ``RADECRMS`` 	  *Astrometric* calibration RMS is too large: rms (:math:`\sqrt(\mathtt{ccdrarms^2 + ccddecrms^2})` > 0.4 arcsec for DECam; 0.2 arcsec for 90Prime; 0.1 arcsec for Mosaic-3
+12  ``SEEING_BAD`` 	  Bad seeing measure: (*seeing* < 0 arcsec OR *seeing* > 3.0 arcsec), where, e.g., ``seeing`` = ``fwhm`` :math:`\times` 0.262 for DECam
+13  ``EARLY_DECAM``       Defined as ``MJD`` < 56516 (note that `DR8`_ started with ``MJD`` < 56730)
+14  ``DEPTH_CUT`` 	  Depth cut code (this is run after the other cuts)
+15  ``TOO_MANY_BAD_CCDS`` Remove full exposures if more than 70% of the CCDs are cut
+16  ``FLAGGED_IN_DES``    Flagged as bad in DES
 === ===================== ===========================
 
-Some of the exact values used to make the cuts are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.
+Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.
 
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls

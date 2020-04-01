@@ -47,7 +47,7 @@ Algorithmic changes for optical data
 * Sources in the `LSLGA`_ and `globular cluster and planetary nebula`_ catalogs are "pre-burned" [1]_ for DR9, and these catalogs have also been extensively improved:
    * The `globular cluster and planetary nebula`_ reference catalog has been updated, and the angular sizes of many sources in this catalog have now been set by visual inspection (see ``legacypipe`` `PR 469`_ and `PR 504`_).
    * The properties of Local Group dwarf galaxies in the `LSLGA`_ have been updated based on `Vizier`_ records, measurements in `McConnachie et al. (2012)`_, and visual inspection. In particular
-      * Fornax and Sculptor have been moved from the `LSLGA`_ large galaxy catalog to the `globular cluster and planetary nebula`_ catalog (which was subsequently updated to handle ellipse parameters).
+      * Fornax and Sculptor have been moved from the `LSLGA`_ large galaxy catalog to the `globular cluster and planetary nebula`_ catalog.
       * A total of 26 galaxies that, on visual inspection, were deemed to not benefit from "local" Tractor fitting have been removed from the `LSLGA`_.
       * Some additional galaxies, beyond those that were included for DR8, have been added to the `LSLGA`_ large galaxy catalog for DR9.
 

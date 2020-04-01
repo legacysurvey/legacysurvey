@@ -106,4 +106,4 @@ Bit Name        Description
 
 `Aaron Meisner's unWISE documentation`_ details how these masks were derived.
 
-.. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`Aaron Meisner's unWISE documentation`: ../../files/unwise_bitmask_writeup-03Dec2018.pdf

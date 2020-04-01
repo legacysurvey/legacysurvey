@@ -833,7 +833,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     Number of exposures contributing to each pixel of the stacked images.
 
 - <AAA>/<brick>/legacysurvey-<brick>-psfsize-<filter>.fits.fz
-    Number of exposures contributing to each pixel of the stacked images.
+    `Weighted average PSF FWHM`_ in arcsec at each pixel of the stacked images.
 
 - <AAA>/<brick>/legacysurvey-<brick>-image.jpg
     JPEG image of the calibrated image using the :math:`g,r,z` filters as the colors.
@@ -850,6 +850,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 - <AAA>/<brick>/legacysurvey-<brick>-wisemodel.jpg
     JPEG image of the model image using the WISE filters as the colors.
+
+.. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
 
 Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
 =====================================================================================

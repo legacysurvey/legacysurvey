@@ -50,7 +50,7 @@ Bit Name          Description
 8   ``WISEM1``    touches a pixel in a ``WISEMASK_W1`` bright star mask
 9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
-11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for Gaia DR2`_ stars `in the range (13 < G < 16)`_
+11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for Gaia DR2`_ stars `to G < 16`_
 12  ``GALAXY``    touches a pixel in an `LSLGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
@@ -59,7 +59,7 @@ Bit Name          Description
 .. _`for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
 .. _`radius-magnitude relation for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
 .. _`to G < 13`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L48
-.. _`in the range (13 < G < 16)`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L48-L49
+.. _`to G < 16`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L49
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`LSLGA`: ../external
 

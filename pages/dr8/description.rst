@@ -248,9 +248,9 @@ geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
 and parallax in `Gaia Data Release 2`_. These mask regions are ignored in the local-sky-fitting calibration code.
 Within the mask regions for bright stars, globular clusters and large galaxies, sources are forced to be ``TYPE=PSF``
-(except for the large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars.
-Within all of the mask regions, a constant sky level is fit in the mask blob for each exposure; this
-appears to preferentially classify sources as ``TYPE=PSF`` around Gaia stars.
+(except for the large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
+(i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_)
+Within ``MEDIUM`` and ``GALAXY`` mask regions (except for `LSLGA galaxies`_), a per-source background sky level is fit in the mask blob for each exposure.
 The reasoning behind treating bright foreground sources as special cases is that many of them
 have large halos or include diffuse light that is not included in the Tractor model choices. This leads such sources
 to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
@@ -261,7 +261,9 @@ set (see the `DR8 bitmasks page`_).
 
 
 .. _`DR8 bitmasks page`: ../bitmasks
+.. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
+.. _`LSLGA galaxies`: ../external
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: http://www.legacysurvey.org/dr7/description/#source-detection
@@ -294,7 +296,7 @@ A constant sky level is then added back to the image that is the mean of what wa
 Additionally, a spatially varying (spline) sky model is computed and removed, by detecting and masking sources, then computing medians in
 sliding 512-pixel boxes. The `image stacks`_ provided on the `files`_ page have this sky level
 removed. As noted under **Source Detection**, above, any regions (blobs) covered by foreground sources
-are ignored in the local-sky-fitting calibration code; a constant sky level is fit within such blobs.
+are treated specially.
 
 
 Tractor Catalogs

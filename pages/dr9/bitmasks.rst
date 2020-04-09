@@ -67,26 +67,27 @@ Bit Name          Description
 ===========================
 
 ``ANYMASK_X`` denotes a source that touches a bad pixel in *any* of a set of overlapping :math:`X`-band images whereas
-``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images. 
-See, also, the `legacypipe bitmask definitions`_. The 
-``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (`NSF's OIR Lab Community Pipeline`_) Data Quality bits.
+``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images.
+See, also, the `legacypipe bitmask definitions`_. The
+``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NSF's OIR Lab Community Pipeline) `Data Quality bits`_,
+which we `map to the values in the table`_.
 
-=== =========== ==========================================================================
+=== =========== ==========================
 Bit Name        Description
-=== =========== ==========================================================================
-  0 ``BADPIX``  bad columns, hot pixels, etc. (see the `CP Data Quality bit description`_)
-  1 ``SATUR``   saturated (see the `CP Data Quality bit description`_)
-  2 ``INTERP``  interpolated (see the `CP Data Quality bit description`_)
-  4 ``CR``      single exposure cosmic ray (see the `CP Data Quality bit description`_)
-  6 ``BLEED``   bleed trail (see the `CP Data Quality bit description`_)
-  7 ``TRANS``   multi-exposure transient (see the `CP Data Quality bit description`_)
-  8 ``EDGE``    edge pixel (see the `CP Data Quality bit description`_)
-  9 ``EDGE2``   edge pixel (see the `CP Data Quality bit description`_)
+=== =========== ==========================
+  0 ``BADPIX``  bad columns, hot pixels, etc.
+  1 ``SATUR``   saturated
+  2 ``INTERP``  interpolated
+  4 ``CR``      single exposure cosmic ray
+  6 ``BLEED``   bleed trail
+  7 ``TRANS``   multi-exposure transient
+  8 ``EDGE``    edge pixel
+  9 ``EDGE2``   edge pixel
  11 ``OUTLIER`` marked as touching an outlier pixel by ``legacypipe`` itself
-=== =========== ==========================================================================
+=== =========== ==========================
 
-.. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Data Quality bits`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/14c49362418b85a591f48eaa394205ffb0321777/py/legacypipe/image.py#L27
 
 ``WISEMASK_W1``/``WISEMASK_W2``
 ===============================
@@ -94,9 +95,9 @@ Bit Name        Description
 ``WISEMASK_W1`` and ``WISEMASK_W2`` have identical bit definitions, the only difference is that ``WISEMASK_W1`` applies to masking in the W1 band
 and ``WISEMASK_W2`` to masking in the W2 band.
 
-=== =========== ===========================
+=== =========== ===============
 Bit Name        Description
-=== =========== ===========================
+=== =========== ===============
 0   ``BRIGHT``  Bright star core and wings
 1   ``SPIKE``   PSF-based diffraction spike
 2   ``GHOST``   Optical ghost
@@ -105,7 +106,7 @@ Bit Name        Description
 5   ``HALO``    AllWISE-like circular halo
 6   ``SATUR``   Bright star saturation
 7   ``SPIKE2``  Geometric diffraction spike
-=== =========== ===========================
+=== =========== ===============
 
 `Aaron Meisner's unWISE documentation`_ details how these masks were derived.
 

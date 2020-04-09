@@ -242,28 +242,26 @@ distinct sources was reduced.
 
 Starting with DR8, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_.
-These include bright stars, medium-bright stars, globular clusters and large galaxies
+These include bright stars, medium-bright stars, globular clusters and LSLGA large galaxies
 (as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
-and parallax in `Gaia Data Release 2`_. These mask regions are ignored in the local-sky-fitting calibration code.
-Within the mask regions for bright stars, globular clusters and large galaxies, sources are forced to be ``TYPE=PSF``
-(except for the large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
-(i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_)
-Within ``MEDIUM`` and ``GALAXY`` mask regions (except for `LSLGA galaxies`_), a per-source background sky level is fit in the mask blob for each exposure.
+and parallax in `Gaia Data Release 2`_.
 The reasoning behind treating bright foreground sources as special cases is that many of them
 have large halos or include diffuse light that is not included in the Tractor model choices. This leads such sources
 to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
 
-The provenance of the foreground objects that correspond to "mask" regions, within which sources are independently extracted, is
-detailed on the `external catalogs page`_. Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS``
-set (see the `DR8 bitmasks page`_).
-
+Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS``
+set (see the `DR8 bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
+and LSLGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
+(except for the LSLGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
+(i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_).
+Mask regions are ignored in the `Tractor` local-sky-fitting calibration code and are superseded by fits within the mask regions themselves.
+Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the LSLGA large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
 
 .. _`DR8 bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
-.. _`LSLGA galaxies`: ../external
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: http://www.legacysurvey.org/dr7/description/#source-detection

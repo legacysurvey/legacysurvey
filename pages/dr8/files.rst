@@ -436,11 +436,14 @@ Column             Type    Description
 External Files (``<region>/external/*``)
 ========================================
 
-| **The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:**
+| **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
+| /global/cfs/projectdirs/sdss/data/sdss
+
+| **The resulting catalogs, which are listed below, can be accessed through the web at:**
 | http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
 | http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/external/
 
-| **Or on the NERSC computers (for collaborators) at:**
+| **Or on the NERSC computers at:**
 | /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/external/
 | /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/external/
 

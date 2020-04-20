@@ -184,8 +184,8 @@ Name                                  Type         Units                 Descrip
 ``lc_rchisq_w2``	              float32[13]                        ``rchisq_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
 ``lc_mjd_w1``		              float64[13]                        ``mjd_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
 ``lc_mjd_w2``		              float64[13]                        ``mjd_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_epoch_index_w1``                 uint8[13]                          Index number of unWISE epoch for W1 (defaults to 255 for unused entries)
-``lc_epoch_index_w2``                 uint8[13]                          Index number of unWISE epoch for W2 (defaults to 255 for unused entries)
+``lc_epoch_index_w1``                 int16[13]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
+``lc_epoch_index_w2``                 int16[13]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
 ``sersic``		              float32                            
 ``sersic_ivar``	                      float32                            Inverse variance of ``sersic``
 ``shape_r``		              float32      arcsec                Half-light radius of galaxy model for galaxy type ``type`` (>0)

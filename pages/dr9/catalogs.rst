@@ -110,9 +110,9 @@ Name                                  Type         Units                 Descrip
 ``apflux_resid_g``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
 ``apflux_resid_r``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
 ``apflux_resid_z``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
-``apflux_blobresid_g``                float32[8]   nanomaggies           
-``apflux_blobresid_r``                float32[8]   nanomaggies           
-``apflux_blobresid_z``                float32[8]   nanomaggies           
+``apflux_blobresid_g``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`g` [#]_
+``apflux_blobresid_r``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`r`
+``apflux_blobresid_z``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`z`
 ``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``
 ``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``
 ``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``
@@ -186,7 +186,7 @@ Name                                  Type         Units                 Descrip
 ``lc_mjd_w2``		              float64[13]                        ``mjd_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
 ``lc_epoch_index_w1``                 int16[13]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
 ``lc_epoch_index_w2``                 int16[13]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
-``sersic``		              float32                            
+``sersic``		              float32                            Power-law index for the Sersic profile model (``type="SER"``)
 ``sersic_ivar``	                      float32                            Inverse variance of ``sersic``
 ``shape_r``		              float32      arcsec                Half-light radius of galaxy model for galaxy type ``type`` (>0)
 ``shape_r_ivar``	              float32      1/arcsec\ |sup2|      Inverse variance of ``shape_r``
@@ -279,3 +279,11 @@ and :math:`r, b/a, \phi`:
     |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
+
+
+|
+
+**Footnotes**
+
+.. [#] `blobmodel` refers to the "blob-model" maps (i.e. the ``<AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` maps described on the `files page`_).
+.. _`files page`: http://localhost:8000/dr9/files/#image-stacks-region-coadd

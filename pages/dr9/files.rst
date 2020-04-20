@@ -114,9 +114,9 @@ Column          Type       Description
 ``trans_g``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``
 ``trans_r``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``
 ``trans_z``     float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``
-``cosky_g``     float32    
-``cosky_r``     float32    
-``cosky_z``     float32    
+``cosky_g``     float32    Estimated sky level in the coadded images (stacks) in :math:`g`-band [#]_
+``cosky_r``     float32    Estimated sky level in the coadded images (stacks) in :math:`r`-band
+``cosky_z``     float32    Estimated sky level in the coadded images (stacks) in :math:`z`-band
 ``ext_g``       float32    Extinction in :math:`g`-band
 ``ext_r``       float32    Extinction in :math:`r`-band
 ``ext_z``       float32    Extinction in :math:`z`-band
@@ -551,7 +551,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [1]_ at datalab@noao.edu.
+Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [#]_ at datalab@noao.edu.
 
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
@@ -688,7 +688,7 @@ Name                                  Type         Units                 Descrip
 ``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
-``SERSIC``                            float32
+``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
 ``SERSIC_IVAR``                       float32                            Inverse variance of ``SERSIC``
 ===================================== ============ ===================== ===============================================
 
@@ -752,7 +752,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 3600 pixels, at 0.262 arcseconds per pixel.
 
 - <AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz
-    Not yet documented.
+    The Tractor's model prediction of the images, similar to ``<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz``, below,
+    except that the models are `clipped to the blobs within which they are measured`. In other words, the models used to derive the
+    maps in these files are not extrapolated beyond the pixels in the blobs that are used to fit the models.
 
 - <AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
@@ -851,7 +853,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
     `Weighted average PSF FWHM`_ in arcsec at each pixel of the stacked images.
 
 - <AAA>/<brick>/legacysurvey-<brick>-blobmodel.jpg
-    Not yet documented.
+    JPEG image of the Tractor's model images, where the model fits have been clipped to
+    the blobs within which the models are measured. Uses the :math:`g,r,z` filters as the colors.
 
 - <AAA>/<brick>/legacysurvey-<brick>-image.jpg
     JPEG image of the calibrated image using the :math:`g,r,z` filters as the colors.
@@ -1099,7 +1102,7 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-Astro Data Lab [1]_ access to raw and calibrated images will be available a few weeks after the DR9 release date.
+Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date.
 
 Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server.
@@ -1147,4 +1150,5 @@ file contains the number of unique images in the last row (File Count).
 
 **Footnotes**
 
-.. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.
+.. [#] The ``cosky_x`` (where ``x`` :math:`= g, r` or :math:`z`) level is subtracted from each individual exposure (and hence also from the coadd) for the corresponding filter.
+.. [#] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.

@@ -97,10 +97,10 @@ Data model changes
    * the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP". 
    * In DR9, every profile is defined by its ``type``, and ``shape_r``, ``shape_e1`` etc. are the appropriate parameters for that ``type`` (so, i.e., ``shapedev_r`` and ``shapeexp_r`` can now be collapsed to just the single ``shape_r`` column).
    * As there are no sources of ``type=COMP``, the ``type`` column is now a 3-string (``'S3'``) rather than a 4-string (``'S4'``).
-* Three new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor files for DR9`_:
+* Three new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor catalogs for DR9`_:
    * ``iterative``
    * ``sersic`` and ``sersic_ivar``
-* Five additional columns exist in the `Tractor files for DR9`_:
+* Five additional columns exist in the `Tractor catalogs for DR9`_:
    * ``lc_epoch_index_w1`` and ``lc_epoch_index_w2``
    * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``
 * Three additional columns exist in the `region-specific survey bricks files`_.
@@ -117,7 +117,7 @@ Data model changes
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
-.. _`Tractor files for DR9`: ../catalogs
+.. _`Tractor catalogs for DR9`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
 .. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz

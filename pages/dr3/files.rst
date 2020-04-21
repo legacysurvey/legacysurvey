@@ -13,18 +13,18 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/
 
 Top level directory for web access to dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/3.1/
 
 .. _`known issues`: ../issues
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/
 
 Top level directory local to NERSC computers for dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/sweep/3.1/
 
 Summary Files
 =============
@@ -289,10 +289,10 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/external/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 

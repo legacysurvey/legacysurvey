@@ -26,28 +26,28 @@ For Web Access
 --------------
 
 | **Top level directory:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/
 | **Top level directory for** `DECaLS`_ **data**:
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/
 | **Top level directory for** `MzLS`_/`BASS`_ **data:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/
 | **Top level directories for sweeps catalogs:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/sweep/
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/sweep/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/sweep/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/sweep/
 
 
 At NERSC (for collaborators)
 ----------------------------
 
 | **Top level directory:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/
 | **Top level directory for** `DECaLS`_ **data:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/south/
 | **Top level directory for** `MzLS`_/`BASS`_ **data:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/north/
 | **Top level directories for sweeps catalogs:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/sweep/
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/sweep/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/south/sweep/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/north/sweep/
 
 Summary Files
 =============
@@ -437,15 +437,15 @@ External Files (``<region>/external/*``)
 ========================================
 
 | **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
-| /global/cfs/projectdirs/sdss/data/sdss
+| /global/cfs/cdirs/sdss/data/sdss
 
 | **The resulting catalogs, which are listed below, can be accessed through the web at:**
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
-| http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/external/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/external/
+| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/external/
 
 | **Or on the NERSC computers at:**
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/north/external/
-| /global/project/projectdirs/cosmo/data/legacysurvey/dr8/south/external/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/north/external/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/south/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files

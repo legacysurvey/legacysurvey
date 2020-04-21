@@ -118,23 +118,23 @@ Size*              Directory                                 Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/calib/
-.. _`north/coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/coadd/
-.. _`south/coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/coadd/
-.. _`north/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/external/
-.. _`south/external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/external/
-.. _`forced/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/forced/
-.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/
-.. _`images/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/images/
-.. _`north/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/logs/
-.. _`south/logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/logs/
-.. _`north/metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/metrics/
-.. _`south/metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/metrics/
-.. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/randoms/
-.. _`north/sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/sweep/
-.. _`south/sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/sweep/
-.. _`north/tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/north/tractor/
-.. _`south/tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/south/tractor/
+.. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/calib/
+.. _`north/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/coadd/
+.. _`south/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/coadd/
+.. _`north/external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/external/
+.. _`south/external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/external/
+.. _`forced/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/forced/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/gallery/
+.. _`images/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/images/
+.. _`north/logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/logs/
+.. _`south/logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/logs/
+.. _`north/metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/metrics/
+.. _`south/metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/metrics/
+.. _`randoms/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/randoms/
+.. _`north/sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/sweep/
+.. _`south/sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/sweep/
+.. _`north/tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/tractor/
+.. _`south/tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/tractor/
 
 
 For all of the DESI Legacy Imaging Surveys, coadded images and

@@ -13,10 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr2/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr2/
 
 Summary Files
 =============
@@ -214,10 +214,10 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following three external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/external/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr2/external/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr2/external/
 
 
 decals-dr2-specObj-dr12.fits

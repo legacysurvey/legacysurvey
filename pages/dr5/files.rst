@@ -17,10 +17,10 @@
 .. contents::
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr5/
 
 Summary Files
 =============
@@ -327,10 +327,10 @@ External Files
 ==============
 
 The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/external/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr5/external/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr5/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 

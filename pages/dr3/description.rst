@@ -56,14 +56,14 @@ Size*   Directory    Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/calib/
-.. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/coadd/
-.. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/external/
-.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/gallery/
-.. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/logs/
-.. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/metrics/
-.. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/
-.. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/tractor/
+.. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/calib/
+.. _`coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/coadd/
+.. _`external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/gallery/
+.. _`logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/logs/
+.. _`metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/metrics/
+.. _`sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/
+.. _`tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/tractor/
 
 The co-added images and Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec

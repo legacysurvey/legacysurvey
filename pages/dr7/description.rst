@@ -105,15 +105,15 @@ Size*      Directory    Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/calib/
-.. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/coadd/
-.. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/external/
-.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/
-.. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/logs/
-.. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/metrics/
-.. _`randoms/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/randoms/
-.. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/sweep/
-.. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/tractor/
+.. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/calib/
+.. _`coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/coadd/
+.. _`external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/external/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/gallery/
+.. _`logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/logs/
+.. _`metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/metrics/
+.. _`randoms/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/randoms/
+.. _`sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/sweep/
+.. _`tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr7/tractor/
 
 For all of the Legacy Surveys, including `DECaLS`_, co-added images and
 `Tractor`_ catalogs are presented in "bricks" of approximate

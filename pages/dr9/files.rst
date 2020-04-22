@@ -460,7 +460,7 @@ Column             Type    Description
 randoms/<region>/survey-bricks-dr9-randoms-0.XXX.0.fits
 -------------------------------------------------------
 
-As for the randoms-inside-dr9-0.XXX.0-X.fits file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
+As for the ``randoms-inside-dr9-0.XXX.0-X.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
 contains all randoms for the northern (southern) imaging surveys, regardless of whether the brick is "officially" in the ``north`` (``south``) region.
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz

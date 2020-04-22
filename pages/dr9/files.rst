@@ -341,8 +341,8 @@ detailed PSF model.
 Random Catalogs
 ===============
 
-randoms/randoms-inside-dr9-0.37.0-\*.fits
------------------------------------------
+randoms/randoms-inside-dr9-0.XXX.0-\*.fits
+------------------------------------------
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR9. Random locations
 were generated across the footprint at a density of 5,000 per square degree and meta-information
@@ -355,9 +355,12 @@ about the survey was extracted from pixels at each random location from files in
 ==================== ======== ======================================================
 Column               Type     Description
 ==================== ======== ======================================================
+``RELEASE``	     int16    Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
+``BRICKNAME``        char[8]  Name of the brick
+``BRICK_OBJID``      int32    Random catalog object number enumerate by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
 ``RA``               float64  Right ascension at equinox J2000
 ``DEC``              float64  Declination at equinox J2000
-``BRICKNAME``        char[8]  Name of the brick
 ``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
 ``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)
 ``NOBS_Z``           int16    Number of images that contribute to the central pixel in the :math:`z` filter for this location (not profile-weighted)
@@ -383,18 +386,35 @@ Column               Type     Description
 ``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
+``TARGETID``         int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``DESI_TARGET``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``BGS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``MWS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SUBPRIORITY``      int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``OBSCONDITIONS``    int32    See the `desitarget data model`_; set to 511, which corresponds to all possible observing conditions (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY_INIT``    int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_INIT``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_MORE``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY``         int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
 ==================== ======== ======================================================
 
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/io.py#L95
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/targets.py#L615
+.. _`desitarget data model`: https://github.com/desihub/desidatamodel/blob/master/doc/DESI_TARGET/targets.rst
+.. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
 .. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
 .. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The **0.37.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The northern and southern imaging footprints overlap, so, randoms are resolved at a Declination of 32.375\ |deg| and by the Galactic plane, such that locations at Dec > 32.375\ |deg| that are north of the Galactic Plane have ``PHOTSYS`` set to "N".
+The **0.XXX.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The
+northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
+randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
+randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").
 
-randoms/randoms-outside-dr9-0.37.0-\*.fits
-------------------------------------------
+randoms/randoms-outside-dr9-0.XXX.0-\*.fits
+-------------------------------------------
 
 Ten files of random points in bricks that do not contain an observation in DR9 (that are "outside" of the DR9 footprint). The columns in this file
 are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
@@ -404,26 +424,27 @@ the order of the points within the file is also randomized. Contains the followi
 ==================== ======== ======================================================
 Column               Type     Description
 ==================== ======== ======================================================
+``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
+``BRICKNAME``        char[8]  Name of the brick
 ``RA``               float64  Right ascension at equinox J2000
 ``DEC``              float64  Declination at equinox J2000
-``BRICKNAME``        char[8]  Name of the brick
 ``NOBS_G``           int16    Always zero in this file.
 ``NOBS_R``           int16    Always zero in this file.
 ``NOBS_Z``           int16    Always zero in this file.
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ==================== ======== ======================================================
 
-randoms/randoms-allsky-dr9-0.37.0.fits
+randoms/randoms-allsky-dr9-0.XXX.0.fits
 ---------------------------------------
 
-The (randomly shuffled) combination of each of the ``randoms-inside-dr9-0.37.0-X.fits``
-and ``randoms-outside-dr9-0.37.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates
+The (randomly shuffled) combination of each of the ``randoms-inside-dr9-0.XXX.0-X.fits``
+and ``randoms-outside-dr9-0.XXX.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates
 ten "all-sky" random catalogs (at a density of 5,000 locations per square degree)
 where each brick is either populated with observations from the
-Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr9-0.37.0-\*.fits`` files.
+Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr9-0.XXX.0-\*.fits`` files.
 
-randoms/survey-bricks-dr9-randoms-0.37.0.fits
----------------------------------------------
+randoms/survey-bricks-dr9-randoms-0.XXX.0.fits
+----------------------------------------------
 
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
 the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional
@@ -432,9 +453,15 @@ columns:
 ================== ======= ======================================================
 Column             Type    Description
 ================== ======= ======================================================
-``PHOTSYS``        char[1] ``"N"``, ``"S"`` or ``" "`` for bricks resolved to be in the north, south, or outside of the footprint, respectively.
+``PHOTSYS``        char[1] ``"N"``, ``"S"`` or ``" "`` for bricks resolved to be "officially" in the north, south, or outside of the footprint, respectively.
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
+
+randoms/<region>/survey-bricks-dr9-randoms-0.XXX.0.fits
+-------------------------------------------------------
+
+As for the randoms-inside-dr9-0.XXX.0-X.fits file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
+contains all randoms for the northern (southern) imaging surveys, regardless of whether the brick is "officially" in the ``north`` (``south``) region.
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 

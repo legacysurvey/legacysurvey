@@ -674,14 +674,14 @@ Name                                  Type         Units                 Descrip
 ``PSFDEPTH_W1``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
 ``PSFDEPTH_W2``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
 ``WISE_COADD_ID``                     char[8]                            unWISE coadd file name for the center of each object
-``LC_FLUX_W1``                        float32[13]  nanomaggies           ``FLUX_W1`` in each of up to thirteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``LC_FLUX_W2``                        float32[13]  nanomaggies           ``FLUX_W2`` in each of up to thirteen unWISE coadd epochs (AB; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W1``                   float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W2``                   float32[13]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
-``LC_NOBS_W1``                        int16[13]                          ``NOBS_W1`` in each of up to thirteen unWISE coadd epochs
-``LC_NOBS_W2``                        int16[13]                          ``NOBS_W2`` in each of up to thirteen unWISE coadd epochs
-``LC_MJD_W1``                         float64[13]                        ``MJD_W1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_MJD_W2``                         float64[13]                        ``MJD_W2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_FLUX_W1``                        float32[15]  nanomaggies           ``FLUX_W1`` in each of up to thirteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``LC_FLUX_W2``                        float32[15]  nanomaggies           ``FLUX_W2`` in each of up to thirteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W1``                   float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W2``                   float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
+``LC_NOBS_W1``                        int16[15]                          ``NOBS_W1`` in each of up to thirteen unWISE coadd epochs
+``LC_NOBS_W2``                        int16[15]                          ``NOBS_W2`` in each of up to thirteen unWISE coadd epochs
+``LC_MJD_W1``                         float64[15]                        ``MJD_W1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_MJD_W2``                         float64[15]                        ``MJD_W2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
 ``SHAPE_R``                           float32      arcsec                Half-light radius of galaxy model for galaxy type ``TYPE`` (>0)
 ``SHAPE_R_IVAR``                      float32      1/arcsec\ |sup2|      Inverse variance of ``SHAPE_R``
 ``SHAPE_E1``                          float32                            Ellipticity component 1 of galaxy model for galaxy type ``TYPE``

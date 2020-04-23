@@ -172,18 +172,18 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
-``lc_flux_w1``	     	              float32[15]  nanomaggies           ``flux_w1`` in each of up to thirteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``lc_flux_w2``                        float32[15]  nanomaggies           ``flux_w2`` in each of up to thirteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``lc_flux_w1``	     	              float32[15]  nanomaggies           ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``lc_flux_w2``                        float32[15]  nanomaggies           ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
 ``lc_flux_ivar_w1``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
 ``lc_flux_ivar_w2``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
-``lc_nobs_w1``		              int16[15]                          ``nobs_w1`` in each of up to thirteen unWISE coadd epochs
-``lc_nobs_w2``		              int16[15]                          ``nobs_w2`` in each of up to thirteen unWISE coadd epochs
-``lc_fracflux_w1``	              float32[15]                        ``fracflux_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_fracflux_w2``	              float32[15]                        ``fracflux_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_rchisq_w1``	              float32[15]                        ``rchisq_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_rchisq_w2``	              float32[15]                        ``rchisq_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_mjd_w1``		              float64[15]                        ``mjd_w1`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_mjd_w2``		              float64[15]                        ``mjd_w2`` in each of up to thirteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_nobs_w1``		              int16[15]                          ``nobs_w1`` in each of up to fifteen unWISE coadd epochs
+``lc_nobs_w2``		              int16[15]                          ``nobs_w2`` in each of up to fifteen unWISE coadd epochs
+``lc_fracflux_w1``	              float32[15]                        ``fracflux_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_fracflux_w2``	              float32[15]                        ``fracflux_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w1``	              float32[15]                        ``rchisq_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w2``	              float32[15]                        ``rchisq_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w1``		              float64[15]                        ``mjd_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w2``		              float64[15]                        ``mjd_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
 ``lc_epoch_index_w1``                 int16[15]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
 ``lc_epoch_index_w2``                 int16[15]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
 ``sersic``		              float32                            Power-law index for the Sersic profile model (``type="SER"``)

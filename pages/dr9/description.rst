@@ -259,12 +259,22 @@ and LSLGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
 Mask regions are ignored in the `Tractor` local-sky-fitting calibration code and are superseded by fits within the mask regions themselves.
 Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the LSLGA large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
 
+Starting with DR9, objects that appear in the `Gaia catalogs`_ are always retained in the `Tractor catalogs`_, even if they would normally be cut by the
+model-selection criteria used to detect sources. This is because Gaia sources are often so bright that they saturate in Legacy Surveys imaging.
+Since such "retained" Gaia sources have no model fits, their ``flux_g``, ``flux_r`` and ``flux_z`` values are estimated in the `catalogs`_,
+using `polynomial fits to Gaia-to-DECam`_ color transformations for stars.
+Transformations to `DECam`_ are used even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_.
+The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero.
+
 .. _`DR8 bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
+.. _`Tractor catalogs`: ../catalogs
+.. _`Gaia catalogs`: ../external
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: http://www.legacysurvey.org/dr7/description/#source-detection
+.. _`polynomial fits to Gaia-to-DECam`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/reference.py#L153
 
 PSF
 ===

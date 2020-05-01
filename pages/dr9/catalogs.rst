@@ -104,18 +104,21 @@ Name                                  Type         Units                 Descrip
 ``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
 ``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
 ``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``apflux_g``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`g`
-``apflux_r``		              float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`r`
-``apflux_z``    	              float32[8]   nanomaggies	         aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`z`
-``apflux_resid_g``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`g`
-``apflux_resid_r``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`r`
-``apflux_resid_z``                    float32[8]   nanomaggies           aperture fluxes on the co-added residual images in :math:`z`
-``apflux_blobresid_g``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`g` [#]_
-``apflux_blobresid_r``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`r`
-``apflux_blobresid_z``                float32[8]   nanomaggies           aperture fluxes on :math:`image-blobmodel` residual maps in :math:`z`
-``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``
-``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``
-``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``
+``apflux_g``		              float32[8]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`g`, masked by :math:`invvar=0` (inverse variance of zero [#]_)
+``apflux_r``		              float32[8]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`r`, masked by :math:`invvar=0`
+``apflux_z``    	              float32[8]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`z`, masked by :math:`invvar=0`
+``apflux_resid_g``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`g`, masked by :math:`invvar=0`
+``apflux_resid_r``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`r`, masked by :math:`invvar=0`
+``apflux_resid_z``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`z`, masked by :math:`invvar=0`
+``apflux_blobresid_g``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`g` [#]_, masked by :math:`invvar=0`
+``apflux_blobresid_r``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`r`, masked by :math:`invvar=0`
+``apflux_blobresid_z``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`z`, masked by :math:`invvar=0`
+``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``, masked by :math:`invvar=0`
+``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``, masked by :math:`invvar=0`
+``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``, masked by :math:`invvar=0`
+``apflux_masked_g``                   float32[8]                         Fraction of pixels masked in :math:`g`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
+``apflux_masked_r``                   float32[8]                         Fraction of pixels masked in :math:`r`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
+``apflux_masked_z``                   float32[8]                         Fraction of pixels masked in :math:`z`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
 ``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0, 1]
 ``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0, 1]
 ``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0, 1]
@@ -285,5 +288,6 @@ and :math:`r, b/a, \phi`:
 
 **Footnotes**
 
+.. [#] We define a mask for the aperture fluxes using an inverse variance of zero. So, pixels with undefined ("infinite") measurement errors are not used when calculating aperture fluxes in the Tractor catalogs. As the aperture fluxes are calculated from the coadd images described on the `files page`_, pixels end up being ignored if they are masked in `every` overlapping exposure in a given band. Thus, for example, the saturated cores and bleed trails of bright stars will be masked. Further, in the case that a coadd is only built from a single image, cosmic rays and other mask bits will cause poorly measured and saturated pixels to be ignored for aperture flux measurements.
 .. [#] `blobmodel` refers to the "blob-model" maps (i.e. the ``<AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` maps described on the `files page`_).
 .. _`files page`: http://localhost:8000/dr9/files/#image-stacks-region-coadd

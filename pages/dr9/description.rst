@@ -453,7 +453,8 @@ fluxes should be very close to a normal distribution.  The fluxes can be negativ
 objects, and indeed we expect many such cases for the faintest objects.
 
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_, `MzLS z-band with corrections`_,
-`DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_.
+`DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_. The curves "with corrections" include terms to correct for
+the telescope, corrector, camera and atmosphere.
 
 Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.

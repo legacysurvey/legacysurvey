@@ -45,12 +45,12 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`SFD98`: http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`DR8`: ../../dr8
 .. _`DR7`: ../../dr7
 .. _`DR6`: ../../dr6
 .. _`DR5`: ../../dr5
 .. _`DR4`: ../../dr4
 .. _`DR3`: ../../dr3
-.. _`DR2`: ../../dr2
 .. _`DESI`: http://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 6 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
@@ -63,9 +63,9 @@ Contents of DR9
 Data Release 9 (DR9) is the ninth public data release of the Legacy Surveys. It is the
 seventh public data release of images and catalogs from `DECaLS`_ (`DR8`_ comprised the sixth release of data from `DECaLS`_)
 and the fourth release of data from `BASS`_ and `MzLS`_ (`DR8`_ comprised the third release of data from `BASS`_ and `MzLS`_).
-DR8 was the first release to include images and catalogs from all three of the Legacy Surveys in a single release, and
+`DR8`_ was the first release to include images and catalogs from all three of the Legacy Surveys in a single release, and
 essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new 
-observations, but builds on `DR8`_ by updating the Legacy Surveys reduction techniques and procedures.
+observations, but builds on `DR8`_ by improving the reduction techniques and procedures used for the Legacy Surveys.
 Imaging from the Legacy Surveys is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being
 processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of
 NEOWISE-Reactivation`_ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
@@ -93,8 +93,8 @@ Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
 ===================== =========== =========== ===========
 
-South of -20|deg| the Legacy Surveys imaging is dominated by observations from DES. North of a Declination 
-of -20|deg|, the area covered in DR9 for different numbers of passes and in different filters is:
+South of -20\ |deg| the Legacy Surveys imaging is dominated by observations from the `Dark Energy Survey`_. North of a Declination 
+of -20\ |deg|, the area covered in DR9 for different numbers of passes and in different filters is:
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
@@ -132,6 +132,7 @@ XXX GB + X.X TB    `north/tractor/`_ + `south/tractor/`_     The Tractor `catalo
 .. _`Matches to other catalogs`: ../files/#external-match-files-region-external
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
+
 .. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/calib/
 .. _`north/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/coadd/
 .. _`south/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/coadd/
@@ -214,7 +215,6 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 .. _`the bottom of the files`: ../files/#raw-data
 .. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr9-fits-gz
 .. _`image stacks`: ../files/#image-stacks-region-coadd
-.. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: http://legacysurvey.org/viewer
 .. _`the NSF's OIR Lab portal`: http://archive.noao.edu/search/query
 
@@ -254,7 +254,7 @@ neighboring peaks was reduced from 6 pixels (about 1.5 arcseconds) to 4 pixels (
 In addition, the "saddle" depth (dip in flux) necessary to model neighboring peaks as
 distinct sources was reduced.
 
-Starting with DR8, many different "foreground" objects are extracted as independent sources
+Starting with `DR8`_, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_.
 These include bright stars, medium-bright stars, globular clusters and LSLGA large galaxies
 (as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
@@ -266,7 +266,7 @@ have large halos or include diffuse light that is not included in the Tractor mo
 to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
 
 Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS``
-set (see the `DR8 bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
+set (see the `bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
 and LSLGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
 (except for the LSLGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
 (i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_).
@@ -280,7 +280,7 @@ using `polynomial fits to Gaia-to-DECam`_ color transformations for stars.
 Transformations to `DECam`_ are used even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_.
 The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero.
 
-.. _`DR8 bitmasks page`: ../bitmasks
+.. _`bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
 .. _`Tractor catalogs`: ../catalogs
@@ -495,19 +495,19 @@ we provide should all be within a few percent of being on an AB system.
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DECam`: http://www.ctio.noao.edu/noao/node/1033
 .. _`Dark Energy Camera`: http://www.ctio.noao.edu/noao/node/1033
-.. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
+.. _`catalogs page`: ../catalogs/#galactic-extinction-coefficients
 
 
 Galactic Extinction
 ===================
 
-The most recent values of the Galactic extinction coefficients are available on the `DR8 catalogs`_ page.
+The most recent values of the Galactic extinction coefficients are available on the `catalogs page`_.
 
 
 Astrometry
 ==========
 
-Starting with DR8, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
+Starting with `DR8`_, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
 `Gaia Data Release 2`_, yielding an astrometric solution that is offset by the average difference between
 the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR9 image. Source
 extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to
@@ -580,6 +580,7 @@ Code Versions
 .. _`DESI Legacy Surveys Imaging Data Release 5`: ../../dr5
 .. _`DESI Legacy Surveys Imaging Data Release 6`: ../../dr6
 .. _`DESI Legacy Surveys Imaging Data Release 7`: ../../dr7
+.. _`DESI Legacy Surveys Imaging Data Release 8`: ../../dr8
 
 Glossary
 ========
@@ -601,8 +602,6 @@ CP
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
 
-DR2
-    `DESI Legacy Surveys Imaging Data Release 2`_.
 
 DR3
     `DESI Legacy Surveys Imaging Data Release 3`_.
@@ -618,6 +617,9 @@ DR6
 
 DR7
     `DESI Legacy Surveys Imaging Data Release 7`_.
+
+DR8
+    `DESI Legacy Surveys Imaging Data Release 8`_.
 
 DECam
     `Dark Energy Camera`_ on the Blanco 4-meter telescope.

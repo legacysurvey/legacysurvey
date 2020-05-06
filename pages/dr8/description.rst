@@ -157,7 +157,7 @@ directly using `the Sky viewer`_
 and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
 `the bottom of the files`_ page).
 
-Sections of the Legacy Surveys  for DR8 can be obtained as JPEGs or FITS files using
+Sections of the Legacy Surveys for DR8 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
 JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz

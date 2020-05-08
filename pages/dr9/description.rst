@@ -93,8 +93,7 @@ Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
 ===================== =========== =========== ===========
 
-South of -20\ |deg| the Legacy Surveys imaging is dominated by observations from the `Dark Energy Survey`_. North of a Declination 
-of -20\ |deg|, the area covered in DR9 for different numbers of passes and in different filters is:
+South of Declination -18\ |deg| the Legacy Surveys imaging is dominated by observations from the `Dark Energy Survey`_. North of -18\ |deg|, the area covered in DR9 for different numbers of passes and in different filters is:
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3

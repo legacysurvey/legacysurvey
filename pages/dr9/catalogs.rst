@@ -39,7 +39,6 @@ Name                                  Type         Units                 Descrip
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick
 ``brick_primary``                     boolean                            ``True`` if the object is within the brick boundary
-``brightblob``                        int16                              bitwise mask indicating that an object is near a bright foreground source, as cataloged on the `DR9 bitmasks page`_
 ``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR9 bitmasks page`_
 ``iterative``                         boolean                            ``True`` if the object was inferred from a second round of fitting to the image-minus-model residuals from the first round of fitting.
 ``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model.

@@ -13,52 +13,11 @@
 General Issues
 --------------
 
-The most up-to-date issues and in-progress fixes moving from DR8 to DR9 are
+The most up-to-date issues and in-progress fixes moving from DR9 to DR10 are
 available on the GitHub issues pages for the `Legacy Surveys website`_ or the `legacypipe pipeline`_.
 
 Issues with CCDs that may have affected the quality of DECam observations are recorded on the
 `DECam CCDs page`_.
-
-Overflow in survey-bricks-dr8-south.fits.gz
--------------------------------------------
-
-The columns `nobjs`, `npsf`, and so on are signed 16-bit integers.  One brick, 2296p020, containing the
-globular cluster M 5, contains 32,943 PSFs (and no other types), which overflows a 16-bit signed integer.
-It therefore appears as -32,593 (off by 65,536).
-
-Patching Morphological Models
------------------------------
-
-Some morphological quantities are inconsistent for PSF sources in DR8, due to a bug in the model selection function that was introduced
-on May 13th, 2019 `to fix a different bug in the reduction process`_.
-
-This issue occurs when the ``REX`` model is better than the ``PSF`` model, but not by more than a ``DCHISQ`` value of 1%.  In that case, instead of reverting to ``PSF``, the modeling code reverts to NONE.
-
-The upshot of this issue is that when ``REX`` is better than ``PSF``, but not by a sufficiently large margin, then the ``EXP`` or ``DEV`` model would be chosen instead of the ``PSF`` model.
-
-This issue has been mostly addressed by looking at the ``DCHISQ`` values in the `Tractor catalogs`_, determining which sources are affected, and
-patching the Tractor files with the ``PSF`` fit values, which are then propagated to all `files`_ that rely on the Tractor catalogs.
-Patching the catalogs in this manner has the inconsistency problem that the pipeline would have already subtracted the ``EXP`` or ``DEV`` model
-for a patched source during extraction, affecting the fitting of other sources in the image.
-
-- Quantities that should be unaffected:
-    - ``RA``, ``DEC``, fluxes and their IVARs; ``TYPE``, ``BX``, ``BY``, ``BRICK_PRIMARY``.
-- Quantities that *could* be inconsistent (if the ``PSF``-fit centroid was in a different brick pixel than the ``DEV``- or ``EXP``-fit centroid):
-    - ``ANYMASK``, ``ALLMASK``, ``MASKBITS``, ``BRIGHTBLOB``, ``NOBS``.
-- Quantities that *will* be inconsistent as they will still use the ``DEV`` or ``EXP`` model shape:
-    - ``FIBERFLUX``, ``FRACIN``, ``FRACFLUX``, ``FRACMASKED``, ``RCHISQ`` and the WISE forced photometry.
-
-DR8 was processed with several different code versions. Morphological models were only patched for a subset of the files that were
-processed with version DR8.2.1 of the code. These files can be identified by the header card: ``PATCHED`` `(= integer number of sources patched)`.
-
-The brightest stars are missing from models and catalogs
---------------------------------------------------------
-
-The cores of very bright stars are often highly saturated. This produces negative fluxes in model fits, which
-causes very bright stars to be dropped completely during model selection. An example is Tania Australis (V~3, RA~213.88\ |deg|, Dec~19.18\ |deg|).
-
-The fix, which will be included in DR9, is to force all reference stars (such as Gaia stars) to be retained during model fitting.
-
 
 Bricks that didn't finish processing
 ------------------------------------
@@ -71,7 +30,7 @@ Most of these cases consist of bricks containing particularly large galaxies
 
 For such bricks, we remove any images from the ``coadd/`` directory so that the
 pixel-level files are consistent with the catalog-level files. This means that
-there are a small number of bricks in DR8 which have images loaded in the
+there are a small number of bricks in DR9 which have images loaded in the
 `viewer`_ but that do not have corresponding `files`_, `coadd files`_ or
 `Tractor catalogs`_.
 

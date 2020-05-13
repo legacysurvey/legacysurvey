@@ -13,8 +13,7 @@
 External Catalogs used for Astrometry and Photometry
 ====================================================
 
-Several external catalogs are used for astrometric and photometric calibration of DR8. These catalogs are available to collaborators in the indicated directories at NERSC. We expect that these
-catalogs will be made available to the public in a static, archival state for DR9.
+Several external catalogs are used for astrometric and photometric calibration of DR9.
 
 Pan-STARRS-1 (PS1)
 ------------------
@@ -38,8 +37,8 @@ Tycho-2
 External Catalogs used for Masking
 ==================================
 
-External catalogs are used for masking regions near foreground sources in DR8
-(e.g. to construct ``BRIGHTBLOB`` and ``MASKBITS`` on the `bitmasks page`_).
+External catalogs are used for masking regions near foreground sources in DR9
+(e.g. to construct ``MASKBITS`` on the `bitmasks page`_).
 These catalogs are available to collaborators in the indicated directories at NERSC.
 
 "BRIGHT" stars
@@ -58,7 +57,7 @@ These catalogs are available to collaborators in the indicated directories at NE
 Globular Clusters & Planetary Nebulae
 -------------------------------------
 
-| In DR8 we mask globular clusters and planetary nebulae selected from the `OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken from the ``majax`` attribute of this catalog.  The input catalog `can be found in the legacypipe software product`_.  Objects in this mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
+| In DR9 we mask globular clusters and planetary nebulae selected from the `OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken from the ``majax`` attribute of this catalog.  The input catalog `can be found in the legacypipe software product`_.  Objects in this mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
 
 LSLGA Large Galaxies
 --------------------

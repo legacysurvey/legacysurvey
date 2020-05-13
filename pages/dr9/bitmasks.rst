@@ -10,26 +10,6 @@
 This page details the meaning of the bitmasks provided with Data Release 9 of the Legacy Surveys. The bits are
 enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-power-of-7`).
 
-``BRIGHTBLOB``
-==============
-
-See also the `legacypipe bitmask definitions`_.
-Note that the difference between bits 0, 1, 2, 3 for ``BRIGHTBLOB`` as compared to bits 1, 11, 12 and 13 for ``MASKBITS`` is that
-``BRIGHTBLOB`` is set based on an *initial* position (the source detection integer pixel peak), while ``MASKBITS`` is set *after* 
-fitting has finished (i.e., on the final brick pixel position). This can lead to slight differences (~0.15%) in the areas
-covered by the ``MASKBITS`` and ``BRIGHTBLOB`` masks.
-
-.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
-
-=== =========== ===============================================================
-Bit Name        Description
-=== =========== ===============================================================
-0   ``BRIGHT``  source lies in the pixels that define a bright star (Tycho)
-1   ``MEDIUM``  source lies in the pixels that define medium bright star (GAIA)
-2   ``CLUSTER`` source lies in the pixels that define a globular cluster
-3   ``GALAXY``  source lies in the pixels that define an `LSLGA`_ large galaxy
-=== =========== ===============================================================
-
 ``MASKBITS``
 ============
 
@@ -55,6 +35,7 @@ Bit Name          Description
 13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
 
+.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
 .. _`radius-magnitude relation for Tycho-2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L258
 .. _`for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
 .. _`radius-magnitude relation for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196

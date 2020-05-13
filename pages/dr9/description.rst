@@ -264,7 +264,7 @@ The reasoning behind treating bright foreground sources as special cases is that
 have large halos or include diffuse light that is not included in the Tractor model choices. This leads such sources
 to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
 
-Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS``
+Sources that are within a mask region have ``MASKBITS``
 set (see the `bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
 and LSLGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
 (except for the LSLGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars

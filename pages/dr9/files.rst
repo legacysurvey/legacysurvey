@@ -191,13 +191,13 @@ Column               Type       Description
 ``yshift``	     boolean	(ignore; it's always ``False``)
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
-``skyrms``           float32    Sky rms for the entire image (in counts)
+``skyrms``           float32    Sky rms for the entire image (in counts/second)
 ``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag)
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdskycounts``     float32    Mean sky counts level per second per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
 ``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2)
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec

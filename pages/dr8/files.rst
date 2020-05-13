@@ -186,23 +186,24 @@ Column               Type       Description
 ``yshift``	     boolean	(ignore; it's always ``False``)
 ``ra``               float64    Approximate RA center of this CCD (deg)
 ``dec``              float64    Approximate Dec center of this CCD (deg)
-``skyrms``           float32    Sky rms for the entire image (in counts)
+``skyrms``           float32    Sky rms for the entire image (in counts/second)
 ``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag)
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdskycounts``     float32    Mean sky count level per pixel in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
+``ccdskycounts``     float32    Mean sky counts level per second per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
 ``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2)
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag)
 ``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction
 ``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five
-``ccd_cuts``         int32      (ignore)
+``ccd_cuts``         int32      Bit mask describing CCD image quality (see, e.g., the `DR9 bitmasks page`_)
 ==================== ========== =======================================================
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
+.. _`DR9 bitmasks page`: ../../dr9/bitmasks/#ccd-cuts
 
 survey-ccds-<camera>-dr8.kd.fits
 --------------------------------
@@ -909,7 +910,7 @@ proper motion!
     ``mjd``          float64    The Modified Julian Date when the exposure was taken, in UTC, eg 57644.31537588
     ``exptime``      float32    The exposure time in seconds, eg 90.0
     ``psfsize``      float32    PSF FWHM in this exposure, in arcsec
-    ``ccd_cuts``     int64      Bit mask describing CCD image quality
+    ``ccd_cuts``     int64      Bit mask describing CCD image quality (see, e.g., the `DR9 bitmasks page`_)
     ``airmass``      float32    Airmass of this observation
     ``sky``          float32    Sky background surface brightness, in nanomaggies/arcsec\ |sup2|
     ``psfdepth``     float32    Inverse-variance for the flux measured from a point source; for a :math:`5\sigma` point source detection limit use :math:`5/\sqrt(\mathrm{psfdepth})` for the flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth})) - 9]` for the corresponding AB magnitude

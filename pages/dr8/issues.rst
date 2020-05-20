@@ -23,7 +23,7 @@ Overflow in survey-bricks-dr8-south.fits.gz
 -------------------------------------------
 
 The columns `nobjs`, `npsf`, and so on are signed 16-bit integers.  One brick, 2296p020, containing the
-globular cluster M 5, contains 32,943 PSFs (and no other types), which overflows a 16-bit signed integer.
+globular cluster M5, contains 32,943 PSFs (and no other types), which overflows a 16-bit signed integer.
 It therefore appears as -32,593 (off by 65,536).
 
 Patching Morphological Models
@@ -59,7 +59,6 @@ causes very bright stars to be dropped completely during model selection. An exa
 
 The fix, which will be included in DR9, is to force all reference stars (such as Gaia stars) to be retained during model fitting.
 
-
 Bricks that didn't finish processing
 ------------------------------------
 Bricks that didn't finish processing, or that only partially
@@ -75,6 +74,22 @@ there are a small number of bricks in DR8 which have images loaded in the
 `viewer`_ but that do not have corresponding `files`_, `coadd files`_ or
 `Tractor catalogs`_.
 
+Incorrect values in the annotated ccds file
+--------------------------------------------
+Sky levels at Declinations south of -30\ |deg| were computed using CCD zero-points of 0 mag rather than the correct zero-points. This produced
+incorrect values for the following quantities in the `annotated ccds file`_:
+
+- ``meansky``
+- ``stdsky``
+- ``maxsky``
+- ``minsky``
+
+These values, which have been corrected for `DR9`_, need to be updated for DR8 as in `this code snippet`_. In addition, the units stated
+for these 4 quantities in the DR8 documentation were originally incorrect. These quantities are all in nanomaggies, not ADU.
+
+.. _`this code snippet`: https://github.com/legacysurvey/legacypipe/commit/3650c7bce35ecd0a1c908cb20111da33a1bfee94
+.. _`DR9`: ../../dr9/files/#ccds-annotated-camera-dr9-cut-fits-gz
+.. _`annotated ccds file`: ../files/#ccds-annotated-camera-dr8-fits-gz
 .. _`to fix a different bug in the reduction process`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
@@ -86,3 +101,4 @@ there are a small number of bricks in DR8 which have images loaded in the
 .. _`viewer`: http://legacysurvey.org/viewer
 .. _`Andromeda`: http://legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
 .. _`M13`: http://legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
+

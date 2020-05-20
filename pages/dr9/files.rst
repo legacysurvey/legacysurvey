@@ -243,10 +243,10 @@ Column               Type       Description
 ``ddec``             float32    Maximum distance from RA,Dec center to the edge midpoints, in Dec
 ``ra_center``        float64    RA coordinate of CCD center
 ``dec_center``       float64    Dec coordinate of CCD center
-``meansky``          float32    Our pipeline (not the CP) estimate of the sky level, average over the image, in ADU.
-``stdsky``           float32    Standard deviation of our sky level
-``maxsky``           float32    Max of our sky level
-``minsky``           float32    Min of our sky level
+``meansky``          float32    Our pipeline (not the CP) estimate of the sky level, average over the image, in nanomaggies
+``stdsky``           float32    Standard deviation of our sky level, in nanomaggies
+``maxsky``           float32    Max of our sky level, in nanomaggies
+``minsky``           float32    Min of our sky level, in nanomaggies
 ``pixscale_mean``    float32    Pixel scale (via sqrt of area of a 10x10 pixel patch evaluated in a 5x5 grid across the image), in arcsec/pixel.
 ``pixscale_std``     float32    Standard deviation of pixel scale
 ``pixscale_max``     float32    Max of pixel scale

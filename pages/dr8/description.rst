@@ -242,7 +242,7 @@ distinct sources was reduced.
 
 Starting with DR8, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_.
-These include bright stars, medium-bright stars, globular clusters and LSLGA large galaxies
+These include bright stars, medium-bright stars, globular clusters and SGA (Siena Galaxy Atlas) large galaxies
 (as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
@@ -253,11 +253,11 @@ to be typically best fit by misleading (and computationally expensive) diffuse g
 
 Sources that are within a mask region have ``BRIGHTBLOB`` and ``MASKBITS``
 set (see the `DR8 bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
-and LSLGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
-(except for the LSLGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
+and SGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
+(except for the SGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
 (i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_).
 Mask regions are ignored in the `Tractor` local-sky-fitting calibration code and are superseded by fits within the mask regions themselves.
-Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the LSLGA large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
+Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the SGA large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
 
 .. _`DR8 bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
@@ -635,6 +635,9 @@ SDSS DR13
 
 SED
     Spectral energy distribution.
+
+SGA
+    `Siena Galaxy Atlas <https://github.com/moustakas/SGA>`_.
 
 SourceExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.

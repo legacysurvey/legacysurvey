@@ -27,7 +27,7 @@ Bit Name        Description
 0   ``BRIGHT``  source lies in the pixels that define a bright star (Tycho)
 1   ``MEDIUM``  source lies in the pixels that define medium bright star (GAIA)
 2   ``CLUSTER`` source lies in the pixels that define a globular cluster
-3   ``GALAXY``  source lies in the pixels that define an `LSLGA`_ large galaxy
+3   ``GALAXY``  source lies in the pixels that define an `SGA`_ large galaxy
 === =========== ===============================================================
 
 ``MASKBITS``
@@ -51,7 +51,7 @@ Bit Name          Description
 9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
 11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for Gaia DR2`_ stars `to G < 16`_
-12  ``GALAXY``    touches a pixel in an `LSLGA`_ large galaxy
+12  ``GALAXY``    touches a pixel in an `SGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
 
@@ -61,7 +61,7 @@ Bit Name          Description
 .. _`to G < 13`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L48
 .. _`to G < 16`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L49
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
-.. _`LSLGA`: ../external
+.. _`SGA`: ../external
 
 ``ALLMASK_X``/``ANYMASK_X``
 ===========================

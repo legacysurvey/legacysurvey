@@ -39,11 +39,11 @@ Algorithmic changes for optical data
    * A complete description of the new PSF model, with examples, is `available for DESI collaborators`_.
    * This updated PSF model leads to different sky levels.
 * The "COMP" (composite) morphological ``type`` from DR8 has been replaced by a Sersic profile (``type=SER``).
-* The definition of a Gaia point source was changed for DR9 (see ``legacypipe`` `PR 471`_):
+* The `criterion used to force a Gaia point source`_ was changed for DR9:
    * Previously, Gaia sources were fixed to ``type=PSF`` if:
       * (``G`` :math:`\leq 19` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5}`) OR (``G`` :math:`\geq 19` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5 + 0.2(\mathtt{G} - 19)}`
-   * For DR9, Gaia sources were fixed to ``type=PSF`` only if:
-      * (``G`` :math:`\leq 19` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5}`)
+   * For DR9, Gaia sources were fixed to ``type=PSF`` if:
+      * (``G`` :math:`\leq 18` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5}`) OR (``G`` :math:`\leq 13`)
 * Sources in the `LSLGA`_ and `globular cluster and planetary nebula`_ catalogs are "pre-burned" [1]_ for DR9, and these catalogs have also been extensively improved:
    * The `globular cluster and planetary nebula`_ reference catalog has been updated, and the angular sizes of many sources in this catalog have now been set by visual inspection (see ``legacypipe`` `PR 469`_ and `PR 504`_).
    * The properties of Local Group dwarf galaxies in the `LSLGA`_ have been updated based on `Vizier`_ records, measurements in `McConnachie et al. (2012)`_, and visual inspection. In particular
@@ -55,7 +55,7 @@ Algorithmic changes for optical data
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
 .. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`PR 504`: https://github.com/legacysurvey/legacypipe/pull/504
-.. _`PR 471`: https://github.com/legacysurvey/legacypipe/pull/471
+.. _`criterion used to force a Gaia point source`: https://github.com/legacysurvey/legacypipe/blob/f96311ad56e6eb9878aae378927405745bc1819e/py/legacypipe/reference.py#L196-L197
 .. _`PR 469`: https://github.com/legacysurvey/legacypipe/pull/469
 .. _`globular cluster and planetary nebula`: ../external/#globular-clusters-planetary-nebulae
 .. _`Vizier`: https://vizier.u-strasbg.fr/viz-bin/VizieR

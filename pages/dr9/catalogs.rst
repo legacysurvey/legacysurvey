@@ -29,7 +29,7 @@ such quantities are often quoted on the Vega system).
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR9 bitmasks page`: ../bitmasks
-.. _`LSLGA`: ../external
+.. _`SGA`: ../external
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
@@ -52,8 +52,8 @@ Name                                  Type         Units                 Descrip
 ``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute the ``mw_transmission_`` columns
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
-``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, "L5" for the `LSLGA`_, empty otherwise
-``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2 and `LSLGA`_
+``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, "L3" for the `SGA`_, empty otherwise
+``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2 and `SGA`_
 ``pmra``                              float32      mas/yr                Reference catalog proper motion in the RA direction
 ``pmdec``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``parallax``                          float32      mas                   Reference catalog parallax

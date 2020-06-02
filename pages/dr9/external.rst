@@ -59,15 +59,15 @@ Globular Clusters & Planetary Nebulae
 
 | In DR9 we mask globular clusters and planetary nebulae selected from the `OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken from the ``majax`` attribute of this catalog.  The input catalog `can be found in the legacypipe software product`_.  Objects in this mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
 
-LSLGA Large Galaxies
---------------------
+SGA Large Galaxies
+------------------
 | **/global/cfs/cdirs/cosmo/staging/largegalaxies/vXXX**
-|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Legacy Survey Large Galaxy Atlas (LSLGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_.
+|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Siena Galaxy Atlas (SGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_.
 
 
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/data/NGC-star-clusters.fits 
 .. _`hardcoded in legacypipe`: https://github.com/legacysurvey/legacypipe/blob/63d0548602a52be1134f64196d6268adc68208fb/py/legacypipe/reference.py#L196
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
-.. _`Legacy Survey Large Galaxy Atlas (LSLGA) work`: https://github.com/moustakas/LSLGA
+.. _`Siena Galaxy Atlas (SGA) work`: https://github.com/moustakas/SGA
 .. _`the HyperLeda catalog`: http://leda.univ-lyon1.fr/acknowledge.html

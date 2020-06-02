@@ -44,12 +44,12 @@ Algorithmic changes for optical data
       * (``G`` :math:`\leq 19` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5}`) OR (``G`` :math:`\geq 19` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5 + 0.2(\mathtt{G} - 19)}`
    * For DR9, Gaia sources were fixed to ``type=PSF`` if:
       * (``G`` :math:`\leq 18` AND ``ASTROMETRIC_EXCESS_NOISE`` < :math:`10^{0.5}`) OR (``G`` :math:`\leq 13`)
-* Sources in the `LSLGA`_ and `globular cluster and planetary nebula`_ catalogs are "pre-burned" [1]_ for DR9, and these catalogs have also been extensively improved:
+* Sources in the `SGA`_ and `globular cluster and planetary nebula`_ catalogs are "pre-burned" [1]_ for DR9, and these catalogs have also been extensively improved:
    * The `globular cluster and planetary nebula`_ reference catalog has been updated, and the angular sizes of many sources in this catalog have now been set by visual inspection (see ``legacypipe`` `PR 469`_ and `PR 504`_).
-   * The properties of Local Group dwarf galaxies in the `LSLGA`_ have been updated based on `Vizier`_ records, measurements in `McConnachie et al. (2012)`_, and visual inspection. In particular
-      * Fornax and Sculptor have been moved from the `LSLGA`_ large galaxy catalog to the `globular cluster and planetary nebula`_ catalog.
-      * A total of 26 galaxies that, on visual inspection, were deemed to not benefit from "local" Tractor fitting have been removed from the `LSLGA`_.
-      * Some additional galaxies, beyond those that were included for DR8, have been added to the `LSLGA`_ large galaxy catalog for DR9.
+   * The properties of Local Group dwarf galaxies in the `SGA`_ have been updated based on `Vizier`_ records, measurements in `McConnachie et al. (2012)`_, and visual inspection. In particular
+      * Fornax and Sculptor have been moved from the `SGA`_ large galaxy catalog to the `globular cluster and planetary nebula`_ catalog.
+      * A total of 26 galaxies that, on visual inspection, were deemed to not benefit from "local" Tractor fitting have been removed from the `SGA`_.
+      * Some additional galaxies, beyond those that were included for DR8, have been added to the `SGA`_ large galaxy catalog for DR9.
 
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
@@ -105,8 +105,8 @@ Data model changes
    * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``
 * Three additional columns exist in the `region-specific survey bricks files`_.
    * ``cosky_g``, ``cosky_r`` and ``cosky_z``
-* The large galaxy (`LSLGA`_) catalog has been updated extensively and is "pre-burned" [1]_. This produces many additional `files of data from fitting in LSLGA regions`_.
-   * DR9 uses version 5 of the `LSLGA`_, so the ``ref_cat`` (or ``REF_CAT``) column in the `Tractor catalogs`_ and `sweep files`_ is populated with ``L5`` for LSLGA sources in DR9 (this column was populated with ``L2`` for LSLGA sources in DR8).
+* The large galaxy (Siena Galaxy Atlas; `SGA`_) catalog has been updated extensively and is "pre-burned" [1]_. This produces many additional `files of data from fitting in SGA regions`_.
+   * DR9 uses version 3 of the `SGA`_, so the ``ref_cat`` (or ``REF_CAT``) column in the `Tractor catalogs`_ and `sweep files`_ is populated with ``L3`` for SGA sources in DR9 (this column was populated with ``L2`` for SGA sources in DR8).
 * The DR9 `coadds`_ include a new file ``legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` which records XXX.
 
 .. _`DR7`: ../../dr7/description
@@ -121,8 +121,8 @@ Data model changes
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
 .. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz
-.. _`LSLGA`: http://localhost:8000/dr9/external/#lslga-large-galaxies
-.. _`files of data from fitting in LSLGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
+.. _`SGA`: http://localhost:8000/dr9/external/#sga-large-galaxies
+.. _`files of data from fitting in SGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
 .. _`coadds`: ../files/#image-stacks-region-coadd
 .. _`external match files`: ../files/#external-match-files-region-external
 

@@ -12,7 +12,7 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through early-April, 2020. For additional publications, see also the NSF's OIR Lab publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through early June, 2020. For additional publications, see also the NSF's OIR Lab publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 
 .. _`text on the acknowledgment page`: ../acknowledgment
@@ -23,24 +23,45 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 
 
-2020 (30 publications so far)
+2020 (51 publications so far)
 =============================
-#. Ross & Cross, `The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`_
+
+#. Huang et al., `Discovering New Strong Gravitational Lenses in the DESI Legacy Imaging Surveys`_
+#. Sridhar et al., `The clustering of LRGs in the DECaLS DR8 footprint: distance constraints from baryon acoustic oscillations using photometric redshifts`_
+#. Yao et al., `SN2019dge: a Helium-rich Ultra-Stripped Envelope Supernova`_
+#. Karunakaran et al., `Systematically Measuring Ultra Diffuse Galaxies in HI: Results from the Pilot Survey`_
+#. Canameras et al., `HOLISMOKES -- II. Identifying galaxy-scale strong gravitational lenses in Pan-STARRS using convolutional neural networks`_
+#. Ho et al., `SN2020bvc: a Broad-lined Type Ic Supernova with a Double-peaked Optical Light Curve and a Luminous X-ray and Radio Counterpart`_
+#. Zhang et al., `A study on Cubic Galileon Gravity Using N-body Simulations`_
+#. De et al., `The Zwicky Transient Facility Census of the Local Universe I: Systematic search for Calcium rich gap transients reveal three related spectroscopic sub-classes`_
 #. Anand et al., `DECam-GROWTH Search for the Faint and Distant Binary Neutron Star and Neutron Star-Black Hole Mergers in O3a`_
-#. Ho et al., `The Koala: A Fast Blue Optical Transient with Luminous Radio Emission from a Starburst Dwarf Galaxy at z=0.27`_
-#. Coppejans et al., `A relativistic outflow from the energetic, fast-rising blue optical transient CSS161010 in a dwarf galaxy`_
 #. Vieira et al., `A Deep CFHT Optical Search for a Counterpart to the Possible Neutron Star - Black Hole Merger GW190814`_
-#. Jaelani et al., `Survey of Gravitationally-lensed Objects in HSC Imaging (SuGOHI). V. Group-to-cluster scale lens search from the HSC-SSP Survey`_
 #. Burleigh et al., `Observing Strategy for the Legacy Surveys`_
 #. Koribalski et al., `WALLABY -- An SKA Pathfinder HI Survey`_
 #. Yao et al., `Unveiling the Intrinsic Alignment of Galaxies with Self-Calibration and DECaLS DR3 data`_
 #. Lacerna et al., `SDSS-IV MaNGA: global and local stellar population properties of elliptical galaxies and their assembly histories`_
+#. Zhou et al., `The Clustering of DESI-like Luminous Red Galaxies Using Photometric Redshifts`_
+#. Wu, `Connecting optical morphology, environment, and HI mass fraction for low-redshift galaxies using deep learning`_
 
+#. Danieli et al., `The Dragonfly Wide Field Survey. I. Telescope, Survey Design and Data Characterization`_
+#. Kim et al., `Gemini Multi-Object Spectrograph Integral Field Unit Spectroscopy of the Double-peaked Broad Emission Line of a Red Active Galactic Nucleus`_
+#. Huang et al., `Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`_
+#. Fremling et al., `The Zwicky Transient Facility Bright Transient Survey I: Spectroscopic Classification and the Redshift Completeness of Local Galaxy Catalogs`_
+#. Rezaie et al., `Improving Galaxy Clustering Measurements with Deep Learning: analysis of the DECaLS DR7 data`_
+#. Ho et al., `The Koala: A Fast Blue Optical Transient with Luminous Radio Emission from a Starburst Dwarf Galaxy at z=0.27`_
+#. Coppejans et al., `A mildly relativistic outflow from the energetic, fast-rising blue optical transient CSS161010 in a dwarf galaxy`_
+#. Drlica-Wagner et al., `Milky Way Satellite Census -- I. The Observational Selection Function for Milky Way Satellites in DES Y3 and Pan-STARRS DR1`_
 #. Hewitt & Treuthardt, `Comparison of galaxy spiral arm pitch angle measurements using manual and automated techniques`_
+#. Kasparova, Katkov & Chilingarian, `An excessively massive thick disc of the enormous edge-on lenticular galaxy NGC 7572`_
 #. Barbosa et al., `One Hundred SMUDGes in S-PLUS: Ultra-diffuse Galaxies Flourish in the Field`_
+#. Jaelani et al., `Survey of Gravitationally-lensed Objects in HSC Imaging (SuGOHI). V. Group-to-cluster scale lens search from the HSC-SSP Survey`_
+#. Pustilnik et al., `XMP gas-rich dwarfs in nearby voids: results of SALT spectroscopy`_
 #. Piatti & Fernandez-Trincado, `Pal 13: its moderately extended low-density halo and its accretion history`_
 #. Bhowmick, Di Matteo & Myers, `Multiplicity functions of quasars: predictions from the MassiveBlackII simulation`_
+#. Moskowitz & Walker, `Stellar Density Profiles of Dwarf Spheroidal Galaxies`_
+#. Ross & Cross, `The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`_
 #. Lacy et al., `The Karl G. Jansky Very Large Array Sky Survey (VLASS). Science Case and Survey Design`_
+#. Prentice et al., `The rise and fall of an extraordinary Ca-rich transient -- The discovery of ATLAS19dqr/SN 2019bkc`_
 #. Dekany et al., `The Zwicky Transient Facility: Observing System`_
 #. Meisner et al., `Expanding the Y Dwarf Census with Spitzer Follow-up of the Coldest CatWISE Solar Neighborhood Discoveries`_
 #. Bait et al., `Discovery of a large H I ring around the quiescent galaxy AGC 203001`_
@@ -49,35 +70,29 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Miller et al., `Investigating Overdensities around z > 6 Galaxies through ALMA Observations of [C ii]`_
 #. Andreoni et al., `GROWTH on S190814bv: Deep Synoptic Limits on the Optical/Near-infrared Counterpart to a Neutron Star-Black Hole Merger`_
 #. Mau et al., `Two Ultra-faint Milky Way Stellar Systems Discovered in Early Data from the DECam Local Volume Exploration Survey`_
+#. Nie & Tian, `Detecting tidal tail of the globular cluster Whiting 1`_
 #. Garma-Oehmichen et al., `SDSS-IV MaNGA: bar pattern speed estimates with the Tremaine-Weinberg method and their error sources`_
-#. Chen et al., `The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`_
+#. Chen et al., `The Most Rapidly Declining Type I Supernova 2019bkc/ATLAS19dqr`_
 #. Kang et al., `Early-type Host Galaxies of Type Ia Supernovae. II. Evidence for Luminosity Evolution in Supernova Cosmology`_
 #. Walmsley et al., `Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`_
 #. Phriksee et al., `Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`_
 #. Bonaca et al., `Variations in the Width, Density, and Direction of the Palomar 5 Tidal Tails`_
 #. Reines et al., `A New Sample of (Wandering) Massive Black Holes in Dwarf Galaxies from High-resolution Radio Observations`_
 
-2019 (78 publications)
-=============================
+2019 (71 publications)
+======================
 #. Krone-Martins et al., `Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`_
-#. Kasparova, Katkov & Chilingarian, `A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`_
 #. Li et al., `The Impact of Merging on The Origin of Kinematically Misaligned and Counter-rotating Galaxies in MaNGA`_
-#. Drlica-Wagner et al., `Milky Way Satellite Census -- I. The Observational Selection Function for Milky Way Satellites in DES Y3 and Pan-STARRS DR1`_
 #. Ahumada et al., `The Sixteenth Data Release of the Sloan Digital Sky Surveys: First Release from the APOGEE-2 Southern Survey and Full Release of eBOSS Spectra`_
 #. Inayoshi et al., `The Assembly of the First Massive Black Holes`_
 #. Kitanidis et al., `Imaging Systematics and Clustering of DESI Main Targets`_
 #. Tinker et al., `Probing the galaxy-halo connection with total satellite luminosity`_
 #. Lan, `The Co-Evolution of Galaxies and the Cool Circumgalactic Medium Probed with the SDSS and DESI Legacy Imaging Surveys`_
-#. Danieli et al., `The Dragonfly Wide Field Survey. I. Telescope, Survey Design and Data Characterization`_
-#. Fremling et al., `The Zwicky Transient Facility Bright Transient Survey I: Spectroscopic Classification and the Redshift Completeness of Local Galaxy Catalogs`_
-#. Moskowitz & Walker, `Stellar Density Profiles of Dwarf Spheroidal Galaxies`_
 #. Alam et al., `Multi-tracer extension of the halo model: probing quenching and conformity in eBOSS`_
-#. Prentice et al., `The rise and fall of an extraordinary Ca-rich transient -- The discovery of ATLAS19dqr/SN 2019bkc`_
+#. Mihos, `Deep Imaging of Diffuse Light Around Galaxies and Clusters: Progress and Challenges`_
 #. Vazquez Najar & Andernach, `Radio-Optical Alignment of Radio Galaxies`_
 #. Kirkpatrick et al., `The Accretion History of AGN: A Newly Defined Population of Cold Quasars`_
 #. Olsen et al., `The Data Lab: A Science Platform for the analysis of ground-based astronomical survey data`_
-#. Rezaie et al., `Improving Galaxy Clustering Measurements with Deep Learning: analysis of the DECaLS DR7 data`_
-#. Huang et al., `Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`_
 
 #. Meisner et al., `unWISE Coadds: The Five-year Data Set`_
 #. Walker et al., `A DECam view of the diffuse dwarf galaxy Crater II: the colour-magnitude diagram`_
@@ -99,15 +114,15 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Wang et al., `Exploring Reionization-era Quasars. III. Discovery of 16 Quasars at 6.4 < z < 6.9 with DESI Legacy Imaging Surveys and the UKIRT Hemisphere Survey and Quasar Luminosity Function at z ~ 6.7`_
 #. Andreon et al., `Why are some galaxy clusters underluminous?. The very low concentration of the CL2015 mass profile`_
 #. Cano-Diaz et al., `SDSS-IV MaNGA: effects of morphology in the global and local star formation main sequences`_
-#. Sridhar et al., `Cosmic distance determination from photometric redshift samples using BAO peaks only`_
+#. Sridhar & Song, `Cosmic distance determination from photometric redshift samples using BAO peaks only`_
 #. Pearson et al., `Detecting Thin Stellar Streams in External Galaxies: Resolved Stars & Integrated Light`_
 #. Zhang et al., `Machine-learning Classifiers for Intermediate Redshift Emission-line Galaxies`_
 #. Sebastian & Bait, `Radio Continuum Emission from Local Analogs of High-z Faint LAEs: Blueberry Galaxies`_
-#. Meyer et al., `New Constraints on Quasar Evolution: Broad Line Velocity Shifts over 1.5 < z < 7.5`_
+#. Meyer, Bosman & Ellis, `New Constraints on Quasar Evolution: Broad Line Velocity Shifts over 1.5 < z < 7.5`_
 #. Erkal et al., `The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`_
 #. Comparat et al., `Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`_
 #. Prochaska et al., `The COS Absorption Survey of Baryon Harbors: The Galaxy Database and Cross-correlation Analysis of O VI Systems`_
-#. Goldstein et al., `GROWTH on S190426c. II. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`_
+#. Goldstein et al., `GROWTH on S190426c. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`_
 #. Bates et al., `Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`_
 #. Wang et al., `Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`_
 #. Maschmann & Melchior, `Ultimate Merging at z~0.1`_
@@ -117,7 +132,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Robertson et al. `Galaxy formation and evolution science in the era of the Large Synoptic Survey Telescope`_
 #. Gordon et al. `The Effect of Minor and Major Mergers on the Evolution of Low-excitation Radio Galaxies`_
 #. Koposov et al., `Piercing the Milky Way: an all-sky view of the Orphan Stream`_
-#. Yang et al., `Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`_
+#. Yang et al., `Exploring Reionization-Era Quasars. IV. Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`_
 #. Bait, Wadadekar & Barway, `Outlying H-alpha emitters in SDSS IV MaNGA`_
 #. Simon et al., `Dynamical Masses for a Complete Census of Local Dwarf Galaxies`_
 #. Dey et al., `Overview of the DESI Legacy Imaging Surveys`_
@@ -198,23 +213,42 @@ This page is likely to be incomplete and has been updated through early-April, 2
 #. Lang, `unWISE: Unblurred Coadds of the WISE Imaging`_
 
 
-
-.. _`The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp..594R/abstract
+.. _`Discovering New Strong Gravitational Lenses in the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2020arXiv200504730H
+.. _`The clustering of LRGs in the DECaLS DR8 footprint: distance constraints from baryon acoustic oscillations using photometric redshifts`: https://ui.adsabs.harvard.edu/abs/2020arXiv200513126S
+.. _`SN2019dge: a Helium-rich Ultra-Stripped Envelope Supernova`: https://ui.adsabs.harvard.edu/abs/2020arXiv200512922Y
+.. _`Systematically Measuring Ultra Diffuse Galaxies in HI: Results from the Pilot Survey`: https://ui.adsabs.harvard.edu/abs/2020arXiv200514202K
+.. _`HOLISMOKES -- II. Identifying galaxy-scale strong gravitational lenses in Pan-STARRS using convolutional neural networks`: https://ui.adsabs.harvard.edu/abs/2020arXiv200413048C
+.. _`SN2020bvc: a Broad-lined Type Ic Supernova with a Double-peaked Optical Light Curve and a Luminous X-ray and Radio Counterpart`: https://ui.adsabs.harvard.edu/abs/2020arXiv200410406H
+.. _`A study on Cubic Galileon Gravity Using N-body Simulations`: https://ui.adsabs.harvard.edu/abs/2020arXiv200412659Z
+.. _`The Zwicky Transient Facility Census of the Local Universe I: Systematic search for Calcium rich gap transients reveal three related spectroscopic sub-classes`: https://ui.adsabs.harvard.edu/abs/2020arXiv200409029D
 .. _`DECam-GROWTH Search for the Faint and Distant Binary Neutron Star and Neutron Star-Black Hole Mergers in O3a`: https://ui.adsabs.harvard.edu/abs/2020arXiv200305516A
-.. _`The Koala: A Fast Blue Optical Transient with Luminous Radio Emission from a Starburst Dwarf Galaxy at z=0.27`: https://ui.adsabs.harvard.edu/abs/2020arXiv200301222H
-.. _`A relativistic outflow from the energetic, fast-rising blue optical transient CSS161010 in a dwarf galaxy`: https://ui.adsabs.harvard.edu/abs/2020arXiv200310503C
 .. _`A Deep CFHT Optical Search for a Counterpart to the Possible Neutron Star - Black Hole Merger GW190814`: https://ui.adsabs.harvard.edu/abs/2020arXiv200309437V
-.. _`Survey of Gravitationally-lensed Objects in HSC Imaging (SuGOHI). V. Group-to-cluster scale lens search from the HSC-SSP Survey`: https://ui.adsabs.harvard.edu/abs/2020arXiv200201611J
 .. _`Observing Strategy for the Legacy Surveys`: https://ui.adsabs.harvard.edu/abs/2020arXiv200205828B
 .. _`WALLABY -- An SKA Pathfinder HI Survey`: https://ui.adsabs.harvard.edu/abs/2020arXiv200207311K
 .. _`Unveiling the Intrinsic Alignment of Galaxies with Self-Calibration and DECaLS DR3 data`: https://ui.adsabs.harvard.edu/abs/2020arXiv200209826Y
 .. _`SDSS-IV MaNGA: global and local stellar population properties of elliptical galaxies and their assembly histories`: https://ui.adsabs.harvard.edu/abs/2020arXiv200105506L
+.. _`The Clustering of DESI-like Luminous Red Galaxies Using Photometric Redshifts`: https://ui.adsabs.harvard.edu/abs/2020arXiv200106018Z
+.. _`Connecting optical morphology, environment, and HI mass fraction for low-redshift galaxies using deep learning`: https://ui.adsabs.harvard.edu/abs/2020arXiv200100018W
 
+.. _`The Dragonfly Wide Field Survey. I. Telescope, Survey Design and Data Characterization`: https://ui.adsabs.harvard.edu/abs/2020ApJ...894..119D
+.. _`Gemini Multi-Object Spectrograph Integral Field Unit Spectroscopy of the Double-peaked Broad Emission Line of a Red Active Galactic Nucleus`: https://ui.adsabs.harvard.edu/abs/2020ApJ...894..126K
+.. _`Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`: https://ui.adsabs.harvard.edu/abs/2020ApJ...894...78H
+.. _`The Zwicky Transient Facility Bright Transient Survey I: Spectroscopic Classification and the Redshift Completeness of Local Galaxy Catalogs`: https://ui.adsabs.harvard.edu/abs/2020ApJ...895...32F
+.. _`Improving Galaxy Clustering Measurements with Deep Learning: analysis of the DECaLS DR7 data`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.495.1613R
+.. _`The Koala: A Fast Blue Optical Transient with Luminous Radio Emission from a Starburst Dwarf Galaxy at z=0.27`: https://ui.adsabs.harvard.edu/abs/2020ApJ...895...49H
+.. _`A mildly relativistic outflow from the energetic, fast-rising blue optical transient CSS161010 in a dwarf galaxy`: https://ui.adsabs.harvard.edu/abs/2020ApJ...895L..23C
+.. _`Milky Way Satellite Census -- I. The Observational Selection Function for Milky Way Satellites in DES Y3 and Pan-STARRS DR1`: https://ui.adsabs.harvard.edu/abs/2020ApJ...893...47D
 .. _`Comparison of galaxy spiral arm pitch angle measurements using manual and automated techniques`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.493.3854H
+.. _`An excessively massive thick disc of the enormous edge-on lenticular galaxy NGC 7572`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.493.5464K
 .. _`One Hundred SMUDGes in S-PLUS: Ultra-diffuse Galaxies Flourish in the Field`: https://ui.adsabs.harvard.edu/abs/2020ApJS..247...46B
+.. _`Survey of Gravitationally-lensed Objects in HSC Imaging (SuGOHI). V. Group-to-cluster scale lens search from the HSC-SSP Survey`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.495.1291J
+.. _`XMP gas-rich dwarfs in nearby voids: results of SALT spectroscopy`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.493..830P
 .. _`Pal 13: its moderately extended low-density halo and its accretion history`: https://ui.adsabs.harvard.edu/abs/2020A%26A...635A..93P
 .. _`Multiplicity functions of quasars: predictions from the MassiveBlackII simulation`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.5620B
+.. _`Stellar Density Profiles of Dwarf Spheroidal Galaxies`: https://ui.adsabs.harvard.edu/abs/2020ApJ...892...27M
+.. _`The Near and Mid-infrared photometric properties of known redshift z>5 Quasars`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.494..789R
 .. _`The Karl G. Jansky Very Large Array Sky Survey (VLASS). Science Case and Survey Design`: https://ui.adsabs.harvard.edu/abs/2020PASP..132c5001L
+.. _`The rise and fall of an extraordinary Ca-rich transient -- The discovery of ATLAS19dqr/SN 2019bkc`: https://ui.adsabs.harvard.edu/abs/2020A%26A...635A.186P
 .. _`The Zwicky Transient Facility: Observing System`: https://ui.adsabs.harvard.edu/abs/2020PASP..132c8001D
 .. _`Expanding the Y Dwarf Census with Spitzer Follow-up of the Coldest CatWISE Solar Neighborhood Discoveries`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...74M
 .. _`Discovery of a large H I ring around the quiescent galaxy AGC 203001`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.492....1B
@@ -223,8 +257,9 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`Investigating Overdensities around z > 6 Galaxies through ALMA Observations of [C ii]`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889...98M
 .. _`GROWTH on S190814bv: Deep Synoptic Limits on the Optical/Near-infrared Counterpart to a Neutron Star-Black Hole Merger`: https://ui.adsabs.harvard.edu/abs/2020ApJ...890..131A
 .. _`Two Ultra-faint Milky Way Stellar Systems Discovered in Early Data from the DECam Local Volume Exploration Survey`: https://ui.adsabs.harvard.edu/abs/2020ApJ...890..136M
+.. _`Detecting tidal tail of the globular cluster Whiting 1`: https://ui.adsabs.harvard.edu/abs/2020IAUS..353..121N
 .. _`SDSS-IV MaNGA: bar pattern speed estimates with the Tremaine-Weinberg method and their error sources`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.3655G
-.. _`The Most Rapidly-Declining Type I Supernova 2019bkc/ATLAS19dqr`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889L...6C
+.. _`The Most Rapidly Declining Type I Supernova 2019bkc/ATLAS19dqr`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889L...6C
 .. _`Early-type Host Galaxies of Type Ia Supernovae. II. Evidence for Luminosity Evolution in Supernova Cosmology`: https://ui.adsabs.harvard.edu/abs/2020ApJ...889....8K
 .. _`Galaxy Zoo: Probabilistic Morphology through Bayesian CNNs and Active Learning`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1554W
 .. _`Weak lensing analysis of CODEX clusters using dark energy camera legacy survey: mass-richness relation`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.1643P
@@ -232,24 +267,17 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`A New Sample of (Wandering) Massive Black Holes in Dwarf Galaxies from High-resolution Radio Observations`: https://ui.adsabs.harvard.edu/abs/2020ApJ...888...36R
 
 .. _`Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`: https://ui.adsabs.harvard.edu/abs/2019arXiv191208977K
-.. _`A thick disc as massive as it gets: the vertical structure of the enormous edge-on lenticular galaxy NGC7572`: https://ui.adsabs.harvard.edu/abs/2019arXiv191204887K
 .. _`The Impact of Merging on The Origin of Kinematically Misaligned and Counter-rotating Galaxies in MaNGA`: https://ui.adsabs.harvard.edu/abs/2019arXiv191204522L
-.. _`Milky Way Satellite Census -- I. The Observational Selection Function for Milky Way Satellites in DES Y3 and Pan-STARRS DR1`: https://ui.adsabs.harvard.edu/abs/2019arXiv191203302D
 .. _`The Sixteenth Data Release of the Sloan Digital Sky Surveys: First Release from the APOGEE-2 Southern Survey and Full Release of eBOSS Spectra`: https://ui.adsabs.harvard.edu/abs/2019arXiv191202905A
 .. _`The Assembly of the First Massive Black Holes`: https://ui.adsabs.harvard.edu/abs/2019arXiv191105791I
 .. _`Imaging Systematics and Clustering of DESI Main Targets`: https://ui.adsabs.harvard.edu/abs/2019arXiv191105714K
 .. _`Probing the galaxy-halo connection with total satellite luminosity`: https://ui.adsabs.harvard.edu/abs/2019arXiv191104507T
 .. _`The Co-Evolution of Galaxies and the Cool Circumgalactic Medium Probed with the SDSS and DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019arXiv191101271L
-.. _`The Dragonfly Wide Field Survey. I. Telescope, Survey Design and Data Characterization`: https://ui.adsabs.harvard.edu/abs/2019arXiv191014045D
-.. _`The Zwicky Transient Facility Bright Transient Survey I: Spectroscopic Classification and the Redshift Completeness of Local Galaxy Catalogs`: https://ui.adsabs.harvard.edu/abs/2019arXiv191012973F
-.. _`Stellar Density Profiles of Dwarf Spheroidal Galaxies`: https://ui.adsabs.harvard.edu/abs/2019arXiv191010134M
 .. _`Multi-tracer extension of the halo model: probing quenching and conformity in eBOSS`: https://ui.adsabs.harvard.edu/abs/2019arXiv191005095A
-.. _`The rise and fall of an extraordinary Ca-rich transient -- The discovery of ATLAS19dqr/SN 2019bkc`: https://ui.adsabs.harvard.edu/abs/2019arXiv190905567P
+.. _`Deep Imaging of Diffuse Light Around Galaxies and Clusters: Progress and Challenges`: https://ui.adsabs.harvard.edu/abs/2019arXiv190909456M
 .. _`Radio-Optical Alignment of Radio Galaxies`: https://ui.adsabs.harvard.edu/abs/2019arXiv190809989V
 .. _`The Accretion History of AGN: A Newly Defined Population of Cold Quasars`: https://ui.adsabs.harvard.edu/abs/2019arXiv190804795K
 .. _`The Data Lab: A Science Platform for the analysis of ground-based astronomical survey data`: https://ui.adsabs.harvard.edu/abs/2019arXiv190800664O
-.. _`Improving Galaxy Clustering Measurements with Deep Learning: analysis of the DECaLS DR7 data`: https://ui.adsabs.harvard.edu/abs/2019arXiv190711355R
-.. _`Finding Strong Gravitational Lenses in the DESI DECam Legacy Survey`: https://ui.adsabs.harvard.edu/abs/2019arXiv190600970H
 
 .. _`unWISE Coadds: The Five-year Data Set`: https://ui.adsabs.harvard.edu/abs/2019PASP..131l4504M
 .. _`A DECam view of the diffuse dwarf galaxy Crater II: the colour-magnitude diagram`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.4121W
@@ -279,7 +307,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`The total mass of the Large Magellanic Cloud from its perturbation on the Orphan stream`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2685E
 .. _`Active Galactic Nuclei and their Large-scale Structure: an eROSITA mock catalogue`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2005C
 .. _`The COS Absorption Survey of Baryon Harbors: The Galaxy Database and Cross-correlation Analysis of O VI Systems`: https://ui.adsabs.harvard.edu/abs/2019ApJS..243...24P
-.. _`GROWTH on S190426c. II. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`: https://ui.adsabs.harvard.edu/abs/2019arXiv190506980G
+.. _`GROWTH on S190426c. Real-Time Search for a Counterpart to the Probable Neutron Star-Black Hole Merger using an Automated Difference Imaging Pipeline for DECam`: https://ui.adsabs.harvard.edu/abs/2019ApJ...881L...7G
 .. _`Mass Functions, Luminosity Functions, and Completeness Measurements from Clustering Redshifts`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.3059B
 .. _`Accurate Modeling of the Projected Galaxy Clustering in Photometric Surveys: I. Tests with Mock Catalogs`: https://ui.adsabs.harvard.edu/abs/2019ApJ...879...71W
 .. _`Ultimate Merging at z~0.1`: https://ui.adsabs.harvard.edu/abs/2019A%26A...627L...3M
@@ -289,7 +317,7 @@ This page is likely to be incomplete and has been updated through early-April, 2
 .. _`Galaxy formation and evolution science in the era of the Large Synoptic Survey Telescope`: https://ui.adsabs.harvard.edu/abs/2019NatRP...1..450R
 .. _`The Effect of Minor and Major Mergers on the Evolution of Low-excitation Radio Galaxies`: https://ui.adsabs.harvard.edu/abs/2019ApJ...878...88G
 .. _`Piercing the Milky Way: an all-sky view of the Orphan Stream`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.4726K
-.. _`Exploring Reionization-Era Quasars IV: Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..236Y
+.. _`Exploring Reionization-Era Quasars. IV. Discovery of Six New z > 6.5 Quasars with DES, VHS and unWISE Photometry`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..236Y
 .. _`Outlying H-alpha emitters in SDSS IV MaNGA`: https://ui.adsabs.harvard.edu/abs/2019MNRAS.485..428B
 .. _`Dynamical Masses for a Complete Census of Local Dwarf Galaxies`: https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.409S
 .. _`Overview of the DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D

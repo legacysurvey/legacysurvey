@@ -23,7 +23,7 @@ This page is likely to be incomplete and has been updated through early August, 
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 
 
-2020 (51 publications so far)
+2020 (90 publications so far)
 =============================
 
 #. Alam et al., `Quasars at intermediate redshift are not special; but they are often satellites`_
@@ -63,7 +63,6 @@ This page is likely to be incomplete and has been updated through early August, 
 #. Zhang et al., `A study on Cubic Galileon Gravity Using N-body Simulations`_
 #. De et al., `The Zwicky Transient Facility Census of the Local Universe I: Systematic search for Calcium rich gap transients reveal three related spectroscopic sub-classes`_
 #. Anand et al., `DECam-GROWTH Search for the Faint and Distant Binary Neutron Star and Neutron Star-Black Hole Mergers in O3a`_
-#. Burleigh et al., `Observing Strategy for the Legacy Surveys`_
 #. Yao et al., `Unveiling the Intrinsic Alignment of Galaxies with Self-Calibration and DECaLS DR3 data`_
 #. Lacerna et al., `SDSS-IV MaNGA: global and local stellar population properties of elliptical galaxies and their assembly histories`_
 #. Zhou et al., `The Clustering of DESI-like Luminous Red Galaxies Using Photometric Redshifts`_
@@ -119,11 +118,11 @@ This page is likely to be incomplete and has been updated through early August, 
 #. Reines et al., `A New Sample of (Wandering) Massive Black Holes in Dwarf Galaxies from High-resolution Radio Observations`_
 #. Juneau, `The AGN-galaxy connection: Low-redshift benchmark & lessons learnt`_
  
-2019 (71 publications)
+2019 (67 publications)
 ======================
 #. Krone-Martins et al., `Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`_
 #. Li et al., `The Impact of Merging on The Origin of Kinematically Misaligned and Counter-rotating Galaxies in MaNGA`_
-#. Inayoshi et al., `The Assembly of the First Massive Black Holes`_
+#. Inayoshi, Visbal & Haiman, `The Assembly of the First Massive Black Holes`_
 #. Tinker et al., `Probing the galaxy-halo connection with total satellite luminosity`_
 #. Mihos, `Deep Imaging of Diffuse Light Around Galaxies and Clusters: Progress and Challenges`_
 #. Vazquez Najar & Andernach, `Radio-Optical Alignment of Radio Galaxies`_
@@ -286,7 +285,6 @@ This page is likely to be incomplete and has been updated through early August, 
 .. _`A study on Cubic Galileon Gravity Using N-body Simulations`: https://ui.adsabs.harvard.edu/abs/2020arXiv200412659Z
 .. _`The Zwicky Transient Facility Census of the Local Universe I: Systematic search for Calcium rich gap transients reveal three related spectroscopic sub-classes`: https://ui.adsabs.harvard.edu/abs/2020arXiv200409029D
 .. _`DECam-GROWTH Search for the Faint and Distant Binary Neutron Star and Neutron Star-Black Hole Mergers in O3a`: https://ui.adsabs.harvard.edu/abs/2020arXiv200305516A
-.. _`Observing Strategy for the Legacy Surveys`: https://ui.adsabs.harvard.edu/abs/2020arXiv200205828B
 .. _`Unveiling the Intrinsic Alignment of Galaxies with Self-Calibration and DECaLS DR3 data`: https://ui.adsabs.harvard.edu/abs/2020arXiv200209826Y
 .. _`SDSS-IV MaNGA: global and local stellar population properties of elliptical galaxies and their assembly histories`: https://ui.adsabs.harvard.edu/abs/2020arXiv200105506L
 .. _`The Clustering of DESI-like Luminous Red Galaxies Using Photometric Redshifts`: https://ui.adsabs.harvard.edu/abs/2020arXiv200106018Z

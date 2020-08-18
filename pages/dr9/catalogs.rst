@@ -39,8 +39,8 @@ Name                                  Type         Units                 Descrip
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick
 ``brick_primary``                     boolean                            ``True`` if the object is within the brick boundary
-``maskbits``                          int16                              bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR9 bitmasks page`_
-``iterative``                         boolean                            ``True`` if the object was inferred from a second round of fitting to the image-minus-model residuals from the first round of fitting.
+``maskbits``                          int16                              Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR9 bitmasks page`_
+``fitbits``                           int16                              Bitwise mask detailing pecularities of how an object was fit, as cataloged on the `DR9 bitmasks page`_
 ``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model.
 ``ra``                                float64      deg                   Right ascension at equinox J2000
 ``dec``                               float64      deg                   Declination at equinox J2000
@@ -61,7 +61,6 @@ Name                                  Type         Units                 Descrip
 ``pmdec_ivar``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``parallax_ivar``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
 ``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
-``gaia_pointsource``                  bool                               This `Gaia`_ DR2 source is believed to be a star, not a galaxy
 ``gaia_phot_g_mean_mag``              float32      mag                   `Gaia`_ G band mag
 ``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia`_ G band signal-to-noise
 ``gaia_phot_g_n_obs``                 int16                              `Gaia`_ G band number of observations
@@ -118,6 +117,18 @@ Name                                  Type         Units                 Descrip
 ``apflux_masked_g``                   float32[8]                         Fraction of pixels masked in :math:`g`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
 ``apflux_masked_r``                   float32[8]                         Fraction of pixels masked in :math:`r`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
 ``apflux_masked_z``                   float32[8]                         Fraction of pixels masked in :math:`z`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
+``apflux_w1``		              float32[5]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] [#]_ arcsec in :math:`W1`, masked by :math:`invvar=0`
+``apflux_w2``		              float32[5]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W2`, masked by :math:`invvar=0`
+``apflux_w3``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W3`, masked by :math:`invvar=0`
+``apflux_w4``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W4`, masked by :math:`invvar=0`
+``apflux_resid_w1``		      float32[5]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`W1`, masked by :math:`invvar=0`
+``apflux_resid_w2``		      float32[5]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`W2`, masked by :math:`invvar=0`
+``apflux_resid_w3``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added residual images in :math:`W3`, masked by :math:`invvar=0`
+``apflux_resid_w4``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added residual images in :math:`W4`, masked by :math:`invvar=0`
+``apflux_ivar_w1``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w1``, masked by :math:`invvar=0`
+``apflux_ivar_w2``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w2``, masked by :math:`invvar=0`
+``apflux_ivar_w3``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w3``, masked by :math:`invvar=0`
+``apflux_ivar_w4``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w4``, masked by :math:`invvar=0`
 ``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0, 1]
 ``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0, 1]
 ``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0, 1]
@@ -169,11 +180,19 @@ Name                                  Type         Units                 Descrip
 ``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``nea_g``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`g`. Can be used to predict the inverse variance of a source's flux from the pixel-level weight map via :math:`invvar \equiv 1/(σ_{\rm pix}^2 \times \mathtt{nea})`
+``nea_r``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`r`.
+``nea_z``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`z`.
+``blob_nea_g``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`g`.
+``blob_nea_r``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`r`.
+``blob_nea_z``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`z`.
 ``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W1
 ``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W2
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
+``wise_x``                            float32
+``wise_y``                            float32
 ``lc_flux_w1``	     	              float32[15]  nanomaggies           ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
 ``lc_flux_w2``                        float32[15]  nanomaggies           ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
 ``lc_flux_ivar_w1``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
@@ -289,4 +308,6 @@ and :math:`r, b/a, \phi`:
 
 .. [#] We define a mask for the aperture fluxes using an inverse variance of zero. So, pixels with undefined ("infinite") measurement errors are not used when calculating aperture fluxes in the Tractor catalogs. As the aperture fluxes are calculated from the coadd images described on the `files page`_, pixels end up being ignored if they are masked in `every` overlapping exposure in a given band. Thus, for example, the saturated cores and bleed trails of bright stars will be masked. Further, in the case that a coadd is only built from a single image, cosmic rays and other mask bits will cause poorly measured and saturated pixels to be ignored for aperture flux measurements.
 .. [#] `blobmodel` refers to the "blob-model" maps (i.e. the ``<AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` maps described on the `files page`_).
+.. [#] The aperture sizes for WISE, and the rationale for including them, are detailed in `issue #447`_.
 .. _`files page`: http://localhost:8000/dr9/files/#image-stacks-region-coadd
+.. _`issue #447`: https://github.com/legacysurvey/legacypipe/issues/447

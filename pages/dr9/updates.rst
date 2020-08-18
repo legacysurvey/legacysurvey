@@ -85,7 +85,7 @@ Data model changes
    * ``LC_FLUX_W1`` and ``LC_FLUX_W2``
    * ``LC_FLUX_IVAR_W1`` and ``LC_FLUX_IVAR_W2``
    * ``LC_NOBS_W1`` and ``LC_NOBS_W2``
-* The shape parameters in the Tractor files (and downstream) have changed, as there are now no sources of ``type=COMP`` (which corresponded to a "composite" galaxy):
+* The shape parameters in the `Tractor catalogs`_ (and downstream) have changed, as there are now no sources of ``type=COMP`` (which corresponded to a "composite" galaxy):
    * The `DR8 catalog`_ columns:
       * ``fracdev``, ``fracdev_ivar``
       * ``shapedev_e1``, ``shapedev_e1_ivar``, ``shapedev_e2``, ``shapedev_e2_ivar``, ``shapedev_r``, ``shapedev_r_ivar``
@@ -97,12 +97,19 @@ Data model changes
    * the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP". 
    * In DR9, every profile is defined by its ``type``, and ``shape_r``, ``shape_e1`` etc. are the appropriate parameters for that ``type`` (so, i.e., ``shapedev_r`` and ``shapeexp_r`` can now be collapsed to just the single ``shape_r`` column).
    * As there are no sources of ``type=COMP``, the ``type`` column is now a 3-string (``'S3'``) rather than a 4-string (``'S4'``).
-* Three new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor catalogs for DR9`_:
-   * ``iterative``
+* Two new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor catalogs for DR9`_:
    * ``sersic`` and ``sersic_ivar``
-* Five additional columns exist in the `Tractor catalogs for DR9`_:
+* A number of additional columns have been added to the `Tractor catalogs for DR9`_:
    * ``lc_epoch_index_w1`` and ``lc_epoch_index_w2``
    * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``
+   * ``apflux_w1``, ``apflux_w1``, ``apflux_w3`` and ``apflux_w4``
+   * ``apflux_resid_w1``, ``apflux_resid_w2``, ``apflux_resid_w3`` and ``apflux_resid_w4``
+   * ``apflux_ivar_w1``, ``apflux_ivar_w2``, ``apflux_ivar_w3`` and ``apflux_ivar_w4``
+   * ``wise_x`` and ``wise_y``
+   * ``nea_g``, ``nea_r`` and ``nea_z``
+   * ``blob_nea_g``, ``blob_nea_r`` and ``blob_nea_z``
+* A new bitwise mask ``fitbits`` has been added to the `sweep files`_ and `Tractor catalogs`_. This new bit-mask details properties of how each source was fit and is documented on the `DR9 bitmasks page`_.
+* The ``gaia_pointsource`` column has been removed from the `Tractor catalogs for DR9`_ (as compared to DR8). This column has been absorbed in the new ``fitbits`` bit-mask.
 * Three additional columns exist in the `region-specific survey bricks files`_.
    * ``cosky_g``, ``cosky_r`` and ``cosky_z``
 * The large galaxy (Siena Galaxy Atlas; `SGA`_) catalog has been updated extensively and is "pre-burned" [1]_. This produces many additional `files of data from fitting in SGA regions`_.

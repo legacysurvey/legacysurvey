@@ -44,6 +44,30 @@ Bit Name          Description
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`SGA`: ../external/#sga-large-galaxies
 
+``FITBITS``
+============
+
+A bit-mask detailing any peculiarities regarding how a source was fit. See also the `legacypipe bitmask definitions`_.
+
+=== ====================== ==========
+Bit Name                   Description
+=== ====================== ==========
+0   ``FORCED_POINTSOURCE`` the source was forced to be type PSF
+1   ``FIT_BACKGROUND``     the source has its background levels fit
+2   ``HIT_RADIUS_LIMIT``   the source hit the radius limit during fitting
+3   ``HIT_SERSIC_LIMIT``   the source hit the Sersic index limit during fitting
+4   ``FROZEN``             the source parameters were not fit
+5   ``BRIGHT``             the source is a bright star (see also ``MASKBITS``, above)
+6   ``MEDIUM``             the source is a medium-bright star (see also ``MASKBITS``, above)
+7   ``GAIA``               the source is a Gaia source
+8   ``TYCHO2``             the source is a Tycho-2 star
+9   ``LARGEGALAXY``        the source is an `SGA`_ large galaxy
+10  ``WALKER``             fitting the source shifted its position by > 1 arcsec
+11  ``RUNNER``             fitting the source shifted its position by > 2.5 arcsec
+12  ``GAIA_POINTSOURCE``   the source was a Gaia source that was *treated* as a point source
+13  ``ITERATIVE``          the source was found during iterative detection
+=== ====================== ==========
+
 ``ALLMASK_X``/``ANYMASK_X``
 ===========================
 

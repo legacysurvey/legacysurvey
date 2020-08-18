@@ -715,6 +715,7 @@ Name                                  Type         Units                 Descrip
 ``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
+``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR9 bitmasks page`_)
 ``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
 ``SERSIC_IVAR``                       float32                            Inverse variance of ``SERSIC``
 ===================================== ============ ===================== ===============================================

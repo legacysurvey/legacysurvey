@@ -10,7 +10,7 @@ DR9 will be the final release of the Legacy Surveys that is used for `DESI`_ tar
 As such, a major push was made to update the `DR8`_ code and data model to prepare for `DESI`_ observations.
 This page documents those updates, in brief.
 
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 .. _`DR8`: ../../dr7/description
 
 Algorithmic changes for optical data
@@ -53,13 +53,13 @@ Algorithmic changes for optical data
 
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
-.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`PR 504`: https://github.com/legacysurvey/legacypipe/pull/504
 .. _`criterion used to force a Gaia point source`: https://github.com/legacysurvey/legacypipe/blob/f96311ad56e6eb9878aae378927405745bc1819e/py/legacypipe/reference.py#L196-L197
 .. _`PR 469`: https://github.com/legacysurvey/legacypipe/pull/469
 .. _`globular cluster and planetary nebula`: ../external/#globular-clusters-planetary-nebulae
 .. _`Vizier`: https://vizier.u-strasbg.fr/viz-bin/VizieR
-.. _`McConnachie et al. (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M
+.. _`McConnachie et al. (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M/abstract
 
 Algorithmic changes for WISE
 ============================
@@ -119,16 +119,16 @@ Data model changes
 .. _`DR7`: ../../dr7/description
 .. _`DR8 catalog`: ../../dr8/catalogs
 .. _`DR9 bitmasks page`: ../bitmasks
-.. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`Aaron Meisner's unWISE documentation`: https://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
-.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`Gaia Data Release 2`: https://gaia.esac.esa.int/documentation/GDR2/index.html
 .. _`Tractor catalogs for DR9`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
 .. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz
-.. _`SGA`: http://localhost:8000/dr9/external/#sga-large-galaxies
+.. _`SGA`: ../external/#sga-large-galaxies
 .. _`files of data from fitting in SGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
 .. _`coadds`: ../files/#image-stacks-region-coadd
 .. _`external match files`: ../files/#external-match-files-region-external

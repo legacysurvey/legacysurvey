@@ -37,21 +37,21 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
-.. _`SciPy`: http://www.scipy.org
-.. _`mixture-of-Gaussians`: http://arxiv.org/abs/1210.6563
-.. _`Mixture-of-Gaussians`: http://arxiv.org/abs/1210.6563
-.. _`SFD98`: http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
+.. _`SciPy`: https://www.scipy.org
+.. _`mixture-of-Gaussians`: https://arxiv.org/abs/1210.6563
+.. _`Mixture-of-Gaussians`: https://arxiv.org/abs/1210.6563
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`Gaia Data Release 2`: https://gaia.esac.esa.int/documentation/GDR2/index.html
 .. _`DR8`: ../../dr8
 .. _`DR7`: ../../dr7
 .. _`DR6`: ../../dr6
 .. _`DR5`: ../../dr5
 .. _`DR4`: ../../dr4
 .. _`DR3`: ../../dr3
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 6 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
 .. _`NSF's OIR Lab survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
@@ -132,23 +132,23 @@ XXX GB + X.X TB    `north/tractor/`_ + `south/tractor/`_     The Tractor `catalo
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/calib/
-.. _`north/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/coadd/
-.. _`south/coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/coadd/
-.. _`north/external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/external/
-.. _`south/external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/external/
-.. _`forced/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/forced/
+.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/calib/
+.. _`north/coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/coadd/
+.. _`south/coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/coadd/
+.. _`north/external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/external/
+.. _`south/external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/external/
+.. _`forced/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/forced/
 .. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/gallery/
-.. _`images/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/images/
-.. _`north/logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/logs/
-.. _`south/logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/logs/
-.. _`north/metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/metrics/
-.. _`south/metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/metrics/
-.. _`randoms/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/randoms/
-.. _`north/sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/
-.. _`south/sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/
-.. _`north/tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/tractor/
-.. _`south/tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/tractor/
+.. _`images/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/images/
+.. _`north/logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/logs/
+.. _`south/logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/logs/
+.. _`north/metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/metrics/
+.. _`south/metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/metrics/
+.. _`randoms/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/randoms/
+.. _`north/sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/
+.. _`south/sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/
+.. _`north/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/tractor/
+.. _`south/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/tractor/
 
 
 For all of the DESI Legacy Imaging Surveys, coadded images and
@@ -174,21 +174,21 @@ and raw data can be obtained through `the NSF's OIR Lab portal`_ (or via ftp; se
 Sections of the Legacy Surveys for DR9 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr9&pixscale=0.27&bands=grz
+JPEG: https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr9&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr9&pixscale=0.27&bands=grz
+FITS: https://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr9&pixscale=0.27&bands=grz
 
 This will merge the northern (MzLS+BASS) and equatorial (DECam) images at the Dec=32.375 line.
 
 To request images from only the northern or equatorial surveys, specify `dr9-north` or `dr9-south`, for example:
 
-JPEG (`DECaLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr9-south&pixscale=0.27&bands=grz
+JPEG (`DECaLS`_): https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr9-south&pixscale=0.27&bands=grz
 
-FITS (`DECaLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr9-south&pixscale=0.27&bands=grz
+FITS (`DECaLS`_): https://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr9-south&pixscale=0.27&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr9-north&pixscale=0.27&bands=grz
+JPEG (`BASS`_/`MzLS`_): https://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr9-north&pixscale=0.27&bands=grz
 
-FITS (`BASS`_/`MzLS`_): http://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr9-north&pixscale=0.27&bands=grz
+FITS (`BASS`_/`MzLS`_): https://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr9-north&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
@@ -198,11 +198,11 @@ or `layer=dr9-resid` (`layer=dr9-north-resid`) will instead return cutouts for t
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr9&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr9&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr9&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr9&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr9&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr9&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
@@ -214,7 +214,7 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 .. _`the bottom of the files`: ../files/#raw-data
 .. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr9-fits-gz
 .. _`image stacks`: ../files/#image-stacks-region-coadd
-.. _`the Sky viewer`: http://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://legacysurvey.org/viewer
 .. _`the NSF's OIR Lab portal`: http://archive.noao.edu/search/query
 
 Source Detection
@@ -286,7 +286,7 @@ The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero
 .. _`Gaia catalogs`: ../external
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
-.. _`Gaia stars were extracted in DR7`: http://www.legacysurvey.org/dr7/description/#source-detection
+.. _`Gaia stars were extracted in DR7`: https://www.legacysurvey.org/dr7/description/#source-detection
 .. _`polynomial fits to Gaia-to-DECam`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/reference.py#L153
 
 PSF
@@ -301,7 +301,7 @@ that is missing from other files in cases where `PSFex`_ fails. This is `expecte
 The configuration files for SExtractor and PSFex that were used for a given
 iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
 
-.. _`PSFEx`: http://www.astromatic.net/software/psfex
+.. _`PSFEx`: https://www.astromatic.net/software/psfex
 .. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
 .. _`expected behavior`: https://github.com/legacysurvey/legacypipe/issues/349
 
@@ -453,9 +453,9 @@ zero points have been significantly `updated since DR6`_. Functions to perform t
 available `in the legacypipe code`_ and the `actual external PS1 catalogs`_ we used are available at NERSC.
 
 .. _`actual external PS1 catalogs`: ../external/#pan-starrs-1-ps1
-.. _`updated since DR5`: http://www.legacysurvey.org/dr5/description/#photometry
-.. _`updated since DR6`: http://www.legacysurvey.org/dr6/description/#photometry
-.. _`Pan-STARRS1 (PS1) PSF photometry`: http://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F
+.. _`updated since DR5`: https://www.legacysurvey.org/dr5/description/#photometry
+.. _`updated since DR6`: https://www.legacysurvey.org/dr6/description/#photometry
+.. _`Pan-STARRS1 (PS1) PSF photometry`: https://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F/abstract
 .. _`in the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/ps1cat.py
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
@@ -481,7 +481,7 @@ give units consistent with the Tractor catalogs. These conversion factors are re
 Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes
 we provide should all be within a few percent of being on an AB system.
 
-.. _`unWISE`: http://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M
+.. _`unWISE`: https://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M/abstract
 .. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
@@ -569,9 +569,9 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr9vX.X to dr9vX.X. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.XX.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr9.X.
-* `NSF's OIR Lab Community Pipeline <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
-* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: X.XX.X
-* `PSFEx <http://www.astromatic.net/software/psfex>`_: X.XX.X
+* `NSF's OIR Lab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
+* `SourceExtractor <https://www.astromatic.net/software/sextractor>`_: X.XX.X
+* `PSFEx <https://www.astromatic.net/software/psfex>`_: X.XX.X
 
 .. _`DESI Legacy Surveys Imaging Data Release 2`: ../../dr2
 .. _`DESI Legacy Surveys Imaging Data Release 3`: ../../dr3
@@ -585,7 +585,7 @@ Glossary
 ========
 
 BASS
-    `Beijing-Arizona Sky Survey <http://legacysurvey.org/bass>`_.
+    `Beijing-Arizona Sky Survey <https://legacysurvey.org/bass>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -596,10 +596,10 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (`reduction pipeline operated by NSF's OIR Lab <http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
+    Community Pipeline (`reduction pipeline operated by NSF's OIR Lab <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
+    `Dark Energy Camera Legacy Survey <https://legacysurvey.org/decamls>`_.
 
 
 DR3
@@ -632,7 +632,7 @@ MoG
     `Mixture-of-Gaussians`_ to approximate galaxy models.
 
 MzLS
-    `Mayall z-band Legacy Survey <http://legacysurvey.org/mzls>`_.
+    `Mayall z-band Legacy Survey <https://legacysurvey.org/mzls>`_.
 
 NSF's OIR Lab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
@@ -645,10 +645,10 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
 
 SDSS
-    `Sloan Digital Sky Survey <http://www.sdss.org>`_.
+    `Sloan Digital Sky Survey <https://www.sdss.org>`_.
 
 SDSS DR12
     `Sloan Digital Sky Survey Data Release 12 <https://www.sdss.org/dr12/>`_.
@@ -663,16 +663,16 @@ SGA
     `Siena Galaxy Atlas <https://github.com/moustakas/SGA>`_.
 
 SourceExtractor
-    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    `Schlegel, Finkbeiner & Davis 1998 extinction maps <http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S>`_.
+    `Schlegel, Finkbeiner & Davis 1998 extinction maps <https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract>`_.
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.
 
 unWISE
-    `New coadds <http://arxiv.org/abs/1405.0308>`_ of the WISE imaging, `at original full resolution <http://unwise.me>`_.
+    `New coadds <https://arxiv.org/abs/1405.0308>`_ of the WISE imaging, `at original full resolution <http://unwise.me>`_.
 
 WISE
     `Wide Infrared Survey Explorer <http://wise.ssl.berkeley.edu>`_.

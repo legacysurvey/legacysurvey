@@ -33,17 +33,17 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
-.. _`SciPy`: http://www.scipy.org
-.. _`mixture-of-gaussian`: http://arxiv.org/abs/1210.6563
-.. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
+.. _`SciPy`: https://www.scipy.org
+.. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-.. _`Gaia Data Release 1`: http://gaia.esac.esa.int/documentation/GDR1/index.html
+.. _`Gaia Data Release 1`: https://gaia.esac.esa.int/documentation/GDR1/index.html
 .. _`DR4`: ../../dr4
 .. _`DR3`: ../../dr3
 .. _`DR2`: ../../dr2
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 
 Contents of DR5
 ===============
@@ -96,14 +96,14 @@ Size*      Directory    Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/calib/
-.. _`coadd/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/coadd/
-.. _`external/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/external/
+.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/calib/
+.. _`coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/coadd/
+.. _`external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/external/
 .. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/gallery/
-.. _`logs/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/logs/
-.. _`metrics/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/metrics/
-.. _`sweep/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/sweep/
-.. _`tractor/`: http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/tractor/
+.. _`logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/logs/
+.. _`metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/metrics/
+.. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/sweep/
+.. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr5/tractor/
 
 For all of the Legacy Surveys, including `DECaLS`_, co-added images and
 `Tractor`_ catalogs are presented in "bricks" of approximate
@@ -127,19 +127,19 @@ the bottom of the `files`_ page).
 Sections of `DECaLS`_ for DR5 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
+JPEG: https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
+FITS: https://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr5&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. The
 size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr5&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=decals-dr5&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr5&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=decals-dr5&pixscale=0.3&bands=grz
 
-http://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr5&pixscale=0.3&bands=grz
+https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=decals-dr5&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
@@ -150,7 +150,7 @@ For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR4 desc
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR4 description`: ../../dr4/description
 .. _`files`: ../files
-.. _`the Sky viewer`: http://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://legacysurvey.org/viewer
 .. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
@@ -185,7 +185,7 @@ using PSFEx_, generating spatially-varying pixelized models.
 The configuration files for SExtractor and PSFex that we used for a given
 iteration of our codebase are available `on our github page`_.
 
-.. _`PSFEx`: http://www.astromatic.net/software/psfex
+.. _`PSFEx`: https://www.astromatic.net/software/psfex
 .. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config
 
 Sky Level
@@ -327,7 +327,7 @@ are well-defined even at the faint end, and the errors on the linear fluxes shou
 be very close to a normal distribution.  The fluxes can be negative for faint objects, and indeed we
 expect many such cases for the faintest objects.
 
-.. _`PS1 photometry`: http://adsabs.harvard.edu/abs/2016ApJ...822...66F
+.. _`PS1 photometry`: https://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F/abstract
 
 DR5 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
@@ -407,7 +407,7 @@ Glossary
 ========
 
 BASS
-    `Beijing-Arizona Sky Survey <http://legacysurvey.org/bass>`_.
+    `Beijing-Arizona Sky Survey <https://legacysurvey.org/bass>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -419,10 +419,10 @@ Brick
 
 CP
     Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
-    http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <http://legacysurvey.org/decamls>`_.
+    `Dark Energy Camera Legacy Survey <https://legacysurvey.org/decamls>`_.
 
 DR2
     `Legacy Survey Data Release 2`_.
@@ -445,10 +445,10 @@ maggie
     corresponds to an AB magnitude of 22.5.
 
 MoG
-    Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).
+    Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
 MzLS
-    `Mayall z-band Legacy Survey <http://legacysurvey.org/mzls>`_.
+    `Mayall z-band Legacy Survey <https://legacysurvey.org/mzls>`_.
 
 NSF's OIR Lab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
@@ -461,10 +461,10 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
 
 SDSS
-    `Sloan Digital Sky Survey <http://www.sdss.org>`_.
+    `Sloan Digital Sky Survey <https://www.sdss.org>`_.
 
 SDSS DR12
     `Sloan Digital Sky Survey Data Release 12 <https://www.sdss.org/dr12/>`_.
@@ -476,17 +476,17 @@ SED
     Spectral energy distribution.
 
 SourceExtractor
-    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://adsabs.harvard.edu/abs/1998ApJ...500..525S).
+    Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.
 
 unWISE
     New coadds of the WISE imaging, at original full resolution
-    (http://unwise.me, http://arxiv.org/abs/1405.0308).
+    (http://unwise.me, https://arxiv.org/abs/1405.0308).
 
 WISE
     `Wide Infrared Survey Explorer <http://wise.ssl.berkeley.edu>`_.

@@ -24,7 +24,7 @@ sometimes produced a duplicate of the same source. These duplicates can be ident
 because they have identical coordinates and fluxes but a different ``OBJID``. An
 example repeated source is here:
 
-http://legacysurvey.org/viewer-dev?ra=215.8471&dec=0.0805&zoom=16&layer=decals-dr5&sources-dr5&bricks
+https://legacysurvey.org/viewer-dev?ra=215.8471&dec=0.0805&zoom=16&layer=decals-dr5&sources-dr5&bricks
 
 This source has the following attributes in catalog-level DR5 data:
 
@@ -57,7 +57,7 @@ files, but we may not have completely removed it from all possible places in DR5
 for instance, still appear in the viewer:
 
 
-http://legacysurvey.org/viewer/dr5?brick=0351m025&bricks&zoom=11
+https://legacysurvey.org/viewer/dr5?brick=0351m025&bricks&zoom=11
 
 Missing CCDs in the region of Gaia bright stars
 ===============================================

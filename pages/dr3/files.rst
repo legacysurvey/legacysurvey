@@ -13,10 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/
 
 Top level directory for web access to dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/3.1/
 
 .. _`known issues`: ../issues
 
@@ -289,7 +289,7 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
 
 Or on the NERSC computers (for collaborators) at:
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/external/
@@ -309,34 +309,32 @@ survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
 specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
-.. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr13.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr3-DR12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
-visually inspected quasar catalog (`Paris et al. 2016`_)
+visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr3-Superset_DR12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
-confirmed objects that were visually inspected as possible quasars 
-(Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
+confirmed objects that were visually inspected as possible quasars (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr3-DR7Q.fits
 ---------------------
@@ -348,8 +346,8 @@ survey-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
-.. _`Schneider et al. 2010`: http://adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
+.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S/abstract
+.. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
 Tractor Catalogs

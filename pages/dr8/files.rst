@@ -26,14 +26,14 @@ For Web Access
 --------------
 
 | **Top level directory:**
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/
 | **Top level directory for** `DECaLS`_ **data**:
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/
 | **Top level directory for** `MzLS`_/`BASS`_ **data:**
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/
 | **Top level directories for sweeps catalogs:**
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/sweep/
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/sweep/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/sweep/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/sweep/
 
 
 At NERSC (for collaborators)
@@ -442,8 +442,8 @@ External Files (``<region>/external/*``)
 | /global/cfs/cdirs/sdss/data/sdss
 
 | **The resulting catalogs, which are listed below, can be accessed through the web at:**
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/external/
-| http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/external/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/north/external/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr8/south/external/
 
 | **Or on the NERSC computers at:**
 | /global/cfs/cdirs/cosmo/data/legacysurvey/dr8/north/external/
@@ -467,7 +467,7 @@ pipeline file such that the photometric parameters in row "N" of
 specObj-dr14.fits. The spectroscopic file
 is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
-.. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr14.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr8-<region>-dr12Q.fits
 ------------------------------
@@ -479,8 +479,8 @@ such that the photometric parameters in row "N" of
 DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr8-<region>-dr14Q_v4_4.fits
 -----------------------------------
@@ -492,7 +492,7 @@ such that the photometric parameters in row "N" of
 DR14Q_v4_4.fits. The spectroscopic file
 is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
 
-.. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P
+.. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
 .. _`data model for DR14Q_v4_4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR14Q/DR14Q_v4_4.html
 
 survey-dr8-<region>-superset-dr12Q.fits
@@ -505,7 +505,7 @@ confirmed objects that were visually inspected as possible quasars
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr8-<region>-dr7Q.fits
 -----------------------------
@@ -517,8 +517,8 @@ such that the photometric parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
-.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
+.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S/abstract
+.. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
 Tractor Catalogs (``<region>/tractor/*``)
@@ -559,7 +559,7 @@ The sweeps are light-weight FITS binary tables (containing a subset of the most 
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
 
 .. _`RELEASE is documented here`: ../../release
-.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
@@ -1001,7 +1001,7 @@ detailing the calibrations (``calib``).
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 
 .. _`contact`: ../../contact
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 .. _`plprocid page`: ../../plprocid
 
 Raw Data

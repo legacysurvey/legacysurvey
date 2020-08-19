@@ -350,7 +350,7 @@ SExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://adsabs.harvard.edu/abs/1998ApJ...500..525S).
+    Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.

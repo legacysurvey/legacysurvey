@@ -87,14 +87,14 @@ from the CP Data Quality bits.
 === ===== =========================== ==================================================
 Bit Value Name                        Description
 === ===== =========================== ==================================================
-  0     1 detector bad pixel/no data  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  1     2 saturated                   detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  2     4 interpolated                detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  4    16 single exposure cosmic ray  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  6    64 bleed trail                 detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  8   256 edge                        detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  9   512 edge2                       detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  0     1 detector bad pixel/no data  detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  1     2 saturated                   detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  2     4 interpolated                detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  4    16 single exposure cosmic ray  detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  6    64 bleed trail                 detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  7   128 multi-exposure transient    detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  8   256 edge                        detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  9   512 edge2                       detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
  10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, e.g, satellite trails.
 === ===== =========================== ==================================================
 
@@ -132,19 +132,23 @@ with 1 representing a fully transparent region of the Milky Way and 0 representi
 The value can slightly exceed unity owing to noise in the SFD98 maps, although it is never below 0.
 
 Extinction coefficients for the SDSS filters have been changed to the values recommended
-by Schlafly & Finkbeiner 2011 (http://arxiv.org/abs/1012.4804 ; Table 4) using the Fizpatrick 1999
+by `Schlafly & Finkbeiner (2011; Table 4)`_ using the Fizpatrick 1999
 extinction curve at R_V = 3.1 and their improved overall calibration of the SFD98 maps.
 These coefficients are A / E(B-V) = 4.239,  3.303,  2.285,  1.698,  1.263 in ugriz,
 which are different from those used in SDSS-I,II,III, but are the values used for SDSS-IV/eBOSS target selection.
 
-Extinction coefficients for the DECam filters also use the Schlafly & Finkbeiner 2011 values,
+Extinction coefficients for the DECam filters also use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
 These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in Schlafly & Finkbeiner (http://arxiv.org/abs/1012.4804).)
+(These are slightly different than the ones in `Schlafly & Finkbeiner 2011`_.)
 
 The coefficients for the four WISE filters are derived from Fitzpatrick 1999, as recommended by Schafly & Finkbeiner,
 considered better than either the Cardelli et al 1989 curves or the newer Fitzpatrick & Massa 2009 NIR curve not vetted beyond 2 micron).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
+
+.. _`Schlafly & Finkbeiner 2011`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Schlafly & Finkbeiner (2011)`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Schlafly & Finkbeiner (2011; Table 4)`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
 
 Ellipticities
 =============

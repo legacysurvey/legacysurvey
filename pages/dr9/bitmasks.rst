@@ -93,7 +93,7 @@ Bit Name        Description
  11 ``OUTLIER`` marked as touching an outlier pixel by ``legacypipe`` itself
 === =========== ==========================
 
-.. _`Data Quality bits`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Data Quality bits`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/14c49362418b85a591f48eaa394205ffb0321777/py/legacypipe/image.py#L27
 
 ``WISEMASK_W1``/``WISEMASK_W2``
@@ -117,7 +117,7 @@ Bit Name        Description
 
 `Aaron Meisner's unWISE documentation`_ details how these masks were derived.
 
-.. _`Aaron Meisner's unWISE documentation`: ../../files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`Aaron Meisner's unWISE documentation`: https://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
 
 ``CCD_CUTS``
 ============

@@ -247,12 +247,12 @@ The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`
 considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
-.. _`SFD98`: http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
-.. _`Schlafly & Finkbeiner (2011)`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Schlafly & Finkbeiner 2011`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Fitzpatrick (1999)`: http://ui.adsabs.harvard.edu/abs/1999PASP..111...63F
-.. _`Cardelli et al. (1989)`: http://ui.adsabs.harvard.edu/abs/1989ApJ...345..245C
-.. _`Fitzpatrick & Massa (2009)`: http://ui.adsabs.harvard.edu/abs/2009ApJ...699.1209F
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
+.. _`Schlafly & Finkbeiner (2011)`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Schlafly & Finkbeiner 2011`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Fitzpatrick (1999)`: https://ui.adsabs.harvard.edu/abs/1999PASP..111...63F/abstract
+.. _`Cardelli et al. (1989)`: https://ui.adsabs.harvard.edu/abs/1989ApJ...345..245C/abstract
+.. _`Fitzpatrick & Massa (2009)`: https://ui.adsabs.harvard.edu/abs/2009ApJ...699.1209F/abstract
 
 Ellipticities
 -------------

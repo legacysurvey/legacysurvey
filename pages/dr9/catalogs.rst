@@ -269,12 +269,12 @@ The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`
 considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).
 These coefficients are A / E(B-V) = 0.184,  0.113, 0.0241, 0.00910.
 
-.. _`SFD98`: http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S
-.. _`Schlafly & Finkbeiner (2011)`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Schlafly & Finkbeiner 2011`: http://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Fitzpatrick (1999)`: http://ui.adsabs.harvard.edu/abs/1999PASP..111...63F
-.. _`Cardelli et al. (1989)`: http://ui.adsabs.harvard.edu/abs/1989ApJ...345..245C
-.. _`Fitzpatrick & Massa (2009)`: http://ui.adsabs.harvard.edu/abs/2009ApJ...699.1209F
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
+.. _`Schlafly & Finkbeiner (2011)`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Schlafly & Finkbeiner 2011`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Fitzpatrick (1999)`: https://ui.adsabs.harvard.edu/abs/1999PASP..111...63F/abstract
+.. _`Cardelli et al. (1989)`: https://ui.adsabs.harvard.edu/abs/1989ApJ...345..245C/abstract
+.. _`Fitzpatrick & Massa (2009)`: https://ui.adsabs.harvard.edu/abs/2009ApJ...699.1209F/abstract
 
 Ellipticities
 -------------
@@ -309,5 +309,5 @@ and :math:`r, b/a, \phi`:
 .. [#] We define a mask for the aperture fluxes using an inverse variance of zero. So, pixels with undefined ("infinite") measurement errors are not used when calculating aperture fluxes in the Tractor catalogs. As the aperture fluxes are calculated from the coadd images described on the `files page`_, pixels end up being ignored if they are masked in `every` overlapping exposure in a given band. Thus, for example, the saturated cores and bleed trails of bright stars will be masked. Further, in the case that a coadd is only built from a single image, cosmic rays and other mask bits will cause poorly measured and saturated pixels to be ignored for aperture flux measurements.
 .. [#] `blobmodel` refers to the "blob-model" maps (i.e. the ``<AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` maps described on the `files page`_).
 .. [#] The aperture sizes for WISE, and the rationale for including them, are detailed in `issue #447`_.
-.. _`files page`: http://localhost:8000/dr9/files/#image-stacks-region-coadd
+.. _`files page`: ../files/#image-stacks-region-coadd
 .. _`issue #447`: https://github.com/legacysurvey/legacypipe/issues/447

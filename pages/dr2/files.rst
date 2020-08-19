@@ -13,7 +13,7 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/
 
 Top level directory local to NERSC computers (for collaborators):
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr2/
@@ -214,7 +214,7 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following three external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/external/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/external/
 
 Or on the NERSC computers (for collaborators) at:
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr2/external/
@@ -231,7 +231,7 @@ specObj-dr12.fits. The structure of the DECaLS photometric catalog files is docu
 is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
 
 .. _`catalogs page`: ../catalogs
-.. _`data model for specObj-dr12.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr12.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 decals-dr2-DR12Q.fits
 ---------------------
@@ -244,9 +244,9 @@ DR12Q.fits. The structure of the DECaLS photometric catalog files is documented 
 `catalogs page`_ and the spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
+.. _`Paris et al. 2014`: https://ui.adsabs.harvard.edu/abs/2014A%26A...563A..54P/abstract
 .. _`catalogs page`: ../catalogs
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 decals-dr2-Superset_DR12Q.fits
 ------------------------------
@@ -260,9 +260,8 @@ Superset_DR12Q.fits. The structure of the DECaLS photometric catalog files is do
 `catalogs page`_ and the spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
 .. _`catalogs page`: ../catalogs
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 
 Tractor Catalogs

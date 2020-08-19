@@ -17,7 +17,7 @@
 .. contents::
 
 Top level directory for web access:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr6/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr6/
 
 Top level directory local to NERSC computers (for collaborators):
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr6/
@@ -316,7 +316,7 @@ External Files
 ==============
 
 The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr6/external/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr6/external/
 
 Or on the NERSC computers (for collaborators) at:
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr6/external/
@@ -338,7 +338,7 @@ pipeline file such that the photometric parameters in row "N" of
 specObj-dr14.fits. The spectroscopic file 
 is documented in the SDSS DR14 `data model for specObj-dr14.fits`_.
 
-.. _`data model for specObj-dr14.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr14.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr6-dr14Q_v4_4.fits
 --------------------------
@@ -350,7 +350,7 @@ such that the photometric parameters in row "N" of
 DR14Q_v4_4.fits. The spectroscopic file 
 is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
 
-.. _`Paris et al. 2018`: http://adsabs.harvard.edu/abs/2017arXiv171205029P
+.. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
 .. _`data model for DR14Q_v4_4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR14Q/DR14Q_v4_4.html
 
 survey-dr6-dr12Q.fits
@@ -363,8 +363,8 @@ such that the photometric parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr6-superset-dr12Q.fits
 ------------------------------
@@ -376,7 +376,7 @@ confirmed objects that were visually inspected as possible quasars
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr6-dr7Q.fits
 ---------------------
@@ -388,8 +388,8 @@ such that the photometric parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
-.. _`Schneider et al. 2010`: http://adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
+.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S/abstract
+.. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
 Tractor Catalogs

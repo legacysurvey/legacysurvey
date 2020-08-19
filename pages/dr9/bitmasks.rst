@@ -53,10 +53,10 @@ A bit-mask detailing any peculiarities regarding how a source was fit. See also 
 Bit Name                   Description
 === ====================== ==========
 0   ``FORCED_POINTSOURCE`` the source was forced to be type PSF
-1   ``FIT_BACKGROUND``     the source has its background levels fit
-2   ``HIT_RADIUS_LIMIT``   the source hit the radius limit during fitting
-3   ``HIT_SERSIC_LIMIT``   the source hit the Sersic index limit during fitting
-4   ``FROZEN``             the source parameters were not fit
+1   ``FIT_BACKGROUND``     the source had its background levels independently fit
+2   ``HIT_RADIUS_LIMIT``   the source hit the radius limit during fitting (based on the limits for galaxy models in the Tractor code)
+3   ``HIT_SERSIC_LIMIT``   the source hit the Sersic index limit during fitting (*e.g.*, see the `Sersic model limits`_ in the Tractor code)
+4   ``FROZEN``             the source was not fit (all parameters for the source were frozen at the reference catalog values)
 5   ``BRIGHT``             the source is a bright star (see also ``MASKBITS``, above)
 6   ``MEDIUM``             the source is a medium-bright star (see also ``MASKBITS``, above)
 7   ``GAIA``               the source is a Gaia source
@@ -67,6 +67,8 @@ Bit Name                   Description
 12  ``GAIA_POINTSOURCE``   the source was a Gaia source that was *treated* as a point source
 13  ``ITERATIVE``          the source was found during iterative detection
 === ====================== ==========
+
+.. _`Sersic model limits`: https://github.com/dstndstn/tractor/blob/009656d8043f06fd8ed18095e5daabafc4c22505/tractor/sersic.py#L356-L358
 
 ``ALLMASK_X``/``ANYMASK_X``
 ===========================

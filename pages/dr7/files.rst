@@ -563,12 +563,12 @@ Name                                  Type         Units                 Descrip
 ``SHAPEEXP_E1_IVAR``                  float32                            Inverse variance of ``SHAPEEXP_E1``
 ``SHAPEEXP_E2``                       float32                            Ellipticity component 2
 ``SHAPEEXP_E2_IVAR``                  float32                            Inverse variance of ``SHAPEEXP_E2``
-``FIBERFLUX_G``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``FIBERFLUX_R``                       float32      nanomaggies		 Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``FIBERFLUX_Z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``FIBERTOTFLUX_G``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``FIBERTOTFLUX_R``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``FIBERTOTFLUX_Z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
+``FIBERFLUX_G``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``FIBERFLUX_R``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``FIBERFLUX_Z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``FIBERTOTFLUX_G``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``FIBERTOTFLUX_R``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``FIBERTOTFLUX_Z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``REF_ID``                            int64                              Reference catalog identifier for this star; :math:`Tyc1*1,000,000+Tyc2*10+Tyc3` for Tycho2; "sourceid" for Gaia-DR2
 ``GAIA_PHOT_G_MEAN_MAG``                           mag                   `Gaia`_ G band magnitude
 ``GAIA_PHOT_G_MEAN_FLUX_OVER_ERROR``  float32                            `Gaia`_ G band signal-to-noise

@@ -47,7 +47,8 @@ Bit Name          Description
 ``FITBITS``
 ============
 
-A bit-mask detailing any peculiarities regarding how a source was fit. See also the `legacypipe bitmask definitions`_.
+A bit-mask detailing any peculiarities regarding how a source was fit. See also the `legacypipe bitmask definitions`_ and the
+`issue that prompted`_ the development of ``FITBITS``.
 
 === ====================== ==========
 Bit Name                   Description
@@ -69,6 +70,7 @@ Bit Name                   Description
 === ====================== ==========
 
 .. _`Sersic model limits`: https://github.com/dstndstn/tractor/blob/009656d8043f06fd8ed18095e5daabafc4c22505/tractor/sersic.py#L356-L358
+.. _`issue that prompted`: https://github.com/legacysurvey/legacypipe/issues/593
 
 ``ALLMASK_X``/``ANYMASK_X``
 ===========================

@@ -209,9 +209,9 @@ It is possible to retrieve multiple cutouts from the command line using standard
 The maximum size for cutouts (in number of pixels) is currently 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 
-See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
 
-.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
 .. _`the bottom of the files`: ../files/#raw-data

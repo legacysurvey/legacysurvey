@@ -159,9 +159,9 @@ approximately 0.262, and for the 90prime camera (used for :math:`g` and :math:`r
 it is approximately 0.454.
 For information on how to recover `DECaLS`_ cutouts, see the `DR7 description`_ page.
 
-See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
 
-.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR5 description`: ../../dr5/description
 .. _`DR7 description`: ../../dr7/description

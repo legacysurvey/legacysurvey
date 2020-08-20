@@ -162,9 +162,9 @@ The maximum size for cutouts (in number of pixels) is currently 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR6 description`_ page.
 
-See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
 
-.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR6 description`: ../../dr6/description
 .. _`files`: ../files

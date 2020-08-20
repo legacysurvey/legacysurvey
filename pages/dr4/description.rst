@@ -145,9 +145,9 @@ writing of this documentation the maximum size for cutouts (in number of pixels)
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ page.
 
-See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
 
-.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer

@@ -98,7 +98,7 @@ for these 4 quantities in the DR8 documentation were originally incorrect. These
 .. _`Tractor catalogs`: ../catalogs
 .. _`coadd files`: ../files/#image-stacks-region-coadd
 .. _`files`: ../files
-.. _`viewer`: https://legacysurvey.org/viewer
-.. _`Andromeda`: https://legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
-.. _`M13`: https://legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
+.. _`viewer`: https://www.legacysurvey.org/viewer
+.. _`Andromeda`: https://www.legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
+.. _`M13`: https://www.legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
 

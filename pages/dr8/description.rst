@@ -160,21 +160,21 @@ and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp;
 Sections of the Legacy Surveys for DR8 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-JPEG: https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
 
-FITS: https://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.27&bands=grz
 
 This will merge the northern (MzLS+BASS) and equatorial (DECam) images at the Dec=32.375 line.
 
 To request images from only the northern or equatorial surveys, specify `dr8-north` or `dr8-south`, for example:
 
-JPEG (`DECaLS`_): https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
+JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
 
-FITS (`DECaLS`_): https://legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
+FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.27&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): https://legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
+JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
 
-FITS (`BASS`_/`MzLS`_): https://legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
+FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.27&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
@@ -184,11 +184,11 @@ or `layer=dr8-resid` (`layer=dr8-north-resid`) will instead return cutouts for t
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr8&pixscale=0.3&bands=grz
 
-https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr8&pixscale=0.3&bands=grz
 
-https://legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr8&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
@@ -201,7 +201,7 @@ Pixscale=0.262 will return (approximately) the native pixels used by the `Tracto
 .. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr8-fits-gz
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`catalogs`: ../catalogs
-.. _`the Sky viewer`: https://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
@@ -563,7 +563,7 @@ Glossary
 ========
 
 BASS
-    `Beijing-Arizona Sky Survey <https://legacysurvey.org/bass>`_.
+    `Beijing-Arizona Sky Survey <https://www.legacysurvey.org/bass>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -577,7 +577,7 @@ CP
     Community Pipeline (`reduction pipeline operated by the NSF's OIR Lab <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <https://legacysurvey.org/decamls>`_.
+    `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.
 
 DR2
     `DESI Legacy Surveys Imaging Data Release 2`_.
@@ -609,7 +609,7 @@ MoG
     `Mixture-of-Gaussians`_ to approximate galaxy models.
 
 MzLS
-    `Mayall z-band Legacy Survey <https://legacysurvey.org/mzls>`_.
+    `Mayall z-band Legacy Survey <https://www.legacysurvey.org/mzls>`_.
 
 NSF's OIR Lab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.

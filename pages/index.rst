@@ -35,7 +35,7 @@
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
-   .. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
+   .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
 
 .. container:: col-md-6 col-right
 
@@ -43,7 +43,7 @@
 
    .. raw:: html
 
-      <h2><a href="http://legacysurvey.org/viewer">Interactive Map</a></h2>
+      <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
       <h2>Current Release: Data Release 9</h2>
       <p>September 2020</p>

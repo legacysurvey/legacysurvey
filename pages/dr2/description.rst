@@ -87,16 +87,16 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service as follows:
 
-JPEG: https://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
 
-FITS: https://legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
+FITS: https://www.legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
 
 where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
 maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native DECam pixels.
 
 .. _`files`: ../files
-.. _`the Sky viewer`: https://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOAO portal`: http://portal-nvo.noao.edu/
 
 Source Detection
@@ -339,7 +339,7 @@ CP
     https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <https://legacysurvey.org>`_.
+    `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org>`_.
 
 DR2
     DECam Legacy Survey Data Release 2, January 2016.

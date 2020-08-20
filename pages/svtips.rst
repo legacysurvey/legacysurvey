@@ -22,6 +22,6 @@ The Legacy Survey Sky Viewer is generally intuitive, but here are some additiona
 
 A full listing of all of the URL patterns that are supported by the viewer is available `here`_.
 
-.. _`here`: http://legacysurvey.org/viewer/urls
+.. _`here`: https://www.legacysurvey.org/viewer/urls
 
 

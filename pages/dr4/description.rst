@@ -136,9 +136,9 @@ the bottom of the `files`_ page).
 Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
-FITS: https://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
@@ -147,7 +147,7 @@ For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ 
 
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
-.. _`the Sky viewer`: https://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
@@ -403,7 +403,7 @@ Glossary
 ========
 
 BASS
-    `Beijing-Arizona Sky Survey <https://legacysurvey.org/bass>`_.
+    `Beijing-Arizona Sky Survey <https://www.legacysurvey.org/bass>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring
@@ -415,10 +415,10 @@ Brick
 
 CP
     Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
-    http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <https://legacysurvey.org/decamls>`_.
+    `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.
 
 DR2
     Legacy Survey Data Release 2.
@@ -441,7 +441,7 @@ MoG
     Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
 MzLS
-    `Mayall z-band Legacy Survey <https://legacysurvey.org/mzls>`_.
+    `Mayall z-band Legacy Survey <https://www.legacysurvey.org/mzls>`_.
 
 NSF's OIR Lab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.

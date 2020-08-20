@@ -25,7 +25,7 @@ sometimes produced a duplicate of the same source. These duplicates can be ident
 because they have identical coordinates and fluxes but a different ``OBJID``. An
 example repeated source is here:
 
-https://legacysurvey.org/viewer-dev?ra=215.8471&dec=0.0805&zoom=16&layer=decals-dr5&sources-dr5&bricks
+https://www.legacysurvey.org/viewer-dev?ra=215.8471&dec=0.0805&zoom=16&layer=decals-dr5&sources-dr5&bricks
 
 This source has the following attributes in catalog-level `DR5`_ data:
 

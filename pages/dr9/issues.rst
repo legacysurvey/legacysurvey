@@ -42,6 +42,6 @@ there are a small number of bricks in DR9 which have images loaded in the
 .. _`Tractor catalogs`: ../catalogs
 .. _`coadd files`: ../files/#image-stacks-region-coadd
 .. _`files`: ../files
-.. _`viewer`: https://legacysurvey.org/viewer
-.. _`Andromeda`: https://legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
-.. _`M13`: https://legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
+.. _`viewer`: https://www.legacysurvey.org/viewer
+.. _`Andromeda`: https://www.legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
+.. _`M13`: https://www.legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8

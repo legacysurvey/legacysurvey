@@ -29,7 +29,7 @@ Then, for example:
 Using Python
 ------------
 
-.. _`NSF's OIR Lab Community Pipeline`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 At the Python prompt:
 

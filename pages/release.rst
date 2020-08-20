@@ -17,7 +17,7 @@
 .. _`BASS`: ../bass
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 
 These tables contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
 

@@ -46,7 +46,7 @@ Name                                  Type         Units                 Descrip
 ``dec``                               float64      deg                   Declination at equinox J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32      1/deg\ |sup2|         Inverse variance of DEC, excluding astrometric calibration errors
-``bx``                                float32      pix                   X position (0-indexed) of coordinates in brick image stack
+``bx``                                float32      pix                   X position (0-indexed) of coordinates in the brick image stack (*i.e.* in the *e.g.* `legacysurvey-<brick>-image-g.fits.fz` `coadd file`_)
 ``by``                                float32      pix                   Y position (0-indexed) of coordinates in brick image stack
 ``dchisq``                            float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, REX, DEV, EXP, SER.  The difference is versus no source.
 ``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute the ``mw_transmission_`` columns
@@ -190,9 +190,9 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W2
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
-``wise_coadd_id``	              char[8]                            unWISE coadd file name for the center of each object
-``wise_x``                            float32
-``wise_y``                            float32
+``wise_coadd_id``	              char[8]                            unWISE coadd brick name (corresponding to the, *e.g.*, `legacysurvey-<brick>-image-W1.fits.fz` `coadd file`_) for the center of each object
+``wise_x``                            float32      pix                   X position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_x`` and ``bx``)
+``wise_y``                            float32      pix                   Y position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_y`` and ``by``)
 ``lc_flux_w1``	     	              float32[15]  nanomaggies           ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
 ``lc_flux_w2``                        float32[15]  nanomaggies           ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
 ``lc_flux_ivar_w1``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
@@ -219,6 +219,8 @@ Name                                  Type         Units                 Descrip
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`coadd file`: ../files/#image-stacks-region-coadd
+.. _`DR9 updates page`: ../updates/#data-model-changes
 
 Goodness-of-Fits and Morphological ``type``
 -------------------------------------------

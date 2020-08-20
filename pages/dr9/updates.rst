@@ -99,13 +99,16 @@ Data model changes
    * As there are no sources of ``type=COMP``, the ``type`` column is now a 3-string (``'S3'``) rather than a 4-string (``'S4'``).
 * Two new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor catalogs for DR9`_:
    * ``sersic`` and ``sersic_ivar``
+* The ``wise_x`` and ``wise_y`` coordinates in the unWISE `coadds`_ (*e.g.* files like `legacysurvey-<brick>-image-W1.fits.fz`) have been added to the `Tractor catalogs for DR9`_. The transformations between these locations and the `bx` and `by` coordinates in the optical `coadds`_ are:
+   * ``wise_x`` = ``bx``:math:`~\times~0.262/2.75 - 0.94327`
+   * ``wise_y`` = ``by``:math:`~\times~0.262/2.75 - 0.94327`
+* The peculiar transformations between, *e.g.*, ``wise_x`` and ``bx`` `arise from the fact that the WCS headers of the optical and WISE stacks share the same (brick) center, which is pinned to the center of each image`_. The WISE image size is chosen by rounding *down* from 3600 pixels scaled by the relative central pixel scales of the tangential projections (which are 0.262 and 2.75 arcsec/pix for the optical and WISE images respectively).
 * A number of additional columns have been added to the `Tractor catalogs for DR9`_:
    * ``lc_epoch_index_w1`` and ``lc_epoch_index_w2``
    * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``
    * ``apflux_w1``, ``apflux_w1``, ``apflux_w3`` and ``apflux_w4``
    * ``apflux_resid_w1``, ``apflux_resid_w2``, ``apflux_resid_w3`` and ``apflux_resid_w4``
    * ``apflux_ivar_w1``, ``apflux_ivar_w2``, ``apflux_ivar_w3`` and ``apflux_ivar_w4``
-   * ``wise_x`` and ``wise_y``
    * ``nea_g``, ``nea_r`` and ``nea_z``
    * ``blob_nea_g``, ``blob_nea_r`` and ``blob_nea_z``
 * A new bitwise mask ``fitbits`` has been added to the `sweep files`_ and `Tractor catalogs`_. This new bit-mask details properties of how each source was fit and is documented on the `DR9 bitmasks page`_.
@@ -132,6 +135,7 @@ Data model changes
 .. _`files of data from fitting in SGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
 .. _`coadds`: ../files/#image-stacks-region-coadd
 .. _`external match files`: ../files/#external-match-files-region-external
+.. _`arise from the fact that the WCS headers of the optical and WISE stacks share the same (brick) center, which is pinned to the center of each image`: https://github.com/legacysurvey/legacysurvey/issues/109#issuecomment-666553568
 
 |
 

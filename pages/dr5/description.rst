@@ -147,6 +147,9 @@ As of the writing of this documentation the maximum size for cutouts (in number 
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `BASS`_ and `MzLS`_ cutouts, see the `DR4 description`_ page.
 
+See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+
+.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR4 description`: ../../dr4/description
 .. _`files`: ../files

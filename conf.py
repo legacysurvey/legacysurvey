@@ -94,13 +94,14 @@ NAVIGATION_LINKS = {
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),
-            ("http://www.darkenergysurvey.org", 'DES'),
+            ("https://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
             ), 'Other Data'),
         ((
-        ("http://legacysurvey.org/viewer", 'Go to the Sky Viewer'),
+        ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
+        ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
         ), 'Sky Viewer'),
         ((
             ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9/gallery/", 'DR9'),

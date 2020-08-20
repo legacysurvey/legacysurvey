@@ -20,7 +20,7 @@ The Legacy Survey Sky Viewer is generally intuitive, but here are some additiona
 #. If you click on the RA,Dec coordinate readout box, you can enter an RA, Dec, and zoom number that you'd like to view.
 #. If you select one layer and then select a second layer, you can flip back to the previous layer using the space bar.  This is handy to "blink" between two layers, e.g., to look for moving objects.
 
-A full listing of all of the URL patterns that are supported by the viewer is available `here`_.
+A list of the URL patterns that are supported by the viewer is available `here`_.
 
 .. _`here`: https://www.legacysurvey.org/viewer/urls
 

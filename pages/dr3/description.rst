@@ -93,6 +93,9 @@ where "bands" is a string like "grz","gz","g", etc.  As of the writing of this d
 maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native DECam pixels.
 
+See also the `list of the URL/cutout patterns that are supported by the viewer`_.
+
+.. _`list of the URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query

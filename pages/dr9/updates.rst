@@ -102,7 +102,7 @@ Data model changes
 * The ``wise_x`` and ``wise_y`` coordinates in the unWISE `coadds`_ (*e.g.* files like `legacysurvey-<brick>-image-W1.fits.fz`) have been added to the `Tractor catalogs for DR9`_. The transformations between these locations and the `bx` and `by` coordinates in the optical `coadds`_ are:
    * ``wise_x`` = ``bx``:math:`~\times~0.262/2.75 - 0.94327`
    * ``wise_y`` = ``by``:math:`~\times~0.262/2.75 - 0.94327`
-* The peculiar transformations between, *e.g.*, ``wise_x`` and ``bx`` `arise from the fact that the WCS headers of the optical and WISE stacks share the same (brick) center, which is pinned to the center of each image`_. The WISE image size is chosen by rounding *down* from 3600 pixels scaled by the relative central pixel scales of the tangential projections (which are 0.262 and 2.75 arcsec/pix for the optical and WISE images respectively).
+* The transformations between, *e.g.*, ``wise_x`` and ``bx`` `arise from the fact that the WCS headers of the optical and WISE stacks share the same (brick) center, which is pinned to the center of each image`_. The WISE image size is chosen by rounding *down* from 3600 pixels scaled by the relative central pixel scales of the tangential projections (which are 0.262 and 2.75 arcsec/pix for the optical and WISE images respectively).
 * A number of additional columns have been added to the `Tractor catalogs for DR9`_:
    * ``lc_epoch_index_w1`` and ``lc_epoch_index_w2``
    * ``apflux_blobresid_g``, ``apflux_blobresid_r`` and ``apflux_blobresid_z``

@@ -26,13 +26,13 @@ These tables contains information regarding how the RELEASE integer corresponds 
 ========= ====== ========= ====== ====== =======
 RELEASE	  CAMERA RELEASE   CAMERA FILTER PRIMARY
 ========= ====== ========= ====== ====== =======
-9000/9002 decam  9001/9003 bok    |g|    1
-9000/9002 decam  9001/9003 bok    |r|    1
-9000/9002 decam  9001/9003 mosaic |z|    1
-9000/9002 wise   9001/9003 wise   |W1|   0
-9000/9002 wise   9001/9003 wise   |W2|   0
-9000/9002 wise   9001/9003 wise   |W3|   0
-9000/9002 wise   9001/9003 wise   |W4|   0
+9010      decam  9011      bok    |g|    1
+9010      decam  9011      bok    |r|    1
+9010      decam  9011      mosaic |z|    1
+9010      wise   9011      wise   |W1|   0
+9010      wise   9011      wise   |W2|   0
+9010      wise   9011      wise   |W3|   0
+9010      wise   9011      wise   |W4|   0
 ========= ====== ========= ====== ====== =======
 
 **DR8**

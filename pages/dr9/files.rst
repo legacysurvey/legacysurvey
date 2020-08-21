@@ -338,10 +338,10 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-Random Catalogs
-===============
+Random Catalogs (``randoms/*``)
+===============================
 
-randoms/randoms-inside-dr9-0.XXX.0-\*.fits
+randoms-inside-dr9-0.XXX.0-\*.fits
 ------------------------------------------
 
 Ten files of random points sampled across the CCDs that comprise the geometry of DR9. Random locations
@@ -413,7 +413,7 @@ northern and southern imaging footprints overlap, so, randoms are resolved by `t
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").
 
-randoms/randoms-outside-dr9-0.XXX.0-\*.fits
+randoms-outside-dr9-0.XXX.0-\*.fits
 -------------------------------------------
 
 Ten files of random points in bricks that do not contain an observation in DR9 (that are "outside" of the DR9 footprint). The columns in this file
@@ -434,7 +434,7 @@ Column               Type     Description
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ==================== ======== ======================================================
 
-randoms/randoms-allsky-dr9-0.XXX.0.fits
+randoms-allsky-dr9-0.XXX.0.fits
 ---------------------------------------
 
 The (randomly shuffled) combination of each of the ``randoms-inside-dr9-0.XXX.0-X.fits``
@@ -443,7 +443,7 @@ ten "all-sky" random catalogs (at a density of 5,000 locations per square degree
 where each brick is either populated with observations from the
 Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr9-0.XXX.0-\*.fits`` files.
 
-randoms/survey-bricks-dr9-randoms-0.XXX.0.fits
+survey-bricks-dr9-randoms-0.XXX.0.fits
 ----------------------------------------------
 
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
@@ -457,7 +457,7 @@ Column             Type    Description
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 
-randoms/<region>/survey-bricks-dr9-randoms-0.XXX.0.fits
+<region>/survey-bricks-dr9-randoms-0.XXX.0.fits
 -------------------------------------------------------
 
 As for the ``randoms-inside-dr9-0.XXX.0-X.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
@@ -772,6 +772,77 @@ High Energy Physics via grant DE-SC0007914."
 
 .. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
 .. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
+
+Star masks (``masks/gaia-mask.fits``)
+=====================================
+
+A FITS binary table with a single HDU containing information about the Gaia stars used to
+set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.
+
+================================ ======= ========================
+Name                             Type    Description
+================================ ======= ========================
+``ra``                           float64 
+``dec``                          float64 
+``isgalaxy``                     uint8   
+``jmag``                         float32 
+``hmag``                         float32 
+``kmag``                         float32 
+``zguess``                       float32 
+``ref_cat``                      char[2] 
+``ref_id``                       int64   
+``pmra_ivar``                    float32 
+``pmdec_ivar``                   float32 
+``ra_ivar``                      float32 
+``dec_ivar``                     float32 
+``pmra``                         float32 
+``pmdec``                        float32 
+``mag``                          float32 
+``radius``                       float32 
+``keep_radius``                  float32 
+``parallax``                     float32 
+``ref_epoch``                    float32 
+``pointsource``                  boolean 
+``phot_g_mean_mag``              float32 
+``isbright``                     boolean 
+``ismedium``                     boolean 
+``phot_bp_mean_mag``             float32 
+``phot_g_n_obs``                 int16   
+``phot_variable_flag``           boolean 
+``phot_rp_mean_flux_over_error`` float32 
+``source_id``                    int64   
+``phot_g_mean_flux_over_error``  float32 
+``phot_rp_mean_mag``             float32 
+``decam_mag_g``                  float32 
+``astrometric_params_solved``    uint8   
+``decam_mag_z``                  float32 
+``e_bp_min_rp_val``              float32 
+``phot_bp_mean_flux_over_error`` float32 
+``astrometric_excess_noise``     float32 
+``astrometric_excess_noise_sig`` float32 
+``astrometric_sigma5d_max``      float32 
+``duplicated_source``            boolean 
+``decam_mag_r``                  float32 
+``a_g_val``                      float32 
+``phot_bp_rp_excess_factor``     float32 
+``astrometric_n_obs_al``         int16   
+``phot_rp_n_obs``                int16   
+``parallax_ivar``                float32 
+``donotfit``                     boolean 
+``astrometric_weight_al``        float32 
+``isgaia``                       boolean 
+``astrometric_n_good_obs_al``    int16   
+``phot_bp_n_obs``                int16   
+``radius_pix``                   int64   
+``ibx``                          int64   
+``iby``                          int64   
+``in_bounds``                    boolean 
+``islargegalaxy``                boolean 
+``iscluster``                    boolean 
+``freezeparams``                 boolean 
+``brickname``                    char[8] 
+================================ ======= ========================
+
 
 Image Stacks (``<region>/coadd/*``)
 ===================================

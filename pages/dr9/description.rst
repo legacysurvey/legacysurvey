@@ -288,7 +288,7 @@ The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero
 .. _`Tractor catalogs`: ../catalogs
 .. _`Gaia catalogs`: ../external
 .. _`catalogs`: ../catalogs
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: https://www.legacysurvey.org/dr7/description/#source-detection
 .. _`polynomial fits to Gaia-to-DECam`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/reference.py#L153
 

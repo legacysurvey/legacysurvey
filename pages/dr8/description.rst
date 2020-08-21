@@ -266,7 +266,7 @@ Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the SGA la
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
 .. _`catalogs`: ../catalogs
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: https://www.legacysurvey.org/dr7/description/#source-detection
 
 PSF

@@ -180,7 +180,7 @@ Name                                  Type         Units                 Descrip
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 
 
 Mask Values

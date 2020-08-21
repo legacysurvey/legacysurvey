@@ -220,7 +220,7 @@ brighter, have large halos that are not include in our model choices and are bes
 by misleading (and computationally expensive) diffuse galaxy models.
 
 .. _`catalogs`: ../catalogs
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 
 PSF
 ===

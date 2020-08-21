@@ -695,7 +695,7 @@ Name                                  Type         Units                 Descrip
 ``FIBERTOTFLUX_R``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``FIBERTOTFLUX_Z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``REF_CAT``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, "L3" for the `SGA`_, empty otherwise
-``REF_ID``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for Gaia-DR2 and `SGA`_
+``REF_ID``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia`_ DR2 and `SGA`_
 ``REF_EPOCH``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
 ``GAIA_PHOT_G_MEAN_MAG``              float32      mag                   `Gaia`_ G band magnitude
 ``GAIA_PHOT_G_MEAN_FLUX_OVER_ERROR``  float32                            `Gaia`_ G band signal-to-noise
@@ -721,7 +721,7 @@ Name                                  Type         Units                 Descrip
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`SGA`: ../external/#sga-large-galaxies
 
 .. _photometric-redshifts:
@@ -773,76 +773,79 @@ High Energy Physics via grant DE-SC0007914."
 .. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
 .. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
 
-Star masks (``masks/gaia-mask.fits``)
-=====================================
+Star masks (``masks/*``)
+========================
 
-A FITS binary table with a single HDU containing information about the Gaia stars used to
+gaia-mask-dr9-fixed.fits
+------------------------
+
+A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia`_ DR2 stars used to
 set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.
 
-================================ ======= ========================
-Name                             Type    Description
-================================ ======= ========================
-``ra``                           float64 
-``dec``                          float64 
-``isgalaxy``                     uint8   
-``jmag``                         float32 
-``hmag``                         float32 
-``kmag``                         float32 
-``zguess``                       float32 
-``ref_cat``                      char[2] 
-``ref_id``                       int64   
-``pmra_ivar``                    float32 
-``pmdec_ivar``                   float32 
-``ra_ivar``                      float32 
-``dec_ivar``                     float32 
-``pmra``                         float32 
-``pmdec``                        float32 
-``mag``                          float32 
-``radius``                       float32 
-``keep_radius``                  float32 
-``parallax``                     float32 
-``ref_epoch``                    float32 
-``pointsource``                  boolean 
-``phot_g_mean_mag``              float32 
-``isbright``                     boolean 
-``ismedium``                     boolean 
-``phot_bp_mean_mag``             float32 
-``phot_g_n_obs``                 int16   
-``phot_variable_flag``           boolean 
-``phot_rp_mean_flux_over_error`` float32 
-``source_id``                    int64   
-``phot_g_mean_flux_over_error``  float32 
-``phot_rp_mean_mag``             float32 
-``decam_mag_g``                  float32 
-``astrometric_params_solved``    uint8   
-``decam_mag_z``                  float32 
-``e_bp_min_rp_val``              float32 
-``phot_bp_mean_flux_over_error`` float32 
-``astrometric_excess_noise``     float32 
-``astrometric_excess_noise_sig`` float32 
-``astrometric_sigma5d_max``      float32 
-``duplicated_source``            boolean 
-``decam_mag_r``                  float32 
-``a_g_val``                      float32 
-``phot_bp_rp_excess_factor``     float32 
-``astrometric_n_obs_al``         int16   
-``phot_rp_n_obs``                int16   
-``parallax_ivar``                float32 
-``donotfit``                     boolean 
-``astrometric_weight_al``        float32 
-``isgaia``                       boolean 
-``astrometric_n_good_obs_al``    int16   
-``phot_bp_n_obs``                int16   
-``radius_pix``                   int64   
-``ibx``                          int64   
-``iby``                          int64   
-``in_bounds``                    boolean 
-``islargegalaxy``                boolean 
-``iscluster``                    boolean 
-``freezeparams``                 boolean 
-``brickname``                    char[8] 
-================================ ======= ========================
+===================================== ======= ================== ========================
+Name                                  Type    Units              Description
+===================================== ======= ================== ========================
+``ra``                                float64 deg                Right ascension from the `Gaia`_ DR2 or `Tycho-2`_ catalog
+``dec``                               float64 deg                Declination from the `Gaia`_ DR2 or `Tycho-2`_ catalog
+``ref_cat``                           char[2]                    Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2
+``ref_id``                            int64                      Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia`_ DR2
+``ref_epoch``                         float32 yr                 Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
+``mag``                               float32 mag                Gaia G-band mag for `Gaia`_ DR2; V_T for `Tycho-2`_ when available, otherwise `Hipparcos`_ magnitude
+``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
+``radius``                            float32 deg                Masking radius
+``radius_pix``                        int64   pix                Masking radius in 0.262 arcsec "brick" pixels
+``pmra``                              float32 mas/yr             Reference catalog proper motion in the RA direction
+``pmdec``                             float32 mas/yr             Reference catalog proper motion in the Dec direction
+``parallax``                          float32 mas                Reference catalog parallax
+``ra_ivar``                           float32 1/deg\ |sup2|      Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
+``dec_ivar``                          float32 1/deg\ |sup2|      Inverse variance of DEC, excluding astrometric calibration errors
+``pmra_ivar``                         float32 1/(mas/yr)\ |sup2| Reference catalog inverse-variance on ``pmra``
+``pmdec_ivar``                        float32 1/(mas/yr)\ |sup2| Reference catalog inverse-variance on ``pmdec``
+``parallax_ivar``                     float32 1/(mas)\ |sup2|    Reference catalog inverse-variance on ``parallax``
+``in_desi``                           boolean                    In the DESI footprint?
+``istycho``                           boolean                    From, or was matched to, the `Tycho-2`_ catalog?
+``isgaia``                            boolean                    From, or was matched to, the `Gaia`_ DR2 catalog?
+``isbright``                          boolean                    Is a ``BRIGHT`` star? ``BRIGHT`` stars are all `Tycho-2`_ stars, plus `Gaia`_ DR2 stars with ``mask_mag`` < 13 (see also the `DR9 bitmasks page`_)
+``ismedium``                          boolean                    Is a ``MEDIUM`` star? ``MEDIUM`` stars are `Gaia`_ DR2 stars with ``mask_mag`` < 16 (see also the `DR9 bitmasks page`_)
+``pointsource``                       boolean                    Does the star pass the Legacy Surveys `Gaia`_ DR2 point source cut?
+``donotfit``                          boolean                    Does the object match an `SGA`_ galaxy? If ``True`` then the object will appear in the `Tractor catalogs`_ as a "DUP" source.
+``decam_mag_g``                       float32 mag                The estimated DECam :math:`g` magnitude for `Gaia`_ DR2 stars based on the :math:`G` and :math:`Bp-Rp` color
+``decam_mag_r``                       float32 mag                The estimated DECam :math:`r` magnitude for `Gaia`_ DR2 stars based on the :math:`G` and :math:`Bp-Rp` color
+``decam_mag_z``                       float32 mag                The estimated DECam :math:`z` magnitude for `Gaia`_ DR2 stars based on the :math:`G` and :math:`Bp-Rp` color
+``zguess``                            float32 mag                The estimated :math:`z` magnitude for `Tycho-2`_ stars from matching to `2MASS`_ and estimating :math:`V` to :math:`z` transformations based on `APASS`_.
+``brickname``                         char[8]                    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
+``ibx``                               int32                      Integer brick pixel X coordinate (0-indexed) of this star
+``iby``                               int32                      Integer brick pixel Y coordinate (0-indexed) of this star
+``gaia_phot_g_mean_mag``              float32 mag                `Gaia`_ G band magnitude
+``gaia_phot_g_mean_flux_over_error``  float32 	      	         `Gaia`_ G band signal-to-noise
+``gaia_phot_g_n_obs``                 int16 	      	      	 `Gaia`_ G band number of observations
+``gaia_phot_bp_mean_mag``             float32 mag     	      	 `Gaia`_ BP magnitude
+``gaia_phot_bp_mean_flux_over_error`` float32 	      	      	 `Gaia`_ BP signal-to-noise
+``gaia_phot_bp_n_obs``                int16 	      	      	 `Gaia`_ BP number of observations
+``gaia_phot_rp_mean_mag``             float32 mag      	      	 `Gaia`_ RP magnitude
+``gaia_phot_rp_mean_flux_over_error`` float32 	      	      	 `Gaia`_ RP signal-to-noise
+``gaia_phot_rp_n_obs``                int16 	      	      	 `Gaia`_ RP number of observations
+``gaia_phot_variable_flag``           boolean 	      	      	 `Gaia`_ photometric variable flag
+``gaia_astrometric_excess_noise``     float32 	      	      	 `Gaia`_ astrometric excess noise
+``gaia_astrometric_excess_noise_sig`` float32 	      	      	 `Gaia`_ astrometric excess noise uncertainty
+``gaia_astrometric_n_obs_al``         int16 	      	      	 `Gaia`_ number of astrometric observations along scan direction
+``gaia_astrometric_n_good_obs_al``    int16 	      	      	 `Gaia`_ number of good astrometric observations along scan direction
+``gaia_astrometric_weight_al``        float32 	      	      	 `Gaia`_ astrometric weight along scan direction
+``gaia_duplicated_source``            boolean 	      	      	 `Gaia`_ duplicated source flag
+``gaia_a_g_val``                      float32 mag      	      	 `Gaia`_ line-of-sight extinction in the G band
+``gaia_e_bp_min_rp_val``              float32 mag      	      	 `Gaia`_ line-of-sight reddening E(BP-RP)
+``gaia_phot_bp_rp_excess_factor``     float32 	      	      	 `Gaia`_ BP/RP excess factor
+``gaia_astrometric_sigma5d_max``      float32 mas   	      	 `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
+``gaia_astrometric_params_solved``    uint8 	      	      	 which astrometric parameters were estimated for a `Gaia`_ source
+===================================== ======= ================== ========================
 
+
+.. _`catalog`: http://vizier.u-strasbg.fr/viz-bin/VizieR?-source=J%2FA%2BA%2F413%2F771
+.. _`Metz & Geffert (2004)`: https://www.aanda.org/articles/aa/pdf/2004/02/aah4555.pdf
+.. _`APASS`: https://www.aavso.org/apass
+.. _`2MASS`: https://www.ipac.caltech.edu/project/2mass
+.. _`Hipparcos`: https://heasarc.gsfc.nasa.gov/W3Browse/all/hipparcos.html
+.. _`Tractor catalogs`: ../catalogs
 
 Image Stacks (``<region>/coadd/*``)
 ===================================

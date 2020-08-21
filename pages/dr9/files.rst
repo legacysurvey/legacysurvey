@@ -1247,6 +1247,8 @@ There is one entry per CCD. Often, multiple CCDs from a given file are used so t
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).
 
+Note that the weight map images (the ``oow`` files) are in the same units as :math:`1/\mathtt{skyrms}^2` in the **survey-ccds-<camera>-dr9.fits.gz** files (documented above).
+But, these images need to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for **<camera>** of **mosaic** or **90prime**).
 
 |
 

@@ -149,7 +149,7 @@ XXX GB + X.X TB    `north/tractor/`_ + `south/tractor/`_     The Tractor `catalo
 .. _`south/sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/
 .. _`north/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/tractor/
 .. _`south/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/tractor/
-
+.. _`survey-ccds-<camera>-dr9.fits.gz files`: ../files/#survey-ccds-camera-dr9-fits-gz
 
 For all of the DESI Legacy Imaging Surveys, coadded images and
 Tractor catalogs are presented in "bricks" of approximate
@@ -166,10 +166,11 @@ There are approximately X.X billion unique sources in DR9 spread over XXX,XXX un
 Obtaining Images and Raw Data
 ==============================
 
-Images for all 3 of the Legacy Surveys can be viewed
-directly using `the Sky viewer`_
+Images for all 3 of the Legacy Surveys can be viewed directly using `the Sky viewer`_
 and raw data can be obtained through `the NSF's OIR Lab portal`_ (or via ftp; see also the information near
-`the bottom of the files`_ page).
+`the bottom of the files`_ page). Note that the weight map images (the ``oow`` files) that can be retrieved either from the viewer or
+portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-<camera>-dr9.fits.gz files`_. But, these images need
+to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for `<camera>` of `mosaic` or `90prime`).
 
 Sections of the Legacy Surveys for DR9 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:

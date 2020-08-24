@@ -91,12 +91,12 @@ Survey-bricks-dr4.fits.gz (all)
 
 - galdepth_{g,r}
 
-In the PSFex configuration file for BASS images, we set PSF_SAMPLING to *auto* (0.0) rather than to *fixed* (1.0). PSFex then automatically
+In the PSFEx configuration file for BASS images, we set PSF_SAMPLING to *auto* (0.0) rather than to *fixed* (1.0). PSFEx then automatically
 chooses a pixel scale (0.455\ |PRIME| per pixel times a factor roughly between 0.8 and 1.2), which is then mis-interpreted by legacypipe.
 For various reasons, legacypipe using a different set of code for model rendering (e.g. coadd model images) and model fitting
-(e.g. convolving a PSFex and galaxy model) so the incorrect pixel scale in used in different cases.
+(e.g. convolving a PSFEx and galaxy model) so the incorrect pixel scale in used in different cases.
 
-In the first case, model rendering uses the incorrect PSFex pixel scale, so all g,r-band "coadd" images are wrong. This happens for:
+In the first case, model rendering uses the incorrect PSFEx pixel scale, so all g,r-band "coadd" images are wrong. This happens for:
 
 - legacysurvey-\*-model-{g,r}.fits
 - legacysurvey-\*-chi2-{g,r}.fits

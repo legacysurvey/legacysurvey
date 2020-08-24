@@ -175,16 +175,16 @@ PSF
 
 The Tractor makes use of the PSF on each individual exposure. The PSF for 
 the individual exposures are first computed independently for each CCD
-using PSFEx_, generating spatially-varying pixelized models.
-The same pixelized PSF from PSFex is used for `BASS`_ and `MzLS`_ in order to
+using `PSFEx`_, generating spatially-varying pixelized models.
+The same pixelized PSF from `PSFEx`_ is used for `BASS`_ and `MzLS`_ in order to
 match the PSF used to extract `DECaLS`_ sources for `DR3`_.
 
 For DECaLS and MzLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
 7\ |Prime| diameter aperture for normalization. For BASS we adopt a 31 x 31 pixel image size and
 a 0.470 pixel scale and use a 7\ |Prime| diameter aperture for normalization 
-The configuration files for SExtractor and PSFex are available `on our github page`_.
+The configuration files for SExtractor and `PSFEx`_ are available `on our github page`_.
 
-.. _`PSFEx`: https://www.astromatic.net/software/psfex
+.. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config
 
 Sky Level
@@ -457,7 +457,7 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
     `Sloan Digital Sky Survey <https://www.sdss.org>`_.
@@ -472,7 +472,7 @@ SED
     Spectral energy distribution.
 
 SourceExtractor
-    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
     Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).

@@ -183,12 +183,12 @@ PSF
 
 The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
-using PSFEx_, generating spatially-varying pixelized models.
+using `PSFEx`_, generating spatially-varying pixelized models.
 
-The configuration files for SExtractor and PSFex that we used for a given
+The configuration files for SExtractor and `PSFEx`_ that we used for a given
 iteration of our codebase are available `on our github page`_.
 
-.. _`PSFEx`: https://www.astromatic.net/software/psfex
+.. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our github page`: https://github.com/legacysurvey/legacypipe-dir/tree/master/calib/se-config
 
 Sky Level
@@ -464,7 +464,7 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
     `Sloan Digital Sky Survey <https://www.sdss.org>`_.
@@ -479,7 +479,7 @@ SED
     Spectral energy distribution.
 
 SourceExtractor
-    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
     Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).

@@ -276,12 +276,12 @@ The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using `PSFEx`_, generating spatially-varying pixelized models. Note that it is possible that
 ``survey-*`` and ``*-annotated-*`` `files`_ could record information
-that is missing from other files in cases where `PSFex`_ fails. This is `expected behavior`_.
+that is missing from other files in cases where `PSFEx`_ fails. This is `expected behavior`_.
 
-The configuration files for SExtractor and PSFex that were used for a given
+The configuration files for SExtractor and `PSFEx`_ that were used for a given
 iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
 
-.. _`PSFEx`: https://www.astromatic.net/software/psfex
+.. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
 .. _`expected behavior`: https://github.com/legacysurvey/legacypipe/issues/349
 
@@ -552,8 +552,8 @@ Code Versions
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.78.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr8.1.
 * `NSF's OIR Lab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
-* `SourceExtractor <https://www.astromatic.net/software/sextractor>`_: 2.25.0
-* `PSFEx <https://www.astromatic.net/software/psfex>`_: 3.21.1
+* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.0
+* `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.21.1
 
 .. _`DESI Legacy Surveys Imaging Data Release 2`: ../../dr2
 .. _`DESI Legacy Surveys Imaging Data Release 3`: ../../dr3
@@ -625,7 +625,7 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
     `Sloan Digital Sky Survey <https://www.sdss.org>`_.
@@ -643,7 +643,7 @@ SGA
     `Siena Galaxy Atlas <https://github.com/moustakas/SGA>`_.
 
 SourceExtractor
-    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
     `Schlegel, Finkbeiner & Davis 1998 extinction maps <https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract>`_.

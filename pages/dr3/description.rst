@@ -367,7 +367,7 @@ PSF
     Point spread function.
 
 PSFEx
-    `Emmanuel Bertin's PSF fitting code <https://www.astromatic.net/software/psfex>`_.
+    `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
     `Sloan Digital Sky Survey <https://www.sdss.org>`_.
@@ -382,7 +382,7 @@ SED
     Spectral energy distribution.
 
 SourceExtractor
-    `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.
+    `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
     Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).

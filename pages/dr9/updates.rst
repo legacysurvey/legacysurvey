@@ -135,9 +135,9 @@ Data model changes
 
   - the logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile. 
 
-  - the ``shapedev_`` and ``shapeexp_`` parameters, in DR8, defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated. 
+  - the ``shapedev_`` and ``shapeexp_`` parameters, in DR8, defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated.
 
-  - the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP". 
+  - the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP".
 
   - In DR9, every profile is defined by its ``type``, and ``shape_r``, ``shape_e1`` etc. are the appropriate parameters for that ``type`` (so, i.e., ``shapedev_r`` and ``shapeexp_r`` can now be collapsed to just the single ``shape_r`` column).
 

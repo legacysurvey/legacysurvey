@@ -69,5 +69,5 @@ SGA Large Galaxies
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/data/NGC-star-clusters.fits 
 .. _`hardcoded in legacypipe`: https://github.com/legacysurvey/legacypipe/blob/63d0548602a52be1134f64196d6268adc68208fb/py/legacypipe/reference.py#L196
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
-.. _`Siena Galaxy Atlas (SGA) work`: https://github.com/moustakas/SGA
+.. _`Siena Galaxy Atlas (SGA) work`: ../SGA
 .. _`the HyperLeda catalog`: http://leda.univ-lyon1.fr/acknowledge.html

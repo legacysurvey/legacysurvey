@@ -259,7 +259,7 @@ distinct sources was reduced.
 
 Starting with `DR8`_, many different "foreground" objects are extracted as independent sources
 in a similar fashion to how `Gaia stars were extracted in DR7`_.
-These include bright stars, medium-bright stars, globular clusters and SGA (Siena Galaxy Atlas) large galaxies
+These include bright stars, medium-bright stars, globular clusters and `SGA (Siena Galaxy Atlas)`_ large galaxies
 (as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
@@ -270,11 +270,11 @@ to be typically best fit by misleading (and computationally expensive) diffuse g
 
 Sources that are within a mask region have ``MASKBITS``
 set (see the `bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
-and SGA large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
-(except for the SGA large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
+and `SGA`_ large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
+(except for the `SGA`_ large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars
 (i.e. if `MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`_).
 Mask regions are ignored in the `Tractor` local-sky-fitting calibration code and are superseded by fits within the mask regions themselves.
-Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the SGA large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
+Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the `SGA`_ large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
 
 Starting with DR9, objects that appear in the `Gaia catalogs`_ are always retained in the `Tractor catalogs`_, even if they would normally be cut by the
 model-selection criteria used to detect sources. This is because Gaia sources are often so bright that they saturate in Legacy Surveys imaging.
@@ -283,6 +283,9 @@ using `polynomial fits to Gaia-to-DECam`_ color transformations for stars.
 Transformations to `DECam`_ are used even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_.
 The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero.
 
+.. _`SGA (Siena Galaxy Atlas)`: ../sga
+.. _`SGA`: ../sga
+.. _`Siena Galaxy Atlas`: ../sga
 .. _`bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external
@@ -664,7 +667,7 @@ SED
     Spectral energy distribution.
 
 SGA
-    `Siena Galaxy Atlas <https://github.com/moustakas/SGA>`_.
+    `Siena Galaxy Atlas`_.
 
 SourceExtractor
     `Source Extractor reduction code <https://www.astromatic.net/software/sextractor>`_.

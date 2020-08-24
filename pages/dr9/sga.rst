@@ -152,8 +152,8 @@ members, ~1700 groups with 3-5 members, ~50 groups with 6-10 members, and just f
 
 We also identify galaxies lying within and outside the Legacy Surveys imaging footprint.
 
-Final Catalog and Data Model
-----------------------------
+Final Parent Sample and Data Model
+----------------------------------
 
 The final parent sample contains 535,787 galaxies approximately limited to :math:`D(25)>20\,\mathrm{arcsec}`, spanning a wide range of magnitude and
 mean surface brightness. Of these, approximately 400,000 (~75%) lie within the DESI footprint.
@@ -270,7 +270,181 @@ File                                                                 Description
 **SGC pipeline files**
 ``GROUP_NAME``-largegalaxy-sample.fits                               Catalog that corresponds to the data model table, above containing just the galaxies in this galaxy group
 ``GROUP_NAME``-coadds.log                                            Logging output for this portion of the pipeline
-``GROUP_NAME``-largegalaxy-coadds.[``isdone``, ``isfail``]               Zero-byte file indicating whether this portion of the pipeline completed successfully (``isdone``) or failed (``isfail``)
+``GROUP_NAME``-largegalaxy-coadds.[``isdone``, ``isfail``]           Zero-byte file indicating whether this portion of the pipeline completed successfully (``isdone``) or failed (``isfail``)
 ==================================================================== ================================================
 
-.. _`DR9 files page`: ../../dr9/files/#large-galaxy-files-largegalaxies-aaa-galname
+.. _`DR9 files page`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
+
+Ellipse-Fitting
+---------------
+
+Next, we measure the multi-band surface brightness profiles of all the galaxies in our sample using the ellipse-fitting tools in the
+`astropy-affiliated`_ package `photutils`_. Once again, we analyze each galaxy group independently and use MPI parallelization to
+process the full sample in finite time.
+
+.. _`astropy-affiliated`: https://docs.astropy.org/en/stable/
+.. _`photutils`: https://photutils.readthedocs.io/en/stable/isophote.html
+
+Specifically, we carry out the following steps for each galaxy group:
+
+1. We begin by reading the ``-largegalaxy-tractor.fits`` and ``-largegalaxy-sample.fits`` catalogs for the field, and reject the following sources from the
+   subsequent ellipse-fitting step, if any:
+
+   - objects missing from the `Tractor catalogs`_ (i.e., they were dropped during fitting);
+   - objects with negative :math:`r\hbox{-}\mathrm{band}` flux or objects fit by *Tractor* as type ``PSF``;
+   - galaxies fit as *Tractor* type ``REX`` which have a measured half-light radius of :math:`\mathrm{shape\_r}<5\,\mathrm{arcsec}`;
+   - galaxies fit as *Tractor* types ``EXP``, ``DEV``, or ``SER`` which have a measured half-light radius of :math:`\mathrm{shape\_r}<2\,\mathrm{arcsec}`.
+
+   The first two criteria identify spurious sources in the parent catalog, or objects with grossly over-estimated diameters; we reject
+   these objects from the final SGA catalog. The second two criteria identify galaxies which are too small to benefit from ellipse-fitting
+   (*i.e.*, they are well-fit by the standard photometric pipeline); these objects also get special handling when we assemble the final SGA catalog.
+
+.. _`Tractor catalogs`: ../catalogs
+.. _`Tractor catalog`: ../catalogs
+
+2. Next, we read the :math:`grz` images and the corresponding inverse variance and model images. Here and throughout our analysis we use the
+   :math:`r\hbox{-}\mathrm{band}` image as the *reference band*. We also read the ``-largegalaxy-maskbits.fits`` image but only retain the
+   ``BRIGHT``, ``MEDIUM``, ``CLUSTER``, ``ALLMASK_G``, ``ALLMASK_R``, and ``ALLMASK_Z`` `bitmasks`_ (hereafter, we refer to this mask as the
+   ``starmask``). With these pieces in hand, we carry out the following steps:
+
+   - First, we build a ``residual_mask`` which accounts for statistically significant differences between the data and the *Tractor* models.
+     In detail, we flag all pixels which deviate by more than :math:`5\hbox{-}\sigma` (in any bandpass) from the absolute value of the Gaussian-smoothed
+     residual image, which we construct by subtracting the model image from the data and smoothing with a 2-pixel Gaussian kernel. This step
+     obviously masks all sources *including* the galaxy of interest, but we restore those pixels in the next step. In addition, we iteratively
+     dilate the mask two times, and we also mask pixels along the border of the mosaic with a border equal to 2% of the size of the mosaic.
+   - Next, we iterate on each galaxy in the group from brightest to faintest based on its :math:`r\hbox{-}\mathrm{band}` flux. For each galaxy,
+     we construct the model image from all the *Tractor* sources in the field *except the galaxy of interest*, and subtract this model image
+     from the data. We then measure the mean elliptical geometry of the galaxy based on the second moment of the light distribution using a
+     modified version of Michele Cappellari's `mge.find_galaxy`_ algorithm (hereafter, the ``ellipse moments``). When computing the ``ellipse moments``,
+     we only use pixels with surface brightness :math:`>27\,\mathrm{mag}/\mathrm{arcsec}^2`, and we median-filter the image with a 3-pixel boxcar to
+     smooth out any small-scale galactic structure. We then combine the ``residual_mask`` with the ``starmask`` (using Boolean logic), but *unmask*
+     pixels belonging to the galaxy based on the geometry of the ``ellipse moments``, but using 1.5 times the estimated semi-major axis of the galaxy.
+   - The preceding algorithm fails in fields containing more than one galaxy if the central coordinates of one of galaxies is masked by a previous
+     (brighter) system. (We consider a source to be impacted if *any* pixels in a 5-pixel diameter box centered on the *Tractor* position of the
+     galaxy are masked.) In this case, we iteratively *shrink* the elliptical mask of any of the previous galaxies until the central position of
+     the current galaxy is unmasked.
+   - Another occasional failure mode is if the flux-weighted position of the galaxy based on the ``ellipse moments`` differs from the *Tractor* position
+     by more than 10 pixels, which can happen in crowded fields and near bright stars and unmasked image artifacts. In this case we revert to using the
+     *Tractor* coordinates and model geometry.
+   - Finally, we convert the images to surface brightness in :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` and the weight maps to variance images in
+     :math:`\mathrm{nanomaggies}^2/\mathrm{arcsec}^4`.
+
+.. _`bitmasks`: ../bitmasks
+.. _`mge.find_galaxy`: https://www-astro.physics.ox.ac.uk/~mxc/software/#mge
+
+3. With the images and individual masks for each galaxy in hand, we can now measure the multi-band surface-brightness profiles of each galaxy. We
+   assume a fixed elliptical geometry based on the previously measured ``ellipse moments``, and robustly determine the surface brightness along
+   the elliptical path from the central pixel to two times the estimated semi-major axis of the galaxy (based on the ``ellipse moments``), in 1-pixel
+   intervals. In detail, we measure the surface brightness (and the uncertainty) using ``nclip=2``, ``sclip=3``, and ``integrmode=median``, i.e., two
+   sigma-clipping iterations, a :math:`3\hbox{-}\sigma` clipping threshold, and median area integration, respectively, as documented in the
+   `photutils.isophote.Ellipse.fit_image`_ method.
+
+   From the :math:`r\hbox{-}\mathrm{band}` surface brightness profile, we also robustly measure the size of the galaxy at the following surface
+   brightness thresholds: 22, 22.5, 23, 23.5, 24, 24.5, 25, 25.5 and 26 :math:`\mathrm{mag}/\mathrm{arcsec}^2`. We perform this measurement by
+   fitting a linear model to the surface brightness profile converted to :math:`\mathrm{mag}/\mathrm{arcsec}^2` vs. :math:`r^{0.25}` (which would be
+   a straight line for a de Vaucouleurs galaxy profile), but only consider measurements that are within :math:`\pm1\,\mathrm{mag}/\mathrm{arcsec}^2`
+   of the desired surface brightness threshold. To estimate the uncertainty in this radius we generate Monte Carlo realizations of the surface
+   brightness profile and use the standard deviation of the resulting distribution of radii.
+
+   Finally, we also measure the curve-of-growth in each bandpass using the tools in `photutils.aperture`_. Briefly, we integrate the image and
+   variance image in each bandpass using elliptical apertures from the center of the galaxy to two times its estimated semi-major axis (based on
+   the ``ellipse moments``, again, in 1-pixel intervals). We fit the curve-of-growth, :math:`m(r)` using the following empirical model (based on
+   an equation from `Observational Astronomy by Birney, Gonzalez, & Oesper`_):
+
+   :math:`m(r) = m_1 + m_0\{1 - \exp[-\alpha_1(r/r_0)^{-\alpha_2}]\}`
+
+   where :math:`m_1, m_0, \alpha_1, \alpha_2` and :math:`r_0` are constant parameters of the model and :math:`r` is the galactocentric radius
+   (semi-major axis) in arcsec. In our analysis we take the radius scale factor :math:`r_0=10\,\mathrm{arcsec}` to be fixed. Note that in the
+   limit :math:`r \rightarrow\infty`, :math:`m_1` is the total, integrated magnitude, and as :math:`r \rightarrow 0`, :math:`m_0 + m_1` is the
+   brightness at the center of the galaxy.
+
+
+.. _`photutils.isophote.Ellipse.fit_image`: https://photutils.readthedocs.io/en/stable/api/photutils.isophote.Ellipse.html#photutils.isophote.Ellipse.fit_image
+.. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
+.. _`Observational Astronomy by Birney, Gonzalez, & Oesper`: https://www.cambridge.org/highereducation/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
+.. _`astropy.QTable`: https://docs.astropy.org/en/stable/api/astropy.table.QTable.html#astropy.table.QTable
+
+Finally, we package all the measurements, one per galaxy, into an `astropy.QTable`_ table (including units for all the quantities), and write out
+the results. Specifically, this part of the pipeline writes out the following files:
+
+============================================================ ================================================
+File                                                         Description
+============================================================ ================================================
+``GROUP_NAME``-largegalaxy-``ID``-ellipse.fits               Table containing the ellipse-fitting results for the galaxy with ``SGA`` identification number ``ID``, using the data model from the table below
+``GROUP_NAME``-ellipse.log                                   Logging output for this portion of the pipeline
+``GROUP_NAME``-largegalaxy-ellipse.[``isdone``, ``isfail``]  Zero-byte file indicating whether this portion of the pipeline completed successfully (``isdone``) or failed (``isfail``)
+============================================================ ================================================
+
+The data model for the ellipse-fitting results is:
+
+================================================== ========== ============================================== ===============================================
+Name                                               Type       Units                                          Description
+================================================== ========== ============================================== ===============================================
+``SGA_ID``                                         int64                                                     See the data model (the first table on this page)
+``GALAXY``                                         char[?]                                                   See the data model (the first table on this page)
+``RA``                                             float64    degree                                         See the data model (the first table on this page)
+``DEC``                                            float64    degree                                         See the data model (the first table on this page)
+``PGC``                                            int64                                                     See the data model (the first table on this page)
+``PA_LEDA``                                        float32    degree                                         See the data model (the first table on this page)
+``BA_LEDA``                                        float32                                                   See the data model (the first table on this page)
+``D25_LEDA``                                       float32    arcmin                                         See the data model (the first table on this page)
+``BANDS``                                          char[1][3]                                                List of bandpasses fitted
+``REFBAND``                                        char[1]                                                   Reference band
+``REFPIXSCALE``                                    float32    arcsec/pixel                                   Pixel scale in the reference band
+``SUCCESS``                                        boolean                                                   Flag indicating success or failure
+``FITGEOMETRY``                                    boolean                                                   Flag indicating whether the ellipse geometry was allowed to vary with semi-major axis (here, always ``False``)
+``INPUT_ELLIPSE``                                  boolean                                                   Flag indicating whether ellipse parameters were passed from an external file (here, always ``False``)
+``LARGESHIFT``                                     boolean                                                   Flag indicating that the light-weighted center (from the ``ellipse moments``) is different from the *Tractor* position by more than 10 pixels in either dimension
+``RA_X0``                                          float64    degree                                         Right ascension (J2000) at pixel position ``X0``
+``DEC_Y0``                                         float64    degree                                         Declination (J2000) at pixel position ``Y0``
+``X0``                                             float32    pixel                                          Light-weighted position along the *x*-axis (from ``ellipse moments``)
+``Y0``                                             float32    pixel                                          Light-weighted position along the *y*-axis (from ``ellipse moments``)
+``EPS``                                            float32                                                   Ellipticity (:math:`e=1-b/a`, where :math:`b/a` is the semi-minor to semi-major axis ratio) see `this FAQ`_ for details (from ``ellipse moments``)
+``PA``                                             float32    degree                                         Position angle (astronomical convention, clockwise from North; from ``ellipse moments``)
+``THETA``                                          float32    degree                                         Position angle measured clockwise from the *x*-axis, given by [:math:`(270-PA)` mod 180] (from ``ellipse moments``)
+``MAJORAXIS``                                      float32    pixel                                          Light-weighted length of the semi-major axis (from ``ellipse moments``)
+``MAXSMA``                                         float32    pixel                                          Maximum semi-major axis length used for the ellipse-fitting and curve-of-growth measurements (taken to be two times ``MAJORAXIS``)
+``INTEGRMODE``                                     char[6]                                                   `photutils.isophote.Ellipse.fit_image`_ integration mode
+``SCLIP``                                          int16                                                     `photutils.isophote.Ellipse.fit_image`_ sigma-clipping threshold
+``NCLIP``                                          int16                                                     Number of `photutils.isophote.Ellipse.fit_image`_ sigma-clipping iterations
+``PSFSIZE_[G,R,Z]``                                float32    arcsec                                         Mean width of the point-spread function over the full mosaic (derived from the ``PSFSIZE_[G,R,Z]`` columns in the `Tractor catalogs`_)
+``PSFDEPTH_[G,R,Z]``                               float32    mag                                            Mean :math:`5\hbox{-}\sigma` depth over the full mosaic (derived from the ``PSFDEPTH_[G,R,Z]`` columns in the `Tractor catalogs`_)
+``MW_TRANSMISSION_[G,R,Z]``                        float32                                                   Galactic transmission fraction (taken from the corresponding `Tractor catalog`_ at the central coordinates of the galaxy)
+``REFBAND_WIDTH``                                  float32    pixel                                          Width of the optical mosaics in ``REFBAND``
+``REFBAND_HEIGHT``                                 float32    pixel                                          Height of the optical mosaics in ``REFBAND`` (always equal to ``REFBAND_WIDTH``)
+``[G,R,Z]_SMA``                                    float32    pixel
+``[G,R,Z]_EPS``                                    float32
+``[G,R,Z]_EPS_ERR``                                float32
+``[G,R,Z]_PA``                                     float32    degree
+``[G,R,Z]_PA_ERR``                                 float32    degree
+``[G,R,Z]_INTENS``                                 float32    :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`
+``[G,R,Z]_INTENS_ERR``                             float32    :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`
+``[G,R,Z]_X0``                                     float32    pixel
+``[G,R,Z]_X0_ERR``                                 float32    pixel
+``[G,R,Z]_Y0``                                     float32    pixel
+``[G,R,Z]_Y0_ERR``                                 float32    pixel
+``[G,R,Z]_A3``                                     float32
+``[G,R,Z]_A3_ERR``                                 float32
+``[G,R,Z]_A4``                                     float32
+``[G,R,Z]_A4_ERR``                                 float32
+``[G,R,Z]_RMS``                                    float32    :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`
+``[G,R,Z]_PIX_STDDEV``                             float32    :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`
+``[G,R,Z]_STOP_CODE``                              int16
+``[G,R,Z]_NDATA``                                  int16
+``[G,R,Z]_NFLAG``                                  int16
+``[G,R,Z]_NITER``                                  int16
+``[G,R,Z]_COG_SMA``                                float32    pixel
+``[G,R,Z]_COG_MAG``                                float32    mag
+``[G,R,Z]_COG_MAGERR``                             float32    mag
+``[G,R,Z]_COG_PARAMS_MTOT``                        float32    mag
+``[G,R,Z]_COG_PARAMS_M0``                          float32    mag
+``[G,R,Z]_COG_PARAMS_ALPHA1``                      float32
+``[G,R,Z]_COG_PARAMS_ALPHA2``                      float32
+``[G,R,Z]_COG_PARAMS_CHI2``                        float32
+``RADIUS_SB[23,23.5,24,24.5,25,25.5,26]``          float32
+``RADIUS_SB[23,23.5,24,24.5,25,25.5,26]_ERR``      float32
+``[G,R,Z]_MAG_SB[23,23.5,24,24.5,25,25.5,26]``     float32
+``[G,R,Z]_MAG_SB[23,23.5,24,24.5,25,25.5,26]_ERR`` float32
+================================================== ========== ============================================== ===============================================
+
+.. _`this FAQ`: https://photutils.readthedocs.io/en/stable/isophote_faq.html#why-use-ellipticity-instead-of-the-canonical-ellipse-eccentricity

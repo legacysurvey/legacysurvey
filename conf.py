@@ -71,6 +71,7 @@ NAVIGATION_LINKS = {
             ("/dr9/catalogs", 'Catalogs'),
             ("/dr9/updates", 'Updates'),
             ("/dr9/bitmasks", 'Bitmasks'),
+            ("/dr9/sga", 'The SGA'),
             ("/dr9/external", 'External Catalogs'),
             ("/dr9/issues", 'Known Issues'),
             ), 'DR9'),

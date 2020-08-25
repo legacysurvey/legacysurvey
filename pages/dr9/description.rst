@@ -301,9 +301,11 @@ PSF
 
 The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
-using `PSFEx`_, generating spatially-varying pixelized models. Note that it is possible that
+using `PSFEx`_, generating spatially varying pixelized models. Note that it is possible that
 ``survey-*`` and ``*-annotated-*`` `files`_ could record information
 that is missing from other files in cases where `PSFEx`_ fails. This is `expected behavior`_.
+
+Starting with DR9, a `modified, extended PSF model`_ is used to subtract the extended wings of bright stars from DECam images.
 
 The configuration files for SExtractor and `PSFEx`_ that were used for a given
 iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
@@ -311,6 +313,7 @@ iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our Gi
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
 .. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
 .. _`expected behavior`: https://github.com/legacysurvey/legacypipe/issues/349
+.. _`modified, extended PSF model`: ../psf
 
 Sky Level
 =========

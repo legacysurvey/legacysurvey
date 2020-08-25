@@ -33,31 +33,7 @@ Algorithmic changes for optical data
 
   - After a first round of fits, the data-model residuals are calculated and a second round of fits is conducted.
 
-* A modified, extended PSF model is now used to subtract the extended wings of bright stars from DECam images. The model is symmetric (which is a good approximation for DECam images), and it is a linear combination of two components:
-
-  - A flexible inner PSF, which is a Moffat fit to the PSFEx image:
-
-    * :math:`f_{\mathrm{Moffat}} = \frac{\beta-1}{\pi \alpha^2} \left[1 + \frac{r}{\alpha^2}\right]^{-\beta}`
-
-  - This formula gives a total flux of unity by definition. Its two free parameters, :math:`\alpha` and :math:`\beta`, are obtained by fitting to the PSFEx image of each CCD. Only PSFEx pixels between 1.8 and 5 arcsec in radius (:math:`r`) are used in the fit.
-
-  - A fixed outer PSF, which is either a power law (for :math:`g`- and :math:`r`-bands):
-
-    * :math:`f_g = 0.00045 r^{-2}`
-
-    * :math:`f_r = 0.00033 r^{-2}`
-
-  - or a Moffat profile (for :math:`z`-band):
-
-    * For most CCDs, the Moffat parameters (with radius in arcsec and SB in nmgy per sq arcsec) and the weight are (for a 22.5 magnitude star):
-
-      - :math:`[\alpha, \beta, weight] = [17.650, 1.7, 0.0145]`
-
-    * However, a small subset of DECam CCDs (N20, S8, S10, S18, S21 and S27) have a more compact outer PSF in the :math:`z`-band, which is characterized using:
-
-      - :math:`[\alpha, \beta, weight] = [16, 2.3, 0.0095]`
-
-  - A complete description of the new PSF model, with examples, is `available for DESI collaborators`_.
+* A `modified, extended PSF model`_ is now used to subtract the extended wings of bright stars from DECam images.
 
   - This updated PSF model leads to different sky levels.
 
@@ -85,6 +61,7 @@ Algorithmic changes for optical data
 
     * Some additional galaxies, beyond those that were included for DR8, have been added to the `SGA`_ large galaxy catalog for DR9.
 
+.. _`modified, extended PSF model`: ../psf
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
 .. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html

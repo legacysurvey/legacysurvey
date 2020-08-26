@@ -31,6 +31,8 @@ Algorithmic changes for optical data
 
 * Changes in the CP (in particular the switch from dark sky flats to `DES`_ star flats) produced residual sky patterns `that have been corrected`_.
 
+* New `fringe templates (and scaling)`_ were applied instead of the CP fringe correction for :math:`z\hbox{-}\mathrm{band}` `DECaLS`_ imaging.
+
 * The Tractor pipeline now includes iterative fitting:
 
   - After a first round of fits, the data-model residuals are calculated and a second round of fits is conducted.
@@ -75,6 +77,7 @@ Algorithmic changes for optical data
 .. _`McConnachie (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M/abstract
 .. _`DES`: https://www.darkenergysurvey.org
 .. _`that have been corrected`: ../sky
+.. _`fringe templates (and scaling)`: ../fringe
 
 Algorithmic changes for WISE
 ============================

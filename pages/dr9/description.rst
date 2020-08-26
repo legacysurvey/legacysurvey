@@ -321,12 +321,12 @@ Sky Level
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single, scaled fringe pattern. These steps are described on the `NSF's OIR Lab Community Pipeline`_
 page.
-This makes the sky level in the processed images near zero, and removes most pattern artifacts.
-A constant sky level is then added back to the image that is the mean of what was removed.
+These corrections are intended to make the sky level in the processed images near zero, and to remove most pattern artifacts.
+A constant sky level, that is the mean of what was removed, is then added back to the image.
 
 Additionally, a spatially varying (spline) sky model is computed and removed, by detecting and masking sources, then computing medians in
 sliding 512-pixel boxes. The `image stacks`_ provided on the `files`_ page have this sky level
-removed. As noted under **Source Detection**, above, any regions (blobs) covered by foreground sources
+removed. As noted under `Source Detection`_, above, any regions (blobs) covered by foreground sources
 are specially treated.
 
 Changes in the Community Pipeline after `DR8`_ (in particular the switch to using star flats from
@@ -335,7 +335,14 @@ residual sky patterns in DECam images. These patterns exist in all three optical
 (:math:`grz`), with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting
 with DR9, we `correct DECaLS images to account for these residual sky patterns`_.
 
+In addition, a new set of fringe templates was created for DECam :math:`z\hbox{-}\mathrm{band}` images for DR9, with
+associated per-exposure fringe scale factors.
+For DR9, `these fringe templates and scale factors`_ replace the fringe correction applied by the Community Pipeline for
+DECam imaging in the :math:`z\hbox{-}\mathrm{band}`.
+
 .. _`correct DECaLS images to account for these residual sky patterns`: ../sky
+.. _`these fringe templates and scale factors`: ../fringe
+.. _`Source Detection`: #source-detection
 
 Tractor Catalogs
 ================

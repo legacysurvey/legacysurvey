@@ -12,7 +12,7 @@
 
 *Page author and contact:* `Rongpu Zhou`_
 
-.. _`Rongpu Zhou`: http://localhost:8000/contact/#other-experts
+.. _`Rongpu Zhou`: ../../contact/#other-experts
 
 Starting with DR9, we supply a new quantity called *noise equivalent area* (NEA) in the `Tractor catalogs`_ (and downstream products).
 The NEA measures the scaling between the inverse variance (IVAR) of the flux measurement and the noise level of the sky background. In units of

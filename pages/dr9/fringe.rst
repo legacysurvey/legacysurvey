@@ -12,7 +12,7 @@
 
 *Page author and contact:* `Rongpu Zhou`_
 
-.. _`Rongpu Zhou`: http://localhost:8000/contact/#other-experts
+.. _`Rongpu Zhou`: ../../contact/#other-experts
 
 A new set of fringe templates was created for DECam :math:`z\hbox{-}\mathrm{band}` images for DR9. This page describes the procedure for generating the templates
 and the per-exposure fringe scale factors. These fringe templates and scales replace the fringe correction applied by the `Community Pipeline`_ (henceforth CP) for

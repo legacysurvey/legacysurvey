@@ -12,7 +12,7 @@
 
 *Page author and contact:* `Rongpu Zhou`_
 
-.. _`Rongpu Zhou`: http://localhost:8000/contact/#other-experts
+.. _`Rongpu Zhou`: ../../contact/#other-experts
 
 Changes in the `DECam Community Pipeline`_ (henceforth CP) between `DR8`_ and `DR9`_ of the Legacy Surveys (in particular the switch from dark sky flats to `DES`_
 star flats) led to residual sky patterns with a sufficiently high amplitude to, *e.g.*, significantly impact `DESI target selection`_. The

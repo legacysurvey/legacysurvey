@@ -180,12 +180,12 @@ Name                                  Type         Units                 Descrip
 ``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``galdepth_z``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
-``nea_g``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`g`. Can be used to predict the inverse variance of a source's flux from the pixel-level weight map via :math:`invvar \equiv 1/(σ_{\rm pix}^2 \times \mathtt{nea})`
-``nea_r``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`r`.
-``nea_z``                             float32      arcsec\ |sup2|        Noise-equivalent area in :math:`z`.
-``blob_nea_g``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`g`.
-``blob_nea_r``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`r`.
-``blob_nea_z``                        float32      arcsec\ |sup2|     	 Blob-masked noise-equivalent area in :math:`z`.
+``nea_g``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`g`.
+``nea_r``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`r`.
+``nea_z``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`z`.
+``blob_nea_g``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`g`.
+``blob_nea_r``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`r`.
+``blob_nea_z``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`z`.
 ``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W1
 ``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W2
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
@@ -221,6 +221,8 @@ Name                                  Type         Units                 Descrip
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`coadd file`: ../files/#image-stacks-region-coadd
 .. _`DR9 updates page`: ../updates/#data-model-changes
+.. _`Noise equivalent area`: ../nea
+.. _`Blob-masked noise equivalent area`: ../nea
 
 Goodness-of-Fits and Morphological ``type``
 -------------------------------------------

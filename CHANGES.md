@@ -16,12 +16,12 @@
     - Addresses [issue #109](https://github.com/legacysurvey/legacysurvey/issues/109)
       through 2020-08-26.
     - Addresses [issue #106](https://github.com/legacysurvey/legacysurvey/issues/106),
-      [issue #110](https://github.com/legacysurvey/legacysurvey/issues/110),
-      [issue #113](https://github.com/legacysurvey/legacysurvey/issues/113),
-      [issue #114](https://github.com/legacysurvey/legacysurvey/issues/114),
-      [issue #115](https://github.com/legacysurvey/legacysurvey/issues/115),
-      [issue #118](https://github.com/legacysurvey/legacysurvey/issues/118) and
-      [issue #119](https://github.com/legacysurvey/legacysurvey/issues/119).
+      [#110](https://github.com/legacysurvey/legacysurvey/issues/110),
+      [#113](https://github.com/legacysurvey/legacysurvey/issues/113),
+      [#114](https://github.com/legacysurvey/legacysurvey/issues/114),
+      [#115](https://github.com/legacysurvey/legacysurvey/issues/115),
+      [#118](https://github.com/legacysurvey/legacysurvey/issues/118) and
+      [#119](https://github.com/legacysurvey/legacysurvey/issues/119).
 
 ## 8.0.3 (DR8, 2020-01-20)
 

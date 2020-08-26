@@ -79,8 +79,8 @@ The sky-corrected image can be calculated as:
 
 :math:`\mathrm{image\_corrected} = \mathrm{image\_original} - \mathrm{skyscale} \times \mathrm{template}`
 
-Special steps were taken for certain :math:`r\hbox{-}\mathrm{band}` images that were affected by edge glow in early DECam exposures. In adition, the following
-DECam CCDs also undergo special handling:
+Special steps were taken for certain :math:`r\hbox{-}\mathrm{band}` images that were affected by edge glow in early DECam exposures. In addition, the following
+`DECam CCDs`_ also undergo special handling:
 
 - ``N10`` (because for certain nights, only half of the CCD is stable)
 - ``N15`` (because it is tarnished by a large hot spot on some nights)
@@ -89,10 +89,10 @@ DECam CCDs also undergo special handling:
 
 Code
 ====
-The code used to correct for sky patters for DR9 of the Legacy Surveys is `available on GitHub`_.
+The code used to correct for sky patterns for DR9 of the Legacy Surveys is `available on GitHub`_.
 
 .. _`available on GitHub`: https://github.com/rongpu/desi-misc/tree/master/sky_pattern
-
+.. _`DECam CCDs`: http://www.ctio.noao.edu/noao/content/decam-what
 
 Additional Information and Products
 ===================================

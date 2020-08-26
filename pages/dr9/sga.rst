@@ -10,10 +10,13 @@
 
 .. contents::
 
+*Page author and contact:* `John Moustakas`_
+
+.. _`John Moustakas`: http://localhost:8000/contact/#other-experts
 
 The Siena Galaxy Atlas (SGA) is an angular diameter-limited sample of galaxies constructed as part of the DESI Legacy Imaging Surveys. It provides
 custom, wide-area, optical and infrared mosaics (in :math:`grz` and :math:`W1-W4`), azimuthally averaged surface brightness profiles, and both aperture and integrated
-photometry for a sample of approximately 400,000 galaxies over :math:`20,000\,\mathrm{deg}^2`.
+photometry for a sample of approximately 400,000 galaxies over :math:`20{,}000\,\mathrm{deg}^2`.
 
 All the code used to generate and analyze the catalog is publicly available:
 

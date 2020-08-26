@@ -10,6 +10,9 @@
 
 .. contents::
 
+*Page author and contact:* `Rongpu Zhou`_
+
+.. _`Rongpu Zhou`: http://localhost:8000/contact/#other-experts
 
 Starting with DR9, we use an extended PSF model to subtract the extended wings of bright stars from DECam images for `DECaLS`_. The model is symmetric (which is
 a good approximation for DECam images), and is a linear combination of two components:

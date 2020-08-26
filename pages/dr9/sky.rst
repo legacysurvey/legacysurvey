@@ -10,8 +10,12 @@
 
 .. contents::
 
+*Page author and contact:* `Rongpu Zhou`_
+
+.. _`Rongpu Zhou`: http://localhost:8000/contact/#other-experts
+
 Changes in the `DECam Community Pipeline`_ (henceforth CP) between `DR8`_ and `DR9`_ of the Legacy Surveys (in particular the switch from dark sky flats to `DES`_
-starflats) led to residual sky patterns with a sufficiently high amplitude to, *e.g.*, significantly impact `DESI target selection`_. The
+star flats) led to residual sky patterns with a sufficiently high amplitude to, *e.g.*, significantly impact `DESI target selection`_. The
 sky residual patterns exist in all three bands (:math:`grz`), with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting
 with `DR9`_, we additionally correct `DECaLS`_ images to account for the residual sky pattern from the `CP`_. Below, we include some representative
 :math:`z\hbox{-}\mathrm{band}` exposures from `DR8`_ imaging, and from `DR9`_ imaging before and after applying the sky correction described on this page:

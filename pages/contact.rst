@@ -47,6 +47,7 @@ BASS Contact:
 
 Image Quality:
     * Eddie Schlafly  eschlafly@gmail.com
+    * Rongpu Zhou   rongpuzhou@lbl.gov
 
 Astro Data Lab [#]_ Contact:
     * Stephanie Juneau  juneau@noao.edu
@@ -62,6 +63,12 @@ Website and Documentation:
 Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
     * Benjamin Weaver  baweaver@lbl.gov
+
+SGA:
+    * John Moustakas  jmoustakas@siena.edu
+
+Photometric Redshifts:
+    * Rongpu Zhou   rongpuzhou@lbl.gov
 
 DESI Target Selection:
     * Christophe Yeche  christophe.yeche@cea.fr

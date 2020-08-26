@@ -27,7 +27,9 @@ Algorithmic changes for optical data
 
     * Notably, `cosmic rays are no longer masked`_ by the CP.
 
-  - The CP now has improved star-flats fit across all of the imaging.
+  - The CP now has improved star flats fit across all of the imaging.
+
+* Changes in the CP (in particular the switch from dark sky flats to `DES`_ star flats) produced residual sky patterns `that have been corrected`_.
 
 * The Tractor pipeline now includes iterative fitting:
 
@@ -71,6 +73,8 @@ Algorithmic changes for optical data
 .. _`globular cluster and planetary nebula`: ../external/#globular-clusters-planetary-nebulae
 .. _`Vizier`: https://vizier.u-strasbg.fr/viz-bin/VizieR
 .. _`McConnachie (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M/abstract
+.. _`DES`: https://www.darkenergysurvey.org
+.. _`that have been corrected`: ../sky
 
 Algorithmic changes for WISE
 ============================

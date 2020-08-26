@@ -327,8 +327,15 @@ A constant sky level is then added back to the image that is the mean of what wa
 Additionally, a spatially varying (spline) sky model is computed and removed, by detecting and masking sources, then computing medians in
 sliding 512-pixel boxes. The `image stacks`_ provided on the `files`_ page have this sky level
 removed. As noted under **Source Detection**, above, any regions (blobs) covered by foreground sources
-are treated specially.
+are specially treated.
 
+Changes in the Community Pipeline after `DR8`_ (in particular the switch to using star flats from
+the `Dark Energy Survey`_ instead of dark sky flats) created
+residual sky patterns in DECam images. These patterns exist in all three optical bands
+(:math:`grz`), with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting
+with DR9, we `correct DECaLS images to account for these residual sky patterns`_.
+
+.. _`correct DECaLS images to account for these residual sky patterns`: ../sky
 
 Tractor Catalogs
 ================
@@ -438,7 +445,7 @@ would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system implies that no color terms have been applied to any of the photometry, meaning
 that fluxes are reported as observed in the `90Prime`_, `Mosaic-3`_ and `DECam`_ filter systems.
 
-Zero point magnitudes for the CP reductions of the `90Prime`_, `Mosaic-3`_ and `DECam`_ images
+Zero point magnitudes for the Community Pipeline reductions of the `90Prime`_, `Mosaic-3`_ and `DECam`_ images
 were computed by comparing Legacy Survey PSF photometry to
 `Pan-STARRS1 (PS1) PSF photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the `90Prime`_, `Mosaic-3`_ or `DECam`_ system.  The same color terms

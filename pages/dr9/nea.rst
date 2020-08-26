@@ -27,12 +27,12 @@ where pixel represents the pixel values of the model. See `King (1983)`_ for the
 In theory, given the variance map and the NEA values, one can estimate the flux error of a source. One of the use cases of the NEA for
 the Legacy Surveys will be to model the effects of varying depth and seeing on `DESI`_ target selection: given the "truth" photometry
 from deep imaging, we can estimate the scatter in the photometry from shallower imaging using the NEA and the per-pixel depth. The NEA
-can also be used to correct for offsets in the photometry due to sky-subtraction residuals. 
+can also be used to correct for offsets in the photometry due to sky-subtraction residuals.
 
 The utility of the NEA for predicting flux errors relies on several assumptions:
 
 - The photometric noise is dominated by the sky background. This should hold for sources with relatively low surface brightness, *e.g.* faint galaxies.
-- The pixel-level variance is constant over the extent of the source. 
+- The pixel-level variance is constant over the extent of the source.
 - The morphology of the source is perfectly known.
 
 .. _`Tractor catalogs`: ../catalogs
@@ -63,7 +63,7 @@ and, is also the sum of the per-image inverse variance:
 
 :math:`\mathrm{IVAR}_\mathrm{tot} = \sum{\mathrm{IVAR}_i} = \sum \frac{1}{\sigma^2_{\mathrm{pix,}i} \times \mathrm{NEA}_i}`  .
 
-In the `legacypipe`_ software used to process the Legacy Surveys imaging, the effective (combined) pixel-level variance :math:`\sigma_\mathrm{pix,eff}` is given by: 
+In the `legacypipe`_ software used to process the Legacy Surveys imaging, the effective (combined) pixel-level variance :math:`\sigma_\mathrm{pix,eff}` is given by:
 
 :math:`\frac{1}{\sigma^2_\mathrm{pix,eff}} = \sum\frac{1}{\sigma^2_{\mathrm{pix,}i}}`
 
@@ -112,7 +112,7 @@ version of the NEA calculation, and, hence, the ``blobnea`` value increases with
 have larger noise for the same pixel-level variance.
 
 The ``blobnea`` values use the coadd per-pixel inverse variance in the denominator of **Eq. 3** (instead of :math:`\sum[1/\sigma^2_{\mathrm{pix,}i}]`). The
-coadd per-pixel inverse variance can be obtained using the ``psfsize`` and ``psfdepth`` values from the `Tractor catalogs`_ as follows: 
+coadd per-pixel inverse variance can be obtained using the ``psfsize`` and ``psfdepth`` values from the `Tractor catalogs`_ as follows:
 
 :math:`1/\sigma^2_\mathrm{pix,coadd} = \mathtt{psfdepth} \times [4 \times \pi \times (\mathtt{psfsize}/2.3548)^2]`
 
@@ -126,7 +126,7 @@ The two versions of NEA agree within 1% (10%) for 90% (97%) of all sources. The 
 sky background. The ``blobnea`` version should be more accurate for predicting the flux errors via:
 
 :math:`\mathrm{flux\_ivar\_predict} = \mathtt{psfdepth} \times [4 \times \pi \times (\mathtt{psfsize}/2.3548)^2] \, / \, \mathtt{blobnea}`
-      
+
 The plot below shows a comparison between ``flux_ivar_g`` from tractor and the predicted ``flux_ivar_g`` using ``blobnea``. At bright magnitudes, the NEA
 overestimates ``flux_ivar`` because the sources are bright compared to the sky (although the deviation can be easily corrected for point sources). The
 agreement is better than a few percent for faint sources.

@@ -2,11 +2,10 @@
 
 ## Unreleased
 
-- Initial updates for DR9 ([PR#116](https://github.com/legacysurvey/legacysurvey/pull/116)). Includes:
+- Initial updates for DR9 ([PR#116](https://github.com/legacysurvey/legacysurvey/pull/116)).
+  Includes:
     - New fringe, sky-level, NEA, psf documentation from Rongpu.
     - Preliminary SGA documentation from John. Changed LSLGA->SGA.
-    - Address everything in issue `#109`_ through 2020-08-26.
-    - Addresses issues `#106`_, `#110`_, `#113`_, `#114`_, `#115`_, `#118`_, `#119`_.
     - Update URLs, where possible, to https instead of http.
     - Near-final data model (pending final DR9 files and organization).
     - Updated publications through 2020-08-11.
@@ -14,15 +13,15 @@
     - Update NERSC directory names to the Community File System.
     - Add documentation for the ``CCD_CUTS`` and ``FITBITS`` bit-masks.
     - Preliminary changes where information will need finalized (XXX).
-
-.. _`#106`: https://github.com/legacysurvey/legacysurvey/issues/106
-.. _`#109`: https://github.com/legacysurvey/legacysurvey/issues/109
-.. _`#110`: https://github.com/legacysurvey/legacysurvey/issues/110
-.. _`#113`: https://github.com/legacysurvey/legacysurvey/issues/113
-.. _`#114`: https://github.com/legacysurvey/legacysurvey/issues/114
-.. _`#115`: https://github.com/legacysurvey/legacysurvey/issues/115
-.. _`#118`: https://github.com/legacysurvey/legacysurvey/issues/118
-.. _`#119`: https://github.com/legacysurvey/legacysurvey/issues/119
+    - Addresses [issue #109](https://github.com/legacysurvey/legacysurvey/issues/109)
+      through 2020-08-26.
+    - Addresses [issue #106](https://github.com/legacysurvey/legacysurvey/issues/106),
+      [issue #110](https://github.com/legacysurvey/legacysurvey/issues/110),
+      [issue #113](https://github.com/legacysurvey/legacysurvey/issues/113),
+      [issue #114](https://github.com/legacysurvey/legacysurvey/issues/114),
+      [issue #115](https://github.com/legacysurvey/legacysurvey/issues/115),
+      [issue #118](https://github.com/legacysurvey/legacysurvey/issues/118) and
+      [issue #119](https://github.com/legacysurvey/legacysurvey/issues/119).
 
 ## 8.0.3 (DR8, 2020-01-20)
 

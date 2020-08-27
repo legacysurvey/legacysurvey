@@ -9,7 +9,7 @@
 .. _`BASS`: ../bass
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 .. _`files page`: ../dr4/files
 .. _`legacypipe`: https://github.com/legacysurvey/legacypipe
 

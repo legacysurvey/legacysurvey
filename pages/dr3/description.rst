@@ -27,7 +27,7 @@ the Blanco Telescope.
 
 Data Release 3 (DR3) is the third public data release of images and catalogs for
 the DECam Legacy Survey (DECaLS). Images from DECaLS
-g,r,z-band observations (NOAO survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+g,r,z-band observations (NSF's OIR Lab survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
 are included from August 2014 through March 2016. DR3 also includes DECam data from a range of 
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
@@ -56,14 +56,14 @@ Size*   Directory    Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/calib/
-.. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/coadd/
-.. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/external/
-.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/gallery/
-.. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/logs/
-.. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/metrics/
-.. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/
-.. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/tractor/
+.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/calib/
+.. _`coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/coadd/
+.. _`external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/gallery/
+.. _`logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/logs/
+.. _`metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/metrics/
+.. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/
+.. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/tractor/
 
 The co-added images and Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
@@ -79,23 +79,26 @@ Obtaining Images and Raw Data
 ==============================
 
 Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOAO portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.27&bands=grz
 
 where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
 maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native DECam pixels.
 
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
+
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`files`: ../files
-.. _`the Sky viewer`: http://legacysurvey.org/viewer
-.. _`the NOAO portal`: http://archive.noao.edu/search/query
+.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
+.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -127,7 +130,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
-http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
 
@@ -209,7 +212,7 @@ Google.
 
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
 under *Morphological Classification*) are approximated
-with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563)
+with mixture-of-gaussian (MoG) models (https://arxiv.org/abs/1210.6563)
 and are convolved by the pixelized PSF models using a new Fourier-space
 method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
@@ -313,7 +316,7 @@ Code Versions
 =============
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
-* NOAO Community Pipeline: mixture of versions; recorded as PLVER.
+* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as PLVER.
 * SourceExtractor 2.19.5, PSFEx 3.17.1
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
 * `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr3
@@ -330,11 +333,11 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (DECam reduction pipeline operated by NOAO;
-    http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    Community Pipeline (DECam reduction pipeline operated by the NSF's OIR Lab;
+    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
+    `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org>`_.
 
 DR2
     DECam Legacy Survey Data Release 2.
@@ -343,7 +346,7 @@ DR3
     DECam Legacy Survey Data Release 3.
 
 DECam
-    Dark Energy Camera on the NOAO Blanco 4-meter telescope.
+    Dark Energy Camera on the Blanco 4-meter telescope.
 
 maggie
     Linear flux units, where an object with an AB magnitude of 0 has a
@@ -351,10 +354,10 @@ maggie
     corresponds to an AB magnitude of 22.5.
 
 MoG
-    Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).
+    Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
-NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+NSF's OIR Lab
+    `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux
@@ -367,7 +370,7 @@ PSFEx
     `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
-    `Sloan Digital Sky Survey <http://www.sdss.org>`_.
+    `Sloan Digital Sky Survey <https://www.sdss.org>`_.
 
 SDSS DR12
     `Sloan Digital Sky Survey Data Release 12 <https://www.sdss.org/dr12/>`_.
@@ -382,14 +385,14 @@ SourceExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://adsabs.harvard.edu/abs/1998ApJ...500..525S).
+    Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.
 
 unWISE
     New coadds of the WISE imaging, at original full resolution
-    (http://unwise.me, http://arxiv.org/abs/1405.0308).
+    (http://unwise.me, https://arxiv.org/abs/1405.0308).
 
 WISE
     `Wide Infrared Survey Explorer <http://wise.ssl.berkeley.edu>`_.

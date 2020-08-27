@@ -9,7 +9,7 @@
 .. _`BASS`: ../bass
 .. _`DECaLS`: ../decamls
 .. _`MzLS`: ../mzls
-.. _`DESI`: http://desi.lbl.gov
+.. _`DESI`: https://desi.lbl.gov
 .. _`DR7`: ../dr7
 .. _`DR8`: ../dr8
 

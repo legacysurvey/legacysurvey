@@ -60,14 +60,14 @@ Size*   Directory    Description
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/calib/
-.. _`coadd/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/coadd/
-.. _`external/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/external/
-.. _`gallery/`: https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/gallery/
-.. _`logs/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/logs/
-.. _`metrics/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/metrics/
-.. _`sweep/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/sweep/
-.. _`tractor/`: http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/tractor/
+.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/calib/
+.. _`coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/coadd/
+.. _`external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/external/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/gallery/
+.. _`logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/logs/
+.. _`metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/metrics/
+.. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/sweep/
+.. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr2/tractor/
 
 The co-added images and Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
@@ -87,16 +87,19 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service as follows:
 
-JPEG: http://legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
 
-FITS: http://legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
+FITS: https://www.legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
 
 where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
 maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native DECam pixels.
 
+See also the `list of URL/cutout patterns that are supported by the viewer`_.
+
+.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`files`: ../files
-.. _`the Sky viewer`: http://legacysurvey.org/viewer
+.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOAO portal`: http://portal-nvo.noao.edu/
 
 Source Detection
@@ -131,7 +134,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
-http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
 
@@ -214,7 +217,7 @@ Ceres solver (http://ceres-solver.org), originally developed by
 Google.
 
 The galaxy profiles are approximated
-with mixture-of-gaussian (MoG) models (http://arxiv.org/abs/1210.6563)
+with mixture-of-gaussian (MoG) models (https://arxiv.org/abs/1210.6563)
 and are convolved by the pixelized PSF models using a new Fourier-space
 method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
@@ -336,10 +339,10 @@ Brick
 
 CP
     Community Pipeline (DECam reduction pipeline operated by NOAO;
-    http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
-    `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
+    `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org>`_.
 
 DR2
     DECam Legacy Survey Data Release 2, January 2016.
@@ -353,7 +356,7 @@ maggie
     corresponds to an AB magnitude of 22.5.
 
 MoG
-    Mixture-of-gaussian model to approximate the galaxy models (http://arxiv.org/abs/1210.6563).
+    Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
 NOAO
     `National Optical Astronomy Observatory <http://www.noao.edu>`_.
@@ -369,7 +372,7 @@ PSFEx
     `Emmanuel Bertin's PSF fitting code <http://www.astromatic.net/software/psfex>`_.
 
 SDSS
-    `Sloan Digital Sky Survey <http://www.sdss.org>`_.
+    `Sloan Digital Sky Survey <https://www.sdss.org>`_.
 
 SDSS DR12
     `Sloan Digital Sky Survey Data Release 12 <https://www.sdss.org/dr12/>`_.
@@ -381,14 +384,14 @@ SourceExtractor
     `Source Extractor reduction code <http://www.astromatic.net/software/sextractor>`_.
 
 SFD98
-    Schlegel, Finkbeiner & Davis 1998 extinction maps (http://adsabs.harvard.edu/abs/1998ApJ...500..525S).
+    Schlegel, Finkbeiner & Davis 1998 extinction maps (https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Tractor
     `Dustin Lang's inference code <https://github.com/dstndstn/tractor>`_.
 
 unWISE
     New coadds of the WISE imaging, at original full resolution
-    (http://unwise.me, http://arxiv.org/abs/1405.0308).
+    (http://unwise.me, https://arxiv.org/abs/1405.0308).
 
 WISE
     `Wide Infrared Survey Explorer <http://wise.ssl.berkeley.edu>`_.

@@ -26,7 +26,7 @@ DR1 and DR2 coadd files have been deprecated
 
 On August 23rd, 2018, the DR1 and DR2 coadd directories were removed to
 save space. Data from those directories is still 
-available via FTP from the NOAO archive for `DR1`_ and `DR2`_.
+available via FTP from the Astro Data Lab's archive for `DR1`_ and `DR2`_.
 
 Spurious extended sources exist across brick boundaries
 =======================================================

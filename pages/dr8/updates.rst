@@ -14,7 +14,7 @@ This page briefly documents those updates.
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
-.. _`Gaia Data Release 2`: http://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`Gaia Data Release 2`: https://gaia.esac.esa.int/documentation/GDR2/index.html
 
 Algorithmic changes for optical data
 ====================================
@@ -87,4 +87,4 @@ Data model changes
 
 .. _`DR7`: ../../dr7/description
 .. _`DR8 bitmasks page`: ../bitmasks
-.. _`Aaron Meisner's unWISE documentation`: http://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf
+.. _`Aaron Meisner's unWISE documentation`: https://catalog.unwise.me/files/unwise_bitmask_writeup-03Dec2018.pdf

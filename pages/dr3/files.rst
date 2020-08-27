@@ -13,18 +13,18 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/
 
 Top level directory for web access to dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/sweep/3.1/
 
 .. _`known issues`: ../issues
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/
 
 Top level directory local to NERSC computers for dr3.1 sweeps (see `known issues`_ for a description of dr3.1):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/sweep/3.1/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/sweep/3.1/
 
 Summary Files
 =============
@@ -88,7 +88,7 @@ Column          Type     Description
 ``trans_z``     float32  Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``DECAM_MW_TRANSMISSION``.
 =============== ======== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
+Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``DECAM_MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
@@ -121,7 +121,7 @@ Column             Type       Description
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
 ``ha``             char[13]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``        float      Airmass, eg 1.35.
-``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
+``propid``         char[10]   NSF OIR Lab's Proposal ID that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
 ``avsky``          float      Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``       float      Average gain for this CCD, eg 4.34.
@@ -289,10 +289,10 @@ External Files
 ==============
 
 The DECaLS photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/external/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr3/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr3/external/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
@@ -309,34 +309,32 @@ survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
 specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
-.. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr13.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr3-DR12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
-visually inspected quasar catalog (`Paris et al. 2016`_)
+visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr3-Superset_DR12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
-confirmed objects that were visually inspected as possible quasars 
-(Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
+confirmed objects that were visually inspected as possible quasars (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
 survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`Paris et al. 2014`: http://adsabs.harvard.edu/abs/2014A%26A...563A..54P
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr3-DR7Q.fits
 ---------------------
@@ -348,8 +346,8 @@ survey-dr3-DR7Q.fits matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
-.. _`Schneider et al. 2010`: http://adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
+.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S/abstract
+.. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
 Tractor Catalogs
@@ -375,7 +373,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
+Users interested in database access to the Tractor Catalogs can contact the Astro Data Lab [1]_ at datalab@noao.edu.
 
 Sweep Catalogs
 ==============
@@ -548,7 +546,7 @@ the colors.
 Raw Data
 ========
 
-Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
 project, as well as other DECam images. 
@@ -556,7 +554,7 @@ project, as well as other DECam images.
 (i) Web interface
 -----------------
 
-1. Query the `NOAO Science Archive`_.
+1. Query the `Astro Data Lab's Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. DECaLS-DR3).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
@@ -564,7 +562,7 @@ project, as well as other DECam images.
 6. For DECaLS only images, refine the search by Proposal ID (2014B-0404) in the "Refine" tab.
 7. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`NOAO Science Archive`: http://archive.noao.edu/search/query
+.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
@@ -610,5 +608,12 @@ Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060
    File Count: 2
 
 In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.
+
+
+|
+
+**Footnotes**
+
+.. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.
 
 

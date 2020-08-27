@@ -84,12 +84,12 @@ Name                                  Type         Units                 Descrip
 ``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W2
 ``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W3
 ``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of FLUX_W4
-``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from this object in 1 arcsec Gaussian seeing
-``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
-``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber from all sources at this location in 1 arcsec Gaussian seeing
+``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``apflux_g``                          float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`g`
 ``apflux_r``                          float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`r`
 ``apflux_z``                          float32[8]   nanomaggies           aperture fluxes on the co-added images in apertures of radius [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in :math:`z`
@@ -180,13 +180,13 @@ Name                                  Type         Units                 Descrip
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
-.. _`Tycho-2`: https://heasarc.nasa.gov/W3Browse/all/tycho2.html
+.. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 
 
 Mask Values
 -----------
 
-The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NOAO Community Pipeline) Data Quality bits.
+The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NSF's OIR Lab Community Pipeline) Data Quality bits.
 
 === ===== =========================== ==================================================
 Bit Value Name                        Description
@@ -202,7 +202,7 @@ Bit Value Name                        Description
  10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
 === ===== =========================== ==================================================
 
-.. _`CP Data Quality bit description`: http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`CP Data Quality bit description`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 Goodness-of-Fits
 ----------------
@@ -250,12 +250,12 @@ The coefficients for the four WISE filters are derived from `Fitzpatrick (1999)`
 considered better than either the `Cardelli et al. (1989)`_ curves or the newer `Fitzpatrick & Massa (2009)`_ NIR curve (which is not vetted beyond 2 microns).
 These coefficients are :math:`A / E(B-V)` = 0.184,  0.113, 0.0241, 0.00910.
 
-.. _`SFD98`: http://adsabs.harvard.edu/abs/1998ApJ...500..525S
-.. _`Schlafly & Finkbeiner (2011)`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Schlafly & Finkbeiner 2011`: http://adsabs.harvard.edu/abs/2011ApJ...737..103S
-.. _`Fitzpatrick (1999)`: http://adsabs.harvard.edu/abs/1999PASP..111...63F
-.. _`Cardelli et al. (1989)`: http://adsabs.harvard.edu/abs/1989ApJ...345..245C
-.. _`Fitzpatrick & Massa (2009)`: http://adsabs.harvard.edu/abs/2009ApJ...699.1209F
+.. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
+.. _`Schlafly & Finkbeiner (2011)`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Schlafly & Finkbeiner 2011`: https://ui.adsabs.harvard.edu/abs/2011ApJ...737..103S/abstract
+.. _`Fitzpatrick (1999)`: https://ui.adsabs.harvard.edu/abs/1999PASP..111...63F/abstract
+.. _`Cardelli et al. (1989)`: https://ui.adsabs.harvard.edu/abs/1989ApJ...345..245C/abstract
+.. _`Fitzpatrick & Massa (2009)`: https://ui.adsabs.harvard.edu/abs/2009ApJ...699.1209F/abstract
 
 Ellipticities
 -------------

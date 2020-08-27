@@ -13,10 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr4/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr4/
 
 Summary Files
 =============
@@ -93,7 +93,7 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NOAO Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on the `catalogs page`_.
+Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Lab Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
@@ -133,7 +133,7 @@ Column               Type       Description
 ``ut``               char[12]   Time of observation start, eg "23:50:58.608241"
 ``ha``               char[12]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``          float32    Airmass, eg 1.35
-``propid``           char[12]   NOAO Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[12]   NSF's OIR Lab Proposal ID that took this image, eg "2014B-0404"
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``avsky``            float32    Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``         float32    Average gain for this CCD, eg 4.34
@@ -297,10 +297,10 @@ External Files
 ==============
 
 The Legacy Survey photometric catalogs have been matched to the following external spectroscopic files from the SDSS, which can be accessed through the web at:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/external/
+  https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr4/external/
 
 Or on the NERSC computers (for collaborators) at:
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr4/external/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr4/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
@@ -317,20 +317,20 @@ survey-dr4-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
 specObj-dr13.fits. The spectroscopic file 
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
-.. _`data model for specObj-dr13.fits`: http://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr13.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr4-dr12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12 
-visually inspected quasar catalog (`Paris et al. 2016`_)
+visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of 
 survey-dr4-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file 
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
-.. _`Paris et al. 2016`: http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1608.06483
-.. _`data model for DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
+.. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
+.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr4-superset-dr12Q.fits
 ------------------------------
@@ -342,8 +342,7 @@ survey-dr4-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" o
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`Paris et al. 2017`: http://adsabs.harvard.edu/abs/2017A%26A...597A..79P
-.. _`data model for Superset_DR12Q.fits`: http://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr4-dr7Q.fits
 ---------------------
@@ -355,8 +354,8 @@ survey-dr4-DR7Q.fits matches the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
-.. _`Schneider et al. 2010`: http://adsabs.harvard.edu/abs/2010AJ....139.2360S
-.. _`DR7 quasar catalog description page`: http://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
+.. _`Schneider et al. 2010`: https://ui.adsabs.harvard.edu/abs/2010AJ....139.2360S/abstract
+.. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
 Tractor Catalogs
@@ -382,7 +381,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor Catalogs can contact the NOAO Data Lab at datalab@noao.edu.
+Users interested in database access to the Tractor Catalogs can contact the Astro Data Lab [1]_ at datalab@noao.edu.
 
 Sweep Catalogs
 ==============
@@ -603,9 +602,7 @@ the colors.
 Raw Data
 ========
 
-NOAO access to raw and calibrated images will be available starting on July 10, 2017.
-
-Raw and Calibrated Legacy Survey images are available from the NOAO Science Archive through the web 
+Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
 stacked images, Tractor catalogs, etc. comprise images 
 taken from the Mayall :math:`z`-band Legacy Survey (`MzLS`_) in the :math:`z` band, and from 
@@ -614,14 +611,14 @@ the Beijing-Arizona Sky Survey (`BASS`_) in the :math:`g` & :math:`r` bands.
 (i) Web interface
 -----------------
 
-1. Query the `NOAO Science Archive`_.
+1. Query the `Astro Data Lab's Science Archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR4).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`NOAO Science Archive`: http://archive.noao.edu/search/query
+.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
@@ -646,3 +643,9 @@ with a list of ``EXPID`` and ``IMAGE_FILENAME``
 There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).
+
+|
+
+**Footnotes**
+
+.. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.

@@ -13,10 +13,10 @@
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
 
 Top level directory for web access:
-  http://portal.nersc.gov/project/cosmo/data/legacysurvey/dr1/
+  http://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr1/
 
 Top level directory local to NERSC computers (for collaborators):
-  /global/project/projectdirs/cosmo/data/legacysurvey/dr1/
+  /global/cfs/cdirs/cosmo/data/legacysurvey/dr1/
 
 Summary Files
 =============

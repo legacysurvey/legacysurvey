@@ -58,15 +58,15 @@ observations.
 
 Additional information is available in the `DESI Legacy Imaging Surveys Overview Paper.`_
 
-.. _`SDSS`: http://classic.sdss.org
-.. _`SDSS-II`: http://classic.sdss.org
-.. _`SDSS-III`: http://www.sdss.org
-.. _`BOSS`: http://www.sdss.org/surveys/boss/
-.. _`SDSS-IV`: http://www.sdss.org
-.. _`eBOSS`: http://www.sdss.org/surveys/eboss/
-.. _`Pan-STARRS`: http://pan-starrs.ifa.hawaii.edu/public/
-.. _`DESI`: http://desi.lbl.gov
-.. _`DES`: http://www.darkenergysurvey.org
-.. _`DESI Legacy Imaging Surveys Overview Paper.`: http://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
+.. _`SDSS`: https://classic.sdss.org
+.. _`SDSS-II`: https://classic.sdss.org
+.. _`SDSS-III`: https://www.sdss.org
+.. _`BOSS`: https://www.sdss.org/surveys/boss/
+.. _`SDSS-IV`: https://www.sdss.org
+.. _`eBOSS`: https://www.sdss.org/surveys/eboss/
+.. _`Pan-STARRS`: https://pan-starrs.ifa.hawaii.edu/public/
+.. _`DESI`: https://desi.lbl.gov
+.. _`DES`: https://www.darkenergysurvey.org
+.. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
 .. _`BASS`: http://batc.bao.ac.cn/BASS/doku.php
 .. _`DECaLS`: ../decamls

@@ -16,7 +16,7 @@ SITE_URL = "http://legacysurvey.org/"
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_tiny.jpg"
+LOGO_URL = "/files/logo_very_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -66,14 +66,24 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
         ((
-            ("/dr8/description", 'Description'),
-            ("/dr8/files", 'Files'),
-            ("/dr8/catalogs", 'Catalogs'),
-            ("/dr8/updates", 'Updates'),
-            ("/dr8/bitmasks", 'Bitmasks'),
-            ("/dr8/external", 'External Catalogs'),
-            ("/dr8/issues", 'Known Issues'),
-            ), 'DR8'),
+            ("/dr9/description", 'Description'),
+            ("/dr9/files", 'Files'),
+            ("/dr9/catalogs", 'Catalogs'),
+            ("/dr9/updates", 'Updates'),
+            ("/dr9/bitmasks", 'Bitmasks'),
+            ("/dr9/sga", 'The SGA'),
+            ("/dr9/external", 'External Catalogs'),
+            ("/dr9/issues", 'Known Issues'),
+            ), 'DR9'),
+        ((
+                ("/dr8/description", 'Description'),
+                ("/dr8/files", 'Files'),
+                ("/dr8/catalogs", 'Catalogs'),
+                ("/dr8/updates", 'Updates'),
+                ("/dr8/bitmasks", 'Bitmasks'),
+                ("/dr8/external", 'External Catalogs'),
+                ("/dr8/issues", 'Known Issues'),
+                ), 'DR8'),
         ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
@@ -85,15 +95,25 @@ NAVIGATION_LINKS = {
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),
-            ("http://www.darkenergysurvey.org", 'DES'),
+            ("https://www.darkenergysurvey.org", 'DES'),
 #            ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
             ), 'Other Data'),
         ((
-        ("http://legacysurvey.org/viewer", 'Go to the Sky Viewer'),
+        ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
+        ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
         ), 'Sky Viewer'),
-        ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/", 'Gallery'),
+        ((
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9/gallery/", 'DR9'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/", 'DR8'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/", 'DR7'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/gallery/", 'DR6'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr5/gallery/", 'DR5'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr4/gallery/", 'DR4'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr3/gallery/", 'DR3'),
+            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr2/gallery/", 'DR2'),
+            ), 'Gallery'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),
         ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),

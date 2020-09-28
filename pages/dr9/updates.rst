@@ -81,13 +81,13 @@ Algorithmic changes for optical data
 
 Algorithmic changes for WISE
 ============================
-* WISE imaging has been updated to include observations through the `5th year of the NEOWISE W1/W2 data`_.
+* WISE imaging has been updated to include observations through the `6th year of the NEOWISE W1/W2 data`_.
 * The unWISE astrometry has been re-generated, and proper motions of stars have been correctly accounted for when conducting time-resolved forced photometry.
 * unWISE epochs have been resampled to have more uniform coverage for the WISE light curves, particularly near the ecliptic poles (e.g. for columns such as ``lc_flux_w1`` on the `catalogs page`_).
 * The unWISE epoch index number is now recorded in the `Tractor catalogs`_.
 * Bit-flags for pixels that lie in some of the brightest `WISE bright star masks`_ have been updated.
 
-.. _`5th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2019_release_intro.html
+.. _`6th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
 .. _`catalogs page`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
 .. _`WISE bright star masks`: ../bitmasks/#wisemask-w1-wisemask-w2

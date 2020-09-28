@@ -67,8 +67,8 @@ and the fourth release of data from `BASS`_ and `MzLS`_ (`DR8`_ comprised the th
 essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new 
 observations, but builds on `DR8`_ by improving the reduction techniques and procedures used for the Legacy Surveys.
 Imaging from the Legacy Surveys is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being
-processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of
-NEOWISE-Reactivation`_ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
+processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of NEOWISE-Reactivation`_
+force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 DR9 includes `BASS`_ (:math:`g,r`-band) images taken from XXth XXXember 20XX through XXth XXrch 20XX and
 `MzLS`_ (:math:`z`-band) images taken from XXth XXember 20XX through XXth XXXruary 20XX.

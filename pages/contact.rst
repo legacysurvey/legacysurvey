@@ -64,7 +64,7 @@ Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
     * Benjamin Weaver  baweaver@lbl.gov
 
-SGA:
+Siena Galaxy Atlas:
     * John Moustakas  jmoustakas@siena.edu
 
 Photometric Redshifts:

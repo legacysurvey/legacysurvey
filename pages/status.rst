@@ -40,9 +40,15 @@ as of Data Release 9 (`DR9`_). The coverage is color-coded by (extinction-correc
 depth. The solid line depicts the Galactic plane.
 
 .. image:: /files/depth-g-dr9.png
+    :height: 410
+    :width: 570
+
 .. image:: /files/depth-r-dr9.png
+    :height: 410
+    :width: 570
+
 .. image:: /files/depth-z-dr9.png
-    :alt: DR9 Depth Plots
-
-
+    :height: 410
+    :width: 570
+    :align: center
 

@@ -15,7 +15,7 @@ This page documents those updates, in brief.
 
 Algorithmic changes for optical data
 ====================================
-* All raw images from Legacy Surveys observations are initially reduced using the `NSF's OIR Lab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
+* All raw images from Legacy Surveys observations are initially reduced using the `NOIRLab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
 
   - The CP now imposes no interpolation.
 
@@ -68,7 +68,7 @@ Algorithmic changes for optical data
 .. _`modified, extended PSF model`: ../psf
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`PR 504`: https://github.com/legacysurvey/legacypipe/pull/504
 .. _`criterion used to force a Gaia point source`: https://github.com/legacysurvey/legacypipe/blob/f96311ad56e6eb9878aae378927405745bc1819e/py/legacypipe/reference.py#L196-L197
 .. _`PR 469`: https://github.com/legacysurvey/legacypipe/pull/469

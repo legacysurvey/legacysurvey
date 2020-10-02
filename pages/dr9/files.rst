@@ -128,7 +128,7 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Lab Community Pipeline as, e.g., cosmic rays or saturation
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Community Pipeline as, e.g., cosmic rays or saturation
 (see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR9 bitmasks page`_), do
 *not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on
 the `catalogs page`_.
@@ -170,7 +170,7 @@ Column               Type       Description
 ``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
 ``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam)
 ``object``           char[35]   Name listed in the object tag from the CCD header
-``propid``           char[10]   NSF's OIR Lab Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
@@ -1210,7 +1210,7 @@ Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's 
 portal (http://archive.noao.edu/search/query) and an ftp server.
 The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
-project, as well as other images from the NSF's OIR Lab telescopes.
+project, as well as other images from the NOIRLab telescopes.
 
 (i) Web interface
 -----------------

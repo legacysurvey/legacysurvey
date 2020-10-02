@@ -96,7 +96,7 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Lab Community Pipeline as, e.g., cosmic rays or saturation, do 
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Community Pipeline as, e.g., cosmic rays or saturation, do 
 NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on 
 the `catalogs page`_.
 
@@ -134,7 +134,7 @@ Column               Type       Description
 ``expnum``           int32      Exposure number, eg 348224
 ``ccdname``          char[4]    CCD name (see Legacy Survey camera layout), eg "N10", "S7"
 ``object``           char[35]   Name listed in the object tag from the CCD header
-``propid``           char[10]   NSF's OIR Lab Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404"
 ``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
 ``exptime``          float32    Exposure time in seconds, eg 30
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389

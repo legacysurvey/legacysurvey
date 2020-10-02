@@ -186,7 +186,7 @@ Name                                  Type         Units                 Descrip
 Mask Values
 -----------
 
-The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NSF's OIR Lab Community Pipeline) Data Quality bits.
+The ANYMASK and ALLMASK bit masks are defined as follows from the CP (NOIRLab Community Pipeline) Data Quality bits.
 
 === ===== =========================== ==================================================
 Bit Value Name                        Description

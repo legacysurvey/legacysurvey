@@ -27,7 +27,7 @@ the Blanco Telescope.
 
 Data Release 3 (DR3) is the third public data release of images and catalogs for
 the DECam Legacy Survey (DECaLS). Images from DECaLS
-g,r,z-band observations (NSF's OIR Lab survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+g,r,z-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
 are included from August 2014 through March 2016. DR3 also includes DECam data from a range of 
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
@@ -316,7 +316,7 @@ Code Versions
 =============
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of versions, ranging from dr3c-21-g3c8a239 to dr3e-255-g1d799e6 (these are git version stings). The version used is documented in the Tractor header card LEGPIPEV.
-* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as PLVER.
+* NOIRLab Community Pipeline: mixture of versions; recorded as PLVER.
 * SourceExtractor 2.19.5, PSFEx 3.17.1
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.67
 * `Tractor <https://github.com/dstndstn/tractor>`_: a mixture of versions, all dr3
@@ -333,7 +333,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (DECam reduction pipeline operated by the NSF's OIR Lab;
+    Community Pipeline (DECam reduction pipeline operated by NOIRLab;
     https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -356,7 +356,7 @@ maggie
 MoG
     Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
-NSF's OIR Lab
+NOIRLab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie

@@ -33,7 +33,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
@@ -51,11 +51,11 @@ Contents of DR5
 Data Release 5 (DR5) is the fifth public data release of the Legacy Surveys. It is the
 fourth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
 DR4 comprised the first release of data from `BASS`_ and `MzLS`_).
-DR5 imaging is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being processed
+DR5 imaging is first reduced through the `NOIRLab Community Pipeline`_ before being processed
 using the `Tractor`_.
 
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (NSF's OIR Lab survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+:math:`g,r,z`-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
 are included from August 2014 through May 2017. DR5 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
@@ -195,7 +195,7 @@ Sky Level
 =========
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single scaled fringe pattern. These steps are described on the `NSF's OIR Lab Community Pipeline`_
+and a single scaled fringe pattern. These steps are described on the `NOIRLab Community Pipeline`_
 page.
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
@@ -397,7 +397,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: mixture of dr5.0 versions ranging from git version string ``7e360d0`` (26/7/2017) to (untagged) version ``0a71f89`` (28/8/2017). The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.72, git version ``d0af7bf`` (11/7/2017)
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr5.2, git version ``5df5875`` (18/7/2017)
-* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as ``PLVER``.
+* NOIRLab Community Pipeline: mixture of versions; recorded as ``PLVER``.
 
 .. * SourceExtractor 2.19.5, PSFEx 3.17.1
 
@@ -421,7 +421,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
+    Community Pipeline (reduction pipeline operated by NOIRLab;
     https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -453,7 +453,7 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <https://www.legacysurvey.org/mzls>`_.
 
-NSF's OIR Lab
+NOIRLab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie

@@ -12,13 +12,14 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through early October, 2020. For additional publications, see also the NSF's OIR Lab publications lists for `2018`_, `2019`_ and `2020`_, and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through early October, 2020. For additional publications, see also the NOIRLab publications
+lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 
 .. _`text on the acknowledgment page`: ../acknowledgment
 .. _`2018`: https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
 .. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
-.. _`2020`: https://www.noao.edu/noao/library/NSF-OIR-Lab-FY20-Publications.html#LegacySurveys
+.. _`ADS Public Library`: https://ui.adsabs.harvard.edu/public-libraries/3gbPEBdlSbe7n9P_EFp8kw
 .. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
 

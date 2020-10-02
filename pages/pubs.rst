@@ -45,7 +45,6 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 
 #. Alam et al., `Quasars at intermediate redshift are not special; but they are often satellites`_
 #. Aubert et al., `The Completed SDSS-IV Extended Baryon Oscillation Spectroscopic Survey: Growth rate of structure measurement from cosmic voids`_
-#. Kong et al., `Removing Imaging Systematics from Galaxy Clustering Measurements with Obiwan : Application to the SDSS-IV extended Baryon Oscillation Spectroscopic Survey Emission Line Galaxy Sample`_
 #. Maschmann et al., `Double-peak emission line galaxies in the SDSS catalogue. A minor merger sequence`_
 #. Ruiz-Macias et al., `Characterising the target selection pipeline for the Dark Energy Spectroscopic Instrument Bright Galaxy Survey`_
 #. Tinker, `A Self-Calibrating Halo-Based Galaxy Group Finder: Algorithm and Tests`_
@@ -89,9 +88,10 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 
 #. Kado-Fong et al., `Tracing the Intrinsic Shapes of Dwarf Galaxies out to Four Effective Radii: Clues to Low-Mass Stellar Halo Formation`_
 #. Kirkpatrick et al., `The Accretion History of AGN: A Newly Defined Population of Cold Quasars`_
-#. Ross et al., `The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: Large-scale Structure Catalogs for Cosmological Analysis`_
 #. Yao et al., `SN2019dge: a Helium-rich Ultra-Stripped Envelope Supernova`_
 #. Wu, `Connecting optical morphology, environment, and HI mass fraction for low-redshift galaxies using deep learning`_
+#. Ross et al., `The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: Large-scale Structure Catalogs for Cosmological Analysis`_
+#. Kong et al., `Removing Imaging Systematics from Galaxy Clustering Measurements with Obiwan : Application to the SDSS-IV extended Baryon Oscillation Spectroscopic Survey Emission Line Galaxy Sample`_
 #. Anand et al., `Optical follow-up of the neutron star-black hole mergers S200105ae and S200115j`_
 
 #. Karim et al., `Validation of Emission-Line Galaxies Target Selection Algorithms for the Dark Energy Spectroscopic Instrument Using the MMT Binospec`_
@@ -299,7 +299,6 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 .. _`The Palomar Transient Factory Core-Collapse Supernova Host-Galaxy Sample. I. Host-Galaxy Distribution Functions and Environment-Dependence of CCSNe`: https://ui.adsabs.harvard.edu/abs/2020arXiv200805988S/abstract
 .. _`Quasars at intermediate redshift are not special; but they are often satellites`: https://ui.adsabs.harvard.edu/abs/2020arXiv200702612A/abstract
 .. _`The Completed SDSS-IV Extended Baryon Oscillation Spectroscopic Survey: Growth rate of structure measurement from cosmic voids`: https://ui.adsabs.harvard.edu/abs/2020arXiv200709013A/abstract
-.. _`Removing Imaging Systematics from Galaxy Clustering Measurements with Obiwan : Application to the SDSS-IV extended Baryon Oscillation Spectroscopic Survey Emission Line Galaxy Sample`: https://ui.adsabs.harvard.edu/abs/2020arXiv200708992K/abstract
 .. _`Double-peak emission line galaxies in the SDSS catalogue. A minor merger sequence`: https://ui.adsabs.harvard.edu/abs/2020arXiv200714410M/abstract
 .. _`Characterising the target selection pipeline for the Dark Energy Spectroscopic Instrument Bright Galaxy Survey`: https://ui.adsabs.harvard.edu/abs/2020arXiv200714950R/abstract
 .. _`A Self-Calibrating Halo-Based Galaxy Group Finder: Algorithm and Tests`: https://ui.adsabs.harvard.edu/abs/2020arXiv200712200T/abstract 
@@ -336,7 +335,8 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 
 .. _`Tracing the Intrinsic Shapes of Dwarf Galaxies out to Four Effective Radii: Clues to Low-Mass Stellar Halo Formation`: https://ui.adsabs.harvard.edu/abs/2020ApJ...900..163K/abstract
 .. _`The Accretion History of AGN: A Newly Defined Population of Cold Quasars`: https://ui.adsabs.harvard.edu/abs/2020ApJ...900....5K/abstract
-.. _`The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: Large-scale Structure Catalogs for Cosmological Analysis`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp.2074R/abstract
+.. _`The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: Large-scale Structure Catalogs for Cosmological Analysis`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.2354R/abstract
+.. _`Removing Imaging Systematics from Galaxy Clustering Measurements with Obiwan : Application to the SDSS-IV extended Baryon Oscillation Spectroscopic Survey Emission Line Galaxy Sample`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp.2673K/abstract
 .. _`SN2019dge: a Helium-rich Ultra-Stripped Envelope Supernova`: https://ui.adsabs.harvard.edu/abs/2020ApJ...900...46Y/abstract
 .. _`Connecting optical morphology, environment, and HI mass fraction for low-redshift galaxies using deep learning`: https://ui.adsabs.harvard.edu/abs/2020ApJ...900..142W/abstract
 .. _`Optical follow-up of the neutron star-black hole mergers S200105ae and S200115j`: https://ui.adsabs.harvard.edu/abs/2020NatAs.tmp..179A/abstract

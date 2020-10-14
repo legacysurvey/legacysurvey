@@ -7,6 +7,19 @@
 
 .. contents::
 
+Usage of images from the Sky Viewer
+===================================
+
+The images provided through the Legacy Surveys Sky Viewer web sites
+`viewer.legacysurvey.org <http://viewer.legacysurvey.org>`_ and
+`legacysurvey.org/viewer <https://www.legacysurvey.org/viewer>`_ are
+licensed under a
+`Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_,
+and hence may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible.
+The credit must be presented in a clear and legible manner to all users, with the wording
+unaltered as “D. Lang/Perimeter Institute”.  The credit should not be hidden or disassociated
+from the image footage. Links should be active if the credit is online.
+
 
 Scientific Publication Acknowledgement
 ======================================

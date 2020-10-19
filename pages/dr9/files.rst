@@ -486,6 +486,10 @@ is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is s
 
 In addition to the columns from the Tractor `catalogs`_, we have added columns from the SDSS files that can be used to track objects uniquely. These are typically some combination of ``PLATE``, ``FIBER``, ``MJD`` (or ``SMJD``) and, in some cases, ``RERUN``.
 
+In previous Data Releases, if a source was duplicated in the SDSS spectroscopic files, only one of the duplicates was matched to a Legacy Surveys photometric object. Starting with DR9, we match
+`all` duplicates in the SDSS spectroscopic files. The result is that all sources in the SDSS spectroscopic files should have information from the Legacy Surveys imaging if they
+match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
+
 .. _`catalogs page`: ../catalogs
 .. _`catalogs`: ../catalogs
 .. _`Catalogs`: ../catalogs

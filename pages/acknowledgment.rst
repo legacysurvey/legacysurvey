@@ -10,14 +10,31 @@
 Usage of images from the Sky Viewer
 ===================================
 
-The images provided through the Legacy Surveys Sky Viewer web sites
-`viewer.legacysurvey.org <http://viewer.legacysurvey.org>`_ and
-`legacysurvey.org/viewer <https://www.legacysurvey.org/viewer>`_ are
-licensed under a
-`Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_,
+The Legacy Surveys Sky Viewer web sites `viewer.legacysurvey.org <http://viewer.legacysurvey.org>`_ and
+`legacysurvey.org/viewer <https://www.legacysurvey.org/viewer>`_ provide images from a number of surveys
+who have publicly released their data. Each survey has its own copyright and licensing terms, links to
+which are available in the bottom-right corner of the viewer web page.
+
+Links to these surveys' image use policies and licensing terms are provided here as a courtesy.  We do
+not guarantee these are the relevant documents; most surveys have statements about images published on
+their web sites, but not on renderings produced from their public data releases. For any usage of images,
+the user is responsible for ensuring that they are in compliance with any licensing terms for the relevant layer.
+
+- SDSS - https://www.sdss.org - https://www.sdss.org/collaboration/#image-use
+- DES DR1 - https://www.darkenergysurvey.org/ - https://des.ncsa.illinois.edu/terms
+- HSC DR2 - https://hsc-release.mtk.nao.ac.jp/doc/index.php/tools-2/ - https://www.nao.ac.jp/en/policy-guide.html
+- VLASS 1.2 - https://public.nrao.edu/vlass/ - https://public.nrao.edu/media-use/
+- GALEX - http://www.galex.caltech.edu/ - https://www.jpl.nasa.gov/imagepolicy/
+- Halpha - https://faun.rc.fas.harvard.edu/dfink/skymaps/halpha/
+- SFD - https://dustmaps.readthedocs.io/en/latest/maps.html#sfd
+- WISE 12 um dust map - http://wise.skymaps.info/
+
+For the layers produced by the Legacy Surveys and unWISE teams, including "Legacy Surveys", "DECaLS", "MzLS+BASS", "DECaPS" and "unWISE" layers, the copyright and license statement is:
+
+Images are licensed under a `Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_,
 and hence may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible.
 The credit must be presented in a clear and legible manner to all users, with the wording
-unaltered as “D. Lang/Perimeter Institute”.  The credit should not be hidden or disassociated
+unaltered as "Legacy Surveys / D. Lang / Perimeter Institute".  The credit should not be hidden or disassociated
 from the image footage. Links should be active if the credit is online.
 
 

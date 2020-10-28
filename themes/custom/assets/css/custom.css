@@ -10,11 +10,13 @@ body {
 }
 
 .navbar-brand {
-    padding: 5px 15px;
+    padding: 2px 15px;
 }
 
 .navbar-brand #logo {
-    height: 54px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
 }
 
 .carousel {

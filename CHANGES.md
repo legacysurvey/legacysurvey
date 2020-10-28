@@ -23,6 +23,11 @@
       [#118](https://github.com/legacysurvey/legacysurvey/issues/118) and
       [#119](https://github.com/legacysurvey/legacysurvey/issues/119).
 
+## 8.1.0 (DR8, unreleased)
+
+- Update jQuery and Bootstrap versions for security reasons
+  ([PR#137](https://github.com/legacysurvey/legacysurvey/pull/137)).
+
 ## 8.0.3 (DR8, 2020-01-20)
 
 - Add documentation of photo-z files

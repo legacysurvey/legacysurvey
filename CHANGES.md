@@ -23,7 +23,7 @@
       [#118](https://github.com/legacysurvey/legacysurvey/issues/118) and
       [#119](https://github.com/legacysurvey/legacysurvey/issues/119).
 
-## 8.1.0 (DR8, unreleased)
+## 8.1.0 (DR8, 2020-10-28)
 
 - Update jQuery and Bootstrap versions for security reasons
   ([PR#120](https://github.com/legacysurvey/legacysurvey/pull/120)).

@@ -13,10 +13,10 @@ BLOG_TITLE = "Legacy Survey"
 SITE_URL = "https://legacysurvey.org/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "https://getnikola.com/"
+# BASE_URL = "https://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_very_tiny.jpg"
+LOGO_URL = "/files/logo_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #

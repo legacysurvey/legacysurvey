@@ -6,7 +6,7 @@ body {
 }
 
 .navbar {
-    font-family: "Raleway","Helvetica Neue", Helvetica, Arial, sans-serif, "FontAwesome";
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif, "FontAwesome";
 }
 
 .navbar-brand {
@@ -14,7 +14,7 @@ body {
 }
 
 .navbar-brand #logo {
-    height: 45px;
+    height: 54px;
     padding: 0;
     margin: 0;
 }

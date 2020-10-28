@@ -412,7 +412,7 @@ LICENSE = ""
 CONTENT_FOOTER = """<hr/>
 <p class="text-muted">Contents &copy; {date}  <a href="mailto:{email}">{author}</a> |
 Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> |
-Theme is Readable |
+Theme is <a href="https://bootswatch.com/3/readable/">Readable</a> |
 <a href="https://github.com/legacysurvey/legacysurvey">Source</a></p>
 """
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,

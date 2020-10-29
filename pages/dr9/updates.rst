@@ -95,6 +95,7 @@ Algorithmic changes for WISE
 Other algorithmic changes
 =========================
 * The DR9 `external match files`_ now include matches to Data Release 16 of the SDSS.
+* Starting with DR9, we recover any duplicates in the SDSS spectroscopic files. The result is that all sources from SDSS spectroscopy should be in the `external match files`_, even if they are duplicates from repeat spectroscopy.
 
 Data model changes
 ==================

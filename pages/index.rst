@@ -20,7 +20,7 @@
    The DESI Legacy Imaging Surveys are producing an inference model catalog of the sky
    from a set of optical and infrared imaging data, comprising
    14,000 deg\ |sup2| of extragalactic sky
-   visible from the northern hemisphere in three optical bands 
+   visible from the northern hemisphere in three optical bands
    (:math:`g,r,z`) and four infrared bands.
    The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
    in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
@@ -46,7 +46,7 @@
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
       <h2>Current Release: Data Release 9</h2>
-      <p>October 2020</p>
+      <p>November 2020</p>
       <p><a class="btn btn-primary btn-lg" href="dr9">DR9</a></p>
 
 .. container::

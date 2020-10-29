@@ -58,3 +58,6 @@ target/
 # Nikola files
 .doit.db*
 my_conf.py
+
+# macOS
+.DS_Store

@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## Unreleased
+## 9.0.0 (DR9, unreleased)
 
 - Initial updates for DR9 ([PR#116](https://github.com/legacysurvey/legacysurvey/pull/116)).
   Includes:
@@ -22,6 +22,11 @@
       [#115](https://github.com/legacysurvey/legacysurvey/issues/115),
       [#118](https://github.com/legacysurvey/legacysurvey/issues/118) and
       [#119](https://github.com/legacysurvey/legacysurvey/issues/119).
+
+## 8.1.0 (DR8, 2020-10-28)
+
+- Update jQuery and Bootstrap versions for security reasons
+  ([PR#120](https://github.com/legacysurvey/legacysurvey/pull/120)).
 
 ## 8.0.3 (DR8, 2020-01-20)
 

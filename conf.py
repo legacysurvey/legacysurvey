@@ -10,13 +10,13 @@ BLOG_AUTHOR = "Legacy Survey"
 BLOG_TITLE = "Legacy Survey"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://legacysurvey.org/"
+SITE_URL = "https://www.legacysurvey.org/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://getnikola.com/"
+# BASE_URL = "https://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_very_tiny.jpg"
+LOGO_URL = "/files/logo_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -65,16 +65,16 @@ TRANSLATIONS = {
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
-        ((
-            ("/dr9/description", 'Description'),
-            ("/dr9/files", 'Files'),
-            ("/dr9/catalogs", 'Catalogs'),
-            ("/dr9/updates", 'Updates'),
-            ("/dr9/bitmasks", 'Bitmasks'),
-            ("/dr9/sga", 'The SGA'),
-            ("/dr9/external", 'External Catalogs'),
-            ("/dr9/issues", 'Known Issues'),
-            ), 'DR9'),
+        # ((
+        #     ("/dr9/description", 'Description'),
+        #     ("/dr9/files", 'Files'),
+        #     ("/dr9/catalogs", 'Catalogs'),
+        #     ("/dr9/updates", 'Updates'),
+        #     ("/dr9/bitmasks", 'Bitmasks'),
+        #     ("/dr9/sga", 'The SGA'),
+        #     ("/dr9/external", 'External Catalogs'),
+        #     ("/dr9/issues", 'Known Issues'),
+        #     ), 'DR9'),
         ((
                 ("/dr8/description", 'Description'),
                 ("/dr8/files", 'Files'),
@@ -96,7 +96,7 @@ NAVIGATION_LINKS = {
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),
             ("https://www.darkenergysurvey.org", 'DES'),
-#            ("http://batc.bao.ac.cn/BASS", 'BASS'),
+            # ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
             ), 'Other Data'),
         ((
@@ -105,7 +105,7 @@ NAVIGATION_LINKS = {
         ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
         ), 'Sky Viewer'),
         ((
-            ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9/gallery/", 'DR9'),
+            # ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9/gallery/", 'DR9'),
             ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr8/gallery/", 'DR8'),
             ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr7/gallery/", 'DR7'),
             ("https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr6/gallery/", 'DR6'),
@@ -411,9 +411,9 @@ LICENSE = ""
 # Default is ''
 CONTENT_FOOTER = """<hr/>
 <p class="text-muted">Contents &copy; {date}  <a href="mailto:{email}">{author}</a> |
-Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> |
-Theme is <a href="http://bootswatch.com/readable/">Readable</a> |
-<a href="http://github.com/legacysurvey/legacysurvey">Source</a></p>
+Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> |
+Theme is <a href="https://bootswatch.com/3/readable/">Readable</a> |
+<a href="https://github.com/legacysurvey/legacysurvey">Source</a></p>
 """
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
@@ -626,7 +626,7 @@ BODY_END = """
 # is served from the NetDNA CDN
 # Set this to False if you want to host your site without requiring access to
 # external resources.
-# USE_CDN = False
+USE_CDN = True
 
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </HEAD>

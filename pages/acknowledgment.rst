@@ -34,7 +34,8 @@ For the layers produced by the Legacy Surveys and unWISE teams, including "Legac
 Images are licensed under a `Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_,
 and hence may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible.
 The credit must be presented in a clear and legible manner to all users, with the wording
-unaltered as "Legacy Surveys / D. Lang / Perimeter Institute".  The credit should not be hidden or disassociated
+unaltered as “Legacy Surveys / D. Lang (Perimeter Institute)” for Legacy Surveys layers
+and "unWISE / NASA/JPL-Caltech / D. Lang (Perimeter Institute)" for unWISE layers. The credit should not be hidden or disassociated
 from the image footage. Links should be active if the credit is online.
 
 

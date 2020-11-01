@@ -16,7 +16,7 @@ SITE_URL = "https://www.legacysurvey.org/"
 # BASE_URL = "https://getnikola.com/"
 BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
-LOGO_URL = "/files/logo_very_tiny.jpg"
+LOGO_URL = "/files/logo_tiny.jpg"
 SHOW_BLOG_TITLE = False
 # Nikola is multilingual!
 #
@@ -75,15 +75,15 @@ NAVIGATION_LINKS = {
             ("/dr9/external", 'External Catalogs'),
             ("/dr9/issues", 'Known Issues'),
         ), 'DR9'),
-        ((
-            ("/dr8/description", 'Description'),
-            ("/dr8/files", 'Files'),
-            ("/dr8/catalogs", 'Catalogs'),
-            ("/dr8/updates", 'Updates'),
-            ("/dr8/bitmasks", 'Bitmasks'),
-            ("/dr8/external", 'External Catalogs'),
-            ("/dr8/issues", 'Known Issues'),
-        ), 'DR8'),
+#        ((
+#            ("/dr8/description", 'Description'),
+#            ("/dr8/files", 'Files'),
+#            ("/dr8/catalogs", 'Catalogs'),
+#            ("/dr8/updates", 'Updates'),
+#            ("/dr8/bitmasks", 'Bitmasks'),
+#            ("/dr8/external", 'External Catalogs'),
+#            ("/dr8/issues", 'Known Issues'),
+#        ), 'DR8'),
         ((
             ("/dr1", 'Data Release 1'),
             ("/dr2", 'Data Release 2'),
@@ -92,6 +92,7 @@ NAVIGATION_LINKS = {
             ("/dr5", 'Data Release 5'),
             ("/dr6", 'Data Release 6'),
             ("/dr7", 'Data Release 7'),
+            ("/dr8", 'Data Release 8'),
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),

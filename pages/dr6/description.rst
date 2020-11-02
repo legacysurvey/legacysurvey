@@ -33,7 +33,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
@@ -56,7 +56,7 @@ Data Release 6 (DR6) is the sixth public data release of the Legacy Surveys. It 
 second public release of images and catalogs that combine the Beijing-Arizona Sky Survey
 and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the fourth 
 release of data from `DECaLS`_). Imaging from the Legacy Surveys is first reduced
-through the `NSF's OIR Lab Community Pipeline`_ before being processed using the `Tractor`_.
+through the `NOIRLab Community Pipeline`_ before being processed using the `Tractor`_.
 
 DR6 includes `BASS`_ images taken prior to June 25, 2017 and `MzLS`_ images taken
 prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy 
@@ -208,7 +208,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination 
 correction, and a single scaled fringe pattern. These steps are described on the 
-`NSF's OIR Lab Community Pipeline`_ page. This makes the sky level in the processed images near 
+`NOIRLab Community Pipeline`_ page. This makes the sky level in the processed images near 
 zero, and removes most pattern artifacts. A constant sky level is then added back to the 
 image that is the mean of what was removed.
 
@@ -457,7 +457,7 @@ Code Versions
   - git commit 1b741bbd35e30d16f4d56ef673d3583baa335645, tag dr6.rc1.2
 
 * Note that Brick `1228p810` was processed with a different stack: `desiconda 20170719-1.1.9-imaging`, `legacypipe dr6.rc1.1-18-g80be603`
-* NSF's OIR Lab Community Pipeline: mixture of versions; recorded as ``PLVER``
+* NOIRLab Community Pipeline: mixture of versions; recorded as ``PLVER``
 
 .. _`Legacy Survey Data Release 2`: ../../dr2
 .. _`Legacy Survey Data Release 3`: ../../dr3
@@ -479,7 +479,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (reduction pipeline operated by the NSF's OIR Lab;
+    Community Pipeline (reduction pipeline operated by NOIRLab;
     https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
@@ -511,7 +511,7 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <https://www.legacysurvey.org/mzls>`_.
 
-NSF's OIR Lab
+NOIRLab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie

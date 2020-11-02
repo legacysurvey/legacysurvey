@@ -2,6 +2,14 @@
 
 ## 9.0.0 (DR9, unreleased)
 
+- Merge DR9 WIP branch with PR#120
+  ([PR#120](https://github.com/legacysurvey/legacysurvey/pull/120))
+  security updates. Also includes some updates for DR9
+  ([PR#121](https://github.com/legacysurvey/legacysurvey/pull/121)):
+    - New acknowledgment with viewer copyright and NOIRLab language.
+    - Change "NSF's OIR Lab" text to NOIRLab everywhere.
+    - Updated publications through early October, 2020.
+    - A handful of other minor notes and fixes.
 - Initial updates for DR9 ([PR#116](https://github.com/legacysurvey/legacysurvey/pull/116)).
   Includes:
     - New fringe, sky-level, NEA, psf documentation from Rongpu.

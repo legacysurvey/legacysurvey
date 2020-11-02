@@ -45,12 +45,9 @@
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <!-- <h2>Current Release: Data Release 9</h2> -->
-      <h2>Current Release: Data Release 8</h2>
-      <!-- <p>November 2020</p> -->
-      <p>July 2019</p>
-      <!-- <p><a class="btn btn-primary btn-lg" href="dr9">DR9</a></p> -->
-      <p><a class="btn btn-primary btn-lg" href="dr8">DR8</a></p>
+      <h2>Current Release: Data Release 9</h2>
+      <p>November 2020</p>
+      <p><a class="btn btn-primary btn-lg" href="dr9">DR9</a></p>
 
 .. container::
 

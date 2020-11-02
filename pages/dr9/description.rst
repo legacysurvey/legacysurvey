@@ -37,7 +37,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-Gaussians`: https://arxiv.org/abs/1210.6563
@@ -54,7 +54,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DESI`: https://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 6 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
-.. _`NSF's OIR Lab survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
+.. _`survey program 0404`: https://www.noao.edu/perl/abstract?2014B-0404
 .. _`Dark Energy Survey`: https://www.darkenergysurvey.org
 
 Contents of DR9
@@ -66,14 +66,14 @@ and the fourth release of data from `BASS`_ and `MzLS`_ (`DR8`_ comprised the th
 `DR8`_ was the first release to include images and catalogs from all three of the Legacy Surveys in a single release, and
 essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new 
 observations, but builds on `DR8`_ by improving the reduction techniques and procedures used for the Legacy Surveys.
-Imaging from the Legacy Surveys is first reduced through the `NSF's OIR Lab Community Pipeline`_ before being
-processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of
-NEOWISE-Reactivation`_ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
+Imaging from the Legacy Surveys is first reduced through the `NOIRLab Community Pipeline`_ before being
+processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of NEOWISE-Reactivation`_
+force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 DR9 includes `BASS`_ (:math:`g,r`-band) images taken from XXth XXXember 20XX through XXth XXrch 20XX and
 `MzLS`_ (:math:`z`-band) images taken from XXth XXember 20XX through XXth XXXruary 20XX.
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (`NSF's OIR Lab survey program 0404`_)
+:math:`g,r,z`-band observations (`survey program 0404`_)
 are included from XXth XXXust 20XX through XXth XXrch 20XX. DR9 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from XXst XXXtember 20XX to XXth XXrch 20XX.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
@@ -167,7 +167,7 @@ Obtaining Images and Raw Data
 ==============================
 
 Images for all 3 of the Legacy Surveys can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NSF's OIR Lab portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (or via ftp; see also the information near
 `the bottom of the files`_ page). Note that the weight map images (the ``oow`` files) that can be retrieved either from the viewer or
 portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-<camera>-dr9.fits.gz files`_. But, these images need
 to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for `<camera>` of `mosaic` or `90prime`).
@@ -219,7 +219,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr9-fits-gz
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the NSF's OIR Lab portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: http://archive.noao.edu/search/query
 
 Source Detection
 ================
@@ -319,7 +319,7 @@ Sky Level
 =========
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
-and a single, scaled fringe pattern. These steps are described on the `NSF's OIR Lab Community Pipeline`_
+and a single, scaled fringe pattern. These steps are described on the `NOIRLab Community Pipeline`_
 page.
 These corrections are intended to make the sky level in the processed images near zero, and to remove most pattern artifacts.
 A constant sky level, that is the mean of what was removed, is then added back to the image.
@@ -593,7 +593,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr9vX.X to dr9vX.X. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.XX.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr9.X.
-* `NSF's OIR Lab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
+* `NOIRLab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: X.XX.X
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: X.XX.X
 
@@ -620,7 +620,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (`reduction pipeline operated by NSF's OIR Lab <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
+    Community Pipeline (`reduction pipeline operated by NOIRLab <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.
@@ -658,7 +658,7 @@ MoG
 MzLS
     `Mayall z-band Legacy Survey <https://www.legacysurvey.org/mzls>`_.
 
-NSF's OIR Lab
+NOIRLab
     `The NSF's National Optical-Infrared Astronomy Research Laboratory  <https://www.aura-astronomy.org/centers/nsfs-oir-lab>`_.
 
 nanomaggie

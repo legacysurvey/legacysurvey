@@ -31,7 +31,7 @@ Other Experts
     * Dustin Lang  dstndstn@gmail.com
     * John Moustakas [#]_  jmoustakas@siena.edu
 
-NSF's OIR Lab Community Pipeline:
+NOIRLab Community Pipeline:
     * David Herrera  herrera@noao.edu
     * Frank Valdes  valdes@noao.edu
 
@@ -52,7 +52,7 @@ Image Quality:
 Astro Data Lab [#]_ Contact:
     * Stephanie Juneau  juneau@noao.edu
 
-Additional NSF's OIR Lab/CTIO Support:
+Additional NOIRLab/CTIO Support:
     * Alistair Walker  awalker@ctio.noao.edu
     * Bob Blum  RBlum@lsst.org
 
@@ -64,7 +64,7 @@ Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
     * Benjamin Weaver  baweaver@lbl.gov
 
-SGA:
+Siena Galaxy Atlas:
     * John Moustakas  jmoustakas@siena.edu
 
 Photometric Redshifts:

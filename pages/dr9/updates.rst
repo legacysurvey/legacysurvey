@@ -15,7 +15,7 @@ This page documents those updates, in brief.
 
 Algorithmic changes for optical data
 ====================================
-* All raw images from Legacy Surveys observations are initially reduced using the `NSF's OIR Lab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
+* All raw images from Legacy Surveys observations are initially reduced using the `NOIRLab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:
 
   - The CP now imposes no interpolation.
 
@@ -68,7 +68,7 @@ Algorithmic changes for optical data
 .. _`modified, extended PSF model`: ../psf
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`PR 504`: https://github.com/legacysurvey/legacypipe/pull/504
 .. _`criterion used to force a Gaia point source`: https://github.com/legacysurvey/legacypipe/blob/f96311ad56e6eb9878aae378927405745bc1819e/py/legacypipe/reference.py#L196-L197
 .. _`PR 469`: https://github.com/legacysurvey/legacypipe/pull/469
@@ -81,13 +81,13 @@ Algorithmic changes for optical data
 
 Algorithmic changes for WISE
 ============================
-* WISE imaging has been updated to include observations through the `5th year of the NEOWISE W1/W2 data`_.
+* WISE imaging has been updated to include observations through the `6th year of the NEOWISE W1/W2 data`_.
 * The unWISE astrometry has been re-generated, and proper motions of stars have been correctly accounted for when conducting time-resolved forced photometry.
 * unWISE epochs have been resampled to have more uniform coverage for the WISE light curves, particularly near the ecliptic poles (e.g. for columns such as ``lc_flux_w1`` on the `catalogs page`_).
 * The unWISE epoch index number is now recorded in the `Tractor catalogs`_.
 * Bit-flags for pixels that lie in some of the brightest `WISE bright star masks`_ have been updated.
 
-.. _`5th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2019_release_intro.html
+.. _`6th year of the NEOWISE W1/W2 data`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
 .. _`catalogs page`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
 .. _`WISE bright star masks`: ../bitmasks/#wisemask-w1-wisemask-w2
@@ -95,6 +95,7 @@ Algorithmic changes for WISE
 Other algorithmic changes
 =========================
 * The DR9 `external match files`_ now include matches to Data Release 16 of the SDSS.
+* Starting with DR9, we recover any duplicates in the SDSS spectroscopic files. The result is that all sources from SDSS spectroscopy should be in the `external match files`_, even if they are duplicates from repeat spectroscopy.
 
 Data model changes
 ==================

@@ -93,7 +93,7 @@ Column          Type       Description
 ``ext_w4``      float32    Extinction in :math:`W4`-band
 =============== ========== =========================================================================
 
-Note that, for the ``nexphist`` rows, pixels that are masked by the NSF's OIR Lab Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on the `catalogs page`_.
+Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Community Pipeline as, e.g., cosmic rays or saturation, do NOT count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on the `catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
@@ -133,7 +133,7 @@ Column               Type       Description
 ``ut``               char[12]   Time of observation start, eg "23:50:58.608241"
 ``ha``               char[12]   Hour angle of the observation (HH:MM:SS)  
 ``airmass``          float32    Airmass, eg 1.35
-``propid``           char[12]   NSF's OIR Lab Proposal ID that took this image, eg "2014B-0404"
+``propid``           char[12]   Proposal ID of the program that took this image, eg "2014B-0404"
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
 ``avsky``            float32    Average sky level in this image, in ADU, eg 36.9324. ``avsky`` is `detailed more here`_
 ``arawgain``         float32    Average gain for this CCD, eg 4.34

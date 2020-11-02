@@ -1,7 +1,7 @@
 .. title: Converting plprocid to a date
 .. slug: plprocid
 
-``plprocid`` is a time-based hash used as a unique identifier by the `NSF's OIR Lab Community Pipeline`_ (CP). Here are a couple of ways to convert ``plprocid`` to a date.
+``plprocid`` is a time-based hash used as a unique identifier by the `NOIRLab Community Pipeline`_ (CP). Here are a couple of ways to convert ``plprocid`` to a date.
 Note that these methods recover the time in your `local` timezone, which you may have to adjust to reflect the timezone of the CP (Tucson, AZ).
 
 At the Command Line
@@ -29,7 +29,7 @@ Then, for example:
 Using Python
 ------------
 
-.. _`NSF's OIR Lab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 At the Python prompt:
 

@@ -99,12 +99,8 @@ Other algorithmic changes
 
 Data model changes
 ==================
-* Additional WISE-variability light-curve columns have been included in the `sweep files`_:
-
-  - ``LC_MJD_W1`` and ``LC_MJD_W2``
-  - ``LC_FLUX_W1`` and ``LC_FLUX_W2``
-  - ``LC_FLUX_IVAR_W1`` and ``LC_FLUX_IVAR_W2``
-  - ``LC_NOBS_W1`` and ``LC_NOBS_W2``
+* All WISE light-curve columns from the `Tractor catalogs`_ are now packaged with the `sweep files`_ in their own set of `light curve sweep files`_, which are row-by-row-parallel to the `standard sweep files`_.
+* Any remaining columns from the `Tractor catalogs`_ that are not in the `standard sweep files`_ or the `light curve sweep files`_ are now packaged in their own set of `extra sweep files`_, which are row-by-row-parallel to the `standard sweep files`_.
 
 * The shape parameters in the `Tractor catalogs`_ (and downstream) have changed, as there are now no sources of ``type=COMP`` (which corresponded to a "composite" galaxy):
 
@@ -177,6 +173,9 @@ Data model changes
 .. _`Tractor catalogs for DR9`: ../catalogs
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
+.. _`standard sweep files`: ../files/#sweep-brickmin-brickmax-fits
+.. _`light curve sweep files`: ../files/#light-curve-sweeps-9-0-lightcurves-sweep-brickmin-brickmax-lc-fits
+.. _`extra sweep files`: ../files/#extra-sweeps-9-0-lightcurves-sweep-brickmin-brickmax-ex-fits
 .. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz
 .. _`SGA`: ../sga
 .. _`files of data from fitting in SGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname

@@ -730,8 +730,55 @@ Name                                  Type         Units                 Descrip
 
 .. _photometric-redshifts:
 
-Photometric Redshift files (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
-----------------------------------------------------------------------------
+Light Curve sweeps (9.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+------------------------------------------------------------------------
+
+The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
+relate to multi-epoch WISE data, which are
+
+====================== ===
+Name
+====================== ===
+``RELEASE``
+``BRICKID``
+``OBJID``
+``LC_FLUX_W1``
+``LC_FLUX_W2``
+``LC_FLUX_IVAR_W1``
+``LC_FLUX_IVAR_W2``
+``LC_NOBS_W1``
+``LC_NOBS_W2``
+``LC_MJD_W1``
+``LC_MJD_W2``
+``LC_FRACFLUX_W1``
+``LC_FRACFLUX_W2``
+``LC_RCHISQ_W1``
+``LC_RCHISQ_W2``
+``LC_EPOCH_INDEX_W1``
+``LC_EPOCH_INDEX_W2``
+====================== ===
+
+See the `Tractor catalogs`_ for a description of these columns.
+The light curve sweeps files are row-by-row-parallel to the standard sweeps files
+(i.e. the entries in each row of the light curve sweeps files correspond to the entries
+in each row of the standard sweeps files, which can be verified using ``RELEASE``,
+``BRICKID`` and ``OBJID``).
+
+
+Extra sweeps (9.0-lightcurves/sweep-<brickmin>-<brickmax>-ex.fits)
+-------------------------------------------------------------------
+
+The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
+are not otherwise in the standard sweeps files or the "light curve" sweep files.
+See the `Tractor catalogs`_ for a description of the columns in these files.
+The extra sweeps files are row-by-row-parallel to the standard sweeps files
+(i.e. the entries in each row of the extra sweeps files correspond to the entries
+in each row of the standard sweeps files, which can be verified using ``RELEASE``,
+``BRICKID`` and ``OBJID``).
+
+
+Photometric Redshift sweeps (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+-----------------------------------------------------------------------------
 
 The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
 catalog is line-matched to the DR9 sweep catalogs as described above.

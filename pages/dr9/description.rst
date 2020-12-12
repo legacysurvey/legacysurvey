@@ -564,23 +564,24 @@ The histograms below depict the median 5\ |sigma| point source (AB) depths for a
 different numbers of observations in the different regions of DR9:
 
 .. image:: ../../files/depth-hist-g-dr9-north.png
-    :height: 350
-    :width: 380
-.. image:: ../../files/depth-hist-r-dr9-north.png
-    :height: 350
-    :width: 380
-.. image:: ../../files/depth-hist-z-dr9-north.png
-    :height: 350
-    :width: 380
+    :height: 375
+    :width: 570
 .. image:: ../../files/depth-hist-g-dr9-south.png
-    :height: 340
-    :width: 375
+    :height: 375
+    :width: 570
+.. image:: ../../files/depth-hist-r-dr9-north.png
+    :height: 375
+    :width: 570
 .. image:: ../../files/depth-hist-r-dr9-south.png
-    :height: 340
-    :width: 375
+    :height: 375
+    :width: 570
+.. image:: ../../files/depth-hist-z-dr9-north.png
+    :height: 375
+    :width: 570
 .. image:: ../../files/depth-hist-z-dr9-south.png
-    :height: 340
-    :width: 375
+    :height: 375
+    :width: 570
+    :alt: DR9 Depth Histograms
 
 These are based upon the formal errors in the Tractor catalogs for point sources,
 and can be compared to the predicted proposed

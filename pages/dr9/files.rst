@@ -422,16 +422,16 @@ Column               Type     Description
 ``PRIORITY``         int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ==================== ======== ======================================================
 
-.. _`a particular declination`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/io.py#L95
-.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/targets.py#L615
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/io.py#L102
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/targets.py#L821
 .. _`desitarget data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_TARGET/index.html
 .. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
-.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/0.48.0/bin/select_randoms
 .. _`desitarget`: https://github.com/desihub/desitarget/
-.. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
+.. _`here`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/randoms.py
 
-The version of the `desitarget`_ code used to generate the random catalogs can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
+The version of the `desitarget`_ code used to generate the random catalogs (``0.48.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
 northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").

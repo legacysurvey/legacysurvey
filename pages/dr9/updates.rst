@@ -114,11 +114,11 @@ Data model changes
 
     * ``shape_e1``, ``shape_e1_ivar``, ``shape_e2``, ``shape_e2_ivar``, ``shape_r``, ``shape_r_ivar``
 
-  - the logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile. 
+  - The logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile: 
 
-  - the ``shapedev_`` and ``shapeexp_`` parameters, in DR8, defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated.
+    * the ``shapedev_`` and ``shapeexp_`` parameters, in DR8, defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated.
 
-  - the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP".
+    * the "COMP" profile has been replaced by a Sersic profile in DR9, so there is no need to have "mixes" of "DEV" and "EXP".
 
   - In DR9, every profile is defined by its ``type``, and ``shape_r``, ``shape_e1`` etc. are the appropriate parameters for that ``type`` (so, i.e., ``shapedev_r`` and ``shapeexp_r`` can now be collapsed to just the single ``shape_r`` column).
 
@@ -160,7 +160,7 @@ Data model changes
 
   - DR9 uses version 3 of the `SGA`_, so the ``ref_cat`` (or ``REF_CAT``) column in the `Tractor catalogs`_ and `sweep files`_ is populated with ``L3`` for `SGA`_ sources in DR9 (this column was populated with ``L2`` for `SGA`_ sources in DR8).
 
-* The DR9 `coadds`_ include a new file ``legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` which records XXX.
+* The DR9 `coadds`_ include a new set of files ``legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` which record a new version of the Tractor's model prediction of the images. The `blobmodel` information is similar to the information in the ``<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz`` files (which have already been made available in prior Data Releaseses). In the `blobmodel` files, though, the models are `clipped to the blobs within which they are measured`. In other words, the models used to derive the maps in the `blobmodel` files are not extrapolated beyond the pixels in the blobs that are used to fit the models.
 
 .. _`DR7`: ../../dr7/description
 .. _`DR8 catalog`: ../../dr8/catalogs

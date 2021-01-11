@@ -15,7 +15,7 @@
 .. contents::
 
 
-<camera>/tractor/<AAA>/tractor-<brick>.fits
+<region>/tractor/<AAA>/tractor-<brick>.fits
 -------------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
@@ -34,7 +34,7 @@ such quantities are often quoted on the Vega system).
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
-``release``		              int16	 		         Unique integer denoting the camera and filter set used (`as documented here`_)
+``release``		              int16	 		         Integer denoting the camera and filter set used (`as documented here`_)
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``objid``                             int32                              Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick

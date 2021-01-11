@@ -851,8 +851,8 @@ High Energy Physics via grant DE-SC0007914."
 .. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
 .. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
 
-Star masks (``masks/*``)
-========================
+Coming Soon! - Star masks (``masks/*``)
+=======================================
 
 gaia-mask-dr9-fixed.fits
 ------------------------
@@ -1132,8 +1132,8 @@ Local fits within the area of large galaxies and galaxy groups, where <GALNAME> 
 - <GALNAME>-pipeline-resid-grz.jpg
     JPEG image, not yet documented.
 
-Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
-=====================================================================================
+Coming Soon! - Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
+====================================================================================================
 
 .. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass

@@ -26,7 +26,7 @@ were corrupted, we reprocessed all such reductions. A total of 1691 bricks in th
 southern region of the Legacy Surveys were
 discovered that displayed changes in some of their coadded ``image``, ``invvar``, or ``nexp``
 files. These bricks were rerun, and assigned a ``RELEASE`` number of ``9012`` (instead of the
-``RELEASE`` number of ``9010`` used throughout the rest of the South).
+``RELEASE`` number of ``9010`` used for reductions in the rest of DR9 south of the Legacy Surveys).
 
 A list of the affected bricks `is available here`_.
 

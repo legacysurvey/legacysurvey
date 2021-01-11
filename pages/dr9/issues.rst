@@ -19,6 +19,19 @@ available on the GitHub issues pages for the `Legacy Surveys website`_ or the `l
 Issues with CCDs that may have affected the quality of DECam observations are recorded on the
 `DECam CCDs page`_.
 
+The DR9sv "Data Release"
+------------------------
+DR9sv was a preliminary version of the Legacy Surveys imaging intended to possibly be used for targeting during the DESI
+Survey Validation (SV) phase. However, DR9sv was never used for DESI SV targeting. Although DR9sv remains publicly available at:
+
+| https://portal.nersc.gov/project/cosmo/data/legacysurvey/dr9sv/
+
+and at NERSC in the directory:
+
+| ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr9sv``
+
+DR9sv has been supplanted by the full DR9 release. We recommend ignoring any data from DR9sv, and using DR9 instead.
+
 Bricks that were processed using the Burst Buffer at NERSC
 ----------------------------------------------------------
 After noticing that some bricks that were run using the `Cori Burst Buffer`_ at NERSC

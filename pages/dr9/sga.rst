@@ -74,6 +74,7 @@ Name                 Type         Units                                       De
 
 .. _`Principal Catalogue of Galaxies`: https://ui.adsabs.harvard.edu/abs/1989A%26AS...80..299P/abstract
 
+|
 
 Additional products are available on the `DR9 files page (coming soon)`_:
 
@@ -110,6 +111,7 @@ File                                                                 Description
 .. _`Observational Astronomy by Birney, Gonzalez, & Oesper`: https://www.cambridge.org/highereducation/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
 .. _`astropy.QTable`: https://docs.astropy.org/en/stable/api/astropy.table.QTable.html#astropy.table.QTable
 
+|
 
 The final DR9 data model for the ellipse-fitting results is coming soon. The current data model is:
 

@@ -74,6 +74,7 @@ NAVIGATION_LINKS = {
             ("/dr9/sga", 'The SGA'),
             ("/dr9/external", 'External Catalogs'),
             ("/dr9/issues", 'Known Issues'),
+            ("/dr9/issues/#the-dr9sv-data-release", 'DR9sv'),
         ), 'DR9'),
 #        ((
 #            ("/dr8/description", 'Description'),
@@ -93,6 +94,7 @@ NAVIGATION_LINKS = {
             ("/dr6", 'Data Release 6'),
             ("/dr7", 'Data Release 7'),
             ("/dr8", 'Data Release 8'),
+            ("/dr9/issues/#the-dr9sv-data-release", 'DR9sv'),
             ("/bass", 'BASS'),
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),

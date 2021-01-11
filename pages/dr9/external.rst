@@ -13,7 +13,8 @@
 External Catalogs used for Astrometry and Photometry
 ====================================================
 
-Several external catalogs are used for astrometric and photometric calibration of DR9.
+Several external catalogs are used for astrometric and photometric calibration of DR9. These catalogs are currently availble in the indicated directories at NERSC, although we will soon
+make them available to the wider public.
 
 Pan-STARRS-1 (PS1)
 ------------------
@@ -61,8 +62,7 @@ Globular Clusters & Planetary Nebulae
 
 SGA Large Galaxies
 ------------------
-| **/global/cfs/cdirs/cosmo/staging/largegalaxies/vXXX**
-|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Siena Galaxy Atlas (SGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_.
+|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Siena Galaxy Atlas (SGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_. More documentation on how the SGA was constructed for DR9 is coming soon.
 
 
 .. _`bitmasks page`: ../bitmasks

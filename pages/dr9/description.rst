@@ -595,7 +595,7 @@ depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Versions from dr9vX.X to dr9vX.X. The version used is documented in the Tractor header card ``LEGPIPEV``.
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A mix of versions; dr9-m33-1-g33038aa1, DR9.6.2, DR9.6.4, DR9.6.5, DR9.6.5-4-gbb698724 and DR9.6.7. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.84
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr9.5
 * `NOIRLab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.

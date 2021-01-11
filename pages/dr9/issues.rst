@@ -13,7 +13,7 @@
 General Issues
 --------------
 
-The most up-to-date issues and in-progress fixes moving from DR9 to DR10 are
+The most up-to-date issues and in-progress fixes are
 available on the GitHub issues pages for the `Legacy Surveys website`_ or the `legacypipe pipeline`_.
 
 Issues with CCDs that may have affected the quality of DECam observations are recorded on the

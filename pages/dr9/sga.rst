@@ -75,25 +75,25 @@ Name                 Type         Units                                       De
 .. _`Principal Catalogue of Galaxies`: https://ui.adsabs.harvard.edu/abs/1989A%26AS...80..299P/abstract
 
 
-Additional products are available on the `DR9 files page`_:
+Additional products are available on the `DR9 files page (coming soon)`_:
 
 ==================================================================== ================================================
 File                                                                 Description
 ==================================================================== ================================================
 **DR9 pipeline ''grz'' files**
-``GROUP_NAME``-ccds-south.fits                                       See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-blobs.fits.gz                             See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-maskbits.fits.fz                          See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-outlier-mask.fits.fz                      See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-tractor.fits                              See the `DR9 files page`_
-``GROUP_NAME``-depth-`[g,r,z]`.fits.fz                               See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-psf-`[g,r,z]`.fits.fz                     See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-`[image,invvar,model]`-`[g,r,z]`.fits.fz  See the `DR9 files page`_
-``GROUP_NAME``-largegalaxy-`[image,model,resid]`-grz.jpg             See the `DR9 files page`_
+``GROUP_NAME``-ccds-south.fits                                       See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-blobs.fits.gz                             See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-maskbits.fits.fz                          See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-outlier-mask.fits.fz                      See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-tractor.fits                              See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-depth-`[g,r,z]`.fits.fz                               See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-psf-`[g,r,z]`.fits.fz                     See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-`[image,invvar,model]`-`[g,r,z]`.fits.fz  See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-largegalaxy-`[image,model,resid]`-grz.jpg             See the `DR9 files page (coming soon)`_
 **DR9 pipeline "unWISE" outputs**
-``GROUP_NAME``-`[image,invvar,model]`-`[W1,W2,W3,W4]`.fits.fz        See the `DR9 files page`_
-``GROUP_NAME``-image-W1W2.jpg                                        See the `DR9 files page`_
-``GROUP_NAME``-model-W1W2.jpg                                        See the `DR9 files page`_
+``GROUP_NAME``-`[image,invvar,model]`-`[W1,W2,W3,W4]`.fits.fz        See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-image-W1W2.jpg                                        See the `DR9 files page (coming soon)`_
+``GROUP_NAME``-model-W1W2.jpg                                        See the `DR9 files page (coming soon)`_
 **SGC pipeline files**
 ``GROUP_NAME``-largegalaxy-sample.fits                               Catalog that corresponds to the data model table, above containing just the galaxies in this galaxy group
 ``GROUP_NAME``-coadds.log                                            Logging output for this portion of the pipeline
@@ -103,6 +103,7 @@ File                                                                 Description
 ``GROUP_NAME``-largegalaxy-ellipse.[``isdone``, ``isfail``]          Zero-byte file indicating whether this portion of the pipeline completed successfully (``isdone``) or failed (``isfail``)
 ==================================================================== ================================================
 
+.. _`DR9 files page (coming soon)`: ../files/#coming-soon-large-galaxy-files-largegalaxies-aaa-galname
 .. _`DR9 files page`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
 .. _`photutils.isophote.Ellipse.fit_image`: https://photutils.readthedocs.io/en/stable/api/photutils.isophote.Ellipse.html#photutils.isophote.Ellipse.fit_image
 .. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
@@ -110,7 +111,7 @@ File                                                                 Description
 .. _`astropy.QTable`: https://docs.astropy.org/en/stable/api/astropy.table.QTable.html#astropy.table.QTable
 
 
-The data model for the ellipse-fitting results is:
+The final DR9 data model for the ellipse-fitting results is coming soon. The current data model is:
 
 ================================================== ========== ============================================== ===============================================
 Name                                               Type       Units                                          Description

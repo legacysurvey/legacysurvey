@@ -859,7 +859,7 @@ gaia-mask-dr9-fixed.fits
 ------------------------
 
 A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia`_ DR2 stars used to
-set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.  XXX
+set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.
 
 ===================================== ======= ================== ========================
 Name                                  Type    Units              Description

@@ -1207,8 +1207,8 @@ proper motion!
     ``dqmask``       int16      Data Quality mask from the CP pipeline for the center pixel (defined as for ``ALLMASK/ANYMASK`` on the `DR9 bitmasks page`_)
     ``dra``          float32    When fitting for spatial derivatives, the motion of the source in the RA direction, in arcsec
     ``ddec``         float32    Motion of the source in the Dec direction, in arcsec
-    ``dra_ivar``     float32    Inverse-variance on `dra`, in 1/arcsec|sup2|
-    ``ddec_ivar``    float32    Inverse-variance on `ddec`, in 1/arcsec|sup2|
+    ``dra_ivar``     float32    Inverse-variance on ``dra``, in 1/arcsec|sup2|
+    ``ddec_ivar``    float32    Inverse-variance on ``ddec``, in 1/arcsec|sup2|
     ================ ========== ======================================================
 
 Other Files
@@ -1226,7 +1226,7 @@ We don't expect that most users will need a description of these files, but `con
 Raw Data
 ========
 Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date, at
-which point this documentation could be updated.
+which point *this documentation could be updated*.
 
 Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server.

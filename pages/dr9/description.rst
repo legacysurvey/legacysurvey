@@ -82,15 +82,15 @@ Information on the exact observations included in DR9 can be derived from the Le
 The table below indicates the area covered in DR9 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area in this table is resolved by including all
 DECam images (the majority of which are from `DECaLS`_) but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
-These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|. 
+These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|.
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 ===================== =========== =========== ===========
-:math:`g`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`r`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`z`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+:math:`g`-band        19,919 |d2| 19,256 |d2| 16,606 |d2|
+:math:`r`-band        19,915 |d2| 19,177 |d2| 16,333 |d2|
+:math:`z`-band        20,242 |d2| 19,420 |d2| 16,972 |d2|
+All bands jointly     19,721 |d2| 18,813 |d2| 14,756 |d2|
 ===================== =========== =========== ===========
 
 South of Declination -18\ |deg| the Legacy Surveys imaging is dominated by observations from the `Dark Energy Survey`_. North of -18\ |deg|, the area covered in DR9 for different numbers of passes and in different filters is:
@@ -98,10 +98,10 @@ South of Declination -18\ |deg| the Legacy Surveys imaging is dominated by obser
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 ===================== =========== =========== ===========
-:math:`g`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`r`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`z`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+:math:`g`-band        15,723 |d2| 15,194 |d2| 12,605 |d2|
+:math:`r`-band        15,712 |d2| 15,124 |d2| 12,346 |d2|
+:math:`z`-band        15,876 |d2| 15,275 |d2| 12,939 |d2|
+All bands jointly     15,566 |d2| 14,784 |d2| 10,802 |d2|
 ===================== =========== =========== ===========
 
 .. |d2| replace:: deg\ :sup:`2`

@@ -82,7 +82,7 @@ Information on the exact observations included in DR9 can be derived from the Le
 The table below indicates the area covered in DR9 for different
 numbers of passes and in different filters across the entire *unique* survey area. Unique area in this table is resolved by including all
 DECam images (the majority of which are from `DECaLS`_) but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
-These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_. 
+These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|. 
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
@@ -104,8 +104,8 @@ Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
 ===================== =========== =========== ===========
 
-
 .. |d2| replace:: deg\ :sup:`2`
+.. |d-2| replace:: deg\ :sup:`-2`
 
 
 DR9 includes a variety of pixel-level and catalog-level products, which are described in more

@@ -357,8 +357,8 @@ detailed PSF model.
 Random Catalogs (``randoms/*``)
 ===============================
 
-randoms-inside-dr9-0.48.0-\*.fits
----------------------------------
+randoms-1-\*.fits
+-----------------
 
 Twenty files of random points sampled across the CCDs that comprise the geometry of DR9. Random locations
 were generated across the footprint at a density of 2,500 per square degree and meta-information
@@ -431,13 +431,13 @@ Column               Type     Description
 .. _`desitarget`: https://github.com/desihub/desitarget/
 .. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
 
-The ``0.48.0`` in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The
+The version of the `desitarget`_ code used to generate the random catalogs can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
 northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").
 
-randoms-outside-dr9-0.48.0-\*.fits
-----------------------------------
+randoms-outside-1-\*.fits
+-------------------------
 
 Twenty files of random points in bricks that do not contain an observation in DR9 (that are "outside" of the DR9 footprint). The columns in this file
 are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
@@ -457,14 +457,14 @@ Column               Type     Description
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ==================== ======== ======================================================
 
-randoms-allsky-dr9-0.48.0-\*.fits
----------------------------------
+randoms-allsky-1-\*.fits
+------------------------
 
-The (randomly shuffled) combination of each of the ``randoms-inside-dr9-0.48.0-X.fits``
-and ``randoms-outside-dr9-0.48.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates
+The (randomly shuffled) combination of each of the ``randoms-1-X.fits``
+and ``randoms-outside-1-X.fits`` files (where X = 0, 1, 2, 3, ... 18, 19). This creates
 twenty "all-sky" random catalogs (at a density of 2,500 locations per square degree)
 where each brick is either populated with observations from the
-Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-inside-dr9-0.48.0-X.fits`` files.
+Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-1-X.fits`` files.
 
 survey-bricks-dr9-randoms-0.48.0.fits
 -------------------------------------
@@ -480,10 +480,10 @@ Column             Type    Description
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 
-<region>/randoms-<region>-dr9-0.48.0-\*.fits
---------------------------------------------
+<region>/randoms/randoms-<region>-1-\*.fits
+-------------------------------------------
 
-As for the corresponding ``randoms-inside-dr9-0.48.0-\*.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
+As for the corresponding ``randoms-1-*.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
 contains all randoms for the northern (southern) imaging surveys, regardless of whether the brick is "officially" in the ``north`` (``south``) region.
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
@@ -804,8 +804,9 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Photometric Redshift sweeps (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
------------------------------------------------------------------------------
+Coming Soon! - Photometric Redshift sweeps
+------------------------------------------
+.. (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 
 The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
 catalog is line-matched to the DR9 sweep catalogs as described above.
@@ -1052,8 +1053,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 
 .. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
 
-Large galaxy files (``largegalaxies/<AAA>/<GALNAME>/*``)
-========================================================
+Coming Soon! - Large galaxy files (``largegalaxies/<AAA>/<GALNAME>/*``)
+=======================================================================
 
 Local fits within the area of large galaxies and galaxy groups, where <GALNAME> is the name of the galaxy or group
 (e.g. ``NGC0779`` or ``NGC0779_GROUP``). Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
@@ -1132,8 +1133,10 @@ Local fits within the area of large galaxies and galaxy groups, where <GALNAME> 
 - <GALNAME>-pipeline-resid-grz.jpg
     JPEG image, not yet documented.
 
-Coming Soon! - Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
-====================================================================================================
+Coming Soon! - Forced Photometry Files
+======================================
+.. (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
+
 
 .. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass
@@ -1208,64 +1211,6 @@ proper motion!
     ``ddec_ivar``    float32    Inverse-variance on `ddec`, in 1/arcsec|sup2|
     ================ ========== ======================================================
 
-
-Splinesky Files (``calib/<camera>/splinesky-*``)
-=================================================
-
-- splinesky-merged/<EXPOS>/<camera>-<EXPOSURE>.fits
-    Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``, <EXPOSURE> is the exposure number as an 8-character string and <EXPOS> is the first 5 characters of <EXPOSURE>.
-
-    This file contains all of the sky models for a given exposure number, as a single FITS binary table with 60 rows, one per CCD.  Each row in this table contains the sky model for a single CCD.
-    The splinesky files describe a smooth 2-dimensional function, implemented using the scipy `RectBivariateSpline function`_.
-    This is defined by a number of grid cell locations and function values at those locations, interpolated with a cubic spline.
-    The spline grid cells for DR9 are ~256 pixels in size, and extend from edge to edge, so, for example DECam images (~2048 x 4096 pixels) have 9 x 17 cells.
-
-    For `MzLS`_ (``mosaic``) files, some early exposures lack an ``EXPNUM`` in the headers; these have a fake exposure number like 160125082555 corresponding
-    to the date and time the image was taken (2016-01-25T08:25:55). For `BASS`_ (``90prime``) files, the exposure number comes from the ``DTACQNAM`` header card;
-    for example, 20160710/d7580.0144.fits becomes exposure number 75800144.
-
-    ================ ========= ======================================================
-    Column           Type      Description
-    ================ ========= ======================================================
-    ``gridw``        int64     The number of grid cells in the horizontal direction
-    ``gridh``        int64     The number of grid cells in the vertical direction
-    ``gridvals``     float32   The spline values (an array of size ``gridh`` :math:`\times` ``gridw``)
-    ``xgrid``        int32     The horizontal locations of the grid cells (an array of length ``gridw``)
-    ``ygrid``        int32     The vertical locations of the grid cells (an array of length ``gridh``)
-    ``order``        uint8     The order of the spline (i.e. 3 = cubic)
-    ``x0``           int32     Pixel offset of the model in the x direction (always 0 for these files)
-    ``y0``           int32     Pixel offset of the model in the y direction (always 0 for these files)
-    ``skyclass``     char[27]  Always set to ``tractor.splinesky.SplineSky`` (the name of a Python class that is used to read the model)
-    ``legpipev``     char[19]  Version of legacypipe used for this reduction
-    ``plver``        char[4]   Community Pipeline (CP) version number
-    ``plprocid``     char[7]   Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
-    ``imgdsum``      int64     The `DATASUM` value from the image header (a checksum)
-    ``procdate``     char[19]  CP processing date
-    ``sig1``         float32   Estimated per-pixel noise in CP image units, from :math:`1/\sqrt(\mathrm{median}(wt[good]))` where :math:`wt` is the weight map and :math:`good` are un-masked pixels
-    ``sky_mode``     float32   Scalar mode of the image, estimated by fitting a quadratic to the histogram of unmasked pixels
-    ``sky_med``      float32   Scalar median of the image, based on unmasked pixels
-    ``sky_cmed``     float32   Median of the :math:`2\sigma`-clipped image pixel values, based on unmasked pixels
-    ``sky_john``     float32   Starting from a 5-pixel boxcar average over the ``sky_cmed``-subtracted pixels, find and mask :math:`3\sigma` sources (dilated by 3 pixels), then take the median of :math:`2\sigma`-clipped pixels
-    ``sky_fmasked``  float32   Total fraction of pixels masked by the source mask, the reference-source mask, and where the weightmap is 0
-    ``sky_fine``     float32   RMS difference between a splinesky model at normal and at twice the resolution, to characterize the splinesky model had it more freedom
-    ``sky_p0``       float32   Identical to ``sky_fine``
-    ``sky_p10``      float32   0th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p20``      float32   10th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p30``      float32   20th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p40``      float32   30th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p50``      float32   40th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p60``      float32   50th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p70``      float32   60th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p80``      float32   70th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p90``      float32   80th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p100``     float32   90th percentile of unmasked image pixels minus the splinesky model
-    ``expnum``       int64     Exposure number, eg 348224
-    ``ccdname``      char[4]   CCD name, e.g. "N10", "S7" for DECam
-    ================ ========= ======================================================
-
-.. _`RectBivariateSpline function`: https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline
-
-
 Other Files
 ===========
 
@@ -1280,7 +1225,8 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date.
+Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date, at
+which point this documentation could be updated.
 
 Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server.

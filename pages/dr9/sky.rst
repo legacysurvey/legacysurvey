@@ -99,7 +99,7 @@ Additional Information and Products
 Some additional plots characterizing the `DECaLS`_ DR9 sky corrections are available for DESI collaborators `on the wiki`_.
 The various files generated to make the sky corrections are also available at NERSC:
 
-- Sky runs: ``/global/cfs/cdirs/desi/users/rongpu/dr9/sky_pattern/skyrunsgoodcountexpnumv48dr8``
+- Sky runs: ``/global/cfs/cdirs/desi/users/rongpu/dr9/sky_pattern/skyrunsgoodcountexpnumv48dr8.fits``
 - Sky templates: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9m/calib/sky_pattern/sky_templates``
 - Per-exposure sky scales: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9m/calib/sky_pattern/sky-scales.fits``
 

@@ -26,7 +26,6 @@ All the code used to generate and analyze the catalog is publicly available:
 
 The table below documents the data model of the current version of the SGA parent sample.
 
-.. _`/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/XXX`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/sga/XXX
 .. _`McConnachie (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M/abstract
 .. _`DR8 of the Legacy Surveys`: ../../dr8
 .. _`DR9 of the Legacy Surveys`: ../../dr9

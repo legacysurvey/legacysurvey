@@ -1,0 +1,68 @@
+# Workflow is based on the Astropy GitHub actions workflow, ci_workflows.yml
+name: CI
+
+on:
+    push:
+        branches:
+            - '*'
+        tags:
+            - '*'
+    pull_request:
+
+jobs:
+    tests:
+        name: Nikola 7
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: true
+            matrix:
+                os: [ubuntu-latest]
+                python-version: [3.6, 3.7, 3.8, 3.9]
+                nikola-version: ['7.8.15']
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+            - name: Set up Python ${{ matrix.python-version }}
+              uses: actions/setup-python@v2
+              with:
+                  python-version: ${{ matrix.python-version }}
+            - name: Install Python dependencies
+              run: |
+                  python -m pip install --upgrade pip wheel
+                  python -m pip install nikola==${{ matrix.nikola-version }}
+            - name: Run the test
+              run: |
+                  nikola build --strict
+                  test -d output
+
+    future:
+      name: Nikola 8
+      runs-on: ${{ matrix.os }}
+      strategy:
+          fail-fast: false
+          matrix:
+                os: [ubuntu-latest]
+                python-version: [3.8]
+                nikola-version: ['8.0.3']
+
+      steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - name: Set up Python ${{ matrix.python-version }}
+              uses: actions/setup-python@v2
+              with:
+                  python-version: ${{ matrix.python-version }}
+            - name: Install Python dependencies
+              run: |
+                  python -m pip install --upgrade pip wheel
+                  python -m pip install nikola==${{ matrix.nikola-version }}
+            - name: Run the test; failures are allowed
+              continue-on-error: true
+              run: |
+                  nikola build --strict
+                  test -d output

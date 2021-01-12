@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 9.0.0 (DR9, unreleased)
+## 9.0.0 (DR9, 2021-01-12)
 
 - Near-final updates for DR9
   ([PR#125](https://github.com/legacysurvey/legacysurvey/pull/125)). Includes:

@@ -371,7 +371,7 @@ about the survey was extracted from pixels at each random location from files in
 ==================== ======== ======================================================
 Column               Type     Description
 ==================== ======== ======================================================
-``RELEASE``	     int16    Integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``RELEASE``	     int16    Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``        char[8]  Name of the brick
 ``BRICK_OBJID``      int32    Random catalog object number enumerate by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
@@ -630,12 +630,13 @@ The sweeps are light-weight FITS binary tables (containing a subset of the most 
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
 
 .. _`RELEASE is documented here`: ../../release
+.. _`release is documented here`: ../../release
 .. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
-``RELEASE``                           int16                              Integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``RELEASE``                           int16                              Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
@@ -767,7 +768,7 @@ relate to multi-epoch WISE data, which are
 ====================== ============ ===================== =======================
 Name                   Type         Units                 Description
 ====================== ============ ===================== =======================
-``RELEASE``            int16                              Integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``RELEASE``            int16                              Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``            int32                              A unique Brick ID (in the range [1, 662174])
 ``OBJID``              int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``LC_FLUX_W1``         float32[15]  nanomaggies           ``FLUX_W1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
@@ -1177,7 +1178,7 @@ proper motion!
     ================ ========== ======================================================
     Column           Type       Description
     ================ ========== ======================================================
-    ``release``      int16      Integer denoting the camera and filter set used (`RELEASE is documented here`_) for the catalog object
+    ``release``      int16      Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`release is documented here`_)
     ``brickid``      int32      Unique Brick ID (in the range [1, 662174]) that the catalog object came from
     ``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
     ``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``

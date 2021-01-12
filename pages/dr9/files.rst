@@ -80,53 +80,61 @@ Column          Type    Description
 
 A FITS binary table with information that summarizes the contents of each brick for a region of DR9.
 
-=============== ========== =========================================================================
-Column          Type       Description
-=============== ========== =========================================================================
-``brickname``   char[8]    Name of the brick
-``ra``          float64    RA of the center of the brick
-``dec``         float64    Dec of the center of the brick
-``nexp_g``      int16      Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band
-``nexp_r``      int16      Median number of exposures in the unique area of the brick in r-band
-``nexp_z``      int16      Median number of exposures in the unique area of the brick in z-band
-``nexphist_g``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g
-``nexphist_r``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r
-``nexphist_z``  int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z
-``nobjs``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types
-``npsf``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``
-``nsimp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (there should be 0 such objects)
-``nrex``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``
-``nexp``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``
-``ndev``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``
-``ncomp``       int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP`` (there should be 0 such objects)
-``nser``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``
-``ndup``        int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``
-``psfsize_g``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in g-band
-``psfsize_r``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in r-band
-``psfsize_z``   float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in z-band
-``psfdepth_g``  float32    5-sigma PSF detection depth in :math:`g`-band (AB mag), using PsfEx PSF model
-``psfdepth_r``  float32    5-sigma PSF detection depth in :math:`r`-band (AB mag), using PsfEx PSF model
-``psfdepth_z``  float32    5-sigma PSF detection depth in :math:`z`-band (AB mag), using PsfEx PSF model
-``galdepth_g``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`g`-band (AB) mag
-``galdepth_r``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`r`-band (AB) mag
-``galdepth_z``  float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`z`-band (AB) mag
-``ebv``         float32    Median `SFD98`_ dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_PRIMARY`` objects in this brick
-``trans_g``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``
-``trans_r``     float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``
-``trans_z``     float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``
-``cosky_g``     float32    Estimated sky level in the coadded images (stacks) in :math:`g`-band [#]_
-``cosky_r``     float32    Estimated sky level in the coadded images (stacks) in :math:`r`-band
-``cosky_z``     float32    Estimated sky level in the coadded images (stacks) in :math:`z`-band
-``ext_g``       float32    Extinction in :math:`g`-band
-``ext_r``       float32    Extinction in :math:`r`-band
-``ext_z``       float32    Extinction in :math:`z`-band
-``wise_nobs``   int16[4]   Number of images that contributed to WISE calculations in each filter (not profile-weighted)
-``trans_wise``  float32[4] Median Milky Way dust transparency in WISE bands, based on ``ebv``. See also, e.g., ``MW_TRANSMISSION_W1``
-``ext_w1``      float32    Extinction in :math:`W1`-band
-``ext_w2``      float32    Extinction in :math:`W2`-band
-``ext_w3``      float32    Extinction in :math:`W3`-band
-``ext_w4``      float32    Extinction in :math:`W4`-band
-=============== ========== =========================================================================
+================== ========== =========================================================================
+Column             Type       Description
+================== ========== =========================================================================
+``brickname``      char[8]    Name of the brick.
+``ra``             float64    RA of the center of the brick.
+``dec``            float64    Dec of the center of the brick.
+``nexp_g``         int16      Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band.
+``nexp_r``         int16      Median number of exposures in the unique area of the brick in r-band.
+``nexp_z``         int16      Median number of exposures in the unique area of the brick in z-band.
+``nexphist_g``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g.
+``nexphist_r``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r.
+``nexphist_z``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z.
+``nobjs``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types.
+``npsf``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``.
+``nsimp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (there should be 0 such objects).
+``nrex``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``.
+``nexp``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``.
+``ndev``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``.
+``ncomp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP`` (there should be 0 such objects).
+``nser``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``.
+``ndup``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``.
+``psfsize_g``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in g-band.
+``psfsize_r``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in r-band.
+``psfsize_z``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in z-band.
+``psfdepth_g``     float32    5-sigma PSF detection depth in :math:`g`-band (AB mag), using PsfEx PSF model.
+``psfdepth_r``     float32    5-sigma PSF detection depth in :math:`r`-band (AB mag), using PsfEx PSF model.
+``psfdepth_z``     float32    5-sigma PSF detection depth in :math:`z`-band (AB mag), using PsfEx PSF model.
+``galdepth_g``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`g`-band (AB) mag.
+``galdepth_r``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`r`-band (AB) mag.
+``galdepth_z``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`z`-band (AB) mag.
+``ebv``            float32    Median `SFD98`_ dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_PRIMARY`` objects in this brick.
+``trans_g``        float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``.
+``trans_r``        float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``.
+``trans_z``        float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``.
+``cosky_g``        float32    Estimated sky level in the coadded images (stacks) in :math:`g`-band [#]_.
+``cosky_r``        float32    Estimated sky level in the coadded images (stacks) in :math:`r`-band.
+``cosky_z``        float32    Estimated sky level in the coadded images (stacks) in :math:`z`-band.
+``ext_g``          float32    Extinction in :math:`g`-band.
+``ext_r``          float32    Extinction in :math:`r`-band.
+``ext_z``          float32    Extinction in :math:`z`-band.
+``wise_nobs``      int16[4]   Number of images that contributed to WISE calculations in each filter (not profile-weighted).
+``trans_wise``     float32[4] Median Milky Way dust transparency in WISE bands, based on ``ebv``. See also, e.g., ``MW_TRANSMISSION_W1``.
+``ext_w1``         float32    Extinction in :math:`W1`-band.
+``ext_w2``         float32    Extinction in :math:`W2`-band.
+``ext_w3``         float32    Extinction in :math:`W3`-band.
+``ext_w4``         float32    Extinction in :math:`W4`-band.
+``brickid``        int16      A unique integer with 1-to-1 mapping to ``brickname``.
+``ra1``            float32    Lower RA boundary.
+``ra2``            float32    Upper RA boundary.
+``dec1``           float32    Lower Dec boundary.
+``dec2``           float32    Upper Dec boundary.
+``area``           float32    Area of the brick in square degrees.
+``survey_primary`` boolean    ``True`` for northern (southern) bricks that lie in the northern (southern) region of the Legacy Surveys.
+``in_desi``        boolean    ``True`` if the brick is in the DESI footprint.
+================== ========== =========================================================================
 
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Community Pipeline as, e.g., cosmic rays or saturation
 (see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR9 bitmasks page`_), do
@@ -161,50 +169,51 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[120]  Path to FITS image, e.g. "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz"
-``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found
-``camera``           char[X]    The camera that took this image (X is 7 for "90prime", 6 for "mosaic" and 5 for "decam")
-``expnum``           int64      Exposure number, eg 348224
-``plver``	     char[8]	Community Pipeline (CP) version number
-``procdate``	     char[19]	CP processing date
-``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
-``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam)
-``object``           char[35]   Name listed in the object tag from the CCD header
-``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404"
-``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`"
-``exptime``          float32    Exposure time in seconds, eg 30
-``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389
-``airmass``	     float32	Airmass of observation (measured at the telescope bore-sight)
-``fwhm``             float32    FWHM (in pixels) measured by the CP
-``width``            int16      Width in pixels of this image, eg 2046
-``height``           int16      Height in pixels of this image, eg 4096
-``ra_bore``          float64    Telescope boresight RA  of this exposure (deg)
-``dec_bore``         float64    Telescope boresight Dec of this exposure (deg)
-``crpix1``           float32    Astrometric header value: X reference pixel
-``crpix2``           float32    Astrometric header value: Y reference pixel
-``crval1``           float64    Astrometric header value: RA of reference pixel
-``crval2``           float64    Astrometric header value: Dec of reference pixel
-``cd1_1``            float32    Astrometric header value: transformation matrix
-``cd1_2``            float32    Astrometric header value: transformation matrix
-``cd2_1``            float32    Astrometric header value: transformation matrix
-``cd2_2``            float32    Astrometric header value: transformation matrix
-``yshift``	     boolean	(ignore; it's always ``False``)
-``ra``               float64    Approximate RA center of this CCD (deg)
-``dec``              float64    Approximate Dec center of this CCD (deg)
-``skyrms``           float32    Sky rms for the entire image (in counts/second)
-``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies
-``ccdzpt``           float32    Zeropoint for the CCD (AB mag)
-``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927
-``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec
-``ccdskycounts``     float32    Mean sky counts level per second per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]
-``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2)
-``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
-``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec
-``ccdphrms``         float32    Photometric rms for the CCD (in mag)
-``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction
-``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five
-``ccd_cuts``         int32      Bit mask describing CCD image quality (see the `DR9 bitmasks page`_)
+``image_filename``   char[120]  Path to FITS image, e.g. "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz".
+``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found.
+``camera``           char[X]    The camera that took this image (X is 7 for "90prime", 6 for "mosaic" and 5 for "decam").
+``expnum``           int64      Exposure number, eg 348224.
+``plver``	     char[8]	Community Pipeline (CP) version number.
+``procdate``	     char[19]	CP processing date.
+``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date.
+``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam).
+``object``           char[35]   Name listed in the object tag from the CCD header.
+``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404".
+``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`".
+``exptime``          float32    Exposure time in seconds, eg 30.
+``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389.
+``airmass``	     float32	Airmass of observation (measured at the telescope bore-sight).
+``fwhm``             float32    FWHM (in pixels) measured by the CP.
+``width``            int16      Width in pixels of this image, eg 2046.
+``height``           int16      Height in pixels of this image, eg 4096.
+``ra_bore``          float64    Telescope boresight RA  of this exposure (deg).
+``dec_bore``         float64    Telescope boresight Dec of this exposure (deg).
+``crpix1``           float32    Astrometric header value: X reference pixel.
+``crpix2``           float32    Astrometric header value: Y reference pixel.
+``crval1``           float64    Astrometric header value: RA of reference pixel.
+``crval2``           float64    Astrometric header value: Dec of reference pixel.
+``cd1_1``            float32    Astrometric header value: transformation matrix.
+``cd1_2``            float32    Astrometric header value: transformation matrix.
+``cd2_1``            float32    Astrometric header value: transformation matrix.
+``cd2_2``            float32    Astrometric header value: transformation matrix.
+``yshift``	     boolean	(ignore; it's always ``False``).
+``ra``               float64    Approximate RA center of this CCD (deg).
+``dec``              float64    Approximate Dec center of this CCD (deg).
+``skyrms``           float32    Sky rms for the entire image (in counts/second).
+``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies.
+``ccdzpt``           float32    Zeropoint for the CCD (AB mag).
+``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
+``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
+``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
+``ccdskycounts``     float32    Mean sky counts level per second per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500].
+``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2).
+``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
+``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
+``ccdphrms``         float32    Photometric rms for the CCD (in mag).
+``phrms``            float32    Median photometric rms across all CCDs in the image (in mag).
+``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction.
+``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five.
+``ccd_cuts``         int32      Bit mask describing CCD image quality (see the `DR9 bitmasks page`_).
 ==================== ========== =======================================================
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
@@ -215,8 +224,8 @@ survey-ccds-<camera>-dr9.kd.fits
 As for the **survey-ccds-<camera>-dr9.fits.gz** files but limited by the depth of each observation. These files
 contain the CCDs actually used for the DR9 reductions. Columns are the same as for the **survey-ccds-<camera>-dr9.fits.gz** files.
 
-ccds-annotated-<camera>-dr9-cut.fits.gz
----------------------------------------
+ccds-annotated-<camera>-dr9.fits.gz
+-----------------------------------
 
 Versions of the **survey-ccds-<camera>-dr9.fits.gz** files with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
@@ -280,6 +289,13 @@ Column               Type       Description
 .. _`issues page`: ../issues
 .. _`DECaLS`: ../../decamls
 
+ccds-annotated-<camera>-dr9.kd.fits
+-----------------------------------
+
+As for the **ccds-annotated-<camera>-dr9.fits.gz** files but limited by the depth of each observation. These files
+contain the CCDs actually used for the DR9 reductions. Columns are the same as for the **ccds-annotated-<camera>-dr9.fits.gz** files.
+
+
 <region>/dr9-<region>-depth.fits.gz
 -----------------------------------
 
@@ -341,21 +357,21 @@ detailed PSF model.
 Random Catalogs (``randoms/*``)
 ===============================
 
-randoms-inside-dr9-0.XXX.0-\*.fits
-------------------------------------------
+randoms-1-\*.fits
+-----------------
 
-Ten files of random points sampled across the CCDs that comprise the geometry of DR9. Random locations
-were generated across the footprint at a density of 5,000 per square degree and meta-information
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR9. Random locations
+were generated across the footprint at a density of 2,500 per square degree and meta-information
 about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
 ``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``,
 ``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
-(meaning that randomness is retained if just the first N rows of the file are read). Contains the following columns:
+(meaning that randomness is retained if just the first N rows of the file are read). Each file contains the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
 ==================== ======== ======================================================
-``RELEASE``	     int16    Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``RELEASE``	     int16    Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``        char[8]  Name of the brick
 ``BRICK_OBJID``      int32    Random catalog object number enumerate by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
@@ -386,6 +402,7 @@ Column               Type     Description
 ``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
+``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
 ``TARGETID``         int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``DESI_TARGET``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``BGS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
@@ -394,31 +411,37 @@ Column               Type     Description
 ``OBSCONDITIONS``    int32    See the `desitarget data model`_; set to 511, which corresponds to all possible observing conditions (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``PRIORITY_INIT``    int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``NUMOBS_INIT``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SCND_TARGET``      int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``NUMOBS_MORE``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS``           int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``Z``                float64  See the `desitarget data model`_; set to -1.0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``ZWARN``            int64    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TARGET_STATE``     char[15] See the `desitarget data model`_; set to "QSO|UNOBS", denoting an unobserved QSO (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TIMESTAMP``        char[19] See the `desitarget data model`_; time at which this random was processed (added to facilitate running randoms through the `DESI fiberassign code`_)
+``VERSION``          char[14] See the `desitarget data model`_; version of the ``desitarget`` code used to process this random (added to facilitate running randoms through the `DESI fiberassign code`_)
 ``PRIORITY``         int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
-``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
 ==================== ======== ======================================================
 
-.. _`a particular declination`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/io.py#L95
-.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/b6b13ae5daf29addfc6cc34db13ad775582842fb/py/desitarget/targets.py#L615
-.. _`desitarget data model`: https://github.com/desihub/desidatamodel/blob/master/doc/DESI_TARGET/targets.rst
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/io.py#L102
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/targets.py#L821
+.. _`desitarget data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_TARGET/index.html
 .. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
-.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/master/bin/select_randoms
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/0.48.0/bin/select_randoms
 .. _`desitarget`: https://github.com/desihub/desitarget/
-.. _`here`: https://github.com/desihub/desitarget/blob/master/py/desitarget/randoms.py
+.. _`here`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/randoms.py
 
-The **0.XXX.0** in the file names refers to the version of the `desitarget`_ code used to generate the random catalogs. The `code is available on GitHub`_ (see also `here`_). The
+The version of the `desitarget`_ code used to generate the random catalogs (``0.48.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
 northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").
 
-randoms-outside-dr9-0.XXX.0-\*.fits
--------------------------------------------
+randoms-outside-1-\*.fits
+-------------------------
 
-Ten files of random points in bricks that do not contain an observation in DR9 (that are "outside" of the DR9 footprint). The columns in this file
+Twenty files of random points in bricks that do not contain an observation in DR9 (that are "outside" of the DR9 footprint). The columns in this file
 are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
-As with the other random catalogs, points were generated at a density of 5,000 per square degree and
+As with the other random catalogs, points were generated at a density of 2,500 per square degree and
 the order of the points within the file is also randomized. Contains the following columns:
 
 ==================== ======== ======================================================
@@ -434,17 +457,17 @@ Column               Type     Description
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ==================== ======== ======================================================
 
-randoms-allsky-dr9-0.XXX.0.fits
----------------------------------------
+randoms-allsky-1-\*.fits
+------------------------
 
-The (randomly shuffled) combination of each of the ``randoms-inside-dr9-0.XXX.0-X.fits``
-and ``randoms-outside-dr9-0.XXX.0-X.fits`` files (where X = 1, 2, 3 etc.). This creates
-ten "all-sky" random catalogs (at a density of 5,000 locations per square degree)
+The (randomly shuffled) combination of each of the ``randoms-1-X.fits``
+and ``randoms-outside-1-X.fits`` files (where X = 0, 1, 2, 3, ... 18, 19). This creates
+twenty "all-sky" random catalogs (at a density of 2,500 locations per square degree)
 where each brick is either populated with observations from the
-Legacy Surveys, or zeros. Contains the same columns as the ``randoms-inside-dr9-0.XXX.0-\*.fits`` files.
+Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-1-X.fits`` files.
 
-survey-bricks-dr9-randoms-0.XXX.0.fits
-----------------------------------------------
+survey-bricks-dr9-randoms-0.48.0.fits
+-------------------------------------
 
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
 the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional
@@ -457,10 +480,10 @@ Column             Type    Description
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 
-<region>/survey-bricks-dr9-randoms-0.XXX.0.fits
--------------------------------------------------------
+<region>/randoms/randoms-<region>-1-\*.fits
+-------------------------------------------
 
-As for the ``randoms-inside-dr9-0.XXX.0-X.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
+As for the corresponding ``randoms-1-*.fits`` file, but for each ``<region>`` without resolving randoms using `the desitarget code`_. In other words, this file
 contains all randoms for the northern (southern) imaging surveys, regardless of whether the brick is "officially" in the ``north`` (``south``) region.
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
@@ -497,13 +520,39 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 survey-dr9-<region>-specObj-dr16.fits
 -------------------------------------
 HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR14 spectrosopic
+photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
-**survey-dr9-specObj-dr16.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr9-<region>-specObj-dr16.fits** match the spectroscopic parameters in row "N" of
 specObj-dr16.fits. The spectroscopic file
-is documented in the SDSS DR14 `data model for specObj-dr16.fits`_.
+is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
 
-.. _`data model for specObj-dr16.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
+.. _`data model for specObj-dr16.fits`: https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html
+
+survey-dr9-<region>-dr16Q-v4.fits
+---------------------------------
+HDU1 (the only HDU) contains Tractored survey
+photometry that is row-by-row-matched to the SDSS DR16
+visually inspected quasar catalog (`Lyke et al. 2020`_)
+such that the photometric parameters in row "N" of
+**survey-dr9-<region>-dr16Q-v4.fits** match the spectroscopic parameters in row "N" of
+DR16Q_v4.fits. The spectroscopic file
+is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
+
+.. _`Lyke et al. 2020`: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract
+.. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
+.. _`data model for DR16Q_v4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
+
+survey-dr9-<region>-superset-dr16Q-v3.fits
+------------------------------------------
+HDU1 (the only HDU) contains Tractored survey
+photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
+confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
+such that the photometric parameters in row "N" of
+**survey-dr9-<region>-superset-dr16Q-v3.fits** match the spectroscopic parameters in row "N" of
+DR16Q_Superset_v3.fits. The spectroscopic file
+is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
+
+.. _`data model for DR16Q_Superset_v3.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_Superset_v3.html
 
 survey-dr9-<region>-dr12Q.fits
 ------------------------------
@@ -511,25 +560,12 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of
-**survey-dr9-dr12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr9-<region>-dr12Q.fits** match the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
-.. _`data model for DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
-
-survey-dr9-<region>-dr14Q_v4_4.fits
------------------------------------
-HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR14
-visually inspected quasar catalog (`Paris et al. 2018`_)
-such that the photometric parameters in row "N" of
-**survey-dr9-dr14Q_v4_4.fits** matches the spectroscopic parameters in row "N" of
-DR14Q_v4_4.fits. The spectroscopic file
-is documented in the SDSS DR14 `data model for DR14Q_v4_4.fits`_.
-
-.. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
-.. _`data model for DR14Q_v4_4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR14Q/DR14Q_v4_4.html
+.. _`data model for DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr9-<region>-superset-dr12Q.fits
 ---------------------------------------
@@ -537,11 +573,11 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
 (`Paris et al. 2017`_) such that the photometric parameters in row "N" of
-**survey-dr9-Superset_dr12Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr9-<region>-superset-dr12Q.fits** match the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
-.. _`data model for Superset_DR12Q.fits`: https://data.sdss3.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
+.. _`data model for Superset_DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr9-<region>-dr7Q.fits
 -----------------------------
@@ -549,7 +585,7 @@ HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-**survey-dr9-dr7Q.fits** matches the spectroscopic parameters in row "N" of
+**survey-dr9-<region>-dr7Q.fits** match the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
@@ -594,12 +630,13 @@ The sweeps are light-weight FITS binary tables (containing a subset of the most 
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
 
 .. _`RELEASE is documented here`: ../../release
+.. _`release is documented here`: ../../release
 .. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
-``RELEASE``                           int16                              Unique integer denoting the camera and filter set used (`RELEASE is documented here`_)
+``RELEASE``                           int16                              Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
@@ -678,14 +715,6 @@ Name                                  Type         Units                 Descrip
 ``PSFDEPTH_W1``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
 ``PSFDEPTH_W2``                       float32      1/nanomaggies\ |sup2| As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
 ``WISE_COADD_ID``                     char[8]                            unWISE coadd file name for the center of each object
-``LC_FLUX_W1``                        float32[15]  nanomaggies           ``FLUX_W1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``LC_FLUX_W2``                        float32[15]  nanomaggies           ``FLUX_W2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W1``                   float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W2``                   float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
-``LC_NOBS_W1``                        int16[15]                          ``NOBS_W1`` in each of up to fifteen unWISE coadd epochs
-``LC_NOBS_W2``                        int16[15]                          ``NOBS_W2`` in each of up to fifteen unWISE coadd epochs
-``LC_MJD_W1``                         float64[15]                        ``MJD_W1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_MJD_W2``                         float64[15]                        ``MJD_W2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
 ``SHAPE_R``                           float32      arcsec                Half-light radius of galaxy model for galaxy type ``TYPE`` (>0)
 ``SHAPE_R_IVAR``                      float32      1/arcsec\ |sup2|      Inverse variance of ``SHAPE_R``
 ``SHAPE_E1``                          float32                            Ellipticity component 1 of galaxy model for galaxy type ``TYPE``
@@ -730,8 +759,55 @@ Name                                  Type         Units                 Descrip
 
 .. _photometric-redshifts:
 
-Photometric Redshift files (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
-----------------------------------------------------------------------------
+Light Curve sweeps (9.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+------------------------------------------------------------------------
+
+The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
+relate to multi-epoch WISE data, which are
+
+====================== ============ ===================== =======================
+Name                   Type         Units                 Description
+====================== ============ ===================== =======================
+``RELEASE``            int16                              Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
+``BRICKID``            int32                              A unique Brick ID (in the range [1, 662174])
+``OBJID``              int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
+``LC_FLUX_W1``         float32[15]  nanomaggies           ``FLUX_W1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``LC_FLUX_W2``         float32[15]  nanomaggies           ``FLUX_W2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W1``    float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``LC_FLUX_W1`` (AB system; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W2``    float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``LC_FLUX_W2`` (AB; defaults to zero for unused entries)
+``LC_NOBS_W1``         int16[15]                          ``NOBS_W1`` in each of up to fifteen unWISE coadd epochs
+``LC_NOBS_W2``         int16[15]                          ``NOBS_W2`` in each of up to fifteen unWISE coadd epochs
+``LC_MJD_W1``          float64[15]                        ``MJD_W1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_MJD_W2``          float64[15]                        ``MJD_W2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_FRACFLUX_W1``     float32[15]                        ``FRACFLUX_W1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_FRACFLUX_W2``     float32[15]                        ``FRACFLUX_W2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_RCHISQ_W1``       float32[15]                        ``RCHISQ_W1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_RCHISQ_W2``       float32[15]                        ``RCHISQ_W2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``LC_EPOCH_INDEX_W1``  int16[15]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
+``LC_EPOCH_INDEX_W2``  int16[15]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
+====================== ============ ===================== =======================
+
+The light curve sweeps files are row-by-row-parallel to the standard sweeps files
+(i.e. the entries in each row of the light curve sweeps files correspond to the entries
+in each row of the standard sweeps files, which can be verified using ``RELEASE``,
+``BRICKID`` and ``OBJID``).
+
+
+Extra sweeps (9.0-lightcurves/sweep-<brickmin>-<brickmax>-ex.fits)
+-------------------------------------------------------------------
+
+The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
+are not otherwise in the standard sweeps files or the "light curve" sweep files.
+See the `Tractor catalogs`_ for a description of the columns in these files.
+The extra sweeps files are row-by-row-parallel to the standard sweeps files
+(i.e. the entries in each row of the extra sweeps files correspond to the entries
+in each row of the standard sweeps files, which can be verified using ``RELEASE``,
+``BRICKID`` and ``OBJID``).
+
+
+Coming Soon! - Photometric Redshift sweeps
+------------------------------------------
+.. (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 
 The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
 catalog is line-matched to the DR9 sweep catalogs as described above.
@@ -777,8 +853,8 @@ High Energy Physics via grant DE-SC0007914."
 .. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
 .. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
 
-Star masks (``masks/*``)
-========================
+Coming Soon! - Star masks (``masks/*``)
+=======================================
 
 gaia-mask-dr9-fixed.fits
 ------------------------
@@ -843,7 +919,6 @@ Name                                  Type    Units              Description
 ``gaia_astrometric_params_solved``    uint8 	      	      	 which astrometric parameters were estimated for a `Gaia`_ source
 ===================================== ======= ================== ========================
 
-
 .. _`catalog`: http://vizier.u-strasbg.fr/viz-bin/VizieR?-source=J%2FA%2BA%2F413%2F771
 .. _`Metz & Geffert (2004)`: https://www.aanda.org/articles/aa/pdf/2004/02/aah4555.pdf
 .. _`APASS`: https://www.aavso.org/apass
@@ -854,8 +929,7 @@ Name                                  Type    Units              Description
 Image Stacks (``<region>/coadd/*``)
 ===================================
 
-Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
-3600 pixels, at 0.262 arcseconds per pixel.
+Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixels, at 0.262 arcseconds per pixel.
 
 - <AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz
     The Tractor's model prediction of the images, similar to ``<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz``, below,
@@ -980,8 +1054,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 .. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
 
-Large galaxy files (``largegalaxies/<AAA>/<GALNAME>/*``)
-========================================================
+Coming Soon! - Large galaxy files (``largegalaxies/<AAA>/<GALNAME>/*``)
+=======================================================================
 
 Local fits within the area of large galaxies and galaxy groups, where <GALNAME> is the name of the galaxy or group
 (e.g. ``NGC0779`` or ``NGC0779_GROUP``). Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
@@ -1060,8 +1134,10 @@ Local fits within the area of large galaxies and galaxy groups, where <GALNAME> 
 - <GALNAME>-pipeline-resid-grz.jpg
     JPEG image, not yet documented.
 
-Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
-=====================================================================================
+Coming Soon! - Forced Photometry Files
+======================================
+.. (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
+
 
 .. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass
@@ -1102,7 +1178,7 @@ proper motion!
     ================ ========== ======================================================
     Column           Type       Description
     ================ ========== ======================================================
-    ``release``      int16      Unique integer denoting the camera and filter set used (`RELEASE is documented here`_) for the catalog object
+    ``release``      int16      Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`release is documented here`_)
     ``brickid``      int32      Unique Brick ID (in the range [1, 662174]) that the catalog object came from
     ``brickname``    char[8]    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2, of the catalog object
     ``objid``        int32      Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``
@@ -1132,67 +1208,9 @@ proper motion!
     ``dqmask``       int16      Data Quality mask from the CP pipeline for the center pixel (defined as for ``ALLMASK/ANYMASK`` on the `DR9 bitmasks page`_)
     ``dra``          float32    When fitting for spatial derivatives, the motion of the source in the RA direction, in arcsec
     ``ddec``         float32    Motion of the source in the Dec direction, in arcsec
-    ``dra_ivar``     float32    Inverse-variance on `dra`, in 1/arcsec|sup2|
-    ``ddec_ivar``    float32    Inverse-variance on `ddec`, in 1/arcsec|sup2|
+    ``dra_ivar``     float32    Inverse-variance on ``dra``, in 1/arcsec|sup2|
+    ``ddec_ivar``    float32    Inverse-variance on ``ddec``, in 1/arcsec|sup2|
     ================ ========== ======================================================
-
-
-Splinesky Files (``calib/<camera>/splinesky-*``)
-=================================================
-
-- splinesky-merged/<EXPOS>/<camera>-<EXPOSURE>.fits
-    Where <camera> is one of ``90prime``, ``decam`` or ``mosaic``, <EXPOSURE> is the exposure number as an 8-character string and <EXPOS> is the first 5 characters of <EXPOSURE>.
-
-    This file contains all of the sky models for a given exposure number, as a single FITS binary table with 60 rows, one per CCD.  Each row in this table contains the sky model for a single CCD.
-    The splinesky files describe a smooth 2-dimensional function, implemented using the scipy `RectBivariateSpline function`_.
-    This is defined by a number of grid cell locations and function values at those locations, interpolated with a cubic spline.
-    The spline grid cells for DR9 are ~256 pixels in size, and extend from edge to edge, so, for example DECam images (~2048 x 4096 pixels) have 9 x 17 cells.
-
-    For `MzLS`_ (``mosaic``) files, some early exposures lack an ``EXPNUM`` in the headers; these have a fake exposure number like 160125082555 corresponding
-    to the date and time the image was taken (2016-01-25T08:25:55). For `BASS`_ (``90prime``) files, the exposure number comes from the ``DTACQNAM`` header card;
-    for example, 20160710/d7580.0144.fits becomes exposure number 75800144.
-
-    ================ ========= ======================================================
-    Column           Type      Description
-    ================ ========= ======================================================
-    ``gridw``        int64     The number of grid cells in the horizontal direction
-    ``gridh``        int64     The number of grid cells in the vertical direction
-    ``gridvals``     float32   The spline values (an array of size ``gridh`` :math:`\times` ``gridw``)
-    ``xgrid``        int32     The horizontal locations of the grid cells (an array of length ``gridw``)
-    ``ygrid``        int32     The vertical locations of the grid cells (an array of length ``gridh``)
-    ``order``        uint8     The order of the spline (i.e. 3 = cubic)
-    ``x0``           int32     Pixel offset of the model in the x direction (always 0 for these files)
-    ``y0``           int32     Pixel offset of the model in the y direction (always 0 for these files)
-    ``skyclass``     char[27]  Always set to ``tractor.splinesky.SplineSky`` (the name of a Python class that is used to read the model)
-    ``legpipev``     char[19]  Version of legacypipe used for this reduction
-    ``plver``        char[4]   Community Pipeline (CP) version number
-    ``plprocid``     char[7]   Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date
-    ``imgdsum``      int64     The `DATASUM` value from the image header (a checksum)
-    ``procdate``     char[19]  CP processing date
-    ``sig1``         float32   Estimated per-pixel noise in CP image units, from :math:`1/\sqrt(\mathrm{median}(wt[good]))` where :math:`wt` is the weight map and :math:`good` are un-masked pixels
-    ``sky_mode``     float32   Scalar mode of the image, estimated by fitting a quadratic to the histogram of unmasked pixels
-    ``sky_med``      float32   Scalar median of the image, based on unmasked pixels
-    ``sky_cmed``     float32   Median of the :math:`2\sigma`-clipped image pixel values, based on unmasked pixels
-    ``sky_john``     float32   Starting from a 5-pixel boxcar average over the ``sky_cmed``-subtracted pixels, find and mask :math:`3\sigma` sources (dilated by 3 pixels), then take the median of :math:`2\sigma`-clipped pixels
-    ``sky_fmasked``  float32   Total fraction of pixels masked by the source mask, the reference-source mask, and where the weightmap is 0
-    ``sky_fine``     float32   RMS difference between a splinesky model at normal and at twice the resolution, to characterize the splinesky model had it more freedom
-    ``sky_p0``       float32   Identical to ``sky_fine``
-    ``sky_p10``      float32   0th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p20``      float32   10th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p30``      float32   20th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p40``      float32   30th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p50``      float32   40th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p60``      float32   50th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p70``      float32   60th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p80``      float32   70th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p90``      float32   80th percentile of unmasked image pixels minus the splinesky model
-    ``sky_p100``     float32   90th percentile of unmasked image pixels minus the splinesky model
-    ``expnum``       int64     Exposure number, eg 348224
-    ``ccdname``      char[4]   CCD name, e.g. "N10", "S7" for DECam
-    ================ ========= ======================================================
-
-.. _`RectBivariateSpline function`: https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html#scipy.interpolate.RectBivariateSpline
-
 
 Other Files
 ===========
@@ -1208,7 +1226,8 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date.
+Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date, at
+which point *this documentation could be updated*.
 
 Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
 portal (http://archive.noao.edu/search/query) and an ftp server.

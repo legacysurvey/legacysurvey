@@ -2,6 +2,14 @@
 
 ## 9.0.0 (DR9, unreleased)
 
+- Near-final updates for DR9
+  ([PR#125](https://github.com/legacysurvey/legacysurvey/pull/125)). Includes:
+    - Final data model, where available.
+    - Updated publications through 2020-12-12.
+    - Add statistics to the description page (areas, numbers of sources, etc.).
+    - Add depth histogram plots.
+    - Add "coming soon" text to work-in-progress sections and pages.
+    - Add known issues, including patched bricks and DR9sv release.
 - Merge DR9 WIP branch with PR#120
   ([PR#120](https://github.com/legacysurvey/legacysurvey/pull/120))
   security updates. Also includes some updates for DR9

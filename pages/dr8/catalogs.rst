@@ -15,7 +15,7 @@
 .. contents::
 
 
-<camera>/tractor/<AAA>/tractor-<brick>.fits
+<region>/tractor/<AAA>/tractor-<brick>.fits
 -------------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be

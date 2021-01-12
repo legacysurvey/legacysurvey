@@ -26,14 +26,20 @@ These tables contains information regarding how the RELEASE integer corresponds 
 ========= ====== ========= ====== ====== =======
 RELEASE	  CAMERA RELEASE   CAMERA FILTER PRIMARY
 ========= ====== ========= ====== ====== =======
-9010      decam  9011      bok    |g|    1
-9010      decam  9011      bok    |r|    1
-9010      decam  9011      mosaic |z|    1
-9010      wise   9011      wise   |W1|   0
-9010      wise   9011      wise   |W2|   0
-9010      wise   9011      wise   |W3|   0
-9010      wise   9011      wise   |W4|   0
+9010/9012 decam  9011      bok    |g|    1
+9010/9012 decam  9011      bok    |r|    1
+9010/9012 decam  9011      mosaic |z|    1
+9010/9012 wise   9011      wise   |W1|   0
+9010/9012 wise   9011      wise   |W2|   0
+9010/9012 wise   9011      wise   |W3|   0
+9010/9012 wise   9011      wise   |W4|   0
 ========= ====== ========= ====== ====== =======
+
+Note that all of the objects in DR9 across a total of 1691 bricks have a ``RELEASE`` number of ``9012``
+instead of ``9010``. This was because these bricks required additional processing, which altered the
+sources that were extracted on these bricks. See also the `known issues page`_.
+
+.. _`known issues page`: ../dr9/issues#bricks-that-were-processed-using-the-burst-buffer-at-nersc
 
 **DR8**
 

@@ -160,7 +160,7 @@ Data model changes
 
   - DR9 uses version 3 of the `SGA`_, so the ``ref_cat`` (or ``REF_CAT``) column in the `Tractor catalogs`_ and `sweep files`_ is populated with ``L3`` for `SGA`_ sources in DR9 (this column was populated with ``L2`` for `SGA`_ sources in DR8).
 
-* The DR9 `coadds`_ include a new set of files ``legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` which record a new version of the Tractor's model prediction of the images. The `blobmodel` information is similar to the information in the ``<AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz`` files (which have already been made available in prior Data Releaseses). In the `blobmodel` files, though, the models are `clipped to the blobs within which they are measured`. In other words, the models used to derive the maps in the `blobmodel` files are not extrapolated beyond the pixels in the blobs that are used to fit the models.
+* The DR9 `coadds`_ include a new set of files ``legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` which record a new version of the Tractor's model prediction of the images. The `blobmodel` information is similar to the information in the ``legacysurvey-<brick>-model-<filter>.fits.fz`` files (which have already been made available in prior Data Releaseses). In the `blobmodel` files, though, the models are `clipped to the blobs within which they are measured`. In other words, the models used to derive the maps in the `blobmodel` files are not extrapolated beyond the pixels in the blobs that are used to fit the models.
 
 .. _`DR7`: ../../dr7/description
 .. _`DR8 catalog`: ../../dr8/catalogs

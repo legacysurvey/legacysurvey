@@ -28,11 +28,11 @@ jobs:
             - name: Set up Python ${{ matrix.python-version }}
               uses: actions/setup-python@v2
               with:
-                python-version: ${{ matrix.python-version }}
+                  python-version: ${{ matrix.python-version }}
             - name: Install Python dependencies
               run: |
-                python -m pip install --upgrade pip wheel
-                python -m pip install nikola==${{ matrix.nikola-version }}
+                  python -m pip install --upgrade pip wheel
+                  python -m pip install nikola==${{ matrix.nikola-version }}
             - name: Run the test
               run: nikola build --strict
 
@@ -42,23 +42,23 @@ jobs:
       strategy:
           fail-fast: false
           matrix:
-              os: [ubuntu-latest]
-              python-version: [3.8]
-              nikola-version: ['8.0.3']
+                os: [ubuntu-latest]
+                python-version: [3.8]
+                nikola-version: ['8.0.3']
 
       steps:
-          - name: Checkout code
-            uses: actions/checkout@v2
-            with:
-              fetch-depth: 0
-          - name: Set up Python ${{ matrix.python-version }}
-            uses: actions/setup-python@v2
-            with:
-              python-version: ${{ matrix.python-version }}
-              - name: Install Python dependencies
-                run: |
-                  python -m pip install --upgrade pip wheel
-                  python -m pip install nikola==${{ matrix.nikola-version }}
-          - name: Run the test; failures are allowed
-            continue-on-error: true
-            run: nikola build --strict
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+            - name: Set up Python ${{ matrix.python-version }}
+              uses: actions/setup-python@v2
+              with:
+                python-version: ${{ matrix.python-version }}
+            - name: Install Python dependencies
+              run: |
+                python -m pip install --upgrade pip wheel
+                python -m pip install nikola==${{ matrix.nikola-version }}
+            - name: Run the test; failures are allowed
+              continue-on-error: true
+              run: nikola build --strict

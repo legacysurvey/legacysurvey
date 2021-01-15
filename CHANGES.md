@@ -3,7 +3,7 @@
 ## 9.0.1 (DR9, unreleased)
 
 - Incorporate gallery pages into this package
-  ([PR#127](https://github.com/legacysurvey/legacysurvey/pull/127)).
+  ([PR#129](https://github.com/legacysurvey/legacysurvey/pull/129)).
 
 ## 9.0.0 (DR9, 2021-01-12)
 

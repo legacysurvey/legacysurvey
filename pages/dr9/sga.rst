@@ -14,9 +14,41 @@
 
 .. _`John Moustakas`: ../../contact/#other-experts
 
-The Siena Galaxy Atlas (SGA) is an angular diameter-limited sample of galaxies constructed as part of the DESI Legacy Imaging Surveys. It provides
-custom, wide-area, optical and infrared mosaics (in :math:`grz` and :math:`W1-W4`), azimuthally averaged surface brightness profiles, and both aperture and integrated
-photometry for a sample of approximately 400,000 galaxies over :math:`20{,}000\,\mathrm{deg}^2`.
+``Historical & Scientific Context``
+===================================
+
+Nearby galaxies which are intrinsically large enough to be spatially
+well-resolved (from our vantage point in the universe) provide a unique and
+powerful window into the fossil record of galaxy formation and evolution. In
+these large angular-diameter systems we can carry out exceptionally detailed
+studies of their internal structure, global properties, faint, low
+surface-brightness features, and local and large-scale environments.
+
+Indeed, existing catalogs and imaging atlases of large, nearby galaxies such as
+the Third Reference Catalog of Bright Galaxies (RC3), the 2MASS Large Galaxy
+Atlas, and the NASA–Sloan Atlas, among others, have had a rich and outsized
+impact on our current understanding of galaxy formation.
+
+
+``The Siena Galaxy Atlas (SGA)``
+================================
+
+We use new deep, wide-area imaging from the DESI Legacy Imaging Surveys
+(:math:`20{,}000\,\mathrm{deg}^2` in :math:`grz` to :math:`r<23.4`) and all-sky
+infrared imaging at :math:`3.4-22` microns from unWISE to produce the 2020
+version of the Siena Galaxy Atlas, ``SGA-2020``, a multiwavelength atlas of
+approximately :math:`400,000` nearby galaxies selected approximately by their
+angular diameter.
+
+The atlas delivers precise coordinates, multiwavelength mosaics, azimuthally
+averaged surface brightness profiles, integrated and aperture photometry, and
+additional metadata for the full sample.
+
+Coupled with existing and forthcoming optical spectroscopy from the Dark Energy
+Spectroscopic Instrument (DESI), particularly the Bright Galaxy Survey (BGS) of
+:math:`10` million galaxies brigher than :math:`r=20`, the SGA-2020 will yield
+new insights into the star formation and mass assembly histories of galaxies and
+the galaxy-halo connection.
 
 All the code used to generate and analyze the catalog is publicly available:
 

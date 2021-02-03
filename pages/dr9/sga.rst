@@ -15,6 +15,14 @@
 .. _`John Moustakas`: ../../contact/#other-experts
 .. _`Dustin Lang`: ../../contact/#other-experts
 
+`Data Access`_
+==============
+
+The ``SGA-2020`` data products can be browsed and downloaded at the `SGA
+web-portal`_, both for individual galaxies and the full sample. Below, we
+describe the data model for these data products. A forthcoming paper (Moustakas,
+Lang, et al., in preparation) will describe the ``SGA-2020`` in detail.
+
 ``Overview``
 ============
 
@@ -66,25 +74,20 @@ well-resolved, nearby galaxies.
  Atlas, and the NASA–Sloan Atlas, among others, have had a rich and outsized
  impact on our current understanding of galaxy formation.
 
+``Reporting Issues``
+====================
 
-``Data Access``
-===============
+We welcome questions and feedback from users, as well as requests for additional
+data products through the ticket system at
 
-The ``SGA-2020`` data products can be browsed and downloaded at the `SGA
-web-portal`_, both for individual galaxies and the full sample. Below, we
-describe the data model for these data products. A forthcoming paper (Moustakas,
-Lang, et al., in preparation) will describe the ``SGA-2020`` in detail.
+- https://github.com/moustakas/SGA/issues
 
-All the code used to select, build, and analyze the catalog is publicly
-available:
+We also acknowledge that all the code used to select, build, and analyze the
+catalog is open source and publicly available:
 
 - https://github.com/moustakas/SGA
 - https://github.com/moustakas/legacyhalos
 - https://github.com/legacysurvey/legacypipe
-
-We welcome questions and feedback from users, as well as requests for additional
-data products through the ticket system at
-https://github.com/moustakas/SGA/issues. 
 
 ``Sample Selection``
 ====================
@@ -822,7 +825,8 @@ Some known issues include:
 
 Write me.
 
-
+.. _`Data Access`: https://sga.legacysurvey.org
+.. _`SGA web-portal`: https://sga.legacysurvey.org
 .. _`DESI Legacy Imaging Surveys DR9`: ../../dr9
 .. _`DR9`: ../../dr9
 .. _`unWISE`: http://unwise.me
@@ -830,7 +834,6 @@ Write me.
 .. _`DESI`: http://desi.lbl.gov
 .. _`HyperLeda`: http://leda.univ-lyon1.fr/
 .. _`HyperLeda extragalactic database`: http://leda.univ-lyon1.fr/
-.. _`SGA web-portal`: https://sga.legacysurvey.org
 .. _`Third Reference Catalog of Bright Galaxies (RC3)`: https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=VII/155
 .. _`RC3`: https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=VII/155
 .. _`NASA Extragalactic Database (NED)`: https://ned.ipac.caltech.edu

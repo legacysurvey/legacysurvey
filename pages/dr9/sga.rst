@@ -27,8 +27,7 @@ Lang, et al., in preparation) will describe the ``SGA-2020`` in detail.
 ============
 
 The ``Siena Galaxy Atlas (SGA)`` is a multiwavelength atlas of approximately
-:math:`385,000` nearby galaxies selected based on their apparent angular
-diameter. 
+385,000 nearby galaxies selected based on their apparent angular diameter.
 
 These galaxies are intrinsically large enough to be spatially resolved from our
 vantage point in the universe, providing a unique and powerful window into the
@@ -40,9 +39,9 @@ the `Dark Energy Spectroscopic Instrument (DESI)`_ survey.
 The ``SGA`` delivers precise coordinates, multiwavelength mosaics, azimuthally
 averaged optical surface brightness and color profiles, integrated and aperture
 photometry, model images and photometry, and additional metadata for the full
-sample. The primary sample relies on deep, wide-field :math:`grz` imaging from
-the `DESI Legacy Imaging Surveys DR9`_ as well as all-sky infrared imaging at
-:math:`3.4-22` microns from `unWISE`_.
+sample. The primary sample relies on deep, wide-field *grz* imaging from the
+`DESI Legacy Imaging Surveys DR9`_ as well as all-sky infrared imaging at 3.4-22
+microns from `unWISE`_.
 
 The 2020 version of the atlas, ``SGA-2020``, is primarily selected from the
 `Hyperleda extragalactic database`_ of *known* large angular-diameter galaxies,
@@ -51,12 +50,12 @@ identified from the `DR9`_ imaging itself, which will mitigate the heterogeneity
 and surface brightness incompleteness of the parent sample.
 
 Coupled with existing and forthcoming optical spectroscopy from `DESI`_,
-particularly the Bright Galaxy Survey (BGS) of :math:`10` million galaxies
-brigher than :math:`r=20`, the ``SGA-2020`` will yield important new insights
-into the star formation and mass assembly histories of galaxies, enable a myriad
-complementary studies of the nearby and distant universe, and help engage the
-broader public in astronomy with visually striking color imaging of large,
-well-resolved, nearby galaxies.
+particularly the Bright Galaxy Survey (BGS) of 10 million galaxies brigher than
+:math:`r=20`, the ``SGA-2020`` will yield important new insights into the star
+formation and mass assembly histories of galaxies, enable a myriad complementary
+studies of the nearby and distant universe, and help engage the broader public
+in astronomy with visually striking color imaging of large, well-resolved,
+nearby galaxies.
 
 .. 
  Historical & Scientific Context
@@ -105,7 +104,7 @@ typically the `B`-band), a traditional measure of the "size" of the galaxy
 popularized by the `Third Reference Catalog of Bright Galaxies (RC3)`_.
 
 We executed the following query on the ``2018 November 14`` version of the
-`Hyperleda`_ database, resulting in a catalog of :math:`1,436,176` galaxies:
+`Hyperleda`_ database, resulting in a catalog of 1,436,176 galaxies:
 
 .. code-block:: sql
                 
@@ -140,8 +139,8 @@ Based on a large number of visual inspections and both quantitative and
 qualitative tests, we culled the resulting sample by applying the following
 additional cuts:
 
-* First, we limited the sample to :math:`0.333<D(25)<180\ \mathrm{arcmin}`, which
-  removed roughly :math:`900,000` galaxies (:math:`\approx63\%` of the original
+* First, we limited the sample to :math:`0.333<D(25)<180\ \mathrm{arcmin}`,
+  which removed roughly 900,000 galaxies (:math:`\approx63\%` of the original
   sample), including the Magellanic Clouds and the Sagittarius Dwarf Galaxy at
   the large-diameter end). We implemented the :math:`D(25)<20\ \mathrm{arcsec}`
   cut because we found that the fraction of spurious sources (or sources with
@@ -167,11 +166,10 @@ additional cuts:
 
 * Finally, we removed :math:`\approx1700` galaxies whose primary galaxy
   identifier (in `Hyperleda`_) was from either SDSS or 2MASS and whose central
-  coordinates placed it *inside* the elliptical aperture of *another*
-  (non-SDSS and non-2MASS) galaxy with diameter greater than :math:`0.5\
-  \mathrm{arcmin}`. Based on visual inspection, we found that many of these
-  sources were due to shredding or were spurious sources with grossly
-  over-estimated diameters.
+  coordinates placed it *inside* the elliptical aperture of *another* (non-SDSS
+  and non-2MASS) galaxy with diameter greater than 0.5 arcmin. Based on visual
+  inspection, we found that many of these sources were due to shredding or were
+  spurious sources with grossly over-estimated diameters.
 
 In addition, we visually inspected all galaxies in the sample with
 :math:`D(25)>0.75\ \mathrm{arcmin}`, including all the NGC/IC galaxies, and
@@ -229,11 +227,10 @@ taking care to ensure that galaxies which overlap (within two times their
 circularized :math:`D(25)` diameter) were assigned to the same group.
 
 Using this procedure, we identified :math:`\approx515,000` unique groups, of
-which approximately :math:`93\%` have just one member. Among the remaining
-:math:`7\%` of groups, :math:`\approx15,000` groups have two members,
-:math:`\approx1700` groups have :math:`3-5` members, :math:`\approx50` groups
-have :math:`6-10` members, and just four groups have :math:`10` or more
-galaxies, including the center of the Coma Cluster.
+which approximately :math:`93\%` have just one member. Among the remaining 7% of
+groups, :math:`\approx15,000` groups have two members, :math:`\approx1700`
+groups have 3-5 members, :math:`\approx50` groups have 6-10 members, and just
+four groups have 10 or more galaxies, including the center of the Coma Cluster.
 
 ..
   We also identify galaxies lying within and outside the Legacy Surveys imaging
@@ -242,10 +239,10 @@ galaxies, including the center of the Coma Cluster.
 ``Final Parent Sample``
 -----------------------
 
-The final parent sample contains :math:`531,677` galaxies approximately limited
-to :math:`D(25)>20\ \mathrm{arcsec}`, spanning a wide range of magnitude and
-mean surface brightness. Of these, approximately :math:`385,000`
-(:math:`\approx72\%`) lie within the `DR9`_ imaging footprint.
+The final parent sample contains 531,677 galaxies approximately limited to
+:math:`D(25)>20\ \mathrm{arcsec}`, spanning a wide range of magnitude and mean
+surface brightness. Of these, approximately 385,000 (:math:`\approx72\%`) lie
+within the `DR9`_ imaging footprint.
 
 ..
   Note that because of the supplemental catalogs, this sample includes a small
@@ -280,7 +277,7 @@ mosaics according to the following criteria:
   affects ``NGC0598_GROUP``) we use a mosaic diameter of :math:`1.4\times`
   ``GROUP_DIAMETER``.
 
-In all cases, for the :math:`grz` imaging we adopt a fixed pixel scale of
+In all cases, for the *grz* imaging we adopt a fixed pixel scale of
 :math:`0.262\ \mathrm{arcsec/pixel}` and for the unWISE mosaics we use
 :math:`2.75\ \mathrm{arcsec/pixel}`.
 
@@ -297,8 +294,8 @@ Unlike in `DR9`_, we use a couple different options when calling the
     fitting the central part of the (typically large, high-surface brightness)
     galaxy at the expense of the outer envelope;
   * We generate and write out inverse-variance weighted pixelized PSFs for each
-    of the :math:`g`-, :math:`g`-, and :math:`z`-band bandpass based on all the
-    available input imaging;
+    of the *g*-, *g*-, and *z*-band bandpass based on all the available input
+    imaging;
   * We turn off the default behavior of only fitting point sources to objects
     detected within the elliptical mask of each SGA large galaxy;
   * And finally, we continue with source detection and model fitting *on the
@@ -335,8 +332,8 @@ Specifically, we carry out the following steps for each galaxy group:
    
    * objects missing from the *Tractor* catalog (i.e., they were dropped during
      *Tractor* modeling);
-   * objects with negative :math:`r`-band flux or objects fit by *Tractor* as
-     type ``PSF``;
+   * objects with negative *r*-band flux or objects fit by *Tractor* as type
+     ``PSF``;
    * galaxies fit as *Tractor* type ``REX`` which have a measured half-light
      radius shape_r :math:`<5\ \mathrm{arcsec}`;
    * galaxies fit as *Tractor* types ``EXP``, ``DEV``, or ``SER`` which have a
@@ -351,13 +348,13 @@ Specifically, we carry out the following steps for each galaxy group:
    and have been deemed to not require special handling. These sources will
    likely be removed from future versions of the ``SGA``.
 
-2. Next, we read the :math:`grz` images and corresponding inverse variance and
-   model images. Here and throughout our analysis we use the :math:`r`-band
-   image as the "reference band." We also read the
-   ``GROUP_NAME-largegalaxy-maskbits.fits`` image (see `Images and Catalogs`_)
-   but only retain the ``BRIGHT``, ``MEDIUM``, ``CLUSTER``, ``ALLMASK_G``,
-   ``ALLMASK_R``, and ``ALLMASK_Z`` bits (defined in the `DR9 bitmasks`_
-   page). Hereafter, we refer to this mask as the ``starmask``.
+2. Next, we read the *grz* images and corresponding inverse variance and model
+   images. Here and throughout our analysis we use the *r*-band image as the
+   "reference band." We also read the ``GROUP_NAME-largegalaxy-maskbits.fits``
+   image (see `Images and Catalogs`_) but only retain the ``BRIGHT``,
+   ``MEDIUM``, ``CLUSTER``, ``ALLMASK_G``, ``ALLMASK_R``, and ``ALLMASK_Z`` bits
+   (defined in the `DR9 bitmasks`_ page). Hereafter, we refer to this mask as
+   the ``starmask``.
 
    With these data in hand, we carry out the following steps:
    
@@ -439,10 +436,9 @@ Specifically, we carry out the following steps for each galaxy group:
    respectively, as documented in the `photutils.isophote.Ellipse.fit_image`_
    method.
 
-   From the :math:`r`-band surface brightness profile, we also robustly measure
-   the size of the galaxy at the following surface brightness thresholds:
-   :math:`22`, :math:`22.5`, :math:`23`, :math:`23.5`, :math:`24`, :math:`24.5`,
-   :math:`25`, :math:`25.5`, and :math:`26\ \mathrm{mag\ arcsec}^{-2}` . We
+   From the *r*-band surface brightness profile, we also robustly measure the
+   size of the galaxy at the following surface brightness thresholds: 22, 22.5,
+   23, 23.5, 24, 24.5, 25, 25.5, and :math:`26\ \mathrm{mag\ arcsec}^{-2}` . We
    perform this measurement by fitting a linear model to the surface brightness
    profile converted to :math:`\mathrm{mag\ arcsec}^{-2}` vs :math:`r^0.25`
    (which would be a straight line for a de Vaucouleurs galaxy profile), but
@@ -466,8 +462,9 @@ Specifically, we carry out the following steps for each galaxy group:
       m(r) = m_{1} + m_{0} \left\{1-\exp\left[ -\alpha_{1} \left(\frac{r}{r_{0}}\right)^{-\alpha_{2}} \right]\right\}
 
    where :math:`m_{1}`, :math:`m_{0}`, :math:`\alpha_{1}`, :math:`\alpha_{2}`,
-   and :math:`r_{0}` are constant parameters of the model and :math:`r` is the
-   semi-major axis in arcsec. In our analysis we take the radius scale factor :math:`r_{0}=10` arcsec to be fixed. 
+   and :math:`r_{0}` are constant parameters of the model and *r* is the
+   semi-major axis in arcsec. In our analysis we take the radius scale factor
+   :math:`r_{0}=10` arcsec to be fixed.
 
    Note that in the limit :math:`r\rightarrow\infty`, :math:`m_{1}` is the
    total, integrated magnitude, and as :math:`r\rightarrow0`,
@@ -483,19 +480,19 @@ Specifically, we carry out the following steps for each galaxy group:
 We divide the ``SGA-2020`` into two non-overlapping samples and define the data
 model for each catalog below:
 
-* `SGA-2020.fits`_ contains :math:`383{,}568` galaxies with three-band
-  (:math:`grz`) imaging from `DR9`_, spanning :math:`\approx20,000\
-  \mathrm{deg}^2`. For these systems we were able to generate multiband mosaics
-  and measure their surface-brightness and color profiles using standard
-  ellipse-fitting techniques.
+* `SGA-2020.fits`_ contains 383,568 galaxies with three-band (*grz*) imaging
+  from `DR9`_, spanning :math:`\approx20,000\ \mathrm{deg}^2`. For these systems
+  we were able to generate multiband mosaics and measure their
+  surface-brightness and color profiles using standard ellipse-fitting
+  techniques.
   
 ..  
   
 
-* `SGA-2020-leda.fits`_ contains the remaining :math:`148{,}109` galaxies from
-  the parent sample which lie *off* the `DR9`_ imaging footprint. (Note that a
-  small number of these galaxies are within the boundaries of the footprint but
-  they lack three-band coverage and therefore were not analyzed as part of the
+* `SGA-2020-leda.fits`_ contains the remaining 148,109 galaxies from the parent
+  sample which lie *off* the `DR9`_ imaging footprint. (Note that a small number
+  of these galaxies are within the boundaries of the footprint but they lack
+  three-band coverage and therefore were not analyzed as part of the
   ``SGA-2020``.)
 
 We also define the set of `Group Files`_ we generate, such as the
@@ -525,7 +522,7 @@ Name                 Type         Units                                       De
 ``SGA_DEC``          float64      degree                                      Declination (J2000).
 ``MORPHTYPE``        char[21]                                                 Visual morphological type from `Hyperleda`_ (if available).
 ``PA_LEDA``          float32      degree                                      Galaxy position angle, measured positive clockwise from North.
-``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\,\mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
+``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\ \mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
 ``BA_LEDA``          float32                                                  Ratio of the semi-minor axis to the semi-major axis.
 ``Z_LEDA``           float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
 ``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
@@ -540,12 +537,12 @@ Name                 Type         Units                                       De
 ``GROUP_DEC``        float64      degree                                      Declination of the group weighted by ``D25_LEDA``.
 ``GROUP_DIAMETER``   float32      arcmin                                      Approximate group diameter. For groups with a single galaxy this quantity equals ``D25_LEDA``. For galaxies with multiple members, we estimate the diameter of the group as the maximum separation of all the pairs of group members (plus their ``D25_LEDA`` diameter).
 ``BRICKNAME``        char[8]                                                  Name of brick, encoding the brick sky position, e.g. "1126p222" is centered on RA=112.6, Dec=+22.2. 
-``DIAM``             float32      arcmin                                      Galaxy semi-major axis diameter measured at the :math:`26\,\mathrm{mag}/\mathrm{arcsec}^2\ r`-band isophote based on ``RADIUS_SB26``. If the :math:`r`-band surface-brightness profile could not be measured at this level, the diameter is set equal to :math:`2.5\times` ``RADIUS_SB25`` or :math:`1.5\times` ``D25_LEDA``, in that order of priority.
+``DIAM``             float32      arcmin                                      Galaxy semi-major axis diameter measured at the :math:`26\ \mathrm{mag}/\mathrm{arcsec}^2\ r`-band isophote based on ``RADIUS_SB26``. If the *r*-band surface-brightness profile could not be measured at this level, the diameter is set equal to :math:`2.5\times` ``RADIUS_SB25`` or :math:`1.5\times` ``D25_LEDA``, in that order of priority.
 ``DIAM_REF``         char[4]                                                  Reference indicating the origin of the ``DIAM`` measurement: ``SB26``, ``SB25``, or ``LEDA``.
 ``PA``               float32      degree                                      Galaxy position angle, measured positive clockwise from North.
 ``BA``               float32                                                  Minor-to-major axis ratio.
 ``ELLIPSEBIT``       int32                                                    See `SGA Bitmasks`_ section.
-``RADIUS_SB22``      float32      arcsec                                      Semi-major axis length at the :math:`\mu=22\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the :math:`r`-band (-1 if not measured).
+``RADIUS_SB22``      float32      arcsec                                      Semi-major axis length at the :math:`\mu=22\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
 ``RADIUS_SB22.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=22.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
 ``RADIUS_SB23``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=23\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
 ``RADIUS_SB23.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=23.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
@@ -554,9 +551,9 @@ Name                 Type         Units                                       De
 ``RADIUS_SB25``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=25\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
 ``RADIUS_SB25.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=25.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
 ``RADIUS_SB26``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=26\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``G_MAG_SB22``       float32      AB mag                                      :math:`g`-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
-``R_MAG_SB22``       float32      AB mag                                      :math:`r`-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
-``Z_MAG_SB22``       float32      AB mag                                      :math:`z`-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
+``G_MAG_SB22``       float32      AB mag                                      *g*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
+``R_MAG_SB22``       float32      AB mag                                      *r*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
+``Z_MAG_SB22``       float32      AB mag                                      *z*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
 ``G_MAG_SB22.5``     float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
 ``R_MAG_SB22.5``     float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
 ``Z_MAG_SB22.5``     float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
@@ -581,9 +578,9 @@ Name                 Type         Units                                       De
 ``G_MAG_SB26``       float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB26``.
 ``R_MAG_SB26``       float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB26``.
 ``Z_MAG_SB26``       float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB26``.
-``G_MAG_TOT``        float32      AB mag                                      Estimate of the total, integrated :math:`g`-band magnitude based on a fit to the :math:`g`-band curve of growth (-1 if not measured). *May be very incorrect depending on the quality of the fit; use with caution!*
-``R_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the :math:`r`-band.
-``Z_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the :math:`z`-band.
+``G_MAG_TOT``        float32      AB mag                                      Estimate of the total, integrated *g*-band magnitude based on a fit to the *g*-band curve of growth (-1 if not measured). *May be very incorrect depending on the quality of the fit; use with caution!*
+``R_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the *r*-band.
+``Z_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the *z*-band.
 ==================== ============ =========================================== ===============================================
 
 SGA-TRACTOR
@@ -618,7 +615,7 @@ Name                 Type         Units                                       De
 ``SGA_DEC``          float64      degree                                      Declination (J2000).
 ``MORPHTYPE``        char[21]                                                 Visual morphological type from `Hyperleda`_ (if available).
 ``PA_LEDA``          float32      degree                                      Galaxy position angle, measured positive clockwise from North.
-``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\,\mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
+``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\ \mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
 ``BA_LEDA``          float32                                                  Ratio of the semi-minor axis to the semi-major axis.
 ``Z_LEDA``           float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
 ``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
@@ -675,12 +672,12 @@ File                                                                           D
 ``GROUP_NAME``-largegalaxy-maskbits.fits.fz                                    Image encoding the `DR9 bitmasks`_ contributing to each pixel (see also the `DR9 image stacks`_ documentation).
 ``GROUP_NAME``-largegalaxy-outlier-mask.fits.fz                                Image of pixels rejecting during outlier masking (see the `metrics`_ documentation); may be removed in future releases.
 ``GROUP_NAME``-depth-`[g,r,z]`.fits.fz                                         Image of the depth :math:`5\sigma` point-source depth at each pixel (see also the `DR9 image stacks`_ documentation).
-``GROUP_NAME``-largegalaxy-psf-`[g,r,z]`.fits.fz                               Postage stamp of the inverse-variance weighted mean pixelized :math:`grz` PSF at the center of the field (see the `PSF documentation`_ for more details). 
-``GROUP_NAME``-largegalaxy-`[image,invvar,model]`-`[g,r,z]`.fits.fz            Inverse-variance weighted image, inverse variance image, and *Tractor* model image based on the input :math:`grz` imaging (see the `DR9 image stacks`_ documentation for more details).
-``GROUP_NAME``-largegalaxy-`[image,model,resid]`-grz.jpg                       JPEG visualization of the data, model, and residual :math:`grz` mosaics.
-``GROUP_NAME``-`[image,invvar]`-`[W1,W2,W3,W4]`.fits.fz                        Inverse-variance weighted image and inverse variance image based on the input :math:`W1-W4` imaging (see the `DR9 image stacks`_ documentation for more details). *Note: there is no ``largegalaxy`` prefix because the data used to generate these files is independent of the SGA.*
-``GROUP_NAME``-largegalaxy-model-`[W1,W2,W3,W4]`.fits.fz                       unWISE *Tractor* model :math:`W1-W4` mosaic based on the forced photometry technique used in `DR9`_. *Note that the ``largegalaxy`` prefix is present because the Tractor models used to generate this image rely on assumptions made specifically for the SGA.*
-``GROUP_NAME``-`[image,model`]-W1W2.jpg                                        JPEG visualization of the data and model :math:`W1W2` mosaics.
+``GROUP_NAME``-largegalaxy-psf-`[g,r,z]`.fits.fz                               Postage stamp of the inverse-variance weighted mean pixelized *grz* PSF at the center of the field (see the `PSF documentation`_ for more details). 
+``GROUP_NAME``-largegalaxy-`[image,invvar,model]`-`[g,r,z]`.fits.fz            Inverse-variance weighted image, inverse variance image, and *Tractor* model image based on the input *grz* imaging (see the `DR9 image stacks`_ documentation for more details).
+``GROUP_NAME``-largegalaxy-`[image,model,resid]`-grz.jpg                       JPEG visualization of the data, model, and residual *grz* mosaics.
+``GROUP_NAME``-`[image,invvar]`-`[W1,W2,W3,W4]`.fits.fz                        Inverse-variance weighted image and inverse variance image based on the input *W1-W4* imaging (see the `DR9 image stacks`_ documentation for more details). *Note: there is no ``largegalaxy`` prefix because the data used to generate these files is independent of the SGA.*
+``GROUP_NAME``-largegalaxy-model-`[W1,W2,W3,W4]`.fits.fz                       unWISE *Tractor* model *W1-W4* mosaic based on the forced photometry technique used in `DR9`_. *Note that the ``largegalaxy`` prefix is present because the Tractor models used to generate this image rely on assumptions made specifically for the SGA.*
+``GROUP_NAME``-`[image,model`]-W1W2.jpg                                        JPEG visualization of the data and model *W1W2* mosaics.
 **SGA Pipeline Files**                                                         
 ``GROUP_NAME``-largegalaxy-sample.fits                                         Catalog of (one or more) galaxies from `SGA-2020.fits`_ belonging to this group.
 ``GROUP_NAME``-largegalaxy-``SGA_ID``-ellipse.fits                             Table containing the ellipse-fitting results for the galaxy with ``SGA`` identification number ``ID``, using the data model from the table below
@@ -789,22 +786,22 @@ Name                                               Type       Units             
      )
 
 Bit indicating why this object could not be included in the `SGA-2020.fits`_
-catalog: `0`: not fitted (i.e., no Tractor catalog); `1`: missing :math:`grz`
+catalog: `0`: not fitted (i.e., no Tractor catalog); `1`: missing *grz*
 coverage; `2`: galaxy center is fully masked (e.g., due to a bleed trail); `3`:
 dropped by Tractor during fitting, indicating either a spurious object or an
 irrecoverable problem with the fitting; `4`: fitted as a point source by
-Tractor; `5`: problematic ellipse-fitting; `6`: negative :math:`r`-band
-flux. E.g., in Python, the expression (``DROPBIT & 2**1 != 0``) would return an
-index array of all the objects without `grz` coverage.
+Tractor; `5`: problematic ellipse-fitting; `6`: negative *r*-band flux. E.g., in
+Python, the expression (``DROPBIT & 2**1 != 0``) would return an index array of
+all the objects without *grz* coverage.
 
 Bit indicating why this object could not be included in the `SGA-2020.fits`_
-catalog: `0`: not fitted (i.e., no Tractor catalog); `1`: missing :math:`grz`
+catalog: `0`: not fitted (i.e., no Tractor catalog); `1`: missing *grz*
 coverage; `2`: galaxy center is fully masked (e.g., due to a bleed trail); `3`:
 dropped by Tractor during fitting, indicating either a spurious object or an
 irrecoverable problem with the fitting; `4`: fitted as a point source
 (type=``PSF``) by Tractor; `5`: problematic ellipse-fitting; `6`: negative
-:math:`r`-band flux. E.g., in Python, the expression (``ELLIPSEBIT \& 2^1 !=
-0``) would return all the objects without `grz` coverage.
+*r*-band flux. E.g., in Python, the expression (``ELLIPSEBIT \& 2^1 != 0``)
+would return all the objects without *grz* coverage.
 
 ``Known Issues``
 ================

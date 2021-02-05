@@ -522,12 +522,12 @@ Name                                                       Type         Units   
 ``Z_LEDA``                                                 float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
 ``SB_D25_LEDA``                                            float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
 ``MAG_LEDA``                                               float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within ``D25_LEDA``; use with care*.)
-``BYHAND``                                                 boolean                                                  Flag indicating whether one or more of ``RA_LEDA``, ``DEC_LEDA``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.
+``BYHAND``                                                 Boolean                                                  Flag indicating whether one or more of ``RA_LEDA``, ``DEC_LEDA``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.
 ``REF``                                                    char[13]                                                 Unique reference name indicating the original source of the object, as described in `Sample Selection`_: ``LEDA-20181114``, ``LGDWARFS``, ``RC3``, ``OpenNGC``, or ``DR8``.
 ``GROUP_ID``                                               int64                                                    Unique group identification number.
 ``GROUP_NAME``                                             char[35]                                                 Unique group name, constructed from the name of its largest member (based on ``D25_LEDA``) and the suffix ``_GROUP`` (e.g., ``PGC193199_GROUP``).
 ``GROUP_MULT``                                             int16                                                    Group multiplicity (i.e., number of group members from the parent sample).
-``GROUP_PRIMARY``                                          boolean                                                  Flag indicating the primary (i.e., largest) group member.
+``GROUP_PRIMARY``                                          Boolean                                                  Flag indicating the primary (i.e., largest) group member.
 ``GROUP_RA``                                               float64      degree                                      Right ascencion of the group weighted by ``D25_LEDA``.
 ``GROUP_DEC``                                              float64      degree                                      Declination of the group weighted by ``D25_LEDA``.
 ``GROUP_DIAMETER``                                         float32      arcmin                                      Approximate group diameter. For groups with a single galaxy this quantity equals ``D25_LEDA``. For galaxies with multiple members, we estimate the diameter of the group as the maximum separation of all the pairs of group members (plus their ``D25_LEDA`` diameter).
@@ -589,12 +589,12 @@ Name                 Type         Units                                       De
 ``Z_LEDA``           float32                                                  See `SGA-LS`_ data model.
 ``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` See `SGA-LS`_ data model.
 ``MAG_LEDA``         float32      Vega mag                                    See `SGA-LS`_ data model.
-``BYHAND``           boolean                                                  See `SGA-LS`_ data model.
+``BYHAND``           Boolean                                                  See `SGA-LS`_ data model.
 ``REF``              char[13]                                                 See `SGA-LS`_ data model.
 ``GROUP_ID``         int64                                                    See `SGA-LS`_ data model.
 ``GROUP_NAME``       char[35]                                                 See `SGA-LS`_ data model.
 ``GROUP_MULT``       int16                                                    See `SGA-LS`_ data model.
-``GROUP_PRIMARY``    boolean                                                  See `SGA-LS`_ data model.
+``GROUP_PRIMARY``    Boolean                                                  See `SGA-LS`_ data model.
 ``GROUP_RA``         float64      degree                                      See `SGA-LS`_ data model.
 ``GROUP_DEC``        float64      degree                                      See `SGA-LS`_ data model.
 ``GROUP_DIAMETER``   float32      arcmin                                      See `SGA-LS`_ data model.
@@ -692,10 +692,10 @@ Name                                                       Type       Units     
 ``BANDS``                                                  char[1][3]                                                List of bandpasses fitted (here, always `g,r,z`).
 ``REFBAND``                                                char[1]                                                   Reference band (here, always `r`).
 ``REFPIXSCALE``                                            float32    arcsec/pixel                                   Pixel scale in ``REFBAND``.
-``SUCCESS``                                                boolean                                                   Flag indicating ellipse-fitting success or failure.
-``FITGEOMETRY``                                            boolean                                                   Flag indicating whether the ellipse geometry was allowed to vary with semi-major axis (here, always ``False``).
-``INPUT_ELLIPSE``                                          boolean                                                   Flag indicating whether ellipse parameters were passed from an external file (here, always ``False``).
-``LARGESHIFT``                                             boolean                                                   Flag indicating that the light-weighted center (from the ``ellipse moments``) is different from the *Tractor* position by more than 10 pixels in either dimension, in which case we adopt the *Tractor* model position.
+``SUCCESS``                                                Boolean                                                   Flag indicating ellipse-fitting success or failure.
+``FITGEOMETRY``                                            Boolean                                                   Flag indicating whether the ellipse geometry was allowed to vary with semi-major axis (here, always ``False``).
+``INPUT_ELLIPSE``                                          Boolean                                                   Flag indicating whether ellipse parameters were passed from an external file (here, always ``False``).
+``LARGESHIFT``                                             Boolean                                                   Flag indicating that the light-weighted center (from the ``ellipse moments``) is different from the *Tractor* position by more than 10 pixels in either dimension, in which case we adopt the *Tractor* model position.
 ``RA_X0``                                                  float64    degree                                         Right ascension (J2000) at pixel position ``X0``.
 ``DEC_Y0``                                                 float64    degree                                         Declination (J2000) at pixel position ``Y0``.
 ``X0``                                                     float32    pixel                                          Light-weighted position along the *x*-axis (from ``ellipse moments``).
@@ -751,26 +751,16 @@ Name                                                       Type       Units     
 ``SGA Bitmasks``
 ================
 
-.. 
- ELLIPSEBITS = dict(
-     largeshift = 2**0,      # >10-pixel shift in the flux-weighted center
-     rex_toosmall = 2**1,    # type == REX & shape_r < 5
-     notrex_toosmall = 2**2, # type != REX & shape_r < 2
-     failed = 2**3,          # ellipse-fitting failed
-     notfit = 2**4,          # not ellipse-fit
-     indropcat = 2**5,       # in the dropcat catalog
-     )
-
 The following tables document some of the bit-masks used in the ``SGA``
 pipeline, as listed in the `SGA-2020-ls.fits`_ and `SGA-2020-nols.fits`_
 catalogs. The bits are enumerated as a power of two, e.g., in Python, the
 expression 
 
-   .. math::
+.. code-block:: python
+   
+   'ELLIPSEBIT' & 2**1 != 0
 
-      ELLIPSEBIT & 2^1 != 0
-
-would return a Boolean array of the objects fitted as type `REX` which were
+would return a Boolean array of the objects fitted as type ``REX`` which were
 too small to be ellipse-fit.
 
 ELLIPSEBIT

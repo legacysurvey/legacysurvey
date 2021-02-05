@@ -10,10 +10,10 @@
 
 .. contents::
 
-*Primary contacts:* `John Moustakas`_ and `Dustin Lang`_.
+*Primary contacts:* `John Moustakas (Siena College)`_ and `Dustin Lang (Perimeter Institute)`_.
 
-.. _`John Moustakas`: ../../contact/#other-experts
-.. _`Dustin Lang`: ../../contact/#other-experts
+.. _`John Moustakas (Siena College)`: ../../contact/#other-experts
+.. _`Dustin Lang (Perimeter Institute)`: ../../contact/#other-experts
 
 `Data Access`_
 ==============
@@ -266,7 +266,7 @@ Custom Mosaics
 
 We run the `DR9`_ pipeline on a "custom brick" based on the estimated center and
 diameter of the galaxy group (using ``GROUP_RA``, ``GROUP_DEC``, and
-``GROUP_DIAMETER`` defined in `SGA-2020.fits`_). Specifically, we generate
+``GROUP_DIAMETER`` defined in `SGA-2020-ls.fits`_). Specifically, we generate
 mosaics according to the following criteria:
 
 * For groups with ``GROUP_DIAMETER``:math:`<14\ \mathrm{arcmin}` we use a mosaic
@@ -341,7 +341,7 @@ Specifically, we carry out the following steps for each galaxy group:
 
    The first two criteria identify spurious sources in the initial parent
    catalog or objects with grossly over-estimated diameters, and all these
-   objects already have been removed from the `SGA-2020.fits`_ catalog.
+   objects already have been removed from the `SGA-2020-ls.fits`_ catalog.
 
    The second two criteria identify galaxies which are too small to benefit from
    ellipse-fitting, i.e., they are well-fit by the standard photometric pipeline
@@ -472,173 +472,143 @@ Specifically, we carry out the following steps for each galaxy group:
 
    Finally, we package all the measurements, one per galaxy, into an
    `astropy.QTable`_ table (including units on all the quantities), and write
-   out the results (as documented in the `Ellipse-Fitting Results`_ section).
+   out the results (as documented in the `Ellipse-Fitting`_ section).
 
 ``Data Products``
 =================
 
 We divide the ``SGA-2020`` into two non-overlapping samples and define the data
-model for each catalog below:
+model for each catalog below.
 
-* `SGA-2020.fits`_ contains 383,568 galaxies with three-band (*grz*) imaging
-  from `DR9`_, spanning :math:`\approx20,000\ \mathrm{deg}^2`. For these systems
-  we were able to generate multiband mosaics and measure their
-  surface-brightness and color profiles using standard ellipse-fitting
-  techniques.
-  
-..  
-  
+SGA-2020-ls.fits
+----------------
 
-* `SGA-2020-leda.fits`_ contains the remaining 148,109 galaxies from the parent
-  sample which lie *off* the `DR9`_ imaging footprint. (Note that a small number
-  of these galaxies are within the boundaries of the footprint but they lack
-  three-band coverage and therefore were not analyzed as part of the
-  ``SGA-2020``.)
+`SGA-2020-ls.fits`_ contains 383,568 galaxies with three-band (*grz*) imaging
+from `DR9`_, spanning :math:`\approx20,000\ \mathrm{deg}^2`. (Here, the suffix
+*ls* means "Legacy Surveys" imaging.)
 
-We also define the set of `Group Files`_ we generate, such as the
-multi-band mosaics and individual Tractor catalogs.
+For these systems we are able to generate multiband mosaics and measure their
+surface-brightness and color profiles using standard ellipse-fitting techniques
+(except as indicated by the ``ELLIPSEBIT`` bit-mask).
 
-SGA-2020.fits
--------------
+The multi-band mosaics, detailed ellipse-fitting results, Tractor catalogs, and
+other data products corresponding to each galaxy group in the ``SGA-2020`` are
+documented in the `Group Files`_ section.  .
 
 ====== ============ ======== ======================
 Number EXTNAME      Type     Contents
 ====== ============ ======== ======================
 HDU00  PRIMARY      IMAGE    Empty.
-HDU01  SGA_         BINTABLE Ellipse-fitting results.
+HDU01  SGA-LS_      BINTABLE Ellipse-fitting results.
 HDU02  SGA-TRACTOR_ BINTABLE Tractor modeling results.
 ====== ============ ======== ======================
 
-SGA
-~~~
+SGA-LS
+~~~~~~
 
-==================== ============ =========================================== ===============================================
-Name                 Type         Units                                       Description
-==================== ============ =========================================== ===============================================
-``SGA_ID``           int64                                                    Unique identifier.
-``GALAXY``           char[29]                                                 Unique galaxy name.
-``PGC``              int64                                                    Unique identifier from the `Principal Catalogue of Galaxies`_ (-1 if none or not known).
-``SGA_RA``           float64      degree                                      Right ascension (J2000).
-``SGA_DEC``          float64      degree                                      Declination (J2000).
-``MORPHTYPE``        char[21]                                                 Visual morphological type from `Hyperleda`_ (if available).
-``PA_LEDA``          float32      degree                                      Galaxy position angle, measured positive clockwise from North.
-``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\ \mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
-``BA_LEDA``          float32                                                  Ratio of the semi-minor axis to the semi-major axis.
-``Z_LEDA``           float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
-``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
-``MAG_LEDA``         float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within ``D25_LEDA``; use with care*.)
-``BYHAND``           boolean                                                  Flag indicating that one or more quantities (``RA``, ``DEC``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.) 
-``REF``              char[13]                                                 Unique reference name indicating the original source of the object, as described in `Sample Selection`_: ``LEDA-20181114``, ``LGDWARFS``, ``RC3``, ``OpenNGC``, or ``DR8``.
-``GROUP_ID``         int64                                                    Unique group number.
-``GROUP_NAME``       char[35]                                                 Unique group name, constructed from the name of its largest member (based on ``D25_LEDA``) and the suffix ``_GROUP`` (e.g., ``PGC193199_GROUP``).
-``GROUP_MULT``       int16                                                    Group multiplicity (i.e., number of group members from the parent sample).
-``GROUP_PRIMARY``    boolean                                                  Flag indicating the primary (i.e., largest) group member.
-``GROUP_RA``         float64      degree                                      Right ascencion of the group weighted by ``D25_LEDA``.
-``GROUP_DEC``        float64      degree                                      Declination of the group weighted by ``D25_LEDA``.
-``GROUP_DIAMETER``   float32      arcmin                                      Approximate group diameter. For groups with a single galaxy this quantity equals ``D25_LEDA``. For galaxies with multiple members, we estimate the diameter of the group as the maximum separation of all the pairs of group members (plus their ``D25_LEDA`` diameter).
-``BRICKNAME``        char[8]                                                  Name of brick, encoding the brick sky position, e.g. "1126p222" is centered on RA=112.6, Dec=+22.2. 
-``DIAM``             float32      arcmin                                      Galaxy semi-major axis diameter measured at the :math:`26\ \mathrm{mag}/\mathrm{arcsec}^2\ r`-band isophote based on ``RADIUS_SB26``. If the *r*-band surface-brightness profile could not be measured at this level, the diameter is set equal to :math:`2.5\times` ``RADIUS_SB25`` or :math:`1.5\times` ``D25_LEDA``, in that order of priority.
-``DIAM_REF``         char[4]                                                  Reference indicating the origin of the ``DIAM`` measurement: ``SB26``, ``SB25``, or ``LEDA``.
-``PA``               float32      degree                                      Galaxy position angle, measured positive clockwise from North, as measured from the ``ellipse moments`` (or equivalent to ``PA_LEDA`` if the ``ellipse moments`` could not be measured).
-``BA``               float32                                                  Minor-to-major axis ratio, as measured from the ``ellipse moments`` (or equivalent to ``BA_LEDA`` if the ``ellipse moments`` could not be measured).
-``ELLIPSEBIT``       int32                                                    See the `SGA Bitmasks`_ documentation.
-``RADIUS_SB22``      float32      arcsec                                      Semi-major axis length at the :math:`\mu=22\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
-``RADIUS_SB22.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=22.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB23``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=23\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB23.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=23.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB24``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=24\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB24.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=24.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB25``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=25\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB25.5``    float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=25.5\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``RADIUS_SB26``      float32      arcsec                                      Like ``RADIUS_SB22`` but measured at the :math:`\mu=26\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote.
-``G_MAG_SB22``       float32      AB mag                                      *g*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
-``R_MAG_SB22``       float32      AB mag                                      *r*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
-``Z_MAG_SB22``       float32      AB mag                                      *z*-band magnitude measured within ``RADIUS_SB22`` (-1 if not measured).
-``G_MAG_SB22.5``     float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
-``R_MAG_SB22.5``     float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
-``Z_MAG_SB22.5``     float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB22.5``.
-``G_MAG_SB23``       float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB23``.
-``R_MAG_SB23``       float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB23``.
-``Z_MAG_SB23``       float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB23``.
-``G_MAG_SB23.5``     float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB23.5``.
-``R_MAG_SB23.5``     float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB23.5``.
-``Z_MAG_SB23.5``     float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB23.5``.
-``G_MAG_SB24``       float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB24``.
-``R_MAG_SB24``       float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB24``.
-``Z_MAG_SB24``       float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB24``.
-``G_MAG_SB24.5``     float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB24.5``.
-``R_MAG_SB24.5``     float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB24.5``.
-``Z_MAG_SB24.5``     float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB24.5``.
-``G_MAG_SB25``       float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB25``.
-``R_MAG_SB25``       float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB25``.
-``Z_MAG_SB25``       float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB25``.
-``G_MAG_SB25.5``     float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB25.5``.
-``R_MAG_SB25.5``     float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB25.5``.
-``Z_MAG_SB25.5``     float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB25.5``.
-``G_MAG_SB26``       float32      AB mag                                      Like ``G_MAG_SB22`` but measured within ``RADIUS_SB26``.
-``R_MAG_SB26``       float32      AB mag                                      Like ``R_MAG_SB22`` but measured within ``RADIUS_SB26``.
-``Z_MAG_SB26``       float32      AB mag                                      Like ``Z_MAG_SB22`` but measured within ``RADIUS_SB26``.
-``G_MAG_TOT``        float32      AB mag                                      Estimate of the total, integrated *g*-band magnitude based on a fit to the *g*-band curve of growth (-1 if not measured). *May be very incorrect depending on the quality of the fit; use with caution!*
-``R_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the *r*-band.
-``Z_MAG_TOT``        float32      AB mag                                      Like ``G_MAG_TOT`` but in the *z*-band.
-==================== ============ =========================================== ===============================================
+========================================================== ============ =========================================== ===============================================
+Name                                                       Type         Units                                       Description
+========================================================== ============ =========================================== ===============================================
+``SGA_ID``                                                 int64                                                    Unique integer identifier.
+``SGA_GALAXY``                                             char16                                                   SGA galaxy name, constructed as "SGA-2020 ``SGA_ID``".
+``GALAXY``                                                 char[29]                                                 Unique galaxy name.
+``PGC``                                                    int64                                                    Unique identifier from the `Principal Catalogue of Galaxies`_ (-1 if none or not known).
+``RA_LEDA``                                                float64      degree                                      Right ascension (J2000) from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
+``DEC_LEDA``                                               float64      degree                                      Declination (J2000) from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
+``MORPHTYPE``                                              char[21]                                                 Visual morphological type from `Hyperleda`_ (if available).
+``PA_LEDA``                                                float32      degree                                      Galaxy position angle, measured positive clockwise from North, taken from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
+``D25_LEDA``                                               float32      arcmin                                      Approximate diameter at the :math:`25\ \mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, taken from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
+``BA_LEDA``                                                float32                                                  Ratio of the semi-minor axis to the semi-major axis, taken from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
+``Z_LEDA``                                                 float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
+``SB_D25_LEDA``                                            float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
+``MAG_LEDA``                                               float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within ``D25_LEDA``; use with care*.)
+``BYHAND``                                                 boolean                                                  Flag indicating whether one or more of ``RA_LEDA``, ``DEC_LEDA``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.
+``REF``                                                    char[13]                                                 Unique reference name indicating the original source of the object, as described in `Sample Selection`_: ``LEDA-20181114``, ``LGDWARFS``, ``RC3``, ``OpenNGC``, or ``DR8``.
+``GROUP_ID``                                               int64                                                    Unique group identification number.
+``GROUP_NAME``                                             char[35]                                                 Unique group name, constructed from the name of its largest member (based on ``D25_LEDA``) and the suffix ``_GROUP`` (e.g., ``PGC193199_GROUP``).
+``GROUP_MULT``                                             int16                                                    Group multiplicity (i.e., number of group members from the parent sample).
+``GROUP_PRIMARY``                                          boolean                                                  Flag indicating the primary (i.e., largest) group member.
+``GROUP_RA``                                               float64      degree                                      Right ascencion of the group weighted by ``D25_LEDA``.
+``GROUP_DEC``                                              float64      degree                                      Declination of the group weighted by ``D25_LEDA``.
+``GROUP_DIAMETER``                                         float32      arcmin                                      Approximate group diameter. For groups with a single galaxy this quantity equals ``D25_LEDA``. For galaxies with multiple members, we estimate the diameter of the group as the maximum separation of all the pairs of group members (plus their ``D25_LEDA`` diameter).
+``BRICKNAME``                                              char[8]                                                  Name of brick, encoding the brick sky position, e.g. "1126p222" is centered on RA=112.6, Dec=+22.2. 
+``DIAM``                                                   float32      arcmin                                      Galaxy semi-major axis diameter measured at the :math:`26\ \mathrm{mag}/\mathrm{arcsec}^2\ r`-band isophote based on ``RADIUS_SB26``. If the *r*-band surface-brightness profile could not be measured at this level, the diameter is set equal to :math:`2.5\times` ``RADIUS_SB25`` or :math:`1.5\times` ``D25_LEDA``, in that order of priority.
+``DIAM_REF``                                               char[4]                                                  Reference indicating the origin of the ``DIAM`` measurement: ``SB26``, ``SB25``, or ``LEDA``.
+``PA``                                                     float32      degree                                      Galaxy position angle, measured positive clockwise from North, as measured from the ``ellipse moments`` (or equivalent to ``PA_LEDA`` if the ``ellipse moments`` could not be measured).
+``BA``                                                     float32                                                  Minor-to-major axis ratio, as measured from the ``ellipse moments`` (or equivalent to ``BA_LEDA`` if the ``ellipse moments`` could not be measured).
+``ELLIPSEBIT``                                             int32                                                    See the `SGA Bitmasks`_ documentation.
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Semi-major axis length at the :math:`\mu=22`, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and 26 :math:`\mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured; see also the `Ellipse Fits`_ table).
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured; see also the `Ellipse Fits`_ table).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32      AB mag                                      Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+========================================================== ============ =========================================== ===============================================
 
 SGA-TRACTOR
 ~~~~~~~~~~~
 
-This binary table is row-matched to the `SGA`_ table in the preceding HDU and
+This binary table is row-matched to the `SGA-LS`_ table in the preceding HDU and
 contains all the columns documented in `DR9 Tractor catalogs`_ documentation,
 supplemented (for convenience) with ``SGA_ID``. All sources in this table have
 ``REF_CAT=="L3"`` and ``REF_ID`` is identical to ``SGA_ID``, as described in the
 `external catalogs documentation`_.
 
-SGA-2020-leda.fits
+SGA-2020-nols.fits
 ------------------
+
+`SGA-2020-nols.fits`_ contains the remaining 148,109 galaxies from the `Final
+Parent Sample`_ which lie *off* the `DR9`_ imaging footprint. (Here, the suffix
+*nols* means "no Legacy Surveys" imaging.)
+
+Note that a small number of these galaxies are within the boundaries of the
+footprint but they lack three-band coverage and therefore they are not analyzed
+as part of the ``SGA-2020``.
 
 ====== ============ ======== ======================
 Number EXTNAME      Type     Contents
 ====== ============ ======== ======================
 HDU00  PRIMARY      IMAGE    Empty.
-HDU01  SGA-LEDA_    BINTABLE Metadata based on the parent catalog.
+HDU01  SGA-NOLS_    BINTABLE Metadata based on the parent catalog.
 ====== ============ ======== ======================
 
-SGA-LEDA
+SGA-NOLS
 ~~~~~~~~
 
 ==================== ============ =========================================== ===============================================
 Name                 Type         Units                                       Description
 ==================== ============ =========================================== ===============================================
-``SGA_ID``           int64                                                    Unique identifier.
-``GALAXY``           char[29]                                                 Unique galaxy name.
-``PGC``              int64                                                    Unique identifier from the `Principal Catalogue of Galaxies`_ (-1 if none or not known).
-``SGA_RA``           float64      degree                                      Right ascension (J2000).
-``SGA_DEC``          float64      degree                                      Declination (J2000).
-``MORPHTYPE``        char[21]                                                 Visual morphological type from `Hyperleda`_ (if available).
-``PA_LEDA``          float32      degree                                      Galaxy position angle, measured positive clockwise from North.
-``D25_LEDA``         float32      arcmin                                      Approximate diameter at the :math:`25\ \mathrm{mag}/\mathrm{arcsec}^2` (optical) surface brightness isophote, from `Hyperleda`_.
-``BA_LEDA``          float32                                                  Ratio of the semi-minor axis to the semi-major axis.
-``Z_LEDA``           float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
-``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
-``MAG_LEDA``         float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within ``D25_LEDA``; use with care*.)
-``BYHAND``           boolean                                                  Flag indicating that one or more quantities (``RA``, ``DEC``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.) 
-``REF``              char[13]                                                 Unique reference name indicating the original source of the object, as described in `Sample Selection`_: ``LEDA-20181114``, ``LGDWARFS``, ``RC3``, ``OpenNGC``, or ``DR8``.
-``GROUP_ID``         int64                                                    Unique group number.
-``GROUP_NAME``       char[35]                                                 Unique group name, constructed from the name of its largest member (based on ``D25_LEDA``) and the suffix ``_GROUP`` (e.g., ``PGC193199_GROUP``).
-``GROUP_MULT``       int16                                                    Group multiplicity (i.e., number of group members from the parent sample).
-``GROUP_PRIMARY``    boolean                                                  Flag indicating the primary (i.e., largest) group member.
-``GROUP_RA``         float64      degree                                      Right ascencion of the group weighted by ``D25_LEDA``.
-``GROUP_DEC``        float64      degree                                      Declination of the group weighted by ``D25_LEDA``.
-``GROUP_DIAMETER``   float32      arcmin                                      Approximate group diameter. For groups with a single galaxy this quantity equals ``D25_LEDA``. For galaxies with multiple members, we estimate the diameter of the group as the maximum separation of all the pairs of group members (plus their ``D25_LEDA`` diameter).
-``BRICKNAME``        char[8]                                                  Name of brick, encoding the brick sky position, e.g. "1126p222" is centered on RA=112.6, Dec=+22.2. 
+``SGA_ID``           int64                                                    See `SGA-LS`_ data model.
+``SGA_GALAXY``       char16                                                   See `SGA-LS`_ data model.
+``GALAXY``           char[29]                                                 See `SGA-LS`_ data model.
+``PGC``              int64                                                    See `SGA-LS`_ data model.
+``RA_LEDA``          float64      degree                                      See `SGA-LS`_ data model.
+``DEC_LEDA``         float64      degree                                      See `SGA-LS`_ data model.
+``MORPHTYPE``        char[21]                                                 See `SGA-LS`_ data model.
+``PA_LEDA``          float32      degree                                      See `SGA-LS`_ data model.
+``D25_LEDA``         float32      arcmin                                      See `SGA-LS`_ data model.
+``BA_LEDA``          float32                                                  See `SGA-LS`_ data model.
+``Z_LEDA``           float32                                                  See `SGA-LS`_ data model.
+``SB_D25_LEDA``      float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` See `SGA-LS`_ data model.
+``MAG_LEDA``         float32      Vega mag                                    See `SGA-LS`_ data model.
+``BYHAND``           boolean                                                  See `SGA-LS`_ data model.
+``REF``              char[13]                                                 See `SGA-LS`_ data model.
+``GROUP_ID``         int64                                                    See `SGA-LS`_ data model.
+``GROUP_NAME``       char[35]                                                 See `SGA-LS`_ data model.
+``GROUP_MULT``       int16                                                    See `SGA-LS`_ data model.
+``GROUP_PRIMARY``    boolean                                                  See `SGA-LS`_ data model.
+``GROUP_RA``         float64      degree                                      See `SGA-LS`_ data model.
+``GROUP_DEC``        float64      degree                                      See `SGA-LS`_ data model.
+``GROUP_DIAMETER``   float32      arcmin                                      See `SGA-LS`_ data model.
+``BRICKNAME``        char[8]                                                  See `SGA-LS`_ data model.
 ``DROPBIT``          int32                                                    See the `SGA Bitmasks`_ documentation.
 ==================== ============ =========================================== ===============================================
 
 ``Group Files``
 ---------------
 
-For each galaxy group in the ``SGA-2020`` (i.e., each row in `SGA-2020.fits`_)
-we produce the set of files documented in the `Images and Catalogs`_ table,
-below, and described in the `Custom Mosaics & Ellipse-Fitting`_ section.
+For each galaxy group in the ``SGA-2020`` (i.e., each row in
+`SGA-2020-ls.fits`_) we produce the set of files documented in the `Images and
+Catalogs`_ table, below, and described in the `Custom Mosaics &
+Ellipse-Fitting`_ section.
 
 These files are organized into the directory structure ``RASLICE/GROUP_NAME``,
 where ``GROUP_NAME`` is the name of the galaxy group and ``RASLICE``
@@ -681,7 +651,7 @@ File                                                                           D
 ``GROUP_NAME``-`[image,model`]-W1W2.jpg                                        JPEG visualization of the data and model *W1W2* mosaics.
 **SGA Pipeline Files**                                                         
 -------------------------------------------------------------------------------------------------------------------------------
-``GROUP_NAME``-largegalaxy-sample.fits                                         Catalog of (one or more) galaxies from `SGA-2020.fits`_ belonging to this group.
+``GROUP_NAME``-largegalaxy-sample.fits                                         Catalog of (one or more) galaxies from `SGA-2020-ls.fits`_ belonging to this group.
 ``GROUP_NAME``-largegalaxy-``SGA_ID``-ellipse.fits                             See the `Ellipse Fits`_ data model; note that this file may be missing (for the galaxy of a given ``SGA_ID``) if ellipse-fitting failed or is not carried out (see ``SGA Bitmasks``).
 ``GROUP_NAME``-coadds.log                                                      Logging output for the *coadds* stage of the pipeline; may be missing in some cases.
 ``GROUP_NAME``-ellipse.log                                                     Logging output for the *ellipse* stage of the pipeline; may be missing in some cases.
@@ -708,75 +678,75 @@ names have been renamed for clarity.
  HDU01  ELLIPSE      BINTABLE Ellipse-fitting results for a single galaxy.
  ====== ============ ======== ======================
 
-================================================== ========== ============================================== ===============================================
-Name                                               Type       Units                                          Description
-================================================== ========== ============================================== ===============================================
-``SGA_ID``                                         int64                                                     See `SGA-2020.fits`_.
-``GALAXY``                                         char[?]                                                   See `SGA-2020.fits`_.
-``RA``                                             float64    degree                                         See `SGA-2020.fits`_.
-``DEC``                                            float64    degree                                         See `SGA-2020.fits`_.
-``PGC``                                            int64                                                     See `SGA-2020.fits`_.
-``PA_LEDA``                                        float32    degree                                         See `SGA-2020.fits`_.
-``BA_LEDA``                                        float32                                                   See `SGA-2020.fits`_.
-``D25_LEDA``                                       float32    arcmin                                         See `SGA-2020.fits`_.
-``BANDS``                                          char[1][3]                                                List of bandpasses fitted (here, always `g,r,z`).
-``REFBAND``                                        char[1]                                                   Reference band (here, always `r`).
-``REFPIXSCALE``                                    float32    arcsec/pixel                                   Pixel scale in ``REFBAND``.
-``SUCCESS``                                        boolean                                                   Flag indicating ellipse-fitting success or failure.
-``FITGEOMETRY``                                    boolean                                                   Flag indicating whether the ellipse geometry was allowed to vary with semi-major axis (here, always ``False``).
-``INPUT_ELLIPSE``                                  boolean                                                   Flag indicating whether ellipse parameters were passed from an external file (here, always ``False``).
-``LARGESHIFT``                                     boolean                                                   Flag indicating that the light-weighted center (from the ``ellipse moments``) is different from the *Tractor* position by more than 10 pixels in either dimension.
-``RA_X0``                                          float64    degree                                         Right ascension (J2000) at pixel position ``X0``.
-``DEC_Y0``                                         float64    degree                                         Declination (J2000) at pixel position ``Y0``.
-``X0``                                             float32    pixel                                          Light-weighted position along the *x*-axis (from ``ellipse moments``).
-``Y0``                                             float32    pixel                                          Light-weighted position along the *y*-axis (from ``ellipse moments``).
-``EPS``                                            float32                                                   Ellipticity :math:`e=1-b/a`, where :math:`b/a` is the semi-minor to semi-major axis ratio ``BA`` given in the `SGA-2020.fits`_ table.
-``PA``                                             float32    degree                                         Galaxy position angle (astronomical convention, measured clockwise from North); equivalent to ``PA`` in the `SGA-2020.fits`_ table.
-``THETA``                                          float32    degree                                         Galaxy position angle (physics convention, measured clockwise from the *x*-axis), and given by [:math:`(270-PA)` mod 180].
-``MAJORAXIS``                                      float32    pixel                                          Light-weighted length of the semi-major axis (from ``ellipse moments``).
-``MAXSMA``                                         float32    pixel                                          Maximum semi-major axis length used for the ellipse-fitting and curve-of-growth measurements (typically taken to be :math:`2\times` ``MAJORAXIS``).
-``INTEGRMODE``                                     char[6]                                                   `photutils.isophote.Ellipse.fit_image`_ integration mode (here, always *median*).
-``SCLIP``                                          int16                                                     `photutils.isophote.Ellipse.fit_image`_ sigma-clipping (here, always *3*).
-``NCLIP``                                          int16                                                     Number of `photutils.isophote.Ellipse.fit_image`_ sigma-clipping iterations (here, always *3*).
-``PSFSIZE_[G,R,Z]``                                float32    arcsec                                         Mean width of the point-spread function over the full mosaic (derived from the ``PSFSIZE_[G,R,Z]`` columns in the `Tractor catalogs`_).
-``PSFDEPTH_[G,R,Z]``                               float32    mag                                            Mean :math:`5\hbox{-}\sigma` depth over the full mosaic (derived from the ``PSFDEPTH_[G,R,Z]`` columns in the `Tractor catalogs`_).
-``MW_TRANSMISSION_[G,R,Z]``                        float32                                                   Galactic transmission fraction (taken from the corresponding `Tractor catalog`_ at the central coordinates of the galaxy).
-``REFBAND_WIDTH``                                  float32    pixel                                          Width of the optical mosaics in ``REFBAND``.
-``REFBAND_HEIGHT``                                 float32    pixel                                          Height of the optical mosaics in ``REFBAND`` (always equal to ``REFBAND_WIDTH``).
-``[G,R,Z]_SMA``                                    float32[N] pixel                                          Semi-major axis position, where ``N`` is the total number of (pixel) samples along the semi-major axis.
-``[G,R,Z]_INTENS``                                 float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Linear surface brightness at the semi-major axis position given by ``[G,R,Z]_SMA``.
-``[G,R,Z]_INTENS_ERR``                             float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Uncertainty in ``[G,R,Z]_INTENS`` (:math:`1\sigma`).
-``[G,R,Z]_EPS``                                    float32[N]                                                Ellipticity along the semi-major axis; here, taken to be fixed at the value given by ``EPS``.
-``[G,R,Z]_EPS_ERR``                                float32[N]                                                Uncertainty in ``[G,R,Z]_EPS`` (:math:`1\sigma`).
-``[G,R,Z]_PA``                                     float32[N] degree                                         Position angle along the semi-major axis; here, taken to be fixed at the value given by ``PA``.
-``[G,R,Z]_PA_ERR``                                 float32[N] degree                                         Uncertainty in ``[G,R,Z]_PA`` (:math:`1\sigma`).
-``[G,R,Z]_X0``                                     float32[N] pixel                                          Pixel coordinate of the ellipse along the *x*-axis; here, taken to be fixed at the value given by ``X0``.
-``[G,R,Z]_X0_ERR``                                 float32[N] pixel                                          Uncertainty in ``[G,R,Z]_X0`` (:math:`1\sigma`).
-``[G,R,Z]_Y0``                                     float32[N] pixel                                          Pixel coordinate of the ellipse along the *x*-axis; here, taken to be fixed at the value given by ``Y0``.
-``[G,R,Z]_Y0_ERR``                                 float32[N] pixel                                          Uncertainty in ``[G,R,Z]_Y0`` (:math:`1\sigma`).                       
-``[G,R,Z]_A3``                                     float32[N]                                                Third-order harmonic coefficient (see `photutils.isophote.IsophoteList`_); not used.
-``[G,R,Z]_A3_ERR``                                 float32[N]                                                Uncertainty in ``[G,R,Z]_A3`` (:math:`1\sigma`).                       
-``[G,R,Z]_A4``                                     float32[N]                                                Fourth-order harmonic coefficient (see `photutils.isophote.IsophoteList`_); not used.
-``[G,R,Z]_A4_ERR``                                 float32[N]                                                Uncertainty in ``[G,R,Z]_A4`` (:math:`1\sigma`).                       
-``[G,R,Z]_RMS``                                    float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Root-mean-square of the surface brightness along the elliptical path (see `photutils.isophote.IsophoteList`_).
-``[G,R,Z]_PIX_STDDEV``                             float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Estimate of the pixel standard deviation along the elliptical path (see `photutils.isophote.IsophoteList`_).
-``[G,R,Z]_STOP_CODE``                              int16[N]                                                  Fitting stop code (see `photutils.isophote.IsophoteList`_ and `photutils.isophote.Isophote`_).
-``[G,R,Z]_NDATA``                                  int16[N]                                                  Number of data points used for the fit (see `photutils.isophote.IsophoteList`_).
-``[G,R,Z]_NFLAG``                                  int16[N]                                                  Number of points rejected during the fit (see `photutils.isophote.IsophoteList`_).
-``[G,R,Z]_NITER``                                  int16[N]                                                  Number of fitting iterations (see `photutils.isophote.IsophoteList`_).
-``[G,R,Z]_COG_SMA``                                float32[M] pixel                                          Semi-major axis position for the curve-of-growth aperture photometry measurements, where ``M`` is the total number of samples (in `arcsec`) along the semi-major axis.
-``[G,R,Z]_COG_MAG``                                float32[M] mag                                            Aperture photometry within the semi-major axis given by ``[G,R,Z]_COG_SMA``.
-``[G,R,Z]_COG_MAGERR``                             float32[M] mag                                            Uncertainty in ``[G,R,Z]_COG_MAG`` (:math:`1\sigma`).                       
-``[G,R,Z]_COG_PARAMS_MTOT``                        float32    mag                                            Best-fitting parameter :math:`m_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_M0``                          float32    mag                                            Best-fitting parameter :math:`m_{0}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_ALPHA1``                      float32                                                   Best-fitting parameter :math:`\alpha_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_ALPHA2``                      float32                                                   Best-fitting parameter :math:`\alpha_{2}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_CHI2``                        float32                                                   Reduced :math:`\chi^{2}` of the fit to the curve of growth. *Note: large values of :math:`\chi^{2}` indicate a poor or problematic fit and should be inspected.*
-``RADIUS_SB[23,23.5,24,24.5,25,25.5,26]``          float32                                                   d
-``RADIUS_SB[23,23.5,24,24.5,25,25.5,26]_ERR``      float32                                                   d
-``[G,R,Z]_MAG_SB[23,23.5,24,24.5,25,25.5,26]``     float32                                                   d
-``[G,R,Z]_MAG_SB[23,23.5,24,24.5,25,25.5,26]_ERR`` float32                                                   d
-================================================== ========== ============================================== ===============================================
+========================================================== ========== ============================================== ===============================================
+Name                                                       Type       Units                                          Description
+========================================================== ========== ============================================== ===============================================
+``SGA_ID``                                                 int64                                                     See `SGA-LS`_ data model.
+``GALAXY``                                                 char[?]                                                   See `SGA-LS`_ data model.
+``RA``                                                     float64    degree                                         See `SGA-LS`_ data model.
+``DEC``                                                    float64    degree                                         See `SGA-LS`_ data model.
+``PGC``                                                    int64                                                     See `SGA-LS`_ data model.
+``PA_LEDA``                                                float32    degree                                         See `SGA-LS`_ data model.
+``BA_LEDA``                                                float32                                                   See `SGA-LS`_ data model.
+``D25_LEDA``                                               float32    arcmin                                         See `SGA-LS`_ data model.
+``BANDS``                                                  char[1][3]                                                List of bandpasses fitted (here, always `g,r,z`).
+``REFBAND``                                                char[1]                                                   Reference band (here, always `r`).
+``REFPIXSCALE``                                            float32    arcsec/pixel                                   Pixel scale in ``REFBAND``.
+``SUCCESS``                                                boolean                                                   Flag indicating ellipse-fitting success or failure.
+``FITGEOMETRY``                                            boolean                                                   Flag indicating whether the ellipse geometry was allowed to vary with semi-major axis (here, always ``False``).
+``INPUT_ELLIPSE``                                          boolean                                                   Flag indicating whether ellipse parameters were passed from an external file (here, always ``False``).
+``LARGESHIFT``                                             boolean                                                   Flag indicating that the light-weighted center (from the ``ellipse moments``) is different from the *Tractor* position by more than 10 pixels in either dimension, in which case we adopt the *Tractor* model position.
+``RA_X0``                                                  float64    degree                                         Right ascension (J2000) at pixel position ``X0``.
+``DEC_Y0``                                                 float64    degree                                         Declination (J2000) at pixel position ``Y0``.
+``X0``                                                     float32    pixel                                          Light-weighted position along the *x*-axis (from ``ellipse moments``).
+``Y0``                                                     float32    pixel                                          Light-weighted position along the *y*-axis (from ``ellipse moments``).
+``EPS``                                                    float32                                                   Ellipticity :math:`e=1-b/a`, where :math:`b/a` is the semi-minor to semi-major axis ratio ``BA`` given in the `SGA-2020-ls.fits`_ table.
+``PA``                                                     float32    degree                                         Galaxy position angle (astronomical convention, measured clockwise from North); equivalent to ``PA`` in the `SGA-2020-ls.fits`_ table.
+``THETA``                                                  float32    degree                                         Galaxy position angle (physics convention, measured clockwise from the *x*-axis), and given by [:math:`(270-PA)` mod 180].
+``MAJORAXIS``                                              float32    pixel                                          Light-weighted length of the semi-major axis (from ``ellipse moments``).
+``MAXSMA``                                                 float32    pixel                                          Maximum semi-major axis length used for the ellipse-fitting and curve-of-growth measurements (typically taken to be :math:`2\times` ``MAJORAXIS``).
+``INTEGRMODE``                                             char[6]                                                   `photutils.isophote.Ellipse.fit_image`_ integration mode (here, always *median*).
+``SCLIP``                                                  int16                                                     `photutils.isophote.Ellipse.fit_image`_ sigma-clipping (here, always *3*).
+``NCLIP``                                                  int16                                                     Number of `photutils.isophote.Ellipse.fit_image`_ sigma-clipping iterations (here, always *3*).
+``PSFSIZE_[G,R,Z]``                                        float32    arcsec                                         Mean width of the point-spread function over the full mosaic (derived from the ``PSFSIZE_[G,R,Z]`` columns in the `Tractor catalogs`_).
+``PSFDEPTH_[G,R,Z]``                                       float32    AB mag                                         Mean :math:`5\hbox{-}\sigma` depth over the full mosaic (derived from the ``PSFDEPTH_[G,R,Z]`` columns in the `Tractor catalogs`_).
+``MW_TRANSMISSION_[G,R,Z]``                                float32                                                   Galactic transmission fraction (taken from the corresponding `Tractor catalog`_ at the central coordinates of the galaxy).
+``REFBAND_WIDTH``                                          float32    pixel                                          Width of the optical mosaics in ``REFBAND``.
+``REFBAND_HEIGHT``                                         float32    pixel                                          Height of the optical mosaics in ``REFBAND`` (always equal to ``REFBAND_WIDTH``).
+``[G,R,Z]_SMA``                                            float32[N] pixel                                          Semi-major axis position, where ``N`` is the total number of (pixel) samples along the semi-major axis.
+``[G,R,Z]_INTENS``                                         float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Linear surface brightness at the semi-major axis position given by ``[G,R,Z]_SMA``.
+``[G,R,Z]_INTENS_ERR``                                     float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Uncertainty in ``[G,R,Z]_INTENS`` (:math:`1\sigma`).
+``[G,R,Z]_EPS``                                            float32[N]                                                Ellipticity along the semi-major axis; here, taken to be fixed at the value given by ``EPS``.
+``[G,R,Z]_EPS_ERR``                                        float32[N]                                                Uncertainty in ``[G,R,Z]_EPS`` (:math:`1\sigma`).
+``[G,R,Z]_PA``                                             float32[N] degree                                         Position angle along the semi-major axis; here, taken to be fixed at the value given by ``PA``.
+``[G,R,Z]_PA_ERR``                                         float32[N] degree                                         Uncertainty in ``[G,R,Z]_PA`` (:math:`1\sigma`).
+``[G,R,Z]_X0``                                             float32[N] pixel                                          Pixel coordinate of the ellipse along the *x*-axis; here, taken to be fixed at the value given by ``X0``.
+``[G,R,Z]_X0_ERR``                                         float32[N] pixel                                          Uncertainty in ``[G,R,Z]_X0`` (:math:`1\sigma`).
+``[G,R,Z]_Y0``                                             float32[N] pixel                                          Pixel coordinate of the ellipse along the *x*-axis; here, taken to be fixed at the value given by ``Y0``.
+``[G,R,Z]_Y0_ERR``                                         float32[N] pixel                                          Uncertainty in ``[G,R,Z]_Y0`` (:math:`1\sigma`).                       
+``[G,R,Z]_A3``                                             float32[N]                                                Third-order harmonic coefficient (see `photutils.isophote.IsophoteList`_); not used.
+``[G,R,Z]_A3_ERR``                                         float32[N]                                                Uncertainty in ``[G,R,Z]_A3`` (:math:`1\sigma`).                       
+``[G,R,Z]_A4``                                             float32[N]                                                Fourth-order harmonic coefficient (see `photutils.isophote.IsophoteList`_); not used.
+``[G,R,Z]_A4_ERR``                                         float32[N]                                                Uncertainty in ``[G,R,Z]_A4`` (:math:`1\sigma`).                       
+``[G,R,Z]_RMS``                                            float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Root-mean-square of the surface brightness along the elliptical path (see `photutils.isophote.IsophoteList`_).
+``[G,R,Z]_PIX_STDDEV``                                     float32[N] :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2` Estimate of the pixel standard deviation along the elliptical path (see `photutils.isophote.IsophoteList`_).
+``[G,R,Z]_STOP_CODE``                                      int16[N]                                                  Fitting stop code (see `photutils.isophote.IsophoteList`_ and `photutils.isophote.Isophote`_).
+``[G,R,Z]_NDATA``                                          int16[N]                                                  Number of data points used for the fit (see `photutils.isophote.IsophoteList`_).
+``[G,R,Z]_NFLAG``                                          int16[N]                                                  Number of points rejected during the fit (see `photutils.isophote.IsophoteList`_).
+``[G,R,Z]_NITER``                                          int16[N]                                                  Number of fitting iterations (see `photutils.isophote.IsophoteList`_).
+``[G,R,Z]_COG_SMA``                                        float32[M] pixel                                          Semi-major axis position for the curve-of-growth aperture photometry measurements, where ``M`` is the total number of samples (in `arcsec`) along the semi-major axis.
+``[G,R,Z]_COG_MAG``                                        float32[M] AB mag                                         Aperture photometry within the semi-major axis given by ``[G,R,Z]_COG_SMA``.
+``[G,R,Z]_COG_MAGERR``                                     float32[M] AB mag                                         Uncertainty in ``[G,R,Z]_COG_MAG`` (:math:`1\sigma`).                       
+``[G,R,Z]_COG_PARAMS_MTOT``                                float32    AB mag                                         Best-fitting parameter :math:`m_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_M0``                                  float32    AB mag                                         Best-fitting parameter :math:`m_{0}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                   Best-fitting parameter :math:`\alpha_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                   Best-fitting parameter :math:`\alpha_{2}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                   Reduced :math:`\chi^{2}` of the fit to the curve of growth. *Note: large values of :math:`\chi^{2}` indicate a poor or problematic fit and should be inspected.*
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32    arcsec                                         Semi-major axis length at the :math:`\mu=22`, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and 26 :math:`\mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32    arcsec                                         Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32    AB mag                                         Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+========================================================== ========== ============================================== ===============================================
 
 ``SGA Bitmasks``
 ================
@@ -791,61 +761,83 @@ Name                                               Type       Units             
      indropcat = 2**5,       # in the dropcat catalog
      )
 
-The following tables document why an object could not be included in the
-`SGA-2020.fits`_ catalog. The bits are enumerated as a power (i.e. ``3`` written
-in a column of bits means `two-to-the-power-of-3`).
+The following tables document some of the bit-masks used in the ``SGA``
+pipeline, as listed in the `SGA-2020-ls.fits`_ and `SGA-2020-nols.fits`_
+catalogs. The bits are enumerated as a power of two, e.g., in Python, the
+expression 
 
-E.g., in Python, the expression (``ELLIPSEBIT \& 2^1 != 0``) would return all
-the objects without *grz* coverage.
+   .. math::
 
+      ELLIPSEBIT & 2^1 != 0
+
+would return a Boolean array of the objects fitted as type `REX` which were
+too small to be ellipse-fit.
 
 ELLIPSEBIT
 ----------
 
+The following bits largely pertain to galaxies *with* `DR9`_ imaging; they
+indicate why a given object in the `SGA-2020-ls.fits`_ catalog was not
+ellipse-fit.
+
 === =================== ===============================
 Bit Name                Description
 === =================== ===============================
-0   ``LARGESHIFT``      :math:`>10`-pixel shift between the *Tractor* and intensity-weighted galaxy position. In this case we adopt the *Tractor* position. 
-1   ``REX_TOOSMALL``    Large 
-2   ``NOTREX_TOOSMALL`` dd
-3   ``FAILED``          
-4   ``NOTFIT``          
-5   ``INDROPCAT``
+0                       Not used; ignore.
+1   ``REX_TOOSMALL``    Object was not ellipse-fit because it was classified as too-small type ``REX`` (see the `Ellipse-Fitting`_ section for details).
+2   ``NOTREX_TOOSMALL`` Object was not ellipse-fit because it was classified as too-small type ``EXP``, ``DEV``, or ``SER`` (see the `Ellipse-Fitting`_ section for details). 
+3   ``FAILED``          Ellipse-fitting was attempted but failed.
+4   ``NOTFIT``          Ellipse-fitting was not attempted *or* the ellipse-fitting results were rejected based on visual inspection; see `Known Issues`_ for additional information. 
 === =================== ===============================
 
 DROPBIT
 -------
 
+The following bits largely pertain to galaxies *without* `DR9`_ imaging; they
+encode why an object in the `Final Parent Sample`_ sample was excluded from the
+`SGA-2020-ls.fits`_ catalog.
+
 === ===========  ===============================
 Bit Name         Description
 === ===========  ===============================
-0   ``NOTFIT``   d
-1   ``NOGRZ``    d
-2   ``MASKED``   d
-3   ``DROPPED``  d          
-4   ``ISPSF``    d
-5   ``NEGFLUX``  d
+0                Not used; ignore.
+1   ``NOGRZ``    Missing *grz* imaging (typically due to lying off the `DR9`_ footprint).
+2   ``MASKED``   Fully masked (i.e., inverse variance equal to zero) in a :math:`\pm2` pixel box centered on the initial position of the galaxy (e.g., due to a bleed trail or other gap in optical imaging).
+3                Not used; ignore.
+4   ``ISPSF``    Fit as type ``PSF`` by *Tractor*. These objects were all inspected and verified to be extended sources; however, due to problems with segmentation or other issues they could not be fit successfully by *Tractor* as galaxies.
+5   ``NEGFLUX``  Fit with a negative *r*-band flux by *Tractor*. These objects were all inspected and verified to be actual sources; however, due to problems with segmentation or other issues the *Tractor* fits were still problematic.
 === ===========  ===============================
-
 
 ``Known Issues``
 ================
 
+**To be written/expanded.**
+
 Some known issues include:
 
 * Talk about the largest galaxies that were not ellipse-fit, including NGC0598.
-
+* Galaxies fit as PSF or negative.
 
 ``Future Plans``
 ================
 
-* Infrared surface-brightness profiles in ``W1-W4``.
+**To be written/expanded.**
 
+* Infrared surface-brightness profiles in *W1-W4*.
 
 ``Acknowledgements``
 ====================
 
-Write me.
+Use of the ``SGA-2020`` data products *must* acknolwedge the `Scientific
+Publication Acknowledgement`_ for the DESI Legacy Imaging Surveys as well as the
+specific `SGA acknowledgement`_.
+
+The ``SGA-2020`` was also made possible by contributions from the following
+(current and former) undergraduate students at `Siena College`_:
+
+- `Alissa Ronca`_
+- `Luis Villa`_
+- `Kevin Napier (University of Michigan)`_
 
 .. _`Data Access`: https://sga.legacysurvey.org
 .. _`SGA web-portal`: https://sga.legacysurvey.org
@@ -884,3 +876,10 @@ Write me.
 .. _`Michele Cappellari's mge.find_galaxy`: https://www-astro.physics.ox.ac.uk/~mxc/software/#mge
 .. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
 .. _`Observational Astronomy by Birney, Gonzalez, & Oesper`: https://www.cambridge.org/core/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
+.. _`DR9 Tractor catalogs`: ../catalogs
+.. _`Scientific Publication Acknowledgement`: ../../acknowledgement/#scientific-publication-acknowledgement
+.. _`SGA acknowledgement`: ../../acknowledgement/#siena-galaxy-atlas
+.. _`Kevin Napier (University of Michigan)`: https://github.com/kjnapier
+.. _`Alissa Ronca`: https://www.linkedin.com/in/alissa-ronca/
+.. _`Luis Villa`: https://www.linkedin.com/in/luis-c-villa/
+.. _`Siena College`: https://www.siena.edu

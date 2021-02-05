@@ -115,3 +115,16 @@ funding from the U.S. Department of Energy Office of Science, Office of
 High Energy Physics via grant DE-SC0007914.
 
 .. _`Photometric Redshifts for the Legacy Surveys (PRLS)`: ../dr8/files#photometric-redshifts
+
+Siena Galaxy Atlas
+------------------
+
+When using data from the `Siena Galaxy Atlas`_ please include the following
+*additional* acknowledgment:
+
+The Siena Galaxy Atlas was made possible by funding support from the
+U.S. Department of Energy, Office of Science, Office of High Energy Physics
+under Award Number DE-SC002008 and from the National Science Foundation under
+grant AST-1616414.
+
+.. _`Siena Galaxy Atlas`: ../dr9/sga

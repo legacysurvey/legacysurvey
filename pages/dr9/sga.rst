@@ -18,16 +18,16 @@
 `Data Access`_
 ==============
 
-The ``SGA-2020`` data products can be browsed and downloaded at the `SGA
+The SGA-2020 data products can be browsed and downloaded at the `SGA
 web-portal`_, both for individual galaxies and the full sample. Below, we
 describe the data model for these data products. A forthcoming paper (Moustakas,
-Lang, et al., in preparation) will describe the ``SGA-2020`` in detail.
+Lang, et al., in preparation) will describe the SGA-2020 in detail.
 
-``Overview``
-============
+Overview
+========
 
-The ``Siena Galaxy Atlas (SGA)`` is a multiwavelength atlas of approximately
-385,000 nearby galaxies selected based on their apparent angular diameter.
+The Siena Galaxy Atlas (SGA) is a multiwavelength atlas of approximately 385,000
+nearby galaxies selected based on their apparent angular diameter.
 
 These galaxies are intrinsically large enough to be spatially resolved from our
 vantage point in the universe, providing a unique and powerful window into the
@@ -36,14 +36,14 @@ connection. In addition, the atlas serves as a valuable angular map of the
 foreground extragalactic sky for cosmological surveys of distant galaxies like
 the `Dark Energy Spectroscopic Instrument (DESI)`_ survey.
 
-The ``SGA`` delivers precise coordinates, multiwavelength mosaics, azimuthally
+The SGA delivers precise coordinates, multiwavelength mosaics, azimuthally
 averaged optical surface brightness and color profiles, integrated and aperture
 photometry, model images and photometry, and additional metadata for the full
 sample. The primary sample relies on deep, wide-field *grz* imaging from the
 `DESI Legacy Imaging Surveys DR9`_ as well as all-sky infrared imaging at 3.4-22
 microns from `unWISE`_.
 
-The 2020 version of the atlas, ``SGA-2020``, is primarily selected from the
+The 2020 version of the atlas, SGA-2020, is primarily selected from the
 `Hyperleda extragalactic database`_ of *known* large angular-diameter galaxies,
 although future versions of the atlas will be supplemented with galaxies
 identified from the `DR9`_ imaging itself, which will mitigate the heterogeneity
@@ -51,30 +51,14 @@ and surface brightness incompleteness of the parent sample.
 
 Coupled with existing and forthcoming optical spectroscopy from `DESI`_,
 particularly the Bright Galaxy Survey (BGS) of 10 million galaxies brigher than
-:math:`r=20`, the ``SGA-2020`` will yield important new insights into the star
+:math:`r=20`, the SGA-2020 will yield important new insights into the star
 formation and mass assembly histories of galaxies, enable a myriad complementary
 studies of the nearby and distant universe, and help engage the broader public
 in astronomy with visually striking color imaging of large, well-resolved,
 nearby galaxies.
 
-.. 
- Historical & Scientific Context
- ===============================
- 
- Nearby galaxies which are intrinsically large enough to be spatially
- well-resolved (from our vantage point in the universe) provide a unique and
- powerful window into the fossil record of galaxy formation and evolution. In
- these large angular-diameter systems we can carry out exceptionally detailed
- studies of their internal structure, global properties, faint, low
- surface-brightness features, and local and large-scale environments.
-
- Indeed, existing catalogs and imaging atlases of large, nearby galaxies such as
- the Third Reference Catalog of Bright Galaxies (RC3), the 2MASS Large Galaxy
- Atlas, and the NASA–Sloan Atlas, among others, have had a rich and outsized
- impact on our current understanding of galaxy formation.
-
-``Reporting Issues``
-====================
+Reporting Issues
+================
 
 We welcome questions and feedback from users, as well as requests for additional
 data products through the ticket system at
@@ -88,22 +72,22 @@ catalog is open source and publicly available:
 - https://github.com/moustakas/legacyhalos
 - https://github.com/legacysurvey/legacypipe
 
-``Sample Selection``
-====================
+Sample Selection
+================
 
-In this section we briefly describe the construction of the parent ``SGA-2020`` sample.
+In this section we briefly describe the construction of the parent SGA-2020 sample.
 
-``Hyperleda Catalog``
----------------------
+Hyperleda Catalog
+-----------------
 
 To construct the initial galaxy catalog, we queried the `Hyperleda extragalactic
-database`_ for galaxies with angular diameter :math:`D(25)>0.2\
-\mathrm{arcmin}`, where :math:`D(25)` is the diameter at the :math:`25\
-\mathrm{mag\ arcsec}^{-2}` surface brightness isophote (in the optical,
-typically the `B`-band), a traditional measure of the "size" of the galaxy
-popularized by the `Third Reference Catalog of Bright Galaxies (RC3)`_.
+database`_ for galaxies with angular diameter :math:`D(25)>0.2` arcmin, where
+:math:`D(25)` is the diameter at the :math:`25\ \mathrm{mag\ arcsec}^{-2}`
+surface brightness isophote (in the optical, typically the `B`-band), a
+traditional measure of the "size" of the galaxy popularized by the `Third
+Reference Catalog of Bright Galaxies (RC3)`_.
 
-We executed the following query on the ``2018 November 14`` version of the
+We executed the following query on the 2018 November 14 version of the
 `Hyperleda`_ database, resulting in a catalog of 1,436,176 galaxies:
 
 .. code-block:: sql
@@ -121,7 +105,6 @@ We executed the following query on the ``2018 November 14`` version of the
    )
    
    SELECT
-   count(*)
      m.pgc, m.objname, m.objtype, m.al2000, m.de2000, m.type, m.bar, m.ring, m.multiple, m.compactness, m.t, 
      m.logd25, m.logr25, m.pa, m.bt, m.it, m.kt, m.v, m.modbest, "R50".lax, "R50".sax, "IR".lax, "IR".sax,
    FROM
@@ -129,120 +112,114 @@ We executed the following query on the ``2018 November 14`` version of the
      LEFT JOIN "R50" USING (pgc)
      LEFT JOIN "IR" USING (pgc)
    WHERE
-     objtype='G'
-     and (
-       m.logd25>0.2 or "R50".lax>0.2 or "IR".lax>0.2
-     )
+     objtype='G' and (m.logd25>0.2 or "R50".lax>0.2 or "IR".lax>0.2)
 
 
 Based on a large number of visual inspections and both quantitative and
 qualitative tests, we culled the resulting sample by applying the following
 additional cuts:
 
-* First, we limited the sample to :math:`0.333<D(25)<180\ \mathrm{arcmin}`,
-  which removed roughly 900,000 galaxies (:math:`\approx63\%` of the original
-  sample), including the Magellanic Clouds and the Sagittarius Dwarf Galaxy at
-  the large-diameter end). We implemented the :math:`D(25)<20\ \mathrm{arcsec}`
-  cut because we found that the fraction of spurious sources (or sources with
-  incorrect diameters) increased rapidly below this diameter; moreover, galaxies
-  smaller than this size are modeled reasonably well as part of the standard
-  ``Tractor`` pipeline used in `DR9`_.
+1. We limited the sample to :math:`0.333<D(25)<180` arcmin, which removed
+   roughly 900,000 galaxies (approximately 65% of the original sample),
+   including the Magellanic Clouds and the Sagittarius Dwarf Galaxy at the
+   large-diameter end). We implemented the :math:`D(25)<20` arcsec cut because
+   we found that the fraction of spurious sources (or sources with incorrect
+   diameters) increased rapidly below this diameter; moreover, galaxies smaller
+   than this size are modeled reasonably well as part of the standard *Tractor*
+   pipeline used in `DR9`_.
   
 ..  
   
 
-* Next, we removed :math:`\approx3800` galaxies with no magnitude estimate in
-  `Hyperleda`_, galaxies which we found to be largely spurious based on visual
-  inspection.
+2. We removed approximately 3800 galaxies with no magnitude estimate in
+   `Hyperleda`_, galaxies which we found to be largely spurious based on visual
+   inspection.
   
 ..  
   
 
-* Third, we removed :math:`\approx6500` spurious sources (or galaxies with
-  significantly overestimated diameters) based on visual inspection.
+3. We removed an additional roughly 6500 spurious sources (or galaxies with
+   significantly overestimated diameters) based on visual inspection.
   
 ..  
   
 
-* Finally, we removed :math:`\approx1700` galaxies whose primary galaxy
-  identifier (in `Hyperleda`_) was from either SDSS or 2MASS and whose central
-  coordinates placed it *inside* the elliptical aperture of *another* (non-SDSS
-  and non-2MASS) galaxy with diameter greater than 0.5 arcmin. Based on visual
-  inspection, we found that many of these sources were due to shredding or were
-  spurious sources with grossly over-estimated diameters.
+4. Finally, we rejected approximately 1700 galaxies whose primary galaxy
+   identifier (in `Hyperleda`_) was from either SDSS or 2MASS and whose central
+   coordinates placed it *inside* the elliptical aperture of *another* (non-SDSS
+   and non-2MASS) galaxy with diameter greater than 0.5 arcmin. Based on visual
+   inspection, we found that many of these sources were due to shredding or were
+   spurious sources with grossly over-estimated diameters.
 
 In addition, we visually inspected all galaxies in the sample with
-:math:`D(25)>0.75\ \mathrm{arcmin}`, including all the NGC/IC galaxies, and
-assessed their published elliptical geometry and coordinates. Where necessary,
-we updated the diameter, position angle, minor-to-major axis ratio, and, in some
-cases, central coordinates "by hand", as indicated in the `BYHAND` column
-described in the data model below. The `NASA Extragalactic Database (NED)`_
-proved invaluable for these cross-checks.
+:math:`D(25)>0.75` arcmin, including all the NGC/IC galaxies, and assessed their
+published elliptical geometry and coordinates. Where necessary, we updated the
+diameter, position angle, minor-to-major axis ratio, and, in some cases, central
+coordinates "by hand", as indicated in the ``BYHAND`` column described in the
+data model below. The `NASA Extragalactic Database (NED)`_ proved invaluable for
+these cross-checks.
 
-``Supplemental Catalogs``
--------------------------
+Supplemental Catalogs
+---------------------
 
 To improve the completeness of the `Hyperleda`_ catalog, we supplemented the
 sample with several additional catalogs:
 
-* First, we added the sample of Local Group Dwarf Galaxies from `McConnachie
-  (2012)`_, making sure to account for any systems already in the `Hyperleda`_
-  catalog. Using visual inspection, we determined that approximately half these
-  systems were too unresolved to be part of the ``SGA-2020`` (e.g., Ursa Minor),
-  and so we removed them from the sample.
+1. We added the sample of Local Group Dwarf Galaxies from `McConnachie (2012)`_,
+   making sure to account for any systems already in the `Hyperleda`_
+   catalog. Using visual inspection, we determined that approximately half these
+   systems were too unresolved to be part of the SGA-2020 (e.g., Ursa Minor),
+   and so we removed them from the sample.
   
 ..  
   
 
-* Next, we identified the sample of galaxies in the `RC3`_ and `OpenNGC`_
-  catalogs which were missing from the `Hyperleda`_ sample. Surprisingly, many
-  of these systems are large and high surface-brightness.
+2. Next, we identified the sample of galaxies in the `RC3`_ and `OpenNGC`_
+   catalogs which were missing from the `Hyperleda`_ sample. Surprisingly, many
+   of these systems are large and high surface-brightness.
   
 ..  
   
 
-* Finally, we used the `DR8`_ photometric catalogs to identify additional additional large-diameter
-  galaxies. This supplemental catalog consists of two subsamples:
+3. Finally, we used the `DR8`_ photometric catalogs to identify additional
+   additional large-diameter galaxies. This supplemental catalog consists of two
+   subsamples:
+   
+   a. First, after applying a variety of catalog-level quality cuts (and
+      extensive visual inspection), we identified all objects in `DR8`_ with
+      half-light radii :math:`r(50)>14` arcsec based on their *Tractor* model
+      fits;
+ 
+   b. And second, we constructed a candidate sample of compact galaxies which
+      would otherwise be forced to be point sources in `DR9`_ based on their Gaia
+      catalog properties (see `this notebook`_ for details).
 
-  * First, after applying a variety of catalog-level quality cuts (and extensive
-    visual inspection), we identified all objects in `DR8`_ with half-light radii
-    :math:`r(50)>14\ \mathrm{arcsec}` based on their ``Tractor`` model fits;
-
-  * And second, we constructed a candidate sample of compact galaxies which
-    would otherwise be forced to be point sources in `DR9`_ based on their Gaia
-    catalog properties `this notebook`_ for details.
-
-..  
-  In addition, Fornax and Sculptor to the [http://link/to/the/cluster/page
-  "globular cluster"] sample for special handling in source detection and
-  photometry.
-
-``Group Catalog``
------------------
+Group Catalog
+-------------
 
 Galaxies which are close to one another (in apparent, angular coordinates) must
 be analyzed jointly. Consequently, we built a simple group catalog using a
-friends-of-friends algorithm and a :math:`10\ \mathrm{arcmin}` linking length,
-taking care to ensure that galaxies which overlap (within two times their
-circularized :math:`D(25)` diameter) were assigned to the same group.
+friends-of-friends algorithm and a 10 arcmin linking length, taking care to
+ensure that galaxies which overlap (within two times their circularized
+:math:`D(25)` diameter) were assigned to the same group.
 
-Using this procedure, we identified :math:`\approx515,000` unique groups, of
-which approximately :math:`93\%` have just one member. Among the remaining 7% of
-groups, :math:`\approx15,000` groups have two members, :math:`\approx1700`
-groups have 3-5 members, :math:`\approx50` groups have 6-10 members, and just
-four groups have 10 or more galaxies, including the center of the Coma Cluster.
+Using this procedure, we identified approximately 515,000 unique groups, of
+which roughly 93% have just one member. Among the remaining 7% of groups,
+approximately 15,000 groups have two members, 1700 groups have 3-5 members, 50
+groups have 6-10 members, and just four groups have 10 or more galaxies,
+including the center of the Coma Cluster.
 
 ..
   We also identify galaxies lying within and outside the Legacy Surveys imaging
   footprint.
 
-``Final Parent Sample``
------------------------
+Final Parent Sample
+-------------------
 
 The final parent sample contains 531,677 galaxies approximately limited to
-:math:`D(25)>20\ \mathrm{arcsec}`, spanning a wide range of magnitude and mean
-surface brightness. Of these, approximately 385,000 (:math:`\approx72\%`) lie
-within the `DR9`_ imaging footprint.
+:math:`D(25)>20` arcsec, spanning a wide range of magnitude and mean surface
+brightness. Of these, approximately 385,000 (72%) lie within the `DR9`_ imaging
+footprint.
 
 ..
   Note that because of the supplemental catalogs, this sample includes a small
@@ -253,10 +230,10 @@ within the `DR9`_ imaging footprint.
 Custom Mosaics & Ellipse-Fitting
 ================================
 
-We analyze every galaxy group in the parent ``SGA-2020`` catalog independently
+We analyze every galaxy group in the parent SGA-2020 catalog independently
 (noting that the pipeline is MPI-parallelized, and so it scales reasonably
 well). In the following two sections (`Custom Mosaics`_ and `Ellipse-Fitting`_)
-we describe our procedure in more detail. 
+we describe our procedure in more detail.
 
 Information regarding the resulting data products and their organization on-disk
 can be found in the `Data Products`_ section.
@@ -269,17 +246,16 @@ diameter of the galaxy group (using ``GROUP_RA``, ``GROUP_DEC``, and
 ``GROUP_DIAMETER`` defined in `SGA-2020-ls.fits`_). Specifically, we generate
 mosaics according to the following criteria:
 
-* For groups with ``GROUP_DIAMETER``:math:`<14\ \mathrm{arcmin}` we use a mosaic
-  diameter of :math:`3\times` ``GROUP_DIAMETER``;
-* For groups with :math:`14<` ``GROUP_DIAMETER``:math:`<30\ \mathrm{arcmin}` we
-  use a mosaic diameter of :math:`2\times` ``GROUP_DIAMETER``;
-* And for groups with ``GROUP_DIAMETER``:math:`>30\ \mathrm{arcmin}` (which only
-  affects ``NGC0598_GROUP``) we use a mosaic diameter of :math:`1.4\times`
+* For groups with ``GROUP_DIAMETER``:math:`<14` arcmin we use a mosaic diameter
+  of :math:`3\times` ``GROUP_DIAMETER``;
+* For groups with :math:`14<` ``GROUP_DIAMETER``:math:`<30` arcmin we use a
+  mosaic diameter of :math:`2\times` ``GROUP_DIAMETER``;
+* And for groups with ``GROUP_DIAMETER``:math:`>30` arcmin (which only affects
+  ``NGC0598_GROUP``) we use a mosaic diameter of :math:`1.4\times`
   ``GROUP_DIAMETER``.
 
-In all cases, for the *grz* imaging we adopt a fixed pixel scale of
-:math:`0.262\ \mathrm{arcsec/pixel}` and for the unWISE mosaics we use
-:math:`2.75\ \mathrm{arcsec/pixel}`.
+In all cases, for the *grz* imaging we adopt a fixed pixel scale of 0.262
+arcsec/pixel and for the unWISE mosaics we use 2.75 arcsec/pixel.
 
 Unlike in `DR9`_, we use a couple different options when calling the
 `legacypipe`_ photometric pipeline:
@@ -290,9 +266,9 @@ Unlike in `DR9`_, we use a couple different options when calling the
   * After reading the individual, sky-subtracted CCD images and rejecting
     outlier pixels, we rescale the inverse variance weights in order to
     downweight the bright central region of the galaxy (even more than from
-    Poisson noise). This change was implemented in order to prevent Tractor from
-    fitting the central part of the (typically large, high-surface brightness)
-    galaxy at the expense of the outer envelope;
+    Poisson noise). This change was implemented in order to prevent *Tractor*
+    from fitting the central part of the (typically large, high-surface
+    brightness) galaxy at the expense of the outer envelope;
   * We generate and write out inverse-variance weighted pixelized PSFs for each
     of the *g*-, *g*-, and *z*-band bandpass based on all the available input
     imaging;
@@ -319,7 +295,7 @@ Ellipse-Fitting
 ---------------
 
 We measure the multi-band surface brightness profiles of each galaxy in the
-``SGA`` using the ellipse-fitting tools in the `astropy`_-affiliated package
+SGA using the ellipse-fitting tools in the `astropy`_-affiliated package
 `photutils`_. Once again, we analyze each galaxy group independently and use MPI
 parallelization to process the full sample.
 
@@ -346,7 +322,7 @@ Specifically, we carry out the following steps for each galaxy group:
    The second two criteria identify galaxies which are too small to benefit from
    ellipse-fitting, i.e., they are well-fit by the standard photometric pipeline
    and have been deemed to not require special handling. These sources will
-   likely be removed from future versions of the ``SGA``.
+   likely be removed from future versions of the SGA.
 
 2. Next, we read the *grz* images and corresponding inverse variance and model
    images. Here and throughout our analysis we use the *r*-band image as the
@@ -403,7 +379,7 @@ Specifically, we carry out the following steps for each galaxy group:
 
      Note that this algorithm is not perfect, particularly in crowded fields
      (e.g., the center of the Coma Cluster), but will be improved in future
-     versions of the ``SGA``.
+     versions of the SGA.
     
    ..  
   
@@ -431,10 +407,10 @@ Specifically, we carry out the following steps for each galaxy group:
    intervals.
 
    In detail, we measure the surface brightness (and the uncertainty) using
-   `nclip=2`, `sclip=3`, and `integrmode=median`, i.e., two sigma-clipping
-   iterations, a `3-sigma` clipping threshold, and `median` area integration,
-   respectively, as documented in the `photutils.isophote.Ellipse.fit_image`_
-   method.
+   *nclip=2*, *sclip=3*, and *integrmode=median*, i.e., two sigma-clipping
+   iterations, a :math:`3\sigma` clipping threshold, and *median* area
+   integration, respectively, as documented in the
+   `photutils.isophote.Ellipse.fit_image`_ method.
 
    From the *r*-band surface brightness profile, we also robustly measure the
    size of the galaxy at the following surface brightness thresholds: 22, 22.5,
@@ -452,7 +428,7 @@ Specifically, we carry out the following steps for each galaxy group:
    in `photutils.aperture`_. Briefly, we integrate the image and variance image
    in each bandpass using elliptical apertures from the center of the galaxy to
    two times its estimated semi-major axis (based on the ``ellipse moments``,
-   again, in `1-pixel` or 0.262 arcsec intervals). 
+   again, in 1-pixel or 0.262 arcsec intervals).
 
    We fit the curve-of-growth, :math:`m(r)` using the following empirical model
    (taken from `Observational Astronomy by Birney, Gonzalez, & Oesper`_):
@@ -474,25 +450,25 @@ Specifically, we carry out the following steps for each galaxy group:
    `astropy.QTable`_ table (including units on all the quantities), and write
    out the results (as documented in the `Ellipse-Fitting`_ section).
 
-``Data Products``
-=================
+Data Products
+=============
 
-We divide the ``SGA-2020`` into two non-overlapping samples and define the data
+We divide the SGA-2020 into two non-overlapping samples and define the data
 model for each catalog below.
 
 SGA-2020-ls.fits
 ----------------
 
 `SGA-2020-ls.fits`_ contains 383,568 galaxies with three-band (*grz*) imaging
-from `DR9`_, spanning :math:`\approx20,000\ \mathrm{deg}^2`. (Here, the suffix
-*ls* means "Legacy Surveys" imaging.)
+from `DR9`_, spanning 20,000 square degrees. (Here, the suffix *ls* means
+"Legacy Surveys" imaging.)
 
 For these systems we are able to generate multiband mosaics and measure their
 surface-brightness and color profiles using standard ellipse-fitting techniques
 (except as indicated by the ``ELLIPSEBIT`` bit-mask).
 
-The multi-band mosaics, detailed ellipse-fitting results, Tractor catalogs, and
-other data products corresponding to each galaxy group in the ``SGA-2020`` are
+The multi-band mosaics, detailed ellipse-fitting results, *Tractor* catalogs,
+and other data products corresponding to each galaxy group in the SGA-2020 are
 documented in the `Group Files`_ section.  .
 
 ====== ============ ======== ======================
@@ -500,7 +476,7 @@ Number EXTNAME      Type     Contents
 ====== ============ ======== ======================
 HDU00  PRIMARY      IMAGE    Empty.
 HDU01  SGA-LS_      BINTABLE Ellipse-fitting results.
-HDU02  SGA-TRACTOR_ BINTABLE Tractor modeling results.
+HDU02  SGA-TRACTOR_ BINTABLE *Tractor* modeling results.
 ====== ============ ======== ======================
 
 SGA-LS
@@ -561,7 +537,7 @@ Parent Sample`_ which lie *off* the `DR9`_ imaging footprint. (Here, the suffix
 
 Note that a small number of these galaxies are within the boundaries of the
 footprint but they lack three-band coverage and therefore they are not analyzed
-as part of the ``SGA-2020``.
+as part of the SGA-2020.
 
 ====== ============ ======== ======================
 Number EXTNAME      Type     Contents
@@ -602,10 +578,10 @@ Name                 Type         Units                                       De
 ``DROPBIT``          int32                                                    See the `SGA Bitmasks`_ documentation.
 ==================== ============ =========================================== ===============================================
 
-``Group Files``
----------------
+Group Files
+-----------
 
-For each galaxy group in the ``SGA-2020`` (i.e., each row in
+For each galaxy group in the SGA-2020 (i.e., each row in
 `SGA-2020-ls.fits`_) we produce the set of files documented in the `Images and
 Catalogs`_ table, below, and described in the `Custom Mosaics &
 Ellipse-Fitting`_ section.
@@ -624,11 +600,11 @@ For example, in Python:
 Images and Catalogs
 ~~~~~~~~~~~~~~~~~~~
 
-The table below documents the nominal set of files produced by the ``SGA``
+The table below documents the nominal set of files produced by the SGA
 pipeline. Many of these files are standard `DR9`_ data products (see the `DR9
 files documentation`_), although slightly different inputs than those used for
 nominal `DR9`_ processing (see `Custom Mosaics`_ for more details) and with
-names which are specific to the ``SGA``.
+names which are specific to the SGA.
 
 ============================================================================== ================================================
 File                                                                           Description
@@ -663,20 +639,12 @@ Ellipse Fits
 ~~~~~~~~~~~~
 
 We produce a single FITS table to store the ellipse-fitting results for each
-galaxy in the ``SGA-2020`` which could be ellipse-fit (see the
+galaxy in the SGA-2020 which could be ellipse-fit (see the
 `Ellipse-Fitting`_ documentation for more details).
 
 Many of the ellipse-fitting measurements are taken directly from the
 `photutils.isophote.IsophoteList`_ attributes, although in many cases the column
 names have been renamed for clarity. 
-
-..
- ====== ============ ======== ======================
- Number EXTNAME      Type     Contents
- ====== ============ ======== ======================
- HDU00  PRIMARY      IMAGE    Empty.
- HDU01  ELLIPSE      BINTABLE Ellipse-fitting results for a single galaxy.
- ====== ============ ======== ======================
 
 ========================================================== ========== ============================================== ===============================================
 Name                                                       Type       Units                                          Description
@@ -748,13 +716,12 @@ Name                                                       Type       Units     
 ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
 ========================================================== ========== ============================================== ===============================================
 
-``SGA Bitmasks``
-================
+SGA Bitmasks
+============
 
-The following tables document some of the bit-masks used in the ``SGA``
-pipeline, as listed in the `SGA-2020-ls.fits`_ and `SGA-2020-nols.fits`_
-catalogs. The bits are enumerated as a power of two, e.g., in Python, the
-expression 
+The following tables document some of the bit-masks used in the SGA pipeline, as
+listed in the `SGA-2020-ls.fits`_ and `SGA-2020-nols.fits`_ catalogs. The bits
+are enumerated as a power of two, e.g., in Python, the expression
 
 .. code-block:: python
    
@@ -798,8 +765,8 @@ Bit Name         Description
 5   ``NEGFLUX``  Fit with a negative *r*-band flux by *Tractor*. These objects were all inspected and verified to be actual sources; however, due to problems with segmentation or other issues the *Tractor* fits were still problematic.
 === ===========  ===============================
 
-``Known Issues``
-================
+Known Issues
+============
 
 **To be written/expanded.**
 
@@ -808,21 +775,21 @@ Some known issues include:
 * Talk about the largest galaxies that were not ellipse-fit, including NGC0598.
 * Galaxies fit as PSF or negative.
 
-``Future Plans``
-================
+Future Plans
+============
 
 **To be written/expanded.**
 
 * Infrared surface-brightness profiles in *W1-W4*.
 
-``Acknowledgements``
-====================
+Acknowledgments
+===============
 
-Use of the ``SGA-2020`` data products *must* acknolwedge the `Scientific
-Publication Acknowledgement`_ for the DESI Legacy Imaging Surveys as well as the
-specific `SGA acknowledgement`_.
+Use of the SGA-2020 data products *must* acknowledge the `Scientific Publication
+Acknowledgment`_ for the DESI Legacy Imaging Surveys as well as the specific
+`SGA acknowledgment`_.
 
-The ``SGA-2020`` was also made possible by contributions from the following
+The SGA-2020 was also made possible by contributions from the following
 (current and former) undergraduate students at `Siena College`_:
 
 - `Alissa Ronca`_
@@ -867,8 +834,8 @@ The ``SGA-2020`` was also made possible by contributions from the following
 .. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
 .. _`Observational Astronomy by Birney, Gonzalez, & Oesper`: https://www.cambridge.org/core/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
 .. _`DR9 Tractor catalogs`: ../catalogs
-.. _`Scientific Publication Acknowledgement`: ../../acknowledgement/#scientific-publication-acknowledgement
-.. _`SGA acknowledgement`: ../../acknowledgement/#siena-galaxy-atlas
+.. _`Scientific Publication Acknowledgment`: ../../acknowledgment/#scientific-publication-acknowledgment
+.. _`SGA acknowledgment`: ../../acknowledgment/#siena-galaxy-atlas
 .. _`Kevin Napier (University of Michigan)`: https://github.com/kjnapier
 .. _`Alissa Ronca`: https://www.linkedin.com/in/alissa-ronca/
 .. _`Luis Villa`: https://www.linkedin.com/in/luis-c-villa/

@@ -71,7 +71,6 @@ NAVIGATION_LINKS = {
             ("/dr9/catalogs", 'Catalogs'),
             ("/dr9/updates", 'Updates'),
             ("/dr9/bitmasks", 'Bitmasks'),
-            ("/dr9/sga", 'The SGA'),
             ("/dr9/external", 'External Catalogs'),
             ("/dr9/issues", 'Known Issues'),
             ("/dr9/issues/#the-dr9sv-data-release", 'DR9sv'),
@@ -119,7 +118,9 @@ NAVIGATION_LINKS = {
             ), 'Gallery'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),
-        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
+        ((
+            ("/sga/sga2020", 'SGA-2020'),
+        ), 'SGA'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),
 #            ("http://thetractor.org", 'The Tractor'),

@@ -60,14 +60,38 @@ Globular Clusters & Planetary Nebulae
 
 | In DR9 we mask globular clusters and planetary nebulae selected from the `OpenNGC`_ catalog of NGC/IC objects.  Specifically, we select all objects classified as ``GCl`` or ``PN`` and use a circular mask with a diameter taken from the ``majax`` attribute of this catalog.  The input catalog `can be found in the legacypipe software product`_.  Objects in this mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
 
-SGA Large Galaxies
-------------------
-|     The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from John Moustakas' `Siena Galaxy Atlas (SGA) work`_ with Dustin Lang which builds on `the HyperLeda catalog`_. More documentation on how the SGA was constructed for DR9 is coming soon.
+Large Galaxies
+--------------
+| The input catalog used to define and mask large galaxies (and to set the ``GALAXY`` bit on the `bitmasks page`_) is taken from the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_. 
 
+Three versions of this catalog were used for DR9 (as recorded in the ``LARGEGALAXIES_CAT`` header card of the output FITS files):
+
+| **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.0/SGA-ellipse-v3.0.kd.fits**  
+| **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.1/SGA-ellipse-v3.1.kd.fits**
+| **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.2/SGA-ellipse-v3.2.kd.fits**
+
+In detail, the ``v3.0`` version was used for most (but not all) bricks north of
+:math:`32^{\circ}`, while the ``v3.1`` version was used below
+:math:`32^{\circ}`, including over the full `DECaLS`_ footprint. The ``v3.2``
+version is identical to the ``v3.1`` version except for the three galaxies in
+and around NGC0598=M33, which required special handling.
+
+In these files, the elliptical geometry (defined by ``DIAM``, ``PA``, and
+``BA``, as documented in the `SGA-2020-ls.fits`_ data model) defines the
+elliptical mask used to set the ``GALAXY`` targeting bit.
+
+In addition, an early version of this large-galaxy catalog was used for masking
+of large galaxies when building the CCD-level sky models:
+| **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.0/SGA-parent-v3.0.kd.fits**  
+
+In this catalog we used the elliptical geometry defined by ``D25_LEDA``,
+``PA_LEDA``, and ``BA_LEDA`` (again, as documented in the `SGA-2020-ls.fits`_
+data model).
 
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/data/NGC-star-clusters.fits 
 .. _`hardcoded in legacypipe`: https://github.com/legacysurvey/legacypipe/blob/63d0548602a52be1134f64196d6268adc68208fb/py/legacypipe/reference.py#L196
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
-.. _`Siena Galaxy Atlas (SGA) work`: ../SGA
-.. _`the HyperLeda catalog`: http://leda.univ-lyon1.fr/acknowledge.html
+.. _`SGA-2020`: ../../sga/sga2020
+.. _`SGA-2020-ls.fits`: ../../sga/sga2020#SGA-2020-ls.fits
+.. _`DECaLS`: ../../decamls

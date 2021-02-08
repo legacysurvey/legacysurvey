@@ -82,6 +82,7 @@ elliptical mask used to set the ``GALAXY`` targeting bit.
 
 In addition, an early version of this large-galaxy catalog was used for masking
 of large galaxies when building the CCD-level sky models:
+
 | **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.0/SGA-parent-v3.0.kd.fits**  
 
 In this catalog we used the elliptical geometry defined by ``D25_LEDA``,

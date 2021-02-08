@@ -116,11 +116,11 @@ NAVIGATION_LINKS = {
             ("/dr2/gallery", 'DR3'),
             ("/dr2/gallery", 'DR2'),
             ), 'Gallery'),
-        ("/status", 'Status'),
-        ("/pubs", 'Publications'),
         ((
             ("/sga/sga2020", 'SGA-2020'),
         ), 'SGA'),
+        ("/status", 'Status'),
+        ("/pubs", 'Publications'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),
 #            ("http://thetractor.org", 'The Tractor'),

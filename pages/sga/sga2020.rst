@@ -1,5 +1,5 @@
 .. title: Siena Galaxy Atlas 2020
-.. slug: sga
+.. slug: sga2020
 .. tags: mathjax
 .. description:
 
@@ -126,7 +126,7 @@ additional cuts:
    we found that the fraction of spurious sources (or sources with incorrect
    diameters) increased rapidly below this diameter; moreover, galaxies smaller
    than this size are modeled reasonably well as part of the standard *Tractor*
-   pipeline (see `*Tractor* implementation details`_).
+   pipeline (see `Tractor implementation details`_).
   
 ..  
   

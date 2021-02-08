@@ -105,7 +105,7 @@ NAVIGATION_LINKS = {
         ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
         ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
-        ), 'Sky Viewer'),
+        ), 'Viewer'),
         ((
             ("/dr9/gallery", 'DR9'),
             ("/dr8/gallery", 'DR8'),

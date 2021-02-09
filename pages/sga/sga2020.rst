@@ -465,7 +465,7 @@ Surveys" imaging.)
 
 For these systems we are able to generate multiband mosaics and measure their
 surface-brightness and color profiles using standard ellipse-fitting techniques
-(except as indicated by the ``ELLIPSEBIT`` bit-mask).
+(except as indicated by the ``ELLIPSEBIT`` bitmask, defined below).
 
 The multi-band mosaics, detailed ellipse-fitting results, *Tractor* catalogs,
 and other data products corresponding to each galaxy group in the SGA-2020 are
@@ -497,7 +497,7 @@ Name                                                       Type         Units   
 ``BA_LEDA``                                                float32                                                  Ratio of the semi-minor axis to the semi-major axis, taken from the reference indicated in ``REF`` (but see also the ``BYHAND`` column).
 ``Z_LEDA``                                                 float32                                                  Heliocentric redshift from `HyperLeda`_. *Note: a missing value, represented with -1.0, does not imply that no redshift exists*.
 ``SB_D25_LEDA``                                            float32      Vega :math:`\mathrm{mag}/\mathrm{arcsec}^2` Mean surface brightness within ``D25_LEDA`` based on the brightness in ``MAG_LEDA``.
-``MAG_LEDA``                                               float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within* ``D25_LEDA``*; use with care*.) 
+``MAG_LEDA``                                               float32      Vega mag                                    Approximate brightness (*Note: this magnitude estimate is heterogeneous in both bandpass and aperture but for most galaxies it is measured in the B-band within* ``D25_LEDA`` *; use with care*.) 
 ``BYHAND``                                                 Boolean                                                  Flag indicating whether one or more of ``RA_LEDA``, ``DEC_LEDA``, ``D25_LEDA``, ``PA_LEDA``, ``BA_LEDA``, or ``MAG_LEDA`` were changed from their published `HyperLeda`_ values, generally based on visual inspection.
 ``REF``                                                    char[13]                                                 Unique reference name indicating the original source of the object, as described in `Sample Selection`_: ``LEDA-20181114``, ``LGDWARFS``, ``RC3``, ``OpenNGC``, or ``DR8``.
 ``GROUP_ID``                                               int64                                                    Unique group identification number.
@@ -513,10 +513,15 @@ Name                                                       Type         Units   
 ``PA``                                                     float32      degree                                      Galaxy position angle, measured positive clockwise from North, as measured from the ``ellipse moments`` (or equivalent to ``PA_LEDA`` if the ``ellipse moments`` could not be measured).
 ``BA``                                                     float32                                                  Minor-to-major axis ratio, as measured from the ``ellipse moments`` (or equivalent to ``BA_LEDA`` if the ``ellipse moments`` could not be measured).
 ``ELLIPSEBIT``                                             int32                                                    See the `SGA Bitmasks`_ documentation.
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Semi-major axis length at the :math:`\mu=` 22, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and 26 :math:`\mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured; see also the `Ellipse Fits`_ table).
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured; see also the `Ellipse Fits`_ table).
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32      AB mag                                      Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Taken from the `Ellipse Fits`_ table.
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_COG_PARAMS_MTOT``                                float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_COG_PARAMS_M0``                                  float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                  Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                  Taken from the `Ellipse Fits`_ table.
+``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                  Taken from the `Ellipse Fits`_ table.
 ========================================================== ============ =========================================== ===============================================
 
 SGA-TRACTOR
@@ -524,9 +529,10 @@ SGA-TRACTOR
 
 This binary table is row-matched to the `SGA-LS`_ table in the preceding HDU and
 contains all the columns documented in the `DR9 Tractor catalogs`_, supplemented
-(for convenience) with ``SGA_ID``. All sources in this table have
-``REF_CAT=="L3"`` and ``REF_ID`` is identical to ``SGA_ID``, as described in the
-`external catalogs documentation`_.
+(for convenience) with ``SGA_ID``. 
+
+Note that all sources in this table have ``REF_CAT=="L3"`` and ``REF_ID`` is
+identical to ``SGA_ID``, as described in the `external catalogs documentation`_.
 
 SGA-2020-nols.fits
 ------------------
@@ -537,7 +543,7 @@ Parent Sample`_ which lie *off* the `DR9`_ imaging footprint. (Here, the suffix
 
 Note that a small number of these galaxies are within the boundaries of the
 footprint but they lack three-band coverage and therefore they are not analyzed
-as part of the SGA-2020.
+as part of the SGA-2020; however, they may be added to the SGA at a future date.
 
 ====== ============ ======== ======================
 Number EXTNAME      Type     Contents
@@ -581,17 +587,14 @@ Name                 Type         Units                                       De
 Group Files
 -----------
 
-For each galaxy group in the SGA-2020 (i.e., each row in
-`SGA-2020-ls.fits`_) we produce the set of files documented in the `Images and
-Catalogs`_ table, below, and described in the `Custom Mosaics &
-Ellipse-Fitting`_ section.
+For each galaxy group in the SGA-2020 (i.e., each row in `SGA-2020-ls.fits`_) we
+produce the set of files described in the `Images and Catalogs`_ table and the
+`Custom Mosaics & Ellipse-Fitting`_ documentation section.
 
 These files are organized into the directory structure ``RASLICE/GROUP_NAME``,
 where ``GROUP_NAME`` is the name of the galaxy group and ``RASLICE``
 (``000-359``) is the one-degree wide *slice* of the sky that the object belongs
-to.
-
-For example, in Python:
+to. Specifically, in Python:
 
 .. code-block:: python
 
@@ -711,9 +714,9 @@ Name                                                       Type       Units     
 ``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                   Best-fitting parameter :math:`\alpha_{2}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
 ``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                   Reduced :math:`\chi^{2}` of the fit to the curve of growth. *Note: large values of* :math:`\chi^{2}` *indicate a poor or problematic fit and should be inspected.*
 ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32    arcsec                                         Semi-major axis length at the :math:`\mu=` 22, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and 26 :math:`\mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32    arcsec                                         Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32    arcsec                                         Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
 ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32    AB mag                                         Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured).
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
 ========================================================== ========== ============================================== ===============================================
 
 SGA Bitmasks

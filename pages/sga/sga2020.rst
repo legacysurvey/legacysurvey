@@ -15,7 +15,7 @@
 .. _`John Moustakas (Siena College)`: ../../contact/#other-experts
 .. _`Dustin Lang (Perimeter Institute)`: ../../contact/#other-experts
 
-`Data Access`_
+`Data Portal`_
 ==============
 
 The SGA-2020 data products can be browsed and downloaded at the `SGA

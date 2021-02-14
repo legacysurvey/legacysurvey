@@ -147,7 +147,7 @@ diameter, position angle, minor-to-major axis ratio, and, in some cases, central
 coordinates "by hand", as indicated in the ``BYHAND`` column described in the
 `SGA-2020.fits`_ catalog. 
 
-We note that the `NASA Extragalactic Database (NED)`_ proved invaluable for
+We note that the `NASA/IPAC Extragalactic Database (NED)`_ proved invaluable for
 these cross-checks.
 
 Supplemental Catalogs
@@ -760,8 +760,7 @@ Acknowledgments
 
 Use of the SGA-2020 data products *must* acknowledge the `Scientific Publication
 Acknowledgment`_ for the DESI Legacy Imaging Surveys, as well as the specific
-`SGA acknowledgment`_, which recognizes the funding and invaluable external
-resources and datasets which made this project possible.
+`SGA acknowledgment`_.
 
 We also acknowledge important contributions to the SGA-2020 from the following
 (current and former) undergraduate students at `Siena College`_:
@@ -769,6 +768,18 @@ We also acknowledge important contributions to the SGA-2020 from the following
 - `Alissa Ronca`_
 - `Luis Villa`_
 - `Kevin Napier (University of Michigan)`_
+
+Finally, we gratefully acknowledge the following invaluable external resources
+which made this project possible:
+
+* We acknowledge the usage of the `HyperLeda`_ database (see especially `Makarov
+  et al. 2014, A&A, 570, A13`_). In particular, we are grateful for the time,
+  effort, and expertise of Dmitry Makarov.
+
+* This research has made use of the `NASA/IPAC Extragalactic Database (NED)`_,
+  which is funded by the National Aeronautics and Space Administration and
+  operated by the California Institute of Technology.
+
 
 .. _`Data Portal`: https://sga.legacysurvey.org
 .. _`SGA web-portal`: https://sga.legacysurvey.org
@@ -782,7 +793,7 @@ We also acknowledge important contributions to the SGA-2020 from the following
 .. _`Third Reference Catalog of Bright Galaxies (RC3)`: https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=VII/155
 .. _`RC3`: https://vizier.u-strasbg.fr/viz-bin/VizieR?-source=VII/155
 .. _`Tractor implementation details`: https://www.legacysurvey.org/dr9/description/#tractor-implementation-details
-.. _`NASA Extragalactic Database (NED)`: https://ned.ipac.caltech.edu
+.. _`NASA/IPAC Extragalactic Database (NED)`: https://ned.ipac.caltech.edu
 .. _`McConnachie (2012)`: https://ui.adsabs.harvard.edu/abs/2012AJ....144....4M/abstract
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
 .. _`DR8`: ../../dr8
@@ -816,3 +827,4 @@ We also acknowledge important contributions to the SGA-2020 from the following
 .. _`Luis Villa`: https://www.linkedin.com/in/luis-c-villa/
 .. _`Siena College`: https://www.siena.edu
 .. _`Contents of DR9`: ../../dr9/description/#contents-of-dr9
+.. _`Makarov et al. 2014, A&A, 570, A13`: https://ui.adsabs.harvard.edu/abs/2014A%26A...570A..13M

@@ -65,14 +65,14 @@ In this section we briefly describe the construction of the parent SGA-2020 samp
 Hyperleda Catalog
 -----------------
 
-To construct the initial galaxy catalog, we queried the `Hyperleda extragalactic
+To construct the initial galaxy catalog, we query the `Hyperleda extragalactic
 database`_ for galaxies with angular diameter :math:`D(25)>0.2` arcmin, where
 :math:`D(25)` is the diameter at the :math:`25\ \mathrm{mag\ arcsec}^{-2}`
 surface brightness isophote (in the optical, typically the `B`-band), a
 traditional measure of the "size" of the galaxy popularized by the `Third
 Reference Catalog of Bright Galaxies (RC3)`_.
 
-We executed the following query on the 2018 November 14 version of the
+We execute the following query on the 2018 November 14 version of the
 `Hyperleda`_ database, resulting in a catalog of 1,436,176 galaxies:
 
 .. code-block:: sql
@@ -101,115 +101,117 @@ We executed the following query on the 2018 November 14 version of the
 
 
 Based on a large number of visual inspections and both quantitative and
-qualitative tests, we culled the resulting sample by applying the following
+qualitative tests, we cull the resulting sample by applying the following
 additional cuts:
 
-1. We limited the sample to :math:`0.333<D(25)<180` arcmin, which removed
-   roughly 900,000 galaxies (approximately 65% of the original sample),
-   including the Magellanic Clouds and the Sagittarius Dwarf Galaxy at the
-   large-diameter end. We implemented the :math:`D(25)<20` arcsec cut because
-   we found that the fraction of spurious sources (or sources with incorrect
-   diameters) increased rapidly below this diameter; moreover, galaxies smaller
-   than this size are modeled reasonably well as part of the standard *Tractor*
-   pipeline (see `Tractor implementation details`_).
+1. We limit the sample to :math:`0.333<D(25)<180` arcmin, which removes roughly
+   900,000 galaxies (approximately 65% of the original sample), including the
+   Magellanic Clouds and the Sagittarius Dwarf Galaxy at the large-diameter
+   end. After this cut, the largest angular-diameter galaxies which remain are
+   NGC0224=M31 and NGC0598=M33 with :math:`D(25)` diameters of 178 and 62
+   arcmin, respectively.
+
+   Among smaller systems, we implement the :math:`D(25)<20` arcsec cut because
+   we find that the fraction of spurious sources (or sources with incorrect
+   diameters) in `Hyperleda`_ increases rapidly below this diameter; moreover,
+   galaxies smaller than this size are modeled reasonably well as part of the
+   standard *Tractor* pipeline (see `Tractor implementation details`_).
   
 ..  
   
 
-2. We removed approximately 3800 galaxies with no magnitude estimate in
-   `Hyperleda`_, galaxies which we found to be largely spurious based on visual
-   inspection.
+2. We remove approximately 3800 galaxies with no magnitude estimate in
+   `Hyperleda`_ (as selected by our query), galaxies which we find to be largely
+   spurious based on visual inspection.
   
 ..  
   
 
-3. We removed an additional roughly 6500 spurious sources (or galaxies with
+3. We remove an additional roughly 6500 spurious sources (or galaxies with
    significantly overestimated diameters) based on visual inspection.
   
 ..  
   
 
-4. Finally, we rejected approximately 1700 galaxies whose primary galaxy
-   identifier (in `Hyperleda`_) was from either SDSS or 2MASS and whose central
-   coordinates placed it *inside* the elliptical aperture of *another* (non-SDSS
+4. Finally, we reject approximately 1700 galaxies whose primary galaxy
+   identifier (in `Hyperleda`_) is from either SDSS or 2MASS and whose central
+   coordinates places it *inside* the elliptical aperture of *another* (non-SDSS
    and non-2MASS) galaxy with diameter greater than 0.5 arcmin. Based on visual
-   inspection, we found that many of these sources were due to shredding or were
+   inspection, we find that many of these sources are due to shredding or are
    spurious sources with grossly over-estimated diameters.
 
-In addition, we visually inspected all galaxies in the sample with
-:math:`D(25)>0.75` arcmin, including all the NGC/IC galaxies, and assessed their
-published elliptical geometry and coordinates. Where necessary, we updated the
+In addition, we visually inspect all galaxies in the sample with
+:math:`D(25)>0.75` arcmin, including all the NGC/IC galaxies, and assess their
+published elliptical geometry and coordinates. Where necessary, we update the
 diameter, position angle, minor-to-major axis ratio, and, in some cases, central
 coordinates "by hand", as indicated in the ``BYHAND`` column described in the
-data model below. The `NASA Extragalactic Database (NED)`_ proved invaluable for
+`SGA-2020.fits`_ catalog. 
+
+We note that the `NASA Extragalactic Database (NED)`_ proved invaluable for
 these cross-checks.
 
 Supplemental Catalogs
 ---------------------
 
-To improve the completeness of the `Hyperleda`_ catalog, we supplemented the
+To improve the completeness of the `Hyperleda`_ catalog, we supplement the
 sample with several additional catalogs:
 
-1. We added the sample of Local Group Dwarf Galaxies from `McConnachie (2012)`_,
+1. We add the sample of Local Group Dwarf Galaxies from `McConnachie (2012)`_,
    making sure to account for any systems already in the `Hyperleda`_
-   catalog. Using visual inspection, we determined that approximately half these
-   systems were too unresolved to be part of the SGA-2020 (e.g., Ursa Minor),
-   and so we removed them from the sample.
+   catalog. Using visual inspection, we determine that approximately half these
+   systems are too unresolved to be part of the SGA-2020 (e.g., Ursa Minor), and
+   so we remove them from the sample.
   
 ..  
   
 
-2. Next, we identified the sample of galaxies in the `RC3`_ and `OpenNGC`_
-   catalogs which were missing from the `Hyperleda`_ sample. Surprisingly, many
+2. Next, we identify the sample of galaxies in the `RC3`_ and `OpenNGC`_
+   catalogs which are missing from the `Hyperleda`_ sample. Surprisingly, many
    of these systems are large and have high average surface brightness.
   
 ..  
   
 
-3. Finally, we used the `DR8`_ photometric catalogs to identify additional
+3. Finally, we use the `DR8`_ photometric catalogs to identify additional
    large-diameter galaxies. This supplemental catalog consists of two
    subsamples:
    
-   a. First, after applying a variety of catalog-level quality cuts (and
-      extensive visual inspection), we identified all objects in `DR8`_ with
+   a) First, after applying a variety of catalog-level quality cuts (and
+      extensive visual inspection), we identify all objects in `DR8`_ with
       half-light radii :math:`r(50)>14` arcsec based on their *Tractor* model
       fits;
  
-   b. And second, we constructed a candidate sample of compact galaxies which
-      would otherwise be forced to be point sources in `DR9`_ based on their Gaia
-      catalog properties (see `this notebook`_ for details).
-
-Group Catalog
--------------
-
-Galaxies which are close to one another (in apparent, angular coordinates) must
-be analyzed jointly. Consequently, we built a simple group catalog using a
-friends-of-friends algorithm and a 10 arcmin linking length, taking care to
-ensure that galaxies which overlap (within two times their circularized
-:math:`D(25)` diameter) were assigned to the same group.
-
-Using this procedure, we identified approximately 515,000 unique groups, of
-which roughly 93% have just one member. Among the remaining 7% of groups,
-approximately 15,000 groups have two members, 1700 groups have 3-5 members, 50
-groups have 6-10 members, and just four groups have 10 or more galaxies,
-including the center of the Coma Cluster.
-
-..
-  We also identify galaxies lying within and outside the Legacy Surveys imaging
-  footprint.
+   b) And second, we construct a candidate sample of compact galaxies which
+      would otherwise be forced to be point sources in `DR9`_ based on their
+      Gaia catalog properties (see `this notebook`_ for details).
 
 Final Parent Sample
 -------------------
 
 The final parent sample contains 531,677 galaxies approximately limited to
 :math:`D(25)>20` arcsec, spanning a wide range of magnitude and mean surface
-brightness. Of these, 383,620 have *grz* imaging from `DR9`_.
+brightness. Of these, 383,620 have *grz* imaging from `DR9`_ and end up in the
+final SGA-2020 catalog (the `Custom Mosaics & Ellipse-Fitting`_).
 
 ..
   Note that because of the supplemental catalogs, this sample includes a small
   fraction of sources with `D(25)<20 arcsec`; however we retain these galaxies
   in the parent sample because some of them are historically important NGC/IC
   galaxies.
+
+Group Catalog
+-------------
+
+Galaxies which are close to one another (in apparent, angular coordinates) must
+be analyzed jointly. Consequently, we build a simple group catalog from the
+`Final Parent Sample`_ using a friends-of-friends algorithm and a 10 arcmin
+linking length, taking care to ensure that galaxies which overlap (within two
+times their circularized :math:`D(25)` diameter) are assigned to the same group.
+
+Using this procedure, we identify 512,825 unique groups, of which roughly 93%
+have just one member. Among the remaining groups, approximately 15,000 have two
+members, 1585 groups have 3-5 members, 51 have 6-10 members, and just four
+groups have more than 10 galaxies, including the center of the Coma Cluster.
 
 Custom Mosaics & Ellipse-Fitting
 ================================
@@ -244,36 +246,35 @@ arcsec/pixel and for the unWISE mosaics we use 2.75 arcsec/pixel.
 Unlike in `DR9`_, we use a couple different options when calling the
 `legacypipe`_ photometric pipeline:
 
-* First, we invoke the ``--fit-on-coadds`` option, which triggers the following
-  specialized behavior:
+1. We invoke the ``--fit-on-coadds`` option, which triggers the following
+   specialized behavior:
   
-  * After reading the individual, sky-subtracted CCD images and rejecting
-    outlier pixels, we rescale the inverse variance weights in order to
-    downweight the bright central region of the galaxy (even more than from
-    Poisson noise). This change was implemented in order to prevent *Tractor*
-    from fitting the central part of the (typically large, high-surface
-    brightness) galaxy at the expense of the outer envelope;
-  * We generate and write out inverse-variance weighted pixelized PSFs for each
-    of the *g-, *r*, and *z* bandpasses based on all the available input
-    imaging;
-  * We turn off the default behavior of only fitting point sources to objects
-    detected within the elliptical mask of each SGA large galaxy;
-  * And finally, we continue with source detection and model fitting *on the
-    coadded images*, unlike in the normal pipeline (in which source detection
-    and model fitting are run on the individual CCDs).
+   * After reading the individual, sky-subtracted CCD images and rejecting
+     outlier pixels, the inverse variance pixel weights are rescaled to prevent
+     *Tractor* from fitting the central part of the (typically large,
+     high-surface brightness) galaxy at the expense of the outer envelope.
+   * The source detection and model fitting steps are carried out *on the
+     coadded images* using the average, inverse-variance weighted pixelized PSF
+     in each bandpass.  individual CCDs.
+   * Objects detected within the elliptical mask of each SGA large galaxy are
+     not forced to be point sources.
     
 ..  
   
 
-* Second, we increase the threshold for detecting and deblending sources by
-  specifying ``--saddle-fraction 0.2`` (the default value is ``0.1``) and
-  ``--saddle-min 4.0`` (versus the default ``2.0``). These parameters control
-  the fractional peak height for identifying new sources around existing
-  sources, and the minimum required saddle point depth (in units of the standard
-  deviation of pixel values above the noise) from existing sources down to new
-  sources, respectively. We find these options necessary in order to prevent
-  excessive shredding and overfitting of the "resolved" galactic structure in
-  individual galaxies (e.g., HII regions).
+2. We increase the threshold for detecting and deblending sources by specifying
+   ``--saddle-fraction 0.2`` (the default value is ``0.1``) and ``--saddle-min
+   4.0`` (versus the default ``2.0``). 
+
+   The ``saddle-fraction`` parameter controls the fractional peak height for
+   identifying new sources around existing sources, and the ``saddle-min``
+   parameter is the minimum required saddle point depth (in units of the
+   standard deviation of pixel values above the noise) from existing sources
+   down to new sources.
+
+   We find these options necessary in order to prevent excessive shredding and
+   overfitting of the "resolved" galactic structure in individual galaxies
+   (e.g., HII regions).
 
 Ellipse-Fitting
 ---------------
@@ -318,69 +319,69 @@ Specifically, we carry out the following steps for each galaxy group:
 
    With these data in hand, we carry out the following steps:
    
-   * First, we build a ``residual_mask`` which accounts for statistically
-     significant differences between the data and the *Tractor* models. In
-     detail, we flag all pixels which deviate by more than math:`5-sigma` (in
-     *any* bandpass) from the absolute value of the Gaussian-smoothed residual
-     image, which we construct by subtracting the model image from the data and
-     smoothing with a `2-pixel` Gaussian kernel. This step obviously masks all
-     sources *including* the galaxy of interest, but we restore those pixels in
-     the next step. In addition, we iteratively dilate the mask two times and we
-     also mask pixels along the border of the mosaic with a border equal to 2%
-     the size of the mosaic.
+   a) First, we build a ``residual_mask`` which accounts for statistically
+      significant differences between the data and the *Tractor* models. In
+      detail, we flag all pixels which deviate by more than math:`5-sigma` (in
+      *any* bandpass) from the absolute value of the Gaussian-smoothed residual
+      image, which we construct by subtracting the model image from the data and
+      smoothing with a `2-pixel` Gaussian kernel. This step obviously masks all
+      sources *including* the galaxy of interest, but we restore those pixels in
+      the next step. In addition, we iteratively dilate the mask two times and
+      we also mask pixels along the border of the mosaic with a border equal to
+      2% the size of the mosaic.
     
    ..  
   
     
-   * Next, we iterate on each galaxy in the group from brightest to faintest
-     based on its *r*-band flux (from *Tractor*). For each galaxy, we construct
-     the model image from all the *Tractor* sources in the field *except the
-     galaxy of interest*, and subtract this model image from the data. 
+   b) Next, we iterate on each galaxy in the group from brightest to faintest
+      based on its *r*-band flux (from *Tractor*). For each galaxy, we construct
+      the model image from all the *Tractor* sources in the field *except the
+      galaxy of interest*, and subtract this model image from the data.
 
-     We then measure the mean elliptical geometry of the galaxy based on the
-     second moment of the light distribution using a modified version of
-     `Michele Cappellari's mge.find_galaxy`_ algorithm (hereafter, the ``ellipse
-     moments``). When computing the ``ellipse moments``, we only use pixels with
-     surface brightness :math:`>27\ \mathrm{mag\ arcsec}^{-2}` and we
-     median-filter the image with a `3-pixel` boxcar to smooth out any
-     small-scale galactic structure.
+      We then measure the mean elliptical geometry of the galaxy based on the
+      second moment of the light distribution using a modified version of
+      `Michele Cappellari's mge.find_galaxy`_ algorithm (hereafter, the
+      ``ellipse moments``). When computing the ``ellipse moments``, we only use
+      pixels with surface brightness :math:`>27\ \mathrm{mag\ arcsec}^{-2}` and
+      we median-filter the image with a `3-pixel` boxcar to smooth out any
+      small-scale galactic structure.
 
-     Finally, we combine the ``residual_mask`` with the ``starmask`` (using
-     Boolean logic), but *unmask* pixels belonging to the galaxy based on the
-     ``ellipse moments`` geometry, but using 1.5 times the estimated semi-major
-     axis of the galaxy.
+      Finally, we combine the ``residual_mask`` with the ``starmask`` (using
+      Boolean logic), but *unmask* pixels belonging to the galaxy based on the
+      ``ellipse moments`` geometry, but using 1.5 times the estimated semi-major
+      axis of the galaxy.
     
    ..  
   
     
-   * The preceding algorithm fails in fields containing more than one galaxy if
-     the central coordinates of one of the galaxies is masked by a previous
-     (brighter) system. (We consider a source to be impacted if *any* pixels in
-     a `5-pixel` diameter box centered on the *Tractor* position of the galaxy
-     are masked.) In this case, we iteratively *shrink* the elliptical mask of
-     any of the previous galaxies until the central position of the current
-     galaxy is unmasked.
+   c) The preceding algorithm fails in fields containing more than one galaxy if
+      the central coordinates of one of the galaxies is masked by a previous
+      (brighter) system. (We consider a source to be impacted if *any* pixels in
+      a `5-pixel` diameter box centered on the *Tractor* position of the galaxy
+      are masked.) In this case, we iteratively *shrink* the elliptical mask of
+      any of the previous galaxies until the central position of the current
+      galaxy is unmasked.
 
-     Note that this algorithm is not perfect, particularly in crowded fields
-     (e.g., the center of the Coma Cluster), but will be improved in future
-     versions of the SGA.
+      Note that this algorithm is not perfect, particularly in crowded fields
+      (e.g., the center of the Coma Cluster), but will be improved in future
+      versions of the SGA.
     
    ..  
   
     
-   * Another occasional failure mode is if the flux-weighted position of the
-     galaxy based on the ``ellipse moments`` differs by the *Tractor* position
-     by more than `10 pixels`, which can happen in crowded fields and near
-     bright stars and unmasked image artifacts. In this case we revert to using
-     the *Tractor* coordinates and model geometry and record this occurence in
-     the ``largeshift`` bit (see the `SGA Bitmasks`_ page). 
+   d) Another occasional failure mode is if the flux-weighted position of the
+      galaxy based on the ``ellipse moments`` differs by the *Tractor* position
+      by more than `10 pixels`, which can happen in crowded fields and near
+      bright stars and unmasked image artifacts. In this case we revert to using
+      the *Tractor* coordinates and model geometry and record this occurence in
+      the ``largeshift`` bit (see the `Bitmasks`_ page).
     
    ..  
   
      
-   * Finally, we convert the images to surface brightness in 
-     :math:`\mathrm{nanomaggies\ arcsec}^{-2}` and the weight maps to variance
-     images in :math:`\mathrm{nanomaggies}^2\ \mathrm{arcsec}^{-4}`.
+   e) Finally, we convert the images to surface brightness in
+      :math:`\mathrm{nanomaggies\ arcsec}^{-2}` and the weight maps to variance
+      images in :math:`\mathrm{nanomaggies}^2\ \mathrm{arcsec}^{-4}`.
 
 3. With the images and individual masks for each galaxy in hand, we can now
    measure the multi-band surface-brightness profiles of each galaxy. We assume
@@ -414,8 +415,9 @@ Specifically, we carry out the following steps for each galaxy group:
    two times its estimated semi-major axis (based on the ``ellipse moments``,
    again, in 1-pixel or 0.262 arcsec intervals).
 
-   We fit the curve-of-growth, :math:`m(r)` using the following empirical model
-   (taken from `Observational Astronomy by Birney, Gonzalez, & Oesper`_):
+   We fit the resulting curve-of-growth, :math:`m(r)` using the following
+   empirical model (taken from `Observational Astronomy by Birney, Gonzalez, &
+   Oesper`_):
 
    .. math::
                    
@@ -432,7 +434,7 @@ Specifically, we carry out the following steps for each galaxy group:
 
    Finally, we package all the measurements, one per galaxy, into an
    `astropy.QTable`_ table (including units on all the quantities), and write
-   out the results (as documented in the `Ellipse-Fitting`_ section).
+   out the results documented in the `Data Products`_ section.
 
 Data Products
 =============
@@ -447,6 +449,12 @@ modeling of all the sources in the field, and (for most systems) measure the
 surface-brightness profiles, color profiles, and optical curves of growth using
 standard ellipse-fitting techniques. These additional data products are
 documented in the `Group Files`_ section.
+
+The figure below shows the distribution of the SGA-2020 sample in an equal-area
+Aitoff projection in equatorial coordinates.
+
+.. image:: /files/sga-2020-sky.png
+    :height: 512
 
 SGA-2020.fits
 -------------
@@ -492,9 +500,9 @@ Name                                                       Type         Units   
 ``DIAM_REF``                                               char[4]                                                  Reference indicating the origin of the ``DIAM`` measurement: ``SB26``, ``SB25``, or ``LEDA``.
 ``PA``                                                     float32      degree                                      Galaxy position angle, measured positive clockwise from North, as measured from the ``ellipse moments`` (or equivalent to ``PA_LEDA`` if the ``ellipse moments`` could not be measured).
 ``BA``                                                     float32                                                  Minor-to-major axis ratio, as measured from the ``ellipse moments`` (or equivalent to ``BA_LEDA`` if the ``ellipse moments`` could not be measured).
-``RA_MOMENT``                                              float64      degree                                      Light-weighted right ascension (J2000), as measured from the ``ellipse moments`` (or equivalent to ``RA_LEDA`` if the ``ellipse moments`` could not be measured). Equivalent to ``RA_X0`` 
-``DEC_MOMENT``                                             float64      degree                                      Light-weighted declination (J2000), as measured from the ``ellipse moments`` (or equivalent to ``DEC_LEDA`` if the ``ellipse moments`` could not be measured).
-``RADIUS_MOMENT``                                          float32      arcsec                                      Second moment of the light distribution based on the measured ``ellipse moments`` (-1 if not measured); equivalent to ``MAJORAXIS`` (but converted to arcsec) in the `Ellipse Fits`_ table.
+``RA_MOMENT``                                              float64      degree                                      Light-weighted right ascension (J2000), as measured from the ``ellipse moments``. Equivalent to ``RA_X0`` in the `Ellipse Fits`_ table but set to ``RA_LEDA`` if ellipse-fitting was not carried out.
+``DEC_MOMENT``                                             float64      degree                                      Light-weighted declination (J2000), as measured from the ``ellipse moments``.  Equivalent to ``DEC_Y0`` in the `Ellipse Fits`_ table but set to ``DEC_LEDA`` if ellipse-fitting was not carried out.
+``RADIUS_MOMENT``                                          float32      arcsec                                      Second moment of the light distribution based on the measured ``ellipse moments`` (-1 if not measured). Equivalent to ``MAJORAXIS`` (but converted to arcsec) in the `Ellipse Fits`_ table.
 ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Taken from the `Ellipse Fits`_ table.
 ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Taken from the `Ellipse Fits`_ table.
 ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
@@ -504,7 +512,7 @@ Name                                                       Type         Units   
 ``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                  Taken from the `Ellipse Fits`_ table.
 ``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                  Taken from the `Ellipse Fits`_ table.
 ``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                  Taken from the `Ellipse Fits`_ table.
-``ELLIPSEBIT``                                             int32                                                    See the `SGA Bitmasks`_ documentation.
+``ELLIPSEBIT``                                             int32                                                    See the `Bitmasks`_ documentation.
 ========================================================== ============ =========================================== ===============================================
 
 TRACTOR
@@ -566,7 +574,7 @@ File                                                                           D
 **SGA Pipeline Files**                                                         
 -------------------------------------------------------------------------------------------------------------------------------
 ``GROUP_NAME``-largegalaxy-sample.fits                                         Catalog of (one or more) galaxies from `SGA-2020.fits`_ belonging to this group.
-``GROUP_NAME``-largegalaxy-``SGA_ID``-ellipse.fits                             See the `Ellipse Fits`_ data model; note that this file may be missing (for the galaxy of a given ``SGA_ID``) if ellipse-fitting failed or is not carried out (see ``SGA Bitmasks``).
+``GROUP_NAME``-largegalaxy-``SGA_ID``-ellipse.fits                             See the `Ellipse Fits`_ data model; note that this file may be missing (for the galaxy of a given ``SGA_ID``) if ellipse-fitting failed or is not carried out (see `Bitmasks`_).
 ``GROUP_NAME``-coadds.log                                                      Logging output for the *coadds* stage of the pipeline; may be missing in some cases.
 ``GROUP_NAME``-ellipse.log                                                     Logging output for the *ellipse* stage of the pipeline; may be missing in some cases.
 ============================================================================== ================================================
@@ -652,12 +660,12 @@ Name                                                       Type       Units     
 ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
 ========================================================== ========== ============================================== ===============================================
 
-SGA Bitmasks
-============
+Bitmasks
+========
 
 The following tables document some of the bit-masks used in the SGA pipeline, as
-listed in the `SGA-2020.fits`_ and `SGA-2020-nols.fits`_ catalogs. The bits
-are enumerated as a power of two, e.g., in Python, the expression
+listed in the `SGA-2020.fits`_ catalog. The bits are enumerated as a power of
+two, e.g., in Python, the expression
 
 .. code-block:: python
    
@@ -679,25 +687,46 @@ Bit Name                Description
 0                       Not used; ignore.
 1   ``REX_TOOSMALL``    Object was not ellipse-fit because it was classified as too-small type ``REX`` (see the `Ellipse-Fitting`_ section for details).
 2   ``NOTREX_TOOSMALL`` Object was not ellipse-fit because it was classified as too-small type ``EXP``, ``DEV``, or ``SER`` (see the `Ellipse-Fitting`_ section for details). 
-3   ``FAILED``          Ellipse-fitting was attempted but failed.
-4   ``NOTFIT``          Ellipse-fitting was not attempted *or* the ellipse-fitting results were rejected based on visual inspection; see `Known Issues`_ for additional information. 
-4   ``REJECTED``        Ellipse-fitting was not attempted *or* the ellipse-fitting results were rejected based on visual inspection; see `Known Issues`_ for additional information. 
+3   ``FAILED``          Ellipse-fitting was attempted but failed. (In SGA-2020 no galaxies have this bit set.)
+4   ``NOTFIT``          Ellipse-fitting was not attempted. (In SGA-2020 only 27 galaxies in seven unique groups have this bit set; see the `Known Issues`_). 
+5   ``REJECTED``        Ellipse-fitting results were rejected (generally based on visual inspection; see the `Known Issues`_). 
 === =================== ===============================
 
 Known Issues
 ============
 
-**To be written/expanded.**
+Here, we document known issues regarding the SGA-2020. We will periodically
+update this section as additional issues are identified or reported and will
+endeavor to address these issues in future versions of the catalog.
 
-Some known issues include:
+* In SGA-2020, 27 galaxies in seven unique groups were not ellipse fit,
+  generally due to the (very large!) size of the primary galaxy:
 
-* Some magnitude errors based on the curve-of-growth as negative.
-* Talk about the largest galaxies that were not ellipse-fit, including NGC0598.
-* Galaxies fit as PSF or negative.
-* Issues with building the final catalog: 
+  * `IC1613`_
+  * `NGC0055 Group`_
+  * `NGC0253 Group`_
+  * `NGC0300 Group`_
+  * `NGC0598 Group`_
+  * `NGC3031 Group`_
+  * `NGC5457`_
 
-Reporting Issues
-================
+* In 52 galaxies identified through visual inspection, we determined that the
+  ellipse-fitting results were incorrect or unreliable, usually due to
+  incomplete or imperfect masking of nearby bright stars or other galaxies. In
+  these systems we *vetoed* the ellipse-fitting results and set the ``REJECTED``
+  bit in the final catalog (see the `Bitmasks`_ table).
+
+.. _`IC1613`: https://sga.legacysurvey.org/group/IC1613
+.. _`NGC0055 Group`: https://sga.legacysurvey.org/group/NGC0055_GROUP
+.. _`NGC0253 Group`: https://sga.legacysurvey.org/group/NGC0253_GROUP
+.. _`NGC0300 Group`: https://sga.legacysurvey.org/group/NGC0300_GROUP
+.. _`NGC0598 Group`: https://sga.legacysurvey.org/group/NGC0598_GROUP
+.. _`NGC3031 Group`: https://sga.legacysurvey.org/group/NGC3031
+.. _`NGC5457`: https://sga.legacysurvey.org/group/NGC5457
+
+
+Feedback
+========
 
 We welcome questions and feedback from users, as well as requests for additional
 data products through the ticket system at
@@ -714,18 +743,27 @@ catalog is open source and publicly available:
 Future Plans
 ============
 
-**To be written/expanded.**
+Future versions of the SGA will focus on four main areas:
 
-* Infrared surface-brightness profiles in *W1-W4*.
+1. Improving the completeness of the sample over the full footprint,
+   particularly with respect to lower surface-brightness galaxies;
+2. Improving the data reduction and analysis of the very largest (angular
+   diameter) galaxies in the sky, like NGC5194=M51 and NGC5457=M101.
+3. Better handling of galaxies with close companions (e.g., in the Coma Cluster)
+   and near bright stars.
+4. Measuring the infrared surface-brightness profiles based on the unWISE
+   imaging at 3.4-22 microns.
+
 
 Acknowledgments
 ===============
 
 Use of the SGA-2020 data products *must* acknowledge the `Scientific Publication
-Acknowledgment`_ for the DESI Legacy Imaging Surveys as well as the specific
-`SGA acknowledgment`_.
+Acknowledgment`_ for the DESI Legacy Imaging Surveys, as well as the specific
+`SGA acknowledgment`_, which recognizes the funding and invaluable external
+resources and datasets which made this project possible.
 
-The SGA-2020 was also made possible by contributions from the following
+We also acknowledge important contributions to the SGA-2020 from the following
 (current and former) undergraduate students at `Siena College`_:
 
 - `Alissa Ronca`_

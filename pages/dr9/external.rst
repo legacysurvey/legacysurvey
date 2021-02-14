@@ -58,10 +58,8 @@ These catalogs are available to collaborators in the indicated directories at NE
 Globular Clusters & Planetary Nebulae
 -------------------------------------
 
-In DR9, we treat globular clusters and planetary nebulae by turning off source
-detection (although we do perform forced photometry of Gaia sources) and using
-the ``CLUSTER`` bit to identify the regions of the sky occupied by these
-systems. We construct our catalog using the following procedure:
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/NGC-star-clusters.fits**
+|     In DR9, we treat globular clusters and planetary nebulae by turning off source detection (although we do perform forced photometry of Gaia sources) and using the ``CLUSTER`` bit to identify the regions of the sky occupied by these systems. We construct our catalog using the following procedure:
 
 1. First, we select all objects classified as ``GCl`` or ``PN`` from the
    `OpenNGC`_ catalog of NGC/IC objects. In most cases, we use the published
@@ -82,14 +80,16 @@ systems. We construct our catalog using the following procedure:
    occupied by these galaxies DR9 only contains photometry for Gaia point
    sources.
 
-The final input catalog `can be found in the legacypipe software product`_,
-which was built using the `build-cluster-catalog.py`_ script.  Objects in this
-mask are given the ``CLUSTER`` bit on the `bitmasks page`_.
+The final input catalog was built using the `build-cluster-catalog.py`_ script
+and `can be found in the legacypipe software product`_ or at the
+publicly-accessible directory given above. Objects in this mask are given the
+``CLUSTER`` bit on the `bitmasks page`_.
 
 Large Galaxies
 --------------
-| **/global/cfs/cdirs/cosmo/staging/largegalaxies/v3.2/SGA-ellipse-v3.2.kd.fits**
-|     In this catalog, which was constructed from the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_, the elliptical geometry used to set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_) was determined from the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters, as documented in the `SGA-2020-ls.fits`_ data model.
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/SGA-parent-v3.0.kd.fits** and 
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/SGA-ellipse-v3.0.kd.fits** 
+|     These catalogs are based on the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_. The elliptical geometry listed in the *parent* catalog was used to mask large galaxies during sky-subtraction, while the elliptical geometry in the *ellipse* catalog determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_). Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs, as documented in the `SGA-2020.fits`_ data model. 
 
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/NGC-star-clusters.fits 
@@ -99,7 +99,7 @@ Large Galaxies
 .. _`star-clusters-supplemental.csv`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/star-clusters-supplemental.csv
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
 .. _`SGA-2020`: ../../sga/sga2020
-.. _`SGA-2020-ls.fits`: ../../sga/sga2020#sga-2020-ls.fits
+.. _`SGA-2020.fits`: ../../sga/sga2020#sga-2020.fits
 .. _`DECaLS`: ../../decamls
 .. _`Fornax`: https://www.legacysurvey.org/viewer?ra=39.997&dec=-34.449&layer=ls-dr9&zoom=10&GCs-PNe
 .. _`Sculptor`: https://www.legacysurvey.org/viewer?ra=15.039&dec=-33.709&layer=ls-dr9&zoom=10&GCs-PNe

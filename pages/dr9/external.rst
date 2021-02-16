@@ -58,7 +58,7 @@ These catalogs are available to collaborators in the indicated directories at NE
 Globular Clusters & Planetary Nebulae
 -------------------------------------
 
-| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/NGC-star-clusters.fits**
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/NGC-star-clusters.fits**
 |     In DR9, we treat globular clusters and planetary nebulae by turning off source detection (although we do perform forced photometry of Gaia sources) and using the ``CLUSTER`` bit to identify the regions of the sky occupied by these systems. We construct our catalog using the following procedure:
 
 1. First, we select all objects classified as ``GCl`` or ``PN`` from the
@@ -87,8 +87,8 @@ publicly-accessible directory given above. Objects in this mask are given the
 
 Large Galaxies
 --------------
-| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/SGA-parent-v3.0.kd.fits** and 
-| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/SGA-ellipse-v3.0.kd.fits** 
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/SGA-parent-v3.0.kd.fits** and 
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/SGA-ellipse-v3.0.kd.fits** 
 |     These catalogs are based on the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_. The elliptical geometry listed in the *parent* catalog was used to mask large galaxies during sky-subtraction, while the elliptical geometry in the *ellipse* catalog determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_). Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs, as documented in the `SGA-2020.fits`_ data model. 
 
 .. _`bitmasks page`: ../bitmasks

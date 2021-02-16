@@ -416,8 +416,8 @@ Specifically, we carry out the following steps for each galaxy group:
    again, in 1-pixel or 0.262 arcsec intervals).
 
    We fit the resulting curve-of-growth, :math:`m(r)` using the following
-   empirical model (taken from `Observational Astronomy by Birney, Gonzalez, &
-   Oesper`_):
+   empirical model taken from `Observational Astronomy`_ by Birney, Gonzalez, &
+   Oesper (*Cambridge University Press*, second edition, chapter 10):
 
    .. math::
                    
@@ -818,7 +818,7 @@ which made this project possible:
 .. _`astropy.QTable`: https://docs.astropy.org/en/stable/api/astropy.table.QTable.html#astropy.table.QTable
 .. _`Michele Cappellari's mge.find_galaxy`: https://www-astro.physics.ox.ac.uk/~mxc/software/#mge
 .. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
-.. _`Observational Astronomy by Birney, Gonzalez, & Oesper`: https://www.cambridge.org/core/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
+.. _`Observational Astronomy`: https://www.cambridge.org/core/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
 .. _`DR9 Tractor catalogs`: ../catalogs
 .. _`Scientific Publication Acknowledgment`: ../../acknowledgment/#scientific-publication-acknowledgment
 .. _`SGA acknowledgment`: ../../acknowledgment/#siena-galaxy-atlas

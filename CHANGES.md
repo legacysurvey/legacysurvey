@@ -2,7 +2,8 @@
 
 ## 9.0.2 (DR9, unreleased)
 
-- No changes yet.
+- First version of SGA-2020 documentation
+  ([PR#132](https://github.com/legacysurvey/legacysurvey/pull/132)).
 
 ## 9.0.1 (DR9, 2021-01-19)
 

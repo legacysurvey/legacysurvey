@@ -71,7 +71,6 @@ NAVIGATION_LINKS = {
             ("/dr9/catalogs", 'Catalogs'),
             ("/dr9/updates", 'Updates'),
             ("/dr9/bitmasks", 'Bitmasks'),
-            ("/dr9/sga", 'The SGA'),
             ("/dr9/external", 'External Catalogs'),
             ("/dr9/issues", 'Known Issues'),
             ("/dr9/issues/#the-dr9sv-data-release", 'DR9sv'),
@@ -106,7 +105,7 @@ NAVIGATION_LINKS = {
         ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
         ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
-        ), 'Sky Viewer'),
+        ), 'Viewer'),
         ((
             ("/dr9/gallery", 'DR9'),
             ("/dr8/gallery", 'DR8'),
@@ -117,9 +116,11 @@ NAVIGATION_LINKS = {
             ("/dr2/gallery", 'DR3'),
             ("/dr2/gallery", 'DR2'),
             ), 'Gallery'),
+        ((
+            ("/sga/sga2020", 'SGA-2020'),
+        ), 'SGA'),
         ("/status", 'Status'),
         ("/pubs", 'Publications'),
-        ("https://desi.lbl.gov/trac/wiki/DecamLegacy", 'Wiki'),
 #        ((
 #            ("http://astrometry.net", 'astrometry.net'),
 #            ("http://thetractor.org", 'The Tractor'),

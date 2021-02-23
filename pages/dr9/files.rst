@@ -854,14 +854,23 @@ and include the `additional acknowledgment for photometric redshifts`_.
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 
-Coming Soon! - Star masks (``masks/*``)
+Foreground object masks (``masking/*``)
 =======================================
 
-gaia-mask-dr9-fixed.fits
-------------------------
+The foreground object masks were used to set the ``BRIGHT``, ``MEDIUM``, ``GALAXY`` and ``CLUSTER`` bits
+described on the `DR9 bitmasks page`_. Files in the ``masking`` directory other than **gaia-mask-dr9.fits.gz**
+are generally described as part the overview of the `external catalogs used for masking`_, and have data models
+that are detailed as part of the `Siena Galaxy Atlas (SGA)`_.
+
+gaia-mask-dr9.fits.gz
+---------------------
 
 A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia`_ DR2 stars used to
-set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.
+set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_. See also the general overview of
+the `external catalogs used for masking`_.
+
+.. _`external catalogs used for masking`: ../external/#external-catalogs-used-for-masking
+.. _`Siena Galaxy Atlas (SGA)`: ../../sga
 
 ===================================== ======= ================== ========================
 Name                                  Type    Units              Description

@@ -695,11 +695,11 @@ Name                                  Type         Units                 Descrip
 Photometric Redshift files (8.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------------------
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
+The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2021`_)
 catalog is line-matched to the DR8 sweep catalogs as described above.
 
 The photometric redshifts are computed using the random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2020)`_.
+Details of the photo-z training and performance can be found in `Zhou et al. (2021)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the NOBS cut,
@@ -713,7 +713,7 @@ The photo-z catalogs do not provide information on star-galaxy separation.
 Stars are excluded from the photo-z training data, and we do not attempt to
 identify stars. To perform star-galaxy separation, one can use the
 morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
-color cut, as applied in  `Zhou et al. 2020`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
+color cut, as applied in  `Zhou et al. 2021`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
 
 ================= ========== ==========================================================================
 Name              Type       Description
@@ -730,14 +730,12 @@ Name              Type       Description
 ``training``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2020)`_
-and include the following acknowledgment: "The Photometric Redshifts for the
-Legacy Surveys (PRLS) catalog used in this paper was produced thanks to
-funding from the U.S. Department of Energy Office of Science, Office of
-High Energy Physics via grant DE-SC0007914."
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2021)`_
+and include the `additional acknowledgment for photometric redshifts`_.
 
-.. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
-.. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
+.. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
+.. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
+.. _`Zhou et al. 2021`:	https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 
 Image Stacks (``<region>/coadd/*``)
 ===================================

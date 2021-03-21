@@ -856,8 +856,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times|
 
 .. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
 
-Forced Photometry Files (``forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits``)
-=====================================================================================
+Forced Photometry Files (``forced/*``)
+======================================
 
 .. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass
@@ -869,23 +869,23 @@ were included in the DR8 processing.
 That is, after we produce the catalogs based on fitting to all images
 simultaneously, we go back to the individual CCDs, select the catalog
 objects that overlap, and ask what fluxes those objects should have to
-best match what is observed in the CCD.  When selecting objects from
+best match what is observed in the CCD. When selecting objects from
 the catalog, we *resolve* the north and south components using the
 same cut as in the sweep files and randoms.
 
-We perform two fits.  The first is regular forced photometry, where
+We perform two fits. The first is regular forced photometry, where
 the position and profile of the sources are fixed, and all we are
-fitting is the flux.  In the second fit, we compute the
+fitting is the flux. In the second fit, we compute the
 source-centered spatial derivatives and fit the amplitudes of those
-derivatives as well.  For sources moving less than a pixel or two,
-this produces an approximate estimate of the motion of the source.
+derivatives as well. For sources moving less than a pixel or two,
+this produces an approximate estimate of the motion of the source (``dra`` and ``ddec``).
 Note that for Gaia sources, this is relative to the Gaia measured
 proper motion!
 
 - forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits
     Where <camera> is one of ``90prime`` for `BASS`_, ``decam`` for
     `DECaLS`_ or ``mosaic`` for `MzLS`_, <EXPOSURE> is the exposure
-    number (not as an 8-character string, unlike some other data
+    number (not necessarily as an 8-character string, unlike some other data
     products), and <EXPOS> is the first 5 characters of the exposure
     number printed as an 8-character string.
 

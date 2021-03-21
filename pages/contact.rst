@@ -19,11 +19,15 @@ DECaLS and MzLS Principal Investigators:
     * David Schlegel djschlegel@lbl.gov
     * Arjun Dey dey@noao.edu
 
+BASS Survey:
+    * Xu Zhou (China PI) zhouxu@bao.ac.cn
+    * Xiaohui Fan (US PI)  fan@as.arizona.edu
+    * Hu Zou (Deputy PI) zouhu@bao.ac.cn
+    * BASS collaboration http://batc.bao.ac.cn/BASS/doku.php
+
 DESI Imaging Survey Scientist and Lead Tractor Developer:
     * Dustin Lang dstndstn@gmail.com
 
-BASS Survey:
-    * http://batc.bao.ac.cn/BASS/doku.php
 
 Other Experts
 -------------
@@ -64,7 +68,7 @@ Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
     * Benjamin Weaver  baweaver@lbl.gov
 
-Siena Galaxy Atlas:
+`Siena Galaxy Atlas`_:
     * John Moustakas  jmoustakas@siena.edu
 
 Photometric Redshifts:
@@ -78,6 +82,7 @@ Pan-STARRS1 Catalogs:
     * Doug Finkbeiner  dfinkbeiner@cfa.harvard.edu
 
 .. _`Legacypipe`: https://legacypipe.readthedocs.io/en/latest/
+.. _`Siena Galaxy Atlas`: ../sga
 
 Additional contributors
 -----------------------

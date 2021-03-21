@@ -805,15 +805,15 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Coming Soon! - Photometric Redshift sweeps
-------------------------------------------
+Photometric Redshift sweeps
+---------------------------
 .. (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, `Zhou et al. 2020`_)
-catalog is line-matched to the DR9 sweep catalogs as described above.
+The Photometric Redshifts for the Legacy Surveys (PRLS, e.g., see `Zhou et al. 2021`_)
+catalog is row-by-row-matched to the DR9 sweep catalogs as described previously for the other types of sweeps files.
 
 The photometric redshifts are computed using the random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2020)`_.
+Details of the photo-z training and performance can be found in `Zhou et al. (2021)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the NOBS cut,
@@ -827,40 +827,50 @@ The photo-z catalogs do not provide information on star-galaxy separation.
 Stars are excluded from the photo-z training data, and we do not attempt to
 identify stars. To perform star-galaxy separation, one can use the
 morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
-color cut, as applied in  `Zhou et al. 2020`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
+color cut, as applied in  `Zhou et al. 2021`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
 
 ================= ========== ==========================================================================
 Name              Type       Description
 ================= ========== ==========================================================================
-``z_phot_mean``   float32    photo-z derived from the mean of the photo-z PDF
-``z_phot_median`` float32    photo-z derived from the median of the photo-z PDF
-``z_phot_std``    float32    standard deviation of the photo-z's derived from the photo-z PDF
-``z_phot_l68``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF
-``z_phot_u68``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
-``z_phot_l95``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF
-``z_phot_u95``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
-``z_spec``        float32    spectroscopic redshift, if available
-``survey``        char[10]   source of the spectroscopic redshift
-``training``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
+``RELEASE``	  int16      Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
+``BRICKID``       int32      A unique Brick ID (in the range [1, 662174])
+``OBJID``         int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
+``Z_PHOT_MEAN``   float32    photo-z derived from the mean of the photo-z PDF
+``Z_PHOT_MEDIAN`` float32    photo-z derived from the median of the photo-z PDF
+``Z_PHOT_STD``    float32    standard deviation of the photo-z's derived from the photo-z PDF
+``Z_PHOT_L68``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_U68``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_L95``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF
+``Z_PHOT_U95``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``Z_SPEC``        float32    spectroscopic redshift, if available
+``SURVEY``        char[10]   source of the spectroscopic redshift
+``TRAINING``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2020)`_
-and include the following acknowledgment: "The Photometric Redshifts for the
-Legacy Surveys (PRLS) catalog used in this paper was produced thanks to
-funding from the U.S. Department of Energy Office of Science, Office of
-High Energy Physics via grant DE-SC0007914."
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2021)`_
+and include the `additional acknowledgment for photometric redshifts`_.
 
-.. _`Zhou et al. (2020)`: https://arxiv.org/abs/2001.06018
-.. _`Zhou et al. 2020`: https://arxiv.org/abs/2001.06018
+.. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
+.. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
+.. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 
-Coming Soon! - Star masks (``masks/*``)
+Foreground object masks (``masking/*``)
 =======================================
 
-gaia-mask-dr9-fixed.fits
-------------------------
+The foreground object masks were used to set the ``BRIGHT``, ``MEDIUM``, ``GALAXY`` and ``CLUSTER`` bits
+described on the `DR9 bitmasks page`_. Files in the ``masking`` directory other than **gaia-mask-dr9.fits.gz**
+are generally described as part the overview of the `external catalogs used for masking`_, and have data models
+that are detailed as part of the `Siena Galaxy Atlas (SGA)`_.
+
+gaia-mask-dr9.fits.gz
+---------------------
 
 A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia`_ DR2 stars used to
-set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_.
+set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_. See also the general overview of
+the `external catalogs used for masking`_.
+
+.. _`external catalogs used for masking`: ../external/#external-catalogs-used-for-masking
+.. _`Siena Galaxy Atlas (SGA)`: ../../sga
 
 ===================================== ======= ================== ========================
 Name                                  Type    Units              Description

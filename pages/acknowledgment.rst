@@ -39,8 +39,8 @@ and "unWISE / NASA/JPL-Caltech / D. Lang (Perimeter Institute)" for unWISE layer
 from the image footage. Links should be active if the credit is online.
 
 
-Scientific Publication Acknowledgement
-======================================
+Scientific Publication Acknowledgment
+=====================================
 
 When using data from the Legacy Surveys in papers, please use the following acknowledgment:
 

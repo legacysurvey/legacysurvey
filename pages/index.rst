@@ -53,7 +53,7 @@
 
    .. raw:: html
 
-      <h2>Acknowledgements</h2> <h3>(see also the <a href="acknowledgment">formal acknowledgment for publications</a>)</h3>
+      <h2>Acknowledgments</h2> <h3>(see also the <a href="acknowledgment">formal acknowledgment for publications</a>)</h3>
 
 
    *The LBNL Physics Division is supported by the U.S. Department of

@@ -40,25 +40,28 @@ External Catalogs used for Masking
 
 External catalogs are used for masking regions near foreground sources in DR9
 (e.g. to construct ``MASKBITS`` on the `bitmasks page`_).
-These catalogs are available to collaborators in the indicated directories at NERSC.
+These catalogs are available in the indicated directories at NERSC and at the listed urls.
 
 "BRIGHT" stars
 --------------
-| **/global/cfs/cdirs/cosmo/staging/tycho2** and
-| **/global/cfs/cdirs/cosmo/work/gaia/chunks-gaia-dr2-astrom-2**
-|     Bright stars are defined from a starting sample of all sources in the Tycho-2 catalog that have ``MAG_VT`` < 13.  The ``BRIGHT`` bit is set for all such Tycho-2 stars. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 13 have the ``BRIGHT`` bit set, provided they do not already match a Tycho-2 source. Gaia and Tycho-2 sources are matched after accounting for proper motion.
+
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz
+|     Bright stars are defined from a starting sample of all sources in the Tycho-2 catalog that have ``MAG_VT`` < 13.  The ``BRIGHT`` bit is set for all such Tycho-2 stars. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 13 have the ``BRIGHT`` bit set, provided they do not already match a Tycho-2 source. Gaia and Tycho-2 sources are matched after accounting for proper motion. In the **gaia-mask-dr9.fits.gz** file, bright stars have the ``isbright`` column set to ``True``.
 
 "MEDIUM-bright" stars
 ---------------------
-| **/global/cfs/cdirs/cosmo/staging/tycho2** and
-| **/global/cfs/cdirs/cosmo/work/gaia/chunks-gaia-dr2-astrom-2**
-|     Medium-bright stars are also defined starting with all sources in the Tycho-2 catalog cut to ``MAG_VT`` < 13.  All such Tycho-2 stars have the ``MEDIUM`` bit set. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 16 have the ``MEDIUM`` bit set, provided they do not already match a Tycho-2 source (where the match accounts for proper motion). Note that this means that all ``BRIGHT`` stars also have the ``MEDIUM`` bit set. The specific (Gaia G) magnitude-radius relationship is `hardcoded in legacypipe`_.
+
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz
+|     Medium-bright stars are also defined starting with all sources in the Tycho-2 catalog cut to ``MAG_VT`` < 13.  All such Tycho-2 stars have the ``MEDIUM`` bit set. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 16 have the ``MEDIUM`` bit set, provided they do not already match a Tycho-2 source (where the match accounts for proper motion). Note that this means that all ``BRIGHT`` stars also have the ``MEDIUM`` bit set. The specific (Gaia G) magnitude-radius relationship is `hardcoded in legacypipe`_. In the **gaia-mask-dr9.fits.gz** file, medium-bright stars have the ``ismedium`` column	set to ``True``.
 
 
 Globular Clusters & Planetary Nebulae
 -------------------------------------
 
 | **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/NGC-star-clusters.fits**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/NGC-star-clusters.fits
 |     In DR9, we treat globular clusters and planetary nebulae by turning off source detection (although we do perform forced photometry of Gaia sources) and using the ``CLUSTER`` bit to identify the regions of the sky occupied by these systems. We construct our catalog using the following procedure:
 
 1. First, we select all objects classified as ``GCl`` or ``PN`` from the
@@ -88,7 +91,9 @@ publicly-accessible directory given above. Objects in this mask are given the
 Large Galaxies
 --------------
 | **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/SGA-parent-v3.0.kd.fits** and 
-| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/SGA-ellipse-v3.0.kd.fits** 
+| **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/SGA-ellipse-v3.0.kd.fits**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/SGA-parent-v3.0.kd.fits and
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/SGA-ellipse-v3.0.kd.fits
 |     These catalogs are based on the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_. The elliptical geometry listed in the *parent* catalog was used to mask large galaxies during sky-subtraction, while the elliptical geometry in the *ellipse* catalog determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_). Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs, as documented in the `SGA-2020.fits`_ data model. 
 
 .. _`bitmasks page`: ../bitmasks
@@ -99,7 +104,7 @@ Large Galaxies
 .. _`star-clusters-supplemental.csv`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/star-clusters-supplemental.csv
 .. _`OpenNGC`: https://github.com/mattiaverga/OpenNGC
 .. _`SGA-2020`: ../../sga/sga2020
-.. _`SGA-2020.fits`: ../../sga/sga2020#sga-2020.fits
+.. _`SGA-2020.fits`: ../../sga/sga2020#sga-2020-fits
 .. _`DECaLS`: ../../decamls
 .. _`Fornax`: https://www.legacysurvey.org/viewer?ra=39.997&dec=-34.449&layer=ls-dr9&zoom=10&GCs-PNe
 .. _`Sculptor`: https://www.legacysurvey.org/viewer?ra=15.039&dec=-33.709&layer=ls-dr9&zoom=10&GCs-PNe

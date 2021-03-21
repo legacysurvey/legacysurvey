@@ -392,8 +392,9 @@ Primary Objects of Type All Northern Sources     All Southern Sources Resolved N
 ======================= ======================== ==================== ========================= ========================= ==============
 
 where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources are from `DECam`_
-surveys. Sources are *resolved* as distinct
-by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg|
+surveys. *Primary* objects, here, specifically refers to sources for which ``BRICK_PRIMARY==True``
+(the totals are derived from the *total number* counts in the `survey bricks summary file`_).
+Sources are *resolved* as distinct by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg|
 and north of the Galactic Plane, or, otherwise counting `DECam`_ sources. *Unique* sources are
 the total of all *resolved* sources.
 
@@ -419,6 +420,7 @@ The fluxes are not constrained to be positive-valued.  This allows the fitting o
 very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
+.. _`survey bricks summary file`: ../files/#region-survey-bricks-dr9-region-fits-gz
 
 Tractor Implementation Details
 ==============================

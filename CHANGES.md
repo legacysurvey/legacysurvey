@@ -4,7 +4,7 @@
 
 - A few more updates for DR9
   ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
-    - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses #135)
+    - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))
     - Document the forced photometry files, remove "Coming Soon."
     - Clarify the counts of morphological types are for ``BRICK_PRIMARY``.
     - Add some sizes for new directories we've added to the release.

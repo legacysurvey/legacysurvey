@@ -2,6 +2,12 @@
 
 ## 9.0.2 (DR9, unreleased)
 
+- A few more updates for DR9
+  ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
+    - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))
+    - Document the forced photometry files, remove "Coming Soon."
+    - Clarify the counts of morphological types are for ``BRICK_PRIMARY``.
+    - Add some sizes for new directories we've added to the release.
 - Update some "Coming Soon" sections for DR9, now that they're released
   ([PR#133](https://github.com/legacysurvey/legacysurvey/pull/133)). Includes:
     - Update description of foreground masking files.

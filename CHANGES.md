@@ -2,6 +2,11 @@
 
 ## 9.0.2 (DR9, unreleased)
 
+- Update some "Coming Soon" sections for DR9, now that they're released
+  ([PR#133](https://github.com/legacysurvey/legacysurvey/pull/133)). Includes:
+    - Update description of foreground masking files.
+    - Add data model for photoz sweeps (and update Zhou et al. reference).
+    - Also fix broken cutout server links, and update BASS contacts.
 - First version of SGA-2020 documentation
   ([PR#132](https://github.com/legacysurvey/legacysurvey/pull/132)).
 

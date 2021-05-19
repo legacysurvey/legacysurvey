@@ -618,7 +618,9 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [#]_ at datalab@noao.edu.
+Users interested in database access to the Tractor `catalogs`_ can use the `NOIRLab Astro Data Lab`_.
+
+.. _`NOIRLab Astro Data Lab`: https://datalab.noirlab.edu/
 
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
@@ -1154,11 +1156,12 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date, at
-which point *this documentation could be updated*.
+`Astro Data Lab`_ access to raw and calibrated images is now available.
 
-Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
-portal (http://archive.noao.edu/search/query) and an ftp server.
+.. _`Astro Data Lab`: https://datalab.noirlab.edu/
+
+Raw and Calibrated Legacy Survey images are available from the `NOIRLab Astro Data Archive`_ through the web
+portal (https://astroarchive.noirlab.edu/portal/search/) and an ftp server.
 The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from the NOIRLab telescopes.
@@ -1173,7 +1176,7 @@ project, as well as other images from the NOIRLab telescopes.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
+.. _`NOIRLab Astro Data archive` https://astroarchive.noirlab.edu/portal/search/
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 

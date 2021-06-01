@@ -20,7 +20,7 @@ and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
 Bit Name          Description
 === ============= ===============================
 0   ``NPRIMARY``  touches a pixel that is outside the ``BRICK_PRIMARY`` region of a brick
-1   ``BRIGHT``    touches a pixel within the locus of a `radius-magnitude relation for Tycho-2 stars`_ or one `for Gaia DR2`_ stars `to G < 13`_
+1   ``BRIGHT``    touches a pixel within `half of`_ the locus of a `radius-magnitude relation`_. Set for Tycho sources with ``MAG_VT`` < 13 and Gaia stars with `G < 13`_.
 2   ``SATUR_G``   touches a pixel that was saturated in at least one :math:`g`-band image
 3   ``SATUR_R``   touches a pixel that was saturated in at least one :math:`r`-band image
 4   ``SATUR_Z``   touches a pixel that was saturated in at least one :math:`z`-band image
@@ -30,19 +30,18 @@ Bit Name          Description
 8   ``WISEM1``    touches a pixel in a ``WISEMASK_W1`` bright star mask
 9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
-11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for Gaia DR2`_ stars `to G < 16`_
+11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation`_. Set for Gaia stars with `G < 16`_. The ``MEDIUM`` radius is twice the ``BRIGHT`` radius at the same magnitude.
 12  ``GALAXY``    touches a pixel in an `SGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
 === ============= ===============================
 
 .. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
-.. _`radius-magnitude relation for Tycho-2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L258
-.. _`for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
-.. _`radius-magnitude relation for Gaia DR2`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L196
-.. _`to G < 13`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L48
-.. _`to G < 16`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L49
+.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L314-L319
+.. _`G < 13`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L310
+.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L311
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`SGA`: ../sga
+.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L672-L675
 
 ``FITBITS``
 ============

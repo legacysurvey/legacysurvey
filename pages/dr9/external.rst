@@ -47,14 +47,21 @@ These catalogs are available in the indicated directories at NERSC and at the li
 
 | **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz**
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz
-|     Bright stars are defined from a starting sample of all sources in the Tycho-2 catalog that have ``MAG_VT`` < 13.  The ``BRIGHT`` bit is set for all such Tycho-2 stars. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 13 have the ``BRIGHT`` bit set, provided they do not already match a Tycho-2 source. Gaia and Tycho-2 sources are matched after accounting for proper motion. In the **gaia-mask-dr9.fits.gz** file, bright stars have the ``isbright`` column set to ``True``.
+|     Bright stars are defined from a starting sample of all sources in the Tycho-2 catalog that have ``MAG_VT`` < 13.  The ``BRIGHT`` bit is set for all such Tycho-2 stars. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 13 have the ``BRIGHT`` bit set, provided they do not already match a Tycho-2 source. Gaia and Tycho-2 sources are matched after accounting for proper motion. In the **gaia-mask-dr9.fits.gz** file, bright stars have the ``isbright`` column set to ``True``. In the legacypipe code, the radius of the ``BRIGHT`` star mask is set by pixels within `half of`_ the locus of a hardcoded `radius-magnitude relation`_ that is set for all Tycho-2 stars and for Gaia DR2 stars `to G < 13`_. But, note that the specific radii in the **gaia-mask-dr9.fits.gz** do not include the factor-of-two correction (i.e. they are the appropriate radii for the ``MEDIUM`` masks, as described below).
 
 "MEDIUM-bright" stars
 ---------------------
 
 | **/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz**
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/gaia-mask-dr9.fits.gz
-|     Medium-bright stars are also defined starting with all sources in the Tycho-2 catalog cut to ``MAG_VT`` < 13.  All such Tycho-2 stars have the ``MEDIUM`` bit set. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 16 have the ``MEDIUM`` bit set, provided they do not already match a Tycho-2 source (where the match accounts for proper motion). Note that this means that all ``BRIGHT`` stars also have the ``MEDIUM`` bit set. The specific (Gaia G) magnitude-radius relationship is `hardcoded in legacypipe`_. In the **gaia-mask-dr9.fits.gz** file, medium-bright stars have the ``ismedium`` column	set to ``True``.
+|     Medium-bright stars are also defined starting with all sources in the Tycho-2 catalog cut to ``MAG_VT`` < 13.  All such Tycho-2 stars have the ``MEDIUM`` bit set. In addition, Gaia DR2 sources with ``phot_g_mean_mag`` < 16 (`G < 16`_) have the ``MEDIUM`` bit set, provided they do not already match a Tycho-2 source (where the match accounts for proper motion). Note that this means that all ``BRIGHT`` stars also have the ``MEDIUM`` bit set. The specific `radius-magnitude relation`_ used is the same one that is adopted for ``BRIGHT`` masks. In the **gaia-mask-dr9.fits.gz** file, medium-bright stars have the ``ismedium`` column set to ``True``. Note that, in the legacypipe code, the radius of a ``BRIGHT`` mask is half that for a ``MEDIUM`` mask for a star of the same magnitude. The radii in the **gaia-mask-dr9.fits.gz** file *correspond to the radii for the MEDIUM masks* (which is *twice* the appropriate radius for a ``BRIGHT`` mask).
+
+.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L314-L319
+.. _`to G < 13`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L310
+.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L311
+.. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
+.. _`SGA`: ../sga
+.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L672-L675
 
 
 Globular Clusters & Planetary Nebulae
@@ -98,7 +105,6 @@ Large Galaxies
 
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/NGC-star-clusters.fits 
-.. _`hardcoded in legacypipe`: https://github.com/legacysurvey/legacypipe/blob/63d0548602a52be1134f64196d6268adc68208fb/py/legacypipe/reference.py#L196
 .. _`build-cluster-catalog.py`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/bin/build-cluster-catalog.py
 .. _`NGC-star-clusters-radii.csv`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/NGC-star-clusters-radii.csv
 .. _`star-clusters-supplemental.csv`: https://github.com/legacysurvey/legacypipe/blob/DR9.6.0/py/legacypipe/data/star-clusters-supplemental.csv

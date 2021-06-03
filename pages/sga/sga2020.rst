@@ -425,8 +425,7 @@ Specifically, we carry out the following steps for each galaxy group:
 
    where :math:`m_{1}`, :math:`m_{0}`, :math:`\alpha_{1}`, :math:`\alpha_{2}`,
    and :math:`r_{0}` are constant parameters of the model and *r* is the
-   semi-major axis in arcsec. In our analysis we take the radius scale factor
-   :math:`r_{0}=10` arcsec to be fixed.
+   semi-major axis in arcsec.
 
    Note that in the limit :math:`r\rightarrow\infty`, :math:`m_{1}` is the
    total, integrated magnitude, and as :math:`r\rightarrow0`,
@@ -527,8 +526,6 @@ supplemented (for convenience) with ``SGA_ID``.
 
 Note that all sources in this table have ``REF_CAT=="L3"`` and ``REF_ID`` is
 identical to ``SGA_ID``, as described in the `external catalogs documentation`_.
-
-**Document RELEASE declination cuts.**
 
 Group Files
 -----------

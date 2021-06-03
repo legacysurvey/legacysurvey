@@ -505,15 +505,16 @@ Name                                                       Type         Units   
 ``PA``                                                     float32      degree                                      Galaxy position angle, measured positive clockwise from North, as measured from the ``ellipse moments`` (or equivalent to ``PA_LEDA`` if the ``ellipse moments`` could not be measured).
 ``BA``                                                     float32                                                  Minor-to-major axis ratio, as measured from the ``ellipse moments`` (or equivalent to ``BA_LEDA`` if the ``ellipse moments`` could not be measured).
 ``RADIUS_MOMENT``                                          float32      arcsec                                      Second moment of the light distribution based on the measured ``ellipse moments`` (-1 if not measured). Equivalent to ``MAJORAXIS`` (but converted to arcsec) in the `Ellipse Fits`_ table.
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Semi-major axis length at the  22, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and 26 :math:`26\ \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured); taken directly from the `Ellipse Fits`_ table.
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_COG_PARAMS_MTOT``                                float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_COG_PARAMS_M0``                                  float32      AB mag                                      Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                  Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                  Taken from the `Ellipse Fits`_ table.
-``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                  Taken from the `Ellipse Fits`_ table.
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32      arcsec                                      Semi-major axis length at the :math:`\mu=22`, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and :math:`26 \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32      arcsec                                      Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32      AB mag                                      Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured).
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32      AB mag                                      Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
+``[G,R,Z]_COG_PARAMS_MTOT``                                float32      AB mag                                      Best-fitting parameter :math:`m_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_M0``                                  float32      AB mag                                      Best-fitting parameter :math:`m_{0}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_R0``                                  float32      arcsec                                      Best-fitting parameter :math:`r_{0}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                  Best-fitting parameter :math:`\alpha_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                  Best-fitting parameter :math:`\alpha_{2}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
+``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                  Reduced :math:`\chi^{2}` of the fit to the curve of growth. *Note: large values of* :math:`\chi^{2}` *indicate a poor or problematic fit and should be inspected.*
 ``ELLIPSEBIT``                                             int32                                                    See the `Bitmasks`_ documentation.
 ========================================================== ============ =========================================== ===============================================
 
@@ -590,7 +591,7 @@ galaxy in the SGA-2020 which could be ellipse-fit (see the
 
 Many of the ellipse-fitting measurements are taken directly from the
 `photutils.isophote.IsophoteList`_ attributes, although in many cases the column
-names have been renamed for clarity. 
+names have been renamed for clarity.
 
 ========================================================== ========== ============================================== ===============================================
 Name                                                       Type       Units                                          Description
@@ -649,17 +650,17 @@ Name                                                       Type       Units     
 ``[G,R,Z]_NFLAG``                                          int16[N]                                                  Number of points rejected during the fit (see `photutils.isophote.IsophoteList`_).
 ``[G,R,Z]_NITER``                                          int16[N]                                                  Number of fitting iterations (see `photutils.isophote.IsophoteList`_).
 ``[G,R,Z]_COG_SMA``                                        float32[M] pixel                                          Semi-major axis position for the curve-of-growth aperture photometry measurements, where ``M`` is the total number of samples (in arcsec) along the semi-major axis.
-``[G,R,Z]_COG_MAG``                                        float32[M] AB mag                                         Aperture photometry within the semi-major axis given by ``[G,R,Z]_COG_SMA``.
-``[G,R,Z]_COG_MAGERR``                                     float32[M] AB mag                                         Uncertainty in ``[G,R,Z]_COG_MAG`` (:math:`1\sigma`).                       
-``[G,R,Z]_COG_PARAMS_MTOT``                                float32    AB mag                                         Best-fitting parameter :math:`m_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_M0``                                  float32    AB mag                                         Best-fitting parameter :math:`m_{0}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                   Best-fitting parameter :math:`\alpha_{1}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                   Best-fitting parameter :math:`\alpha_{2}` based on the fit to the curve of growth (see the `Ellipse-Fitting`_ section).
-``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                   Reduced :math:`\chi^{2}` of the fit to the curve of growth. *Note: large values of* :math:`\chi^{2}` *indicate a poor or problematic fit and should be inspected.*
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32    arcsec                                         Semi-major axis length at the :math:`\mu=22`, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, and :math:`26 \mathrm{mag}\ \mathrm{arcsec}^{-2}` isophote in the *r*-band (-1 if not measured).
-``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32    arcsec                                         Uncertainty in ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32    AB mag                                         Cumulative brightness measured within the corresponding ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (-1 if not measured).
-``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         Uncertainty in ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]`` (:math:`1\sigma`). *Note: can be -1 if there was an issue estimating the uncertainty.*
+``[G,R,Z]_COG_MAG``                                        float32[M] AB mag                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_MAGERR``                                     float32[M] AB mag                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_PARAMS_MTOT``                                float32    AB mag                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_PARAMS_M0``                                  float32    AB mag                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_PARAMS_ALPHA1``                              float32                                                   **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_PARAMS_ALPHA2``                              float32                                                   **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_COG_PARAMS_CHI2``                                float32                                                   **Do not use**; see the `Known Issues`_.
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``          float32    arcsec                                         **Do not use**; see the `Known Issues`_.
+``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``      float32    arcsec                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``     float32    AB mag                                         **Do not use**; see the `Known Issues`_.
+``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` float32    AB mag                                         **Do not use**; see the `Known Issues`_.
 ========================================================== ========== ============================================== ===============================================
 
 Bitmasks
@@ -712,11 +713,28 @@ endeavor to address these issues in future versions of the catalog.
   * `NGC3031 Group`_
   * `NGC5457`_
 
+..
+
+   
 * In 52 galaxies identified through visual inspection, we determined that the
   ellipse-fitting results were incorrect or unreliable, usually due to
   incomplete or imperfect masking of nearby bright stars or other galaxies. In
   these systems we *vetoed* the ellipse-fitting results and set the ``REJECTED``
   bit in the final catalog (see the `Bitmasks`_ table).
+
+..
+
+   
+* The curve-of-growth measurements (as recorded in the ``[G,R,Z]_COG_MAG`` and
+  ``[G,R,Z]_COG_MAGERR`` columns of the `Ellipse Fits`_ files) were
+  unfortunately compromised by an irrecoverable bug and should not be
+  used. However, we have remeasured some of the key quantities of interest
+  (specifically, ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``,
+  ``RADIUS_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR``,
+  ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]``, and
+  ``[G,R,Z]_MAG_SB[22,22.5,23,23.5,24,24.5,25,25.5,26]_ERR`` from the
+  surface-brightness profiles and stored the results in the `SGA-2020.fits`_
+  table.
 
 .. _`IC1613`: https://sga.legacysurvey.org/group/IC1613
 .. _`NGC0055 Group`: https://sga.legacysurvey.org/group/NGC0055_GROUP

@@ -429,8 +429,8 @@ Specifically, we carry out the following steps for each galaxy group:
    :math:`r\rightarrow\infty`, :math:`m_{tot}` is the total, integrated
    magnitude.
 
-   With this model, the half-light radius, :math:`r_{50}` can be inferred from
-   the best-fitting model parameters:
+   With this model, the half-light semi-major axis, :math:`r_{50}`, can be
+   inferred from the best-fitting model parameters:
 
    .. math::
                    

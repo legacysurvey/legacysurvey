@@ -2,6 +2,8 @@
 
 ## 9.0.2 (DR9, unreleased)
 
+- Fix minor typos in psfdepth description on catalogs page
+  ([PR#141](https://github.com/legacysurvey/legacysurvey/pull/141)).
 - A few more updates for DR9
   ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
     - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))

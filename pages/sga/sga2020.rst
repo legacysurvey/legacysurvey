@@ -52,7 +52,7 @@ respect to surface brightness completeness.
 Coupled with existing and forthcoming optical spectroscopy from `DESI`_,
 particularly the Bright Galaxy Survey (BGS) of 10 million galaxies brigher than
 :math:`r=20`, the SGA-2020 will yield important new insights into the star
-formation and mass assembly histories of galaxies, enable a myriad complementary
+formation and mass assembly histories of galaxies, enable myriad complementary
 studies of the nearby and distant universe, and help engage the broader public
 in astronomy with visually striking color imaging of large, well-resolved,
 nearby galaxies.
@@ -135,7 +135,7 @@ additional cuts:
 
 4. Finally, we reject approximately 1700 galaxies whose primary galaxy
    identifier (in `Hyperleda`_) is from either SDSS or 2MASS and whose central
-   coordinates places it *inside* the elliptical aperture of *another* (non-SDSS
+   coordinates place it *inside* the elliptical aperture of *another* (non-SDSS
    and non-2MASS) galaxy with diameter greater than 0.5 arcmin. Based on visual
    inspection, we find that many of these sources are due to shredding or are
    spurious sources with grossly over-estimated diameters.
@@ -159,8 +159,8 @@ sample with several additional catalogs:
 1. We add the sample of Local Group Dwarf Galaxies from `McConnachie (2012)`_,
    making sure to account for any systems already in the `Hyperleda`_
    catalog. Using visual inspection, we determine that approximately half these
-   systems are too unresolved to be part of the SGA-2020 (e.g., Ursa Minor), and
-   so we remove them from the sample.
+   systems are insufficiently resolved to be part of the SGA-2020 (e.g., Ursa
+   Minor), and so we remove them from the sample.
   
 ..  
   
@@ -191,7 +191,7 @@ Final Parent Sample
 The final parent sample contains 531,677 galaxies approximately limited to
 :math:`D(25)>20` arcsec, spanning a wide range of magnitude and mean surface
 brightness. Of these, 383,620 have *grz* imaging from `DR9`_ and end up in the
-final SGA-2020 catalog (the `Custom Mosaics & Ellipse-Fitting`_).
+final SGA-2020 catalog (see `Custom Mosaics & Ellipse-Fitting`_).
 
 ..
   Note that because of the supplemental catalogs, this sample includes a small
@@ -204,7 +204,7 @@ Group Catalog
 
 Galaxies which are close to one another (in apparent, angular coordinates) must
 be analyzed jointly. Consequently, we build a simple group catalog from the
-`Final Parent Sample`_ using a friends-of-friends algorithm and a 10 arcmin
+*Final Parent Sample* using a friends-of-friends algorithm and a 10 arcmin
 linking length, taking care to ensure that galaxies which overlap (within two
 times their circularized :math:`D(25)` diameter) are assigned to the same group.
 
@@ -255,7 +255,7 @@ Unlike in `DR9`_, we use a couple different options when calling the
      high-surface brightness) galaxy at the expense of the outer envelope.
    * The source detection and model fitting steps are carried out *on the
      coadded images* using the average, inverse-variance weighted pixelized PSF
-     in each bandpass.  individual CCDs.
+     in each bandpass.
    * Objects detected within the elliptical mask of each SGA large galaxy are
      not forced to be point sources.
     
@@ -296,9 +296,9 @@ Specifically, we carry out the following steps for each galaxy group:
    * objects with negative *r*-band flux or objects fit by *Tractor* as type
      ``PSF``;
    * galaxies fit as *Tractor* type ``REX`` which have a measured half-light
-     radius ``shape_r`` :math:`<5` arcsec`;
+     major-axis length ``shape_r`` :math:`<5` arcsec;
    * galaxies fit as *Tractor* types ``EXP``, ``DEV``, or ``SER`` which have a
-     measured half-light radius ``shape_r`` :math:`<2` arcsec`;
+     measured half-light major-axis length ``shape_r`` :math:`<2` arcsec;
 
    The first two criteria identify spurious sources in the initial parent
    catalog or objects with grossly over-estimated diameters, and all these
@@ -314,14 +314,14 @@ Specifically, we carry out the following steps for each galaxy group:
    "reference band." We also read the ``GROUP_NAME-largegalaxy-maskbits.fits``
    image (see `Images and Catalogs`_) but only retain the ``BRIGHT``,
    ``MEDIUM``, ``CLUSTER``, ``ALLMASK_G``, ``ALLMASK_R``, and ``ALLMASK_Z`` bits
-   (defined in the `DR9 bitmasks`_ page). Hereafter, we refer to this mask as
+   (defined on the `DR9 bitmasks`_ page). Hereafter, we refer to this mask as
    the ``starmask``.
 
    With these data in hand, we carry out the following steps:
    
    a) First, we build a ``residual_mask`` which accounts for statistically
       significant differences between the data and the *Tractor* models. In
-      detail, we flag all pixels which deviate by more than math:`5-sigma` (in
+      detail, we flag all pixels which deviate by more than :math:`5\sigma` (in
       *any* bandpass) from the absolute value of the Gaussian-smoothed residual
       image, which we construct by subtracting the model image from the data and
       smoothing with a `2-pixel` Gaussian kernel. This step obviously masks all
@@ -379,9 +379,9 @@ Specifically, we carry out the following steps for each galaxy group:
    ..  
   
      
-   e) Finally, we convert the images to surface brightness in
-      :math:`\mathrm{nanomaggies\ arcsec}^{-2}` and the weight maps to variance
-      images in :math:`\mathrm{nanomaggies}^2\ \mathrm{arcsec}^{-4}`.
+   e) Finally, we convert the data images and variance images to surface
+      brightness in units of :math:`\mathrm{nanomaggies\ arcsec}^{-2}` and
+      :math:`\mathrm{nanomaggies}^2\ \mathrm{arcsec}^{-4}`, respectively.
 
 3. With the images and individual masks for each galaxy in hand, we can now
    measure the multi-band surface-brightness profiles of each galaxy. We assume
@@ -443,7 +443,7 @@ Specifically, we carry out the following steps for each galaxy group:
 Data Products
 =============
 
-The principle SGA-2020 data product is the `SGA-2020.fits`_ catalog, which
+The principal SGA-2020 data product is the `SGA-2020.fits`_ catalog, which
 contains detailed information for 383,620 galaxies with three-band (*grz*)
 imaging from `DR9`_, spanning approximately 20,000 square degrees (see the
 `Contents of DR9`_ page for a more precise area).
@@ -822,17 +822,17 @@ which made this project possible:
 .. _`DR8`: ../../dr8
 .. _`this notebook`: https://github.com/legacysurvey/legacypipe/blob/master/doc/nb/lslga-from-gaia.ipynb
 .. _`Principal Catalogue of Galaxies`: https://ui.adsabs.harvard.edu/abs/1989A%26AS...80..299P/abstract
-.. _`DR9 Tractor catalogs`: ../catalogs
-.. _`external catalogs documentation`: ../external/#sga-large-galaxies
-.. _`DR9 files documentation`: ../files
+.. _`DR9 Tractor catalogs`: ../../dr9/catalogs
+.. _`external catalogs documentation`: ../../dr9/external/#sga-large-galaxies
+.. _`DR9 files documentation`: ../../dr9/files
 .. _`legacypipe`: https://github.com/legacysurvey/legacypipe
-.. _`CCDs`: ../files/#survey-ccds-camera-dr9-fits-gz
-.. _`metrics`: ../files/#other-files
-.. _`DR9 image stacks`: ../files/#image-stacks-region-coadd
-.. _`DR9 bitmasks`: ../bitmasks
-.. _`Tractor catalog`: ../catalogs
-.. _`Tractor catalogs`: ../catalogs
-.. _`PSF documentation`: ../description/#psf
+.. _`CCDs`: ../../dr9/files/#survey-ccds-camera-dr9-fits-gz
+.. _`metrics`: ../../dr9/files/#other-files
+.. _`DR9 image stacks`: ../../dr9/files/#image-stacks-region-coadd
+.. _`DR9 bitmasks`: ../../dr9/bitmasks
+.. _`Tractor catalog`: ../../dr9/catalogs
+.. _`Tractor catalogs`: ../../dr9/catalogs
+.. _`PSF documentation`: ../../dr9/description/#psf
 .. _`astropy`: https://docs.astropy.org/en/stable 
 .. _`photutils`: https://photutils.readthedocs.io/en/stable/isophote.html
 .. _`photutils.isophote.Ellipse.fit_image`: https://photutils.readthedocs.io/en/stable/api/photutils.isophote.Ellipse.html#photutils.isophote.Ellipse.fit_image 
@@ -842,7 +842,6 @@ which made this project possible:
 .. _`Michele Cappellari's mge.find_galaxy`: https://www-astro.physics.ox.ac.uk/~mxc/software/#mge
 .. _`photutils.aperture`: https://photutils.readthedocs.io/en/stable/aperture.html
 .. _`Observational Astronomy`: https://www.cambridge.org/core/books/observational-astronomy/98B4694421AEB3953FE088D19BA0495C
-.. _`DR9 Tractor catalogs`: ../catalogs
 .. _`Scientific Publication Acknowledgment`: ../../acknowledgment/#scientific-publication-acknowledgment
 .. _`SGA acknowledgment`: ../../acknowledgment/#siena-galaxy-atlas
 .. _`Kevin Napier (University of Michigan)`: https://github.com/kjnapier

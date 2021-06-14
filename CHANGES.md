@@ -1,5 +1,8 @@
 # legacysurvey Change Log
 
+- Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
+  ([PR#138])(https://github.com/legacysurvey/legacysurvey/pull/138))
+
 ## 9.0.2 (DR9, unreleased)
 
 - A few more updates for DR9

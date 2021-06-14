@@ -1,5 +1,8 @@
 # legacysurvey Change Log
 
+- Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
+  ([PR#138])(https://github.com/legacysurvey/legacysurvey/pull/138))
+
 ## 9.0.2 (DR9, unreleased)
 
 - Major update of SGA documentation ahead of public release

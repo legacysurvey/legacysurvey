@@ -1064,8 +1064,8 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 
 .. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
 
-Forced Photometry Files (``forced/*``)
-======================================
+Forced Photometry Files (``forced-ccd/*`` and ``forced-brick/*``)
+=================================================================
 
 .. _`catalog description`: ../catalogs
 .. _`BASS`: ../../bass
@@ -1074,10 +1074,12 @@ Forced Photometry Files (``forced/*``)
 Files in this directory contain *forced photometry* results, for all CCDs that
 were included in the DR9 processing.
 
-That is, after we produce the catalogs based on fitting to all images
+After we produce the catalogs based on fitting to all images
 simultaneously, we go back to the individual CCDs, select the catalog
 objects that overlap, and ask what fluxes those objects should have to
-best match what is observed in the CCD. When selecting objects from
+best match what is observed in the CCD. The positions and shapes of the stars
+and galaxies are held fixed, which is why it is called "forced"; only the fluxes are fit.
+When selecting objects from
 the catalog, we *resolve* the north and south components using the
 same cut as in the sweep files and randoms.
 
@@ -1090,7 +1092,13 @@ this produces an approximate estimate of the motion of the source (``dra`` and `
 Note that for Gaia sources, this is relative to the Gaia measured
 proper motion!
 
-- forced/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits
+We provide these results organized in two ways.  The first is
+exposure-based (each file contains measurements for all the sources
+that appear in the CCDs of a single exposure), and the second is
+brick-based (each file contains all the sources within a brick,
+gathering up measurements from all the CCDs that overlap the brick).
+
+- forced-ccd/<camera>/<EXPOS>/forced-<camera>-<EXPOSURE>.fits
     Where <camera> is one of ``90prime`` for `BASS`_, ``decam`` for
     `DECaLS`_ or ``mosaic`` for `MzLS`_, <EXPOSURE> is the exposure
     number (not necessarily as an 8-character string, unlike some other data
@@ -1140,11 +1148,41 @@ proper motion!
     ``ddec_ivar``    float32    Inverse-variance on ``ddec``, in 1/arcsec|sup2|
     ================ ========== ======================================================
 
+- forced-brick/<AAA>/forced-<brick>.fits.gz
+    Where ``<AAA>`` are the first three characters of the brick name,
+    ie, the RA angle, and ``<brick>`` is the brick name.
+
+    These files contain two tables.  The first lists the catalog objects contained
+    in the file, and gives the indices in the second table of the measurements for
+    that source.
+
+    Note that the forced photometry was performed on a *resolved* combination of the
+    *north* and *south* surveys, so the ``forced-brick`` product for the ``north``
+    will contain measurements of northern CCDs, but *catalog entries* that may have been
+    detected in the north or south.
+
+    ================ ========= ======================================================
+    Column           Type      Description
+    ================ ========= ======================================================
+    ``release``      int16     Integer denoting the camera and filter set used, which will be unique for a given processing run of the data
+    ``brickid``      int32     Brick ID [1,662174]
+    ``objid``        int32     Catalog object number within this brick; a unique identifier hash is ``release,brickid,objid``;  ``objid`` spans [0,N-1] and is contiguously enumerated within each brick
+    ``nobs_g``       int32     Number of forced-photometry measurements in the :math:`g` band.
+    ``index_g``      int32     Starting index in the second table of the :math:`g` band measurements.
+    ``nobs_r``       int32     Number of forced-photometry measurements in the :math:`r` band.
+    ``index_r``      int32     Starting index in the second table of the :math:`r` band measurements.
+    ``nobs_z``       int32     Number of forced-photometry measurements in the :math:`z` band.
+    ``index_z``      int32     Starting index in the second table of the :math:`z` band measurements.
+    ================ ========= ======================================================
+
+    The second HDU has exactly the same format as the ``forced-ccd`` table described above.
+
 Other Files
 ===========
 
 Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories,
-statistics of the Tractor fits (``<region>/metrics``), code outputs from the fitting processes (``<region>/logs``) and additional files
+statistics of the Tractor fits (``<region>/metrics``), CCD-level masks of outlier pixels (``<region>/outlier-masks``),
+code outputs from the fitting processes (``<region>/logs``) and additional files
 detailing the calibrations (``calib``).
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 

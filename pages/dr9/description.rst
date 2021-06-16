@@ -64,7 +64,7 @@ Data Release 9 (DR9) is the ninth public data release of the Legacy Surveys. It 
 seventh public data release of images and catalogs from `DECaLS`_ (`DR8`_ comprised the sixth release of data from `DECaLS`_)
 and the fourth release of data from `BASS`_ and `MzLS`_ (`DR8`_ comprised the third release of data from `BASS`_ and `MzLS`_).
 `DR8`_ was the first release to include images and catalogs from all three of the Legacy Surveys in a single release, and
-essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new 
+essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new
 observations, but builds on `DR8`_ by improving the reduction techniques and procedures used for the Legacy Surveys.
 Imaging from the Legacy Surveys is first reduced through the `NOIRLab Community Pipeline`_ before being
 processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of NEOWISE-Reactivation`_
@@ -173,10 +173,10 @@ area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 There are approximately 2.0 billion unique sources in DR9 spread over 331,958 unique bricks.
 
 Obtaining Images and Raw Data
-==============================
+=============================
 
 Images for all 3 of the Legacy Surveys can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOIRLab portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 `the bottom of the files`_ page). Note that the weight map images (the ``oow`` files) that can be retrieved either from the viewer or
 portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-<camera>-dr9.fits.gz files`_. But, these images need
 to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for `<camera>` of `mosaic` or `90prime`).

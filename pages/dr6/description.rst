@@ -54,12 +54,12 @@ Contents of DR6
 
 Data Release 6 (DR6) is the sixth public data release of the Legacy Surveys. It is the
 second public release of images and catalogs that combine the Beijing-Arizona Sky Survey
-and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the fourth 
+and the Mayall z-band Legacy Survey (`BASS`_ and `MzLS`_; `DR5`_ comprised the fourth
 release of data from `DECaLS`_). Imaging from the Legacy Surveys is first reduced
 through the `NOIRLab Community Pipeline`_ before being processed using the `Tractor`_.
 
 DR6 includes `BASS`_ images taken prior to June 25, 2017 and `MzLS`_ images taken
-prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy 
+prior to December 9, 2017. For the latest `DECaLS`_ images, see `DR5`_ of the Legacy
 Surveys. The `BASS`_ and `MzLS`_ data in DR6 are reduced in a manner that is largely
 consistent with `DECaLS`_ reductions in `DR5`_.
 
@@ -95,8 +95,8 @@ Size*       Directory    Description
 449 GB     `tractor/`_  Tractor catalogs
 ========== ============ =======================
 
-\*Note that although the *contents* of a directory should be fixed for each Data Release, 
-the *size* of a directory can change. This is typically due to updated file compression. 
+\*Note that although the *contents* of a directory should be fixed for each Data Release,
+the *size* of a directory can change. This is typically due to updated file compression.
 So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
 .. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr6/calib/
@@ -124,10 +124,9 @@ There are approximately 310 million unique sources in DR6 spread over 92,287 bri
 Obtaining Images and Raw Data
 ==============================
 
-Images from all 3 of the Legacy Surveys can be viewed directly using 
-`the Sky viewer`_ and raw data can be obtained through `the Astro Data Lab's portal`_ 
-(or via ftp; see also the information near
-the bottom of the `files`_ page).
+Images from all 3 of the Legacy Surveys can be viewed directly using
+`the Sky viewer`_ and raw data can be obtained through `the NOIRLab portal`_
+(see also the information near the bottom of the `files`_ page).
 
 Sections of the coadd images in DR6 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
@@ -136,7 +135,7 @@ JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&la
 
 FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
 
-where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc. 
+where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
 Replacing `layer=mzls+bass-dr6` with `layer=mzls+bass-dr6-model` or `layer=mzls+bass-dr6-resid` will instead return
 cutouts for the model and residual images, respectively.
@@ -167,7 +166,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`DR7 description`: ../../dr7/description
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -206,15 +205,15 @@ iteration of our codebase are available `on our github page`_.
 Sky Level
 =========
 
-The Community Pipeline removes a sky level that includes a sky pattern, an illumination 
-correction, and a single scaled fringe pattern. These steps are described on the 
-`NOIRLab Community Pipeline`_ page. This makes the sky level in the processed images near 
-zero, and removes most pattern artifacts. A constant sky level is then added back to the 
+The Community Pipeline removes a sky level that includes a sky pattern, an illumination
+correction, and a single scaled fringe pattern. These steps are described on the
+`NOIRLab Community Pipeline`_ page. This makes the sky level in the processed images near
+zero, and removes most pattern artifacts. A constant sky level is then added back to the
 image that is the mean of what was removed.
 
 Additionally, we compute and remove a spatially varying (spline) sky
 model, by detecting and masking sources, then computing medians in
-sliding 512-pixel boxes. 
+sliding 512-pixel boxes.
 
 Tractor Catalogs
 ================
@@ -233,7 +232,7 @@ The `Tractor`_ fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR6.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters. 
+and the shape parameters.
 
 There is also the discrete choice of which
 model type to use. In DR6, five morphological types are used: point sources,
@@ -259,23 +258,23 @@ Note that, as of `DR5`_, the "REX" model replaced the "SIMP" model used in
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
-The "PSF" and "REX" models are computed for every source and the better of these 
-two is used when deciding whether to keep the source. A source is retained if its 
-penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2| 
-difference of 27 (because of the penalty of 2 for the source centroid). Sources 
-below this threshold are removed. 
+The "PSF" and "REX" models are computed for every source and the better of these
+two is used when deciding whether to keep the source. A source is retained if its
+penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2|
+difference of 27 (because of the penalty of 2 for the source centroid). Sources
+below this threshold are removed.
 
-The source is classified as the better of "point source (PSF)" or "round exponential 
-galaxy (REX)" unless the penalized |chi|\ |sup2| is improved by 9 (*i.e.*, 
-approximately a 3\ |sigma| improvement) by treating it as a deVaucouleurs or 
-exponential profile. The classification is a composite of deVaucouleurs + exponential 
-if it is both a better fit to a single profile over the point source, and the composite 
+The source is classified as the better of "point source (PSF)" or "round exponential
+galaxy (REX)" unless the penalized |chi|\ |sup2| is improved by 9 (*i.e.*,
+approximately a 3\ |sigma| improvement) by treating it as a deVaucouleurs or
+exponential profile. The classification is a composite of deVaucouleurs + exponential
+if it is both a better fit to a single profile over the point source, and the composite
 improves the penalized |chi|\ |sup2| by another 9. These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections
 and that composite profiles must be at least 6.5\ |sigma| detections.
 
-The fluxes are not constrained to be positive-valued.  This allows the fitting of 
-very low signal-to-noise sources without introducing biases at the faint end.  It 
+The fluxes are not constrained to be positive-valued.  This allows the fitting of
+very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
 
@@ -288,8 +287,8 @@ solver from the `SciPy`_ package, or the open source
 `Ceres solver`_, originally developed by Google.
 
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
-under *Morphological Classification*) are approximated with `mixture-of-gaussian`_ 
-(MoG) models and are convolved by the pixelized PSF models using a new 
+under *Morphological Classification*) are approximated with `mixture-of-gaussian`_
+(MoG) models and are convolved by the pixelized PSF models using a new
 Fourier-space method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
@@ -310,7 +309,7 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_ 
+The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_
 and `Mosaic-3`_ cameras, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
@@ -321,12 +320,12 @@ applied color terms to any of the photometry, but report fluxes as observed in t
 `90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP reductions of the `90Prime`_ and `Mosaic-3`_ images
-were computed by comparing Legacy Survey PSF photometry to 
+were computed by comparing Legacy Survey PSF photometry to
 `Pan-STARRS-1 (PS1) PSF photometry`_, where the latter was modified with color terms
-to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
+to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.
 The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
-The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and 
+The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and
 `Mosaic-3`_ (for `MzLS`_)  were computed for stars
 in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
@@ -336,23 +335,23 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
    r_{\mathrm{BASS}} & = & r_{\mathrm{PS}} - 0.04836 (g-i) + 0.01100 (g-i)^2 - 0.00563 (g-i)^3 \\
    z_{\mathrm{MzLS}} & = & z_{\mathrm{PS}} - 0.12315 (g-i) + 0.04608 (g-i)^2 - 0.01164 (g-i)^3 \\
 
-The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The 
+The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The
 conversion from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`.
-These linear fluxes are well-defined even at the faint end, and the errors on the linear 
-fluxes should be very close to a normal distribution.  The fluxes can be negative for faint 
+These linear fluxes are well-defined even at the faint end, and the errors on the linear
+fluxes should be very close to a normal distribution.  The fluxes can be negative for faint
 objects, and indeed we expect many such cases for the faintest objects.
 
 .. _`Pan-STARRS-1 (PS1) PSF photometry`: https://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F/abstract
 
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_ and
-`MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere 
+`MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere
 (at airmass=1.0).
 The derivation of the BASS filter responses is described on the `BASS website`_. The
 `BASS`_ filter curves were updated during the `DR7`_ release, but the `old filter curve for BASS g-band`_
 and `old filter curve for BASS r-band`_ (circa DR5) are still available.
 
-As of DR6, PSF photometry uses the same PSF models 
-(and sky background subtraction) for zeropoint-fitting as is later used in cataloging.  
+As of DR6, PSF photometry uses the same PSF models
+(and sky background subtraction) for zeropoint-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
 So, starting with DR6, the measured fluxes for PS1 stars should be completely self-consistent.
 
@@ -364,7 +363,7 @@ the WISE team`_. Namely,
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
-Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
+Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes
 we provide should all be within a few percent of being on an AB system.
 
 
@@ -388,23 +387,23 @@ The most recent values of the Galactic extinction coefficients are available on 
 Astrometry
 ==========
 
-Our astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to 
-predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. The 
+Our astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to
+predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. The
 residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-Astrometric calibration of all optical Legacy Survey data is conducted using Gaia 
+Astrometric calibration of all optical Legacy Survey data is conducted using Gaia
 astrometric positions of stars matched to Pan-STARRS-1 (PS1).
-The same matched objects are used for both astrometric and photometric calibration. There 
-are some areas of sky where Gaia has "holes," i.e., where stars brighter than the Gaia 
+The same matched objects are used for both astrometric and photometric calibration. There
+are some areas of sky where Gaia has "holes," i.e., where stars brighter than the Gaia
 magnitude limit are missing from the Gaia catalog. As a result, in
-some regions of the survey there are fewer matches to a given bright magnitude limit in 
-the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric 
+some regions of the survey there are fewer matches to a given bright magnitude limit in
+the PS1-Gaia catalog than there are in the PS1 catalog that was used for astrometric
 calibration in, e.g., `DR4`_ of the Legacy Surveys.
 
-As of DR6, PSF photometry uses the same PSF models 
-(and sky background subtraction) for zero-point-fitting as is later used in cataloging.  
+As of DR6, PSF photometry uses the same PSF models
+(and sky background subtraction) for zero-point-fitting as is later used in cataloging.
 This was not the case for `DR5`_ or before.
-So, starting with DR6, the measured positions for Gaia stars should be completely 
+So, starting with DR6, the measured positions for Gaia stars should be completely
 self-consistent, substantially reducing any systematic errors in astrometry.
 
 
@@ -412,9 +411,9 @@ Image Stacks
 ============
 
 The image stacks are provided for convenience, but were not used in the Tractor fits.
-These images are oversized by approximately 260 pixels in each dimension. These are 
-tangent projections centered at each brick center, North up, with dimensions of 
-3600 |times| 3600 and a scale of 0.262\ |Prime|/pix.  The image stacks are computed 
+These images are oversized by approximately 260 pixels in each dimension. These are
+tangent projections centered at each brick center, North up, with dimensions of
+3600 |times| 3600 and a scale of 0.262\ |Prime|/pix.  The image stacks are computed
 using Lanczos-3 interpolation. These stacks should not be used for "precision" work.
 
 
@@ -435,9 +434,9 @@ different numbers of observations in DR6.
     :width: 570
     :alt: DR6 Depth Histograms
 
-These histograms are based upon the formal errors in the Tractor 
-catalogs for point sources, which need further confirmation. These depths can be compared 
-to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of 
+These histograms are based upon the formal errors in the Tractor
+catalogs for point sources, which need further confirmation. These depths can be compared
+to the predicted proposed depths for 2 observations at 1.5\ |Prime| seeing of
 :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
 
@@ -450,9 +449,9 @@ Code Versions
   - `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: git commit: a5cb17a742cf0e66e5d0e09675b8c7e614aabcb9, tag 0.73-1-ga5cb17a
   - `Tractor  <https://github.com/dstndstn/tractor>`_: git commit bc042691d58f6d684642cade435bdd2eff3a241e, tag dr6.2
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_ was upgraded twice to fix small bugs, but the bulk of the processing was done with the first version: 
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_ was upgraded twice to fix small bugs, but the bulk of the processing was done with the first version:
 
-  - git commit 02a4d874a957c66da8d4a9b079299f74c9456a53, tag dr6.rc1 
+  - git commit 02a4d874a957c66da8d4a9b079299f74c9456a53, tag dr6.rc1
   - git commit 536e466dbb0d022e767835810858a50ffe0fe0fc, tag dr6.rc1.1
   - git commit 1b741bbd35e30d16f4d56ef673d3583baa335645, tag dr6.rc1.2
 

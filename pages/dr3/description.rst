@@ -28,7 +28,7 @@ the Blanco Telescope.
 Data Release 3 (DR3) is the third public data release of images and catalogs for
 the DECam Legacy Survey (DECaLS). Images from DECaLS
 g,r,z-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
-are included from August 2014 through March 2016. DR3 also includes DECam data from a range of 
+are included from August 2014 through March 2016. DR3 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
 In total, the optical data covers a disjoint footprint
@@ -69,7 +69,7 @@ The co-added images and Tractor catalogs are presented in "bricks" of approximat
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
 projection around the brick center, with size 3600 |times| 3600 pixels at a scale of
-0.262 arcseconds per pixel.  The projections for the g,r,z filters are identical.  
+0.262 arcseconds per pixel.  The projections for the g,r,z filters are identical.
 There are 662174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . As 3600\ :sup:`2` |times| 0.262\ :sup:`2` arcsec\ :sup:`2` is
 ~0.0686 deg\ :sup:`2`\ , the brick images have some overlap. The co-added images should be
@@ -79,7 +79,7 @@ Obtaining Images and Raw Data
 ==============================
 
 Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
@@ -98,7 +98,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -121,7 +121,7 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
-The Tractor makes use of the PSF on each individual exposure. The PSF for 
+The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using PSFEx, generating spatially-varying pixelized models.
 
@@ -243,7 +243,7 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to 
+were computed by comparing 7\ |Prime| diameter aperture photometry to
 PS1 photometry, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.

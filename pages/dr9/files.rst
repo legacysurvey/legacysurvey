@@ -1156,18 +1156,19 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
+
 `Astro Data Lab`_ access to raw and calibrated images is now available.
 
 .. _`Astro Data Lab`: https://datalab.noirlab.edu/
 
 Raw and Calibrated Legacy Survey images are available from the `NOIRLab Astro Data Archive`_ through the web
-portal (https://astroarchive.noirlab.edu/portal/search/) and an ftp server.
+portal (https://astroarchive.noirlab.edu/portal/search/).
 The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from the NOIRLab telescopes.
 
-(i) Web interface
------------------
+Web interface
+-------------
 
 1. Query the `NOIRLab Astro Data archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
@@ -1187,10 +1188,6 @@ Following the organization of the Stacked images, Raw and Calibrated images are 
 by survey brick, which are defined in the file **survey-bricks-dr9.fits.gz** for DR9. Both the main Tractor
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
 format ``<AAAa>c<BBB>)``.
-
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr9/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr9/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr9/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``

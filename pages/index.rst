@@ -82,15 +82,15 @@
 .. image:: /files/nersc-logo.png
    :height: 40px
    :alt: NERSC Logo
-.. image:: /files/3.5inch_72dpi.jpg
+.. image:: /files/nsf-noirlab.jpg
    :height: 80px
-   :alt: NOAO Logo
+   :alt: NOIRLab Logo
 .. image:: /files/AURAlogo.jpg
    :height: 40px
    :alt: AURA Logo
-.. image:: /files/nsf1.jpg
-   :height: 40px
-   :alt: NSF Logo
+.. .. image:: /files/nsf1.jpg
+..    :height: 40px
+..    :alt: NSF Logo
 
 .. .. slides::
 

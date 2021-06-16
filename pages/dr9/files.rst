@@ -974,7 +974,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
     ``skyplver``     char[8]   Community Pipeline (CP) version of the input to sky calibration
     ``wcsplver``     char[5]   CP version of the input to WCS calibration
     ``psfplver``     char[8]   CP version of the input to PSF calibration
-    ``co_sky``       float32   
+    ``co_sky``       float32
     ================ ========= ======================================================
 
 .. _`legacypipe issue #379`: https://github.com/legacysurvey/legacypipe/issues/379
@@ -1169,14 +1169,14 @@ project, as well as other images from the NOIRLab telescopes.
 (i) Web interface
 -----------------
 
-1. Query the `Astro Data Lab's Science Archive`_.
+1. Query the `NOIRLab Astro Data archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`NOIRLab Astro Data archive` https://astroarchive.noirlab.edu/portal/search/
+.. _`NOIRLab Astro Data archive`: https://astroarchive.noirlab.edu/portal/search/
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 

@@ -124,7 +124,7 @@ Data model changes
 
   - As there are no sources of ``type=COMP``, the ``type`` column is now a 3-string (``'S3'``) rather than a 4-string (``'S4'``).
 
-* Two new columns related to the Sersic profiles and iterative-fitting now exist in the `Tractor catalogs for DR9`_:
+* Two new columns related to the Sersic profiles now exist in the `Tractor catalogs for DR9`_:
 
   - ``sersic`` and ``sersic_ivar``
 
@@ -148,7 +148,7 @@ Data model changes
   - ``apflux_resid_w1``, ``apflux_resid_w2``, ``apflux_resid_w3`` and ``apflux_resid_w4``
   - ``apflux_ivar_w1``, ``apflux_ivar_w2``, ``apflux_ivar_w3`` and ``apflux_ivar_w4``
 
-* A new bitwise mask ``fitbits`` has been added to the `sweep files`_ and `Tractor catalogs`_. This new bit-mask details properties of how each source was fit and is documented on the `DR9 bitmasks page`_.
+* A new bitwise mask ``fitbits`` has been added to the `sweep files`_ and `Tractor catalogs`_. This new bit-mask details properties of how each source was fit and is documented on the `DR9 bitmasks page`_.  This includes a bit for iterative detection and fitting.
 
 * The ``gaia_pointsource`` column has been removed from the `Tractor catalogs for DR9`_ (as compared to DR8). This column has been absorbed in the new ``fitbits`` bit-mask.
 

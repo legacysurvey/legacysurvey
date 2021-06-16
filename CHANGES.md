@@ -4,6 +4,10 @@
 
 - Fix minor typos in psfdepth description on catalogs page
   ([PR#141](https://github.com/legacysurvey/legacysurvey/pull/141)).
+- Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
+  ([PR#138])(https://github.com/legacysurvey/legacysurvey/pull/138)).
+- Major update of SGA documentation ahead of public release
+  ([PR#137](https://github.com/legacysurvey/legacysurvey/pull/137)).  
 - A few more updates for DR9
   ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
     - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))

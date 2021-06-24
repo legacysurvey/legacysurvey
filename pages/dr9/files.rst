@@ -1167,8 +1167,10 @@ The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from the NOIRLab telescopes.
 
-Web interface
+Web Interface
 -------------
+
+*Warning:* these instructions are still being updated.
 
 1. Query the `NOIRLab Astro Data archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
@@ -1181,8 +1183,10 @@ Web interface
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
-(ii) ftp sites
---------------
+API Query
+---------
+
+*Warning:* these instructions are still being updated.
 
 Following the organization of the Stacked images, Raw and Calibrated images are organized
 by survey brick, which are defined in the file **survey-bricks-dr9.fits.gz** for DR9. Both the main Tractor

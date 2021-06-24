@@ -618,7 +618,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can use the `NOIRLab Astro Data Lab`_.
+Users interested in database access to the Tractor `catalogs`_ can use the `NOIRLab Astro Data Lab`_ [#]_.
 
 .. _`NOIRLab Astro Data Lab`: https://datalab.noirlab.edu/
 

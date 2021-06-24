@@ -154,7 +154,7 @@ Obtaining Images and Raw Data
 
 Images for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
-and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 `the bottom of the files`_ page).
 
 Sections of the Legacy Surveys for DR8 can be obtained as JPEGs or FITS files using
@@ -205,7 +205,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================

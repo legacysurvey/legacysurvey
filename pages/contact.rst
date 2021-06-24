@@ -17,7 +17,7 @@ PIs and Leads
 -------------
 DECaLS and MzLS Principal Investigators:
     * David Schlegel djschlegel@lbl.gov
-    * Arjun Dey dey@noao.edu
+    * Arjun Dey arjun.dey@noirlab.edu
 
 BASS Survey:
     * Xu Zhou (China PI) zhouxu@bao.ac.cn
@@ -36,11 +36,11 @@ Other Experts
     * John Moustakas [#]_  jmoustakas@siena.edu
 
 NOIRLab Community Pipeline:
-    * David Herrera  herrera@noao.edu
-    * Frank Valdes  valdes@noao.edu
+    * David Herrera  david.herrera@noirlab.edu
+    * Frank Valdes  frank.valdes@noirlab.edu
 
 WISE Reductions:
-    * Aaron Meisner  ameisner@noao.edu
+    * Aaron Meisner  aaron.meisner@noirlab.edu
 
 Run Managers
     * Mark (Ziyao) Zhang  ziyaoz@berkeley.edu *(for DR9)*
@@ -54,10 +54,10 @@ Image Quality:
     * Rongpu Zhou   rongpuzhou@lbl.gov
 
 Astro Data Lab [#]_ Contact:
-    * Stephanie Juneau  juneau@noao.edu
+    * Stephanie Juneau  stephanie.juneau@noirlab.edu
 
 Additional NOIRLab/CTIO Support:
-    * Alistair Walker  awalker@ctio.noao.edu
+    * Alistair Walker  alistair.walker@noirlab.edu
     * Bob Blum  RBlum@lsst.org
 
 Website and Documentation:

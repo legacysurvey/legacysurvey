@@ -618,7 +618,9 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [#]_ at datalab@noao.edu.
+Users interested in database access to the Tractor `catalogs`_ can use the `NOIRLab Astro Data Lab`_ [#]_.
+
+.. _`NOIRLab Astro Data Lab`: https://datalab.noirlab.edu/
 
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
@@ -972,7 +974,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
     ``skyplver``     char[8]   Community Pipeline (CP) version of the input to sky calibration
     ``wcsplver``     char[5]   CP version of the input to WCS calibration
     ``psfplver``     char[8]   CP version of the input to PSF calibration
-    ``co_sky``       float32   
+    ``co_sky``       float32
     ================ ========= ======================================================
 
 .. _`legacypipe issue #379`: https://github.com/legacysurvey/legacypipe/issues/379
@@ -1192,40 +1194,42 @@ We don't expect that most users will need a description of these files, but `con
 
 Raw Data
 ========
-Astro Data Lab access to raw and calibrated images will be available a few weeks after the DR9 release date, at
-which point *this documentation could be updated*.
 
-Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's Science Archive through the web
-portal (http://archive.noao.edu/search/query) and an ftp server.
+`Astro Data Lab`_ access to raw and calibrated images is now available.
+
+.. _`Astro Data Lab`: https://datalab.noirlab.edu/
+
+Raw and Calibrated Legacy Survey images are available from the `NOIRLab Astro Data Archive`_ through the web
+portal (https://astroarchive.noirlab.edu/portal/search/).
 The input data used to create the
 stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
 project, as well as other images from the NOIRLab telescopes.
 
-(i) Web interface
------------------
+Web Interface
+-------------
 
-1. Query the `Astro Data Lab's Science Archive`_.
+*Warning:* these instructions are still being updated.
+
+1. Query the `NOIRLab Astro Data archive`_.
 2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
 3. Under "Data products - Raw data" check "Object".
 4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
 5. Click "Search".
 6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
 
-.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
+.. _`NOIRLab Astro Data archive`: https://astroarchive.noirlab.edu/portal/search/
 .. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
 
 
-(ii) ftp sites
---------------
+API Query
+---------
+
+*Warning:* these instructions are still being updated.
 
 Following the organization of the Stacked images, Raw and Calibrated images are organized
 by survey brick, which are defined in the file **survey-bricks-dr9.fits.gz** for DR9. Both the main Tractor
 catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
 format ``<AAAa>c<BBB>)``.
-
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr9/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr9/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr9/coadd/``<AAA>/<brick>``
 
 For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
 from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``

@@ -546,7 +546,7 @@ FITS binary table containing Tractor photometry, documented on the
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [1]_ at datalab@noao.edu.
+Users interested in database access to the Tractor `catalogs`_ can contact the Astro Data Lab [1]_ at datalab@noirlab.edu.
 
 
 Sweep Catalogs (``<region>/sweep/*``)

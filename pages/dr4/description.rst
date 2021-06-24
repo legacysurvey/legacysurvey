@@ -35,7 +35,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
 .. _`SFD98`: https://arxiv.org/abs/astro-ph/9710327
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
-.. _`Gaia Data Release 1`: https://gaia.esac.esa.int/documentation/GDR1/index.html 
+.. _`Gaia Data Release 1`: https://gaia.esac.esa.int/documentation/GDR1/index.html
 .. _`DR3`: ../../dr3
 .. _`DR2`: ../../dr2
 .. _`DESI`: https://desi.lbl.gov
@@ -51,14 +51,14 @@ datasets is first reduced through the `NOIRLab Community Pipeline`_ before being
 using the `Tractor`_.
 
 DR4 includes `BASS`_ images taken prior to July 13, 2016 and `MzLS`_ images taken
-prior to June 6, 2016. For the latest `DECaLS`_ images, see 
+prior to June 6, 2016. For the latest `DECaLS`_ images, see
 `DR3`_ of the Legacy Surveys.
 The `BASS`_ and `MzLS`_ data in DR4 are reduced in a manner that is largely
-consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases. 
+consistent with `DECaLS`_ reductions in prior Legacy Survey Data Releases.
 
-In total, the `BASS`_ imaging included in DR4 covers 58,341 bricks in either 
+In total, the `BASS`_ imaging included in DR4 covers 58,341 bricks in either
 :math:`g`-band or :math:`r`-band. The `MzLS`_ imaging in DR4 covers 57,943
-bricks in :math:`z`-band. The table below indicates the area covered 
+bricks in :math:`z`-band. The table below indicates the area covered
 in DR4 for different numbers of passes and in different filters.
 These are precise area estimates derived from the geometry of
 CCDs that contribute to the Legacy Surveys footprint.
@@ -74,7 +74,7 @@ All bands jointly     2249 |d2| 763 |d2|  65 |d2|
 
 .. |d2| replace:: deg\ :sup:`2`
 
-There are 
+There are
 approximately 183 million unique sources in DR4.
 
 DR4 includes the Right Ascension (RA) range of 55 to 301 degrees, and
@@ -110,11 +110,11 @@ Size*   Directory    Description
 .. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr4/sweep/
 .. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr4/tractor/
 
-For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, co-added images and 
+For all of the Legacy Surveys, including `BASS`_ and `MzLS`_, co-added images and
 `Tractor`_ catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  For the image stacks, we use a simple tangent-plane (WCS TAN)
-projection around the brick center. The projections for the :math:`g,r,z` filters are identical.  
+projection around the brick center. The projections for the :math:`g,r,z` filters are identical.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 The co-added images should be
@@ -122,15 +122,15 @@ used with caution, as noted below in the *Image Stacks* section.
 
 For `DESI`_ members with access to DocDB, a further overview of DR4 is available in `Kaylan Burleigh's presentation`_ from the June, 2017 `DESI`_ collaboration meeting.
 
-.. _`Kaylan Burleigh's presentation`: https://desi.lbl.gov/DocDB/cgi-bin/private/ShowDocument?docid=3026 
+.. _`Kaylan Burleigh's presentation`: https://desi.lbl.gov/DocDB/cgi-bin/private/ShowDocument?docid=3026
 
 
 Obtaining Images and Raw Data
 ==============================
 
-Images, for all 3 of the Legacy Surveys can be viewed 
+Images, for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
-and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
 Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
@@ -140,7 +140,7 @@ JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&l
 
 FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
 
-where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the 
+where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
 Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ page.
@@ -151,7 +151,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`DR3 description`: ../../dr3/description
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -173,15 +173,15 @@ are detected in each of these two SED-matched filters, as well as in each band i
 PSF
 ===
 
-The Tractor makes use of the PSF on each individual exposure. The PSF for 
+The Tractor makes use of the PSF on each individual exposure. The PSF for
 the individual exposures are first computed independently for each CCD
 using `PSFEx`_, generating spatially-varying pixelized models.
 The same pixelized PSF from `PSFEx`_ is used for `BASS`_ and `MzLS`_ in order to
 match the PSF used to extract `DECaLS`_ sources for `DR3`_.
 
-For DECaLS and MzLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a 
+For DECaLS and MzLS we adopt a 63 x 63 pixel image size and a 0.262 pixel scale and use a
 7\ |Prime| diameter aperture for normalization. For BASS we adopt a 31 x 31 pixel image size and
-a 0.470 pixel scale and use a 7\ |Prime| diameter aperture for normalization 
+a 0.470 pixel scale and use a 7\ |Prime| diameter aperture for normalization
 The configuration files for SExtractor and `PSFEx`_ are available `on our github page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
@@ -220,7 +220,7 @@ Only the source properties were allowed to float in DR4.
 These are continuous properties for the object centers, fluxes,
 and the shape parameters. There is also the discrete choice of which
 model type to use. In DR4, five morphological types are used: point sources,
-"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius 
+"simple" galaxies (an exponential profile with a fixed 0.45\ |Prime| effective radius
 and round profile), deVaucouleurs profiles
 (elliptical galaxies), exponential profiles (spiral galaxies), and composite
 profiles that are deVaucouleurs + exponential (with the same source center).
@@ -294,23 +294,23 @@ too much freedom.
 Photometry
 ==========
 
-The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_ 
+The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_
 and `Mosaic-3`_ cameras, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
 constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
 :math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
-applied color terms to any of the photometry, but report fluxes as observed in the 
+applied color terms to any of the photometry, but report fluxes as observed in the
 `90Prime`_ and `Mosaic-3`_ filter systems.
 
 Zero point magnitudes for the CP version 2 reductions of the `90Prime`_ and `Mosaic-3`_ images
-were computed by comparing 7\ |Prime| diameter aperture photometry to 
+were computed by comparing 7\ |Prime| diameter aperture photometry to
 `Pan-STARRS-1 (PS1) photometry`_, where the latter was modified with color terms
-to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.  
+to place the PS1 photometry on the `90Prime`_ and `Mosaic-3`_ camera systems.
 The same color terms are applied to all CCDs.
 Zero points are computed separately for each CCD, but not for each amplifier.
-The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and 
+The *average* color terms to convert from PS1 to `90Prime`_ (for `BASS`_) and
 `Mosaic-3`_ (for `MzLS`_)  were computed for stars
 in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 
@@ -362,10 +362,10 @@ Astrometry
 As of DR4, astrometry uses the `Gaia Data Release 1`_ system. Positions of sources are tied to predicted Gaia positions at
 the epoch of the corresponding Legacy Survey observation. The residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
-Astrometric calibration of MzLS data is conducted using Gaia astrometric positions of stars matched to Pan-STARRS-1 (PS1). 
-The same matched objects are used for both astrometric and photometric calibration. There are some areas of sky where Gaia 
-has "holes," i.e., where stars brighter than the Gaia magnitude limit are missing from the Gaia catalog. As a result, in 
-some regions of the survey there are fewer matches to a given bright magnitude limit in the PS1-Gaia catalog than there 
+Astrometric calibration of MzLS data is conducted using Gaia astrometric positions of stars matched to Pan-STARRS-1 (PS1).
+The same matched objects are used for both astrometric and photometric calibration. There are some areas of sky where Gaia
+has "holes," i.e., where stars brighter than the Gaia magnitude limit are missing from the Gaia catalog. As a result, in
+some regions of the survey there are fewer matches to a given bright magnitude limit in the PS1-Gaia catalog than there
 are in the PS1 catalog that was used for astrometric calibration in, e.g., `DR3`_ of the Legacy Surveys.
 
 
@@ -382,13 +382,13 @@ interpolation. These stacks should not be used for "precision" work.
 Depths
 ======
 
-As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for areas with 3 observations 
+As of `DR2`_ of the Legacy Surveys, the median 5\ |sigma| point source (AB) depths for areas with 3 observations
 in DECaLS was :math:`g=24.65`, :math:`r=23.61`, :math:`z=22.84`. DR4 should reach similar depths.
-This is based upon the formal errors in the Tractor catalogs for point sources; those 
-errors need further confirmation. This can be compared to the predicted proposed 
+This is based upon the formal errors in the Tractor catalogs for point sources; those
+errors need further confirmation. This can be compared to the predicted proposed
 depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
-For MzLS, the median 5\ |sigma| point source (AB) depth for areas with 3 observations is  
+For MzLS, the median 5\ |sigma| point source (AB) depth for areas with 3 observations is
 :math:`z=23.04`. 90% of the individual CCDs are deeper than :math:`z=22.81`.
 
 Code Versions

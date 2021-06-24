@@ -121,7 +121,7 @@ Obtaining Images and Raw Data
 
 Images, for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
-and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
 Sections of `DECaLS`_ for DR5 can be obtained as JPEGs or FITS files using
@@ -154,7 +154,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`DR4 description`: ../../dr4/description
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -309,7 +309,7 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to 
+were computed by comparing 7\ |Prime| diameter aperture photometry to
 `PS1 photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.

@@ -3,7 +3,7 @@
 ## 9.0.3 (DR9, unreleased)
 
 - Automate removal of outdated JavaScript files
-  ([PR#143](https://github.com/legacysurvey/legacysurvey/pull/141)).
+  ([PR#144](https://github.com/legacysurvey/legacysurvey/pull/144)).
 
 ## 9.0.2 (DR9, 2021-06-24)
 

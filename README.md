@@ -16,6 +16,18 @@ theme. The custom theme allows us to:
 -  Tweak various aspects of the generated HTML, such as titles, links
    and listings.
 
+## Deployment
+
+To simplify the preparation of site for deployment, a `Makefile` handles
+several steps, so that this simple command prepares a TAR file that can
+be copied to NERSC:
+
+```
+make TAG=9.0.2
+```
+
+In this example, the output would be `legacysurvey-9.0.2.tar.gz`.
+
 ## Logo
 
 There are a few logo files in the `files` directory:

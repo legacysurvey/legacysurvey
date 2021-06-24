@@ -1,9 +1,10 @@
 # legacysurvey Change Log
 
-## 9.0.2 (DR9, unreleased)
+## 9.0.2 (DR9, 2021-06-24)
 
 - Fix minor typos in psfdepth description on catalogs page
   ([PR#141](https://github.com/legacysurvey/legacysurvey/pull/141)).
+- Replace NOAO with NOIRLab ([PR#139](https://github.com/legacysurvey/legacysurvey/pull/139)).
 - Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
   ([PR#138](https://github.com/legacysurvey/legacysurvey/pull/138)).
 - Major update of SGA documentation ahead of public release

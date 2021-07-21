@@ -300,9 +300,9 @@ using `polynomial fits to Gaia-to-DECam`_ color transformations for stars.
 Transformations to `DECam`_ are used even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_.
 The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero.
 
-.. _`SGA (Siena Galaxy Atlas)`: ../sga
-.. _`SGA`: ../sga
-.. _`Siena Galaxy Atlas`: ../sga
+.. _`SGA (Siena Galaxy Atlas)`: ../../sga/sga2020
+.. _`SGA`: ../../sga/sga2020
+.. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`bitmasks page`: ../bitmasks
 .. _`MEDIUM is set but BRIGHT, CLUSTER, and GALAXY are not`: ../bitmasks
 .. _`external catalogs page`: ../external

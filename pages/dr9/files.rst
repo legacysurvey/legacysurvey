@@ -757,7 +757,7 @@ Name                                  Type         Units                 Descrip
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
-.. _`SGA`: ../sga
+.. _`SGA`: ../../sga/sga2020
 
 .. _photometric-redshifts:
 
@@ -872,7 +872,7 @@ set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR9 bitmasks page`_. Se
 the `external catalogs used for masking`_.
 
 .. _`external catalogs used for masking`: ../external/#external-catalogs-used-for-masking
-.. _`Siena Galaxy Atlas (SGA)`: ../../sga
+.. _`Siena Galaxy Atlas (SGA)`: ../../sga/sga2020
 
 ===================================== ======= ================== ========================
 Name                                  Type    Units              Description

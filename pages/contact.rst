@@ -82,7 +82,7 @@ Pan-STARRS1 Catalogs:
     * Doug Finkbeiner  dfinkbeiner@cfa.harvard.edu
 
 .. _`Legacypipe`: https://legacypipe.readthedocs.io/en/latest/
-.. _`Siena Galaxy Atlas`: ../sga
+.. _`Siena Galaxy Atlas`: ../../sga/sga2020
 
 Additional contributors
 -----------------------

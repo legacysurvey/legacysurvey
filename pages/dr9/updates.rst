@@ -177,7 +177,7 @@ Data model changes
 .. _`light curve sweep files`: ../files/#light-curve-sweeps-9-0-lightcurves-sweep-brickmin-brickmax-lc-fits
 .. _`extra sweep files`: ../files/#extra-sweeps-9-0-lightcurves-sweep-brickmin-brickmax-ex-fits
 .. _`region-specific survey bricks files`: ../files/#region-survey-bricks-dr9-region-fits-gz
-.. _`SGA`: ../sga
+.. _`SGA`: ../../sga/sga2020
 .. _`files of data from fitting in SGA regions`: ../files/#large-galaxy-files-largegalaxies-aaa-galname
 .. _`coadds`: ../files/#image-stacks-region-coadd
 .. _`external match files`: ../files/#external-match-files-region-external

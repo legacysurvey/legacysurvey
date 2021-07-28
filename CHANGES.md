@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 9.0.4 (DR9, unreleased)
+
+- No changes yet.
+
 ## 9.0.3 (DR9, 2021-07-28)
 
 - Fix incorrect/broken links to the SGA documentation

@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 9.0.3 (DR9, unreleased)
+## 9.0.3 (DR9, 2021-07-28)
 
 - Fix incorrect/broken links to the SGA documentation
   ([PR#145](https://github.com/legacysurvey/legacysurvey/pull/145)).

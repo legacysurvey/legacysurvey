@@ -2,6 +2,8 @@
 
 ## 9.0.3 (DR9, unreleased)
 
+- Fix incorrect/broken links to the SGA documentation
+  ([PR#145](https://github.com/legacysurvey/legacysurvey/pull/145)).
 - Automate removal of outdated JavaScript files
   ([PR#144](https://github.com/legacysurvey/legacysurvey/pull/144)).
 

@@ -29,7 +29,7 @@ such quantities are often quoted on the Vega system).
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR9 bitmasks page`: ../bitmasks
-.. _`SGA`: ../sga
+.. _`SGA`: ../../sga/sga2020
 
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description

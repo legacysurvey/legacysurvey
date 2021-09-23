@@ -1,0 +1,5 @@
+ra,dec,name,color,radius
+10,41,A,blue,30
+10,41.1,B,cyan,60
+10.1,41.1,C,magenta,15
+10.1,41,D,#ff0000,90

@@ -1,11 +1,23 @@
 # legacysurvey Change Log
 
-## 9.0.2 (DR9, unreleased)
+## 9.0.4 (DR9, unreleased)
+
+- Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)). 
+
+## 9.0.3 (DR9, 2021-07-28)
+
+- Fix incorrect/broken links to the SGA documentation
+  ([PR#145](https://github.com/legacysurvey/legacysurvey/pull/145)).
+- Automate removal of outdated JavaScript files
+  ([PR#144](https://github.com/legacysurvey/legacysurvey/pull/144)).
+
+## 9.0.2 (DR9, 2021-06-24)
 
 - Minor additions to sky viewer tips and tricks page: ``blink``, ``mark``, ``poly``, and custom catalog upload
   ([PR#146](https://github.com/legacysurvey/legacysurvey/pull/146)).
 - Fix minor typos in psfdepth description on catalogs page
   ([PR#141](https://github.com/legacysurvey/legacysurvey/pull/141)).
+- Replace NOAO with NOIRLab ([PR#139](https://github.com/legacysurvey/legacysurvey/pull/139)).
 - Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
   ([PR#138](https://github.com/legacysurvey/legacysurvey/pull/138)).
 - Major update of SGA documentation ahead of public release

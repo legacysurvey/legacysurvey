@@ -1,7 +1,7 @@
 .. title: Publications that use or reference Legacy Survey data or tools
 .. slug: pubs
 .. tags: mathjax
-.. description: 
+.. description:
 
 .. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
 .. |geq|    unicode:: U+2265 .. GREATER-THAN-OR-EQUAL-TO SIGN
@@ -12,13 +12,14 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-This page is likely to be incomplete and has been updated through mid-December, 2020. For additional publications, see also the NOIRLab publications
-lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
+This page is likely to be incomplete and has been updated through mid-December, 2020.
+For additional publications, see the Legacy Surveys `ADS Public Library`_ and
+`citations`_ to the `DESI Legacy Imaging Surveys Overview Paper.`_
 
 
 .. _`text on the acknowledgment page`: ../acknowledgment
-.. _`2018`: https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
-.. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
+.. .. _`2018`: https://www.noao.edu/noao/library/NOAO_FY18_Publications.html#DECaLS
+.. .. _`2019`: https://www.noao.edu/noao/library/NOAO-FY19-Publications.html#LegacySurveys
 .. _`ADS Public Library`: https://ui.adsabs.harvard.edu/public-libraries/3gbPEBdlSbe7n9P_EFp8kw
 .. _`citations`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
@@ -194,7 +195,7 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 
 #. Nie & Tian, `Detecting tidal tail of the globular cluster Whiting 1`_
 #. Juneau, `The AGN-galaxy connection: Low-redshift benchmark & lessons learnt`_
- 
+
 2019 (64 publications)
 ======================
 #. Krone-Martins et al., `Gaia GraL: Gaia DR2 Gravitational Lens Systems. V. Doubly-imaged QSOs discovered from entropy and wavelets`_
@@ -352,7 +353,7 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 .. _`Quasars at intermediate redshift are not special; but they are often satellites`: https://ui.adsabs.harvard.edu/abs/2020arXiv200702612A/abstract
 .. _`The Completed SDSS-IV Extended Baryon Oscillation Spectroscopic Survey: Growth rate of structure measurement from cosmic voids`: https://ui.adsabs.harvard.edu/abs/2020arXiv200709013A/abstract
 .. _`Characterising the target selection pipeline for the Dark Energy Spectroscopic Instrument Bright Galaxy Survey`: https://ui.adsabs.harvard.edu/abs/2020arXiv200714950R/abstract
-.. _`A Self-Calibrating Halo-Based Galaxy Group Finder: Algorithm and Tests`: https://ui.adsabs.harvard.edu/abs/2020arXiv200712200T/abstract 
+.. _`A Self-Calibrating Halo-Based Galaxy Group Finder: Algorithm and Tests`: https://ui.adsabs.harvard.edu/abs/2020arXiv200712200T/abstract
 .. _`The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: A Catalogue of Strong Galaxy-Galaxy Lens Candidates`: https://ui.adsabs.harvard.edu/abs/2020arXiv200709006T/abstract
 .. _`Spatially-resolved Stellar Population Properties of the M 51-NGC 5195 System from Multi-wavelength Photometric Data`: https://ui.adsabs.harvard.edu/abs/2020arXiv200706231W/abstract
 .. _`The Completed SDSS-IV extended Baryon Oscillation Spectroscopic Survey: N-body Mock Challenge for the eBOSS Emission Line Galaxy Sample`: https://ui.adsabs.harvard.edu/abs/2020arXiv200709004A/abstract
@@ -416,10 +417,10 @@ lists for `2018`_ and `2019`_, the Legacy Surveys `ADS Public Library`_ and `cit
 .. _`The Assembly of the First Massive Black Holes`: https://ui.adsabs.harvard.edu/abs/2020ARA%26A..58...27I/abstract
 .. _`The Massive and Distant Clusters of WISE Survey. IX. High Radio Activity in a Merging Cluster`: https://ui.adsabs.harvard.edu/abs/2020ApJ...898..145M/abstract
 .. _`Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science Project`: https://ui.adsabs.harvard.edu/abs/2020ApJ...899..123M/abstract
-.. _`Dynamic Observing and Tiling Strategies for the DESI Legacy Surveys`: https://ui.adsabs.harvard.edu/abs/2020AJ....160...61B/abstract 
+.. _`Dynamic Observing and Tiling Strategies for the DESI Legacy Surveys`: https://ui.adsabs.harvard.edu/abs/2020AJ....160...61B/abstract
 .. _`Multi-tracer extension of the halo model: probing quenching and conformity in eBOSS`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.497..581A/abstract
 .. _`The Co-Evolution of Galaxies and the Cool Circumgalactic Medium Probed with the SDSS and DESI Legacy Imaging Surveys`: https://ui.adsabs.harvard.edu/abs/2020ApJ...897...97L/abstract
-.. _`Early optical imaging polarimetry of type I superluminous supernova 2020ank`: https://ui.adsabs.harvard.edu/abs/2020AN....341..651L/abstract 
+.. _`Early optical imaging polarimetry of type I superluminous supernova 2020ank`: https://ui.adsabs.harvard.edu/abs/2020AN....341..651L/abstract
 .. _`Tilted outer and inner structures in edge-on galaxies?`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.497.2039M/abstract
 .. _`SPIDERS: overview of the X-ray galaxy cluster follow-up and the final spectroscopic data release`: https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp.2183C/abstract
 .. _`Poniua'ena: A Luminous z = 7.5 Quasar Hosting a 1.5 Billion Solar Mass Black Hole`: https://ui.adsabs.harvard.edu/abs/2020ApJ...897L..14Y/abstract

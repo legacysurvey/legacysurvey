@@ -60,9 +60,9 @@ Contents of DR7
 Data Release 7 (DR7) is the seventh public data release of the Legacy Surveys. It is the
 fifth public data release of images and catalogs from the DECam Legacy Survey (`DECaLS`_;
 `DR6`_ comprised the second release of data from `BASS`_ and `MzLS`_).
-Imaging from the Legacy Surveys is first reduced through the `NOIRLab Community Pipeline`_ before being 
+Imaging from the Legacy Surveys is first reduced through the `NOIRLab Community Pipeline`_ before being
 processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes from `year 4 of NEOWISE`_
-force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources. 
+force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 Images from `DECaLS`_
 :math:`g,r,z`-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
@@ -132,7 +132,7 @@ Obtaining Images and Raw Data
 
 Images, for all 3 of the Legacy Surveys can be viewed
 directly using `the Sky viewer`_
-and raw data can be obtained through `the Astro Data Lab's portal`_ (or via ftp; see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
 Sections of `DECaLS`_ for DR7 can be obtained as JPEGs or FITS files using
@@ -169,7 +169,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`DR6 description`: ../../dr6/description
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the Astro Data Lab's portal`: http://archive.noao.edu/search/query
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -188,29 +188,29 @@ created, for two SEDs: "flat" (a source with AB color zero), and
 "red", a source with AB color :math:`g-r = 1`, :math:`r-z = 1`.  Sources above 6\ |sigma|
 are detected in each of these two SED-matched filters, as well as in each band independently.
 
-The locations of the peak fluxes of extracted sources are used to determine where objects 
-are photometered and how the initial parameters for an object are seeded. When a source is detected 
-in multiple bands a choice of filter must be made to seed the initial extraction. 
-Sources detected in other bands beyond the initial filter are only kept if they are 
+The locations of the peak fluxes of extracted sources are used to determine where objects
+are photometered and how the initial parameters for an object are seeded. When a source is detected
+in multiple bands a choice of filter must be made to seed the initial extraction.
+Sources detected in other bands beyond the initial filter are only kept if they are
 sufficiently separated from an object that was extracted in previous bands.
 In `DR4`_, `DR3`_ and earlier data releases,
 source detection was run first in :math:`g`, then in :math:`r`, :math:`z`, "flat"
 and finally in "red".
-In `DR5`_, `DR6`_ and DR7, source detection 
+In `DR5`_, `DR6`_ and DR7, source detection
 was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". :math:`z` was chosen as the "primary" detection image
 to take advantage of the better PSF in that band.
 
 Starting with DR7 we relaxed some of the criteria for deciding whether a
 flux peak is a distinct source. We reduced the minimum possible distance between
-neighboring peaks from 6 pixels (about 1.5 arcseconds) to 4 pixels (about 1 arcsecond). 
+neighboring peaks from 6 pixels (about 1.5 arcseconds) to 4 pixels (about 1 arcsecond).
 We also reduced the "saddle" depth (dip in flux) necessary
 to model neighboring peaks as distinct sources.
 
 Starting with DR7, Gaia stars are extracted as independent sources. Stars from `Tycho-2`_
 and `Gaia Data Release 2`_ are matched, and their Gaia information is retained.
 Such stars are then fixed at their Gaia positions shifted by their
-proper motions in order to determine their positions at the epoch of their 
+proper motions in order to determine their positions at the epoch of their
 Legacy Surveys image. Gaia stars are forced to remain stars (galaxy models are
 never considered as an option for such sources) but their fluxes are extracted from the
 Legacy Surveys images. `Tycho-2`_ stars have ``brightstarinblob`` set (see the `catalogs`_
@@ -266,7 +266,7 @@ The `Tractor`_ fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
 Only the source properties were allowed to float in DR7.
 These are continuous properties for the object centers, fluxes,
-and the shape parameters. 
+and the shape parameters.
 
 There is also the discrete choice of which
 model type to use. In DR7, five morphological types are used: point sources,
@@ -292,23 +292,23 @@ Note that the "REX" model replaces the "SIMP" model used in
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
-The "PSF" and "REX" models are computed for every source and the better of these 
-two is used when deciding whether to keep the source. A source is retained if its 
-penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2| 
-difference of 27 (because of the penalty of 2 for the source centroid).  Sources 
+The "PSF" and "REX" models are computed for every source and the better of these
+two is used when deciding whether to keep the source. A source is retained if its
+penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2|
+difference of 27 (because of the penalty of 2 for the source centroid).  Sources
 below this threshold are removed.
 
-The source is classified as the better of "point source (PSF)" or "round exponential 
-galaxy (REX)" unless the penalized |chi|\ |sup2| is improved by 9 (*i.e.*, 
-approximately a 3\ |sigma| improvement) by treating it as a deVaucouleurs or 
-exponential profile. The classification is a composite of deVaucouleurs + exponential 
-if it is both a better fit to a single profile over the point source, and the composite 
+The source is classified as the better of "point source (PSF)" or "round exponential
+galaxy (REX)" unless the penalized |chi|\ |sup2| is improved by 9 (*i.e.*,
+approximately a 3\ |sigma| improvement) by treating it as a deVaucouleurs or
+exponential profile. The classification is a composite of deVaucouleurs + exponential
+if it is both a better fit to a single profile over the point source, and the composite
 improves the penalized |chi|\ |sup2| by another 9.  These choices implicitly mean
 that any extended source classifications have to be at least 5.8\ |sigma| detections
 and that composite profiles must be at least 6.5\ |sigma| detections.
 
-The fluxes are not constrained to be positive-valued.  This allows the fitting of 
-very low signal-to-noise sources without introducing biases at the faint end.  It 
+The fluxes are not constrained to be positive-valued.  This allows the fitting of
+very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
 
@@ -321,8 +321,8 @@ solver from the `SciPy`_ package, or the open source
 `Ceres solver`_, originally developed by Google.
 
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
-under *Morphological Classification*) are approximated with `mixture-of-gaussian`_ 
-(MoG) models and are convolved by the pixelized PSF models using a new 
+under *Morphological Classification*) are approximated with `mixture-of-gaussian`_
+(MoG) models and are convolved by the pixelized PSF models using a new
 Fourier-space method (Lang, in prep).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
@@ -352,7 +352,7 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP reductions of the DECam images
-were computed by comparing Legacy Survey PSF photometry to 
+were computed by comparing Legacy Survey PSF photometry to
 `Pan-STARRS-1 (PS1) PSF photometry`_, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
@@ -373,9 +373,9 @@ Note that these zero points have been `updated since DR5`_.
 .. _`Pan-STARRS-1 (PS1) PSF photometry`: https://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F/abstract
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
-from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`. 
-These linear fluxes are well-defined even at the faint end, and the errors on the linear 
-fluxes should be very close to a normal distribution.  The fluxes can be negative for faint 
+from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`.
+These linear fluxes are well-defined even at the faint end, and the errors on the linear
+fluxes should be very close to a normal distribution.  The fluxes can be negative for faint
 objects, and indeed we expect many such cases for the faintest objects.
 
 The filter curves are available for `DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_.
@@ -394,11 +394,11 @@ We have converted these to an AB system using the `recommended conversions by th
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs. These conversion factors are recorded in the
-Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes 
+Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WISE fluxes
 we provide should all be within a few percent of being on an AB system.
 
-Aaron Meisner has carefully studied the stability of the WISE instrument. He finds that 
-there is small, but measurable, change to the instrument with time. Most noticeably, 
+Aaron Meisner has carefully studied the stability of the WISE instrument. He finds that
+there is small, but measurable, change to the instrument with time. Most noticeably,
 the PSF has broadened by 1.1% (0.9%) in W1 (W2) in the NEO4 full-depth coadds
 used for DR7 relative to the NEO2 full-depth coadds used for `DR4`_ and `DR5`_.
 These values are reasonably consistent with a finding from Aaron that the W1/W2
@@ -432,13 +432,13 @@ Astrometry
 DR7 astrometry is tied to Gaia, but in a (very slightly) inconsistent fashion. Each image is calibrated to
 `Gaia Data Release 1`_, yielding an astrometric solution that is offset by the average difference between
 the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR7 image. Source
-extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to 
+extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to
 predicted Gaia positions at the epoch of the corresponding Legacy Survey observation. Despite
 these inconsistencies, astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.
 
 Astrometric calibration of all optical Legacy Survey data is conducted using Gaia
 astrometric positions of stars matched to Pan-STARRS-1 (PS1).
-The same matched objects are used for both astrometric and photometric calibration. 
+The same matched objects are used for both astrometric and photometric calibration.
 
 Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zero-point-fitting as is later used in cataloging.

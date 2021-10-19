@@ -95,9 +95,9 @@ Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Comm
 survey-ccds-decals.fits.gz
 --------------------------
 
-A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. 
+A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image.
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR3 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qz" catalog.
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -117,9 +117,9 @@ Column             Type       Description
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
 ``seeing``         float      Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
-``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
+``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
-``ha``             char[13]   Hour angle of the observation (HH:MM:SS)  
+``ha``             char[13]   Hour angle of the observation (HH:MM:SS)
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   Proposal ID of the program that took this image, eg "2014B-0404".
 ``zpt``            float      Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
@@ -295,7 +295,7 @@ Or on the NERSC computers (for collaborators) at:
   /global/cfs/cdirs/cosmo/data/legacysurvey/dr3/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
-imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files 
+imaging catalogs, matched at a radius of 1.0 arcsec. The structure of the imaging catalog files
 is documented on the `catalogs page`_. If no match is found, then ``OBJID`` is set to -1.
 
 .. _`catalogs page`: ../catalogs
@@ -304,9 +304,9 @@ survey-dr3-specObj-dr13.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR13 spectrosopic
-pipeline file such that the photometric parameters in row "N" of 
+pipeline file such that the photometric parameters in row "N" of
 survey-dr3-specObj-dr13.fits matches the spectroscopic parameters in row "N" of
-specObj-dr13.fits. The spectroscopic file 
+specObj-dr13.fits. The spectroscopic file
 is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 
 .. _`data model for specObj-dr13.fits`: https://data.sdss3.org/datamodel/files/SPECTRO_REDUX/specObj.html
@@ -314,11 +314,11 @@ is documented in the SDSS DR13 `data model for specObj-dr13.fits`_.
 survey-dr3-DR12Q.fits
 ---------------------
 HDU1 (the only HDU) contains Tractored survey
-photometry that is row-by-row-matched to the SDSS DR12 
+photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 survey-dr3-DR12Q.fits matches the spectroscopic parameters in row "N" of
-DR12Q.fits. The spectroscopic file 
+DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
@@ -329,7 +329,7 @@ survey-dr3-Superset_DR12Q.fits
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Paris et al. 2017`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 survey-dr3-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
 is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
@@ -369,11 +369,11 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry, documented on the
-`catalogs page`_. 
+`catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
-Users interested in database access to the Tractor Catalogs can contact the Astro Data Lab [1]_ at datalab@noao.edu.
+Users interested in database access to the Tractor Catalogs can contact the Astro Data Lab [1]_ at datalab@noirlab.edu.
 
 Sweep Catalogs
 ==============
@@ -425,7 +425,7 @@ Name                            Type         Units                 Description
 ``TYCHO2INBLOB``                boolean                            Is there a Tycho-2 (very bright) star in this blob?
 ``SHAPEDEV_R``                  float32      arcsec                Half-light radius of deVaucouleurs model (>0)
 ``SHAPEDEV_R_IVAR``             float32      1/arcsec\ |sup2|      Inverse variance of SHAPEDEV_R
-``SHAPEDEV_E1``                 float32                            Ellipticity component 1 (documented on the `catalogs page`_) 
+``SHAPEDEV_E1``                 float32                            Ellipticity component 1 (documented on the `catalogs page`_)
 ``SHAPEDEV_E1_IVAR``            float32                            Inverse variance of SHAPEDEV_E1
 ``SHAPEDEV_E2``                 float32                            Ellipticity component 2 (documented on the `catalogs page`_)
 ``SHAPEDEV_E2_IVAR``            float32                            Inverse variance of SHAPEDEV_E2
@@ -547,9 +547,9 @@ Raw Data
 ========
 
 Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web
-portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the 
-stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey 
-project, as well as other DECam images. 
+portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the
+stacked images, Tractor catalogs, etc. comprise images taken by the dedicated DECam Legacy Survey
+project, as well as other DECam images.
 
 (i) Web interface
 -----------------
@@ -569,42 +569,42 @@ project, as well as other DECam images.
 (ii) ftp sites
 --------------
 
-Following the organization of the Stacked images, Raw and Calibrated DECam images are organized 
-by survey brick, which are defined in the file *survey-bricks-dr3.fits.gz* for DR3. Both the main Tractor 
-catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with 
-format ``<AAAa>c<BBB>)``. 
+Following the organization of the Stacked images, Raw and Calibrated DECam images are organized
+by survey brick, which are defined in the file *survey-bricks-dr3.fits.gz* for DR3. Both the main Tractor
+catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
+format ``<AAAa>c<BBB>)``.
 
 - Raw: ftp://archive.noao.edu/public/hlsp/decals/dr3/raw/``<AAA>/<brick>``
 - Calibrated: ftp://archive.noao.edu/public/hlsp/decals/dr3/calibrated/``<AAA>/<brick>``
 - Stacked: ftp://archive.noao.edu/public/hlsp/decals/dr3/coadd/``<AAA>/<brick>``
 
-For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick 
-from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>`` 
-contains an ASCII file 
-with a list of ``EXPID`` and ``IMAGE_FILENAME`` 
-(*legacysurvey*-``<brick>``-*image_filename.txt*; see the example below). 
-``EXPID`` contains the exposure number and the CCD name (Nxx or Sxx) with the format ``EXPNUM-ccd``. 
-There is one entry per CCD. Often, multiple CCDs from a given file are used so there are 
+For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
+from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``
+contains an ASCII file
+with a list of ``EXPID`` and ``IMAGE_FILENAME``
+(*legacysurvey*-``<brick>``-*image_filename.txt*; see the example below).
+``EXPID`` contains the exposure number and the CCD name (Nxx or Sxx) with the format ``EXPNUM-ccd``.
+There is one entry per CCD. Often, multiple CCDs from a given file are used so there are
 fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
 file contains the number of unique images in the last row (File Count).
 
-For the Raw CCD images, the file naming convention has evolved during the survey. The 
-corresponding files can be reconciled through the original DECam filename: 
-DECam_<``EXPNUM``>.fits.fz where ``EXPNUM`` needs to be in format ``I08`` and can be retrieved 
-from *legacysurvey*-``<brick>``-*ccds.fits* for each brick, and from the keyword ``DTNSANAM`` 
+For the Raw CCD images, the file naming convention has evolved during the survey. The
+corresponding files can be reconciled through the original DECam filename:
+DECam_<``EXPNUM``>.fits.fz where ``EXPNUM`` needs to be in format ``I08`` and can be retrieved
+from *legacysurvey*-``<brick>``-*ccds.fits* for each brick, and from the keyword ``DTNSANAM``
 in ``hdr[0]`` from each calibrated file.
 
 Here is an example ASCII file for a given brick: *[noao-ftp]/calibrated/006/0060p147/legacysurvey-0060p147-image_filename.txt*
 
 ::
 
-   expid                                                image_filename 
-   1 00483709-N25 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   2 00483709-N26 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   3 00483709-N29 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz           
-   4 00483710-N25 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
-   5 00483710-N26 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
-   6 00483710-N29 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz           
+   expid                                                image_filename
+   1 00483709-N25 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz
+   2 00483709-N26 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz
+   3 00483709-N29 decam/CP20151010/c4d_151011_041055_oki_g_v1.fits.fz
+   4 00483710-N25 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz
+   5 00483710-N26 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz
+   6 00483710-N29 decam/CP20151010/c4d_151011_041329_oki_r_v1.fits.fz
    File Count: 2
 
 In the example above, there are 6 CCDs used for the stacked image, corresponding to 2 unique, multi-extension files.
@@ -615,5 +615,3 @@ In the example above, there are 6 CCDs used for the stacked image, corresponding
 **Footnotes**
 
 .. [1] The Astro Data Lab is part of the Community Science and Data Center (CSDC) of NSF's National Optical Infrared Astronomy Research Laboratory.
-
-

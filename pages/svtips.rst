@@ -18,9 +18,15 @@ The Legacy Survey Sky Viewer is generally intuitive, but here are some additiona
 #. Clicking on the map will return a popup with a few different options. A particularly useful option is "Link Here", which redirects your browser to a URL that should reproduce what you're seeing - at the correct position, zoom, and layer, with the correct overlays enabled.  This is convenient if you want to share something of note.
 #. If you notice something unusual which you'd like to bring to the attention of the LegacySurvey team, you can click on the map and in the popup look for the "Discuss This Object" link.  That will direct you to our discussion forum, with a link back to your object of interest.
 #. If you click on the RA,Dec coordinate readout box, you can enter an RA, Dec, and zoom number that you'd like to view.
-#. If you select one layer and then select a second layer, you can flip back to the previous layer using the space bar.  This is handy to "blink" between two layers, e.g., to look for moving objects.
+#. If you select one layer and then select a second layer, you can flip back to the previous layer using the space bar.  This is handy to "blink" between two layers, e.g., to look for moving objects.  You can set up a blink by adding a parameter to the URL: ``&blink=<layer-name>``; `example <https://www.legacysurvey.org/viewer/?ra=111.3938&dec=29.4898&zoom=12&layer=ls-dr9&blink=unwise-neo6>`_.
+#. Annotations: If you add to the URL an extra parameter ``&mark=1,2;3,4``, the viewer will place yellow circles at RA,Dec = 1,2 and 3,4.  This is useful for marking the position of objects whose RA,Decs you know.  If you add ``&poly=1,2,3,4;5,6,7,8``, it will draw a line from RA,Dec = (1,2) to (3,4) and another polygon from (5,6) to (7,8).  You can draw multiple polygons this way.
 
-A list of the URL patterns that are supported by the viewer is available `here`_.
+Uploading a custom catalog:
+
+#. In the bottom-left corner there is a box to upload a Custom Catalog.  This file can be in FITS or CSV format.  It must contain columns called "RA" and "DEC" (case-insensitive), in decimal degrees.  It may optionally contain columns: "NAME" (giving a label to each point); "COLOR", which can take either color names like "red" and "magenta" or hex codes like "#ff0000"; and "RADIUS", which takes a marker size in arcseconds (default 10 arcseconds.  Check out an `example FITS table </files/example-cat.fits>`_ or `example CSV table </files/example-cat.csv>`_.
+
+A list of the URL patterns that are supported by the viewer is
+available `here`_.
 
 .. _`here`: https://www.legacysurvey.org/viewer/urls
 

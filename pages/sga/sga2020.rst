@@ -434,7 +434,7 @@ Specifically, we carry out the following steps for each galaxy group:
 
    .. math::
                    
-      r_{50} = r_{0} \left\{ \frac{1}{\alpha_{2}} \left[ \exp\left( -\frac{\log_{10}(0.5)}{0.4 m_{0}} \right) -1 \right] \right\}^{-1/\alpha_{2}} 
+      r_{50} = r_{0} \left\{ \frac{1}{\alpha_{1}} \left[ \exp\left( -\frac{\log_{10}(0.5)}{0.4 m_{0}} \right) -1 \right] \right\}^{-1/\alpha_{2}} 
 
    Finally, we package all the measurements, one per galaxy, into an
    `astropy.QTable`_ table (including units on all the quantities), and write

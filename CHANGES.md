@@ -2,7 +2,7 @@
 
 ## 9.0.4 (DR9, unreleased)
 
-- No changes yet.
+- Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)). 
 
 ## 9.0.3 (DR9, 2021-07-28)
 

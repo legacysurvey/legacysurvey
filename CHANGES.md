@@ -1,5 +1,9 @@
 # legacysurvey Change Log
 
+## 9.0.5 (DR9, unreleased)
+
+- No changes yet.
+
 ## 9.0.4 (DR9, 2021-10-19)
 
 - Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)). 

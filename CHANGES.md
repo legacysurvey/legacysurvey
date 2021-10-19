@@ -2,6 +2,8 @@
 
 ## 9.0.2 (DR9, unreleased)
 
+- Minor additions to sky viewer tips and tricks page: ``blink``, ``mark``, ``poly``, and custom catalog upload
+  ([PR#146](https://github.com/legacysurvey/legacysurvey/pull/146)).
 - Fix minor typos in psfdepth description on catalogs page
   ([PR#141](https://github.com/legacysurvey/legacysurvey/pull/141)).
 - Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list

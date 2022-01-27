@@ -19,6 +19,10 @@ available on the GitHub issues pages for the `Legacy Surveys website`_ or the `l
 Issues with CCDs that may have affected the quality of DECam observations are recorded on the
 `DECam CCDs page`_.
 
+.. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
+.. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
+.. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs
+
 The DR9sv "Data Release"
 ------------------------
 DR9sv was a preliminary version of the Legacy Surveys imaging intended to possibly be used for targeting during the DESI
@@ -34,6 +38,7 @@ DR9sv has been supplanted by the full DR9 release. We recommend ignoring any dat
 
 Bricks that were processed using the Burst Buffer at NERSC
 ----------------------------------------------------------
+
 After noticing that some bricks that were run using the `Cori Burst Buffer`_ at NERSC
 were corrupted, we reprocessed all such reductions. A total of 1691 bricks in the
 southern region of the Legacy Surveys were
@@ -43,16 +48,12 @@ files. These bricks were rerun, and assigned a ``RELEASE`` number of ``9012`` (i
 
 A list of the affected bricks `is available here`_.
 
-.. _`is available here`: ../../files/dr9-south-patched-bricks.fits
 .. _`Cori Burst Buffer`: https://docs.nersc.gov/filesystems/cori-burst-buffer/
-.. _`to fix a different bug in the reduction process`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
-.. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
-.. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
-.. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs
-.. _`DECaLS`: ../../decamls
-.. _`Tractor catalogs`: ../catalogs
-.. _`coadd files`: ../files/#image-stacks-region-coadd
-.. _`files`: ../files
-.. _`viewer`: https://www.legacysurvey.org/viewer
-.. _`Andromeda`: https://www.legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
-.. _`M13`: https://www.legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
+.. _`is available here`: ../../files/dr9-south-patched-bricks.fits
+
+"Blobmodel" images are not compressed
+-------------------------------------
+
+`Blobmodel images`_ were intended to be compressed, and are named with a ``.fits.fz`` suffix, but they are not actually compressed.
+
+.. _`Blobmodel images`: ../files/#image-stacks-region-coadd

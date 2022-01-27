@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 9.0.5 (DR9, unreleased)
+## 9.0.5 (DR9, 2022-01-27)
 
 - Add known issue about blobmodel files ([PR#149](https://github.com/legacysurvey/legacysurvey/pull/149)).
 

@@ -2,11 +2,11 @@
 
 ## 9.0.5 (DR9, unreleased)
 
-- No changes yet.
+- Add known issue about blobmodel files ([PR#149](https://github.com/legacysurvey/legacysurvey/pull/149)).
 
 ## 9.0.4 (DR9, 2021-10-19)
 
-- Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)). 
+- Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)).
 - Minor additions to sky viewer tips and tricks page: ``blink``, ``mark``, ``poly``, and custom catalog upload
   ([PR#146](https://github.com/legacysurvey/legacysurvey/pull/146)).
 

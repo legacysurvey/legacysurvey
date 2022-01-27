@@ -2,7 +2,7 @@
 
 ## 9.0.5 (DR9, unreleased)
 
-- Add known issue about blobmodel files ([PR#150](https://github.com/legacysurvey/legacysurvey/pull/150)).
+- Add known issue about blobmodel files ([PR#149](https://github.com/legacysurvey/legacysurvey/pull/149)).
 
 ## 9.0.4 (DR9, 2021-10-19)
 

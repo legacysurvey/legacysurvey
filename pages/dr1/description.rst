@@ -27,9 +27,9 @@ the Blanco Telescope.
 
 Data Release 1 (DR1) is the first public data release of images and catalogs for
 the DECam Legacy Survey.  It includes DECam data primarily from z-band
-observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
+observations in August 2013 (https://legacy.noirlab.edu/perl/abstract?2013A-0741) and
 g,r,z-band observations from August 2014 through January 2015 for an NOAO survey
-program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
+program (https://legacy.noirlab.edu/perl/abstract?2014B-0404).  It also includes
 public data from other programs near the Fall celestial equator bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
 |deg|.  In total, the optical data covers a disjoint 3100 deg\ |sup2| footprint,
@@ -97,7 +97,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
-http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is mean of what was removed.
 
@@ -306,7 +306,7 @@ Brick
 
 CP
     Community Pipeline (DECam reduction pipeline operated by NOAO;
-    http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <http://legacysurvey.org>`_.
@@ -325,7 +325,7 @@ MoG
     Mixture-of-gaussian model to approximate the PSF and galaxy models (http://arxiv.org/abs/1210.6563).
 
 NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+    `National Optical Astronomy Observatory <https://legacy.noirlab.edu>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

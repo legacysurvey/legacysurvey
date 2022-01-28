@@ -94,7 +94,7 @@ Bit Name        Description
  11 ``OUTLIER`` marked as touching an outlier pixel by ``legacypipe`` itself
 === =========== ==========================
 
-.. _`Data Quality bits`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Data Quality bits`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/14c49362418b85a591f48eaa394205ffb0321777/py/legacypipe/image.py#L27
 
 ``WISEMASK_W1``/``WISEMASK_W2``

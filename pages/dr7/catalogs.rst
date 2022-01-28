@@ -202,7 +202,7 @@ Bit Value Name                        Description
  10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
 === ===== =========================== ==================================================
 
-.. _`CP Data Quality bit description`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`CP Data Quality bit description`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 Goodness-of-Fits
 ----------------

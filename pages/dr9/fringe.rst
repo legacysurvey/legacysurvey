@@ -20,8 +20,8 @@ and the per-exposure fringe scale factors. These fringe templates and scales rep
 `DECaLS`_ reductions are backed out and the new fringe corrections are applied. Later versions of the `CP`_ will likely incorporate new fringe templates, and then
 the correction described here will no longer be necessary.
 
-.. _`Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-.. _`CP`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`CP`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`DECaLS`: ../../decamls
 .. _`DR8`: ../../DR8
 
@@ -80,7 +80,7 @@ There are several instances for which the new :math:`z\hbox{-}\mathrm{band}` fri
     :height: 400
     :width: 480
 
-.. _`DECam CCD`: http://www.ctio.noao.edu/noao/content/decam-what
+.. _`DECam CCD`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/characteristics
 
 Code
 ====

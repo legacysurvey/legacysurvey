@@ -75,14 +75,14 @@ from the CP Data Quality bits.
 === ===== =========================== ==================================================
 Bit Value Name                        Description
 === ===== =========================== ==================================================
-  0     1 detector bad pixel/no data  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  1     2 saturated                   detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  2     4 interpolated                detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  4    16 single exposure cosmic ray  detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  6    64 bleed trail                 detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  7   128 multi-exposure transient    detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  8   256 edge                        detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  9   512 edge2                       detailed at http://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  0     1 detector bad pixel/no data  detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  1     2 saturated                   detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  2     4 interpolated                detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  4    16 single exposure cosmic ray  detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  6    64 bleed trail                 detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  7   128 multi-exposure transient    detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  8   256 edge                        detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  9   512 edge2                       detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 === ===== =========================== ==================================================
 
 

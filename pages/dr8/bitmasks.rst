@@ -15,7 +15,7 @@ enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-
 
 See also the `legacypipe bitmask definitions`_.
 Note that the difference between bits 0, 1, 2, 3 for ``BRIGHTBLOB`` as compared to bits 1, 11, 12 and 13 for ``MASKBITS`` is that
-``BRIGHTBLOB`` is set based on an *initial* position (the source detection integer pixel peak), while ``MASKBITS`` is set *after* 
+``BRIGHTBLOB`` is set based on an *initial* position (the source detection integer pixel peak), while ``MASKBITS`` is set *after*
 fitting has finished (i.e., on the final brick pixel position). This can lead to slight differences (~0.15%) in the areas
 covered by the ``MASKBITS`` and ``BRIGHTBLOB`` masks.
 
@@ -67,8 +67,8 @@ Bit Name          Description
 ===========================
 
 ``ANYMASK_X`` denotes a source that touches a bad pixel in *any* of a set of overlapping :math:`X`-band images whereas
-``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images. 
-See, also, the `legacypipe bitmask definitions`_. The 
+``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping :math:`X`-band images.
+See, also, the `legacypipe bitmask definitions`_. The
 ``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NOIRLab Community Pipeline) `Data Quality bits`_,
 which we `map to the values in the table`_.
 
@@ -86,7 +86,7 @@ Bit Name        Description
  11 ``OUTLIER`` marked as touching an outlier pixel by ``legacypipe`` itself
 === =========== =========================
 
-.. _`Data Quality bits`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`Data Quality bits`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/14c49362418b85a591f48eaa394205ffb0321777/py/legacypipe/image.py#L27
 
 ``WISEMASK_W1``/``WISEMASK_W2``

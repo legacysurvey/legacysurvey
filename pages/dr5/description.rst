@@ -33,7 +33,7 @@ of extragalactic sky visible from the northern hemisphere in three optical bands
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
@@ -55,7 +55,7 @@ DR5 imaging is first reduced through the `NOIRLab Community Pipeline`_ before be
 using the `Tractor`_.
 
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+:math:`g,r,z`-band observations (survey program 0404; https://legacy.noirlab.edu/perl/abstract?2014B-0404)
 are included from August 2014 through May 2017. DR5 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to May 2017.
 
@@ -349,7 +349,7 @@ the DECam and WISE fluxes we provide should all be within a few percent of being
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
-.. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
+.. _`Mosaic-3`: https://noirlab.edu/science/programs/kpno/retired-instruments/mosaic
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
@@ -422,7 +422,7 @@ Brick
 
 CP
     Community Pipeline (reduction pipeline operated by NOIRLab;
-    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.

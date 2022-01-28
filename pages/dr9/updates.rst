@@ -68,7 +68,7 @@ Algorithmic changes for optical data
 .. _`modified, extended PSF model`: ../psf
 .. _`available for DESI collaborators`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings
 .. _`cosmic rays are no longer masked`: https://github.com/legacysurvey/legacypipe/issues/334
-.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`PR 504`: https://github.com/legacysurvey/legacypipe/pull/504
 .. _`criterion used to force a Gaia point source`: https://github.com/legacysurvey/legacypipe/blob/f96311ad56e6eb9878aae378927405745bc1819e/py/legacypipe/reference.py#L196-L197
 .. _`PR 469`: https://github.com/legacysurvey/legacypipe/pull/469
@@ -114,7 +114,7 @@ Data model changes
 
     * ``shape_e1``, ``shape_e1_ivar``, ``shape_e2``, ``shape_e2_ivar``, ``shape_r``, ``shape_r_ivar``
 
-  - The logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile: 
+  - The logic behind this change is that, in DR8, the composite ``type`` comprised some fraction (``fracdev``) of a de Vaucouleurs profile, with the remaining fraction being an exponential profile:
 
     * the ``shapedev_`` and ``shapeexp_`` parameters, in DR8, defined the appropriate parameters for the de Vaucouleurs and exponential profiles. In the event that something was fit with ``type=DEV`` or ``type=EXP``, only the columns that corresponded to the relevant profile would be populated.
 
@@ -189,6 +189,3 @@ Data model changes
 **Footnotes**
 
 .. [1] Here, "pre-burned" means that the region that lies within the confines of the galaxy, cluster or nebula undergoes local source extraction using its own run of Tractor.
-
-
-

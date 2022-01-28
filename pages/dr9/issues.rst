@@ -21,7 +21,7 @@ Issues with CCDs that may have affected the quality of DECam observations are re
 
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
-.. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs
+.. _`DECam CCDs page`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/Status-DECam-CCDs
 
 The DR9sv "Data Release"
 ------------------------

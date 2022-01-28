@@ -438,23 +438,6 @@ the colors.
 Raw Data
 ========
 
+See the `raw data page`_.
 
-Raw Legacy Survey images are available through the NOIRLab Science Archive.  The
-*input* data used to create the stacked images, Tractor catalogs, etc. comprises
-images taken by the dedicated DECam Legacy Survey project, as well as other
-DECam images, and images from other surveys.  These instructions are for
-obtaining raw images from the DECam Legacy Survey *only*.
-
-
-1. Visit the `NOAO Science Archive`_.
-2. Click on `General Search for NOAO data (all users)`_.
-3. From the menu of "Available Collections" at left, select the desired DECaLS data release (e.g. DECaLS-DR2).
-4. Under "Data products - Raw data" check "Object".
-5. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
-6. Click Search.
-7. The Results page offers several different ways to download the detail. See
-   `the Tutorials page`_ for details.
-
-.. _`NOAO Science Archive`: http://portal-nvo.noao.edu
-.. _`General Search for NOAO data (all users)`: http://portal-nvo.noao.edu/search/query
-.. _`the Tutorials page`: http://portal-nvo.noao.edu/tutorials/query
+.. _`raw data page`: ../../rawdata

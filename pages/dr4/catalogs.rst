@@ -210,8 +210,9 @@ For DR4, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they wer
 
 Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in `Schlafly & Finkbeiner 2011`_).
+These coefficients are :math:`A / E(B-V)` = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064
+for the DECam :math:`u`, :math:`g`, :math:`r`, :math:`i`, :math:`z`, :math:`Y` filters,
+respectively. Note that these are *slightly* different from the coefficients in `Schlafly & Finkbeiner (2011)`_.
 
 The coefficients for the four WISE filters are derived from Fitzpatrick (1999), as recommended by Schafly & Finkbeiner,
 considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).

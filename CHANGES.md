@@ -7,6 +7,8 @@
 
 ## 9.0.6 (DR9, 2022-02-16)
 
+- Add a dr9 known issue about NOBS in the Tractor vs. random catalogs
+  ([PR#153](https://github.com/legacysurvey/legacysurvey/pull/153)).
 - Replace `noao.edu` with `noirlab.edu` wherever possible; move raw
   data access instructions into a unified, top-level page
   ([PR#150](https://github.com/legacysurvey/legacysurvey/pull/150)).

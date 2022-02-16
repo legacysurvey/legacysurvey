@@ -180,7 +180,7 @@ Column               Type       Description
 ``object``           char[35]   Name listed in the object tag from the CCD header.
 ``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404".
 ``filter``           char[1]    Filter used for observation, *e.g.* ":math:`g`", ":math:`r`", ":math:`z`".
-``exptime``          float32    Exposure time in seconds, *e.g. 30.
+``exptime``          float32    Exposure time in seconds, *e.g.* 30.
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), *e.g.* 56884.99373389.
 ``airmass``          float32    Airmass of observation (measured at the telescope bore-sight).
 ``fwhm``             float32    FWHM (in pixels) measured by the CP.

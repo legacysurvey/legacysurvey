@@ -72,8 +72,8 @@ Community Pipeline.
 
 The result of this discrepancy is that a few percent of objects in the `Tractor catalogs`_ have different values of ``nobs`` than would
 be expected when deriving ``NOBS`` from the same location in the ``nexp`` `coadded stacks`_. Conveniently, the ``nobs`` values in the `Tractor catalogs`_
-are (almost) always larger than what would be derived from the ``nexp`` `coadded stacks`_. This means that constraints based on a minimum number of
-observations in a given filter will always result in reproducible survey geometry, at the expensive of rejecting a few per cent of sources.
+are (almost) always larger than what would be derived from the ``nexp`` `coadded stacks`_. This means that constraints based on a minimum ``nexp`` value
+in a given filter will always result in reproducible survey geometry, at the expense of rejecting a small fraction (typically <1%) of sources.
 
 .. _`Tractor catalogs`: ../catalogs
 .. _`random catalogs`: ../files/#random-catalogs-randoms

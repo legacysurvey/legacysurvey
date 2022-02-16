@@ -218,7 +218,7 @@ computed as the following sum over pixels in the blob for each object:
 .. math::
     \chi^2 = \frac{\sum \left[ \left(\mathrm{image} - \mathrm{model}\right)^2 \times \mathrm{model} \times \mathrm{inverse\, variance}\right]}{\sum \left[ \mathrm{model} \right]}
 
-The above sum is over all images contributing to a particular filter, and can be negative-valued for sources 
+The above sum is over all images contributing to a particular filter, and can be negative-valued for sources
 that have a flux measured as negative in some bands where they are not detected.
 
 The final, additional moropholigical type is "DUP." This type is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
@@ -234,11 +234,12 @@ with 1 representing a fully transparent region of the Milky Way and 0 representi
 The value can slightly exceed unity owing to noise in the `SFD98`_ maps, although it is never below 0.
 
 Eddie Schlafly has computed the extinction coefficients for the DECam filters through airmass=1.3, computed for a 7000K source spectrum as was
-done in the Appendix of `Schlafly & Finkbeiner (2011)`_. 
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064 (note that these are
-*slightly* different from the coefficients in `Schlafly & Finkbeiner 2011`_).
-The coefficients are multiplied by the SFD98 E(B-V) values at the coordinates
-of each object to derive the :math:`g`, :math:`r` and :math:`z` ``mw_transmission`` values in the Legacy Surveys catalogs. The coefficients at different airmasses 
+done in the Appendix of `Schlafly & Finkbeiner (2011)`_.
+These coefficients are :math:`A / E(B-V)` = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064
+for the DECam :math:`u`, :math:`g`, :math:`r`, :math:`i`, :math:`z`, :math:`Y` filters,
+respectively. Note that these are *slightly* different from the coefficients in `Schlafly & Finkbeiner (2011)`_.
+The coefficients are multiplied by the `SFD98`_ E(B-V) values at the coordinates
+of each object to derive the :math:`g`, :math:`r` and :math:`z` ``mw_transmission`` values in the Legacy Surveys catalogs. The coefficients at different airmasses
 only change by a small amount, with the largest effect in :math:`g`-band where the coefficient would be 3.219 at airmass=1 and 3.202 at airmass=2.
 
 We calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they are on the DECam filter system.

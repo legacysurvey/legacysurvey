@@ -100,6 +100,7 @@ NAVIGATION_LINKS = {
             ("https://www.darkenergysurvey.org", 'DES'),
             # ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
+            ("/rawdata", 'Raw Data')
             ), 'Other Data'),
         ((
         ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),

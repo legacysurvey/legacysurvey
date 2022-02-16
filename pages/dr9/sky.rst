@@ -32,8 +32,8 @@ with `DR9`_, we additionally correct `DECaLS`_ images to account for the residua
     :height: 380
     :width: 380
 
-.. _`DECam Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-.. _`CP`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`DECam Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`CP`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`DR8`: ../../dr8
 .. _`DR9`: ../../dr9
 .. _`DES`: https://www.darkenergysurvey.org
@@ -92,7 +92,7 @@ Code
 The code used to correct for sky patterns for DR9 of the Legacy Surveys is `available on GitHub`_.
 
 .. _`available on GitHub`: https://github.com/rongpu/desi-misc/tree/master/sky_pattern
-.. _`DECam CCDs`: http://www.ctio.noao.edu/noao/content/decam-what
+.. _`DECam CCDs`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/characteristics
 
 Additional Information and Products
 ===================================

@@ -2,7 +2,9 @@
 
 ## 9.0.6 (DR9, unreleased)
 
-- No changes yet.
+- Replace `noao.edu` with `noirlab.edu` wherever possible; move raw
+  data access instructions into a unified, top-level page
+  ([PR#150](https://github.com/legacysurvey/legacysurvey/pull/150)).
 
 ## 9.0.5 (DR9, 2022-01-27)
 

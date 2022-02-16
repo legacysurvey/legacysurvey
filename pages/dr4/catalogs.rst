@@ -14,7 +14,7 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there are
-`known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data 
+`known issues`_ regarding their content and derivation. In DR4, the columns pertaining to optical data
 also have :math:`u`, :math:`i` and :math:`Y`-band entries (e.g. ``flux_u``, ``flux_i``, ``flux_Y``) but these contain only
 zeros in DR4.
 
@@ -104,9 +104,9 @@ Name                        Type         Units                 Description
 ``anymask_g``               int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g`
 ``anymask_r``               int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r`
 ``anymask_z``               int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z`
-``allmask_g``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` 
-``allmask_r``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` 
-``allmask_z``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` 
+``allmask_g``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g`
+``allmask_r``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r`
+``allmask_z``               int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z`
 ``wisemask_w1``		    uint8			       W1 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
 ``wisemask_w2``		    uint8			       W2 bright star bitmask, :math:`2^0` :math:`(2^1)` for southward (northward) scans
 ``psfsize_g``               float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
@@ -166,7 +166,7 @@ Bit Value Name                        Description
  10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, *e.g.*, satellite trails.
 === ===== =========================== ==================================================
 
-.. _`CP Data Quality bit description`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`CP Data Quality bit description`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 
 Goodness-of-Fits
 ----------------
@@ -210,8 +210,9 @@ For DR4, we calculate Galactic extinction for `BASS`_ and `MzLS`_ as if they wer
 
 Extinction coefficients for the DECam filters use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in `Schlafly & Finkbeiner 2011`_).
+These coefficients are :math:`A / E(B-V)` = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064
+for the DECam :math:`u`, :math:`g`, :math:`r`, :math:`i`, :math:`z`, :math:`Y` filters,
+respectively. Note that these are *slightly* different from the coefficients in `Schlafly & Finkbeiner (2011)`_.
 
 The coefficients for the four WISE filters are derived from Fitzpatrick (1999), as recommended by Schafly & Finkbeiner,
 considered better than either the Cardelli et al (1989) curves or the newer Fitzpatrick & Massa (2009) NIR curve (which is not vetted beyond 2 microns).

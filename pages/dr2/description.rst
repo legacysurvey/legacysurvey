@@ -27,9 +27,9 @@ the Blanco Telescope.
 
 Data Release 2 (DR2) is the second public data release of images and catalogs for
 the DECam Legacy Survey. DR2 includes DECam data primarily from z-band
-observations in August 2013 (http://www.noao.edu/perl/abstract?2013A-0741) and
+observations in August 2013 (https://legacy.noirlab.edu/perl/abstract?2013A-0741) and
 g,r,z-band observations from August 2014 through June 2015 for an NOAO survey
-program (https://www.noao.edu/perl/abstract?2014B-0404).  It also includes
+program (https://legacy.noirlab.edu/perl/abstract?2014B-0404).  It also includes
 public data from other programs with the footprint, including data taken by the
 Dark Energy Survey that are now public, in the "stripe 82" region bounded by 315 <
 |alpha| < 360 |deg| or 0 < |alpha| < 5 |deg|, and by -3\ |deg| < |delta| < +3\
@@ -81,7 +81,7 @@ Obtaining Images and Raw Data
 ==============================
 
 Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOAO portal`_ (see also the information near
+and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
@@ -100,7 +100,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`files`: ../files
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
-.. _`the NOAO portal`: http://portal-nvo.noao.edu/
+.. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
 ================
@@ -134,7 +134,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
-https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
 
@@ -248,7 +248,7 @@ The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the DECam filters.
 
 Zero point magnitudes for the CP version 2 reductions of the DECam images
-were computed by comparing 7\ |Prime| diameter aperture photometry to 
+were computed by comparing 7\ |Prime| diameter aperture photometry to
 PS1 photometry, where the latter was modified with color terms
 to place the PS1 photometry on the DECam system.  The same color terms
 are applied to all CCDs.
@@ -339,7 +339,7 @@ Brick
 
 CP
     Community Pipeline (DECam reduction pipeline operated by NOAO;
-    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org>`_.
@@ -359,7 +359,7 @@ MoG
     Mixture-of-gaussian model to approximate the galaxy models (https://arxiv.org/abs/1210.6563).
 
 NOAO
-    `National Optical Astronomy Observatory <http://www.noao.edu>`_.
+    `National Optical Astronomy Observatory <https://legacy.noirlab.edu>`_.
 
 nanomaggie
     Linear flux units, where an object with an AB magnitude of 22.5 has a flux

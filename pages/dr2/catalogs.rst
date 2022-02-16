@@ -12,7 +12,7 @@
 tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
-FITS binary table containing Tractor photometry. Note there is a 
+FITS binary table containing Tractor photometry. Note there is a
 `known issue`_ regarding the fact that some bricks contain pixels but zero sources, hence have empty (zero-row) catalog files.
 
 .. _`known issue`: ../issues
@@ -87,14 +87,14 @@ from the CP Data Quality bits.
 === ===== =========================== ==================================================
 Bit Value Name                        Description
 === ===== =========================== ==================================================
-  0     1 detector bad pixel/no data  detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  1     2 saturated                   detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  2     4 interpolated                detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  4    16 single exposure cosmic ray  detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  6    64 bleed trail                 detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  7   128 multi-exposure transient    detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  8   256 edge                        detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-  9   512 edge2                       detailed at https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  0     1 detector bad pixel/no data  detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  1     2 saturated                   detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  2     4 interpolated                detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  4    16 single exposure cosmic ray  detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  6    64 bleed trail                 detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  7   128 multi-exposure transient    detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  8   256 edge                        detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+  9   512 edge2                       detailed at https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
  10  1024 longthin                    :math:`\gt 5\sigma` connected components with major axis :math:`\gt 200` pixels and major/minor axis :math:`\gt 0.1`.  To mask, e.g, satellite trails.
 === ===== =========================== ==================================================
 
@@ -104,7 +104,7 @@ Goodness-of-Fits
 
 The DCHISQ values represent the |chi|\ |sup2| sum of all pixels in the source's blob
 for various models.  This 5-element vector contains the |chi|\ |sup2| difference between
-the best-fit point source (type="PSF"), simple galaxy model ("SIMP"), de Vaucouleurs model ("DEV"), 
+the best-fit point source (type="PSF"), simple galaxy model ("SIMP"), de Vaucouleurs model ("DEV"),
 exponential model ("EXP"), and a composite model ("COMP"), in that order.
 The "simple galaxy" model is an exponential galaxy with fixed shape of 0.45" and zero ellipticity (round)
 and is meant to capture slightly-extended but low signal-to-noise objects.
@@ -139,8 +139,9 @@ which are different from those used in SDSS-I,II,III, but are the values used fo
 
 Extinction coefficients for the DECam filters also use the `Schlafly & Finkbeiner (2011)`_ values,
 with u-band computed using the same formulae and code at airmass 1.3 (Schlafly, priv. comm. decam-data list on 11/13/14).
-These coefficients are A / E(B-V) = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064.
-(These are slightly different than the ones in `Schlafly & Finkbeiner 2011`_.)
+These coefficients are :math:`A / E(B-V)` = 3.995, 3.214, 2.165, 1.592, 1.211, 1.064
+for the DECam :math:`u`, :math:`g`, :math:`r`, :math:`i`, :math:`z`, :math:`Y` filters,
+respectively. Note that these are *slightly* different from the coefficients in `Schlafly & Finkbeiner (2011)`_.
 
 The coefficients for the four WISE filters are derived from Fitzpatrick 1999, as recommended by Schafly & Finkbeiner,
 considered better than either the Cardelli et al 1989 curves or the newer Fitzpatrick & Massa 2009 NIR curve not vetted beyond 2 micron).

@@ -27,7 +27,7 @@ the Blanco Telescope.
 
 Data Release 3 (DR3) is the third public data release of images and catalogs for
 the DECam Legacy Survey (DECaLS). Images from DECaLS
-g,r,z-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+g,r,z-band observations (survey program 0404; https://legacy.noirlab.edu/perl/abstract?2014B-0404)
 are included from August 2014 through March 2016. DR3 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from September 2012 to March 2016.
 
@@ -130,7 +130,7 @@ Sky Level
 
 The Community Pipeline removes a sky level that includes a sky pattern, an illumination correction,
 and a single scaled fringe pattern.  These steps are described here:
-https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
+https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html .
 This makes the sky level in the processed images near zero, and removes most pattern artifacts.
 A constant sky level is then added back to the image that is the mean of what was removed.
 
@@ -334,7 +334,7 @@ Brick
 
 CP
     Community Pipeline (DECam reduction pipeline operated by NOIRLab;
-    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org>`_.

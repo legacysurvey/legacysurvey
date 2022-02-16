@@ -37,7 +37,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOIRLab Community Pipeline`: https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-gaussian`: https://arxiv.org/abs/1210.6563
@@ -65,7 +65,7 @@ processed using the `Tractor`_. DR7 also includes `WISE`_ fluxes from `year 4 of
 force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 Images from `DECaLS`_
-:math:`g,r,z`-band observations (survey program 0404; https://www.noao.edu/perl/abstract?2014B-0404)
+:math:`g,r,z`-band observations (survey program 0404; https://legacy.noirlab.edu/perl/abstract?2014B-0404)
 are included from 12th August 2013 through 18th March 2018. DR7 also includes DECam data from a range of
 non-DECaLS surveys, including observations that were conducted from August 2013 to March 2018.
 
@@ -416,7 +416,7 @@ systematics are stable at the 0.1% level.
 .. _`DECaLS g-band`: ../../files/decam.g.am1p4.dat.txt
 .. _`DECaLS r-band`: ../../files/decam.r.am1p4.dat.txt
 .. _`DECaLS z-band`: ../../files/decam.z.am1p4.dat.txt
-.. _`Mosaic-3`: http://www-kpno.kpno.noao.edu/mosaic/index.html
+.. _`Mosaic-3`: https://noirlab.edu/science/programs/kpno/retired-instruments/mosaic
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
 
@@ -482,7 +482,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: Most bricks were run with dr7v3.31. A few were finished with dr7v3.32. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.74.
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr7.0.
-* `NOIRLab Community Pipeline <https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded as ``PLVER``.
+* `NOIRLab Community Pipeline <https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: mixture of versions; recorded as ``PLVER``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.19.5.
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.17.1.
 
@@ -508,7 +508,7 @@ Brick
 
 CP
     Community Pipeline (reduction pipeline operated by NOIRLab;
-    https://www.noao.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
+    https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.

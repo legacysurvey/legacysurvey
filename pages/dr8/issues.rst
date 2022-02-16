@@ -93,7 +93,7 @@ for these 4 quantities in the DR8 documentation were originally incorrect. These
 .. _`to fix a different bug in the reduction process`: https://github.com/legacysurvey/legacypipe/commit/a10ecc33247ec615ec1d8401cef2e0787f91a8fc
 .. _`Legacy Surveys website`: https://github.com/legacysurvey/legacysurvey/issues
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
-.. _`DECam CCDs page`: http://www.ctio.noao.edu/noao/content/Status-DECam-CCDs
+.. _`DECam CCDs page`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/Status-DECam-CCDs
 .. _`DECaLS`: ../../decamls
 .. _`Tractor catalogs`: ../catalogs
 .. _`coadd files`: ../files/#image-stacks-region-coadd
@@ -101,4 +101,3 @@ for these 4 quantities in the DR8 documentation were originally incorrect. These
 .. _`viewer`: https://www.legacysurvey.org/viewer
 .. _`Andromeda`: https://www.legacysurvey.org/viewer?ra=10.6801&dec=41.2757&zoom=10&layer=dr8
 .. _`M13`: https://www.legacysurvey.org/viewer?ra=250.4306&dec=36.4666&zoom=10&layer=dr8
-

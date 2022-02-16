@@ -602,47 +602,9 @@ the colors.
 Raw Data
 ========
 
-Raw and Calibrated Legacy Survey images are available from the Astro Data Lab's [1]_ Science Archive through the web
-portal (http://archive.noao.edu/search/query) and an ftp server. The input data used to create the
-stacked images, Tractor catalogs, etc. comprise images
-taken from the Mayall :math:`z`-band Legacy Survey (`MzLS`_) in the :math:`z` band, and from
-the Beijing-Arizona Sky Survey (`BASS`_) in the :math:`g` & :math:`r` bands.
+See the `raw data page`_.
 
-(i) Web interface
------------------
-
-1. Query the `Astro Data Lab's Science Archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR4).
-3. Under "Data products - Raw data" check "Object".
-4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
-5. Click "Search".
-6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
-
-.. _`Astro Data Lab's Science Archive`: http://archive.noao.edu/search/query
-.. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
-
-
-(ii) ftp sites
---------------
-
-Following the organization of the Stacked images, Raw and Calibrated images are organized
-by survey brick, which are defined in the file *survey-bricks-dr4.fits.gz* for DR4. Both the main Tractor
-catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
-format ``<AAAa>c<BBB>)``.
-
-- Raw: ftp://archive.noao.edu/public/hlsp/ls/dr4/raw/``<AAA>/<brick>``
-- Calibrated: ftp://archive.noao.edu/public/hlsp/ls/dr4/calibrated/``<AAA>/<brick>``
-- Stacked: ftp://archive.noao.edu/public/hlsp/ls/dr4/coadd/``<AAA>/<brick>``
-
-For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
-from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``
-contains an ASCII file
-with a list of ``EXPID`` and ``IMAGE_FILENAME``
-(*legacysurvey*-``<brick>``-*image_filename.txt*).
-``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``.
-There is one entry per CCD. Often, multiple CCDs from a given file are used so there are
-fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
-file contains the number of unique images in the last row (File Count).
+.. _`raw data page`: ../../rawdata
 
 |
 

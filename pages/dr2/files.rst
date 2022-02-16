@@ -82,7 +82,7 @@ decals-ccds.fits.gz
 
 A FITS binary table with almanac information (e.g. seeing, etc.) about each individual CCD image. Note that this is the only file in the top-level directory that is gzipped (it is slightly larger than other such files and is gzipped for compliance with the legacysurvey github repository).
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog. 
+This file contains information regarding the photometric and astrometric zero points for each CCD of every DECam image that is part of the DECaLS DR2 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes (measured in an approximately 7 arcsec diameter aperture) to color-selected stars in the PanSTARRS "qy" catalog.
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -101,7 +101,7 @@ Column             Type       Description
 ``filter``         char[1]    Filter used for observation, eg "g", "r", "z".
 ``seeing``         float      Seeing in arcseconds determined by fitting a 2-dimensional gaussian to the median PSF of stars on the CCD, eg 1.1019.
 ``date_obs``       char[10]   Date of observation start, eg "2014-08-15".  Can be combined with ``ut``, or use ``mjd_obs`` instead.
-``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.               
+``mjd_obs``        double     Date of observation in MJD (in UTC system), eg 56884.99373389.
 ``ut``             char[15]   Time of observation start, eg "23:50:58.608241".
 ``airmass``        float      Airmass, eg 1.35.
 ``propid``         char[10]   NOAO Proposal ID that took this image, eg "2014B-0404".
@@ -224,10 +224,10 @@ decals-dr2-specObj-dr12.fits
 ----------------------------
 HDU1 (the only HDU) contains Tractored DECaLS
 photometry that is row-by-row-matched to the SDSS DR12 spectrosopic
-pipeline file such that the photometric parameters in row "N" of 
+pipeline file such that the photometric parameters in row "N" of
 decals-dr2-specObj-dr12.fits matches the spectroscopic parameters in row "N" of
 specObj-dr12.fits. The structure of the DECaLS photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file 
+`catalogs page`_ and the spectroscopic file
 is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
 
 .. _`catalogs page`: ../catalogs
@@ -235,13 +235,13 @@ is documented in the SDSS DR12 `data model for specObj-dr12.fits`_.
 
 decals-dr2-DR12Q.fits
 ---------------------
-HDU1 (the only HDU) contains Tractored DECaLS 
-photometry that is row-by-row-matched to the SDSS DR12 
+HDU1 (the only HDU) contains Tractored DECaLS
+photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 decals-dr2-DR12Q.fits matches the spectroscopic parameters in row "N" of
 DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
-`catalogs page`_ and the spectroscopic file 
+`catalogs page`_ and the spectroscopic file
 is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2014`: https://ui.adsabs.harvard.edu/abs/2014A%26A...563A..54P/abstract
@@ -252,9 +252,9 @@ decals-dr2-Superset_DR12Q.fits
 ------------------------------
 HDU1 (the only HDU) contains Tractored DECaLS
 photometry catalog that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
-confirmed objects that were visually inspected as possible quasars 
+confirmed objects that were visually inspected as possible quasars
 (Paris et al. 2016, in preparation, see also `Paris et al. 2014`_)
-such that the photometric parameters in row "N" of 
+such that the photometric parameters in row "N" of
 decals-dr2-Superset_DR12Q.fits matches the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The structure of the DECaLS photometric catalog files is documented on the
 `catalogs page`_ and the spectroscopic file
@@ -269,7 +269,7 @@ Tractor Catalogs
 
 In the file listings outlined below:
 
-- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|). 
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|).
 
 - **<brickmin>** and **<brickmax>** denote the corners of a rectangle in (RA, Dec). Explicitly, **<brickmin>** has the format `<AAA>c<BBB>` where `<AAA>` denotes three digits of the minimum :math:`int(RA)` in degrees, <BBB> denotes three digits of the minimum :math:`int(Dec)` in degrees, and `c` uses the `p`/`m` ("plus"/"minus") format outlined in the previous bullet point. The convention is similar for  **<brickmax>** and the maximum RA and Dec. For example `000m010-010m005` would correspond to a survey region limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
@@ -283,7 +283,7 @@ tractor/<AAA>/tractor-<brick>.fits
 ----------------------------------
 
 FITS binary table containing Tractor photometry, documented on the
-`catalogs page`_. 
+`catalogs page`_.
 
 .. _`catalogs page`: ../catalogs
 
@@ -438,22 +438,6 @@ the colors.
 Raw Data
 ========
 
-Raw Legacy Survey images are available through the NOAO Science Archive.  The
-*input* data used to create the stacked images, Tractor catalogs, etc. comprises
-images taken by the dedicated DECam Legacy Survey project, as well as other
-DECam images, and images from other surveys.  These instructions are for
-obtaining raw images from the DECam Legacy Survey *only*.
+See the `raw data page`_.
 
-
-1. Visit the `NOAO Science Archive`_.
-2. Click on `General Search for NOAO data (all users)`_.
-3. From the menu of "Available Collections" at left, select the desired DECaLS data release (e.g. DECaLS-DR2).
-4. Under "Data products - Raw data" check "Object".
-5. Optionally, you may select data from specific DECam filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
-6. Click Search.
-7. The Results page offers several different ways to download the detail. See 
-   `the Tutorials page`_ for details.
-
-.. _`NOAO Science Archive`: http://portal-nvo.noao.edu
-.. _`General Search for NOAO data (all users)`: http://portal-nvo.noao.edu/search/query
-.. _`the Tutorials page`: http://portal-nvo.noao.edu/tutorials/query
+.. _`raw data page`: ../../rawdata

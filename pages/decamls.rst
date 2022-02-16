@@ -10,10 +10,10 @@
 
 The Dark Energy Camera (DECam) on the Blanco 4m telescope,
 located at the Cerro Tololo Inter-American Observatory, will provide the optical
-imaging for targeting for 2/3 of the Dark Energy Spectroscopic Instrument (`DESI`_) 
+imaging for targeting for 2/3 of the Dark Energy Spectroscopic Instrument (`DESI`_)
 footprint, covering both the North Galactic Cap region at Dec |leq| 32\ |deg|
 and the South Galactic Cap region at Dec |leq| 34\ |deg|.  Due to the
-combination of large field of view and high sensitivity from 400-1000 nm, 
+combination of large field of view and high sensitivity from 400-1000 nm,
 DECam is an efficient option for obtaining photometry in the
 :math:`g`, :math:`r`, and :math:`z` bands.
 
@@ -25,7 +25,7 @@ radius of 0.45 arcsec.  Because of the incomplete fill factor of DECam,
 a 3-pass observing strategy has been designed where these depths are
 met with 2 of the 3 exposures.  Accounting for weather loss,
 DECam is capable of imaging 9000 deg\ |sup2| of the `DESI`_
-footprint to this depth in 157 scheduled nights. 
+footprint to this depth in 157 scheduled nights.
 
 A public survey, "The DECam Legacy Survey of the SDSS Equatorial
 Sky" (PI: D. Schlegel and A. Dey), was
@@ -64,7 +64,7 @@ and the `DESI Legacy Imaging Surveys Overview Paper.`_
 .. _`DESI`: https://desi.lbl.gov
 .. _`DES`: https://www.darkenergysurvey.org
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
-.. _`2013A-0741`: https://www.noao.edu/perl/abstract?2013A-0741
-.. _`2014B-0404`: https://www.noao.edu/perl/abstract?2014B-0404
+.. _`2013A-0741`: https://legacy.noirlab.edu/perl/abstract?2013A-0741
+.. _`2014B-0404`: https://legacy.noirlab.edu/perl/abstract?2014B-0404
 .. _`full proposal text`: https://www.legacysurvey.org/files/LargeSurvey.pdf
 .. _`DECam Legacy Survey Principles`: https://desi.lbl.gov/trac/wiki/PublicPages/DecamLegacy/Principles

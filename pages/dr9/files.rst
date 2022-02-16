@@ -169,23 +169,23 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[120]  Path to FITS image, e.g. "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz".
+``image_filename``   char[120]  Path to FITS image, *e.g.* "north/DECam_CP/CP20170729/c4d_170730_045351_ooi_g_v1.fits.fz".
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found.
 ``camera``           char[X]    The camera that took this image (X is 7 for "90prime", 6 for "mosaic" and 5 for "decam").
-``expnum``           int64      Exposure number, eg 348224.
-``plver``	     char[8]	Community Pipeline (CP) version number.
-``procdate``	     char[19]	CP processing date.
-``plprocid``	     char[7]	Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date.
-``ccdname``          char[X]    CCD name, e.g. "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam).
+``expnum``           int64      Exposure number, *e.g.* 348224.
+``plver``            char[8]    Community Pipeline (CP) version number.
+``procdate``         char[19]   CP processing date.
+``plprocid``         char[7]    Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date.
+``ccdname``          char[X]    CCD name, *e.g.* "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam).
 ``object``           char[35]   Name listed in the object tag from the CCD header.
 ``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404".
-``filter``           char[1]    Filter used for observation, eg ":math:`g`", ":math:`r`", ":math:`z`".
-``exptime``          float32    Exposure time in seconds, eg 30.
-``mjd_obs``          float64    Date of observation in MJD (in UTC system), eg 56884.99373389.
-``airmass``	     float32	Airmass of observation (measured at the telescope bore-sight).
+``filter``           char[1]    Filter used for observation, *e.g.* ":math:`g`", ":math:`r`", ":math:`z`".
+``exptime``          float32    Exposure time in seconds, *e.g. 30.
+``mjd_obs``          float64    Date of observation in MJD (in UTC system), *e.g.* 56884.99373389.
+``airmass``          float32    Airmass of observation (measured at the telescope bore-sight).
 ``fwhm``             float32    FWHM (in pixels) measured by the CP.
-``width``            int16      Width in pixels of this image, eg 2046.
-``height``           int16      Height in pixels of this image, eg 4096.
+``width``            int16      Width in pixels of this image, *e.g.* 2046.
+``height``           int16      Height in pixels of this image, *e.g.* 4096.
 ``ra_bore``          float64    Telescope boresight RA  of this exposure (deg).
 ``dec_bore``         float64    Telescope boresight Dec of this exposure (deg).
 ``crpix1``           float32    Astrometric header value: X reference pixel.
@@ -196,23 +196,22 @@ Column               Type       Description
 ``cd1_2``            float32    Astrometric header value: transformation matrix.
 ``cd2_1``            float32    Astrometric header value: transformation matrix.
 ``cd2_2``            float32    Astrometric header value: transformation matrix.
-``yshift``	     boolean	(ignore; it's always ``False``).
+``yshift``           boolean    (ignore; it's always ``False``).
 ``ra``               float64    Approximate RA center of this CCD (deg).
 ``dec``              float64    Approximate Dec center of this CCD (deg).
 ``skyrms``           float32    Sky rms for the entire image (in counts/second).
 ``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies.
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag).
-``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), eg 25.0927.
+``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), *e.g.* 25.0927.
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
-``ccdskycounts``     float32    Mean sky counts level per second per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500].
-``ccdskysb``	     float32	Sky surface brightness (in AB mag/arcsec2).
+``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. DECam exposure data is in electrons. Mosaic and 90prime are in electrons/sec. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccdphrms``         float32    Photometric rms for the CCD (in mag).
 ``phrms``            float32    Median photometric rms across all CCDs in the image (in mag).
-``ccdnastrom``	     int16	Number of stars (after sigma-clipping) used to compute astrometric correction.
-``ccdnphotom``	     int16	Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five.
+``ccdnastrom``       int16      Number of stars (after sigma-clipping) used to compute astrometric correction.
+``ccdnphotom``       int16      Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five.
 ``ccd_cuts``         int32      Bit mask describing CCD image quality (see the `DR9 bitmasks page`_).
 ==================== ========== =======================================================
 
@@ -1195,53 +1194,9 @@ We don't expect that most users will need a description of these files, but `con
 Raw Data
 ========
 
-`Astro Data Lab`_ access to raw and calibrated images is now available.
+See the `raw data page`_.
 
-.. _`Astro Data Lab`: https://datalab.noirlab.edu/
-
-Raw and Calibrated Legacy Survey images are available from the `NOIRLab Astro Data Archive`_ through the web
-portal (https://astroarchive.noirlab.edu/portal/search/).
-The input data used to create the
-stacked images, Tractor `catalogs`_, etc. comprise images taken by the dedicated `DESI`_ Legacy Imaging Surveys
-project, as well as other images from the NOIRLab telescopes.
-
-Web Interface
--------------
-
-*Warning:* these instructions are still being updated.
-
-1. Query the `NOIRLab Astro Data archive`_.
-2. From the menu of "Available Collections" on the left, select the desired data release (e.g. LS-DR9).
-3. Under "Data products - Raw data" check "Object".
-4. Optionally, you may select data from specific filters, or restrict the search by other parameters such as sky coordinates, observing date, or exposure time.
-5. Click "Search".
-6. The Results page offers several different ways to download the data. See `the Tutorials page`_ for details.
-
-.. _`NOIRLab Astro Data archive`: https://astroarchive.noirlab.edu/portal/search/
-.. _`the Tutorials page`: http://archive.noao.edu/tutorials/query
-
-
-API Query
----------
-
-*Warning:* these instructions are still being updated.
-
-Following the organization of the Stacked images, Raw and Calibrated images are organized
-by survey brick, which are defined in the file **survey-bricks-dr9.fits.gz** for DR9. Both the main Tractor
-catalogs and Sweep catalogs include the ``BRICKNAME`` keyword (corresponding to ``<brick>`` with
-format ``<AAAa>c<BBB>)``.
-
-For the calibrated images, filenames can be retrieved from the ``IMAGE_FILENAME`` keyword in each brick
-from *legacysurvey*-``<brick>``-*ccds.fits*. Additionally, each *calibrated*/``<AAA>/<brick>``
-contains an ASCII file with a list of ``EXPID`` and ``IMAGE_FILENAME``
-(*legacysurvey*-``<brick>``-*image_filename.txt*).
-``EXPID`` contains the exposure number and the CCD name with the format ``EXPNUM-ccd``.
-There is one entry per CCD. Often, multiple CCDs from a given file are used so there are
-fewer unique filenames than the number of CCDs. Each *legacysurvey*-``<brick>``-*image_filename.txt*
-file contains the number of unique images in the last row (File Count).
-
-Note that the weight map images (the ``oow`` files) are in the same units as :math:`1/\mathtt{skyrms}^2` in the **survey-ccds-<camera>-dr9.fits.gz** files (documented above).
-But, these images need to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for **<camera>** of **mosaic** or **90prime**).
+.. _`raw data page`: ../../rawdata
 
 |
 

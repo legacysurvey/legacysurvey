@@ -3,7 +3,7 @@
 ## 9.0.7 (DR9, unreleased)
 
 - Planned: actually update the raw and CP-processed data access instructions
-  ([#143](https://github.com/legacysurvey/legacysurvey/issues/149)).
+  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
 ## 9.0.6 (DR9, 2022-02-16)
 

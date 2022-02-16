@@ -1,5 +1,10 @@
 # legacysurvey Change Log
 
+## 9.0.7 (DR9, unreleased)
+
+- Planned: actually update the raw and CP-processed data access instructions
+  ([#143](https://github.com/legacysurvey/legacysurvey/issues/149)).
+
 ## 9.0.6 (DR9, 2022-02-16)
 
 - Replace `noao.edu` with `noirlab.edu` wherever possible; move raw

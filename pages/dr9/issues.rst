@@ -57,3 +57,24 @@ A list of the affected bricks `is available here`_.
 `Blobmodel images`_ were intended to be compressed, and are named with a ``.fits.fz`` suffix, but they are not actually compressed.
 
 .. _`Blobmodel images`: ../files/#image-stacks-region-coadd
+
+
+``NOBS`` differs between the Tractor catalogs and random catalogs
+-----------------------------------------------------------------
+
+Quantities named ``nobs_x`` (where ``x`` is any of the Legacy Surveys imaging bands) in the `Tractor catalogs`_ (and derived
+products such as the sweep files) are slightly different to the ``NOBS_X`` quantities in the `random catalogs`_.
+
+The `Tractor catalogs`_ ``nobs`` columns count *all* pixels overlapping each brick pixel, even if the pixel is masked. In contrast,
+the `random catalogs`_ are derived from the ``nexp`` `coadded stacks`_, which only count pixels where the inverse variances are positive.
+This means, for instance, that the ``nexp`` stacks ignore both masked pixels and pixels that have zero weight passed forwards from the
+Community Pipeline.
+
+The result of this discrepancy is that a few percent of objects in the `Tractor catalogs`_ have different values of ``nobs`` than would
+be expected when deriving ``NOBS`` from the same location in the ``nexp`` `coadded stacks`_. Conveniently, the ``nobs`` values in the `Tractor catalogs`_
+are (almost) always larger than what would be derived from the ``nexp`` `coadded stacks`_. This means that constraints based on a minimum number of
+observations in a given filter will always result in reproducible survey geometry, at the expensive of rejecting a few per cent of sources.
+
+.. _`Tractor catalogs`: ../catalogs
+.. _`random catalogs`: ../files/#random-catalogs-randoms
+.. _`coadded stacks`: ../files/#image-stacks-region-coadd

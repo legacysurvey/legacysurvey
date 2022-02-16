@@ -63,7 +63,7 @@ A list of the affected bricks `is available here`_.
 -----------------------------------------------------------------
 
 Quantities named ``nobs_x`` (where ``x`` is any of the Legacy Surveys imaging bands) in the `Tractor catalogs`_ (and derived
-products such as the sweep files) are slightly different to the ``NOBS_X`` quantities in the `random catalogs`_.
+products such as the sweep files) are slightly different from the ``NOBS_X`` quantities in the `random catalogs`_.
 
 The `Tractor catalogs`_ ``nobs`` columns count *all* pixels overlapping each brick pixel, even if the pixel is masked. In contrast,
 the `random catalogs`_ are derived from the ``nexp`` `coadded stacks`_, which only count pixels where the inverse variances are positive.

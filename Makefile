@@ -4,7 +4,7 @@
 export SHELL = /bin/sh
 LASTTAG := $(shell git describe --tags --dirty --always | cut -d- -f1)
 COUNT := $(shell git rev-list --count HEAD)
-VERSION := $(shell if test -n "$(TAG)"; then v=$(TAG); else v=$(LASTTAG).post$(COUNT); fi; echo "$${v}")
+export VERSION := $(shell if test -n "$(TAG)"; then v=$(TAG); else v=$(LASTTAG).post$(COUNT); fi; echo "$${v}")
 #
 # This is the first target so it is the default.
 #

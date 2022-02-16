@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 import time
+import os
 
 # Configuration, please edit
 
@@ -18,6 +19,10 @@ BLOG_EMAIL = "no-reply@legacysurvey.org"
 BLOG_DESCRIPTION = "Legacy Survey"
 LOGO_URL = "/files/logo_tiny.jpg"
 SHOW_BLOG_TITLE = False
+try:
+    SITE_VERSION = os.environ['VERSION']
+except KeyError:
+    SITE_VERSION = 'Unknown'
 # Nikola is multilingual!
 #
 # Currently supported languages are:
@@ -414,15 +419,17 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
-CONTENT_FOOTER = """<hr/>
+CONTENT_FOOTER_TEMPLATE = """<hr/>
 <p class="text-muted">Contents &copy; {date}  <a href="mailto:{email}">{author}</a> |
 Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> |
 Theme is <a href="https://bootswatch.com/3/readable/">Readable</a> |
-<a href="https://github.com/legacysurvey/legacysurvey">Source</a></p>
+<a href="https://github.com/legacysurvey/legacysurvey">Source</a> |
+Version is {version}</p>
 """
-CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
-                                       author=BLOG_AUTHOR,
-                                       date=time.gmtime().tm_year)
+CONTENT_FOOTER = CONTENT_FOOTER_TEMPLATE.format(email=BLOG_EMAIL,
+                                                author=BLOG_AUTHOR,
+                                                version=SITE_VERSION,
+                                                date=time.gmtime().tm_year)
 
 # To use comments, you can choose between different third party comment
 # systems, one of "disqus", "livefyre", "intensedebate", "moot",

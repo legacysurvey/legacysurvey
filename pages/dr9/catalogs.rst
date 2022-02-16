@@ -136,13 +136,13 @@ Name                                  Type         Units                 Descrip
 ``mw_transmission_w2``	              float32                            Galactic transmission in :math:`W2` filter in linear units [0, 1]
 ``mw_transmission_w3``	              float32                            Galactic transmission in :math:`W3` filter in linear units [0, 1]
 ``mw_transmission_w4``	              float32                            Galactic transmission in :math:`W4` filter in linear units [0, 1]
-``nobs_g``                            int16                              Number of images that contribute to the central pixel in :math:`g`: filter for this object (not profile-weighted)
-``nobs_r``                            int16                              Number of images that contribute to the central pixel in :math:`r`: filter for this object (not profile-weighted)
-``nobs_z``                            int16                              Number of images that contribute to the central pixel in :math:`z`: filter for this object (not profile-weighted)
-``nobs_w1``                           int16                              Number of images that contribute to the central pixel in :math:`W1`: filter for this object (not profile-weighted)
-``nobs_w2``                           int16                              Number of images that contribute to the central pixel in :math:`W2`: filter for this object (not profile-weighted)
-``nobs_w3``                           int16                              Number of images that contribute to the central pixel in :math:`W3`: filter for this object (not profile-weighted)
-``nobs_w4``                           int16                              Number of images that contribute to the central pixel in :math:`W4`: filter for this object (not profile-weighted)
+``nobs_g``                            int16                              Number of images that contribute to the central pixel in :math:`g` filter for this object (not profile-weighted)
+``nobs_r``                            int16                              Number of images that contribute to the central pixel in :math:`r` filter for this object (not profile-weighted)
+``nobs_z``                            int16                              Number of images that contribute to the central pixel in :math:`z` filter for this object (not profile-weighted)
+``nobs_w1``                           int16                              Number of images that contribute to the central pixel in :math:`W1` filter for this object (not profile-weighted)
+``nobs_w2``                           int16                              Number of images that contribute to the central pixel in :math:`W2` filter for this object (not profile-weighted)
+``nobs_w3``                           int16                              Number of images that contribute to the central pixel in :math:`W3` filter for this object (not profile-weighted)
+``nobs_w4``                           int16                              Number of images that contribute to the central pixel in :math:`W4` filter for this object (not profile-weighted)
 ``rchisq_g``                          float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`g`
 ``rchisq_r``                          float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`r`
 ``rchisq_z``                          float32                            Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels in :math:`z`

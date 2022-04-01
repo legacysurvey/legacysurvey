@@ -1,11 +1,14 @@
 # legacysurvey Change Log
 
+## 9.1.0 (DR9, unreleased)
+
+- Planned: actually update the raw and CP-processed data access instructions
+  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+
 ## 9.0.8 (DR9, unreleased)
 
 - Add new i-band ``MASKBITS`` values (``SATUR_I`` and ``ALLMASK_I``)
   ([PR#154](https://github.com/legacysurvey/legacysurvey/pull/154)).
-- Planned: actually update the raw and CP-processed data access instructions
-  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
 ## 9.0.7 (DR9, 2022-02-16)
 

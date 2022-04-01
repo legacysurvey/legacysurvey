@@ -33,6 +33,8 @@ Bit Name          Description
 11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation`_. Set for Gaia stars with `G < 16`_. The ``MEDIUM`` radius is twice the ``BRIGHT`` radius at the same magnitude.
 12  ``GALAXY``    touches a pixel in an `SGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
+14  ``SATUR_I``   touches a pixel that was saturated in at least one :math:`i`-band image (always zero prior to DR10)
+15  ``ALLMASK_I`` touches a pixel that has any of the ``ALLMASK_I`` bits set (always zero prior to DR10)
 === ============= ===============================
 
 .. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py

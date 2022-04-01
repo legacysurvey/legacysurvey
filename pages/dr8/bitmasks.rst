@@ -53,6 +53,8 @@ Bit Name          Description
 11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation for Gaia DR2`_ stars `to G < 16`_
 12  ``GALAXY``    touches a pixel in an `SGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
+14  ``SATUR_I``   touches a pixel that was saturated in at least one :math:`i`-band image
+15  ``ALLMASK_I`` touches a pixel that has any of the ``ALLMASK_I`` bits set
 === ============= ===============================
 
 .. _`radius-magnitude relation for Tycho-2 stars`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/reference.py#L258

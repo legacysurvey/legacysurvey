@@ -2,12 +2,15 @@
 
 ## 9.1.0 (DR9, unreleased)
 
-- Planned: actually update the raw and CP-processed data access instructions
+- *Planned*: correct units for `ccdskycounts`
+  ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
+- *Planned*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+- *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
-## 9.0.8 (DR9, unreleased)
+## 9.0.8 (DR9, 2022-04-04)
 
-- Add new i-band ``MASKBITS`` values (``SATUR_I`` and ``ALLMASK_I``)
+- Add new i-band `MASKBITS` values (`SATUR_I` and `ALLMASK_I`)
   ([PR#154](https://github.com/legacysurvey/legacysurvey/pull/154)).
 
 ## 9.0.7 (DR9, 2022-02-16)
@@ -28,7 +31,7 @@
 ## 9.0.4 (DR9, 2021-10-19)
 
 - Fix SGA documentation bug ([PR#148](https://github.com/legacysurvey/legacysurvey/pull/148)).
-- Minor additions to sky viewer tips and tricks page: ``blink``, ``mark``, ``poly``, and custom catalog upload
+- Minor additions to sky viewer tips and tricks page: `blink`, `mark`, `poly`, and custom catalog upload
   ([PR#146](https://github.com/legacysurvey/legacysurvey/pull/146)).
 
 ## 9.0.3 (DR9, 2021-07-28)
@@ -49,9 +52,9 @@
   ([PR#137](https://github.com/legacysurvey/legacysurvey/pull/137)).  
 - A few more updates for DR9
   ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
-    - Specify relative radii of ``BRIGHT``/``MEDIUM`` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))
+    - Specify relative radii of `BRIGHT`/`MEDIUM` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))
     - Document the forced photometry files, remove "Coming Soon."
-    - Clarify the counts of morphological types are for ``BRICK_PRIMARY``.
+    - Clarify the counts of morphological types are for `BRICK_PRIMARY`.
     - Add some sizes for new directories we've added to the release.
 - Update some "Coming Soon" sections for DR9, now that they're released
   ([PR#133](https://github.com/legacysurvey/legacysurvey/pull/133)). Includes:
@@ -93,7 +96,7 @@
     - Updated publications through 2020-08-11.
     - Add a drop-down menu to access earlier versions of the gallery.
     - Update NERSC directory names to the Community File System.
-    - Add documentation for the ``CCD_CUTS`` and ``FITBITS`` bit-masks.
+    - Add documentation for the `CCD_CUTS` and `FITBITS` bit-masks.
     - Preliminary changes where information will need finalized (XXX).
     - Addresses [issue #109](https://github.com/legacysurvey/legacysurvey/issues/109)
       through 2020-08-26.

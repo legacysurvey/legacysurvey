@@ -11,14 +11,13 @@ on:
 
 jobs:
     tests:
-        name: Nikola 7
+        name: Nikola
         runs-on: ${{ matrix.os }}
         strategy:
             fail-fast: true
             matrix:
                 os: [ubuntu-latest]
-                python-version: [3.6, 3.7, 3.8, 3.9]
-                nikola-version: ['7.8.15']
+                python-version: ['3.8', '3.9', '3.10']
 
         steps:
             - name: Checkout code
@@ -31,37 +30,9 @@ jobs:
                   python-version: ${{ matrix.python-version }}
             - name: Install Python dependencies
               run: |
-                  python -m pip install --upgrade pip wheel
-                  python -m pip install nikola==${{ matrix.nikola-version }} docutils==0.16
-            - name: Run the test
-              run: |
-                  nikola build --strict
-                  test -d output
-
-    future:
-      name: Nikola 8
-      runs-on: ${{ matrix.os }}
-      strategy:
-          fail-fast: false
-          matrix:
-                os: [ubuntu-latest]
-                python-version: [3.9]
-
-      steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
-            - name: Set up Python ${{ matrix.python-version }}
-              uses: actions/setup-python@v2
-              with:
-                  python-version: ${{ matrix.python-version }}
-            - name: Install Python dependencies
-              run: |
-                  python -m pip install --upgrade pip wheel
+                  python -m pip install --upgrade pip setuptools wheel
                   python -m pip install nikola
-            - name: Run the test; failures are allowed
-              continue-on-error: true
+            - name: Run the test
               run: |
                   nikola build --strict
                   test -d output

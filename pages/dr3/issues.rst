@@ -1,7 +1,7 @@
 .. title: Known Issues and Workarounds
 .. slug: issues
-.. tags: mathjax
-.. description:
+.. tags: 
+.. has_math: yes
 
 DR3.1 Update to sweeps and Tractor Files
 ========================================

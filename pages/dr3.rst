@@ -1,5 +1,6 @@
 .. title: Data Release 3
 .. slug: dr3
+.. date: 2012-11-08 00:06:06
 
 .. container:: col-md-4
 
@@ -12,4 +13,3 @@
 .. _`Files`: /dr3/files
 .. _`Catalogs`: /dr3/catalogs
 .. _`Known Issues and Workarounds`: /dr3/issues
-

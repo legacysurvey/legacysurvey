@@ -1,5 +1,6 @@
 .. title: Data Release 9
 .. slug: dr9
+.. date: 2012-11-08 00:06:06
 
 .. container:: col-md-4
 

@@ -1,6 +1,7 @@
 .. title: Known Issues and Workarounds
 .. slug: issues
-.. tags: mathjax
+.. tags: 
+.. has_math: yes
 
 Catalogs with Zero Sources
 ==========================

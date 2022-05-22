@@ -1,5 +1,6 @@
 .. title: Data Release 1
 .. slug: dr1
+.. date: 2012-11-08 00:06:06
 
 .. container:: col-md-4
 

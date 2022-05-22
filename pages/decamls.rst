@@ -1,6 +1,8 @@
 .. title: The Dark Energy Camera Legacy Survey (DECaLS)
 .. slug: decamls
-.. tags: mathjax
+.. date: 2012-11-08 00:06:06
+.. tags: 
+.. has_math: yes
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
 .. |sup2|     unicode:: U+000B2 .. SUPERSCRIPT TWO

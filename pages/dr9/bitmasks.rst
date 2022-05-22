@@ -1,6 +1,7 @@
 .. title: DR9 bitmasks
 .. slug: bitmasks
-.. tags: mathjax
+.. tags: 
+.. has_math: yes
 
 .. class:: pull-right well
 

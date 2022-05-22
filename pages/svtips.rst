@@ -1,6 +1,8 @@
 .. title: Sky Viewer Tips & Tricks
 .. slug: svtips
-.. tags: mathjax
+.. date: 2012-11-08 00:06:06
+.. tags: 
+.. has_math: yes
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
 .. |sup2|     unicode:: U+000B2 .. SUPERSCRIPT TWO
@@ -29,5 +31,3 @@ A list of the URL patterns that are supported by the viewer is
 available `here`_.
 
 .. _`here`: https://www.legacysurvey.org/viewer/urls
-
-

@@ -1,7 +1,7 @@
 .. title: Acknowledgment for all Legacy Survey Data
 .. slug: acknowledgment-old
-.. tags: mathjax
-.. description:
+.. date: 2012-11-08 00:06:06
+.. tags: acknowledgment
 
 When using data from the Legacy Surveys in papers, please use the following acknowledgment:
 

@@ -1,6 +1,7 @@
 .. title: Major updates since DR7
 .. slug: updates
-.. tags: mathjax
+.. tags: 
+.. has_math: yes
 
 .. class:: pull-right well
 

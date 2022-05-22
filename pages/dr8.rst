@@ -1,5 +1,6 @@
 .. title: Data Release 8
 .. slug: dr8
+.. date: 2012-11-08 00:06:06
 
 .. container:: col-md-4
 
@@ -18,4 +19,3 @@
 .. _`Bitmasks`: /dr8/bitmasks
 .. _`External Catalogs`: /dr8/external
 .. _`Known Issues`: /dr8/issues
-

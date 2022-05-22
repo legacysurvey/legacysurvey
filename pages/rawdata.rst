@@ -1,5 +1,6 @@
 .. title: Accessing Raw and Calibrated Images
 .. slug: rawdata
+.. date: 2012-11-08 00:06:06
 
 .. class:: pull-right well
 

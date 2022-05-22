@@ -1,5 +1,6 @@
 .. title: Converting plprocid to a date
 .. slug: plprocid
+.. date: 2012-11-08 00:06:06
 
 ``plprocid`` is a time-based hash used as a unique identifier by the `NOIRLab Community Pipeline`_ (CP). Here are a couple of ways to convert ``plprocid`` to a date.
 Note that these methods recover the time in your `local` timezone, which you may have to adjust to reflect the timezone of the CP (Tucson, AZ).

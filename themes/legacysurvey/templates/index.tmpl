@@ -1,0 +1,39 @@
+## -*- coding: utf-8 -*-
+##
+## Modified from base to change the formatting of author and date
+##
+
+<%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+<%inherit file="base.tmpl"/>
+
+<%block name="content">
+<div class="postindex">
+% for post in posts:
+
+    <article class="h-entry post-${post.meta('type')}">
+    <header>
+        <h3 class="p-name">
+          <a href="${post.permalink()}" class="u-url">${post.title()}</a>
+	  &nbsp;
+          <small><time class="published dt-published" datetime="${post.date.isoformat()}">${post.formatted_date(date_format)}</time></small>
+	</h3>
+    </header>
+
+    %if index_teasers:
+    <div class="p-summary entry-summary">
+    ${post.text(teaser_only=True)}
+    %else:
+    <div class="e-content entry-content">
+    ${post.text(teaser_only=False)}
+    %endif
+    </div>
+
+    </article>
+
+% endfor
+</div>
+${helper.html_pager()}
+${comments.comment_link_script()}
+${helper.mathjax_script(posts)}
+</%block>

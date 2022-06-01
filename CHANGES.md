@@ -1,12 +1,17 @@
 # legacysurvey Change Log
 
-## 9.1.0 (DR9, unreleased)
+## 9.2.0 (DR9, unreleased)
 
 - *Planned*: correct units for `ccdskycounts`
   ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 - *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
+
+## 9.1.0 (DR9, 2022-06-01)
+
+- Support up-to-date Nikola versions `>=8.0`
+  ([PR#155](https://github.com/legacysurvey/legacysurvey/pull/155)).
 
 ## 9.0.8 (DR9, 2022-04-04)
 

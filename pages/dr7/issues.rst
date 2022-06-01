@@ -1,7 +1,8 @@
 .. title: Known Issues
 .. slug: issues
-.. tags: mathjax
-.. description:
+.. date: 2012-11-08 00:06:06
+.. tags: 
+.. has_math: yes
 
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME
@@ -12,8 +13,8 @@ DR7.1 update to sweeps files
 ============================
 The column ``BRIGHTSTARINBLOB`` was not initially included in the DR7 sweeps
 files. In addition, the ``GAIA_DUPLICATED_SOURCE`` column in the DR7 sweeps files
-was initially included as type *int8* rather than being passed through as a 
-*boolean* from the Tractor files. The DR7.1 sweeps files were provided as an 
+was initially included as type *int8* rather than being passed through as a
+*boolean* from the Tractor files. The DR7.1 sweeps files were provided as an
 update to rectify these issues.
 
 Smaller subsets of files of random points
@@ -25,7 +26,7 @@ DR1 and DR2 coadd files have been deprecated
 ============================================
 
 On August 23rd, 2018, the DR1 and DR2 coadd directories were removed to
-save space. Data from those directories is still 
+save space. Data from those directories is still
 available via FTP from the Astro Data Lab's archive for `DR1`_ and `DR2`_.
 
 Spurious extended sources exist across brick boundaries
@@ -50,5 +51,3 @@ extended sources that lie across a brick boundary that touches a bright star.
 .. _`catalogs page`: ../catalogs
 .. _`MzLS`: ../../mzls
 .. _`BASS`: ../../bass
-
-

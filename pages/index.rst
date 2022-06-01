@@ -1,7 +1,13 @@
 .. title: Index
 .. slug: index
-.. tags: mathjax
-.. date: 2012-11-08 00:06:06
+.. date: 2022-05-21 01:37:09 UTC
+.. tags:
+.. category:
+.. link:
+.. description:
+.. type: text
+.. author: Legacy Survey
+.. has_math: true
 .. hidetitle: true
 
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN

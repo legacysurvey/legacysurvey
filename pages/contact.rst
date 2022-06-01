@@ -1,5 +1,7 @@
 .. title: Contacts
 .. slug: contact
+.. date: 2012-11-08 00:06:06
+.. tags: Contact
 
 .. class:: pull-right well
 

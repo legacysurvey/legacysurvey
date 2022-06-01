@@ -1,7 +1,7 @@
 .. title: Modified PSFEx Profile and the Outer Wings of Stars
 .. slug: psf
-.. tags: mathjax
-.. description:
+.. tags: 
+.. has_math: yes
 
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |Prime|    unicode:: U+02033 .. DOUBLE PRIME

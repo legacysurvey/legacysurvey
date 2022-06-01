@@ -1,6 +1,8 @@
 .. title: The Mayall z-band Legacy Survey (MzLS)
 .. slug: mzls
-.. tags: mathjax
+.. date: 2012-11-08 00:06:06
+.. tags: MzLS
+.. has_math: yes
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
 .. |sup2|     unicode:: U+000B2 .. SUPERSCRIPT TWO
@@ -11,7 +13,7 @@
 .. |AA|    unicode:: U+212B .. ANGSTROM SYMBOL
 .. |mu|    unicode:: U+00B5 .. MICRO SIGN
 
-The Mayall :math:`z`-band Legacy Survey (MzLS) imaged the 
+The Mayall :math:`z`-band Legacy Survey (MzLS) imaged the
 Dec |geq| 32\ |deg| region of the Dark Energy Spectroscopic Instrument (`DESI`_)
 footprint. Although the focus of the survey was Dec |geq| +32\ |deg|, a few per cent of the
 observations included in the Legacy Surveys are at Dec < +32\ |deg|. Notably,
@@ -43,7 +45,7 @@ The dewar was delivered to NOAO in September 2015 where it
 was integrated with the MOSAIC-1.1 mechanical enclosure,
 shutter, filter wheel and acquisition and guider system.
 This upgraded camera, christened MOSAIC-3, saw first light in
-October 2015 and underwent further on-sky commissioning runs in 
+October 2015 and underwent further on-sky commissioning runs in
 November and December 2015. The :math:`z`-band efficiency has
 been measured to be improved by 60% as compared to the MOSAIC-1.1 camera.
 

@@ -1,7 +1,7 @@
 .. title: Tractor Catalog Format
 .. slug: catalogs
-.. tags: mathjax
-.. description:
+.. tags: 
+.. has_math: yes
 
 .. |chi|      unicode:: U+003C7 .. GREEK SMALL LETTER CHI
 .. |sup2|   unicode:: U+000B2 .. SUPERSCRIPT TWO

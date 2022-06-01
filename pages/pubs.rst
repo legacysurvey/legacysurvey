@@ -1,7 +1,8 @@
 .. title: Publications that use or reference Legacy Survey data or tools
 .. slug: pubs
-.. tags: mathjax
-.. description:
+.. date: 2012-11-08 00:06:06
+.. tags: 
+.. has_math: yes
 
 .. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
 .. |geq|    unicode:: U+2265 .. GREATER-THAN-OR-EQUAL-TO SIGN

@@ -1,6 +1,8 @@
 .. title: Interpretation of the bitmask column
 .. slug: bitmask
-.. tags: mathjax
+.. date: 2012-11-08 00:06:06
+.. tags: bitmask
+.. has_math: yes
 
 .. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
 .. |geq|    unicode:: U+2265 .. GREATER-THAN-OR-EQUAL-TO SIGN
@@ -25,8 +27,7 @@ Bit  Meaning
 ==== ========
 
 The CCDs used by `legacypipe`_ can be determined via:
- 
+
 ``photometric == True AND bitmask == 0``
 
 Note that ``photometric``, ``ccdrarms``, ``ccddecrms`` and ``ccdphrms`` are all columns in the ``ccds-`` and ``survey-`` files described on the DR4 `files page`_.
-

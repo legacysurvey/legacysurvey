@@ -1,7 +1,7 @@
 .. title: Acknowledgments for all Data from the Legacy Surveys
 .. slug: acknowledgment
-.. tags: mathjax
-.. description:
+.. date: 2012-11-08 00:06:06
+.. tags: acknowledgment
 
 .. class:: pull-right well
 

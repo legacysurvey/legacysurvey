@@ -51,11 +51,14 @@ Fan), and the Mayall z-band Legacy Survey (MzLS; Prop. ID #2016A-0453; PI: Arjun
 Dey). DECaLS, BASS and MzLS together include data obtained, respectively, at the Blanco telescope,
 Cerro Tololo Inter-American Observatory, NSF’s NOIRLab;
 the Bok telescope, Steward Observatory, University of Arizona; and the
-Mayall telescope, Kitt Peak National Observatory, NOIRLab. The Legacy Surveys project is honored
-to be permitted to conduct astronomical research on Iolkam Du’ag (Kitt Peak), a mountain with particular
-significance to the Tohono O’odham Nation.
+Mayall telescope, Kitt Peak National Observatory, NOIRLab.
+Pipeline processing and analyses of the data were supported by NOIRLab and the
+Lawrence Berkeley National Laboratory (LBNL). The Legacy Surveys project is honored
+to be permitted to conduct astronomical research on Iolkam Du’ag (Kitt Peak),
+a mountain with particular significance to the Tohono O’odham Nation.
 
 NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.
+LBNL is managed by the Regents of the University of California under contract to the U.S. Department of Energy.
 
 This project used data obtained with the Dark Energy Camera (DECam), which was constructed by
 the Dark Energy Survey (DES) collaboration. Funding for the DES Projects has been provided by

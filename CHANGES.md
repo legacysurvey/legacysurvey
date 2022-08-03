@@ -8,6 +8,10 @@
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 - *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
+## 9.1.1 (DR9, 2022-08-03)
+
+- Add LBNL and BASS details to acknowledgment ([#162](https://github.com/legacysurvey/legacysurvey/pull/162)).
+
 ## 9.1.0 (DR9, 2022-06-01)
 
 - Support up-to-date Nikola versions `>=8.0`

@@ -103,6 +103,30 @@ by the National Energy Research Scientific Computing Center, a DOE Office of Sci
 under the same contract; and by the U.S. National Science Foundation, Division of Astronomical
 Sciences under Contract No. AST-0950945 to NOAO.
 
+Short Acknowledgment for DESI Collaborators
+===========================================
+
+If you are *already* using the `standard DESI Acknowledgments`_ in your paper,
+you can *replace* the full Acknowledgment above with this shorter Acknowledgment:
+
+The DESI Legacy Imaging Surveys consist of three individual and complementary projects:
+the Dark Energy Camera Legacy Survey (DECaLS), the Beijing-Arizona Sky Survey (BASS),
+and the Mayall z-band Legacy Survey (MzLS). DECaLS, BASS and MzLS together include data obtained,
+respectively, at the Blanco telescope, Cerro Tololo Inter-American Observatory, NSF’s NOIRLab;
+the Bok telescope, Steward Observatory, University of Arizona; and the Mayall telescope,
+Kitt Peak National Observatory, NOIRLab.
+NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA)
+under a cooperative agreement with the National Science Foundation.
+Legacy Surveys also uses data products from the Near-Earth Object Wide-field Infrared Survey Explorer (NEOWISE),
+a project of the Jet Propulsion Laboratory/California Institute of Technology, funded by the National Aeronautics and Space Administration.
+Legacy Surveys was supported by: the Director, Office of Science,
+Office of High Energy Physics of the U.S. Department of Energy; the National Energy Research Scientific Computing Center,
+a DOE Office of Science User Facility;  the U.S. National Science Foundation, Division of Astronomical Sciences;
+the National Astronomical Observatories of China, the Chinese Academy of Sciences and the Chinese National Natural Science Foundation.
+The complete acknowledgments can be found at https://www.legacysurvey.org/acknowledgment/.
+
+.. _`standard DESI Acknowledgments`: https://desi.lbl.gov/trac/wiki/GuidetoPub/DESIAcknowledgements
+
 Additional Acknowledgments
 ==========================
 

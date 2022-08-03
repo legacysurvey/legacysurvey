@@ -125,7 +125,7 @@ a DOE Office of Science User Facility;  the U.S. National Science Foundation, Di
 the National Astronomical Observatories of China, the Chinese Academy of Sciences and the Chinese National Natural Science Foundation.
 The complete acknowledgments can be found at https://www.legacysurvey.org/acknowledgment/.
 
-.. _`standard DESI Acknowledgments`: https://desi.lbl.gov/trac/wiki/GuidetoPub/DESIAcknowledgements
+.. _`standard DESI Acknowledgments`: https://desi.lbl.gov/trac/wiki/GuidetoPub/DESIAcknowledgements#StandardAcknowledgements
 
 Additional Acknowledgments
 ==========================

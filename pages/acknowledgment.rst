@@ -91,7 +91,7 @@ National Astronomical Observatories of China, the Chinese Academy of Sciences (t
 Priority Research Program “The Emergence of Cosmological Structures” Grant # XDB09000000),
 and the Special Fund for Astronomy from the Ministry of Finance. The BASS is also supported
 by the External Cooperation Program of Chinese Academy of Sciences (Grant # 114A11KYSB20160057),
-and Chinese National Natural Science Foundation (Grant # 11433005).
+and Chinese National Natural Science Foundation (Grant # 12120101003, # 11433005).
 
 The Legacy Survey team makes use of data products from the Near-Earth Object Wide-field Infrared
 Survey Explorer (NEOWISE), which is a project of the Jet Propulsion Laboratory/California Institute

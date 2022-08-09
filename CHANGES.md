@@ -8,6 +8,10 @@
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 - *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
+## 9.1.2 (DR9, 2022-08-09)
+
+- Add LBNL details to *short* acknowledgment ([PR#164](https://github.com/legacysurvey/legacysurvey/pull/164)).
+
 ## 9.1.1 (DR9, 2022-08-03)
 
 - Add LBNL and BASS details to acknowledgment; allow

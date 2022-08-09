@@ -117,12 +117,14 @@ the Bok telescope, Steward Observatory, University of Arizona; and the Mayall te
 Kitt Peak National Observatory, NOIRLab.
 NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA)
 under a cooperative agreement with the National Science Foundation.
+Pipeline processing and analyses of the data were supported by NOIRLab and the Lawrence Berkeley National Laboratory (LBNL).
 Legacy Surveys also uses data products from the Near-Earth Object Wide-field Infrared Survey Explorer (NEOWISE),
 a project of the Jet Propulsion Laboratory/California Institute of Technology, funded by the National Aeronautics and Space Administration.
 Legacy Surveys was supported by: the Director, Office of Science,
 Office of High Energy Physics of the U.S. Department of Energy; the National Energy Research Scientific Computing Center,
 a DOE Office of Science User Facility;  the U.S. National Science Foundation, Division of Astronomical Sciences;
 the National Astronomical Observatories of China, the Chinese Academy of Sciences and the Chinese National Natural Science Foundation.
+LBNL is managed by the Regents of the University of California under contract to the U.S. Department of Energy.
 The complete acknowledgments can be found at https://www.legacysurvey.org/acknowledgment/.
 
 .. _`standard DESI Acknowledgments`: https://desi.lbl.gov/trac/wiki/GuidetoPub/DESIAcknowledgements#StandardAcknowledgements

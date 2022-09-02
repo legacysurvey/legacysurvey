@@ -1,6 +1,6 @@
 .. title: Index
 .. slug: index
-.. date: 2022-05-21 01:37:09 UTC
+.. date: 2022-09-02 01:37:09 UTC
 .. tags:
 .. category:
 .. link:
@@ -51,9 +51,9 @@
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 9</h2>
-      <p>January 2021</p>
-      <p><a class="btn btn-primary btn-lg" href="dr9">DR9</a></p>
+      <h2>Current Release: Data Release 10</h2>
+      <p>September 2022</p>
+      <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
 
 .. container::
 

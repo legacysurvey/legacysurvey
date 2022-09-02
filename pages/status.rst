@@ -20,6 +20,7 @@
 .. _`DR7`: ../dr7
 .. _`DR8`: ../dr8
 .. _`DR9`: ../dr9
+.. _`DR10`: ../dr10
 
 Observations for the `DESI`_ Legacy Imaging Surveys began in August 2014. For each of the Legacy Surveys
 (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
@@ -43,18 +44,20 @@ reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that
 footprint of the Legacy Surveys.
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`z`) status of the DESI Legacy Imaging Surveys
-as of Data Release 9 (`DR9`_). The coverage is color-coded by (extinction-corrected)
+as of Data Release 10 (`DR10`_). The coverage is color-coded by (extinction-corrected)
 depth. The solid line depicts the Galactic plane.
 
-.. image:: /files/depth-g-dr9.png
+XXX Status plots are not yet updated XXX
+
+.. image:: /files/depth-g-dr10.png
     :height: 410
     :width: 570
 
-.. image:: /files/depth-r-dr9.png
+.. image:: /files/depth-r-dr10.png
     :height: 410
     :width: 570
 
-.. image:: /files/depth-z-dr9.png
+.. image:: /files/depth-z-dr10.png
     :height: 410
     :width: 570
     :align: center

@@ -61,3 +61,18 @@ XXX Status plots are not yet updated XXX
     :height: 410
     :width: 570
     :align: center
+
+The status for DR9 (which usefully depicts the northern coverage) was
+
+.. image:: /files/depth-g-dr9.png
+    :height: 410
+    :width: 570
+
+.. image:: /files/depth-r-dr9.png
+    :height: 410
+    :width: 570
+
+.. image:: /files/depth-z-dr9.png
+    :height: 410
+    :width: 570
+    :align: center

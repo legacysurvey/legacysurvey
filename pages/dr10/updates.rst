@@ -14,6 +14,12 @@ This page documents those updates, in brief.
 .. _`DESI`: https://desi.lbl.gov
 .. _`DR8`: ../../dr7/description
 
+XXX
+- Added i-band quantities
+- MASKBITS is now 32-bit not 16-bit (what extra bits did we define)
+- Sweeps are now 5 x 5o not 10 x 5o
+- New per-band ngood_X in the Tractor catalogs (what does it mean)
+
 Algorithmic changes for optical data
 ====================================
 * All raw images from Legacy Surveys observations are initially reduced using the `NOIRLab Community Pipeline`_ (CP). For DR9, the CP has been rerun in full on each of the raw images:

@@ -1,4 +1,4 @@
-.. title: DR9 bitmasks
+.. title: DR10 bitmasks
 .. slug: bitmasks
 .. tags: 
 .. has_math: yes
@@ -8,7 +8,7 @@
 .. contents::
 
 
-This page details the meaning of the bitmasks provided with Data Release 9 of the Legacy Surveys. The bits are
+This page details the meaning of the bitmasks provided with Data Release 10 of the Legacy Surveys. The bits are
 enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-power-of-7`).
 
 ``MASKBITS``
@@ -16,6 +16,8 @@ enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-
 
 These definitions apply to both the values in the ``coadd/*/*/*maskbits*`` *files* and to ``MASKBITS`` *columns* in the Tractor
 and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
+
+XXX MASKBITS is now 32-bit, so must have new definitions?
 
 === ============= ===============================
 Bit Name          Description
@@ -163,7 +165,7 @@ Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8`: ../../dr8/description
-.. _`survey CCDs`: ../files/#survey-ccds-camera-dr9-fits-gz
+.. _`survey CCDs`: ../files/#survey-ccds-camera-dr10-fits-gz
 .. _`forced photometry`: ../files/#forced-photometry-files-forced-camera-expos-forced-camera-exposure-fits
 .. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L15
 .. _`legacyzpts`: https://github.com/legacysurvey/legacyzpts/

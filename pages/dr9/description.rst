@@ -328,7 +328,7 @@ The configuration files for SExtractor and `PSFEx`_ that were used for a given
 iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
-.. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
+.. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/main/py/legacypipe/config
 .. _`expected behavior`: https://github.com/legacysurvey/legacypipe/issues/349
 .. _`modified, extended PSF model`: ../psf
 

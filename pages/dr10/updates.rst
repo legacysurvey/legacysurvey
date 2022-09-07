@@ -1,24 +1,30 @@
-.. title: Major updates since DR8
+.. title: Updates since DR9
 .. slug: updates
 .. tags: 
 .. has_math: yes
+
+.. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 
 .. class:: pull-right well
 
 .. contents::
 
-DR9 will be the final release of the Legacy Surveys that is used for `DESI`_ target selection.
-As such, a major push was made to update the `DR8`_ code and data model to prepare for `DESI`_ observations.
-This page documents those updates, in brief.
+This page documents some of the main updates to the Legacy Surveys since Data Release 9.
 
 .. _`DESI`: https://desi.lbl.gov
 .. _`DR8`: ../../dr7/description
 
 XXX
-- Added i-band quantities
-- MASKBITS is now 32-bit not 16-bit (what extra bits did we define)
-- Sweeps are now 5 x 5o not 10 x 5o
-- New per-band ngood_X in the Tractor catalogs (what does it mean)
+
+* Added :math:`i\hbox{-}\mathrm{band}` quantities in the Tractor catalogs and sweeps files.
+
+* ``MASKBITS`` is now 32-bit rather than 16-bit (XXX what extra bits did we define?)
+
+* Sweeps are now 5\ |deg| x 5\ |deg| rather than 10\ |deg| x 5\ |deg|.
+
+* New per-band ``ngood_x`` in the Tractor catalogs (XXX what does it mean?)
+
+* DR10 only contains updates for the ``south`` part of the Legacy Surveys from new imaging with DECam.
 
 Algorithmic changes for optical data
 ====================================

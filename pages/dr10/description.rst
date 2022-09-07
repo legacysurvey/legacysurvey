@@ -18,19 +18,20 @@
 
 .. contents::
 
-The DESI Legacy Imaging Surveys are producing an inference model of the 14,000 square degrees
-of extragalactic sky visible from the northern hemisphere in three optical bands
-(:math:`g,r,z`) and four infrared bands.  The sky coverage is approximately bounded by
+The DESI Legacy Imaging Surveys conducted dedicated observations to produce an inference model of
+14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
+(:math:`g,r,z`) and four infrared bands.  The sky coverage was approximately bounded by
 -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
-|deg| in Galactic coordinates. To achieve this goal, the Legacy Surveys are conducting
-3 imaging projects on different telescopes, described in more depth at the following links:
+|deg| in Galactic coordinates. To achieve this goal, the Legacy Surveys completed
+three imaging projects on different telescopes, described in more depth at the following links:
 
-========================================== ===================================== ===========================================
-*The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
-========================================== ===================================== ===========================================
+- *The Beijing-Arizona Sky Survey* (`BASS`_)
+- *The DECam Legacy Survey* (`DECaLS`_)
+- *The Mayall z-band Legacy Survey* (`MzLS`_)
 
-An overview of the surveys is available in `Dey et al. (2019)`_.
-
+An overview of the surveys is available in `Dey et al. (2019)`_. The Legacy Surveys are currently being
+augmented to incorporate additional DECam data reduced by the `NOIRLab Community Pipeline`_. Goals include extending the
+footprint further south, adding observations from other optical bands, and creating a consistent inference model over a larger area.
 
 .. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
 .. _`BASS`: ../../bass
@@ -45,6 +46,7 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`SFD98`: https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract
 .. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 .. _`Gaia Data Release 2`: https://gaia.esac.esa.int/documentation/GDR2/index.html
+.. _`DR9`: ../../dr9
 .. _`DR8`: ../../dr8
 .. _`DR7`: ../../dr7
 .. _`DR6`: ../../dr6
@@ -53,47 +55,43 @@ An overview of the surveys is available in `Dey et al. (2019)`_.
 .. _`DR3`: ../../dr3
 .. _`DESI`: https://desi.lbl.gov
 .. _`WISE`: http://wise.ssl.berkeley.edu
-.. _`year 6 of NEOWISE-Reactivation`: http://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2020_release_intro.html
+.. _`year 7 of NEOWISE-Reactivation`: https://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2021_release_intro.html
 .. _`survey program 0404`: https://legacy.noirlab.edu/perl/abstract?2014B-0404
 .. _`Dark Energy Survey`: https://www.darkenergysurvey.org
 
-Contents of DR9
-===============
+Contents of DR10
+================
 
-Data Release 9 (DR9) is the ninth public data release of the Legacy Surveys. It is the
-seventh public data release of images and catalogs from `DECaLS`_ (`DR8`_ comprised the sixth release of data from `DECaLS`_)
-and the fourth release of data from `BASS`_ and `MzLS`_ (`DR8`_ comprised the third release of data from `BASS`_ and `MzLS`_).
-`DR8`_ was the first release to include images and catalogs from all three of the Legacy Surveys in a single release, and
-essentially provided the final, full sky coverage of Legacy Surveys imaging. DR9 does not contain significant new
-observations, but builds on `DR8`_ by improving the reduction techniques and procedures used for the Legacy Surveys.
-Imaging from the Legacy Surveys is first reduced through the `NOIRLab Community Pipeline`_ before being
-processed using the `Tractor`_. DR9 also includes `WISE`_ fluxes from all imaging through `year 6 of NEOWISE-Reactivation`_
+Data Release 10 (DR10) is the tenth public data release of the Legacy Surveys. The dedicated observations that
+comprised `DECaLS`_, `BASS`_ and `MzLS`_ are now complete. In DR10, we focus, instead, on incorporating
+new imaging from DECam into the "southern" Legacy Surveys footprint; continuing to extend the footprint while also providing
+a consistent inference model of imaging over much of the sky. Notably, DR10 of the Legacy Surveys provides
+:math:`i\hbox{-}\mathrm{band}` observations for the first time. Imaging from the Legacy Surveys is
+reduced through the `NOIRLab Community Pipeline`_ before being processed using the `Tractor`_. DR10 also
+includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_ XXX
 force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
-DR9 includes `BASS`_ (:math:`g,r`-band) images taken from 12th November 2015 through 7th March 2019 and
-`MzLS`_ (:math:`z`-band) images taken from 19th November 2015 through 12th February 2018.
-Images from `DECaLS`_
-:math:`g,r,z`-band observations (`survey program 0404`_)
-are included from 9th August 2014 through 7th March 2019. DR9 also includes DECam data from a range of
-non-DECaLS surveys, including observations that were conducted from 31st August 2013 to 7th March 2019.
+DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between
+9th August 2014 and 7th March 2019. DR10 also includes :math:`g,r,i,z`-band DECam observations from a range of
+non-DECaLS surveys, including observations that were conducted between XXXst August XXXX and XXX March XXXX.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
-Information on the exact observations included in DR9 can be derived from the Legacy Surveys `survey-ccds-* files`_.
+Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
+To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
-The table below indicates the area covered in DR9 for different
-numbers of passes and in different filters across the entire *unique* survey area. Unique area in this table is resolved by including all
-DECam images (the majority of which are from `DECaLS`_) but only including `BASS`_ and `MzLS`_ images if they are both at Declination > 32.375\ |deg| and north of the Galactic Plane.
-These are area estimates derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|.
+The table below indicates the total area covered by the DR10 release, estimated from
+XXX Area estimates are derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|.
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
 ===================== =========== =========== ===========
-:math:`g`-band        19,919 |d2| 19,256 |d2| 16,606 |d2|
-:math:`r`-band        19,915 |d2| 19,177 |d2| 16,333 |d2|
-:math:`z`-band        20,242 |d2| 19,420 |d2| 16,972 |d2|
-All bands jointly     19,721 |d2| 18,813 |d2| 14,756 |d2|
+:math:`g`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+:math:`r`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+:math:`i`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+:math:`z`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
+All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
 ===================== =========== =========== ===========
 
-South of Declination -18\ |deg| the Legacy Surveys imaging is dominated by observations from the `Dark Energy Survey`_. North of -18\ |deg|, the area covered in DR9 for different numbers of passes and in different filters is:
+For reference, in the "official" Legacy Surveys *northern* footprint (north of -18\ |deg|), the area covered in `DR9`_ for different numbers of passes and in different filters was:
 
 ===================== =========== =========== ===========
 Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
@@ -108,118 +106,105 @@ All bands jointly     15,566 |d2| 14,784 |d2| 10,802 |d2|
 .. |d-2| replace:: deg\ :sup:`-2`
 
 
-DR9 includes a variety of pixel-level and catalog-level products, which are described in more
+DR10 includes a variety of pixel-level and catalog-level products, which are described in more
 detail on the `files`_ page.
-The size of the DR9 data distribution, split out into contributions from
-the north (`BASS`_/`MzLS`_) and south (`DECaLS`_) to match the directory structure of DR9 is:
+The size of the DR10 data distribution is:
 
 ================== ================================================= =========================================================
 Size*              Directory                                         Description
 ================== ================================================= =========================================================
-1.9 TB             `calib/`_                                         Calibration files
-1.5 KB             `gallery/`_                                       Link to webgpages of notable images (*e.g.* NGC galaxies)
-6.6 GB             `masking/`_                                       Files containing `external catalogs used for masking`_
-23 TB + 66 TB      `north/coadd/`_ + `south/coadd/`_                 Coadded images (image stacks)
-18 GB + 18 GB      `north/external/`_ + `south/external/`_           `Matches to other catalogs`_ (SDSS, etc.)
-362 GB + 2.8 TB    `north/forced-brick/`_ + `south/forced-brick/`_   Brick-organized forced-photometry catalogs
-788 GB + 5.7 TB    `north/forced-ccd/`_ + `south/forced-ccd/`_       Exposure-organized forced-photometry catalogs
-12 GB + 47 GB      `north/logs/`_ + `south/logs/`_                   Log files generated by `Tractor`_ processing
-1.1 TB + 2.7 TB    `north/metrics/`_ + `south/metrics/`_             Metrics and statisics of Tractor fits
-91 GB + 616 GB     `north/outlier-masks/`_ + `south/outlier-masks/`_ CCD-level masks of outlier pixels (cosmic rays, satellite trails, etc) from image differencing
-536 GB	           `randoms/`_                                       Catalogs of random points
-77 GB + 208 GB     `north/randoms/`_ + `south/randoms/`_             Region-specific catalogs of random points
-720 GB + 3.2 TB    `north/sweep/`_ + `south/sweep/`_                 Subsets of the Tractor `catalogs`_ and row-by-row matched products
-741 GB + 3.3 TB    `north/tractor/`_ + `south/tractor/`_             The Tractor `catalogs`_
-784 GB + 3.4 TB    `north/tractor-i/`_ + `south/tractor-i/`_         Expanded versions of the Tractor `catalogs`_
+XXX TB             `calib/`_                                         Calibration files
+XXX KB             `gallery/`_                                       Link to webgpages of notable images (*e.g.* NGC galaxies)
+XXX GB             `masking/`_                                       Files containing `external catalogs used for masking`_
+XXX TB             `coadd/`_                                         Coadded images (image stacks)
+XXX GB             `external/`_                                      `Matches to other catalogs`_ (SDSS, etc.)
+XXX TB             `forced-brick/`_                                  Brick-organized forced-photometry catalogs
+XXX TB             `forced-ccd/`_                                    Exposure-organized forced-photometry catalogs
+XXX GB             `logs/`_                                          Log files generated by `Tractor`_ processing
+XXX TB             `metrics/`_                                       Metrics and statisics of Tractor fits
+XXX GB             `outlier-masks/`_                                 CCD-level masks of outlier pixels (cosmic rays, satellite trails, etc) from image differencing
+XXX GB	           `randoms/`_                                       Catalogs of random points
+XXX TB             `sweep/`_                                         Subsets of the Tractor `catalogs`_ and row-by-row matched products
+XXX TB             `tractor/`_                                       The Tractor `catalogs`_
+XXX TB             `tractor-i/`_                                     Expanded versions of the Tractor `catalogs`_
 ================== ================================================= =========================================================
 
 .. _`Matches to other catalogs`: ../files/#external-match-files-region-external
 
 \*Note that although the *contents* of a directory should be fixed for each Data Release, the *size* of a directory can change. This is typically due to updated file compression. So, the listed directory sizes should be viewed as (very reasonable) estimates.
 
-.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/calib/
-.. _`masking/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/masking/
+.. _`calib/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/calib/
+.. _`masking/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/masking/
 .. _`external catalogs used for masking`: ../external/#external-catalogs-used-for-masking
-.. _`north/coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/coadd/
-.. _`south/coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/coadd/
-.. _`north/randoms/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/randoms/
-.. _`south/randoms/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/randoms/
-.. _`north/external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/external/
-.. _`south/external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/external/
-.. _`north/forced-brick/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/forced-brick/
-.. _`south/forced-brick/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/forced-brick/
-.. _`north/forced-ccd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/forced-ccd/
-.. _`south/forced-ccd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/forced-ccd/
-.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/gallery/
-.. _`images/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/images/
-.. _`north/logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/logs/
-.. _`south/logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/logs/
-.. _`north/metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/metrics/
-.. _`south/metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/metrics/
-.. _`north/outlier-masks/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/outlier-masks/
-.. _`south/outlier-masks/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/outlier-masks/
-.. _`randoms/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/randoms/
-.. _`north/sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/
-.. _`south/sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/
-.. _`north/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/tractor/
-.. _`south/tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/tractor/
-.. _`north/tractor-i/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/tractor-i/
-.. _`south/tractor-i/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/tractor-i/
-.. _`survey-ccds-<camera>-dr9.fits.gz files`: ../files/#survey-ccds-camera-dr9-fits-gz
+.. _`coadd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/coadd/
+.. _`randoms/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/randoms/
+.. _`external/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/external/
+.. _`forced-brick/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/forced-brick/
+.. _`forced-ccd/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/forced-ccd/
+.. _`gallery/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/gallery/
+.. _`images/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/images/
+.. _`logs/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/logs/
+.. _`metrics/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/metrics/
+.. _`outlier-masks/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/outlier-masks/
+.. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/sweep/
+.. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/tractor/
+.. _`tractor-i/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/tractor-i/
+.. _`survey-ccds-decam-dr10.fits.gz files`: ../files/#survey-ccds-camera-dr10-fits-gz
 
 For all of the DESI Legacy Imaging Surveys, coadded images and
 Tractor catalogs are presented in "bricks" of approximate
 size 0.25\ |deg| |times| 0.25\ |deg|.  Each brick is defined in terms of a box in RA,Dec
 coordinates.  The image stacks use a simple tangent-plane (WCS TAN)
-projection around the brick center. The projections for the :math:`g,r,z` filters are identical, with
+projection around the brick center. The projections for the :math:`g,r,i,z` filters are identical, with
 a pixel scale of 0.262\ |Prime|/pix. The projections for the four WISE filters are also identical
 but with a pixel scale of 2.75\ |Prime|/pix.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
-There are approximately 2.0 billion unique sources in DR9 spread over 331,958 unique bricks.
+There are approximately XXX billion unique sources in DR10 spread over XXX,XXX unique bricks.
 
 Obtaining Images and Raw Data
 =============================
 
-Images for all 3 of the Legacy Surveys can be viewed directly using `the Sky viewer`_
+Images for the Legacy Surveys can be viewed directly using `the Sky viewer`_
 and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 `the bottom of the files`_ page). Note that the weight map images (the ``oow`` files) that can be retrieved either from the viewer or
-portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-<camera>-dr9.fits.gz files`_. But, these images need
-to be multiplied by both gain and ``exptime`` to retrieve units of electrons (for `<camera>` of `mosaic` or `90prime`).
+portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-decam-dr10.fits.gz files`_.
 
-Sections of the Legacy Surveys for DR9 can be obtained as JPEGs or FITS files using
+Sections of the Legacy Surveys for DR10 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr9&pixscale=0.27&bands=grz
+XXX check cutout urls. This could be complicated!
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr9&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.27&bands=grz
+
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.27&bands=grz
 
 This will merge the northern (MzLS+BASS) and southern (DECam) images at a line corresponding to Dec=32.375\ |deg|.
 
-To request images from only the northern or southern surveys, specify `dr9-north` or `dr9-south`, for example:
+To request images from only the northern or southern surveys, specify `dr10-north` or `dr10-south`, for example:
 
-JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr9-south&pixscale=0.27&bands=grz
+JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.27&bands=grz
 
-FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr9-south&pixscale=0.27&bands=grz
+FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.27&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.27&bands=grz
+JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.27&bands=grz
 
-FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.27&bands=grz
+FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.27&bands=grz
 
-where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
+where "bands" is a string such as ":math:`griz`",":math:`gz`",":math:`g`", etc.
 
-Replacing `layer=ls-dr9` (or, e.g., `layer=ls-dr9-north`) with `layer=ls-dr9-model` (`layer=ls-dr9-north-model`)
-or `layer=ls-dr9-resid` (`layer=ls-dr9-north-resid`) will instead return cutouts for the model and residual images, respectively.
+Replacing `layer=ls-dr10` (or, e.g., `layer=ls-dr10-north`) with `layer=ls-dr10-model` (`layer=ls-dr10-north-model`)
+or `layer=ls-dr10-resid` (`layer=ls-dr10-north-resid`) will instead return cutouts for the model and residual images, respectively.
 
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=ls-dr9&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=ls-dr10&pixscale=0.3&bands=grz
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=ls-dr9&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=ls-dr10&pixscale=0.3&bands=grz
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=ls-dr9&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=ls-dr10&pixscale=0.3&bands=grz
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
@@ -232,7 +217,7 @@ More examples are available on the `list of URL/cutout patterns that are support
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
 .. _`the bottom of the files`: ../files/#raw-data
-.. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr9-fits-gz
+.. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr10-fits-gz
 .. _`random catalogs`: ../files/#random-catalogs-randoms
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
@@ -266,7 +251,9 @@ and finally in "red".
 Starting with `DR5`_, source detection
 was run first in :math:`z`, then in :math:`r`, :math:`g`, "flat"
 and finally in "red". :math:`z` was chosen as the "primary" detection image
-to take advantage of the better PSF in that band.
+to take advantage of the better PSF in that band. DR10 follows the convention of running
+source detection in the redder bands first, i.e. in the order
+:math:`z`, :math:`i`, :math:`r`, :math:`g`, "flat" and finally "red".
 
 Starting with `DR7`_ the criteria for deciding whether a
 flux peak is a distinct source were relaxed. The minimum possible distance between
@@ -293,12 +280,12 @@ and `SGA`_ large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
 Mask regions are ignored in the `Tractor` local-sky-fitting calibration code and are superseded by fits within the mask regions themselves.
 Within ``BRIGHT``, ``MEDIUM`` and ``GALAXY`` mask regions (except for the `SGA`_ large galaxies themselves), a per-source background sky level is fit in the mask blob for each exposure.
 
-Starting with DR9, objects that appear in the `Gaia catalogs`_ are always retained in the `Tractor catalogs`_, even if they would normally be cut by the
+Starting with `DR9`_, objects that appear in the `Gaia catalogs`_ are always retained in the `Tractor catalogs`_, even if they would normally be cut by the
 model-selection criteria used to detect sources. This is because Gaia sources are often so bright that they saturate in Legacy Surveys imaging.
-Since such "retained" Gaia sources have no model fits, their ``flux_g``, ``flux_r`` and ``flux_z`` values are estimated in the `catalogs`_,
+Since such "retained" Gaia sources have no model fits, their ``flux_g``, ``flux_r``, ``flux_i`` and ``flux_z`` values are estimated in the `catalogs`_,
 using `polynomial fits to Gaia-to-DECam`_ color transformations for stars.
-Transformations to `DECam`_ are used even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_.
-The ``flux_ivar_[grz]`` values for these "retained" Gaia sources are set to zero.
+Transformations to `DECam`_ are always used (i.e. even in areas of the Legacy Surveys footprint that are only covered by `BASS`_ and `MzLS`_).
+The ``flux_ivar_[griz]`` values for these "retained" Gaia sources are set to zero.
 
 .. _`SGA (Siena Galaxy Atlas)`: ../../sga/sga2020
 .. _`SGA`: ../../sga/sga2020
@@ -322,13 +309,13 @@ using `PSFEx`_, generating spatially varying pixelized models. Note that it is p
 ``survey-*`` and ``*-annotated-*`` `files`_ could record information
 that is missing from other files in cases where `PSFEx`_ fails. This is `expected behavior`_.
 
-Starting with DR9, a `modified, extended PSF model`_ is used to subtract the extended wings of bright stars from DECam images.
+Starting with `DR9`_, a `modified, extended PSF model`_ is used to subtract the extended wings of bright stars from DECam images.
 
 The configuration files for SExtractor and `PSFEx`_ that were used for a given
 iteration of the Legacy Surveys ``legacypipe`` codebase are available `on our GitHub page`_.
 
 .. _`PSFEx`: http://www.astromatic.net/software/psfex
-.. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/master/py/legacypipe/config
+.. _`on our GitHub page`: https://github.com/legacysurvey/legacypipe/tree/main/py/legacypipe/config
 .. _`expected behavior`: https://github.com/legacysurvey/legacypipe/issues/349
 .. _`modified, extended PSF model`: ../psf
 
@@ -348,17 +335,17 @@ are specially treated.
 
 Changes in the Community Pipeline after `DR8`_ (in particular the switch to using star flats from
 the `Dark Energy Survey`_ instead of dark sky flats) created
-residual sky patterns in DECam images. These patterns exist in all three optical bands
-(:math:`grz`), with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting
-with DR9, we `correct DECaLS images to account for these residual sky patterns`_.
+residual sky patterns in DECam images. These patterns are expected to exist in all optical bands
+with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting
+with `DR9`_, the Legacy Surveys `corrects DECam images to account for these residual sky patterns`_.
 
-In addition, a new set of fringe templates was created for DECam :math:`z\hbox{-}\mathrm{band}` images for DR9, with
-associated per-exposure fringe scale factors.
-For DR9, `these fringe templates and scale factors`_ replace the fringe correction applied by the Community Pipeline for
+In addition, starting with `DR9`_, a new set of fringe templates was created for DECam :math:`z\hbox{-}\mathrm{band}`
+images, with associated per-exposure fringe scale factors. These
+`fringe templates and scale factors`_ replace the fringe correction applied by the Community Pipeline for
 DECam imaging in the :math:`z\hbox{-}\mathrm{band}`.
 
-.. _`correct DECaLS images to account for these residual sky patterns`: ../sky
-.. _`these fringe templates and scale factors`: ../fringe
+.. _`corrects DECam images to account for these residual sky patterns`: ../sky
+.. _`fringe templates and scale factors`: ../fringe
 .. _`Source Detection`: #source-detection
 
 Tractor Catalogs
@@ -377,38 +364,35 @@ Morphological Classification
 
 The `Tractor`_ fitting can allow any of the source properties or
 image calibration parameters (such as the PSF) to float.
-Only the source properties were allowed to float in DR9.
+Only the source properties were allowed to float in DR10.
 These are continuous properties for the object centers, fluxes,
 and the shape parameters.
 
 There is also the discrete choice of which
-model type to use. In DR9, six morphological types are used. Five of these
-are used in the `Tractor`_ fitting procedure: point sources,
+model type to use. In DR10, six morphological types are used. Five of these
+are used in the `Tractor`_ fitting procedure: point sources ("PSF"),
 round exponential galaxies with a variable radius ("REX"), deVaucouleurs ("DEV") profiles
 (elliptical galaxies), exponential ("EXP") profiles (spiral galaxies), and Sersic ("SER") profiles.
 The sixth morphological type is "DUP," which is set for Gaia sources that are coincident with, and so have been fit by, an extended source.
 No optical flux is assigned to "DUP" sources, but they are retained to ensure that all Gaia sources appear in the catalogs even if
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
-The total numbers of the different morphological types in DR9 are:
+The total numbers of the different morphological types in DR10 are:
 
-======================= ======================== ==================== ========================= ========================= ==============
-Primary Objects of Type All Northern Sources     All Southern Sources Resolved Northern Sources Resolved Southern Sources Unique Sources
-======================= ======================== ==================== ========================= ========================= ==============
-*All*                            364,277,779           1,649,627,447            339,099,030              1,630,843,648     1,969,942,678
-``PSF``                          164,720,017             722,051,765            152,333,681                713,290,025       865,623,706
-``REX``                          156,642,867             721,171,642            146,573,516                713,210,505       859,784,021
-``EXP``                           26,017,822             133,651,640             24,352,976                132,351,271       156,704,247
-``DEV``                           12,017,438              45,884,306             11,258,845                 45,375,743        56,634,588
-``SER``                            4,831,509              26,745,496              4,537,809                 26,495,974        31,033,783
-``DUP``                               48,126                 122,598                 42,203                    120,130           162,333
-======================= ======================== ==================== ========================= ========================= ==============
+======================= ==============
+Primary Objects of Type Unique Sources
+======================= ==============
+*All*                      XXX,XXX,XXX
+``PSF``                    XXX,XXX,XXX
+``REX``                    XXX,XXX,XXX
+``EXP``                    XXX,XXX,XXX
+``DEV``                     XX,XXX,XXX
+``SER``                     XX,XXX,XXX
+``DUP``                        XXX,XXX
+======================= ==============
 
-where *northern* sources are from `BASS`_ and `MzLS`_, and *southern* sources are from `DECam`_
-surveys. *Primary* objects, here, specifically refers to sources for which ``BRICK_PRIMARY==True``
+*Primary* objects, here, specifically refers to sources for which ``BRICK_PRIMARY==True``
 (the totals are derived from the *total number* counts in the `survey bricks summary file`_).
-Sources are *resolved* as distinct by only counting `BASS`_ and `MzLS`_ sources if they are both at Declination > 32.375\ |deg|
-and north of the Galactic Plane, or, otherwise counting `DECam`_ sources. *Unique* sources are
-the total of all *resolved* sources.
+See `DR9`_ for source counts in the northern footprint of the Legacy Surveys.
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
@@ -432,7 +416,7 @@ The fluxes are not constrained to be positive-valued.  This allows the fitting o
 very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
-.. _`survey bricks summary file`: ../files/#region-survey-bricks-dr9-region-fits-gz
+.. _`survey bricks summary file`: ../files/#region-survey-bricks-dr10-region-fits-gz
 
 Tractor Implementation Details
 ==============================
@@ -445,7 +429,7 @@ solver from the `SciPy`_ package, or the open source
 The galaxy profiles (the exponential and deVaucouleurs profiles mentioned above
 under `Morphological Classification`_) are approximated with `mixture-of-Gaussians`_
 (MoG) models and are convolved by the pixelized PSF models using a new
-Fourier-space method (`Lang 2021`_).
+Fourier-space method (`Lang 2020`_).
 The galaxy profile approximation introduces errors in these
 models typically at the level of :math:`10^{-4}` or smaller.
 The PSF models are treated as pixel-convolved quantities,
@@ -460,7 +444,7 @@ would be to iterate between fitting source parameters in brick space,
 and fitting calibration parameters in exposure space.
 
 .. _`Morphological Classification`: #morphological-classification
-.. _`Lang 2021`: https://ui.adsabs.harvard.edu/abs/2020arXiv201215797L/abstract
+.. _`Lang 2020`: https://ui.adsabs.harvard.edu/abs/2020arXiv201215797L/abstract
 
 Photometry
 ==========
@@ -492,6 +476,7 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
    z_{\mathrm{Mosaic3}} & = & z_{\mathrm{PS}}  + 0.03664 - 0.11084 (g-i) + 0.04477 (g-i)^2 - 0.01223 (g-i)^3 \\
    g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.00062 + 0.03604 (g-i) + 0.01028 (g-i)^2 - 0.00613 (g-i)^3 \\
    r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} + 0.00495 - 0.08435 (g-i) + 0.03222 (g-i)^2 - 0.01140 (g-i)^3 \\
+   i_{\mathrm{DECam}} & = & XXX \\
    z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} + 0.02583 - 0.07690 (g-i) + 0.02824 (g-i)^2 - 0.00898 (g-i)^3 \\
 
 Note that the `DECam`_ zero points have been significantly `updated since DR5`_ and the `90Prime`_ and `Mosaic-3`_
@@ -512,11 +497,11 @@ objects, and indeed we expect many such cases for the faintest objects.
 
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_, `MzLS z-band with corrections`_,
 `DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_. The curves "with corrections" include terms to correct for
-the telescope, corrector, camera and atmosphere.
+the telescope, corrector, camera and atmosphere. XXX add i-band?
 
 Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.
-So, for DR9, the measured fluxes for PS1 stars should be completely self-consistent.
+So, for DR10 the measured fluxes for PS1 stars should be completely self-consistent.
 
 The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
 We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
@@ -552,6 +537,8 @@ The most recent values of the Galactic extinction coefficients are available on 
 Astrometry
 ==========
 
+XXX did we update to EDR3 for DR10?
+
 Starting with `DR8`_, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
 `Gaia Data Release 2`_, yielding an astrometric solution that is offset by the average difference between
 the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR9 image. Source
@@ -573,7 +560,7 @@ Image Stacks
 The image stacks (that are detailed on the `files`_ page) are provided for convenience, but were not used in the `Tractor`_ fits.
 These images overlap adjacent images by approximately 130 pixels in each direction.
 These are tangent projections centered at each brick center, North up, with dimensions of 3600 |times| 3600
-and a scale of 0.262\ |Prime|/pix for the :math:`g,r,z` data and 2.75\ |Prime|/pix for the WISE data.
+and a scale of 0.262\ |Prime|/pix for the :math:`g,r,i,z` data and 2.75\ |Prime|/pix for the WISE data.
 The image stacks are computed using Lanczos-3
 interpolation. They have not been designed for "precision" work, although they should be
 sufficient for many use cases.
@@ -583,7 +570,21 @@ Depths
 ======
 
 The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
-different numbers of observations in the different regions of DR9:
+different numbers of DECam observations in DR10:
+XXX
+.. image:: ../../files/depth-hist-r-dr10-south.png
+    :height: 375
+    :width: 570
+.. image:: ../../files/depth-hist-z-dr10-north.png
+    :height: 375
+    :width: 570
+.. image:: ../../files/depth-hist-z-dr10-south.png
+    :height: 375
+    :width: 570
+    :alt: DR10 Depth Histograms
+
+These can be compared to similar plots for the northern Legacy Surveys (`BASS`_ and `MzLS`_)
+from `DR9`_:
 
 .. image:: ../../files/depth-hist-g-dr9-north.png
     :height: 375
@@ -594,23 +595,15 @@ different numbers of observations in the different regions of DR9:
 .. image:: ../../files/depth-hist-r-dr9-north.png
     :height: 375
     :width: 570
-.. image:: ../../files/depth-hist-r-dr9-south.png
-    :height: 375
-    :width: 570
-.. image:: ../../files/depth-hist-z-dr9-north.png
-    :height: 375
-    :width: 570
-.. image:: ../../files/depth-hist-z-dr9-south.png
-    :height: 375
-    :width: 570
-    :alt: DR9 Depth Histograms
 
-These are based upon the formal errors in the Tractor catalogs for point sources,
-and can be compared to the predicted proposed
+These plots are based upon the formal errors in the Tractor catalogs for point sources,
+and can be compared to the predicted proposed Legacy Surveys
 depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
 Code Versions
 =============
+
+XXX update to actual code versions.
 
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A mix of versions; dr9-m33-1-g33038aa1, DR9.6.2, DR9.6.4, DR9.6.5, DR9.6.5-4-gbb698724 and DR9.6.7. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.84
@@ -626,6 +619,7 @@ Code Versions
 .. _`DESI Legacy Surveys Imaging Data Release 6`: ../../dr6
 .. _`DESI Legacy Surveys Imaging Data Release 7`: ../../dr7
 .. _`DESI Legacy Surveys Imaging Data Release 8`: ../../dr8
+.. _`DESI Legacy Surveys Imaging Data Release 9`: ../../dr9
 
 Glossary
 ========
@@ -665,6 +659,9 @@ DR7
 
 DR8
     `DESI Legacy Surveys Imaging Data Release 8`_.
+
+DR9
+    `DESI Legacy Surveys Imaging Data Release 9`_.
 
 DECam
     `Dark Energy Camera`_ on the Blanco 4-meter telescope.

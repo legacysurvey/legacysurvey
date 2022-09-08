@@ -219,18 +219,18 @@ Name                                  Type         Units                 Descrip
 ``wise_coadd_id``	              char[8]                            unWISE coadd brick name (corresponding to the, *e.g.*, `legacysurvey-<brick>-image-W1.fits.fz` `coadd file`_) for the center of each object
 ``wise_x``                            float32      pix                   X position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR10 updates page`_ for transformations between ``wise_x`` and ``bx``)
 ``wise_y``                            float32      pix                   Y position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR10 updates page`_ for transformations between ``wise_y`` and ``by``)
-``lc_flux_w1``                        float32[17]  nanomaggies           ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``lc_flux_w2``                        float32[17]  nanomaggies           ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``lc_flux_w1``                        float32[17]  nanomaggies           ``flux_w1`` in each of up to seventeen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``lc_flux_w2``                        float32[17]  nanomaggies           ``flux_w2`` in each of up to seventeen unWISE coadd epochs (AB; defaults to zero for unused entries)
 ``lc_flux_ivar_w1``                   float32[17]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
 ``lc_flux_ivar_w2``                   float32[17]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
-``lc_nobs_w1``                        int16[17]                          ``nobs_w1`` in each of up to fifteen unWISE coadd epochs
-``lc_nobs_w2``                        int16[17]                          ``nobs_w2`` in each of up to fifteen unWISE coadd epochs
-``lc_fracflux_w1``                    float32[17]                        ``fracflux_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_fracflux_w2``                    float32[17]                        ``fracflux_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_rchisq_w1``                      float32[17]                        ``rchisq_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_rchisq_w2``                      float32[17]                        ``rchisq_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_mjd_w1``                         float64[17]                        ``mjd_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
-``lc_mjd_w2``                         float64[17]                        ``mjd_w2`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_nobs_w1``                        int16[17]                          ``nobs_w1`` in each of up to seventeen unWISE coadd epochs
+``lc_nobs_w2``                        int16[17]                          ``nobs_w2`` in each of up to seventeen unWISE coadd epochs
+``lc_fracflux_w1``                    float32[17]                        ``fracflux_w1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_fracflux_w2``                    float32[17]                        ``fracflux_w2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w1``                      float32[17]                        ``rchisq_w1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_rchisq_w2``                      float32[17]                        ``rchisq_w2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w1``                         float64[17]                        ``mjd_w1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
+``lc_mjd_w2``                         float64[17]                        ``mjd_w2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
 ``lc_epoch_index_w1``                 int16[17]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
 ``lc_epoch_index_w2``                 int16[17]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
 ``sersic``		              float32                            Power-law index for the Sersic profile model (``type="SER"``)

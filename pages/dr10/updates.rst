@@ -18,7 +18,9 @@ XXX
 
 * Added :math:`i\hbox{-}\mathrm{band}` quantities in the Tractor catalogs and sweeps files.
 
-* ``MASKBITS`` is now 32-bit rather than 16-bit (XXX what extra bits did we define?)
+* ``MASKBITS`` is now 32-bit rather than 16-bit (XXX what extra bits did we define?).
+
+* ``CCD_CUTS`` is now 64-bit rather than 32-bit (XXX what extra bits did we define?).
 
 * Sweeps are now 5\ |deg| x 5\ |deg| rather than 10\ |deg| x 5\ |deg|.
 

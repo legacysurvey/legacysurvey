@@ -127,6 +127,8 @@ Bit Name        Description
 
 ``CCD_CUTS``
 ============
+XXX CCD_CUTS is now 64-bit, so must have new definitions?
+
 The `survey CCDs`_ and `forced photometry`_ files include a bitmask ``ccd_cuts`` that
 is `used by the legacypipe code`_ to discard CCDs that have low-quality observations before processing imaging for the Legacy Surveys. Any observations with
 non-zero vales of ``ccd_cuts`` are discarded prior to processing.
@@ -157,6 +159,7 @@ Bit Name                  Description
 14  ``DEPTH_CUT`` 	  Depth cut code (this is run after the other cuts)
 15  ``TOO_MANY_BAD_CCDS`` Remove full exposures if more than 70% of the CCDs are cut
 16  ``FLAGGED_IN_DES``    Flagged as bad in DES
+17  ``XXX``               XXX
 === ===================== ===========================
 
 Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.

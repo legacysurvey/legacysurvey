@@ -64,7 +64,7 @@ Column          Type    Description
 =============== ======= ======================================================
 
 survey-bricks-dr10.fits.gz
---------------------------------------------
+--------------------------
 
 A FITS binary table with information that summarizes the contents of each brick in DR10.
 
@@ -208,13 +208,13 @@ Column               Type       Description
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 
 survey-ccds-<camera>-dr10.kd.fits
---------------------------------
+---------------------------------
 
 As for the **survey-ccds-<camera>-dr10.fits.gz** files but limited by the depth of each observation. These files
 contain the CCDs actually used for the DR10 reductions. Columns are the same as for the **survey-ccds-<camera>-dr10.fits.gz** files.
 
 ccds-annotated-<camera>-dr10.fits.gz
-----------------------------=-------
+------------------------------------
 
 Versions of the **survey-ccds-<camera>-dr10.fits.gz** files with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
@@ -278,14 +278,14 @@ Column               Type       Description
 .. _`DECaLS`: ../../decamls
 
 ccds-annotated-<camera>-dr10.kd.fits
------------------------------------
+------------------------------------
 
 As for the **ccds-annotated-<camera>-dr10.fits.gz** files but limited by the depth of each observation. These files
 contain the CCDs actually used for the DR10 reductions. Columns are the same as for the **ccds-annotated-<camera>-dr10.fits.gz** files.
 
 
 dr10-depth.fits.gz
------------------------------------
+------------------
 
 XXX
 
@@ -320,7 +320,7 @@ Column               Type       Description
 ==================== =========  ============================================================
 
 dr10-depth-summary.fits.gz
--------------------------------------------
+--------------------------
 
 XXX
 
@@ -467,7 +467,7 @@ where each brick is either populated with observations from the
 Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-1-X.fits`` files.
 
 survey-bricks-dr10-randoms-0.48.0.fits
--------------------------------------
+--------------------------------------
 
 XXX
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
@@ -484,7 +484,7 @@ Column             Type    Description
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 
 External Match Files (``external/*``)
-==============================================
+=====================================
 
 XXX
 | **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
@@ -512,7 +512,7 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 .. _`Catalogs`: ../catalogs
 
 survey-dr10-specObj-dr16.fits
--------------------------------------
+-----------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
@@ -523,7 +523,7 @@ is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
 .. _`data model for specObj-dr16.fits`: https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
 survey-dr10-dr16Q-v4.fits
----------------------------------
+-------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16
 visually inspected quasar catalog (`Lyke et al. 2020`_)
@@ -537,7 +537,7 @@ is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
 .. _`data model for DR16Q_v4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 
 survey-dr10-superset-dr16Q-v3.fits
-------------------------------------------
+----------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
@@ -549,7 +549,7 @@ is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
 .. _`data model for DR16Q_Superset_v3.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_Superset_v3.html
 
 survey-dr10-dr12Q.fits
-------------------------------
+----------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
@@ -562,7 +562,7 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`data model for DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
 survey-dr10-superset-dr12Q.fits
----------------------------------------
+-------------------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
@@ -574,7 +574,7 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 .. _`data model for Superset_DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
 survey-dr10-dr7Q.fits
------------------------------
+---------------------
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
@@ -588,7 +588,7 @@ is documented on the `DR7 quasar catalog description page`_.
 
 
 Tractor Catalogs (``tractor/*``)
-=========================================
+================================
 
 In the file listings outlined below:
 
@@ -617,7 +617,7 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 .. _`NOIRLab Astro Data Lab`: https://datalab.noirlab.edu/
 
 Sweep Catalogs (``sweep/*``)
-=====================================
+============================
 
 9.0/sweep-<brickmin>-<brickmax>.fits
 ------------------------------------
@@ -805,7 +805,7 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 
 
 Extra sweeps (9.0-lightcurves/sweep-<brickmin>-<brickmax>-ex.fits)
--------------------------------------------------------------------
+------------------------------------------------------------------
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
 are not otherwise in the standard sweeps files or the "light curve" sweep files.
@@ -878,7 +878,7 @@ are generally described as part the overview of the `external catalogs used for 
 that are detailed as part of the `Siena Galaxy Atlas (SGA)`_.
 
 gaia-mask-dr10.fits.gz
----------------------
+----------------------
 
 XXX is this Gaia EDR3, now?
 
@@ -954,7 +954,7 @@ Name                                  Type    Units              Description
 .. _`Tractor catalogs`: ../catalogs
 
 Image Stacks (``coadd/*``)
-===================================
+==========================
 
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixels, at 0.262 arcseconds per pixel.
 

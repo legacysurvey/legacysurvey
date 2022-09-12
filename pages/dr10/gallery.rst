@@ -1,4 +1,4 @@
-.. title: DR9 Image Gallery
+.. title: DR10 Image Gallery
 .. slug: gallery
 .. description:
 
@@ -9,4 +9,4 @@
 Under Construction
 ------------------
 
-The DR9 image gallery is in preparation.
+The DR10 image gallery is in preparation.

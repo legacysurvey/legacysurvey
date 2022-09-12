@@ -119,6 +119,8 @@ File locations
 ==============
 The `PSFEx`_ files used in this analysis are available in the following directories at NERSC:
 
+XXX DR10 updates?
+
 - Original PSF: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9-archive/unpatched-psfex``
 - Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/psfex``
 
@@ -139,6 +141,6 @@ The code used to analyze the DECam PSF for the Legacy Surveys is:
 
 Additional Information
 ======================
-Further extensive tests and plots characterizing the `DECaLS`_ DR9 PSF model is available for DESI collaborators `on the wiki`_.
+Further extensive tests and plots characterizing the `DECaLS`_ PSF model *for DR9*  is available for DESI collaborators `on the wiki`_.
 
 .. _`on the wiki`: https://desi.lbl.gov/trac/wiki/DecamLegacy/DR9/PSFExAndOuterWings

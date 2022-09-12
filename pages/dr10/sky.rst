@@ -14,6 +14,8 @@
 
 .. _`Rongpu Zhou`: ../../contact/#other-experts
 
+XXX is any of this still needed for DR10?
+
 Changes in the `DECam Community Pipeline`_ (henceforth CP) between `DR8`_ and `DR9`_ of the Legacy Surveys (in particular the switch from dark sky flats to `DES`_
 star flats) led to residual sky patterns with a sufficiently high amplitude to, *e.g.*, significantly impact `DESI target selection`_. The
 sky residual patterns exist in all three bands (:math:`grz`), with the :math:`z\hbox{-}\mathrm{band}` having the worst residuals. So, starting

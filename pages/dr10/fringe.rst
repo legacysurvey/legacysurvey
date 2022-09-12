@@ -14,6 +14,8 @@
 
 .. _`Rongpu Zhou`: ../../contact/#other-experts
 
+XXX Still necessary for DR10?
+
 A new set of fringe templates was created for DECam :math:`z\hbox{-}\mathrm{band}` images for DR9. This page describes the procedure for generating the templates
 and the per-exposure fringe scale factors. These fringe templates and scales replace the fringe correction applied by the `Community Pipeline`_ (henceforth CP) for
 `DECaLS`_ imaging in :math:`z\hbox{-}\mathrm{band}` for DR9 of the Legacy Surveys. Specifically, the `CP`_ fringe corrections that are originally applied for all

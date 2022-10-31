@@ -47,7 +47,6 @@ The figures below depict the (:math:`g`, :math:`r`, :math:`z`) status of the DES
 as of Data Release 10 (`DR10`_). The coverage is color-coded by (extinction-corrected)
 depth. The solid line depicts the Galactic plane.
 
-XXX Status plots are not yet updated XXX
 
 .. image:: /files/depth-g-dr10.png
     :height: 410
@@ -57,10 +56,13 @@ XXX Status plots are not yet updated XXX
     :height: 410
     :width: 570
 
+.. image:: /files/depth-i-dr10.png
+    :height: 410
+    :width: 570
+
 .. image:: /files/depth-z-dr10.png
     :height: 410
     :width: 570
-    :align: center
 
 The status for DR9 (which usefully illustrates the northern coverage) is depicted below.
 

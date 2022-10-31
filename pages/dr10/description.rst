@@ -73,7 +73,7 @@ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys opti
 
 DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between
 9th August 2014 and 7th March 2019. DR10 also includes :math:`g,r,i,z`-band DECam observations from a range of
-non-DECaLS surveys, including observations that were conducted between XXXst August XXXX and XXX March XXXX.
+non-DECaLS surveys, including observations that were conducted between 8th January 2013 and 30th August 2021.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
 Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
 To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.

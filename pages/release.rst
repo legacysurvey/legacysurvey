@@ -26,19 +26,20 @@ These tables contains information regarding how the RELEASE integer corresponds 
 DR10
 ----
 
-XXX DR10 RELEASE number needs checked for veracity XXX
+XXX 10300 DR10 RELEASE number needs checked for veracity XXX
 
-========= ====== ====== =======
-RELEASE	  CAMERA FILTER PRIMARY
-========= ====== ====== =======
-9013      decam  |g|    1
-9013      decam  |r|    1
-9013      decam  |z|    1
-9013      wise   |W1|   0
-9013      wise   |W2|   0
-9013      wise   |W3|   0
-9013      wise   |W4|   0
-========= ====== ====== =======
+================ ====== ====== =======
+RELEASE	         CAMERA FILTER PRIMARY
+================ ====== ====== =======
+9999/10000/10300 decam  |g|    1
+9999/10000/10300 decam  |r|    1
+9999/10000/10300 decam  |i|    1
+9999/10000/10300 decam  |z|    1
+9999/10000/10300 wise   |W1|   0
+9999/10000/10300 wise   |W2|   0
+9999/10000/10300 wise   |W3|   0
+9999/10000/10300 wise   |W4|   0
+================ ====== ====== =======
 
 DR9
 ---

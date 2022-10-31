@@ -40,12 +40,11 @@ observed regions at Dec |leq| 32\ |deg|. `MzLS`_ observed solely in :math:`z`, `
 observed in :math:`g` and :math:`r`, and `DECaLS`_ observed in all 3 filters.
 
 In addition to observations carried out as part of the DESI Legacy Imaging Surveys, data releases include
-reductions of data from other programs in (:math:`g`, :math:`r`, :math:`z`) that overlap the
-footprint of the Legacy Surveys.
+reductions of data from other programs that overlap the footprint of the Legacy Surveys.
 
-The figures below depict the (:math:`g`, :math:`r`, :math:`z`) status of the DESI Legacy Imaging Surveys
+The figures below depict the (:math:`g`, :math:`r`, :math:`i`, :math:`z`) status of the DESI Legacy Imaging Surveys
 as of Data Release 10 (`DR10`_). The coverage is color-coded by (extinction-corrected)
-depth. The solid line depicts the Galactic plane.
+depth. The solid line depicts the Galactic plane. XXX regular status plots XXX.
 
 
 .. image:: /files/depth-g-dr10.png

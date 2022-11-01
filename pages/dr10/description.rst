@@ -78,33 +78,14 @@ A large portion of these non-DECaLS observations were taken by the `Dark Energy 
 Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
 To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
-The table below indicates the total area covered by the DR10 release, estimated from
-XXX Area estimates are derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 45,000 |d-2|.
-
-===================== =========== =========== ===========
-Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
-===================== =========== =========== ===========
-:math:`g`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`r`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`i`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-:math:`z`-band        XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-All bands jointly     XX,XXX |d2| XX,XXX |d2| XX,XXX |d2|
-===================== =========== =========== ===========
-
-For reference, in the "official" Legacy Surveys *northern* footprint (north of -18\ |deg|), the area covered in `DR9`_ for different numbers of passes and in different filters was:
-
-===================== =========== =========== ===========
-Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
-===================== =========== =========== ===========
-:math:`g`-band        15,723 |d2| 15,194 |d2| 12,605 |d2|
-:math:`r`-band        15,712 |d2| 15,124 |d2| 12,346 |d2|
-:math:`z`-band        15,876 |d2| 15,275 |d2| 12,939 |d2|
-All bands jointly     15,566 |d2| 14,784 |d2| 10,802 |d2|
-===================== =========== =========== ===========
+In total, the DR10 release (which only includes area in the southern footprint) covers approximately
+21,800 deg\ |sup2| in g-band, 20,300 deg\ |sup2| in r-band, 18,100 deg\ |sup2| in i-band, and 21,000 deg\ |sup2|
+in z-band, of which 15,700 deg\ |sup2| has been observed in all four optical filters. These are crude estimates
+derived from counting sources in HEALPixels. More precise areas will be posted here once random catalogs
+have been derived to model the geometry of the CCDs that contribute to the DR10 footprint.
 
 .. |d2| replace:: deg\ :sup:`2`
 .. |d-2| replace:: deg\ :sup:`-2`
-
 
 DR10 includes a variety of pixel-level and catalog-level products, which are described in more
 detail on the `files`_ page.

@@ -63,8 +63,8 @@ Column          Type    Description
 ``DEC2``        float64 Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr10.fits.gz
---------------------------
+survey-bricks-dr10-south.fits.gz
+--------------------------------
 
 A FITS binary table with information that summarizes the contents of each brick in DR10.
 

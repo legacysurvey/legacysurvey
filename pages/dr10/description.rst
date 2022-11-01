@@ -79,8 +79,9 @@ Information on the exact observations included in DR10 can be derived from the L
 To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
 In total, the DR10 release (which only includes area in the southern footprint) covers approximately
-21,800 deg\ |sup2| in g-band, 20,300 deg\ |sup2| in r-band, 18,100 deg\ |sup2| in i-band, and 21,000 deg\ |sup2|
-in z-band, of which 15,700 deg\ |sup2| has been observed in all four optical filters. These are crude estimates
+21,800 deg\ |sup2| in :math:`g\hbox{-}\mathrm{band}`, 20,300 deg\ |sup2| in :math:`r\hbox{-}\mathrm{band}`,
+18,100 deg\ |sup2| in :math:`i\hbox{-}\mathrm{band}`, and 21,000 deg\ |sup2| in :math:`z\hbox{-}\mathrm{band}`,
+of which 15,700 deg\ |sup2| has been observed in all four optical filters. These are crude estimates
 derived from counting sources in HEALPixels. More precise areas will be posted here once random catalogs
 have been derived to model the geometry of the CCDs that contribute to the DR10 footprint.
 
@@ -142,7 +143,7 @@ but with a pixel scale of 2.75\ |Prime|/pix.
 There are 662,174 bricks spread over the sky, meaning that each brick has an average
 area of 0.0623 deg\ :sup:`2`\ . The brick images have some overlap.
 
-There are approximately XXX billion unique sources in DR10 spread over XXX,XXX unique bricks.
+There are approximately 2.8 billion unique sources in DR10 spread over 366,898 unique bricks.
 
 Obtaining Images and Raw Data
 =============================
@@ -362,13 +363,13 @@ The total numbers of the different morphological types in DR10 are:
 ======================= ==============
 Primary Objects of Type Unique Sources
 ======================= ==============
-*All*                      XXX,XXX,XXX
-``PSF``                    XXX,XXX,XXX
-``REX``                    XXX,XXX,XXX
-``EXP``                    XXX,XXX,XXX
-``DEV``                     XX,XXX,XXX
-``SER``                     XX,XXX,XXX
-``DUP``                        XXX,XXX
+*All*                    2,826,169,461
+``PSF``                  1,345,771,671
+``REX``                  1,122,268,233
+``EXP``                    225,234,618
+``DEV``                     83,907,237
+``SER``                     48,696,586
+``DUP``                        291,116
 ======================= ==============
 
 *Primary* objects, here, specifically refers to sources for which ``BRICK_PRIMARY==True``
@@ -397,7 +398,7 @@ The fluxes are not constrained to be positive-valued.  This allows the fitting o
 very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
-.. _`survey bricks summary file`: ../files/#region-survey-bricks-dr10-region-fits-gz
+.. _`survey bricks summary file`: ../files/#survey-bricks-dr10-south-fits-gz
 
 Tractor Implementation Details
 ==============================

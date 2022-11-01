@@ -22,8 +22,7 @@
 .. _`DR9`: ../dr9
 .. _`DR10`: ../dr10
 
-Observations for the `DESI`_ Legacy Imaging Surveys began in August 2014. For each of the Legacy Surveys
-(`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
+For each of the Legacy Surveys (`BASS`_, `DECaLS`_ and `MzLS`_) each position in the sky (minus some small filling factor)
 was designed to be observed in three "passes" in each of three filters (:math:`g`, :math:`r`, :math:`z`).
 The passes were observed according to the following criteria:
 
@@ -40,11 +39,13 @@ observed regions at Dec |leq| 32\ |deg|. `MzLS`_ observed solely in :math:`z`, `
 observed in :math:`g` and :math:`r`, and `DECaLS`_ observed in all 3 filters.
 
 In addition to observations carried out as part of the DESI Legacy Imaging Surveys, data releases include
-reductions of data from other programs that overlap the footprint of the Legacy Surveys.
+reductions of data from other programs that overlap the footprint of the Legacy Surveys. This adds imaging
+in other bands beyond the originally intended :math:`grz` coverage. For example, substantial coverage in
+:math:`i` was included as part of Data Release 10 (`DR10`_).
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`i`, :math:`z`) status of the DESI Legacy Imaging Surveys
-as of Data Release 10 (`DR10`_). The coverage is color-coded by (extinction-corrected)
-depth. The solid line depicts the Galactic plane. XXX regular status plots XXX.
+as of DR10. The coverage is color-coded by (extinction-corrected) depth. As DR10 only added new data in the southern
+footprint of the Legacy Surveys, exposures from `DR9`_ have been added to illustrate the northern coverage.
 
 
 .. image:: /files/depth-g-dr10.png
@@ -62,18 +63,3 @@ depth. The solid line depicts the Galactic plane. XXX regular status plots XXX.
 .. image:: /files/depth-z-dr10.png
     :height: 410
     :width: 570
-
-The status for DR9 (which usefully illustrates the northern coverage) is depicted below.
-
-.. image:: /files/depth-g-dr9.png
-    :height: 410
-    :width: 570
-
-.. image:: /files/depth-r-dr9.png
-    :height: 410
-    :width: 570
-
-.. image:: /files/depth-z-dr9.png
-    :height: 410
-    :width: 570
-    :align: center

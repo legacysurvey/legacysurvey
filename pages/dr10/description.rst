@@ -553,12 +553,14 @@ Depths
 
 The histograms below depict the median 5\ |sigma| point source (AB) depths for areas with
 different numbers of DECam observations in DR10:
-XXX
 
 .. image:: ../../files/depth-hist-g-dr10-south.png
     :height: 375
     :width: 570
 .. image:: ../../files/depth-hist-r-dr10-south.png
+    :height: 375
+    :width: 570
+.. image:: ../../files/depth-hist-i-dr10-south.png
     :height: 375
     :width: 570
 .. image:: ../../files/depth-hist-z-dr10-south.png

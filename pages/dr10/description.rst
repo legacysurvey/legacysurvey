@@ -581,21 +581,27 @@ from `DR9`_:
     :height: 375
     :width: 570
 
-These plots are based upon the formal errors in the Tractor catalogs for point sources,
-and can be compared to the predicted proposed Legacy Surveys
-depths for 2 observations at 1.5\ |Prime| seeing of :math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
+These plots are based upon the formal errors in the Tractor catalogs for point sources. The
+predicted proposed Legacy Surveys depths for 2 observations at 1.5\ |Prime| seeing were
+:math:`g=24.7`, :math:`r=23.9`, :math:`z=23.0`.
 
 Code Versions
 =============
 
-XXX update to actual code versions.
-
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A mix of versions; dr9-m33-1-g33038aa1, DR9.6.2, DR9.6.4, DR9.6.5, DR9.6.5-4-gbb698724 and DR9.6.7. The version used is documented in the Tractor header card ``LEGPIPEV``.
-* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.84
-* `Tractor <https://github.com/dstndstn/tractor>`_: dr9.5
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A range of versions; DR10.0.0, DR10.0.1, DR10.0.2, DR10.0.3, DR10.0.4, DR10.0.5 and DR10.0.10. The version used is documented in the Tractor header card ``LEGPIPEV``.
+* `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.90-8-g575ad17b
+* `Tractor <https://github.com/dstndstn/tractor>`_: dr10.1
 * `NOIRLab Community Pipeline <https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
-* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.2
-* `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.22.1
+* `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.3
+* `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.23.0
+* `Astropy <https://www.astropy.org/>`_: 5.0.4
+* `fitsio <https://github.com/esheldon/fitsio>`_: 1.1.6
+* `Matplotlib <https://matplotlib.org>`_: 3.5.2
+* `mkl_fft <https://pypi.org/project/mkl-fft>`_: 1.3.1
+* `NumPy <https://numpy.org/>`_: 1.21.2
+* `photutils <https://photutils.readthedocs.io/en/stable/index.html>`_: 1.4.0
+*  `SciPy`_: 1.6.3
+* `unwise_psf <https://github.com/legacysurvey/unwise_psf/blob/master/README>`_: dr10.0
 
 .. _`DESI Legacy Surveys Imaging Data Release 2`: ../../dr2
 .. _`DESI Legacy Surveys Imaging Data Release 3`: ../../dr3

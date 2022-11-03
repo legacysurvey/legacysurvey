@@ -68,7 +68,7 @@ new imaging from DECam into the "southern" Legacy Surveys footprint; continuing 
 a consistent inference model of imaging over much of the sky. Notably, DR10 of the Legacy Surveys provides
 :math:`i\hbox{-}\mathrm{band}` observations for the first time. Imaging from the Legacy Surveys is
 reduced through the `NOIRLab Community Pipeline`_ before being processed using the `Tractor`_. DR10 also
-includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_ XXX
+includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_
 force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between

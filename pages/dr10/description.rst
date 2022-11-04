@@ -478,8 +478,8 @@ fluxes should be very close to a normal distribution.  The fluxes can be negativ
 objects, and indeed we expect many such cases for the faintest objects.
 
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_, `MzLS z-band with corrections`_,
-`DECaLS g-band`_, `DECaLS r-band`_ and `DECaLS z-band`_. The curves "with corrections" include terms to correct for
-the telescope, corrector, camera and atmosphere. XXX add i-band?
+`DECam g-band`_, `DECam r-band`_, `DECam i-band`_ and `DECam z-band`_. The curves "with corrections" include terms to correct for
+the telescope, corrector, camera and atmosphere.
 
 Starting with `DR6`_, PSF photometry uses the same PSF models
 (and sky background subtraction) for zeropoint-fitting as is later used in cataloging.
@@ -500,9 +500,10 @@ we provide should all be within a few percent of being on an AB system.
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt
 .. _`MzLS z-band with corrections`: ../../files/kpzdccdcorr3.txt
-.. _`DECaLS g-band`: ../../files/decam.g.am1p4.dat.txt
-.. _`DECaLS r-band`: ../../files/decam.r.am1p4.dat.txt
-.. _`DECaLS z-band`: ../../files/decam.z.am1p4.dat.txt
+.. _`DECam g-band`: ../../files/decam.g.am1p4.dat.txt
+.. _`DECam r-band`: ../../files/decam.r.am1p4.dat.txt
+.. _`DECam i-band`: ../../files/decam.i.am1p4.dat.txt
+.. _`DECam z-band`: ../../files/decam.z.am1p4.dat.txt
 .. _`Mosaic-3`: https://noirlab.edu/science/programs/kpno/retired-instruments/mosaic
 .. _`90Prime`: https://soweb.as.arizona.edu/~tscopewiki/doku.php?id=90prime_info
 .. _`DECam`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera
@@ -588,7 +589,7 @@ predicted proposed Legacy Surveys depths for 2 observations at 1.5\ |Prime| seei
 Code Versions
 =============
 
-* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A range of versions; DR10.0.0, DR10.0.1, DR10.0.2, DR10.0.3, DR10.0.4, DR10.0.5 and DR10.0.10. The version used is documented in the Tractor header card ``LEGPIPEV``.
+* `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A range of versions; DR10.0.0, DR10.0.1, DR10.0.2, DR10.0.3, DR10.0.4, DR10.0.5, DR10.0.10 and DR10.0.12. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.90-8-g575ad17b
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr10.1
 * `NOIRLab Community Pipeline <https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.

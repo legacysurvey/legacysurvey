@@ -1,4 +1,4 @@
-# DECam system throughput, from DECaLS wiki, 
+# DECam system throughput, from DECaLS wiki,
 # source: DECamFilters-14apr18.xslx
 # airmass:       1.40000
 # i band

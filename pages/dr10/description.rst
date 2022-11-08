@@ -1,3 +1,4 @@
+
 .. title: Data Release Description
 .. slug: description
 .. tags: 
@@ -37,6 +38,7 @@ footprint further south, adding observations from other optical bands, and creat
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
+.. _`Legacypipe`: https://github.com/legacysurvey/legacypipe
 .. _`Tractor`: https://github.com/dstndstn/tractor
 .. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
 .. _`Ceres solver`: http://ceres-solver.org
@@ -67,8 +69,8 @@ comprised `DECaLS`_, `BASS`_ and `MzLS`_ are now complete. In DR10, we focus, in
 new imaging from DECam into the "southern" Legacy Surveys footprint; continuing to extend the footprint while also providing
 a consistent inference model of imaging over much of the sky. Notably, DR10 of the Legacy Surveys provides
 :math:`i\hbox{-}\mathrm{band}` observations for the first time. Imaging from the Legacy Surveys is
-reduced through the `NOIRLab Community Pipeline`_ before being processed using the `Tractor`_. DR10 also
-includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_
+reduced through the `NOIRLab Community Pipeline`_ before being processed using the `Legacypipe`_ pipeline. DR10 also
+includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_ XXX
 force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
 DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between

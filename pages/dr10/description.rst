@@ -281,7 +281,7 @@ The ``flux_ivar_[griz]`` values for these "retained" Gaia sources are set to zer
 .. _`catalogs`: ../catalogs
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`Gaia stars were extracted in DR7`: https://www.legacysurvey.org/dr7/description/#source-detection
-.. _`polynomial fits to Gaia-to-DECam`: https://github.com/legacysurvey/legacypipe/blob/7f9ab6d7a9dd5f2ae5766e4ced88942521b8f5f2/py/legacypipe/reference.py#L209
+.. _`polynomial fits to Gaia-to-DECam`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L237-L267
 
 PSF
 ===
@@ -454,23 +454,28 @@ in the color range :math:`0.4 < (g-i) < 2.7` as follows:
 .. math::
 
                (g-i) & = & g_{\mathrm{PS}} - i_{\mathrm{PS}} \\
+
    g_{\mathrm{90Prime}}  & = & g_{\mathrm{PS}} + 0.00464 + 0.08672 (g-i) - 0.00668 (g-i)^2 - 0.00255 (g-i)^3 \\
    r_{\mathrm{90Prime}}  & = & r_{\mathrm{PS}} + 0.00110 - 0.06875 (g-i) + 0.02480 (g-i)^2 - 0.00855 (g-i)^3 \\
    z_{\mathrm{Mosaic3}} & = & z_{\mathrm{PS}}  + 0.03664 - 0.11084 (g-i) + 0.04477 (g-i)^2 - 0.01223 (g-i)^3 \\
+
    g_{\mathrm{DECam}} & = & g_{\mathrm{PS}} + 0.00062 + 0.03604 (g-i) + 0.01028 (g-i)^2 - 0.00613 (g-i)^3 \\
    r_{\mathrm{DECam}} & = & r_{\mathrm{PS}} + 0.00495 - 0.08435 (g-i) + 0.03222 (g-i)^2 - 0.01140 (g-i)^3 \\
-   i_{\mathrm{DECam}} & = & XXX \\
+   i_{\mathrm{DECam}} & = & i_{\mathrm{PS}} + 0.00904 - 0.04171 (g-i) + 0.00566 (g-i)^2 - 0.00829 (g-i)^3 \\
    z_{\mathrm{DECam}} & = & z_{\mathrm{PS}} + 0.02583 - 0.07690 (g-i) + 0.02824 (g-i)^2 - 0.00898 (g-i)^3 \\
+   Y_{\mathrm{DECam}} & = & Y_{\mathrm{PS}} + 0.02332 - 0.05992 (g-i) + 0.02840 (g-i)^2 - 0.00572 (g-i)^3 \\
 
 Note that the `DECam`_ zero points have been significantly `updated since DR5`_ and the `90Prime`_ and `Mosaic-3`_
-zero points have been significantly `updated since DR6`_. Functions to perform the conversions are
+zero points have been significantly `updated since DR6`_. We included transformations for :math:`i\hbox{-}\mathrm{band}`
+and :math:`Y\hbox{-}\mathrm{band}` starting with DR10, although we have yet to release any :math:`Y\hbox{-}\mathrm{band}`
+observations. Functions to perform the conversions are
 available `in the legacypipe code`_ and the `actual external PS1 catalogs`_ we used are available at NERSC.
 
 .. _`actual external PS1 catalogs`: ../external/#pan-starrs-1-ps1
 .. _`updated since DR5`: https://www.legacysurvey.org/dr5/description/#photometry
 .. _`updated since DR6`: https://www.legacysurvey.org/dr6/description/#photometry
 .. _`Pan-STARRS1 (PS1) PSF photometry`: https://ui.adsabs.harvard.edu/abs/2016ApJ...822...66F/abstract
-.. _`in the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/65d71a6b0d0cc2ab94d497770346ff6241020f80/py/legacypipe/ps1cat.py
+.. _`in the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/ps1cat.py#L182
 
 The brightnesses of objects are all stored as linear fluxes in units of nanomaggies.  The conversion
 from linear fluxes to magnitudes is :math:`m = 22.5 - 2.5 \log_{10}(\mathrm{flux})`.
@@ -520,8 +525,6 @@ The most recent values of the Galactic extinction coefficients are available on 
 
 Astrometry
 ==========
-
-XXX did we update to EDR3 for DR10?
 
 Starting with `DR8`_, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
 `Gaia Data Release 2`_, yielding an astrometric solution that is offset by the average difference between

@@ -621,7 +621,7 @@ Name                                  Type         Units                 Descrip
 ``FIBERTOTFLUX_R``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``FIBERTOTFLUX_I``                    float32      nanomaggies           Predicted :math:`i`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``FIBERTOTFLUX_Z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
-``REF_CAT``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia EDR3`_, "L3" for the `SGA`_, empty otherwise
+``REF_CAT``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "GE" for `Gaia EDR3`_, "L3" for the `SGA`_, empty otherwise
 ``REF_ID``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia EDR3`_ and `SGA`_
 ``REF_EPOCH``                         float32      yr                    Reference catalog reference epoch (eg, 2016.0 for `Gaia EDR3`_)
 ``GAIA_PHOT_G_MEAN_MAG``              float32      mag                   `Gaia EDR3`_ G band magnitude

@@ -52,36 +52,36 @@ Name                                  Type         Units                 Descrip
 ``ebv``                               float32      mag                   Galactic extinction E(B-V) reddening from `SFD98`_, used to compute the ``mw_transmission_`` columns
 ``mjd_min``		              float64	   days                  Minimum Modified Julian Date of observations used to construct the model of this object
 ``mjd_max``		              float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
-``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, "L3" for the `SGA`_, empty otherwise
-``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for `Gaia`_ DR2 and `SGA`_
+``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "GE" for `Gaia EDR3`_, "L3" for the `SGA`_, empty otherwise
+``ref_id``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for `Gaia EDR3`_ and `SGA`_
 ``pmra``                              float32      mas/yr                Reference catalog proper motion in the RA direction
 ``pmdec``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
 ``parallax``                          float32      mas                   Reference catalog parallax
 ``pmra_ivar``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
 ``pmdec_ivar``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
 ``parallax_ivar``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
-``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
-``gaia_phot_g_mean_mag``              float32      mag                   `Gaia`_ G band mag
-``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia`_ G band signal-to-noise
-``gaia_phot_g_n_obs``                 int16                              `Gaia`_ G band number of observations
-``gaia_phot_bp_mean_mag``             float32      mag                   `Gaia`_ BP mag
-``gaia_phot_bp_mean_flux_over_error`` float32                            `Gaia`_ BP signal-to-noise
-``gaia_phot_bp_n_obs``                int16                              `Gaia`_ BP number of observations
-``gaia_phot_rp_mean_mag``             float32      mag                   `Gaia`_ RP mag
-``gaia_phot_rp_mean_flux_over_error`` float32                            `Gaia`_ RP signal-to-noise
-``gaia_phot_rp_n_obs``                int16                              `Gaia`_ RP number of observations
-``gaia_phot_variable_flag``           bool                               `Gaia`_ photometric variable flag
-``gaia_astrometric_excess_noise``     float32                            `Gaia`_ astrometric excess noise
-``gaia_astrometric_excess_noise_sig`` float32                            `Gaia`_ astrometric excess noise uncertainty
-``gaia_astrometric_n_obs_al``         int16                              `Gaia`_ number of astrometric observations along scan direction
-``gaia_astrometric_n_good_obs_al``    int16                              `Gaia`_ number of good astrometric observations along scan direction
-``gaia_astrometric_weight_al``        float32                            `Gaia`_ astrometric weight along scan direction
-``gaia_duplicated_source``            bool                               `Gaia`_ duplicated source flag
-``gaia_a_g_val``		      float32	   magnitudes		 `Gaia`_ line-of-sight extinction in the G band
-``gaia_e_bp_min_rp_val``	      float32	   magnitudes		 `Gaia`_ line-of-sight reddening E(BP-RP)
-``gaia_phot_bp_rp_excess_factor``     float32	   			 `Gaia`_ BP/RP excess factor
-``gaia_astrometric_sigma5d_max``      float32	   mas			 `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
-``gaia_astrometric_params_solved``    uint8				 which astrometric parameters were estimated for a `Gaia`_ source
+``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia EDR3`_)
+``gaia_phot_g_mean_mag``              float32      mag                   `Gaia EDR3`_ G band mag
+``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia EDR3`_ G band signal-to-noise
+``gaia_phot_g_n_obs``                 int16                              `Gaia EDR3`_ G band number of observations
+``gaia_phot_bp_mean_mag``             float32      mag                   `Gaia EDR3`_ BP mag
+``gaia_phot_bp_mean_flux_over_error`` float32                            `Gaia EDR3`_ BP signal-to-noise
+``gaia_phot_bp_n_obs``                int16                              `Gaia EDR3`_ BP number of observations
+``gaia_phot_rp_mean_mag``             float32      mag                   `Gaia EDR3`_ RP mag
+``gaia_phot_rp_mean_flux_over_error`` float32                            `Gaia EDR3`_ RP signal-to-noise
+``gaia_phot_rp_n_obs``                int16                              `Gaia EDR3`_ RP number of observations
+``gaia_phot_variable_flag``           bool                               `Gaia EDR3`_ photometric variable flag
+``gaia_astrometric_excess_noise``     float32                            `Gaia EDR3`_ astrometric excess noise
+``gaia_astrometric_excess_noise_sig`` float32                            `Gaia EDR3`_ astrometric excess noise uncertainty
+``gaia_astrometric_n_obs_al``         int16                              `Gaia EDR3`_ number of astrometric observations along scan direction
+``gaia_astrometric_n_good_obs_al``    int16                              `Gaia EDR3`_ number of good astrometric observations along scan direction
+``gaia_astrometric_weight_al``        float32                            `Gaia EDR3`_ astrometric weight along scan direction
+``gaia_duplicated_source``            bool                               `Gaia EDR3`_ duplicated source flag
+``gaia_a_g_val``		      float32	   magnitudes		 `Gaia EDR3`_ line-of-sight extinction in the G band
+``gaia_e_bp_min_rp_val``	      float32	   magnitudes		 `Gaia EDR3`_ line-of-sight reddening E(BP-RP)
+``gaia_phot_bp_rp_excess_factor``     float32	   			 `Gaia EDR3`_ BP/RP excess factor
+``gaia_astrometric_sigma5d_max``      float32	   mas			 `Gaia EDR3`_ longest semi-major axis of the 5-d error ellipsoid
+``gaia_astrometric_params_solved``    uint8				 Which astrometric parameters were estimated for a `Gaia EDR3`_ source
 ``flux_g``		              float32      nanomaggies           model flux in :math:`g`
 ``flux_r``		              float32      nanomaggies           model flux in :math:`r`
 ``flux_i``		              float32      nanomaggies           model flux in :math:`i`
@@ -178,10 +178,10 @@ Name                                  Type         Units                 Descrip
 ``fracin_r``                          float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
 ``fracin_i``                          float32                            Fraction of a source's flux within the blob in :math:`i`, near unity for real sources
 ``fracin_z``                          float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
-``ngood_g``                           int16                              XXX
-``ngood_r``                           int16                              XXX
-``ngood_i``                           int16                              XXX
-``ngood_z``                           int16                              XXX
+``ngood_g``                           int16                              Number of `good` (unmasked) images that contribute in :math:`g` (this quantity is consistent with the `nexp` maps in the `image stacks`_
+``ngood_r``                           int16                              Number of `good` (unmasked) images that contribute in :math:`r` (this quantity is consistent with the `nexp` maps in the `image stacks`_
+``ngood_i``                           int16                              Number of `good` (unmasked) images that contribute in :math:`i` (this quantity is consistent with the `nexp` maps in the `image stacks`_
+``ngood_z``                           int16                              Number of `good` (unmasked) images that contribute in :math:`z` (this quantity is consistent with the `nexp` maps in the `image stacks`_
 ``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` as cataloged on the `DR10 bitmasks page`_
 ``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` as cataloged on the `DR10 bitmasks page`_
 ``anymask_i``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`i` as cataloged on the `DR10 bitmasks page`_
@@ -243,12 +243,14 @@ Name                                  Type         Units                 Descrip
 ``shape_e2_ivar``	              float32                            Inverse variance of ``shape_e2``
 ===================================== ============ ===================== ===============================================
 
+.. _`Gaia EDR3`: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`coadd file`: ../files/#image-stacks-region-coadd
 .. _`DR10 updates page`: ../updates/#data-model-changes
 .. _`Noise equivalent area`: ../nea
 .. _`Blob-masked noise equivalent area`: ../nea
+.. _`image stacks`: ../files/#image-stacks-region-coadd
 
 Goodness-of-Fits and Morphological ``type``
 -------------------------------------------

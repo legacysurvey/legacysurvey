@@ -18,7 +18,10 @@ This page documents some of the main updates to the Legacy Surveys since Data Re
 Changes for optical data
 ========================
 
-* Multiple :math:`i\hbox{-}\mathrm{band}` quantities have been added to the `Tractor catalogs`_ and the sweeps files.
+* Multiple :math:`i\hbox{-}\mathrm{band}` quantities have been added to the `Tractor catalogs`_ and the sweep files.
+
+* Gaia quantities included in files and catalogs are now drawn from `Gaia EDR3`_.
+  - Note, though, that the astrometric solution for DR10 was still calculated using Gaia DR2.
 
 * The ``MASKBITS`` bitmask is now 32-bit rather than 16-bit, as a new bit called ``SUB_BLOB`` was added. This bit is described on the DR10 bitmasks page `under MASKBITS`_.
 
@@ -42,4 +45,4 @@ Changes for WISE data
 .. _`under MASKBITS`: ../bitmasks#maskbits
 .. _`under CCD_CUTS`: ../bitmasks#ccd-cuts
 .. _`the status page`: ../../status
-
+.. _`Gaia EDR3`: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html

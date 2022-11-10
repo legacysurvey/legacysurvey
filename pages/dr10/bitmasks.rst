@@ -36,7 +36,7 @@ Bit Name          Description
 13  ``CLUSTER``   touches a pixel in a globular cluster
 14  ``SATUR_I``   touches a pixel that was saturated in at least one :math:`i`-band image (always zero prior to DR10)
 15  ``ALLMASK_I`` touches a pixel that has any of the ``ALLMASK_I`` bits set (always zero prior to DR10)
-16  ``SUB_BLOB``  XXX
+16  ``SUB_BLOB``  source is in a large blob that was split into smaller blobs for processing
 === ============= ===============================
 
 .. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
@@ -127,7 +127,7 @@ Bit Name        Description
 ``CCD_CUTS``
 ============
 
-The `survey CCDs`_ and `forced photometry`_ files include a bitmask ``ccd_cuts`` that
+The `survey CCDs`_ files include a bitmask ``ccd_cuts`` that
 is `used by the legacypipe code`_ to discard CCDs that have low-quality observations before processing imaging for the Legacy Surveys. Any observations with
 non-zero vales of ``ccd_cuts`` are discarded prior to processing.
 
@@ -157,8 +157,8 @@ Bit Name                  Description
 14  ``DEPTH_CUT`` 	  Depth cut code (this is run after the other cuts)
 15  ``TOO_MANY_BAD_CCDS`` Remove full exposures if more than 70% of the CCDs are cut
 16  ``FLAGGED_IN_DES``    Flagged as bad in DES
-17  ``PHRMS_S7``          XXX
-18  ``DEPTH_CUT_2``       XXX
+17  ``PHRMS_S7``          A special bit for the DECam S7 chip, indicating that an extra cut on ``ccdphrms`` (see, e.g., the `survey CCDs`_ file) of > 0.1 mag was included
+18  ``DEPTH_CUT_2``       An additional depth cut was applied to allow this field to run to completion (likely because a particularly high source density made extractions intractable)
 === ===================== ===========================
 
 Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.
@@ -167,8 +167,7 @@ Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8`: ../../dr8/description
-.. _`survey CCDs`: ../files/#survey-ccds-camera-dr10-fits-gz
-.. _`forced photometry`: ../files/#forced-photometry-files-forced-camera-expos-forced-camera-exposure-fits
+.. _`survey CCDs`: ../files/#survey-ccds-dr10-v7.fits-gz
 .. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L15
 .. _`legacyzpts`: https://github.com/legacysurvey/legacyzpts/
 .. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacyzpts/data/mosaic-bad_expid.txt

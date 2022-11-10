@@ -17,8 +17,6 @@ enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-
 These definitions apply to both the values in the ``coadd/*/*/*maskbits*`` *files* and to ``MASKBITS`` *columns* in the Tractor
 and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
 
-XXX MASKBITS is now 32-bit, so must have new definitions?
-
 === ============= ===============================
 Bit Name          Description
 === ============= ===============================
@@ -38,6 +36,7 @@ Bit Name          Description
 13  ``CLUSTER``   touches a pixel in a globular cluster
 14  ``SATUR_I``   touches a pixel that was saturated in at least one :math:`i`-band image (always zero prior to DR10)
 15  ``ALLMASK_I`` touches a pixel that has any of the ``ALLMASK_I`` bits set (always zero prior to DR10)
+16  ``SUB_BLOB``  XXX
 === ============= ===============================
 
 .. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
@@ -127,7 +126,6 @@ Bit Name        Description
 
 ``CCD_CUTS``
 ============
-XXX CCD_CUTS is now 64-bit, so must have new definitions?
 
 The `survey CCDs`_ and `forced photometry`_ files include a bitmask ``ccd_cuts`` that
 is `used by the legacypipe code`_ to discard CCDs that have low-quality observations before processing imaging for the Legacy Surveys. Any observations with
@@ -159,7 +157,8 @@ Bit Name                  Description
 14  ``DEPTH_CUT`` 	  Depth cut code (this is run after the other cuts)
 15  ``TOO_MANY_BAD_CCDS`` Remove full exposures if more than 70% of the CCDs are cut
 16  ``FLAGGED_IN_DES``    Flagged as bad in DES
-17  ``XXX``               XXX
+17  ``PHRMS_S7``          XXX
+18  ``DEPTH_CUT_2``       XXX
 === ===================== ===========================
 
 Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.

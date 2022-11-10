@@ -1,4 +1,3 @@
-
 .. title: Data Release Description
 .. slug: description
 .. tags: 
@@ -100,7 +99,7 @@ Size*              Directory                                         Description
 2.1 TB             `calib/`_                                         Calibration files
 XXX KB             `gallery/`_                                       Link to webgpages of notable images (*e.g.* NGC galaxies)
 8.0 GB             `masking/`_                                       Files containing `external catalogs used for masking`_
-60 TB             `coadd/`_                                         Coadded images (image stacks)
+60 TB              `coadd/`_                                         Coadded images (image stacks)
 XXX GB             `external/`_                                      `Matches to other catalogs`_ (SDSS, etc.)
 XXX TB             `forced-brick/`_                                  Brick-organized forced-photometry catalogs
 XXX TB             `forced-ccd/`_                                    Exposure-organized forced-photometry catalogs

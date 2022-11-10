@@ -15,7 +15,7 @@
 .. contents::
 
 
-<region>/tractor/<AAA>/tractor-<brick>.fits
+south/tractor/<AAA>/tractor-<brick>.fits
 -------------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
@@ -178,10 +178,10 @@ Name                                  Type         Units                 Descrip
 ``fracin_r``                          float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
 ``fracin_i``                          float32                            Fraction of a source's flux within the blob in :math:`i`, near unity for real sources
 ``fracin_z``                          float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
-``ngood_g``                           int16                              Number of `good` (unmasked) images that contribute in :math:`g` (this quantity is consistent with the `nexp` maps in the `image stacks`_
-``ngood_r``                           int16                              Number of `good` (unmasked) images that contribute in :math:`r` (this quantity is consistent with the `nexp` maps in the `image stacks`_
-``ngood_i``                           int16                              Number of `good` (unmasked) images that contribute in :math:`i` (this quantity is consistent with the `nexp` maps in the `image stacks`_
-``ngood_z``                           int16                              Number of `good` (unmasked) images that contribute in :math:`z` (this quantity is consistent with the `nexp` maps in the `image stacks`_
+``ngood_g``                           int16                              Number of `good` (unmasked) images that contribute in :math:`g` (this quantity is consistent with the `nexp` maps in the `image stacks`_)
+``ngood_r``                           int16                              Number of `good` (unmasked) images that contribute in :math:`r` (this quantity is consistent with the `nexp` maps in the `image stacks`_)
+``ngood_i``                           int16                              Number of `good` (unmasked) images that contribute in :math:`i` (this quantity is consistent with the `nexp` maps in the `image stacks`_)
+``ngood_z``                           int16                              Number of `good` (unmasked) images that contribute in :math:`z` (this quantity is consistent with the `nexp` maps in the `image stacks`_)
 ``anymask_g``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` as cataloged on the `DR10 bitmasks page`_
 ``anymask_r``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` as cataloged on the `DR10 bitmasks page`_
 ``anymask_i``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`i` as cataloged on the `DR10 bitmasks page`_
@@ -217,8 +217,8 @@ Name                                  Type         Units                 Descrip
 ``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
 ``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd brick name (corresponding to the, *e.g.*, `legacysurvey-<brick>-image-W1.fits.fz` `coadd file`_) for the center of each object
-``wise_x``                            float32      pix                   X position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR10 updates page`_ for transformations between ``wise_x`` and ``bx``)
-``wise_y``                            float32      pix                   Y position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR10 updates page`_ for transformations between ``wise_y`` and ``by``)
+``wise_x``                            float32      pix                   X position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_x`` and ``bx``)
+``wise_y``                            float32      pix                   Y position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_y`` and ``by``)
 ``lc_flux_w1``                        float32[17]  nanomaggies           ``flux_w1`` in each of up to seventeen unWISE coadd epochs (AB system; defaults to zero for unused entries)
 ``lc_flux_w2``                        float32[17]  nanomaggies           ``flux_w2`` in each of up to seventeen unWISE coadd epochs (AB; defaults to zero for unused entries)
 ``lc_flux_ivar_w1``                   float32[17]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
@@ -246,11 +246,11 @@ Name                                  Type         Units                 Descrip
 .. _`Gaia EDR3`: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
-.. _`coadd file`: ../files/#image-stacks-region-coadd
-.. _`DR10 updates page`: ../updates/#data-model-changes
-.. _`Noise equivalent area`: ../nea
-.. _`Blob-masked noise equivalent area`: ../nea
-.. _`image stacks`: ../files/#image-stacks-region-coadd
+.. _`coadd file`: ../files/#image-stacks-south-coadd
+.. _`DR9 updates page`: ../../dr9/updates/#data-model-changes
+.. _`Noise equivalent area`: ../../dr9/nea
+.. _`Blob-masked noise equivalent area`: ../../dr9/nea
+.. _`image stacks`: ../files/#image-stacks-south-coadd
 
 Goodness-of-Fits and Morphological ``type``
 -------------------------------------------
@@ -342,5 +342,5 @@ and :math:`r, b/a, \phi`:
 .. [#] We define a mask for the aperture fluxes using an inverse variance of zero. So, pixels with undefined ("infinite") measurement errors are not used when calculating aperture fluxes in the Tractor catalogs. As the aperture fluxes are calculated from the coadd images described on the `files page`_, pixels end up being ignored if they are masked in `every` overlapping exposure in a given band. Thus, for example, the saturated cores and bleed trails of bright stars will be masked. Further, in the case that a coadd is only built from a single image, cosmic rays and other mask bits will cause poorly measured and saturated pixels to be ignored for aperture flux measurements.
 .. [#] `blobmodel` refers to the "blob-model" maps (i.e. the ``<AAA>/<brick>/legacysurvey-<brick>-blobmodel-<filter>.fits.fz`` maps described on the `files page`_).
 .. [#] The aperture sizes for WISE, and the rationale for including them, are detailed in `issue #447`_.
-.. _`files page`: ../files/#image-stacks-region-coadd
+.. _`files page`: ../files/#image-stacks-south-coadd
 .. _`issue #447`: https://github.com/legacysurvey/legacypipe/issues/447

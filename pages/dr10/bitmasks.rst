@@ -39,13 +39,13 @@ Bit Name          Description
 16  ``SUB_BLOB``  source is in a large blob that was split into smaller blobs for processing
 === ============= ===============================
 
-.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacypipe/bits.py
-.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L314-L319
-.. _`G < 13`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L310
-.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L311
+.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/bits.py
+.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L352-L357
+.. _`G < 13`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L348
+.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L349
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`SGA`: ../../sga/sga2020
-.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/6d1a92f8462f4db9360fb1a68ef7d6c252781027/py/legacypipe/reference.py#L672-L675
+.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L762-L765
 
 ``FITBITS``
 ============
@@ -99,7 +99,7 @@ Bit Name        Description
 === =========== ==========================
 
 .. _`Data Quality bits`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-.. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/14c49362418b85a591f48eaa394205ffb0321777/py/legacypipe/image.py#L27
+.. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/image.py#L25
 
 ``WISEMASK_W1``/``WISEMASK_W2``
 ===============================
@@ -161,18 +161,18 @@ Bit Name                  Description
 18  ``DEPTH_CUT_2``       An additional depth cut was applied to allow this field to run to completion (likely because a particularly high source density made extractions intractable)
 === ===================== ===========================
 
-Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `90Prime`_, `Mosaic-3`_ and `DECam`_.
+Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `DECam`_ (and also for the `Mosaic-3`_ and `90Prime`_ cameras).
 
 .. _`BASS`: ../../bass
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8`: ../../dr8/description
-.. _`survey CCDs`: ../files/#survey-ccds-dr10-v7.fits-gz
-.. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L15
+.. _`survey CCDs`: ../files/#survey-ccds-dr10-v7-fits
+.. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/bits.py#L26
 .. _`legacyzpts`: https://github.com/legacysurvey/legacyzpts/
-.. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacyzpts/data/mosaic-bad_expid.txt
-.. _`90prime-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacyzpts/data/90prime-bad_expid.txt
-.. _`decam-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/master/py/legacyzpts/data/decam-bad_expid.txt
-.. _`90Prime`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L291
-.. _`Mosaic-3`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L279
-.. _`DECam`: https://github.com/legacysurvey/legacypipe/blob/ac568487758f800e1ab5958d1d1de5582da22210/py/legacyzpts/psfzpt_cuts.py#L304
+.. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/mosaic-bad_expid.txt
+.. _`90prime-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/90prime-bad_expid.txt
+.. _`decam-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/decam-bad_expid.txt
+.. _`DECam`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L345
+.. _`90Prime`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L332
+.. _`Mosaic-3`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L320

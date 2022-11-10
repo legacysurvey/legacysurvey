@@ -879,7 +879,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
       the Vega-to-AB conversions `recommended by the WISE team`_.
 
 - <AAA>/<brick>/legacysurvey-<brick>-nexp-<filter>.fits.fz
-    Number of exposures contributing to each pixel of the stacked images.
+    Number of good (unmasked) exposures contributing to each pixel of the stacked images.
 
 - <AAA>/<brick>/legacysurvey-<brick>-psfsize-<filter>.fits.fz
     `Weighted average PSF FWHM`_ in arcsec at each pixel of the stacked images.

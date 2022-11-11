@@ -35,7 +35,11 @@ Changes for optical data
 
 * The ``CCD_CUTS`` bitmask is now 64-bit rather than 32-bit, as two new bits called ``PHRMS_S7`` and ``DEPTH_CUT_2`` were added. These bits are described on the DR10 bitmasks page `under CCD_CUTS`_.
 
-* The `Tractor catalogs`_ contain a new per-band quantity called ``ngood_x`` where ``x`` is one of :math:`g`, :math:`r`, :math:`i` or :math:`z`. These quantities record the number of `good` (unmasked) images that contribute to a source in a particular band at a particular pixel-location. Prior to DR9, we only recorded ``nobs_x`` (the `total` number of images that contributed to a source in each band) in the `Tractor catalogs`_, which created an inconsistency with the "nexp" pixel-maps in the `image stacks`_ (which only record the number of `good` images). So, ``ngood_x`` is recorded to allow a direct mapping between the number of good images in the `Tractor catalogs`_ and `image stacks`_. As an example of the difference, for saturated sources one would expect ``ngood_x`` and the "nexp" pixel maps to be zero, but ``nobs_x`` to correspond to the total number of exposures that contributed to the source.
+* The `Tractor catalogs`_ contain a new per-band quantity called ``ngood_x`` where ``x`` is one of :math:`g`, :math:`r`, :math:`i` or :math:`z`. These quantities record the number of `good` (unmasked) images that contribute to a source in a particular band at a particular pixel-location. Prior to DR9, only ``nobs_x`` (the `total` number of images that contributed to a source in each band) were recorded in the `Tractor catalogs`_, which created an inconsistency with the "nexp" pixel-maps in the `image stacks`_ (which only record the number of `good` images). So, ``ngood_x`` is recorded to allow a direct mapping between the number of good images in the `Tractor catalogs`_ and `image stacks`_.
+
+  - As an example of the difference, for saturated sources one would expect ``ngood_x`` and the "nexp" pixel maps to be zero, but ``nobs_x`` to correspond to the total number of exposures that contributed to the source.
+
+  - The addition of ``ngood_x`` fixes a `known issue from DR9`_.
 
 Changes for WISE data
 =====================
@@ -52,3 +56,4 @@ Changes for WISE data
 .. _`the status page`: ../../status
 .. _`Gaia EDR3`: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`image stacks`: ../files/#image-stacks-south-coadd
+.. _`known issue from DR9`: ../../dr9/issues/#nobs-differs-between-the-tractor-catalogs-and-random-catalogs

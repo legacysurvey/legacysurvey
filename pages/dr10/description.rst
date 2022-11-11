@@ -250,12 +250,12 @@ These include bright stars, medium-bright stars, globular clusters and `SGA (Sie
 (as detailed on the `external catalogs page`_). The foreground objects consist of pre-defined
 geometrical masks (which are elliptical for galaxies) that are
 fixed at their expected positions in the Legacy Surveys images after accounting for proper motion
-and parallax in `Gaia Data Release 2`_.
+and parallax in Gaia.
 The reasoning behind treating bright foreground sources as special cases is that many of them
-have large halos or include diffuse light that is not included in the Tractor model choices. This leads such sources
-to be typically best fit by misleading (and computationally expensive) diffuse galaxy models.
+have large halos or include diffuse light that is not present in the Tractor model choices. This leads such sources
+to be typically best-fit by misleading (and computationally expensive) diffuse galaxy models.
 
-Sources that are within a mask region have ``MASKBITS``
+Sources that lie inside the boundary of a foreground object have ``MASKBITS``
 set (see the `bitmasks page`_). Within the mask regions for bright stars (``BRIGHT``), globular clusters (``CLUSTER``)
 and `SGA`_ large galaxies (``GALAXY``), sources are forced to be ``TYPE=PSF``
 (except for the `SGA`_ large galaxies themselves). Note that sources are *not* forced to be ``TYPE=PSF`` in the region of *medium*-bright stars

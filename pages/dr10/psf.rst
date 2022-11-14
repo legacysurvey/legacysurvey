@@ -73,11 +73,12 @@ Here is an example of the `Moffat profile`_ fit to the `PSFEx`_ image, and the c
 The Outer PSF Profile
 =====================
 
-For :math:`g\hbox{-}` and :math:`r\hbox{-}\mathrm{bands}`, the outer PSF profile is a fixed power law (normalized to a 22.5 magnitude star, in units
+For :math:`g\hbox{-}`, :math:`r\hbox{-}` and :math:`i\hbox{-}\mathrm{bands}`, the outer PSF profile is a fixed power law (normalized to a 22.5 magnitude star, in units
 of :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`):
 
 - :math:`f_g = 0.00045 r^{-2}`
 - :math:`f_r = 0.00033 r^{-2}`
+- :math:`f_i = 0.00033 r^{-2}`
 
 For :math:`z\hbox{-}\mathrm{band}`, the outer PSF is a weighted `Moffat profile`_. For most CCDs, the Moffat parameters (with radius in arcsec and surface
 brightness in :math:`\mathrm{nanomaggies}/\mathrm{arcsec}^2`) and the weights are (for a 22.5 magnitude star):
@@ -119,7 +120,7 @@ File locations
 ==============
 The `PSFEx`_ files used in this analysis are available in the following directories at NERSC:
 
-XXX DR10 updates?
+XXX DR10 updates to file paths?
 
 - Original PSF: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9-archive/unpatched-psfex``
 - Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/psfex``

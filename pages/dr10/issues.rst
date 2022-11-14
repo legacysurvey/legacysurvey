@@ -55,14 +55,11 @@ A few dozen bricks were intractable on a reasonable timescale as they overlapped
 bricks were "bailed out" of before they finished processing. Sources in such bricks can be identified as they have
 the ``BAILOUT`` flag set in the `MASKBITS bitmask`_.
 
-LMC in viewer is only Gaia sources.
------------------------------------
-So, there's a significant drop in density at the boundary. Improve this description and add an example when the
+LMC in viewer is only Gaia sources
+----------------------------------
+Because it's only Gaia, there's a significant drop in density at the boundary. Improve this description and add an example when the
 viewer is served. XXX
 
-Rings of spurious Gaia sources around bright stars
---------------------------------------------------
-([decam-chatter 16786]). Expand on this. XXX
 
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep

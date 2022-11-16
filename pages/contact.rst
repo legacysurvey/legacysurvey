@@ -44,9 +44,18 @@ NOIRLab Community Pipeline:
 WISE Reductions:
     * Aaron Meisner  aaron.meisner@noirlab.edu
 
-Run Managers
+DR10 Run Managers
+    * Jan Snigula (snigula@mpe.mpg.de)
+    * Maximilian Fabricius (mfabricius@gmail.com)
+    * Johan Comparat (comparat@mpe.mpg.de)
+
+Past Run Managers
     * Mark (Ziyao) Zhang  ziyaoz@berkeley.edu *(for DR9)*
     * Martin Landriau  mlandriau@lbl.gov *(for DR5, DR6, DR7 and DR8)*
+
+Legacy survey - eROSITA - `DeROSITAS`_ coordination
+    * Alfredo Zenteno (alfredo.zenteno@noirlab.edu)
+    * Mara Salvato (mara@mpe.mpg.de)
 
 BASS Contact:
     * Jinyi Yang  jinyiyang@email.arizona.edu
@@ -84,6 +93,7 @@ Pan-STARRS1 Catalogs:
     * Doug Finkbeiner  dfinkbeiner@cfa.harvard.edu
 
 .. _`Legacypipe`: https://legacypipe.readthedocs.io/en/latest/
+.. _`DeROSITAS`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
 
 Additional contributors

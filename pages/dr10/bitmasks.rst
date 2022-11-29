@@ -167,7 +167,7 @@ Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8`: ../../dr8/description
-.. _`survey CCDs`: ../files/#survey-ccds-dr10-v7-fits
+.. _`survey CCDs`: ../files/#survey-ccds-decam-dr10-fits-gz
 .. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/bits.py#L26
 .. _`legacyzpts`: https://github.com/legacysurvey/legacyzpts/
 .. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/mosaic-bad_expid.txt

@@ -153,7 +153,7 @@ XXX TB             `sweep/`_                                         Subsets of 
 .. _`sweep/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/sweep/
 .. _`tractor/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/tractor/
 .. _`tractor-i/`: https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/tractor-i/
-.. _`survey-ccds-decam-dr10.fits.gz files`: ../files/#survey-ccds-camera-dr10-fits-gz
+.. _`survey-ccds-decam-dr10.fits.gz files`: ../files/#survey-ccds-decam-dr10-fits-gz
 
 For all of the DESI Legacy Imaging Surveys, coadded images and
 Tractor catalogs are presented in "bricks" of approximate
@@ -221,7 +221,7 @@ More examples are available on the `list of URL/cutout patterns that are support
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
 .. _`the bottom of the files`: ../files/#raw-data
-.. _`survey-ccds-* files`: ../files/#survey-ccds-camera-dr10-fits-gz
+.. _`survey-ccds-* files`: ../files/#survey-ccds-decam-dr10-fits-gz
 .. _`random catalogs`: ../files/#random-catalogs-randoms
 .. _`image stacks`: ../files/#image-stacks-region-coadd
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer

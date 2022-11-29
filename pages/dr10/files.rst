@@ -63,10 +63,8 @@ Column          Type    Description
 ``DEC2``        float64 Upper Dec boundary.
 =============== ======= ======================================================
 
-survey-bricks-dr10-south.fits.gz
---------------------------------
-
-XXX will this be in the south directory? If so change title to south/survey-bricks-dr10-south.fits.gz.
+south/survey-bricks-dr10-south.fits.gz
+--------------------------------------
 
 A FITS binary table with information that summarizes the contents of each brick in DR10.
 
@@ -76,39 +74,47 @@ Column             Type       Description
 ``brickname``      char[8]    Name of the brick.
 ``ra``             float64    RA of the center of the brick.
 ``dec``            float64    Dec of the center of the brick.
-``nexp_g``         int16      Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in g-band.
-``nexp_r``         int16      Median number of exposures in the unique area of the brick in r-band.
-``nexp_z``         int16      Median number of exposures in the unique area of the brick in z-band.
-``nexphist_g``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in g.
-``nexphist_r``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r.
-``nexphist_z``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z.
-``nobjs``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types.
-``npsf``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``. See also `the larger description`_.
-``nsimp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (there should be 0 such objects).
-``nrex``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``. See also `the larger description`_.
-``nexp``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``. See also `the larger description`_.
-``ndev``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``. See also `the larger description`_.
-``ncomp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP`` (there should be 0 such objects).
-``nser``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``. See also `the larger description`_.
-``ndup``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``. See also `the larger description`_.
-``psfsize_g``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in g-band.
-``psfsize_r``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in r-band.
-``psfsize_z``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in z-band.
+``nexp_g``         int16      Median number of exposures in the unique area (i.e. ``BRICK_PRIMARY`` area) of the brick in :math:`g`-band.
+``nexp_r``         int16      Median number of exposures in the unique area of the brick in :math:`r`-band.
+``nexp_i``         int16      Median number of exposures in the unique area of the brick in :math:`i`-band.
+``nexp_z``         int16      Median number of exposures in the unique area of the brick in :math:`z`-band.
+``nexphist_g``     int32[11]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or > 10 exposures in :math:`g`.
+``nexphist_r``     int32[11]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or > 10 exposures in :math:`r`.
+``nexphist_i``     int32[11]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or > 10 exposures in :math:`i`.
+``nexphist_z``     int32[11]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or > 10 exposures in :math:`z`.
+``nobjs``          int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types.
+``npsf``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``. See also `the larger description`_.
+``nsimp``          int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (there should be 0 such objects).
+``nrex``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``. See also `the larger description`_.
+``nexp``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``. See also `the larger description`_.
+``ndev``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``. See also `the larger description`_.
+``ncomp``          int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP`` (there should be 0 such objects).
+``nser``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``. See also `the larger description`_.
+``ndup``           int32      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``. See also `the larger description`_.
+``psfsize_g``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`g`-band.
+``psfsize_r``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`r`-band.
+``psfsize_i``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`i`-band.
+``psfsize_z``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in :math:`z`-band.
 ``psfdepth_g``     float32    5-sigma PSF detection depth in :math:`g`-band (AB mag), using PsfEx PSF model.
 ``psfdepth_r``     float32    5-sigma PSF detection depth in :math:`r`-band (AB mag), using PsfEx PSF model.
+``psfdepth_i``     float32    5-sigma PSF detection depth in :math:`i`-band (AB mag), using PsfEx PSF model.
 ``psfdepth_z``     float32    5-sigma PSF detection depth in :math:`z`-band (AB mag), using PsfEx PSF model.
 ``galdepth_g``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`g`-band (AB) mag.
 ``galdepth_r``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`r`-band (AB) mag.
+``galdepth_i``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`i`-band (AB) mag.
 ``galdepth_z``     float32    5-sigma galaxy (0.45" round exp) detection depth in :math:`z`-band (AB) mag.
 ``ebv``            float32    Median `SFD98`_ dust map E(B-V) extinction, in magnitudes, evaluated at ``BRICK_PRIMARY`` objects in this brick.
 ``trans_g``        float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_G``.
-``trans_r``        float32    Median Milky Way dust transparency in :math:`g`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``.
+``trans_r``        float32    Median Milky Way dust transparency in :math:`r`-band, based on ``ebv``. See also ``MW_TRANSMISSION_R``.
+``trans_i``        float32    Median Milky Way dust transparency in :math:`i`-band, based on ``ebv``. See also ``MW_TRANSMISSION_I``.
 ``trans_z``        float32    Median Milky Way dust transparency in :math:`z`-band, based on ``ebv``. See also ``MW_TRANSMISSION_Z``.
 ``cosky_g``        float32    Estimated sky level in the coadded images (stacks) in :math:`g`-band [#]_.
 ``cosky_r``        float32    Estimated sky level in the coadded images (stacks) in :math:`r`-band.
+``cosky_i``        float32    Estimated sky level in the coadded images (stacks) in :math:`i`-band.
 ``cosky_z``        float32    Estimated sky level in the coadded images (stacks) in :math:`z`-band.
 ``ext_g``          float32    Extinction in :math:`g`-band.
 ``ext_r``          float32    Extinction in :math:`r`-band.
+``ext_i``          float32    Extinction in :math:`i`-band.
 ``ext_z``          float32    Extinction in :math:`z`-band.
 ``wise_nobs``      int16[4]   Number of images that contributed to WISE calculations in each filter (not profile-weighted).
 ``trans_wise``     float32[4] Median Milky Way dust transparency in WISE bands, based on ``ebv``. See also, e.g., ``MW_TRANSMISSION_W1``.
@@ -116,12 +122,12 @@ Column             Type       Description
 ``ext_w2``         float32    Extinction in :math:`W2`-band.
 ``ext_w3``         float32    Extinction in :math:`W3`-band.
 ``ext_w4``         float32    Extinction in :math:`W4`-band.
-``brickid``        int16      A unique integer with 1-to-1 mapping to ``brickname``.
-``ra1``            float32    Lower RA boundary.
-``ra2``            float32    Upper RA boundary.
-``dec1``           float32    Lower Dec boundary.
-``dec2``           float32    Upper Dec boundary.
-``area``           float32    Area of the brick in square degrees.
+``brickid``        int32      A unique integer with 1-to-1 mapping to ``brickname``.
+``ra1``            float64    Lower RA boundary.
+``ra2``            float64    Upper RA boundary.
+``dec1``           float64    Lower Dec boundary.
+``dec2``           float64    Upper Dec boundary.
+``area``           float64    Area of the brick in square degrees.
 ``survey_primary`` boolean    ``True`` for northern (southern) bricks that lie in the northern (southern) footprint of the Legacy Surveys.
 ``in_desi``        boolean    ``True`` if the brick is in the DESI footprint.
 ================== ========== =========================================================================
@@ -136,8 +142,8 @@ the `catalogs page`_.
 .. _`github`: https://github.com
 .. _`DR10 bitmasks page`: ../bitmasks
 
-survey-ccds-dr10-v7.fits
-------------------------
+survey-ccds-decam-dr10.fits.gz
+------------------------------
 
 A FITS binary table with almanac information about each individual CCD image for each camera.
 
@@ -210,19 +216,19 @@ Column               Type       Description
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 
-survey-ccds-dr10-v7.kd.fits
----------------------------
+survey-ccds-decam-dr10.kd.fits
+------------------------------
 
-As for the **survey-ccds-dr10-v7.fits** file but limited by the depth of each observation. This file
-contains the CCDs actually used for the DR10 reductions. Columns are the same as for the **survey-ccds-dr10-v7.fits** file.
+As for the **survey-ccds-decam-dr10.fits.gz** file but limited by the depth of each observation. This file
+contains the CCDs actually used for the DR10 reductions. Columns are the same as for the **survey-ccds-decam-dr10.fits.gz** file.
 
-ccds-annotated-dr10-v7.fits
----------------------------
+ccds-annotated-decam-dr10.fits.gz
+---------------------------------
 
-A version of the **survey-ccds-dr10-v7.fits** file with additional information
+A version of the **survey-ccds-decam-dr10.fits.gz** file with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
 
-Includes all of the columns in the **survey-ccds-dr10-v7.fits** file plus the columns
+Includes all of the columns in the **survey-ccds-decam-dr10.fits.gz** file plus the columns
 listed below.
 
 ==================== ========== ======================================================
@@ -279,19 +285,8 @@ Column               Type       Description
 .. _`issues page`: ../issues
 .. _`DECaLS`: ../../decamls
 
-ccds-annotated-dr10-v7.kd.fits
+south/dr10-south-depth.fits.gz
 ------------------------------
-
-XXX Does this exist?
-
-As for the **ccds-annotated-dr10-v7.fits** file but limited by the depth of each observation. This file
-contain the CCDs actually used for the DR10 reductions. Columns are the same as for the **ccds-annotated-dr10-v7.fits** file.
-
-
-dr10-south-depth.fits.gz
-------------------------
-
-XXX Will this be in the south directory? If so, change title to south/dr10-south-depth.fits.gz
 
 A concatenation of the depth histograms for each brick, from the
 ``coadd/*/*/*-depth.fits`` tables.  HDU1 contains histograms that describe the
@@ -323,10 +318,8 @@ Column               Type       Description
 ``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
 ==================== =========  ============================================================
 
-dr10-south-depth-summary.fits.gz
---------------------------------
-
-XXX Will this be in the south directory? If so, change title to south/dr10-south-depth-summary.fits.gz
+south/dr10-south-depth-summary.fits.gz
+--------------------------------------
 
 A summary of the depth histogram for DR10.  FITS table with the following columns:
 
@@ -711,9 +704,8 @@ described on the `DR10 bitmasks page`_. Files in the ``masking`` directory other
 are generally described as part the overview of the `external catalogs used for masking`_, and have data models
 that are detailed as part of the `Siena Galaxy Atlas (SGA)`_.
 
-gaia-mask-dr10-near.fits.gz
----------------------------
-XXX why does this now contain the word "near" in the filename?
+gaia-mask-dr10.fits.gz
+----------------------
 
 A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia EDR3`_ stars used to
 set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR10 bitmasks page`_. See also the general overview of
@@ -759,7 +751,7 @@ Name                                  Type    Units              Description
 ``iby``                               int32                      Integer brick pixel Y coordinate (0-indexed) of this star
 ``gaia_phot_g_mean_mag``              float32 mag                `Gaia EDR3`_ G band magnitude
 ``gaia_phot_g_mean_flux_over_error``  float32 	      	         `Gaia EDR3`_ G band signal-to-noise
-``gaia_phot_g_n_obs``                 int16 	      	      	 `Gaia EDR3`_ G band number of observations
+``gaia_phot_g_n_obs``                 int32 	      	      	 `Gaia EDR3`_ G band number of observations
 ``gaia_phot_bp_mean_mag``             float32 mag     	      	 `Gaia EDR3`_ BP magnitude
 ``gaia_phot_bp_mean_flux_over_error`` float32 	      	      	 `Gaia EDR3`_ BP signal-to-noise
 ``gaia_phot_rp_mean_mag``             float32 mag      	      	 `Gaia EDR3`_ RP magnitude
@@ -795,7 +787,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 
 - <AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-dr10-v7.fits**, and also contains
+    Contains the same columns as **survey-ccds-decam-dr10.fits.gz**, and also contains
     the additional columns listed below.
 
     ================ ========= ======================================================
@@ -812,9 +804,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
     ``psfnorm``      float32   Same as ``psfnorm`` in the *ccds-annotated-* file
     ``galnorm``      float32   Same as ``galnorm`` in the *ccds-annotated-* file
     ``skyver``       char[8]   Git version of the sky calibration code
-    ``psfver``       char[20]  Git version of the PSF calibration code
-    ``skyplver``     char[8]   Community Pipeline (CP) version of the input to sky calibration
-    ``psfplver``     char[8]   CP version of the input to PSF calibration
+    ``psfver``       char[21]  Git version of the PSF calibration code
+    ``skyplver``     char[7]   Community Pipeline (CP) version of the input to sky calibration
+    ``psfplver``     char[7]   CP version of the input to PSF calibration
     ``co_sky``       float32
     ================ ========= ======================================================
 
@@ -914,12 +906,10 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 Other Files
 ===========
 
-XXX Are these ultimately going to be put in south/metrics, etc.? If so, update accordingly.
-
 Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories,
-statistics of the Tractor fits (``metrics``),
-code outputs from the fitting processes (``logs``) and additional files
-detailing the calibrations (``calib``).
+statistics of the Tractor fits (``south/metrics``),
+code outputs from the fitting processes (``south/logs``) and additional files
+detailing the calibrations (``calib``).x
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 
 .. _`contact`: ../../contact

@@ -79,12 +79,33 @@ A large portion of these non-DECaLS observations were taken by the `Dark Energy 
 Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
 To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
-In total, the DR10 release (which only includes area in the southern footprint) covers approximately
-21,800 deg\ |sup2| in :math:`g\hbox{-}\mathrm{band}`, 20,300 deg\ |sup2| in :math:`r\hbox{-}\mathrm{band}`,
-18,100 deg\ |sup2| in :math:`i\hbox{-}\mathrm{band}`, and 21,000 deg\ |sup2| in :math:`z\hbox{-}\mathrm{band}`,
-of which 15,700 deg\ |sup2| has been observed in all four optical filters. These are crude estimates
-derived from counting sources in HEALPixels. More precise areas will be posted here once random catalogs
-have been derived to model the geometry of the CCDs that contribute to the DR10 footprint.
+The table below indicates the area covered in DR10 for different numbers of passes and in different filters. These estimates
+are derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 50,000 |d-2|.
+
+===================== =========== =========== ===========
+Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
+===================== =========== =========== ===========
+:math:`g`-band        21,619 |d2| 20,241 |d2| 17,290 |d2|
+:math:`r`-band        20,135 |d2| 19,108 |d2| 16,576 |d2|
+:math:`i`-band        17,732 |d2| 15,862 |d2| 13,024 |d2|
+:math:`z`-band        20,810 |d2| 19,548 |d2| 16,762 |d2|
+All bands jointly     15,342 |d2| 13,281 |d2|  9,923 |d2|
+===================== =========== =========== ===========
+
+Past data releases have strictly defined the northern and southern portions of the Legacy Surveys to prevent double-counting of area
+in regions covered by multiple surveys. Typically, the Legacy Surveys has defined locations at Dec :math:`\geq` 32.375\ |deg| `and`
+that are north of the Galactic Plane as "northern" for `BASS`_/`MzLS`_ imaging and locations at Dec <  32.375\ |deg| `or` that are
+south of the Galactic Plane as "southern" for DECam imaging. Under this stricter definition of what constitues "southern" area, DR10 covers:
+
+===================== =========== =========== ===========
+Band/Number of Passes |geq| 1     |geq| 2     |geq| 3
+===================== =========== =========== ===========
+:math:`g`-band        21,375 |d2| 20,030 |d2| 17,143 |d2|
+:math:`r`-band        19,885 |d2| 18,898 |d2| 16,435 |d2|
+:math:`i`-band        17,732 |d2| 15,862 |d2| 13,024 |d2|
+:math:`z`-band        20,562 |d2| 19,332 |d2| 16,594 |d2|
+All bands jointly     15,342 |d2| 13,281 |d2|  9,923 |d2|
+===================== =========== =========== ===========
 
 .. |d2| replace:: deg\ :sup:`2`
 .. |d-2| replace:: deg\ :sup:`-2`

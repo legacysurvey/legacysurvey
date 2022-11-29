@@ -41,7 +41,7 @@ Name                                  Type         Units                 Descrip
 ``brick_primary``                     boolean                            ``True`` if the object is within the brick boundary
 ``maskbits``                          int32                              Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps, as cataloged on the `DR10 bitmasks page`_
 ``fitbits``                           int16                              Bitwise mask detailing pecularities of how an object was fit, as cataloged on the `DR10 bitmasks page`_
-``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model.
+``type``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy", "DEV"=deVauc, "EXP"=exponential, "SER"=Sersic, "DUP"=Gaia source fit by different model. See also `the larger description`_.
 ``ra``                                float64      deg                   Right ascension at equinox J2000
 ``dec``                               float64      deg                   Declination at equinox J2000
 ``ra_ivar``                           float32      1/deg\ |sup2|         Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
@@ -251,6 +251,7 @@ Name                                  Type         Units                 Descrip
 .. _`Noise equivalent area`: ../../dr9/nea
 .. _`Blob-masked noise equivalent area`: ../../dr9/nea
 .. _`image stacks`: ../files/#image-stacks-south-coadd
+.. _`the larger description`: ../description/#morphological-classification
 
 Goodness-of-Fits and Morphological ``type``
 -------------------------------------------

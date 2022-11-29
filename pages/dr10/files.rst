@@ -83,14 +83,14 @@ Column             Type       Description
 ``nexphist_r``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in r.
 ``nexphist_z``     int32[6]   Histogram of number of pixels in the unique brick area with 0, 1, 2, 3, 4, or > 5 exposures in z.
 ``nobjs``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of all types.
-``npsf``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``.
+``npsf``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``PSF``. See also `the larger description`_.
 ``nsimp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SIMP`` (there should be 0 such objects).
-``nrex``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``.
-``nexp``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``.
-``ndev``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``.
+``nrex``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``REX``. See also `the larger description`_.
+``nexp``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``EXP``. See also `the larger description`_.
+``ndev``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DEV``. See also `the larger description`_.
 ``ncomp``          int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``COMP`` (there should be 0 such objects).
-``nser``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``.
-``ndup``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``.
+``nser``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``SER``. See also `the larger description`_.
+``ndup``           int16      Total number of ``BRICK_PRIMARY`` objects in this brick, of type ``DUP``. See also `the larger description`_.
 ``psfsize_g``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in g-band.
 ``psfsize_r``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in r-band.
 ``psfsize_z``      float32    Median PSF size, in arcsec, evaluated at the ``BRICK_PRIMARY`` objects in this brick in z-band.
@@ -131,6 +131,7 @@ Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Comm
 *not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on
 the `catalogs page`_.
 
+.. _`the larger description`: ../description/#morphological-classification
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
 .. _`DR10 bitmasks page`: ../bitmasks
@@ -519,7 +520,7 @@ Name                                  Type         Units                 Descrip
 ``BRICKID``                           int32                              A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``OBJID``                             int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
-``TYPE``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "SER"=Sersic, "DUP"==Gaia source fit by different model
+``TYPE``                              char[3]                            Morphological model: "PSF"=stellar, "REX"="round exponential galaxy" = round EXP galaxy with a variable radius, "EXP"=exponential, "DEV"=deVauc, "SER"=Sersic, "DUP"==Gaia source fit by different model. See also `the larger description`_.
 ``RA``                                float64      deg                   Right ascension at equinox J2000
 ``DEC``                               float64      deg                   Declination at equinox J2000
 ``RA_IVAR``                           float32      1/deg\ |sup2|         Inverse variance of ``RA`` (no cosine term!), excluding astrometric calibration errors

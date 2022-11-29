@@ -681,8 +681,8 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Extra sweeps (10.0-lightcurves/sweep-<brickmin>-<brickmax>-ex.fits)
--------------------------------------------------------------------
+Extra sweeps (10.0-extra/sweep-<brickmin>-<brickmax>-ex.fits)
+-------------------------------------------------------------
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
 are not otherwise in the standard sweeps files or the "light curve" sweep files.
@@ -909,7 +909,7 @@ Other Files
 Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories,
 statistics of the Tractor fits (``south/metrics``),
 code outputs from the fitting processes (``south/logs``) and additional files
-detailing the calibrations (``calib``).x
+detailing the calibrations (``calib``).
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 
 .. _`contact`: ../../contact

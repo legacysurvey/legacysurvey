@@ -16,10 +16,10 @@
 
 
 south/tractor/<AAA>/tractor-<brick>.fits
--------------------------------------------
+----------------------------------------
 
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
-`known issues`_ regarding their content and derivation. Note that all flux-based quantities in the
+`known issues`_ regarding their content and derivation. All flux-based quantities in the
 catalogs are on the AB system (we specify that WISE fluxes are AB in the table for clarity, as
 such quantities are often quoted on the Vega system).
 

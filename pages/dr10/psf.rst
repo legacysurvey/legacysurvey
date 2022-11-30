@@ -120,10 +120,8 @@ File locations
 ==============
 The `PSFEx`_ files used in this analysis are available in the following directories at NERSC:
 
-XXX DR10 updates to file paths?
-
 - Original PSF: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9-archive/unpatched-psfex``
-- Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/psfex``
+- Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/psfex``
 
 .. _`DECaLS`: ../../decamls
 

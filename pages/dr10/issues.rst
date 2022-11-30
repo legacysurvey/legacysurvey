@@ -23,8 +23,6 @@ Issues with CCDs that may have affected the quality of DECam observations are re
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
 .. _`DECam CCDs page`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/Status-DECam-CCDs
 
-XXX - clean these up
-
 Header inconsistencies
 ----------------------
 Headers may be inconsistent with catalog values for about 2% of bricks in the `Tractor catalogs`_. This is due to
@@ -45,23 +43,17 @@ boundaries of a brick.
 
 This issue will also propagate to the `sweep files`_.
 
-Inconsistencies with DES photometry south of :math:`-30^\circ`
---------------------------------------------------------------
-Do we want to mention this? Probably not. XXX
-
 Bricks where source-fitting failed
 ----------------------------------
 A few dozen bricks were intractable on a reasonable timescale as they overlapped regions of high source density. These
 bricks were "bailed out" of before they finished processing. Sources in such bricks can be identified as they have
 the ``BAILOUT`` flag set in the `MASKBITS bitmask`_.
 
-LMC in viewer is only Gaia sources
-----------------------------------
-Because it's only Gaia, there's a significant drop in density at the boundary. Improve this description and add an example when the
-viewer is served. XXX
-
+In addition, certain high-density regions are missing completely from the Legacy Surveys. A good example is
+the `Large Magellanic Cloud`_.
 
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
 .. _`DR9`: ../../dr9
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
+.. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.6836&dec=-69.0686&layer=ls-dr10-early&zoom=5

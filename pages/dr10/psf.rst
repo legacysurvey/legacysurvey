@@ -14,7 +14,7 @@
 
 .. _`Rongpu Zhou`: ../../contact/#other-experts
 
-Starting with DR9, we use an extended PSF model to subtract the extended wings of bright stars from DECam images for `DECaLS`_. The model is symmetric (which is
+Starting with DR9, we use an extended PSF model to subtract the extended wings of bright stars from DECam images. The model is symmetric (which is
 a good approximation for DECam images), and is a linear combination of two components:
 
 1. A flexible inner PSF, which is a `Moffat profile`_ fit to the `PSFEx`_ image.
@@ -118,9 +118,14 @@ difference only shows up in the :math:`z\hbox{-}\mathrm{band}` images (although 
 
 File locations
 ==============
-The `PSFEx`_ files used in this analysis are available in the following directories at NERSC:
+The `PSFEx`_ files used for the above analysis are available in the following directories at NERSC:
 
 - Original PSF: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr9-archive/unpatched-psfex``
+- Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/psfex``
+
+The equivalent files used to modify the PSF for DR10 are available at:
+
+- Original PSF: ``/global/cfs/cdirs/cosmo/work/legacysurvey/dr10/attic/TO-ARCHIVE/calib/unpatched-psfex.tgz`` (in a gzipped tar archive)
 - Patched PSF: ``/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/psfex``
 
 .. _`DECaLS`: ../../decamls

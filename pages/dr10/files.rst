@@ -403,29 +403,29 @@ Column               Type     Description
 ``WISEMASK_W1``      uint8    Bitwise mask for WISE W1 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
 ``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
-``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
+``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ (or DECam) location
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
-``TARGETID``         int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
-``DESI_TARGET``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
-``BGS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
-``MWS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
-``SUBPRIORITY``      int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
-``OBSCONDITIONS``    int32    See the `desitarget data model`_; set to 1023, which corresponds to all possible observing conditions (added to facilitate running randoms through the `DESI fiberassign code`_)
-``PRIORITY_INIT``    int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
-``NUMOBS_INIT``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
-``SCND_TARGET``      int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``NUMOBS_MORE``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
-``NUMOBS``           int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``Z``                float64  See the `desitarget data model`_; set to -1.0 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``ZWARN``            int64    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``ZTILEID``          int32    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``Z_QN``             float64  See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``IS_QSO_QN``        int16    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``DELTACHI2``        float64  See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
-``TARGET_STATE``     char[30] See the `desitarget data model`_; set to "QSO|UNOBS", denoting an unobserved QSO (added to facilitate running randoms through the `DESI fiberassign code`_)
-``TIMESTAMP``        char[25] See the `desitarget data model`_; time at which this random was processed (added to facilitate running randoms through the `DESI fiberassign code`_)
-``VERSION``          char[14] See the `desitarget data model`_; version of the ``desitarget`` code used to process this random (added to facilitate running randoms through the `DESI fiberassign code`_)
-``PRIORITY``         int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TARGETID``         int64    See the `DESI data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``DESI_TARGET``      int64    See the `DESI data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``BGS_TARGET``       int64    See the `DESI data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``MWS_TARGET``       int64    See the `DESI data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SUBPRIORITY``      int64    See the `DESI data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``OBSCONDITIONS``    int32    See the `DESI data model`_; set to 1023, which corresponds to all possible observing conditions (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY_INIT``    int64    See the `DESI data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_INIT``      int64    See the `DESI data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SCND_TARGET``      int64    See the `DESI data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_MORE``      int64    See the `DESI data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS``           int64    See the `DESI data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``Z``                float64  See the `DESI data model`_; set to -1.0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``ZWARN``            int64    See the `DESI data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``ZTILEID``          int32    See the `DESI data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``Z_QN``             float64  See the `DESI data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``IS_QSO_QN``        int16    See the `DESI data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``DELTACHI2``        float64  See the `DESI data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TARGET_STATE``     char[30] See the `DESI data model`_; set to "QSO|UNOBS", denoting an unobserved QSO (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TIMESTAMP``        char[25] See the `DESI data model`_; time at which this random was processed (added to facilitate running randoms through the `DESI fiberassign code`_)
+``VERSION``          char[14] See the `DESI data model`_; version of the ``desitarget`` code used to process this random (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY``         int64    See the `DESI data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ==================== ======== ======================================================
 
 The version of the `desitarget`_ code used to generate the random catalogs (``2.6.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
@@ -487,9 +487,9 @@ As for the corresponding ``randoms-1-*.fits`` file, but without resolving random
 contains all randoms for dr10, regardless of whether the brick is "officially" in the ``south`` region.
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
-.. _`a particular declination`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/io.py#L102
-.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/targets.py#L821
-.. _`desitarget data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_TARGET/index.html
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/io.py#L105
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/targets.py#L1048
+.. _`DESI data model`: https://desidatamodel.readthedocs.io/en/latest/SURVEYOPS/mtl/main/dark/mtl-dark-hp-HPX.html
 .. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
 .. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/2.6.0/bin/select_randoms

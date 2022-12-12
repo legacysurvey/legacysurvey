@@ -350,7 +350,152 @@ detailed PSF model.
 .. _`Myers et al. 2022`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
 .. _`Myers et al. (2022)`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
 
+Random Catalogs (``randoms/*``)
+==============================
 
+randoms-1-\*.fits
+-----------------
+
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2022`_). Random locations
+were generated across the footprint at a density of 2,500 per square degree and meta-information
+about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
+``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
+``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``,
+``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
+(meaning that randomness is retained if just the first N rows of the file are read). Each file contains the following columns:
+
+==================== ======== ======================================================
+Column               Type     Description
+==================== ======== ======================================================
+``RELEASE``	     int16    Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
+``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
+``BRICKNAME``        char[8]  Name of the brick
+``BRICK_OBJID``      int32    Random catalog object number enumerate by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
+``RA``               float64  Right ascension at equinox J2000
+``DEC``              float64  Declination at equinox J2000
+``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
+``NOBS_R``           int16    Number of images that contribute to the central pixel in the :math:`r` filter for this location (not profile-weighted)
+``NOBS_I``           int16    Number of images that contribute to the central pixel in the :math:`i` filter for this location (not profile-weighted)
+``NOBS_Z``           int16    Number of images that contribute to the central pixel in the :math:`z` filter for this location (not profile-weighted)
+``PSFDEPTH_G``       float32  For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_G})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_G})) - 9]` gives corresponding magnitude
+``PSFDEPTH_R``       float32  For a :math:`5\sigma` point source detection limit in :math:`r`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_R})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_R})) - 9]` gives corresponding magnitude
+``PSFDEPTH_I``       float32  For a :math:`5\sigma` point source detection limit in :math:`i`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_I})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_I})) - 9]` gives corresponding magnitude
+``PSFDEPTH_Z``       float32  For a :math:`5\sigma` point source detection limit in :math:`z`, :math:`5/\sqrt(\mathrm{PSFDEPTH\_Z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{PSFDEPTH\_Z})) - 9]` gives corresponding magnitude
+``GALDEPTH_G``       float32  As for ``PSFDEPTH_G`` but for a galaxy (0.45" exp, round) detection sensitivity
+``GALDEPTH_R``       float32  As for ``PSFDEPTH_R`` but for a galaxy (0.45" exp, round) detection sensitivity
+``GALDEPTH_I``       float32  As for ``PSFDEPTH_I`` but for a galaxy (0.45" exp, round) detection sensitivity
+``GALDEPTH_Z``       float32  As for ``PSFDEPTH_Z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``PSFDEPTH_W1``      float32  As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W1
+``PSFDEPTH_W2``      float32  As for ``PSFDEPTH_G`` (and also on the AB system) but for WISE W2
+``PSFSIZE_G``	     float32  Weighted average PSF FWHM in arcsec in the :math:`g` band
+``PSFSIZE_R``	     float32  Weighted average PSF FWHM in arcsec in the :math:`r` band
+``PSFSIZE_I``	     float32  Weighted average PSF FWHM in arcsec in the :math:`i` band
+``PSFSIZE_Z``	     float32  Weighted average PSF FWHM in arcsec in the :math:`z` band
+``APFLUX_G``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`g` band at this location
+``APFLUX_R``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`r` band at this location
+``APFLUX_I``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`i` band at this location
+``APFLUX_Z``	     float32  Total flux in nanomaggies extracted in a 0.75 arcsec radius in the :math:`z` band at this location
+``APFLUX_IVAR_G``    float32  Inverse variance of ``APFLUX_G``
+``APFLUX_IVAR_R``    float32  Inverse variance of ``APFLUX_R``
+``APFLUX_IVAR_I``    float32  Inverse variance of ``APFLUX_I``
+``APFLUX_IVAR_Z``    float32  Inverse variance of ``APFLUX_Z``
+``MASKBITS``         int32    Bitwise mask for optical data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
+``WISEMASK_W1``      uint8    Bitwise mask for WISE W1 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
+``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
+``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
+``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ location
+``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
+``TARGETID``         int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``DESI_TARGET``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``BGS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``MWS_TARGET``       int64    See the `desitarget data model`_; set to zero (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SUBPRIORITY``      int64    See the `desitarget data model`_ (added to facilitate running randoms through the `DESI fiberassign code`_)
+``OBSCONDITIONS``    int32    See the `desitarget data model`_; set to 1023, which corresponds to all possible observing conditions (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY_INIT``    int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_INIT``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``SCND_TARGET``      int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS_MORE``      int64    See the `desitarget data model`_; set to 4, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+``NUMOBS``           int64    See the `desitarget data model`_; set to 0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``Z``                float64  See the `desitarget data model`_; set to -1.0 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``ZWARN``            int64    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``ZTILEID``          int32    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``Z_QN``             float64  See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``IS_QSO_QN``        int16    See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``DELTACHI2``        float64  See the `desitarget data model`_; set to -1 (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TARGET_STATE``     char[30] See the `desitarget data model`_; set to "QSO|UNOBS", denoting an unobserved QSO (added to facilitate running randoms through the `DESI fiberassign code`_)
+``TIMESTAMP``        char[25] See the `desitarget data model`_; time at which this random was processed (added to facilitate running randoms through the `DESI fiberassign code`_)
+``VERSION``          char[14] See the `desitarget data model`_; version of the ``desitarget`` code used to process this random (added to facilitate running randoms through the `DESI fiberassign code`_)
+``PRIORITY``         int64    See the `desitarget data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
+==================== ======== ======================================================
+
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/io.py#L102
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/targets.py#L821
+.. _`desitarget data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_TARGET/index.html
+.. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
+.. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/2.6.0/bin/select_randoms
+.. _`desitarget`: https://github.com/desihub/desitarget/
+.. _`here`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/randoms.py
+
+The version of the `desitarget`_ code used to generate the random catalogs (``2.6.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
+northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
+randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
+randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels observed with DECam (``PHOTSYS`` set to "S").
+
+Work which uses any of the random catalogs should cite `Myers et al. (2022)`_.
+
+randoms-outside-1-\*.fits
+-------------------------
+
+Twenty files of random points in bricks that do `not` contain an observation in DR10 (i.e. that are "outside" of the DR10 footprint). The columns in this file
+are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
+As with the other random catalogs, points were generated at a density of 2,500 per square degree and
+the order of the points within the file is also randomized. Contains the following columns:
+
+==================== ======== ======================================================
+Column               Type     Description
+==================== ======== ======================================================
+``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
+``BRICKNAME``        char[8]  Name of the brick
+``RA``               float64  Right ascension at equinox J2000
+``DEC``              float64  Declination at equinox J2000
+``NOBS_G``           int16    Always zero in this file.
+``NOBS_R``           int16    Always zero in this file.
+``NOBS_I``           int16    Always zero in this file.
+``NOBS_Z``           int16    Always zero in this file.
+``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
+==================== ======== ======================================================
+
+randoms-allsky-1-\*.fits
+------------------------
+
+The (randomly shuffled) combination of each of the ``randoms-1-X.fits``
+and ``randoms-outside-1-X.fits`` files (where X = 0, 1, 2, 3, ... 18, 19). This creates
+twenty "all-sky" random catalogs (at a density of 2,500 locations per square degree)
+where each brick is either populated with observations from the
+Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-1-X.fits`` files.
+
+survey-bricks-dr10-randoms-2.6.0.fits
+-------------------------------------
+
+A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
+the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional
+columns:
+
+================== ======= ======================================================
+Column             Type    Description
+================== ======= ======================================================
+``PHOTSYS``        char[1] ``"N"``, ``"S"`` or ``" "`` for bricks resolved to be "officially" in the north, south, or outside of the footprint, respectively.
+``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
+================== ======= ======================================================
+
+south/randoms/randoms-south-1-\*.fits
+-------------------------------------------
+
+As for the corresponding ``randoms-1-*.fits`` file, but without resolving randoms using `the desitarget code`_. In other words, this file
+contains all randoms for dr10, regardless of whether the brick is "officially" in the ``south`` region.
+
+.. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 .. _`a particular declination`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/io.py#L102
 .. _`the desitarget code`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/targets.py#L821
 .. _`desitarget data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_TARGET/index.html
@@ -358,7 +503,7 @@ detailed PSF model.
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
 .. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/0.48.0/bin/select_randoms
 .. _`desitarget`: https://github.com/desihub/desitarget/
-.. _`here`: https://github.com/desihub/desitarget/blob/0.48.0/py/desitarget/randoms.py
+.. _`here`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/randoms.py
 
 
 External Match Files (``south/external/*``)

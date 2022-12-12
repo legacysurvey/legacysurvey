@@ -138,9 +138,9 @@ the bottom of the `files`_ page).
 Sections of `DECaLS`_ for DR7 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.262&bands=grz
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=decals-dr7&pixscale=0.262&bands=grz
 
 where "bands" is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 

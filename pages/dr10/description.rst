@@ -175,21 +175,21 @@ the cutout service, for example, as follows:
 
 XXX check cutout urls. This could be complicated!
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262&bands=grz
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262&bands=grz
 
 This will merge the northern (MzLS+BASS) and southern (DECam) images at a line corresponding to Dec=32.375\ |deg|.
 
 To request images from only the northern or southern surveys, specify `dr10-north` or `dr10-south`, for example:
 
-JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.27&bands=grz
+JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262&bands=grz
 
-FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.27&bands=grz
+FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.27&bands=grz
+JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.262&bands=grz
 
-FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.27&bands=grz
+FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.262&bands=grz
 
 where "bands" is a string such as ":math:`griz`",":math:`gz`",":math:`g`", etc.
 

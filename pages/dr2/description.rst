@@ -87,7 +87,7 @@ the bottom of the `files`_ page).
 Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
 the cutout service as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.262&bands=grz
 
 FITS: https://www.legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
 

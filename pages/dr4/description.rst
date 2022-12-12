@@ -136,9 +136,9 @@ the bottom of the `files`_ page).
 Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.262&bands=grz
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.262&bands=grz
 
 where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the
 writing of this documentation the maximum size for cutouts (in number of pixels) is 512.

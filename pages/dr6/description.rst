@@ -131,9 +131,9 @@ Images from all 3 of the Legacy Surveys can be viewed directly using
 Sections of the coadd images in DR6 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262&bands=grz
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262&bands=grz
 
 where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 

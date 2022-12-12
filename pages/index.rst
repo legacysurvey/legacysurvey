@@ -53,7 +53,7 @@
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
       <h2>Current Release: Data Release 10</h2>
-      <p>September 2022</p>
+      <p>December 2022</p>
       <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
 
 .. container::

@@ -22,27 +22,29 @@
 
 .. container:: col-md-6 col-left
 
+   The DESI Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
+   infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
+   of ~14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
+   (:math:`g,r,z`), which was augmented with four infrared bands from `NEOWISE`_.
 
-   The DESI Legacy Imaging Surveys conducted dedicated observations to produce an inference model of 
-   14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
-   (:math:`g,r,z`) and four infrared bands.  The sky coverage was approximately bounded by
-   -18\ |deg| < |delta| < +84\ |deg| in celestial coordinates and :math:`|b|` > 18\
-   |deg| in Galactic coordinates. To achieve this goal, the Legacy Surveys completed
-   three imaging projects on different telescopes, described in more depth at the following links:
+   Currently, the Legacy Surveys
+   inference model is being self-consistently expanded to > 20,000 square degrees by incorporating additional
+   public DECam data in extra optical bands (:math:`g,r,i,z`) from the `NOIRLab Data Archive`_.
 
-   ========================================== ===================================== ===========================================
-   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
-   ========================================== ===================================== ===========================================
+   ========================================== ===================================== =========================================== =======================================
+   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
+   ========================================== ===================================== =========================================== =======================================
 
-   An overview of the surveys is available in `Dey et al. (2019)`_. The Legacy Surveys are currently being
-   augmented to incorporate additional DECam data reduced by the `NOIRLab Community Pipeline`_. Goals include extending the
-   footprint further south, adding observations from other optical bands, and creating a consistent inference model over a larger area.
+   An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
    .. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
    .. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+   .. _`NOIRLab Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
+   .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
+   .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 
 .. container:: col-md-6 col-right
 

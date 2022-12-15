@@ -72,7 +72,7 @@ Contents of DR10
 
 Data Release 10 (DR10) is the tenth public data release of the Legacy Surveys. The dedicated observations that
 comprised `DECaLS`_, `BASS`_ and `MzLS`_ are now complete. In DR10, we focus, instead, on incorporating
-new imaging from DECam into the "southern" Legacy Surveys footprint; continuing to extend the footprint while also providing
+new imaging from DECam into the "southern" (Declination :math:`\leq` 32.375\ |deg|) Legacy Surveys footprint; continuing to extend the footprint while also providing
 a consistent inference model of imaging over much of the sky. Notably, DR10 of the Legacy Surveys provides
 :math:`i\hbox{-}\mathrm{band}` observations for the first time. Imaging from the Legacy Surveys is
 reduced through the `NOIRLab Community Pipeline`_ before being processed using the `Legacypipe`_ pipeline. DR10 also

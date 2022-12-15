@@ -468,8 +468,8 @@ Photometry
 The flux calibration for `BASS`_, `MzLS`_ and `DECaLS`_ are on the AB natural system of the
 `90Prime`_, `Mosaic-3`_ and `DECam`_ instruments, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
-constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
-:math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
+constant in units of erg/s/cm\ |sup2|/Hz. A source with a spectrum of
+:math:`f = 10^{-(48.6+22.5)/2.5}` erg/s/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system implies that no color terms have been applied to any of the photometry, meaning
 that fluxes are reported as observed in the `90Prime`_, `Mosaic-3`_ and `DECam`_ filter systems.

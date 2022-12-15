@@ -29,7 +29,7 @@ Changes for optical data
 
 * Gaia quantities included in files and catalogs are now drawn from `Gaia EDR3`_.
 
-  - Note, though, that the astrometric solution for DR10 was still calculated using Gaia DR2.
+  - Note, though, that the astrometric solution for DR10 was still calculated using positions and proper motions from Gaia DR2.
 
 * The ``MASKBITS`` bitmask is now 32-bit rather than 16-bit, as a new bit called ``SUB_BLOB`` was added. This bit is described on the DR10 bitmasks page `under MASKBITS`_.
 

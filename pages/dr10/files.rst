@@ -24,7 +24,7 @@ For Web Access
 --------------
 
 | **Top level directory:**
-| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/south/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/
 | **Top level directory for sweep catalogs:**
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/south/sweep/
 
@@ -33,7 +33,7 @@ At NERSC (for collaborators)
 ----------------------------
 
 | **Top level directory:**
-| /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/south/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/
 | **Top level directory for sweep catalogs:**
 | /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/south/sweep/
 

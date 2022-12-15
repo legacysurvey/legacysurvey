@@ -73,11 +73,11 @@ Additional NOIRLab/CTIO Support:
 
 Website and Documentation:
     * Adam Myers  geordiemyers@gmail.com
-    * Benjamin Weaver  baweaver@lbl.gov
+    * Benjamin Weaver  benjamin.weaver@noirlab.edu
 
 Image Gallery:
     * John Moustakas  jmoustakas@siena.edu
-    * Benjamin Weaver  baweaver@lbl.gov
+    * Benjamin Weaver  benjamin.weaver@noirlab.edu
 
 `Siena Galaxy Atlas`_:
     * John Moustakas  jmoustakas@siena.edu

@@ -66,6 +66,7 @@ An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 .. _`Proposal IDs`: ../files/dr10-propids.txt
 .. _`NOIRLab Astro Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
 .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
+.. _`DeROSITAS`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
 
 Contents of DR10
 ================
@@ -81,7 +82,8 @@ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys opti
 
 DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between
 9th August 2014 and 7th March 2019. DR10 also includes :math:`g,r,i,z`-band DECam observations from a range of
-non-DECaLS surveys, including observations that were conducted between 8th January 2013 and 30th August 2021.
+non-DECaLS surveys, including observations that were conducted between 8th January 2013 and 30th August 2021. The bulk
+of these additional DECam observations are from the `DeROSITAS`_ and BLISS+ surveys [#]_.
 A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
 Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
 To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
@@ -742,3 +744,10 @@ unWISE
 
 WISE
     `Wide Infrared Survey Explorer <http://wise.ssl.berkeley.edu>`_.
+
+**Footnotes**
+
+.. [#] The full numbers of CCDs contributed by each public Proposal ID in the `NOIRLab Astro Data Archive`_ are available in `this table`_.
+
+.. _`DESI Legacy Imaging Surveys Overview Paper`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D
+.. _`this table`: ../../files/dr10-propids.txt

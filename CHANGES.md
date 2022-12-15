@@ -2,11 +2,16 @@
 
 ## 9.2.0 (DR9, unreleased)
 
-- *Planned*: correct units for `ccdskycounts`
+- Near-final updates for DR10
+  ([PR#160](https://github.com/legacysurvey/legacysurvey/pull/160)):
+    - Includes a sufficient set of DR10 pages for an initial release.
+    - Still missing details of the syntax for the cutout server.
+    - Still missing details about the DR10 sky pattern correction.
+- *Planned for DR9*: correct units for `ccdskycounts`
   ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
-- *Planned*: actually update the raw and CP-processed data access instructions
+- *Planned for DR9*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
-- *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
+- *Planned for DR9*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
 ## 9.1.2 (DR9, 2022-08-09)
 

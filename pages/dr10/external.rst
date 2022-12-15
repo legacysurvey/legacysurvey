@@ -100,6 +100,12 @@ Large Galaxies
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/masking/SGA-ellipse-v3.0.kd.fits
 |     These catalogs are based on the 2020 version of the Siena Galaxy Atlas, `SGA-2020`_. The elliptical geometry listed in the *parent* catalog was used to mask large galaxies during sky-subtraction, while the elliptical geometry in the *ellipse* catalog determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_). Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs, as documented in the `SGA-2020.fits`_ data model. 
 
+Additional Masking
+------------------
+Additionally, DR10 processing bypassed the densest regions of the Large Magellanic Cloud and Small Magellanic Cloud (effectively, we "cut holes" around the LMC and SMC). The
+result is that bricks in the central regions of the `LMC`_ and `SMC`_ are simply missing from DR10.
+
+
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.4/py/legacypipe/data/NGC-star-clusters.fits
 .. _`build-cluster-catalog.py`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.4/bin/build-cluster-catalog.py
@@ -111,3 +117,5 @@ Large Galaxies
 .. _`DECaLS`: ../../decamls
 .. _`Fornax`: https://www.legacysurvey.org/viewer?ra=39.997&dec=-34.449&layer=ls-dr10&zoom=10&GCs-PNe
 .. _`Sculptor`: https://www.legacysurvey.org/viewer?ra=15.039&dec=-33.709&layer=ls-dr10&zoom=10&GCs-PNe
+.. _`LMC`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10-early&zoom=5
+.. _`SMC`: https://www.legacysurvey.org/viewer?ra=13.1867&dec=-72.8286&layer=ls-dr10-early&zoom=5

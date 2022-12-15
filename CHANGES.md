@@ -8,11 +8,6 @@
     - Still missing details of the syntax for the cutout server.
     - Still missing details about the DR10 sky pattern correction.
     - Addresses [issue #160](https://github.com/legacysurvey/legacysurvey/issues/160).
-- *Planned for DR9*: correct units for `ccdskycounts`
-  ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
-- *Planned for DR9*: actually update the raw and CP-processed data access instructions
-  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
-- *Planned for DR9*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
 ## 9.1.2 (DR9, 2022-08-09)
 

@@ -131,6 +131,7 @@ Obtaining Images and Raw Data
 Raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
+.. _`files`: ../files
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection

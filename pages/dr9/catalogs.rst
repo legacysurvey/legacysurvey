@@ -59,7 +59,7 @@ Name                                  Type         Units                 Descrip
 ``parallax``                          float32      mas                   Reference catalog parallax
 ``pmra_ivar``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
 ``pmdec_ivar``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
-``parallax_ivar``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
+``parallax_ivar``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``parallax``
 ``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia`_ DR2)
 ``gaia_phot_g_mean_mag``              float32      mag                   `Gaia`_ G band mag
 ``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia`_ G band signal-to-noise
@@ -82,53 +82,53 @@ Name                                  Type         Units                 Descrip
 ``gaia_phot_bp_rp_excess_factor``     float32	   			 `Gaia`_ BP/RP excess factor
 ``gaia_astrometric_sigma5d_max``      float32	   mas			 `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
 ``gaia_astrometric_params_solved``    uint8				 which astrometric parameters were estimated for a `Gaia`_ source
-``flux_g``		              float32      nanomaggies           model flux in :math:`g`
-``flux_r``		              float32      nanomaggies           model flux in :math:`r`
-``flux_z``		              float32      nanomaggies           model flux in :math:`z`
-``flux_w1``                           float32      nanomaggies           WISE model flux in :math:`W1` (AB system)
-``flux_w2``                           float32      nanomaggies           WISE model flux in :math:`W2` (AB)
-``flux_w3``                           float32      nanomaggies           WISE model flux in :math:`W3` (AB)
-``flux_w4``                           float32      nanomaggies           WISE model flux in :math:`W4` (AB)
-``flux_ivar_g``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_g``
-``flux_ivar_r``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_r``
-``flux_ivar_z``		              float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_z``
-``flux_ivar_w1``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w1`` (AB system)
-``flux_ivar_w2``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w2`` (AB)
-``flux_ivar_w3``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w3`` (AB)
-``flux_ivar_w4``                      float32      1/nanomaggies\ |sup2| Inverse variance of ``flux_w4`` (AB)
-``fiberflux_g``                       float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
-``fiberflux_r``                       float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
-``fiberflux_z``                       float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
-``fibertotflux_g``                    float32      nanomaggies           Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
-``fibertotflux_r``                    float32      nanomaggies           Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
-``fibertotflux_z``                    float32      nanomaggies           Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
-``apflux_g``		              float32[8]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`g`, masked by :math:`invvar=0` (inverse variance of zero [#]_)
-``apflux_r``		              float32[8]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`r`, masked by :math:`invvar=0`
-``apflux_z``    	              float32[8]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`z`, masked by :math:`invvar=0`
-``apflux_resid_g``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`g`, masked by :math:`invvar=0`
-``apflux_resid_r``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`r`, masked by :math:`invvar=0`
-``apflux_resid_z``                    float32[8]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`z`, masked by :math:`invvar=0`
-``apflux_blobresid_g``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`g` [#]_, masked by :math:`invvar=0`
-``apflux_blobresid_r``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`r`, masked by :math:`invvar=0`
-``apflux_blobresid_z``                float32[8]   nanomaggies           Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`z`, masked by :math:`invvar=0`
-``apflux_ivar_g``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_g``, masked by :math:`invvar=0`
-``apflux_ivar_r``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_r``, masked by :math:`invvar=0`
-``apflux_ivar_z``                     float32[8]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_z``, masked by :math:`invvar=0`
+``flux_g``                            float32      nanomaggy             model flux in :math:`g`
+``flux_r``                            float32      nanomaggy             model flux in :math:`r`
+``flux_z``                            float32      nanomaggy             model flux in :math:`z`
+``flux_w1``                           float32      nanomaggy             WISE model flux in :math:`W1` (AB system)
+``flux_w2``                           float32      nanomaggy             WISE model flux in :math:`W2` (AB)
+``flux_w3``                           float32      nanomaggy             WISE model flux in :math:`W3` (AB)
+``flux_w4``                           float32      nanomaggy             WISE model flux in :math:`W4` (AB)
+``flux_ivar_g``                       float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_g``
+``flux_ivar_r``                       float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_r``
+``flux_ivar_z``                       float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_z``
+``flux_ivar_w1``                      float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_w1`` (AB system)
+``flux_ivar_w2``                      float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_w2`` (AB)
+``flux_ivar_w3``                      float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_w3`` (AB)
+``flux_ivar_w4``                      float32      1/nanomaggy\ |sup2|   Inverse variance of ``flux_w4`` (AB)
+``fiberflux_g``                       float32      nanomaggy             Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fiberflux_r``                       float32      nanomaggy             Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fiberflux_z``                       float32      nanomaggy             Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing
+``fibertotflux_g``                    float32      nanomaggy             Predicted :math:`g`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_r``                    float32      nanomaggy             Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``fibertotflux_z``                    float32      nanomaggy             Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
+``apflux_g``                          float32[8]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`g`, masked by :math:`invvar=0` (inverse variance of zero [#]_)
+``apflux_r``                          float32[8]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`r`, masked by :math:`invvar=0`
+``apflux_z``                          float32[8]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [0.5, 0.75, 1.0, 1.5, 2.0, 3.5, 5.0, 7.0] arcsec in :math:`z`, masked by :math:`invvar=0`
+``apflux_resid_g``                    float32[8]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`g`, masked by :math:`invvar=0`
+``apflux_resid_r``                    float32[8]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`r`, masked by :math:`invvar=0`
+``apflux_resid_z``                    float32[8]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`z`, masked by :math:`invvar=0`
+``apflux_blobresid_g``                float32[8]   nanomaggy             Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`g` [#]_, masked by :math:`invvar=0`
+``apflux_blobresid_r``                float32[8]   nanomaggy             Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`r`, masked by :math:`invvar=0`
+``apflux_blobresid_z``                float32[8]   nanomaggy             Aperture fluxes on :math:`image-blobmodel` residual maps in :math:`z`, masked by :math:`invvar=0`
+``apflux_ivar_g``                     float32[8]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_g``, masked by :math:`invvar=0`
+``apflux_ivar_r``                     float32[8]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_r``, masked by :math:`invvar=0`
+``apflux_ivar_z``                     float32[8]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_z``, masked by :math:`invvar=0`
 ``apflux_masked_g``                   float32[8]                         Fraction of pixels masked in :math:`g`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
 ``apflux_masked_r``                   float32[8]                         Fraction of pixels masked in :math:`r`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
 ``apflux_masked_z``                   float32[8]                         Fraction of pixels masked in :math:`z`-band aperture flux measurements; 1 means fully masked (ie, fully ignored; contributing zero to the measurement)
-``apflux_w1``		              float32[5]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] [#]_ arcsec in :math:`W1`, masked by :math:`invvar=0`
-``apflux_w2``		              float32[5]   nanomaggies           Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W2`, masked by :math:`invvar=0`
-``apflux_w3``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W3`, masked by :math:`invvar=0`
-``apflux_w4``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W4`, masked by :math:`invvar=0`
-``apflux_resid_w1``		      float32[5]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`W1`, masked by :math:`invvar=0`
-``apflux_resid_w2``		      float32[5]   nanomaggies           Aperture fluxes on the co-added residual images in :math:`W2`, masked by :math:`invvar=0`
-``apflux_resid_w3``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added residual images in :math:`W3`, masked by :math:`invvar=0`
-``apflux_resid_w4``    	              float32[5]   nanomaggies	         Aperture fluxes on the co-added residual images in :math:`W4`, masked by :math:`invvar=0`
-``apflux_ivar_w1``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w1``, masked by :math:`invvar=0`
-``apflux_ivar_w2``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w2``, masked by :math:`invvar=0`
-``apflux_ivar_w3``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w3``, masked by :math:`invvar=0`
-``apflux_ivar_w4``		      float32[5]   1/nanomaggies\ |sup2| Inverse variance of ``apflux_resid_w4``, masked by :math:`invvar=0`
+``apflux_w1``                         float32[5]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] [#]_ arcsec in :math:`W1`, masked by :math:`invvar=0`
+``apflux_w2``                         float32[5]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W2`, masked by :math:`invvar=0`
+``apflux_w3``                         float32[5]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W3`, masked by :math:`invvar=0`
+``apflux_w4``                         float32[5]   nanomaggy             Aperture fluxes on the co-added images in apertures of radius [3, 5, 7, 9, 11] arcsec in :math:`W4`, masked by :math:`invvar=0`
+``apflux_resid_w1``                   float32[5]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`W1`, masked by :math:`invvar=0`
+``apflux_resid_w2``                   float32[5]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`W2`, masked by :math:`invvar=0`
+``apflux_resid_w3``    	              float32[5]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`W3`, masked by :math:`invvar=0`
+``apflux_resid_w4``    	              float32[5]   nanomaggy             Aperture fluxes on the co-added residual images in :math:`W4`, masked by :math:`invvar=0`
+``apflux_ivar_w1``                    float32[5]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_w1``, masked by :math:`invvar=0`
+``apflux_ivar_w2``                    float32[5]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_w2``, masked by :math:`invvar=0`
+``apflux_ivar_w3``                    float32[5]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_w3``, masked by :math:`invvar=0`
+``apflux_ivar_w4``                    float32[5]   1/nanomaggy\ |sup2|   Inverse variance of ``apflux_resid_w4``, masked by :math:`invvar=0`
 ``mw_transmission_g``	              float32                            Galactic transmission in :math:`g` filter in linear units [0, 1]
 ``mw_transmission_r``	              float32                            Galactic transmission in :math:`r` filter in linear units [0, 1]
 ``mw_transmission_z``	              float32                            Galactic transmission in :math:`z` filter in linear units [0, 1]
@@ -174,29 +174,29 @@ Name                                  Type         Units                 Descrip
 ``psfsize_g``                         float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 ``psfsize_r``                         float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 ``psfsize_z``                         float32      arcsec                Weighted average PSF FWHM in the :math:`z` band
-``psfdepth_g``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{psfdepth\_g})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_g})) - 9]` gives corresponding AB magnitude
-``psfdepth_r``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`r`, :math:`5/\sqrt(\mathrm{psfdepth\_r})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_r})) - 9]` gives corresponding AB magnitude
-``psfdepth_z``                        float32      1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit in :math:`z`, :math:`5/\sqrt(\mathrm{psfdepth\_z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_z})) - 9]` gives corresponding AB magnitude
-``galdepth_g``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
-``galdepth_r``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
-``galdepth_z``                        float32      1/nanomaggies\ |sup2| As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
+``psfdepth_g``                        float32      1/nanomaggy\ |sup2|   For a :math:`5\sigma` point source detection limit in :math:`g`, :math:`5/\sqrt(\mathrm{psfdepth\_g})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_g})) - 9]` gives corresponding AB magnitude
+``psfdepth_r``                        float32      1/nanomaggy\ |sup2|   For a :math:`5\sigma` point source detection limit in :math:`r`, :math:`5/\sqrt(\mathrm{psfdepth\_r})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_r})) - 9]` gives corresponding AB magnitude
+``psfdepth_z``                        float32      1/nanomaggy\ |sup2|   For a :math:`5\sigma` point source detection limit in :math:`z`, :math:`5/\sqrt(\mathrm{psfdepth\_z})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{psfdepth\_z})) - 9]` gives corresponding AB magnitude
+``galdepth_g``                        float32      1/nanomaggy\ |sup2|   As for ``psfdepth_g`` but for a galaxy (0.45" exp, round) detection sensitivity
+``galdepth_r``                        float32      1/nanomaggy\ |sup2|   As for ``psfdepth_r`` but for a galaxy (0.45" exp, round) detection sensitivity
+``galdepth_z``                        float32      1/nanomaggy\ |sup2|   As for ``psfdepth_z`` but for a galaxy (0.45" exp, round) detection sensitivity
 ``nea_g``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`g`.
 ``nea_r``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`r`.
 ``nea_z``                             float32      arcsec\ |sup2|        `Noise equivalent area`_ in :math:`z`.
 ``blob_nea_g``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`g`.
 ``blob_nea_r``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`r`.
 ``blob_nea_z``                        float32      arcsec\ |sup2|     	 `Blob-masked noise equivalent area`_ in :math:`z`.
-``psfdepth_w1``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W1
-``psfdepth_w2``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W2
-``psfdepth_w3``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
-``psfdepth_w4``			      float32	   1/nanomaggies\ |sup2| As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
+``psfdepth_w1``                       float32      1/nanomaggy\ |sup2|   As for ``psfdepth_g`` (and also on the AB system) but for WISE W1
+``psfdepth_w2``	                      float32      1/nanomaggy\ |sup2|   As for ``psfdepth_g`` (and also on the AB system) but for WISE W2
+``psfdepth_w3``	                      float32      1/nanomaggy\ |sup2|   As for ``psfdepth_g`` (and also on the AB system) but for WISE W3
+``psfdepth_w4``	                      float32      1/nanomaggy\ |sup2|   As for ``psfdepth_g`` (and also on the AB system) but for WISE W4
 ``wise_coadd_id``	              char[8]                            unWISE coadd brick name (corresponding to the, *e.g.*, `legacysurvey-<brick>-image-W1.fits.fz` `coadd file`_) for the center of each object
 ``wise_x``                            float32      pix                   X position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_x`` and ``bx``)
 ``wise_y``                            float32      pix                   Y position of coordinates in the brick image stack that corresponds to ``wise_coadd_id`` (see the `DR9 updates page`_ for transformations between ``wise_y`` and ``by``)
-``lc_flux_w1``	     	              float32[15]  nanomaggies           ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``lc_flux_w2``                        float32[15]  nanomaggies           ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
-``lc_flux_ivar_w1``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
-``lc_flux_ivar_w2``	              float32[15]  1/nanomaggies\ |sup2| Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
+``lc_flux_w1``                        float32[15]  nanomaggy             ``flux_w1`` in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``lc_flux_w2``                        float32[15]  nanomaggy             ``flux_w2`` in each of up to fifteen unWISE coadd epochs (AB; defaults to zero for unused entries)
+``lc_flux_ivar_w1``                   float32[15]  1/nanomaggy\ |sup2|   Inverse variance of ``lc_flux_w1`` (AB system; defaults to zero for unused entries)
+``lc_flux_ivar_w2``                   float32[15]  1/nanomaggy\ |sup2|   Inverse variance of ``lc_flux_w2`` (AB; defaults to zero for unused entries)
 ``lc_nobs_w1``		              int16[15]                          ``nobs_w1`` in each of up to fifteen unWISE coadd epochs
 ``lc_nobs_w2``		              int16[15]                          ``nobs_w2`` in each of up to fifteen unWISE coadd epochs
 ``lc_fracflux_w1``	              float32[15]                        ``fracflux_w1`` in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)

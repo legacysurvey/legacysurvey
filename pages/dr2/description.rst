@@ -80,26 +80,9 @@ brick images have some overlap.
 Obtaining Images and Raw Data
 ==============================
 
-Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
+Raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
-Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
-the cutout service as follows:
-
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout-decals-dr2/?ra=244.6961&dec=7.4106&size=512&pixscale=0.262&bands=grz
-
-FITS: https://www.legacysurvey.org/viewer/fits-cutout-decals-dr2?ra=244.6961&dec=7.4106&pixscale=0.911&size=512&bands=r
-
-where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
-maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native DECam pixels.
-
-See also the `list of URL/cutout patterns that are supported by the viewer`_.
-
-.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
-.. _`files`: ../files
-.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection

@@ -160,7 +160,7 @@ and raw data can be obtained through `the NOIRLab portal`_ (see also the informa
 Sections of the Legacy Surveys for DR8 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.262&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.262
 
 FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8&pixscale=0.262&bands=grz
 
@@ -168,11 +168,11 @@ This will merge the northern (MzLS+BASS) and equatorial (DECam) images at the De
 
 To request images from only the northern or equatorial surveys, specify `dr8-north` or `dr8-south`, for example:
 
-JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.262&bands=grz
+JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.262
 
 FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=dr8-south&pixscale=0.262&bands=grz
 
-JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.262&bands=grz
+JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.262
 
 FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=dr8-north&pixscale=0.262&bands=grz
 
@@ -184,11 +184,11 @@ or `layer=dr8-resid` (`layer=dr8-north-resid`) will instead return cutouts for t
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=dr8&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=dr8&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr8&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=dr8&pixscale=0.262
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 

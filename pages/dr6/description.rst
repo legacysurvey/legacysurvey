@@ -131,7 +131,7 @@ Images from all 3 of the Legacy Surveys can be viewed directly using
 Sections of the coadd images in DR6 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262
 
 FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262&bands=grz
 
@@ -143,11 +143,11 @@ cutouts for the model and residual images, respectively.
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&height=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&height=100&layer=mzls+bass-dr6&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&size=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&size=100&layer=mzls+bass-dr6&pixscale=0.262
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 

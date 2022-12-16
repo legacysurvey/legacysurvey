@@ -128,29 +128,9 @@ For `DESI`_ members with access to DocDB, a further overview of DR4 is available
 Obtaining Images and Raw Data
 ==============================
 
-Images, for all 3 of the Legacy Surveys can be viewed
-directly using `the Sky viewer`_
-and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
+Raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
-Sections of BASS and MzLS for DR4 can be obtained as JPEGs or FITS files using
-the cutout service, as follows:
-
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.262&bands=grz
-
-FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=51.2005&layer=mzls+bass-dr4&pixscale=0.262&bands=grz
-
-where "bands" is a string like ":math:`grz`",":math:`gz`",":math:`g`", etc.  As of the
-writing of this documentation the maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
-For information on how to recover `DECaLS`_ cutouts, see the `DR3 description`_ page.
-
-See also the `list of URL/cutout patterns that are supported by the viewer`_.
-
-.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
-.. _`DR3 description`: ../../dr3/description
-.. _`files`: ../files
-.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection

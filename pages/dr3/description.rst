@@ -78,26 +78,9 @@ used with caution, as noted below in the *Image Stacks* section.
 Obtaining Images and Raw Data
 ==============================
 
-Images can be viewed directly using `the Sky viewer`_
-and raw data can be obtained through `the NOIRLab portal`_ (see also the information near
+Raw data can be obtained through `the NOIRLab portal`_ (see also the information near
 the bottom of the `files`_ page).
 
-Sections of the Legacy Survey can be obtained as JPEGs or FITS files using
-the cutout service, as follows:
-
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.262&bands=grz
-
-FITS: https://www.legacysurvey.org/viewer/fits-cutout/?ra=190.1086&dec=1.2005&layer=decals-dr3&pixscale=0.262&bands=grz
-
-where "bands" is a string like "grz","gz","g", etc.  As of the writing of this documentation the
-maximum size for cutouts (in number of pixels) is 512.
-Pixscale=0.262 will return (approximately) the native DECam pixels.
-
-See also the `list of URL/cutout patterns that are supported by the viewer`_.
-
-.. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
-.. _`files`: ../files
-.. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection

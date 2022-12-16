@@ -28,11 +28,11 @@ BY                          float32      pix                   Y position (0-ind
 BX0                         float32      pix                   Initialized X position (0-indexed) of coordinates in brick image stack
 BY0                         float32      pix                   Initialized Y position (0-indexed) of coordinates in brick image stack
 LEFT_BLOB                   char                               "T" if an object center has been optimized to be outside the fitting pixel area; otherwise "F"
-DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
-DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
-DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
-DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fluxes on the co-added residual images
-DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
+DECAM_FLUX                  float32[6]   nanomaggy             DECam model flux in ugrizY
+DECAM_FLUX_IVAR             float32[6]   1/nanomaggy\ |sup2|   Inverse variance oF DECAM_FLUX
+DECAM_APFLUX                float32[8,6] nanomaggy             DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
+DECAM_APFLUX_RESID          float32[8,6] nanomaggy             DECam aperture fluxes on the co-added residual images
+DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggy\ |sup2|   Inverse variance oF DECAM_APFLUX
 DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
 DECAM_NOBS                  int32[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 DECAM_RCHI2                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
@@ -42,8 +42,8 @@ DECAM_FRACIN                float32[6]                         Fraction of a sou
 OUT_OF_BOUNDS               bool[6]                            "T" for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 DECAM_ANYMASK               int32[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
 DECAM_ALLMASK               int32[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
-WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
-WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
+WISE_FLUX                   float32[4]   nanomaggy             WISE model flux in W1,W2,W3,W4
+WISE_FLUX_IVAR              float32[4]   1/nanomaggy\ |sup2|   Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
 WISE_NOBS                   int32[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])

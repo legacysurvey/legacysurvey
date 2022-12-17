@@ -56,4 +56,4 @@ the `Large Magellanic Cloud`_.
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
 .. _`DR9`: ../../dr9
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
-.. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.6836&dec=-69.0686&layer=ls-dr10-early&zoom=5
+.. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5

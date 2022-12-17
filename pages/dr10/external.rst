@@ -117,5 +117,5 @@ result is that bricks in the central regions of the `LMC`_ and `SMC`_ are simply
 .. _`DECaLS`: ../../decamls
 .. _`Fornax`: https://www.legacysurvey.org/viewer?ra=39.997&dec=-34.449&layer=ls-dr10&zoom=10&GCs-PNe
 .. _`Sculptor`: https://www.legacysurvey.org/viewer?ra=15.039&dec=-33.709&layer=ls-dr10&zoom=10&GCs-PNe
-.. _`LMC`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10-early&zoom=5
-.. _`SMC`: https://www.legacysurvey.org/viewer?ra=13.1867&dec=-72.8286&layer=ls-dr10-early&zoom=5
+.. _`LMC`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5
+.. _`SMC`: https://www.legacysurvey.org/viewer?ra=13.1867&dec=-72.8286&layer=ls-dr10&zoom=5

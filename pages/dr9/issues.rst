@@ -75,6 +75,22 @@ be expected when deriving ``NOBS`` from the same location in the ``nexp`` `coadd
 are (almost) always larger than what would be derived from the ``nexp`` `coadded stacks`_. This means that constraints based on a minimum ``nexp`` value
 in a given filter will always result in reproducible survey geometry, at the expense of rejecting a small fraction (typically <1%) of sources.
 
+Duplicate ``ref_id`` values
+---------------------------
+
+A very small number of ``ref_id`` values for Gaia sources appear twice in the `Tractor catalogs`_. One of the duplicates corresponds to the
+"correct" Gaia source and the second duplicate has all of the correct information for a Gaia source but with an incorrect
+``ref_id``. The ``ref_id`` that would be correct for the second duplicate is missing entirely from the `Tractor catalogs`_.
+
+An example is ``ref_id`` 303293444934132224, which appears in Tractor catalog ``tractor-0238p302.fits`` with correct
+information (RA, Dec, etc.) and in Tractor catalog ``tractor-0238p305.fits`` with information that corresponds to
+the Gaia source with ``ref_id`` 303315950562852864.
+
+The cause of this problem has yet to be fully diagnosed, although the discrepant Gaia sources tend to lie very close to brick boundaries.
+
+This issue will also propagate to the `sweep files`_.
+
 .. _`Tractor catalogs`: ../catalogs
 .. _`random catalogs`: ../files/#random-catalogs-randoms
 .. _`coadded stacks`: ../files/#image-stacks-region-coadd
+.. _`sweep files`: ../files/#sweep-catalogs-region-sweep

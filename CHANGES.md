@@ -1,12 +1,17 @@
 # legacysurvey Change Log
 
-## 9.2.0 (DR9, unreleased)
+## 10.0.0 (DR10, unreleased)
 
+- Near-final updates for DR10
+  ([PR#165](https://github.com/legacysurvey/legacysurvey/pull/165)):
+    - Includes a sufficient set of DR10 pages for an initial release.
+    - Still missing details of the syntax for the cutout server.
+    - Still missing details about the DR10 sky pattern correction.
+    - Addresses [issue #160](https://github.com/legacysurvey/legacysurvey/issues/160).
 - *Planned*: correct units for `ccdskycounts`
   ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
-- *Planned*: DR9 gallery ([#117](https://github.com/legacysurvey/legacysurvey/issues/117)).
 
 ## 9.1.2 (DR9, 2022-08-09)
 

@@ -131,9 +131,9 @@ Images from all 3 of the Legacy Surveys can be viewed directly using
 Sections of the coadd images in DR6 can be obtained as JPEGs or FITS files using
 the cutout service, as follows:
 
-JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262
 
-FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.27&bands=grz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=mzls+bass-dr6&pixscale=0.262&bands=grz
 
 where :math:`bands` is a string such as ":math:`grz`",":math:`gz`",":math:`g`", etc.
 
@@ -143,11 +143,11 @@ cutouts for the model and residual images, respectively.
 The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
 where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&width=100&layer=mzls+bass-dr6&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&height=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&height=100&layer=mzls+bass-dr6&pixscale=0.262
 
-https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&size=100&layer=mzls+bass-dr6&pixscale=0.3&bands=grz
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&size=100&layer=mzls+bass-dr6&pixscale=0.262
 
 It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
@@ -312,8 +312,8 @@ Photometry
 The flux calibration for `BASS`_ and `MzLS`_ are on the AB natural system of the `90Prime`_
 and `Mosaic-3`_ cameras, respectively.
 An AB system reports the same flux in any band for a source whose spectrum is
-constant in units of erg/cm\ |sup2|/Hz. A source with a spectrum of
-:math:`f = 10^{-(48.6+22.5)/2.5}` erg/cm\ |sup2|/Hz
+constant in units of erg/s/cm\ |sup2|/Hz. A source with a spectrum of
+:math:`f = 10^{-(48.6+22.5)/2.5}` erg/s/cm\ |sup2|/Hz
 would be reported to have an integrated flux of 1 nanomaggie in any filter.
 The natural system means that we have not
 applied color terms to any of the photometry, but report fluxes as observed in the

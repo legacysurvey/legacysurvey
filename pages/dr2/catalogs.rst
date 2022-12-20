@@ -40,11 +40,11 @@ LEFT_BLOB                   boolean                            True if an object
 OUT_OF_BOUNDS               boolean                            True for objects whose center is on the brick; less strong of a cut than BRICK_PRIMARY
 DCHISQ                      float32[5]                         Difference in |chi|\ |sup2| between successively more-complex model fits: PSF, SIMPle, DEV, EXP, COMP.  The difference is versus no source.
 EBV                         float32      mag                   Galactic extinction E(B-V) reddening from SFD98, used to compute DECAM_MW_TRANSMISSION and WISE_MW_TRANSMISSION
-DECAM_FLUX                  float32[6]   nanomaggies           DECam model flux in ugrizY
-DECAM_FLUX_IVAR             float32[6]   1/nanomaggies\ |sup2| Inverse variance oF DECAM_FLUX
-DECAM_APFLUX                float32[8,6] nanomaggies           DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
-DECAM_APFLUX_RESID          float32[8,6] nanomaggies           DECam aperture fluxes on the co-added residual images
-DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggies\ |sup2| Inverse variance oF DECAM_APFLUX
+DECAM_FLUX                  float32[6]   nanomaggy             DECam model flux in ugrizY
+DECAM_FLUX_IVAR             float32[6]   1/nanomaggy\ |sup2|   Inverse variance oF DECAM_FLUX
+DECAM_APFLUX                float32[8,6] nanomaggy             DECam aperture fluxes on the co-added images in apertures of radius  [0.5,0.75,1.0,1.5,2.0,3.5,5.0,7.0] arcsec in ugrizY
+DECAM_APFLUX_RESID          float32[8,6] nanomaggy             DECam aperture fluxes on the co-added residual images
+DECAM_APFLUX_IVAR           float32[8,6] 1/nanomaggy\ |sup2|   Inverse variance oF DECAM_APFLUX
 DECAM_MW_TRANSMISSION       float32[6]                         Galactic transmission in ugrizY filters in linear units [0,1]
 DECAM_NOBS                  uint8[6]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 DECAM_RCHI2                 float32[6]                         Profile-weighted |chi|\ |sup2| of model fit normalized by the number of pixels
@@ -54,8 +54,8 @@ DECAM_FRACIN                float32[6]                         Fraction of a sou
 DECAM_ANYMASK               int16[6]                           Bitwise mask set if the central pixel from any image satisfy each condition
 DECAM_ALLMASK               int16[6]                           Bitwise mask set if the central pixel from all images satisfy each condition
 DECAM_PSFSIZE               float32[6]   arcsec                Weighted average PSF FWHM per band
-WISE_FLUX                   float32[4]   nanomaggies           WISE model flux in W1,W2,W3,W4
-WISE_FLUX_IVAR              float32[4]   1/nanomaggies\ |sup2| Inverse variance of WISE_FLUX
+WISE_FLUX                   float32[4]   nanomaggy             WISE model flux in W1,W2,W3,W4
+WISE_FLUX_IVAR              float32[4]   1/nanomaggy\ |sup2|   Inverse variance of WISE_FLUX
 WISE_MW_TRANSMISSION        float32[4]                         Galactic transmission in W1,W2,W3,W4 filters in linear units [0,1]
 WISE_NOBS                   int16[4]                           Number of images that contribute to the central pixel in each filter for this object (not profile-weighted)
 WISE_FRACFLUX               float32[4]                         Profile-weight fraction of the flux from other sources divided by the total flux (typically [0,1])
@@ -74,8 +74,8 @@ SHAPEDEV_E1                 float32                            Ellipticity compo
 SHAPEDEV_E1_IVAR            float32                            Inverse variance of SHAPEDEV_E1
 SHAPEDEV_E2                 float32                            Ellipticity component 2
 SHAPEDEV_E2_IVAR            float32                            Inverse variance of SHAPEDEV_E2
-DECAM_DEPTH                 float32[6]   1/nanomaggies\ |sup2| For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{DECAM\_DEPTH})) - 9]` gives corresponding magnitude
-DECAM_GALDEPTH              float32[6]   1/nanomaggies\ |sup2| As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
+DECAM_DEPTH                 float32[6]   1/nanomaggy\ |sup2|   For a :math:`5\sigma` point source detection limit, :math:`5/\sqrt(\mathrm{DECAM\_DEPTH})` gives flux in nanomaggies and :math:`-2.5[\log_{10}(5 / \sqrt(\mathrm{DECAM\_DEPTH})) - 9]` gives corresponding magnitude
+DECAM_GALDEPTH              float32[6]   1/nanomaggy\ |sup2|   As for DECAM_DEPTH but for a galaxy (0.45" exp, round) detection sensitivity
 =========================== ============ ===================== ===============================================
 
 Mask Values

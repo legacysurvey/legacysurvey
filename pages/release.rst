@@ -9,6 +9,7 @@
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN
 .. |g| replace:: :math:`g`
 .. |r| replace:: :math:`r`
+.. |i| replace:: :math:`i`
 .. |z| replace:: :math:`z`
 .. |W1| replace:: :math:`W1`
 .. |W2| replace:: :math:`W2`
@@ -22,6 +23,22 @@
 .. _`DESI`: https://desi.lbl.gov
 
 These tables contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
+
+DR10
+----
+
+======= ====== ====== =======
+RELEASE CAMERA FILTER PRIMARY
+======= ====== ====== =======
+10000   decam  |g|    1
+10000   decam  |r|    1
+10000   decam  |i|    1
+10000   decam  |z|    1
+10000   wise   |W1|   0
+10000   wise   |W2|   0
+10000   wise   |W3|   0
+10000   wise   |W4|   0
+======= ====== ====== =======
 
 DR9
 ---

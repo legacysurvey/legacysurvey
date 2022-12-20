@@ -1,6 +1,6 @@
 .. title: Index
 .. slug: index
-.. date: 2022-05-21 01:37:09 UTC
+.. date: 2022-09-02 01:37:09 UTC
 .. tags:
 .. category:
 .. link:
@@ -22,26 +22,29 @@
 
 .. container:: col-md-6 col-left
 
+   The DESI Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
+   infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
+   of ~14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
+   (:math:`g,r,z`), which was augmented with four infrared bands from `NEOWISE`_.
 
-   The DESI Legacy Imaging Surveys are producing an inference model catalog of the sky
-   from a set of optical and infrared imaging data, comprising
-   14,000 deg\ |sup2| of extragalactic sky
-   visible from the northern hemisphere in three optical bands
-   (:math:`g,r,z`) and four infrared bands.
-   The sky coverage is approximately bounded by -18\ |deg| < |delta| < +84\ |deg|
-   in celestial coordinates and :math:`|b|` > 18\ |deg| in Galactic coordinates.
-   To achieve this goal, the DESI Legacy Imaging Surveys are conducting
-   3 imaging projects on different telescopes, described in more detail at the following links and
-   in the `DESI Legacy Imaging Surveys Overview Paper.`_
+   Currently, the Legacy Surveys
+   inference model is being self-consistently expanded to > 20,000 square degrees by incorporating additional
+   public DECam data in extra optical bands (:math:`g,r,i,z`) from the `NOIRLab Data Archive`_.
 
-   ========================================== ===================================== ===========================================
-   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_)
-   ========================================== ===================================== ===========================================
+   ========================================== ===================================== =========================================== =======================================
+   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
+   ========================================== ===================================== =========================================== =======================================
+
+   An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
-   .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
+   .. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
+   .. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+   .. _`NOIRLab Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
+   .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
+   .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 
 .. container:: col-md-6 col-right
 
@@ -51,9 +54,9 @@
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 9</h2>
-      <p>January 2021</p>
-      <p><a class="btn btn-primary btn-lg" href="dr9">DR9</a></p>
+      <h2>Current Release: Data Release 10</h2>
+      <p>December 2022</p>
+      <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
 
 .. container::
 

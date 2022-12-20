@@ -18,72 +18,82 @@ Help Desk:
 PIs and Leads
 -------------
 DECaLS and MzLS Principal Investigators:
-    * David Schlegel djschlegel@lbl.gov
-    * Arjun Dey arjun.dey@noirlab.edu
+    * David Schlegel <djschlegel@lbl.gov>
+    * Arjun Dey <arjun.dey@noirlab.edu>
 
 BASS Survey:
-    * Xu Zhou (China PI) zhouxu@bao.ac.cn
-    * Xiaohui Fan (US PI)  fan@as.arizona.edu
-    * Hu Zou (Deputy PI) zouhu@bao.ac.cn
+    * Xu Zhou (China PI) <zhouxu@bao.ac.cn>
+    * Xiaohui Fan (US PI) <fan@as.arizona.edu>
+    * Hu Zou (Deputy PI) <zouhu@bao.ac.cn>
     * BASS collaboration http://batc.bao.ac.cn/BASS/doku.php
 
 DESI Imaging Survey Scientist and Lead Tractor Developer:
-    * Dustin Lang dstndstn@gmail.com
+    * Dustin Lang <dstndstn@gmail.com>
 
 
 Other Experts
 -------------
 `Legacypipe`_ Pipeline Development
-    * Dustin Lang  dstndstn@gmail.com
-    * John Moustakas [#]_  jmoustakas@siena.edu
+    * Dustin Lang <dstndstn@gmail.com>
+    * John Moustakas [#]_ <jmoustakas@siena.edu>
 
 NOIRLab Community Pipeline:
-    * David Herrera  david.herrera@noirlab.edu
-    * Frank Valdes  frank.valdes@noirlab.edu
+    * David Herrera <david.herrera@noirlab.edu>
+    * Frank Valdes <frank.valdes@noirlab.edu>
 
 WISE Reductions:
-    * Aaron Meisner  aaron.meisner@noirlab.edu
+    * Aaron Meisner <aaron.meisner@noirlab.edu>
 
-Run Managers
-    * Mark (Ziyao) Zhang  ziyaoz@berkeley.edu *(for DR9)*
-    * Martin Landriau  mlandriau@lbl.gov *(for DR5, DR6, DR7 and DR8)*
+DR10 Run Managers
+    * Jan Snigula <snigula@mpe.mpg.de>
+    * Maximilian Fabricius <mfabricius@gmail.com>
+    * Johan Comparat <comparat@mpe.mpg.de>
+
+Past Run Managers
+    * Mark (Ziyao) Zhang <ziyaoz@berkeley.edu> *(for DR9)*
+    * Martin Landriau <mlandriau@lbl.gov> *(for DR5, DR6, DR7 and DR8)*
+
+Legacy survey - eROSITA - `DeROSITAS`_ coordination
+    * Alfredo Zenteno <alfredo.zenteno@noirlab.edu>
+    * Mara Salvato <mara@mpe.mpg.de>
 
 BASS Contact:
-    * Jinyi Yang  jinyiyang@email.arizona.edu
+    * Jinyi Yang <jinyiyang@email.arizona.edu>
 
 Image Quality:
-    * Eddie Schlafly  eschlafly@gmail.com
-    * Rongpu Zhou   rongpuzhou@lbl.gov
+    * Eddie Schlafly <eschlafly@gmail.com>
+    * Rongpu Zhou <rongpuzhou@lbl.gov>
 
 Astro Data Lab [#]_ Contact:
-    * Stephanie Juneau  stephanie.juneau@noirlab.edu
+    * Stephanie Juneau <stephanie.juneau@noirlab.edu>
 
 Additional NOIRLab/CTIO Support:
-    * Alistair Walker  alistair.walker@noirlab.edu
-    * Bob Blum  RBlum@lsst.org
+    * Alistair Walker <alistair.walker@noirlab.edu>
+    * Bob Blum <RBlum@lsst.org>
 
 Website and Documentation:
-    * Adam Myers  geordiemyers@gmail.com
-    * Benjamin Weaver  baweaver@lbl.gov
+    * Adam Myers <geordiemyers@gmail.com>
+    * Benjamin Weaver <benjamin.weaver@noirlab.edu>
 
 Image Gallery:
-    * John Moustakas  jmoustakas@siena.edu
-    * Benjamin Weaver  baweaver@lbl.gov
+    * John Moustakas <jmoustakas@siena.edu>
+    * Benjamin Weaver <benjamin.weaver@noirlab.edu>
 
 `Siena Galaxy Atlas`_:
-    * John Moustakas  jmoustakas@siena.edu
+    * John Moustakas <jmoustakas@siena.edu>
 
 Photometric Redshifts:
-    * Rongpu Zhou   rongpuzhou@lbl.gov
+    * Rongpu Zhou <rongpuzhou@lbl.gov>
 
 DESI Target Selection:
-    * Christophe Yeche  christophe.yeche@cea.fr
-    * Adam Myers [#]_  geordiemyers@gmail.com
+    * Christophe Yeche <christophe.yeche@cea.fr>
+    * Adam Myers [#]_ <geordiemyers@gmail.com>
 
 Pan-STARRS1 Catalogs:
-    * Doug Finkbeiner  dfinkbeiner@cfa.harvard.edu
+    * Doug Finkbeiner <dfinkbeiner@cfa.harvard.edu>
 
 .. _`Legacypipe`: https://legacypipe.readthedocs.io/en/latest/
+.. _`DeROSITAS`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
 
 Additional contributors

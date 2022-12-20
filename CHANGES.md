@@ -1,6 +1,13 @@
 # legacysurvey Change Log
 
-## 10.0.0 (DR10, unreleased)
+## 10.0.1 (DR10, unreleased)
+
+- *Planned*: correct units for `ccdskycounts`
+  ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
+- *Planned*: actually update the raw and CP-processed data access instructions
+  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+
+## 10.0.0 (DR10, 2022-12-20)
 
 - Near-final updates for DR10
   ([PR#165](https://github.com/legacysurvey/legacysurvey/pull/165)):
@@ -8,10 +15,6 @@
     - Still missing details of the syntax for the cutout server.
     - Still missing details about the DR10 sky pattern correction.
     - Addresses [issue #160](https://github.com/legacysurvey/legacysurvey/issues/160).
-- *Planned*: correct units for `ccdskycounts`
-  ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
-- *Planned*: actually update the raw and CP-processed data access instructions
-  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
 ## 9.1.2 (DR9, 2022-08-09)
 
@@ -68,7 +71,7 @@
 - Describe the forced-brick data product, and add forced-brick and forced-ccd to the file-size contents list
   ([PR#138](https://github.com/legacysurvey/legacysurvey/pull/138)).
 - Major update of SGA documentation ahead of public release
-  ([PR#137](https://github.com/legacysurvey/legacysurvey/pull/137)).  
+  ([PR#137](https://github.com/legacysurvey/legacysurvey/pull/137)).
 - A few more updates for DR9
   ([PR#136](https://github.com/legacysurvey/legacysurvey/pull/136)). Includes:
     - Specify relative radii of `BRIGHT`/`MEDIUM` Masks (addresses [#135](https://github.com/legacysurvey/legacysurvey/issues/135))

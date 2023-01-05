@@ -655,7 +655,7 @@ BASS
     `Beijing-Arizona Sky Survey <https://www.legacysurvey.org/bass>`_.
 
 BLISS+
-    `Blanco Imaging of the Southern Sky <https://arxiv.org/abs/1812.06318>`_.
+    `Blanco Imaging of the Southern Sky Survey <https://arxiv.org/abs/1812.06318>`_.
 
 Blob
     Continguous region of pixels above a detection threshold and neighboring

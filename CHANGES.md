@@ -1,11 +1,14 @@
 # legacysurvey Change Log
 
-## 10.0.1 (DR10, unreleased)
+## 10.0.2 (DR10, unreleased)
 
 - *Planned*: correct units for `ccdskycounts`
   ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+
+## 10.0.1 (DR10, 2023-01-05)
+
 - Additional, minor updates to the DR10 description page
   ([PR#166](https://github.com/legacysurvey/legacysurvey/pull/166)).
 

@@ -6,12 +6,13 @@
   ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+- Additional, minor updates to the DR10 description page
+  ([PR#166](https://github.com/legacysurvey/legacysurvey/pull/166)).
 
 ## 10.0.0 (DR10, 2022-12-20)
 
 - Near-final updates for DR10
-  ([PR#165](https://github.com/legacysurvey/legacysurvey/pull/165)) and
-  ([PR#166](https://github.com/legacysurvey/legacysurvey/pull/166)):
+  ([PR#165](https://github.com/legacysurvey/legacysurvey/pull/165)):
     - Includes a sufficient set of DR10 pages for an initial release.
     - Still missing details about the DR10 sky pattern correction.
     - Addresses [issue #160](https://github.com/legacysurvey/legacysurvey/issues/160).

@@ -62,11 +62,13 @@ An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 .. _`WISE`: http://wise.ssl.berkeley.edu
 .. _`year 7 of NEOWISE-Reactivation`: https://wise2.ipac.caltech.edu/docs/release/neowise/neowise_2021_release_intro.html
 .. _`survey program 0404`: https://legacy.noirlab.edu/perl/abstract?2014B-0404
+.. _`survey program 2014B-0404`: https://noirlab.edu/science/observing-noirlab/approved-survey-programs
 .. _`Dark Energy Survey`: https://www.darkenergysurvey.org
 .. _`Proposal IDs`: ../files/dr10-propids.txt
 .. _`NOIRLab Astro Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
 .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 .. _`DeROSITAS`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
+.. _`BLISS+`: https://arxiv.org/abs/1812.06318
 
 Contents of DR10
 ================
@@ -80,13 +82,12 @@ reduced through the `NOIRLab Community Pipeline`_ before being processed using t
 includes `WISE`_ fluxes from all imaging through `year 7 of NEOWISE-Reactivation`_
 force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys optical sources.
 
-DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 0404`_) observed between
+DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 2014B-0404`_) observed between
 9th August 2014 and 7th March 2019. DR10 also includes :math:`g,r,i,z`-band DECam observations from a range of
 non-DECaLS surveys, including observations that were conducted between 8th January 2013 and 30th August 2021. The bulk
-of these additional DECam observations are from the `DeROSITAS`_ and BLISS+ surveys [#]_.
-A large portion of these non-DECaLS observations were taken by the `Dark Energy Survey`_.
-Information on the exact observations included in DR10 can be derived from the Legacy Surveys `survey-ccds-* files`_.
-To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
+of these additional DECam observations are from the `DeROSITAS`_ survey, the `BLISS+`_ survey [#]_, and the final
+(sixth) year of the `Dark Energy Survey`_. Information on the exact observations included in DR10 can be derived from
+the Legacy Surveys `survey-ccds-* files`_. To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
 The table below indicates the area covered in DR10 for different numbers of passes and in different filters. These estimates
 are derived from the geometry of the CCDs that contribute to the Legacy Surveys footprint, using the `random catalogs`_ at a density of 50,000 |d-2|.
@@ -201,9 +202,9 @@ the cutout service, for example, as follows:
 
     FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262&bands=grz
 
-    JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.262
+    JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262
 
-    FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr10-north&pixscale=0.262&bands=grz
+    FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262&bands=grz
 
     where "bands" is a string such as ":math:`griz`",":math:`gz`",":math:`g`", etc.
 
@@ -653,6 +654,9 @@ Glossary
 BASS
     `Beijing-Arizona Sky Survey <https://www.legacysurvey.org/bass>`_.
 
+BLISS+
+    `Blanco Imaging of the Southern Sky <https://arxiv.org/abs/1812.06318>`_.
+
 Blob
     Continguous region of pixels above a detection threshold and neighboring
     pixels; Tractor is optimized within blobs.
@@ -667,6 +671,8 @@ CP
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.
 
+DeROSITAS
+    `DECam eROSITA Survey <https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS>`_.
 
 DR3
     `DESI Legacy Surveys Imaging Data Release 3`_.

@@ -186,46 +186,46 @@ portal are in the same units as :math:`1/\mathtt{skyrms}^2` in the `survey-ccds-
 Sections of the Legacy Surveys for DR10 can be obtained as JPEGs or FITS files using
 the cutout service, for example, as follows:
 
-    JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262
+JPEG: https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262
 
-    FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262&bands=griz
+FITS: https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10&pixscale=0.262&bands=griz
 
-    This will merge the northern (MzLS+BASS) and southern (DECam) images at a line corresponding to Dec=32.375\ |deg|.
+This will merge the northern (MzLS+BASS) and southern (DECam) images at a line corresponding to Dec=32.375\ |deg|.
 
-    DR10 includes images in the (:math:`i`) band, so it uses a different color mapping for JPEG images in the DECam footprint.
-    (The DR9-north footprint still uses the (:math:`g,r,z`) color mapping.)  To use only the (:math:`g,r,z`) bands used in previous
-    data releases for the DECam data, you can set `layer=ls-dr10-grz`.
+DR10 includes images in the (:math:`i`) band, so it uses a different color mapping for JPEG images in the DECam footprint.
+(The DR9-north footprint still uses the (:math:`g,r,z`) color mapping.)  To use only the (:math:`g,r,z`) bands used in previous
+data releases for the DECam data, you can set `layer=ls-dr10-grz`.
 
-    To request images from only the northern or southern surveys, specify `dr10-north` or `dr10-south`, for example:
+To request images from only the northern or southern surveys, specify `dr9-north` or `dr10-south`, for example:
 
-    JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262
+JPEG (`DECaLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262
 
-    FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262&bands=grz
+FITS (`DECaLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=190.1086&dec=1.2005&layer=ls-dr10-south&pixscale=0.262&bands=grz
 
-    JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262
+JPEG (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/jpeg-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262
 
-    FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262&bands=grz
+FITS (`BASS`_/`MzLS`_): https://www.legacysurvey.org/viewer/fits-cutout?ra=154.7709&dec=46.4537&layer=ls-dr9-north&pixscale=0.262&bands=grz
 
-    where "bands" is a string such as ":math:`griz`",":math:`gz`",":math:`g`", etc.
+where "bands" is a string such as ":math:`griz`",":math:`gz`",":math:`g`", etc.
 
-    Replacing `layer=ls-dr10` (or, e.g., `layer=ls-dr10-north`) with `layer=ls-dr10-model` (`layer=ls-dr10-north-model`)
-    or `layer=ls-dr10-resid` (`layer=ls-dr10-north-resid`) will instead return cutouts for the model and residual images, respectively.
+Replacing `layer=ls-dr10` (or, e.g., `layer=ls-dr9-north`) with `layer=ls-dr10-model` (`layer=ls-dr9-north-model`)
+or `layer=ls-dr10-resid` (`layer=ls-dr9-north-resid`) will instead return cutouts for the model and residual images, respectively.
 
-    The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
-    where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
+The size of the image can also be specified using :math:`width`, :math:`height` and :math:`size`,
+where :math:`size` forces :math:`width` and :math:`height` to be equal. For example:
 
-    https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=ls-dr10&pixscale=0.62
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&width=100&layer=ls-dr10&pixscale=0.262
 
-    https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=ls-dr10&pixscale=0.262
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&height=100&layer=ls-dr10&pixscale=0.262
 
-    https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=ls-dr10&pixscale=0.262
+https://www.legacysurvey.org/viewer/jpeg-cutout?ra=190.1086&dec=1.2005&size=100&layer=ls-dr10&pixscale=0.262
 
-    It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
+It is possible to retrieve multiple cutouts from the command line using standard utilites such as `wget`_.
 
-    The maximum size for cutouts (in number of pixels) is currently 512.
-    Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
+The maximum size for cutouts (in number of pixels) is currently 512.
+Pixscale=0.262 will return (approximately) the native pixels used by the `Tractor`_.
 
-    More examples are available on the `list of URL/cutout patterns that are supported by the viewer`_.
+More examples are available on the `list of URL/cutout patterns that are supported by the viewer`_.
 
 .. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview

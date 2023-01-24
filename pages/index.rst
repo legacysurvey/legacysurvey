@@ -69,7 +69,7 @@
    Energy Office of Science High Energy Physics.*
 
    *NSF's NOIRLab (National Optical-Infrared Astronomy Research
-   Laboratory) the US center for ground-based optical astronomy,
+   Laboratory), the US center for ground-based optical astronomy,
    operates the international Gemini Observatory (a facility of NSF
    NRC-Canada, ANID-Chile, MCTIC-Brazil, MINCyT-Argentina, and
    KASI-Republic of Korea), Kitt Peak National Observatory (KPNO),

@@ -7,6 +7,10 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
+## 10.0.3 (DR10, unreleased)
+
+- No changes yet.
+
 ## 10.0.2 (DR10, 2023-01-24)
 
 - Update boilerplate on entry index page for NOIRLab rather than NOAO

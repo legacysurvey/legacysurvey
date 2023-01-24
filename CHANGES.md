@@ -1,11 +1,16 @@
 # legacysurvey Change Log
 
-## 10.0.2 (DR10, unreleased)
+## 10.1.0 (DR10, planned)
 
 - *Planned*: correct units for `ccdskycounts`
-  ([#152](https://github.com/legacysurvey/legacysurvey/issues/152)).
+  ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
-  ([#143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+  ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+
+## 10.0.2 (DR10, unreleased)
+
+- Update boilerplate on entry index page for NOIRLab rather than NOAO
+  ([PR#167](https://github.com/legacysurvey/legacysurvey/pull/167)).
 
 ## 10.0.1 (DR10, 2023-01-05)
 

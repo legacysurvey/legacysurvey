@@ -68,10 +68,17 @@
    *The LBNL Physics Division is supported by the U.S. Department of
    Energy Office of Science High Energy Physics.*
 
-   *The Cerro Tololo Inter-American Observatory and the National
-   Optical Astronomy Observatory are operated by the Association
-   of Universities for Research in Astronomy (AURA) under cooperative
-   agreement with the National Science Foundation.*
+   *NSF's NOIRLab (National Optical-Infrared Astronomy Research
+   Laboratory), the US center for ground-based optical-infrared astronomy,
+   operates the international Gemini Observatory (a facility of NSF,
+   NRC-Canada, ANID-Chile, MCTIC-Brazil, MINCyT-Argentina, and
+   KASI-Republic of Korea), Kitt Peak National Observatory (KPNO),
+   Cerro Tololo Inter-American Observatory (CTIO), the Community
+   Science and Data Center (CSDC), and Vera C. Rubin Observatory (in
+   cooperation with DOE's SLAC National Accelerator Laboratory). It is
+   managed by the Association of Universities for Research in Astronomy
+   (AURA) under a cooperative agreement with NSF and is headquartered
+   in Tucson, Arizona.*
 
    *The National Energy Research Scientific Computing Center, which is
    supported by the Office of Science of the U.S. Department of Energy

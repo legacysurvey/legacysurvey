@@ -67,8 +67,9 @@ An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 .. _`Proposal IDs`: ../files/dr10-propids.txt
 .. _`NOIRLab Astro Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
 .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
-.. _`DeROSITAS`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
+.. _`DeROSITA Survey`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/DeROSITAS
 .. _`BLISS+`: https://arxiv.org/abs/1812.06318
+.. _`DELVE Survey`: https://delve-survey.github.io
 
 Contents of DR10
 ================
@@ -85,8 +86,9 @@ force-photometered in the `unWISE`_ maps at the locations of Legacy Surveys opti
 DR10 includes images from `DECaLS`_ :math:`g,r,z`-band observations (`survey program 2014B-0404`_) observed between
 9th August 2014 and 7th March 2019. DR10 also includes :math:`g,r,i,z`-band DECam observations from a range of
 non-DECaLS surveys, including observations that were conducted between 8th January 2013 and 30th August 2021. The bulk
-of these additional DECam observations are from the `DeROSITAS`_ survey, the `BLISS+`_ survey [#]_, and the final
-(sixth) year of the `Dark Energy Survey`_. Information on the exact observations included in DR10 can be derived from
+of these additional DECam observations are from the `Dark Energy Survey`_ (including the full six years of the survey);
+the `DELVE Survey`_, and the `DeROSITA Survey`_.
+Information on the exact observations included in DR10 can be derived from
 the Legacy Surveys `survey-ccds-* files`_. To obtain northern observations from `BASS`_ and `MzLS`_, see `DR9`_ of the Legacy Surveys.
 
 The table below indicates the area covered in DR10 for different numbers of passes and in different filters. These estimates

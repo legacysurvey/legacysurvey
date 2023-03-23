@@ -52,8 +52,28 @@ the ``BAILOUT`` flag set in the `MASKBITS bitmask`_.
 In addition, certain high-density regions are missing completely from the Legacy Surveys. A good example is
 the `Large Magellanic Cloud`_.
 
+Bricks for which ``SUB_BLOB`` was set
+-------------------------------------
+To facilitate rapid processing of sources in high-density regions, some DR10 bricks were split into smaller "sub-blobs."
+These bricks can be identified as they have ``SUB_BLOB`` set in the `MASKBITS bitmask`_ for some `pixels` in the
+`image stacks version`_ of the maskbits product. Due to a bug in processing these sub-blobs, some genuine sources were not
+extracted and included in DR10. The locations of these bricks are plotted below
+
+.. image:: ../../files/dr10-sb.png
+    :height: 410
+    :width: 600
+    :align: center
+
+and a full list of the 711 affected bricks `is available here`_. Note that these bricks can't be identified in the `source`-level
+catalogs (rather than the `pixel`-level products). For example, the problematic bricks can't be recovered by checking if
+``SUB_BLOB`` is set in the `MASKBITS bitmask`_ in the `sweep files`_. This is because some of the relevant sources are
+`completely missing` from the DR10 catalogs.
+
+
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
+.. _`image stacks version`: ../files/#image-stacks-south-coadd
 .. _`DR9`: ../../dr9
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
 .. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5
+.. _`is available here`: ../../files/dr10-sub-blob-bricks.txt

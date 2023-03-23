@@ -9,7 +9,10 @@
 
 ## 10.0.3 (DR10, unreleased)
 
-- No changes yet.
+- Add issue about missing `SUB_BLOB` sources to the DR10 known issues page
+  ([PR#169](https://github.com/legacysurvey/legacysurvey/pull/169)).
+- Update descriptions of, and depth plots for, DELVE and DeROSITA surveys
+  ([PR#168](https://github.com/legacysurvey/legacysurvey/pull/168)).
 
 ## 10.0.2 (DR10, 2023-01-24)
 

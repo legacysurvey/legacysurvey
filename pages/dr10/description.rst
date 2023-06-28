@@ -561,7 +561,7 @@ Astrometry
 
 Starting with `DR8`_, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
 `Gaia Data Release 2`_, yielding an astrometric solution that is offset by the average difference between
-the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR9 image. Source
+the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR10 image. Source
 extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to
 predicted Gaia positions at the epoch of the corresponding Legacy Surveys observation.
 Astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.

@@ -156,4 +156,4 @@ U.S. Department of Energy, Office of Science, Office of High Energy Physics
 under Award Number DE-SC0020086 and from the National Science Foundation under
 grant AST-1616414.
 
-.. _`Siena Galaxy Atlas`: ../../sga/sga2020
+.. _`Siena Galaxy Atlas`: ../sga/sga2020

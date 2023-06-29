@@ -175,7 +175,6 @@ NAVIGATION_LINKS = {
             ("/decamls", 'DECaLS'),
             ("/mzls", 'MzLS'),
             ("https://www.darkenergysurvey.org", 'DES'),
-            # ("http://batc.bao.ac.cn/BASS", 'BASS'),
             ("http://unwise.me", 'unWISE'),
             ("/rawdata", 'Raw Data')
             ), 'Other Data'),

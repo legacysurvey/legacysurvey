@@ -70,5 +70,5 @@ Additional information is available in the `DESI Legacy Imaging Surveys Overview
 .. _`DESI`: https://desi.lbl.gov
 .. _`DES`: https://www.darkenergysurvey.org
 .. _`DESI Legacy Imaging Surveys Overview Paper.`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
-.. _`BASS`: http://batc.bao.ac.cn/BASS/doku.php
+.. _`BASS`: https://ui.adsabs.harvard.edu/abs/2017PASP..129f4101Z/abstract
 .. _`DECaLS`: ../decamls

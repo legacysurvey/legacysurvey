@@ -40,7 +40,7 @@ was observed in both photometric conditions and in seeing
 conditions better than 1.7 arcsec.
 
 BASS was awarded 56 nights in Spring 2015 and 100 nights in each
-of Spring 2016 and 2017 (PIs: Zhou Xu and Xiaohui Fan; see http://batc.bao.ac.cn/BASS).
+of Spring 2016 and 2017 (PIs: Zhou Xu and Xiaohui Fan).
 The Bok survey targeted about 5500 deg\ |sup2| in the NGC, including about
 500 deg\ |sup2| of overlap with the region covered by DECam surveys in order to understand and
 correct for any systematic biases in `DESI`_ target selection.
@@ -69,8 +69,7 @@ BASS was ultimately expected to complete observations in July 2018 with
 an additional 100 nights in 2017A and 50 nights in 2018A. A few final weeks
 of observations were conducted in 2019A to complete the survey.
 
-Main BASS website:
-http://batc.bao.ac.cn/BASS/doku.php
+Additional information is available in the `BASS project overview paper`_.
 
 .. _`SDSS`: https://classic.sdss.org
 .. _`SDSS-II`: https://classic.sdss.org
@@ -81,5 +80,6 @@ http://batc.bao.ac.cn/BASS/doku.php
 .. _`Pan-STARRS`: https://pan-starrs.ifa.hawaii.edu/public/
 .. _`DESI`: https://desi.lbl.gov
 .. _`DES`: https://www.darkenergysurvey.org
-.. _`BASS`: http://batc.bao.ac.cn/BASS/doku.php
+.. _`BASS`: https://ui.adsabs.harvard.edu/abs/2017PASP..129f4101Z/abstract
+.. _`BASS project overview paper`: https://ui.adsabs.harvard.edu/abs/2017PASP..129f4101Z/abstract
 .. _`DECaLS`: ../decamls

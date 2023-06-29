@@ -346,7 +346,7 @@ objects, and indeed we expect many such cases for the faintest objects.
 The filter curves are available for `BASS g-band`_, `BASS r-band`_, `MzLS z-band`_ and
 `MzLS z-band with corrections`_ for the telescope, corrector, camera and atmosphere
 (at airmass=1.0).
-The derivation of the BASS filter responses is described on the `BASS website`_. The
+The BASS filter responses are described in Section 2.2 of the `BASS project overview paper`_. The
 `BASS`_ filter curves were updated during the `DR7`_ release, but the `old filter curve for BASS g-band`_
 and `old filter curve for BASS r-band`_ (circa DR5) are still available.
 
@@ -367,7 +367,7 @@ Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WIS
 we provide should all be within a few percent of being on an AB system.
 
 
-.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
+.. _`BASS project overview paper`: https://ui.adsabs.harvard.edu/abs/2017PASP..129f4101Z/abstract
 .. _`BASS g-band`: ../../files/BASS_g_corr.bp
 .. _`BASS r-band`: ../../files/BASS_r_corr.bp
 .. _`old filter curve for BASS g-band`: ../../files/bass-g.txt

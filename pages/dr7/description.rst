@@ -408,7 +408,6 @@ Note that any broadening will be accounted for in the Tractor PSF, and internal
 systematics are stable at the 0.1% level.
 
 .. _`unWISE`: https://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M/abstract
-.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt

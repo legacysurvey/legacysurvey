@@ -748,11 +748,11 @@ Name                                  Type         Units                 Descrip
 ``GAIA_ASTROMETRIC_SIGMA5D_MAX``      float32      mas                   `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
 ``GAIA_ASTROMETRIC_PARAMS_SOLVED``    uint8                              Which astrometric parameters were estimated for a `Gaia`_ source
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
-``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``parallax``
-``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
-``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
-``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``PARALLAX``
+``PMRA``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``REF_EPOCH``
+``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
+``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
+``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
 ``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR9 bitmasks page`_)
 ``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
@@ -890,8 +890,8 @@ Name                                  Type    Units              Description
 ``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
 ``radius``                            float32 deg                Masking radius
 ``radius_pix``                        int64   pix                Masking radius in 0.262 arcsec "brick" pixels
-``pmra``                              float32 mas/yr             Reference catalog proper motion in the RA direction
-``pmdec``                             float32 mas/yr             Reference catalog proper motion in the Dec direction
+``pmra``                              float32 mas/yr             Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``ref_epoch``
+``pmdec``                             float32 mas/yr             Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``ref_epoch``
 ``parallax``                          float32 mas                Reference catalog parallax
 ``ra_ivar``                           float32 1/deg\ |sup2|      Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32 1/deg\ |sup2|      Inverse variance of DEC, excluding astrometric calibration errors

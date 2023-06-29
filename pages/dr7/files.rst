@@ -579,11 +579,11 @@ Name                                  Type         Units                 Descrip
 ``GAIA_ASTROMETRIC_EXCESS_NOISE``     float32                            `Gaia`_ astrometric excess noise
 ``GAIA_DUPLICATED_SOURCE``            boolean                            `Gaia`_ duplicated source flag (1/0 for True/False)
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
-``PARALLAX_IVAR``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
-``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
-``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
-``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``PARALLAX_IVAR``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``PARALLAX``
+``PMRA``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``REF_EPOCH``
+``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
+``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
+``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
 ``BRIGHTSTARINBLOB``                  boolean                            True if the object shares a blob with a "bright" (Tycho-2) star
 ===================================== ============ ===================== ===============================================
 

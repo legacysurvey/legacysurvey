@@ -678,11 +678,11 @@ Name                                  Type         Units                 Descrip
 ``GAIA_ASTROMETRIC_SIGMA5D_MAX``      float32      mas                   `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
 ``GAIA_ASTROMETRIC_PARAMS_SOLVED``    uint8                              Which astrometric parameters were estimated for a `Gaia`_ source
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
-``PARALLAX_IVAR``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``parallax``
-``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
-``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
-``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``PARALLAX_IVAR``                     float32      1/(mas)\ |sup2|       Reference catalog inverse-variance on ``PARALLAX``
+``PMRA``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``REF_EPOCH``
+``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
+``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
+``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR8 bitmasks page`_)
 ===================================== ============ ===================== ===============================================
 

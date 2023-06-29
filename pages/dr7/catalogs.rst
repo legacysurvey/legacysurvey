@@ -46,8 +46,8 @@ Name                                  Type         Units                 Descrip
 ``mjd_max``                           float64      days                  Maximum Modified Julian Date of observations used to construct the model of this object
 ``ref_cat``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G2" for `Gaia`_ DR2, empty otherwise
 ``ref_id``                            int64                              Reference catalog identifier for this star; :math:`\mathrm{Tyc1} \times 1,000,000 + \mathrm{Tyc2} \times 10 + \mathrm{Tyc3}` for Tycho2; "sourceid" for Gaia-DR2
-``pmra``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``pmdec``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
+``pmra``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``ref_epoch``
+``pmdec``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``ref_epoch``
 ``parallax``                          float32      mas                   Reference catalog parallax
 ``pmra_ivar``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
 ``pmdec_ivar``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``

@@ -258,6 +258,8 @@ Note that, as of `DR5`_, the "REX" model replaced the "SIMP" model used in
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
+Here, the |chi|\ |sup2| value is calculated as a sum across all optical bands
+(i.e. :math:`g`, :math:`r` and :math:`z` for DR6).
 The "PSF" and "REX" models are computed for every source and the better of these
 two is used when deciding whether to keep the source. A source is retained if its
 penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2|

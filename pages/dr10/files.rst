@@ -347,7 +347,7 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-.. _`Myers et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract 
+.. _`Myers et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
 .. _`Myers et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
 
 Random Catalogs (``randoms/*``)

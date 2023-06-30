@@ -98,6 +98,14 @@ is that these galaxies were not flagged as ``GALAXY`` in the `MASKBITS bitmask`_
 Note that these fifty-two galaxies `were` included in the publicly released version of the SGA.
 
 
+Bleed trails identified as spurious sources
+-------------------------------------------
+A small number of bleed trail artifacts are identified as large galaxies or bright point sources in MzLS/BASS imaging for DR9. Artifacts identified
+as point sources are listed in `legacypipe issue #637`_ and those identified as large galaxies are listed in `legacypipe issue #639`_.
+
+
+.. _`legacypipe issue #637`: https://github.com/legacysurvey/legacypipe/issues/637
+.. _`legacypipe issue #639`: https://github.com/legacysurvey/legacypipe/issues/639
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`Tractor catalogs`: ../catalogs

@@ -87,6 +87,14 @@ incorrect values for the following quantities in the `annotated ccds file`_:
 These values, which have been corrected for `DR9`_, need to be updated for DR8 as in `this code snippet`_. In addition, the units stated
 for these 4 quantities in the DR8 documentation were originally incorrect. These quantities are all in nanomaggies, not ADU.
 
+Bleed trails identified as spurious sources
+-------------------------------------------
+A small number of bleed trail artifacts are identified as large galaxies or bright point sources in MzLS/BASS imaging for DR8. Artifacts identified
+as point sources are listed in `legacypipe issue #637`_ and those identified as large galaxies are listed in `legacypipe issue #639`_.
+
+
+.. _`legacypipe issue #637`: https://github.com/legacysurvey/legacypipe/issues/637
+.. _`legacypipe issue #639`: https://github.com/legacysurvey/legacypipe/issues/639
 .. _`this code snippet`: https://github.com/legacysurvey/legacypipe/commit/3650c7bce35ecd0a1c908cb20111da33a1bfee94
 .. _`DR9`: ../../dr9/files/#ccds-annotated-camera-dr9-cut-fits-gz
 .. _`annotated ccds file`: ../files/#ccds-annotated-camera-dr8-fits-gz

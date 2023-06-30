@@ -69,6 +69,7 @@ catalogs (rather than the `pixel`-level products). For example, the problematic 
 ``SUB_BLOB`` is set in the `MASKBITS bitmask`_ in the `sweep files`_. This is because some of the relevant sources are
 `completely missing` from the DR10 catalogs.
 
+
 Large galaxies missing from the Siena Galaxy Atlas
 --------------------------------------------------
 Fifty-two galaxies were overlooked in the version of the `Siena Galaxy Atlas`_ (SGA) used to process DR10. The upshot of this oversight

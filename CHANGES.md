@@ -7,6 +7,11 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
+## 10.0.4 (DR10, planned)
+
+- Address points listed in [issue #170](https://github.com/legacysurvey/legacysurvey/issues/170).
+  ([PR#172](https://github.com/legacysurvey/legacysurvey/pull/172)).
+
 ## 10.0.3 (DR10, 2023-04-05)
 
 - Add issue about missing `SUB_BLOB` sources to the DR10 known issues page

@@ -61,5 +61,5 @@ and include the `additional acknowledgment for photometric redshifts`_.
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
-.. _`newer versions`: ../files/#photometric-redshift-sweeps
+.. _`newer versions`: ../files/#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits
 .. _`RELEASE is documented here`: ../../release

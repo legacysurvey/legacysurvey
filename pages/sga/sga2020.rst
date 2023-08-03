@@ -18,10 +18,10 @@
 `Data Portal`_
 ==============
 
-The SGA-2020 data products can be browsed and downloaded at the `SGA
-web-portal`_, both for individual galaxies and the full sample. Below, we
-describe the data model for these data products. A forthcoming paper (Moustakas,
-Lang, et al., in preparation) will describe the SGA-2020 in detail.
+The Siena Galaxy Atlas 2020 (SGA-2020) data products can be browsed and
+downloaded at the `SGA web-portal`_, both for individual galaxies and
+the full sample. Below, we outline the data model for these data products.
+The SGA-2020 is described in detail in `Moustakas, Lang, et al. (2023)`_.
 
 Overview
 ========
@@ -851,3 +851,4 @@ which made this project possible:
 .. _`Siena College`: https://www.siena.edu
 .. _`Contents of DR9`: ../../dr9/description/#contents-of-dr9
 .. _`Makarov et al. 2014, A&A, 570, A13`: https://ui.adsabs.harvard.edu/abs/2014A%26A...570A..13M
+.. _`Moustakas, Lang, et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023arXiv230704888M/abstract

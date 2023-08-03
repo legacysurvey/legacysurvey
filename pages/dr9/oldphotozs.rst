@@ -1,6 +1,6 @@
 .. title: Old Photometric Redshift Sweeps
 .. slug: oldphotozs
-.. tags: 
+.. tags:
 .. has_math: yes
 
 .. |deg|    unicode:: U+000B0 .. DEGREE SIGN

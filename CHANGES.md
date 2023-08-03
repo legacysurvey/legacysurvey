@@ -10,7 +10,9 @@
 ## 10.0.4 (DR10, planned)
 
 - Address points listed in [issue #170](https://github.com/legacysurvey/legacysurvey/issues/170).
-  ([PR#172](https://github.com/legacysurvey/legacysurvey/pull/172)).
+  ([PR#172](https://github.com/legacysurvey/legacysurvey/pull/172)). Also includes a:
+    - Description of the new Zhou et al. (2023) dr9.1 photo-z sweeps.
+    - Link to the SGA-2020 paper.
 
 ## 10.0.3 (DR10, 2023-04-05)
 

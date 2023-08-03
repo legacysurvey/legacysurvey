@@ -811,28 +811,43 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Photometric Redshift sweeps
----------------------------
-.. (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+Photo-z sweeps (9.1-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+----------------------------------------------------------------
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, e.g., see `Zhou et al. 2021`_)
-catalog is row-by-row-matched to the DR9 sweep catalogs as described previously for the other types of sweeps files.
+.. note::
+   In July of 2023, the photometric redshift sweeps were updated to the version detailed
+   in `Zhou et al. (2023; in preparation)`_. The older versions, from `Zhou et al. (2021)`_, which we
+   `have retained`_, were stored in the ``9.0-photo-z`` directory. The older and newer photometric
+   redshift sweeps are both based on the same, ``9.0``, versions of the sweep catalogs. But the newer
+   photometric redshift sweeps are stored in the ``9.1-photo-z`` directory
+   to distinguish them from the older versions.
 
-The photometric redshifts are computed using the random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2021)`_.
+The photometric redshift (photo-z)
+sweeps catalogs are row-by-row-matched to the DR9 sweep catalogs as described above for the
+other types of sweeps files.
+
+The photometric redshifts are computed using a random forest algorithm.
+Details of the photo-z training and performance can be found in `Zhou et al. (2023; in preparation)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
-For objects that do not meet the NOBS cut,
-the photo-z values are filled with -99. Although we provide photo-z's for all
-objects that meet the NOBS cut, only relatively bright objects have reliable
+For objects that do not meet the ``NOBS`` cut,
+the photo-z values are filled with -99.
+
+Although we provide photo-z's for all
+objects that meet the ``NOBS`` cut, the brightest objects have the most reliable
 photo-z's. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
 are mostly reliable, whereas fainter objects are increasingly unreliable with
-large systematic offsets.
+increasingly large systematic offsets. The overall performance of the photometric
+redshifts compared to a range of spectroscopic surveys are available for both
+the `northern`_ and `southern`_ regions of the legacy surveys imaging.
+
+.. _`northern`: ../../files/pz_vs_sz_north.pdf
+.. _`southern`: ../../files/pz_vs_sz_south.pdf
 
 The photo-z catalogs do not provide information on star-galaxy separation.
 Stars are excluded from the photo-z training data, and we do not attempt to
 identify stars. To perform star-galaxy separation, one can use the
-morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
+morphological ``TYPE`` and/or the photometry (*e.g.*, the optical-WISE
 color cut, as applied in  `Zhou et al. 2021`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
 
 ================= ========== ==========================================================================
@@ -851,14 +866,19 @@ Name              Type       Description
 ``Z_SPEC``        float32    spectroscopic redshift, if available
 ``SURVEY``        char[10]   source of the spectroscopic redshift
 ``TRAINING``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
+``KFOLD``         int16      index of the subset in the 10-fold cross-validation
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2021)`_
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2023; in preparation)`_
 and include the `additional acknowledgment for photometric redshifts`_.
 
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
+.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu
+.. _`Zhou et al. (2023; in preparation)`: ./#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits
+.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu
+.. _`have retained`: ../oldphotozs
 
 Foreground object masks (``masking/*``)
 =======================================

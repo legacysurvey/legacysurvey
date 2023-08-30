@@ -145,6 +145,8 @@ The decision to retain an object in the catalog and to re-classify as
 models more complicated than a point source are made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
+Here, the |chi|\ |sup2| value is calculated as a sum across all optical bands
+(i.e. :math:`g`, :math:`r` and :math:`z` for DR1).
 A source is retained if this penalized |chi|\ |sup2| is improved by 25;
 this corresponds to a |chi|\ |sup2| difference of 27 (because of the penalty
 of 2 for the source centroid).  Sources below this threshold are removed.

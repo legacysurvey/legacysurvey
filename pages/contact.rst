@@ -25,7 +25,6 @@ BASS Survey:
     * Xu Zhou (China PI) <zhouxu@bao.ac.cn>
     * Xiaohui Fan (US PI) <fan@as.arizona.edu>
     * Hu Zou (Deputy PI) <zouhu@bao.ac.cn>
-    * BASS collaboration http://batc.bao.ac.cn/BASS/doku.php
 
 DESI Imaging Survey Scientist and Lead Tractor Developer:
     * Dustin Lang <dstndstn@gmail.com>

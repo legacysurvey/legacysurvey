@@ -347,8 +347,8 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-.. _`Myers et al. 2022`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
-.. _`Myers et al. (2022)`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
+.. _`Myers et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
+.. _`Myers et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
 
 Random Catalogs (``randoms/*``)
 ===============================
@@ -356,7 +356,7 @@ Random Catalogs (``randoms/*``)
 randoms-1-\*.fits
 -----------------
 
-Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2022`_). Random locations
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2023`_). Random locations
 were generated across the footprint at a density of 2,500 per square degree and meta-information
 about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
@@ -433,7 +433,7 @@ northern and southern imaging footprints overlap, so, randoms are resolved by `t
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels observed with DECam (``PHOTSYS`` set to "S").
 
-Work which uses any of the random catalogs should cite `Myers et al. (2022)`_.
+Work which uses any of the random catalogs should cite `Myers et al. (2023)`_.
 
 randoms-outside-1-\*.fits
 -------------------------
@@ -765,11 +765,11 @@ Name                                  Type         Units                 Descrip
 ``GAIA_ASTROMETRIC_SIGMA5D_MAX``      float32      mas                   `Gaia EDR3`_ longest semi-major axis of the 5-d error ellipsoid
 ``GAIA_ASTROMETRIC_PARAMS_SOLVED``    uint8                              Which astrometric parameters were estimated for a `Gaia EDR3`_ source
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
-``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``parallax``
-``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
-``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
-``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``PARALLAX``
+``PMRA``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``REF_EPOCH``
+``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
+``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
+``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
 ``MASKBITS``           		      int32    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
 ``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR10 bitmasks page`_)
 ``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
@@ -861,8 +861,8 @@ Name                                  Type    Units              Description
 ``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
 ``radius``                            float32 deg                Masking radius
 ``radius_pix``                        int64   pix                Masking radius in 0.262 arcsec "brick" pixels
-``pmra``                              float32 mas/yr             Reference catalog proper motion in the RA direction
-``pmdec``                             float32 mas/yr             Reference catalog proper motion in the Dec direction
+``pmra``                              float32 mas/yr             Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``ref_epoch``
+``pmdec``                             float32 mas/yr             Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``ref_epoch``
 ``parallax``                          float32 mas                Reference catalog parallax
 ``ra_ivar``                           float32 1/deg\ |sup2|      Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32 1/deg\ |sup2|      Inverse variance of DEC, excluding astrometric calibration errors

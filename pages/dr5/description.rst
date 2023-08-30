@@ -247,6 +247,8 @@ The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for
 other sources.
+Here, the |chi|\ |sup2| value is calculated as a sum across all optical bands
+(i.e. :math:`g`, :math:`r` and :math:`z` for DR5).
 The "PSF" and "REX" models are computed for
 every source and the better of these two is used when deciding whether to keep
 the source. A source is retained if its penalized |chi|\ |sup2| is improved by 25;
@@ -344,7 +346,6 @@ Tractor catalog headers ("WISEAB1", etc). The result is that
 the DECam and WISE fluxes we provide should all be within a few percent of being on an AB system.
 
 
-.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt

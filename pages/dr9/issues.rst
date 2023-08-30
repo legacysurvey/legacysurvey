@@ -90,7 +90,26 @@ The cause of this problem has yet to be fully diagnosed, although the discrepant
 
 This issue will also propagate to the `sweep files`_.
 
+
+Large galaxies missing from the Siena Galaxy Atlas
+--------------------------------------------------
+Fifty-two galaxies were overlooked in the version of the `Siena Galaxy Atlas`_ (SGA) used to process DR9. The upshot of this oversight
+is that these galaxies were not flagged as ``GALAXY`` in the `MASKBITS bitmask`_. Further details are provided in `legacypipe issue #680`_.
+Note that these fifty-two galaxies `were` included in the publicly released version of the SGA.
+
+
+Bleed trails identified as spurious sources
+-------------------------------------------
+A small number of bleed trail artifacts are identified as large galaxies or bright point sources in MzLS/BASS imaging for DR9. Artifacts identified
+as point sources are listed in `legacypipe issue #637`_ and those identified as large galaxies are listed in `legacypipe issue #639`_.
+
+
+.. _`legacypipe issue #637`: https://github.com/legacysurvey/legacypipe/issues/637
+.. _`legacypipe issue #639`: https://github.com/legacysurvey/legacypipe/issues/639
+.. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
+.. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`Tractor catalogs`: ../catalogs
 .. _`random catalogs`: ../files/#random-catalogs-randoms
 .. _`coadded stacks`: ../files/#image-stacks-region-coadd
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
+.. _`MASKBITS bitmask`: ../bitmasks/#maskbits

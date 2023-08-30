@@ -413,6 +413,8 @@ the total of all *resolved* sources.
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
+Here, the |chi|\ |sup2| value is calculated as a sum across all optical bands
+(i.e. :math:`g`, :math:`r` and :math:`z` for DR9).
 The "PSF" and "REX" models are computed for every source and the better of these
 two is used when deciding whether to keep the source. A source is retained if its
 penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2|
@@ -528,7 +530,6 @@ Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WIS
 we provide should all be within a few percent of being on an AB system.
 
 .. _`unWISE`: https://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M/abstract
-.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt

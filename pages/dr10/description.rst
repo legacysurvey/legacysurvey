@@ -413,6 +413,8 @@ See `DR9`_ for source counts in the northern footprint of the Legacy Surveys.
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
 changes to |chi|\ |sup2| in the image after subtracting the models for other sources.
+Here, the |chi|\ |sup2| value is calculated as a sum across all optical bands
+(i.e. :math:`g`, :math:`r`, :math:`i` and :math:`z` for DR10).
 The "PSF" and "REX" models are computed for every source and the better of these
 two is used when deciding whether to keep the source. A source is retained if its
 penalized |chi|\ |sup2| is improved by 25; this corresponds to a |chi|\ |sup2|
@@ -534,7 +536,6 @@ Tractor catalog headers ("WISEAB1", etc). The result is that the optical and WIS
 we provide should all be within a few percent of being on an AB system.
 
 .. _`unWISE`: https://ui.adsabs.harvard.edu/abs/2018RNAAS...2a...1M/abstract
-.. _`BASS website`: http://batc.bao.ac.cn/BASS/doku.php?id=datarelease:telescope_and_instrument:home#filters
 .. _`BASS g-band`: ../../files/bass-g.txt
 .. _`BASS r-band`: ../../files/bass-r.txt
 .. _`MzLS z-band`: ../../files/kpzd.txt
@@ -561,7 +562,7 @@ Astrometry
 
 Starting with `DR8`_, astrometry is tied entirely to `Gaia Data Release 2`_. Each image is calibrated to
 `Gaia Data Release 2`_, yielding an astrometric solution that is offset by the average difference between
-the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR9 image. Source
+the position of Gaia stars at an epoch of 2015.0 and the epoch of the DR10 image. Source
 extraction is then fixed to the `Gaia Data Release 2`_ system, such that positions of sources are tied to
 predicted Gaia positions at the epoch of the corresponding Legacy Surveys observation.
 Astrometric residuals are typically smaller than |plusmn|\ 0.03\ |Prime|.

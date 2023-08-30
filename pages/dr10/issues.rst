@@ -70,6 +70,15 @@ catalogs (rather than the `pixel`-level products). For example, the problematic 
 `completely missing` from the DR10 catalogs.
 
 
+Large galaxies missing from the Siena Galaxy Atlas
+--------------------------------------------------
+Fifty-two galaxies were overlooked in the version of the `Siena Galaxy Atlas`_ (SGA) used to process DR10. The upshot of this oversight
+is that these galaxies were not flagged as ``GALAXY`` in the `MASKBITS bitmask`_. Further details are provided in `legacypipe issue #680`_.
+Note that these fifty-two galaxies `were` included in the publicly released version of the SGA.
+
+
+.. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
+.. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`Tractor catalogs`: ../catalogs
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
 .. _`image stacks version`: ../files/#image-stacks-south-coadd

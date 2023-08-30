@@ -22,7 +22,7 @@
 
 .. container:: col-md-6 col-left
 
-   The DESI Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
+   The `DESI`_ Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
    infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
    of ~14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
    (:math:`g,r,z`), which was augmented with four infrared bands from `NEOWISE`_.
@@ -31,12 +31,13 @@
    inference model is being self-consistently expanded to > 20,000 square degrees by incorporating additional
    public DECam data in extra optical bands (:math:`g,r,i,z`) from the `NOIRLab Data Archive`_.
 
-   ========================================== ===================================== =========================================== =======================================
-   *The Beijing-Arizona Sky Survey* (`BASS`_) *The DECam Legacy Survey* (`DECaLS`_) *The Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
-   ========================================== ===================================== =========================================== =======================================
+   ============================================ ====================================== ================================= ======================================= =======================================
+   *DESI Spectroscopic Data Releases* (`DESI`_) *Beijing-Arizona Sky Survey* (`BASS`_) *DECam Legacy Survey* (`DECaLS`_) *Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
+   ============================================ ====================================== ================================= ======================================= =======================================
 
    An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 
+   .. _`DESI`: https://data.desi.lbl.gov
    .. _`BASS`: ./bass
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls

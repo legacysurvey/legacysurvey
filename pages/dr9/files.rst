@@ -353,8 +353,8 @@ be turned into values in square degrees using the brick pixel area of
 small-scale masking (cosmic rays, edges, saturated pixels) and
 detailed PSF model.
 
-.. _`Myers et al. 2022`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
-.. _`Myers et al. (2022)`: https://ui.adsabs.harvard.edu/abs/2022arXiv220808518M/abstract
+.. _`Myers et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
+.. _`Myers et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract
 
 Random Catalogs (``randoms/*``)
 ===============================
@@ -362,7 +362,7 @@ Random Catalogs (``randoms/*``)
 randoms-1-\*.fits
 -----------------
 
-Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2022`_). Random locations
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2023`_). Random locations
 were generated across the footprint at a density of 2,500 per square degree and meta-information
 about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
@@ -438,7 +438,7 @@ northern and southern imaging footprints overlap, so, randoms are resolved by `t
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels in `DECaLS`_ (``PHOTSYS`` set to "S").
 
-Work which uses any of the random catalogs should cite `Myers et al. (2022)`_.
+Work which uses any of the random catalogs should cite `Myers et al. (2023)`_.
 
 randoms-outside-1-\*.fits
 -------------------------
@@ -748,11 +748,11 @@ Name                                  Type         Units                 Descrip
 ``GAIA_ASTROMETRIC_SIGMA5D_MAX``      float32      mas                   `Gaia`_ longest semi-major axis of the 5-d error ellipsoid
 ``GAIA_ASTROMETRIC_PARAMS_SOLVED``    uint8                              Which astrometric parameters were estimated for a `Gaia`_ source
 ``PARALLAX``                          float32      mas                   Reference catalog parallax
-``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``parallax``
-``PMRA``                              float32      mas/yr                Reference catalog proper motion in the RA direction
-``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmra``
-``PMDEC``                             float32      mas/yr                Reference catalog proper motion in the Dec direction
-``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``pmdec``
+``PARALLAX_IVAR``                     float32      1/mas\ |sup2|         Reference catalog inverse-variance on ``PARALLAX``
+``PMRA``                              float32      mas/yr                Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``REF_EPOCH``
+``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
+``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
+``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
 ``MASKBITS``           		      int16    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR9 bitmasks page`_)
 ``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR9 bitmasks page`_)
 ``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
@@ -811,28 +811,43 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Photometric Redshift sweeps
----------------------------
-.. (9.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+Photo-z sweeps (9.1-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+----------------------------------------------------------------
 
-The Photometric Redshifts for the Legacy Surveys (PRLS, e.g., see `Zhou et al. 2021`_)
-catalog is row-by-row-matched to the DR9 sweep catalogs as described previously for the other types of sweeps files.
+.. note::
+   In July of 2023, the photometric redshift sweeps were updated to the version detailed
+   in `Zhou et al. (2023; in preparation)`_. The older versions, from `Zhou et al. (2021)`_, which we
+   `have retained`_, were stored in the ``9.0-photo-z`` directory. The older and newer photometric
+   redshift sweeps are both based on the same, ``9.0``, versions of the sweep catalogs. But the newer
+   photometric redshift sweeps are stored in the ``9.1-photo-z`` directory
+   to distinguish them from the older versions.
 
-The photometric redshifts are computed using the random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2021)`_.
+The photometric redshift (photo-z)
+sweeps catalogs are row-by-row-matched to the DR9 sweep catalogs as described above for the
+other types of sweeps files.
+
+The photometric redshifts are computed using a random forest algorithm.
+Details of the photo-z training and performance can be found in `Zhou et al. (2023; in preparation)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
-For objects that do not meet the NOBS cut,
-the photo-z values are filled with -99. Although we provide photo-z's for all
-objects that meet the NOBS cut, only relatively bright objects have reliable
+For objects that do not meet the ``NOBS`` cut,
+the photo-z values are filled with -99.
+
+Although we provide photo-z's for all
+objects that meet the ``NOBS`` cut, the brightest objects have the most reliable
 photo-z's. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
 are mostly reliable, whereas fainter objects are increasingly unreliable with
-large systematic offsets.
+increasingly large systematic offsets. The overall performance of the photometric
+redshifts compared to a range of spectroscopic surveys are available for both
+the `northern`_ and `southern`_ regions of the legacy surveys imaging.
+
+.. _`northern`: ../../files/pz_vs_sz_north.pdf
+.. _`southern`: ../../files/pz_vs_sz_south.pdf
 
 The photo-z catalogs do not provide information on star-galaxy separation.
 Stars are excluded from the photo-z training data, and we do not attempt to
 identify stars. To perform star-galaxy separation, one can use the
-morphological "TYPE" and/or the photometry (*e.g.*, the optical-WISE
+morphological ``TYPE`` and/or the photometry (*e.g.*, the optical-WISE
 color cut, as applied in  `Zhou et al. 2021`_, can be very effective for selecting redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
 
 ================= ========== ==========================================================================
@@ -851,14 +866,19 @@ Name              Type       Description
 ``Z_SPEC``        float32    spectroscopic redshift, if available
 ``SURVEY``        char[10]   source of the spectroscopic redshift
 ``TRAINING``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training
+``KFOLD``         int16      index of the subset in the 10-fold cross-validation
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2021)`_
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2023; in preparation)`_
 and include the `additional acknowledgment for photometric redshifts`_.
 
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
+.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu
+.. _`Zhou et al. (2023; in preparation)`: ./#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits
+.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu
+.. _`have retained`: ../oldphotozs
 
 Foreground object masks (``masking/*``)
 =======================================
@@ -890,8 +910,8 @@ Name                                  Type    Units              Description
 ``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
 ``radius``                            float32 deg                Masking radius
 ``radius_pix``                        int64   pix                Masking radius in 0.262 arcsec "brick" pixels
-``pmra``                              float32 mas/yr             Reference catalog proper motion in the RA direction
-``pmdec``                             float32 mas/yr             Reference catalog proper motion in the Dec direction
+``pmra``                              float32 mas/yr             Reference catalog proper motion in RA direction (:math:`\mu_\alpha^*\equiv\mu_\alpha\cos\delta`) in the ICRS at ``ref_epoch``
+``pmdec``                             float32 mas/yr             Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``ref_epoch``
 ``parallax``                          float32 mas                Reference catalog parallax
 ``ra_ivar``                           float32 1/deg\ |sup2|      Inverse variance of RA (no cosine term!), excluding astrometric calibration errors
 ``dec_ivar``                          float32 1/deg\ |sup2|      Inverse variance of DEC, excluding astrometric calibration errors

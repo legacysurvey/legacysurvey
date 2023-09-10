@@ -523,8 +523,15 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 .. _`catalogs`: ../catalogs
 .. _`Catalogs`: ../catalogs
 
-survey-dr10-south-specObj-dr16.fits
------------------------------------
+survey-dr(10|10.1)-south-specObj-dr16.fits
+------------------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
@@ -534,8 +541,15 @@ is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
 
 .. _`data model for specObj-dr16.fits`: https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr10-south-dr16Q-v4.fits
--------------------------------
+survey-dr(10|10.1)-south-dr16Q-v4.fits
+--------------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16
 visually inspected quasar catalog (`Lyke et al. 2020`_)
@@ -548,8 +562,15 @@ is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
 .. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
 .. _`data model for DR16Q_v4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 
-survey-dr10-south-superset-dr16Q-v3.fits
-----------------------------------------
+survey-dr(10|10.1)-south-superset-dr16Q-v3.fits
+-----------------------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
@@ -560,8 +581,15 @@ is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
 
 .. _`data model for DR16Q_Superset_v3.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_Superset_v3.html
 
-survey-dr10-south-dr12Q.fits
-----------------------------
+survey-dr(10|10.1)-south-dr12Q.fits
+-----------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
@@ -573,8 +601,15 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
 .. _`data model for DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr10-south-superset-dr12Q.fits
--------------------------------------
+survey-dr(10|10.1)-south-superset-dr12Q.fits
+--------------------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
@@ -585,8 +620,15 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`data model for Superset_DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr10-south-dr7Q.fits
----------------------------
+survey-dr(10|10.1)-south-dr7Q.fits
+----------------------------------
+
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)

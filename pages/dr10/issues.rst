@@ -57,17 +57,23 @@ Bricks for which ``SUB_BLOB`` was set
 To facilitate rapid processing of sources in high-density regions, some DR10 bricks were split into smaller "sub-blobs."
 These bricks can be identified as they have ``SUB_BLOB`` set in the `MASKBITS bitmask`_ for some `pixels` in the
 `image stacks version`_ of the maskbits product. Due to a bug in processing these sub-blobs, some genuine sources were not
-extracted and included in DR10. The locations of these bricks are plotted below
+extracted and included in DR10. The locations of the affected 598 bricks are plotted below
 
-.. image:: ../../files/dr10-sb.png
+.. image:: ../../files/dr10.1-sb.png
     :height: 410
     :width: 600
     :align: center
 
-and a full list of the 711 affected bricks `is available here`_. Note that these bricks can't be identified in the `source`-level
-catalogs (rather than the `pixel`-level products). For example, the problematic bricks can't be recovered by checking if
-``SUB_BLOB`` is set in the `MASKBITS bitmask`_ in the `sweep files`_. This is because some of the relevant sources are
-`completely missing` from the DR10 catalogs.
+These bricks were re-processed in the summer of 2023, effectively fixing the bug, and the DR10 release directory was updated
+with the relevant files on the weekend of September 9, 2023.
+
+Files that had to be updated to fix the ``SUB_BLOB`` bug included the `coadd stacks`_, `tractor`_ and tractor-i files, `random catalogs`_,
+`sweep files`_, `external-match files`_, and `metric`_ and `log`_ files. The full list of the updated files `is available here`_. The
+random catalogs, and the tractor, tractor-i and coadd files were completely replaced, and we recommend always using the latest versions.
+The original and updated versions of the sweep and external-match files were both retained. The original versions of the sweeps
+are in the directories ``10.0``, ``10.0-extra`` and ``10.0-lightcurves`` and the updated versions are in the directories
+``10.1``, ``10.1-extra`` and ``10.1-lightcurves``. The original and updated versions of the external-match files are both in the
+``external`` directory, but the original files contain the string `dr10` and the updated files contain the string `dr10.1`.
 
 
 Large galaxies missing from the Siena Galaxy Atlas
@@ -80,9 +86,15 @@ Note that these fifty-two galaxies `were` included in the publicly released vers
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`Tractor catalogs`: ../catalogs
+.. _`tractor`: ../catalogs
+.. _`coadd stacks`: ../files/#image-stacks-south-coadd
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
+.. _`random catalogs`: ../files/#random-catalogs-randoms
 .. _`image stacks version`: ../files/#image-stacks-south-coadd
+.. _`external-match files`: ../files/#external-match-files-south-external
+.. _`metric`: ../files/#other-files
+.. _`log`: ../files/#other-files
 .. _`DR9`: ../../dr9
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
 .. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5
-.. _`is available here`: ../../files/dr10-sub-blob-bricks.txt
+.. _`is available here`: ../../files/dr10.1-sub-blob-bricks.txt

@@ -631,8 +631,8 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 Sweep Catalogs (``south/sweep/*``)
 ==================================
 
-10.X/sweep-<brickmin>-<brickmax>.fits
--------------------------------------
+10.[0-1]/sweep-<brickmin>-<brickmax>.fits
+-----------------------------------------
 
 .. note::
    In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
@@ -789,8 +789,8 @@ Name                                  Type         Units                 Descrip
 
 .. _photometric-redshifts:
 
-Light Curve sweeps (10.X-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
--------------------------------------------------------------------------
+Light Curve sweeps (10.[0-1]-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+-----------------------------------------------------------------------------
 
 .. note::
    In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
@@ -829,8 +829,8 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Extra sweeps (10.X-extra/sweep-<brickmin>-<brickmax>-ex.fits)
--------------------------------------------------------------
+Extra sweeps (10.[0-1]-extra/sweep-<brickmin>-<brickmax>-ex.fits)
+-----------------------------------------------------------------
 
 .. note::
    In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in

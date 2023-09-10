@@ -9,6 +9,9 @@
 
 ## 10.0.4 (DR10, planned)
 
+- Document updates made to fix the sub-blob bug (i.e. for "DR10.1")
+  ([PR#174](https://github.com/legacysurvey/legacysurvey/pull/174)).
+    - Addresses [issue #172](https://github.com/legacysurvey/legacysurvey/issues/172).
 - Address points listed in [issue #170](https://github.com/legacysurvey/legacysurvey/issues/170)
   ([PR#172](https://github.com/legacysurvey/legacysurvey/pull/172)). Also includes:
     - A description of the new Zhou et al. (2023) dr9.1 photo-z sweeps.

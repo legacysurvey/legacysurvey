@@ -57,7 +57,7 @@ Bricks for which ``SUB_BLOB`` was set
 To facilitate rapid processing of sources in high-density regions, some DR10 bricks were split into smaller "sub-blobs."
 These bricks can be identified as they have ``SUB_BLOB`` set in the `MASKBITS bitmask`_ for some `pixels` in the
 `image stacks version`_ of the maskbits product. Due to a bug in processing these sub-blobs, some genuine sources were not
-extracted and included in DR10. The locations of the affected 598 bricks are plotted below
+initially extracted and included in DR10. The locations of the 598 affected bricks are plotted below
 
 .. image:: ../../files/dr10.1-sb.png
     :height: 410
@@ -73,7 +73,7 @@ random catalogs, and the tractor, tractor-i and coadd files were completely repl
 The original and updated versions of the sweep and external-match files were both retained. The original versions of the sweeps
 are in the directories ``10.0``, ``10.0-extra`` and ``10.0-lightcurves`` and the updated versions are in the directories
 ``10.1``, ``10.1-extra`` and ``10.1-lightcurves``. The original and updated versions of the external-match files are both in the
-``external`` directory, but the original files contain the string `dr10` and the updated files contain the string `dr10.1`.
+``external`` directory, but the original files contain the string ``dr10`` and the updated files contain the string ``dr10.1``.
 
 
 Large galaxies missing from the Siena Galaxy Atlas

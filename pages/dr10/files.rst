@@ -631,8 +631,14 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 Sweep Catalogs (``south/sweep/*``)
 ==================================
 
-10.0/sweep-<brickmin>-<brickmax>.fits
+10.X/sweep-<brickmin>-<brickmax>.fits
 -------------------------------------
+
+.. note::
+   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
+   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
+   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
+   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
@@ -779,11 +785,18 @@ Name                                  Type         Units                 Descrip
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`SGA`: ../../sga/sga2020
+.. _`documented on the known issues page`: ../issues/#bricks-for-which-sub-blob-was-set
 
 .. _photometric-redshifts:
 
-Light Curve sweeps (10.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+Light Curve sweeps (10.X-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
 -------------------------------------------------------------------------
+
+.. note::
+   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
+   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
+   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
+   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
 
 The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
 relate to multi-epoch WISE data, which are
@@ -816,8 +829,14 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Extra sweeps (10.0-extra/sweep-<brickmin>-<brickmax>-ex.fits)
+Extra sweeps (10.X-extra/sweep-<brickmin>-<brickmax>-ex.fits)
 -------------------------------------------------------------
+
+.. note::
+   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
+   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
+   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
+   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
 are not otherwise in the standard sweeps files or the "light curve" sweep files.

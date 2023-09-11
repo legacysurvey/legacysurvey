@@ -499,6 +499,12 @@ contains all randoms for dr10, regardless of whether the brick is "officially" i
 External Match Files (``south/external/*``)
 ===========================================
 
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 | **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
 | /global/cfs/cdirs/sdss/data/sdss
 
@@ -523,8 +529,9 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 .. _`catalogs`: ../catalogs
 .. _`Catalogs`: ../catalogs
 
-survey-dr10-south-specObj-dr16.fits
------------------------------------
+survey-dr(10|10.1)-south-specObj-dr16.fits
+------------------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
@@ -534,8 +541,9 @@ is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
 
 .. _`data model for specObj-dr16.fits`: https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr10-south-dr16Q-v4.fits
--------------------------------
+survey-dr(10|10.1)-south-dr16Q-v4.fits
+--------------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16
 visually inspected quasar catalog (`Lyke et al. 2020`_)
@@ -548,8 +556,9 @@ is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
 .. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
 .. _`data model for DR16Q_v4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 
-survey-dr10-south-superset-dr16Q-v3.fits
-----------------------------------------
+survey-dr(10|10.1)-south-superset-dr16Q-v3.fits
+-----------------------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
@@ -560,8 +569,9 @@ is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
 
 .. _`data model for DR16Q_Superset_v3.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_Superset_v3.html
 
-survey-dr10-south-dr12Q.fits
-----------------------------
+survey-dr(10|10.1)-south-dr12Q.fits
+-----------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
@@ -573,8 +583,9 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
 .. _`data model for DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr10-south-superset-dr12Q.fits
--------------------------------------
+survey-dr(10|10.1)-south-superset-dr12Q.fits
+--------------------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
@@ -585,8 +596,9 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 .. _`data model for Superset_DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr10-south-dr7Q.fits
----------------------------
+survey-dr(10|10.1)-south-dr7Q.fits
+----------------------------------
+
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
@@ -631,8 +643,14 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 Sweep Catalogs (``south/sweep/*``)
 ==================================
 
-10.0/sweep-<brickmin>-<brickmax>.fits
--------------------------------------
+.. note::
+   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
+   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
+   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
+   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
+
+10.[0-1]/sweep-<brickmin>-<brickmax>.fits
+-----------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
@@ -779,11 +797,12 @@ Name                                  Type         Units                 Descrip
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`SGA`: ../../sga/sga2020
+.. _`documented on the known issues page`: ../issues/#bricks-for-which-sub-blob-was-set
 
 .. _photometric-redshifts:
 
-Light Curve sweeps (10.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
--------------------------------------------------------------------------
+Light Curve sweeps (10.[0-1]-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+-----------------------------------------------------------------------------
 
 The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
 relate to multi-epoch WISE data, which are
@@ -816,8 +835,8 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Extra sweeps (10.0-extra/sweep-<brickmin>-<brickmax>-ex.fits)
--------------------------------------------------------------
+Extra sweeps (10.[0-1]-extra/sweep-<brickmin>-<brickmax>-ex.fits)
+-----------------------------------------------------------------
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
 are not otherwise in the standard sweeps files or the "light curve" sweep files.

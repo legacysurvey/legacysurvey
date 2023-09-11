@@ -1,14 +1,17 @@
 # legacysurvey Change Log
 
-## 10.1.0 (DR10, planned)
+## 10.1.1 (DR10, planned)
 
 - *Planned*: correct units for `ccdskycounts`
   ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 10.0.4 (DR10, planned)
+## 10.1.0 (DR10)
 
+- Document updates made to fix the sub-blob bug (i.e. for "DR10.1")
+  ([PR#174](https://github.com/legacysurvey/legacysurvey/pull/174)).
+    - Addresses [issue #173](https://github.com/legacysurvey/legacysurvey/issues/173).
 - Address points listed in [issue #170](https://github.com/legacysurvey/legacysurvey/issues/170)
   ([PR#172](https://github.com/legacysurvey/legacysurvey/pull/172)). Also includes:
     - A description of the new Zhou et al. (2023) dr9.1 photo-z sweeps.

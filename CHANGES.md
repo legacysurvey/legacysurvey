@@ -1,13 +1,13 @@
 # legacysurvey Change Log
 
-## 10.1.0 (DR10, planned)
+## 10.1.1 (DR10, planned)
 
 - *Planned*: correct units for `ccdskycounts`
   ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 10.0.4 (DR10, planned)
+## 10.1.0 (DR10)
 
 - Document updates made to fix the sub-blob bug (i.e. for "DR10.1")
   ([PR#174](https://github.com/legacysurvey/legacysurvey/pull/174)).

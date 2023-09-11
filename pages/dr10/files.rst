@@ -499,6 +499,12 @@ contains all randoms for dr10, regardless of whether the brick is "officially" i
 External Match Files (``south/external/*``)
 ===========================================
 
+.. note::
+   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
+   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
+   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
+   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
+
 | **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
 | /global/cfs/cdirs/sdss/data/sdss
 
@@ -526,12 +532,6 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 survey-dr(10|10.1)-south-specObj-dr16.fits
 ------------------------------------------
 
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
-
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
@@ -543,12 +543,6 @@ is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
 
 survey-dr(10|10.1)-south-dr16Q-v4.fits
 --------------------------------------
-
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16
@@ -565,12 +559,6 @@ is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
 survey-dr(10|10.1)-south-superset-dr16Q-v3.fits
 -----------------------------------------------
 
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
-
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
@@ -583,12 +571,6 @@ is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
 
 survey-dr(10|10.1)-south-dr12Q.fits
 -----------------------------------
-
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
@@ -604,12 +586,6 @@ is documented in the SDSS DR12 `data model for DR12Q.fits`_.
 survey-dr(10|10.1)-south-superset-dr12Q.fits
 --------------------------------------------
 
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
-
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
@@ -622,12 +598,6 @@ is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
 
 survey-dr(10|10.1)-south-dr7Q.fits
 ----------------------------------
-
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
@@ -673,14 +643,14 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 Sweep Catalogs (``south/sweep/*``)
 ==================================
 
-10.[0-1]/sweep-<brickmin>-<brickmax>.fits
------------------------------------------
-
 .. note::
    In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
    sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
    bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
    catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
+
+10.[0-1]/sweep-<brickmin>-<brickmax>.fits
+-----------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
 Tractor measurements) of all the Tractor `catalogs`_ for which ``BRICK_PRIMARY==T`` in rectangles of RA, Dec.
@@ -834,12 +804,6 @@ Name                                  Type         Units                 Descrip
 Light Curve sweeps (10.[0-1]-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
 -----------------------------------------------------------------------------
 
-.. note::
-   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
-   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
-   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
-   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
-
 The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
 relate to multi-epoch WISE data, which are
 
@@ -873,12 +837,6 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 
 Extra sweeps (10.[0-1]-extra/sweep-<brickmin>-<brickmax>-ex.fits)
 -----------------------------------------------------------------
-
-.. note::
-   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
-   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
-   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
-   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
 are not otherwise in the standard sweeps files or the "light curve" sweep files.

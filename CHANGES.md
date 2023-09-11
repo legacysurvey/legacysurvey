@@ -7,7 +7,7 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 10.1.0 (DR10)
+## 10.1.0 (DR10, 2023-09-11)
 
 - Document updates made to fix the sub-blob bug (i.e. for "DR10.1")
   ([PR#174](https://github.com/legacysurvey/legacysurvey/pull/174)).

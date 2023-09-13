@@ -815,9 +815,9 @@ Photo-z sweeps (9.1-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------
 
 .. note::
-   In July of 2023, the photometric redshift sweeps were updated to the version detailed
-   in `Zhou et al. (2023; in preparation)`_. The older versions, from `Zhou et al. (2021)`_, which we
-   `have retained`_, were stored in the ``9.0-photo-z`` directory. The older and newer photometric
+   In September of 2023, the photometric redshift sweeps were updated to the version detailed
+   in `Zhou et al. (2023)`_. The older version of the photo-z's, based on the methods and training data documented in
+   `Zhou et al. (2021)`_, `has been retained`_ and is stored in the ``9.0-photo-z`` directory. The older and newer photometric
    redshift sweeps are both based on the same, ``9.0``, versions of the sweep catalogs. But the newer
    photometric redshift sweeps are stored in the ``9.1-photo-z`` directory
    to distinguish them from the older versions.
@@ -827,7 +827,7 @@ sweeps catalogs are row-by-row-matched to the DR9 sweep catalogs as described ab
 other types of sweeps files.
 
 The photometric redshifts are computed using a random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2023; in preparation)`_.
+Details of the photo-z training and performance can be found in `Zhou et al. (2023)`_.
 For computing the photo-z's, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the ``NOBS`` cut,
@@ -869,16 +869,15 @@ Name              Type       Description
 ``KFOLD``         int16      index of the subset in the 10-fold cross-validation
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2023; in preparation)`_
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2023)`_
 and include the `additional acknowledgment for photometric redshifts`_.
 
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
-.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu
-.. _`Zhou et al. (2023; in preparation)`: ./#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits
-.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu
-.. _`have retained`: ../oldphotozs
+.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
+.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
+.. _`has been retained`: ../oldphotozs
 
 Foreground object masks (``masking/*``)
 =======================================

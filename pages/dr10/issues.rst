@@ -65,7 +65,8 @@ initially extracted and included in DR10. The locations of the 598 affected bric
     :align: center
 
 These bricks were re-processed in the summer of 2023, effectively fixing the bug, and the DR10 release directory was updated
-with the relevant files on the weekend of September 9, 2023.
+with the relevant files on the weekend of September 9, 2023. This bug fix can be thought of as "DR10.1". Sources that were
+updated for DR10.1 have a `RELEASE integer`_ of 10002 (compared to the standard `RELEASE integer`_ of 10000).
 
 Files that had to be updated to fix the ``SUB_BLOB`` bug included the `coadd stacks`_, `tractor`_ and tractor-i files, `random catalogs`_,
 `sweep files`_, `external-match files`_, and `metric`_ and `log`_ files. The full list of the updated files `is available here`_. The
@@ -98,3 +99,4 @@ Note that these fifty-two galaxies `were` included in the publicly released vers
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
 .. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5
 .. _`is available here`: ../../files/dr10.1-sub-blob-bricks.txt
+.. _`RELEASE integer`: ../../release

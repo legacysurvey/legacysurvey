@@ -55,8 +55,8 @@
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
 
-      <h2>Current Release: Data Release 10</h2>
-      <p>December 2022</p>
+      <h2>Current Data Release: 10.1</h2>
+      <p>September 2023 (How DR10/10.1 differ is described on the <a href="dr10/issues#bricks-for-which-sub-blob-was-set">known issues page</a>)</p>
       <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
 
 .. container::

@@ -860,12 +860,13 @@ other types of sweeps files.
 The photometric redshifts are computed using a random forest algorithm.
 Details of the photo-z training and performance are similar to those
 found in `Zhou et al. (2023)`_.
-We include two sets of photo-zs, one based on :math:`grz` fluxes and one
-based on :math:`griz` fluxes. Columns in the catalogs that additionally use
+We include two sets of photo-zs as part of DR10.1. Both sets include WISE W1 and W2 fluxes, but
+one includes just :math:`grz` fluxes in the optical and one is extended to include
+:math:`i`-band fluxes. Columns in the catalogs that additionally use
 :math:`i`-band can be identified by ``_I`` in the column name.
 For computing the photo-zs, we require at least one exposure in
-each band of interest. For example, for the :math:`grz`-based photo-zs we
-require at least one exposure in each of the
+each :math:`griz` band of interest. For example, for the :math:`grz`-based
+photo-zs we require at least one exposure in each of the
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the ``NOBS`` cut,
 the photo-z values are filled with -99.
@@ -896,24 +897,24 @@ Name                Type       Description
 ``OBJID``           int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``Z_SPEC``          float32    spectroscopic redshift, if available
 ``SURVEY``          char[12]   source of the spectroscopic redshift
-``Z_PHOT_MEAN``     float32    photo-z derived from the mean of the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_MEDIAN``   float32    photo-z derived from the median of the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_STD``      float32    standard deviation of the photo-zs derived from the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_L68``      float32    lower bound of the 68% confidence region, derived from the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_U68``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_L95``      float32    lower bound of the 95% confidence region, derived from the photo-z PDF (:math:`grz`-based)
-``Z_PHOT_U95``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF (:math:`grz`-based)
-``TRAINING``        boolean    whether or not the spectroscopic redshift is used in photometric redshift training (:math:`grz`-based)
-``KFOLD``           int16      index of the subset in the 10-fold cross-validation (:math:`grz`-based)
-``Z_PHOT_MEAN_I``   float32    photo-z derived from the mean of the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_MEDIAN_I`` float32    photo-z derived from the median of the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_STD_I``    float32    standard deviation of the photo-zs derived from the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_L68_I``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_U68_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_L95_I``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF (:math:`griz`-based)
-``Z_PHOT_U95_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (:math:`griz`-based)
-``TRAINING_I``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training (:math:`griz`-based)
-``KFOLD_I``         int16      index of the subset in the 10-fold cross-validation (:math:`griz`-based)
+``Z_PHOT_MEAN``     float32    photo-z derived from the mean of the photo-z PDF
+``Z_PHOT_MEDIAN``   float32    photo-z derived from the median of the photo-z PDF
+``Z_PHOT_STD``      float32    standard deviation of the photo-zs derived from the photo-z PDF
+``Z_PHOT_L68``      float32    lower bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_U68``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_L95``      float32    lower bound of the 95% confidence region, derived from the photo-z PDF
+``Z_PHOT_U95``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``TRAINING``        boolean    whether or not the spectroscopic redshift is used in photometric redshift training
+``KFOLD``           int16      index of the subset in the 10-fold cross-validation
+``Z_PHOT_MEAN_I``   float32    photo-z derived from the mean of the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_MEDIAN_I`` float32    photo-z derived from the median of the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_STD_I``    float32    standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_L68_I``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_U68_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_L95_I``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
+``Z_PHOT_U95_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
+``TRAINING_I``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training (including :math:`i`-bad fluxes)
+``KFOLD_I``         int16      index of the subset in the 10-fold cross-validation (including :math:`i`-bad fluxes)
 =================== ========== ==========================================================================
 
 Work which uses the photometric redshift sweeps should cite `Zhou et al. (2023)`_

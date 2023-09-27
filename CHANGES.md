@@ -7,6 +7,14 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
+## 10.1.1 (DR10, 2023-09-27)
+
+- Add description of DR10.1 photozs
+  ([PR#175](https://github.com/legacysurvey/legacysurvey/pull/175)). Also includes:
+    - Add arXiv link to Zhou et al. (2023) photoz paper.
+    - Update ``RELEASE`` documentation to include ``RELEASE=10002` number.
+    - Add a mention of DR10.1 to the landing page.
+
 ## 10.1.0 (DR10, 2023-09-11)
 
 - Document updates made to fix the sub-blob bug (i.e. for "DR10.1")

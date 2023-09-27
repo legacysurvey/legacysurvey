@@ -1,6 +1,6 @@
 # legacysurvey Change Log
 
-## 10.1.1 (DR10, planned)
+## 10.1.2 (DR10, planned)
 
 - *Planned*: correct units for `ccdskycounts`
   ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).

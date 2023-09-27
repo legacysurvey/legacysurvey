@@ -909,15 +909,15 @@ Name                Type       Description
 ``Z_PHOT_U95``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF
 ``TRAINING``        boolean    whether or not the spectroscopic redshift is used in photometric redshift training
 ``KFOLD``           int16      index of the subset in the 10-fold cross-validation
-``Z_PHOT_MEAN_I``   float32    photo-z derived from the mean of the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_MEDIAN_I`` float32    photo-z derived from the median of the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_STD_I``    float32    standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_L68_I``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_U68_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_L95_I``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
-``Z_PHOT_U95_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-bad fluxes)
-``TRAINING_I``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training (including :math:`i`-bad fluxes)
-``KFOLD_I``         int16      index of the subset in the 10-fold cross-validation (including :math:`i`-bad fluxes)
+``Z_PHOT_MEAN_I``   float32    photo-z derived from the mean of the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_MEDIAN_I`` float32    photo-z derived from the median of the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_STD_I``    float32    standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_L68_I``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_U68_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_L95_I``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
+``Z_PHOT_U95_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
+``TRAINING_I``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training (including :math:`i`-band fluxes)
+``KFOLD_I``         int16      index of the subset in the 10-fold cross-validation (including :math:`i`-band fluxes)
 =================== ========== ==========================================================================
 
 Work which uses the photometric redshift sweeps should cite `Zhou et al. (2023)`_

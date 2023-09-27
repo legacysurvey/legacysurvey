@@ -877,10 +877,13 @@ photo-zs. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 
 are mostly reliable, whereas fainter objects are increasingly unreliable with
 increasingly large systematic offsets. Plots of the overall performance of the photometric
 redshifts compared to a range of spectroscopic surveys are available for both
-the `grz-based`_ and `griz-based`_ photo-zs.
+the photo-zs that `do not include i-band`_ and those that `include i-band`_. We also
+provide a `table summarizing the relative performance of the photo-zs with and without i-band`_
+that can be compared to Table 7 of `Zhou et al. (2023)`_.
 
-.. _`grz-based`: ../../files/pz_vs_sz_south_dr10.pdf
-.. _`griz-based`: ../../files/pz_vs_sz_with_i_south_dr10.pdf
+.. _`do not include i-band`: ../../files/pz_vs_sz_south_dr10.pdf
+.. _`include i-band`: ../../files/pz_vs_sz_with_i_south_dr10.pdf
+.. _`table summarizing the relative performance of the photo-zs with and without i-band`: ../../files/dr10_photoz_performance.txt
 
 The photo-z catalogs do not provide information on star-galaxy separation.
 We do not attempt to identify stars, which are excluded from the photo-z

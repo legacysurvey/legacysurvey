@@ -815,9 +815,9 @@ Photo-z sweeps (9.1-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
 ----------------------------------------------------------------
 
 .. note::
-   In July of 2023, the photometric redshift sweeps were updated to the version detailed
-   in `Zhou et al. (2023; in preparation)`_. The older versions, from `Zhou et al. (2021)`_, which we
-   `have retained`_, were stored in the ``9.0-photo-z`` directory. The older and newer photometric
+   In September of 2023, the photometric redshift sweeps were updated to the version detailed
+   in `Zhou et al. (2023)`_. The older version of the photo-zs, based on the methods and training data documented in
+   `Zhou et al. (2021)`_, `has been retained`_ and is stored in the ``9.0-photo-z`` directory. The older and newer photometric
    redshift sweeps are both based on the same, ``9.0``, versions of the sweep catalogs. But the newer
    photometric redshift sweeps are stored in the ``9.1-photo-z`` directory
    to distinguish them from the older versions.
@@ -827,15 +827,15 @@ sweeps catalogs are row-by-row-matched to the DR9 sweep catalogs as described ab
 other types of sweeps files.
 
 The photometric redshifts are computed using a random forest algorithm.
-Details of the photo-z training and performance can be found in `Zhou et al. (2023; in preparation)`_.
-For computing the photo-z's, we require at least one exposure in
+Details of the photo-z training and performance can be found in `Zhou et al. (2023)`_.
+For computing the photo-zs, we require at least one exposure in
 :math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
 For objects that do not meet the ``NOBS`` cut,
 the photo-z values are filled with -99.
 
-Although we provide photo-z's for all
+Although we provide photo-zs for all
 objects that meet the ``NOBS`` cut, the brightest objects have the most reliable
-photo-z's. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
+photo-zs. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
 are mostly reliable, whereas fainter objects are increasingly unreliable with
 increasingly large systematic offsets. The overall performance of the photometric
 redshifts compared to a range of spectroscopic surveys are available for both
@@ -858,7 +858,7 @@ Name              Type       Description
 ``OBJID``         int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``Z_PHOT_MEAN``   float32    photo-z derived from the mean of the photo-z PDF
 ``Z_PHOT_MEDIAN`` float32    photo-z derived from the median of the photo-z PDF
-``Z_PHOT_STD``    float32    standard deviation of the photo-z's derived from the photo-z PDF
+``Z_PHOT_STD``    float32    standard deviation of the photo-zs derived from the photo-z PDF
 ``Z_PHOT_L68``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF
 ``Z_PHOT_U68``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
 ``Z_PHOT_L95``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF
@@ -869,16 +869,15 @@ Name              Type       Description
 ``KFOLD``         int16      index of the subset in the 10-fold cross-validation
 ================= ========== ==========================================================================
 
-Work which uses this photometric redshift catalog should cite `Zhou et al. (2023; in preparation)`_
+Work which uses this photometric redshift catalog should cite `Zhou et al. (2023)`_
 and include the `additional acknowledgment for photometric redshifts`_.
 
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
-.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu
-.. _`Zhou et al. (2023; in preparation)`: ./#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits
-.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu
-.. _`have retained`: ../oldphotozs
+.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
+.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
+.. _`has been retained`: ../oldphotozs
 
 Foreground object masks (``masking/*``)
 =======================================

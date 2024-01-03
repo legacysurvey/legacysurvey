@@ -394,21 +394,26 @@ No optical flux is assigned to "DUP" sources, but they are retained to ensure th
 `Tractor`_ preferred and fit a different source based on the deeper Legacy Surveys imaging.
 The total numbers of the different morphological types in DR10 are:
 
+.. note::
+   This table was updated in early 2024 to correct for a `bug in the brick-level summary statics file`_.
+
 ======================= ==============
 Primary Objects of Type Unique Sources
 ======================= ==============
-*All*                    2,826,169,461
-``PSF``                  1,345,771,671
-``REX``                  1,122,268,233
-``EXP``                    225,234,618
-``DEV``                     83,907,237
-``SER``                     48,696,586
+*All*                    2,827,055,986
+``PSF``                  1,346,165,723
+``REX``                  1,122,579,568
+``EXP``                    225,321,618
+``DEV``                     83,968,261
+``SER``                     48,729,700
 ``DUP``                        291,116
 ======================= ==============
 
 *Primary* objects, here, specifically refers to sources for which ``BRICK_PRIMARY==True``
 (the totals are derived from the *total number* counts in the `survey bricks summary file`_).
 See `DR9`_ for source counts in the northern footprint of the Legacy Surveys.
+
+.. _`bug in the brick-level summary statics file`: ../issues/#updates-to-the-brick-level-summary-statistics-files
 
 The decision to retain an object in the catalog and to re-classify it using
 models more complicated than a point source is made using the penalized
@@ -434,7 +439,7 @@ The fluxes are not constrained to be positive-valued.  This allows the fitting o
 very low signal-to-noise sources without introducing biases at the faint end.  It
 also allows the stacking of fluxes at the catalog level.
 
-.. _`survey bricks summary file`: ../files/#survey-bricks-dr10-south-fits-gz
+.. _`survey bricks summary file`: ../files/#south-survey-bricks-dr10-south-fits-gz
 
 Tractor Implementation Details
 ==============================

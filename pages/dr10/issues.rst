@@ -76,18 +76,33 @@ are in the directories ``10.0``, ``10.0-extra`` and ``10.0-lightcurves`` and the
 ``10.1``, ``10.1-extra`` and ``10.1-lightcurves``. The original and updated versions of the external-match files are both in the
 ``external`` directory, but the original files contain the string ``dr10`` and the updated files contain the string ``dr10.1``.
 
-
 Large galaxies missing from the Siena Galaxy Atlas
 --------------------------------------------------
 Fifty-two galaxies were overlooked in the version of the `Siena Galaxy Atlas`_ (SGA) used to process DR10. The upshot of this oversight
 is that these galaxies were not flagged as ``GALAXY`` in the `MASKBITS bitmask`_. Further details are provided in `legacypipe issue #680`_.
 Note that these fifty-two galaxies `were` included in the publicly released version of the SGA.
 
+Updates to the brick-level summary statistics files
+---------------------------------------------------
+The initial `brick-level summary file`_ released with DR10 contained an incorrect accounting of the number of sources in some bricks.
+This was likely caused by processing results before all relevant files in the release were finalized and rsynced. Multiple columns
+in the summary file were inaccurate to varying degrees, including
+``nexphist_*``, ``nobjs``, ``npsf``, ``nrex``, ``nexp``, ``ndev``, ``nser``, ``psfsize_*``, ``psfdepth_*``, ``galdepth_*``, ``ebv``, ``trans_*``, ``cosky_*``, ``ext_*`` and ``wise_nobs``.
+In December of 2023, we completely replaced this file. The table of the `number of sources of each morphological type`_ on the description page
+was also updated to reflect the new information.
+
+The `dr10-south-depth.fits.gz`_ and `dr10-south-depth-summary.fits.gz`_ files were also updated in December of 2023, although
+all of the changes in these summary files were caused by fixes to the 598 bricks affected by the ``SUB_BLOB`` bug (described above).
+
 
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
 .. _`Tractor catalogs`: ../catalogs
 .. _`tractor`: ../catalogs
+.. _`number of sources of each morphological type`: ../description/#morphological-classification
+.. _`dr10-south-depth.fits.gz`: ../files/#south-dr10-south-depth-fits-gz
+.. _`dr10-south-depth-summary.fits.gz`: ../files/#south-dr10-south-depth-summary-fits-gz
+.. _`brick-level summary file`: ../files/#south-survey-bricks-dr10-south-fits-gz
 .. _`coadd stacks`: ../files/#image-stacks-south-coadd
 .. _`sweep files`: ../files/#sweep-catalogs-south-sweep
 .. _`random catalogs`: ../files/#random-catalogs-randoms

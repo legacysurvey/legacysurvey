@@ -1,11 +1,18 @@
 # legacysurvey Change Log
 
-## 10.1.2 (DR10, planned)
+## 10.1.3 (DR10, planned)
 
 - *Planned*: correct units for `ccdskycounts`
   ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+
+## 10.1.2 (DR10, 2024-01-XX)
+
+- Add a known issue describing updates to the brick summary files
+  ([PR#177](https://github.com/legacysurvey/legacysurvey/pull/177)):
+    - Also update table of sources by morphological type on DR10 description page.
+    - Addresses [issue #176](https://github.com/legacysurvey/legacysurvey/issues/176).
 
 ## 10.1.1 (DR10, 2023-09-28)
 

@@ -7,7 +7,7 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 10.1.2 (DR10, 2024-01-XX)
+## 10.1.2 (DR10, 2024-01-03)
 
 - Add a known issue describing updates to the brick summary files
   ([PR#177](https://github.com/legacysurvey/legacysurvey/pull/177)):

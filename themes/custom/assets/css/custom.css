@@ -1,4 +1,6 @@
-@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+/*
+ * @import url(https://weloveiconfonts.com/api/?family=fontawesome);
+ */
 
 body {
     padding-top: 70px;
@@ -6,7 +8,7 @@ body {
 }
 
 .navbar {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif, "FontAwesome";
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; /* , "FontAwesome"; */
 }
 
 .navbar-brand {

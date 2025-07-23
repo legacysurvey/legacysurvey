@@ -29,6 +29,16 @@ Uploading a custom catalog:
 
 #. In the bottom-left corner there is a box to upload a Custom Catalog.  This file can be in FITS or CSV format.  It must contain columns called "RA" and "DEC" (case-insensitive), in decimal degrees.  It may optionally contain columns: "NAME" (giving a label to each point); "COLOR", which can take either color names like "red" and "magenta" or hex codes like "#ff0000"; and "RADIUS", which takes a marker size in arcseconds (default 10 arcseconds.  Check out an `example FITS table </files/example-cat.fits>`_ or `example CSV table </files/example-cat.csv>`_.
 
+Cutouts:
+
+#. If you click on the map, in the popup, one of the links is a "Cutout" (in JPEG format) (or "(FITS)" format cutout).
+   The cutout URLs are like
+   ``https://www.legacysurvey.org/viewer/cutout.jpg?ra=187.9778&dec=15.1242&layer=ls-dr9&pixscale=0.500``
+#. You can set the image size with either the ``size=500`` or ``width=800&height=500`` arguments.
+#. For FITS format, you can set the ``bands=gr`` argument to include the given list of bands, from among ``g``, ``r``, ``i`` and ``z`` for the optical; and ``1`` or ``2`` for unWISE.
+#. Normally, we resample from the released brick-level products into the WCS grid that you have requested.  For FITS cutouts, you can instead request that we return a sub-image from the brick-level products (without resampling), by including the ``subimage`` argument.  This will return all images that overlap your WCS region of interest.  In parts of the sky where bricks overlap, subimage from each overlapping brick will be included.
+#. For FITS cutouts, inverse-variance maps can be requested with the ``invvar`` flag.
+
 A list of the URL patterns that are supported by the viewer is
 available `here`_.
 

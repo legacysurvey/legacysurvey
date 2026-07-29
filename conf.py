@@ -152,16 +152,17 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/.", 'Home'),
         ((
-            ("/dr10/description", 'Description'),
-            ("/dr10/files", 'Files'),
-            ("/dr10/catalogs", 'Catalogs'),
-            ("/dr10/updates", 'Updates'),
-            ("/dr10/bitmasks", 'Bitmasks'),
-            ("/dr10/external", 'External Catalogs'),
-            ("/dr10/issues", 'Known Issues'),
-        ), 'DR10'),
+            ("/dr11/description", 'Description'),
+            ("/dr11/files", 'Files'),
+            ("/dr11/catalogs", 'Catalogs'),
+            ("/dr11/updates", 'Updates'),
+            ("/dr11/bitmasks", 'Bitmasks'),
+            ("/dr11/external", 'External Catalogs'),
+            ("/dr11/issues", 'Known Issues'),
+        ), 'DR11'),
         ((
             ("https://data.desi.lbl.gov", 'DESI spectra'),
+            ("/dr10", 'Data Release 10'),
             ("/dr9", 'Data Release 9'),
             ("/dr8", 'Data Release 8'),
             ("/dr7", 'Data Release 7'),
@@ -185,6 +186,7 @@ NAVIGATION_LINKS = {
         ("https://www.legacysurvey.org/viewer/urls", 'List of Cutout/URL Patterns'),
         ), 'Viewer'),
         ((
+            ("/dr11/gallery", 'DR11'),
             ("/dr10/gallery", 'DR10'),
             ("/dr9/gallery", 'DR9'),
             ("/dr8/gallery", 'DR8'),

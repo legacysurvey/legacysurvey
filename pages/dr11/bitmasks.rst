@@ -1,4 +1,4 @@
-.. title: DR10 bitmasks
+.. title: DR11 bitmasks
 .. slug: bitmasks
 .. tags: 
 .. has_math: yes
@@ -8,7 +8,7 @@
 .. contents::
 
 
-This page details the meaning of the bitmasks provided with Data Release 10 of the Legacy Surveys. The bits are
+This page details the meaning of the bitmasks provided with Data Release 11 of the Legacy Surveys. The bits are
 enumerated as a power (i.e. ``7`` written in a column of bits means `two-to-the-power-of-7`).
 
 ``MASKBITS``
@@ -21,7 +21,7 @@ and sweeps catalogs. See also the `legacypipe bitmask definitions`_.
 Bit Name          Description
 === ============= ===============================
 0   ``NPRIMARY``  touches a pixel that is outside the ``BRICK_PRIMARY`` region of a brick
-1   ``BRIGHT``    touches a pixel within `half of`_ the locus of a `radius-magnitude relation`_. Set for Tycho sources with ``MAG_VT`` < 13 and Gaia stars with `G < 13`_.
+1   ``BRIGHT``    touches a pixel within `half of`_ the locus of a `radius-magnitude relation`_. Set for Tycho sources with ``MAG_VT`` < 13 and Gaia stars with `G < 13`_
 2   ``SATUR_G``   touches a pixel that was saturated in at least one :math:`g`-band image
 3   ``SATUR_R``   touches a pixel that was saturated in at least one :math:`r`-band image
 4   ``SATUR_Z``   touches a pixel that was saturated in at least one :math:`z`-band image
@@ -31,21 +31,23 @@ Bit Name          Description
 8   ``WISEM1``    touches a pixel in a ``WISEMASK_W1`` bright star mask
 9   ``WISEM2``    touches a pixel in a ``WISEMASK_W2`` bright star mask
 10  ``BAILOUT``   touches a pixel in a blob where we "bailed out" of source fitting
-11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation`_. Set for Gaia stars with `G < 16`_. The ``MEDIUM`` radius is twice the ``BRIGHT`` radius at the same magnitude.
+11  ``MEDIUM``    touches a pixel within the locus of a `radius-magnitude relation`_. Set for Gaia stars with `G < 16`_. The ``MEDIUM`` radius is twice the ``BRIGHT`` radius at the same magnitude
 12  ``GALAXY``    touches a pixel in an `SGA`_ large galaxy
 13  ``CLUSTER``   touches a pixel in a globular cluster
 14  ``SATUR_I``   touches a pixel that was saturated in at least one :math:`i`-band image (always zero prior to DR10)
 15  ``ALLMASK_I`` touches a pixel that has any of the ``ALLMASK_I`` bits set (always zero prior to DR10)
 16  ``SUB_BLOB``  source is in a large blob that was split into smaller blobs for processing
+17  ``RESOLVED``  source lies within a local dwarf galaxy whose stars are resolved (always zero prior to DR11)
+18  ``MCLOUDS``   source lies within one of the Magellanic clouds (always zero prior to DR11)
+19  ``WISE_GAIA`` source lies in a high-density brick and only includes WISE forced performed on Gaia sources (always zero prior to DR11)
 === ============= ===============================
 
-.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/bits.py
-.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L352-L357
-.. _`G < 13`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L348
-.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L349
-.. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
-.. _`SGA`: ../../sga/sga2020
-.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/reference.py#L762-L765
+.. _`legacypipe bitmask definitions`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/bits.py
+.. _`radius-magnitude relation`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/reference.py#L452-L457
+.. _`G < 13`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/reference.py#L448
+.. _`G < 16`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/reference.py#L449
+.. _`SGA`: https://sga.readthedocs.io/en/latest/
+.. _`half of`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/reference.py#L1049-L1052
 
 ``FITBITS``
 ============
@@ -81,8 +83,7 @@ Bit Name                   Description
 ``ANYMASK_X`` denotes a source that touches a bad pixel in *any* of a set of overlapping ``X``-band images whereas
 ``ALLMASK_X`` denotes a source that touches a bad pixel in *all* of a set of overlapping ``X``-band images.
 See, also, the `legacypipe bitmask definitions`_. The
-``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NOIRLab Community Pipeline) `Data Quality bits`_,
-which we `map to the values in the table`_.
+``ANYMASK`` and ``ALLMASK`` bit masks are defined as follows, mostly from the CP (NOIRLab Community Pipeline).
 
 === =========== ==========================
 Bit Name        Description
@@ -99,7 +100,6 @@ Bit Name        Description
 === =========== ==========================
 
 .. _`Data Quality bits`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
-.. _`map to the values in the table`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/image.py#L25
 
 ``WISEMASK_W1``/``WISEMASK_W2``
 ===============================
@@ -141,10 +141,10 @@ In this table, the ``column`` ``names`` are as they appear in, e.g., the `survey
 Bit Name                  Description
 === ===================== ===========================
 0   ``ERR_LEGACYZPTS``    Some error from the `legacyzpts`_ code (e.g., the CP had a WCS error, usually due to being very shallow)
-1   ``NOT_GRZ`` 	  Not a :math:`g`-, :math:`r`- or :math:`z`-band observation
+1   ``NOT_GRIZ`` 	  Not a :math:`g`-, :math:`r`-, :math:`i`- or :math:`z`-band observation
 2   ``NOT_THIRD_PIX``     Mosaic-3 one-third-pixel interpolation problem
-3   ``EXPTIME_LT_30``     Exposure time < 30 seconds
-4   ``CCDNMATCH_LT_20``   Number of matching CCDs < 20
+3   ``EXPTIME``           Exposure time < 30 seconds
+4   ``CCDNMATCH``         Number of matching CCDs < 20
 5   ``ZPT_DIFF_AVG``      Zeropoint for CCD is different than the average for the exposure: abs(``ccdzpt`` - ``zpt``) > 0.25 for DECam, 0.1 for 90Prime, 0.1 for Mosaic-3
 6   ``ZPT_SMALL`` 	  Zeropoint is too *low*: ``zpt`` < (``zpt0`` - P) where P is [0.5, 0.5, 1.0] mag for [DECam, 90Prime, Mosaic-3]
 7   ``ZPT_LARGE`` 	  Zeropoint is too *high*: ``zpt`` > (``zpt0`` + Q) where Q is [0.25, 0.18, 0.8] mag for [DECam, 90Prime, Mosaic-3]
@@ -159,6 +159,7 @@ Bit Name                  Description
 16  ``FLAGGED_IN_DES``    Flagged as bad in DES
 17  ``PHRMS_S7``          A special bit for the DECam S7 chip, indicating that an extra cut on ``ccdphrms`` (see, e.g., the `survey CCDs`_ file) of > 0.1 mag was included
 18  ``DEPTH_CUT_2``       An additional depth cut was applied to allow this field to run to completion (likely because a particularly high source density made extractions intractable)
+19  ``PLVER``             A bit signifying whether a particular pipeline version should be included
 === ===================== ===========================
 
 Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in the ``legacyzpts`` code for `DECam`_ (and also for the `Mosaic-3`_ and `90Prime`_ cameras).
@@ -167,12 +168,12 @@ Some of the exact values used to create the ``CCD_CUTS`` bitmask are recorded in
 .. _`DECaLS`: ../../decamls
 .. _`MzLS`: ../../mzls
 .. _`DR8`: ../../dr8/description
-.. _`survey CCDs`: ../files/#survey-ccds-decam-dr10-fits-gz
-.. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacypipe/bits.py#L26
+.. _`survey CCDs`: ../files/#survey-ccds-decam-dr11-fits-gz
+.. _`used by the legacypipe code`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/bits.py#L27
 .. _`legacyzpts`: https://github.com/legacysurvey/legacyzpts/
-.. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/mosaic-bad_expid.txt
-.. _`90prime-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/90prime-bad_expid.txt
-.. _`decam-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/data/decam-bad_expid.txt
-.. _`DECam`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L345
-.. _`90Prime`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L332
-.. _`Mosaic-3`: https://github.com/legacysurvey/legacypipe/blob/DR10.0.12/py/legacyzpts/psfzpt_cuts.py#L320
+.. _`mosaic-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/data/mosaic-bad_expid.txt
+.. _`90prime-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/data/90prime-bad_expid.txt
+.. _`decam-bad_expid.txt`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/data/decam-bad_expid.txt
+.. _`DECam`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/psfzpt_cuts.py#L357
+.. _`90Prime`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/psfzpt_cuts.py#L344
+.. _`Mosaic-3`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacyzpts/psfzpt_cuts.py#L332

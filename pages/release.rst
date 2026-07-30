@@ -24,6 +24,22 @@
 
 These tables contains information regarding how the RELEASE integer corresponds to the cameras and filter set used for an observation.
 
+DR11 (11010)
+------------
+
+======= ====== ====== =======
+RELEASE CAMERA FILTER PRIMARY
+======= ====== ====== =======
+11010   decam  |g|    1
+11010   decam  |r|    1
+11010   decam  |i|    1
+11010   decam  |z|    1
+11010   wise   |W1|   0
+11010   wise   |W2|   0
+11010   wise   |W3|   0
+11010   wise   |W4|   0
+======= ====== ====== =======
+
 DR10 (10000) and DR10.1 (10002)
 -------------------------------
 

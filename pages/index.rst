@@ -20,7 +20,7 @@
    <h1>DESI Legacy Imaging Surveys</h1>
 
 
-.. container:: col-md-6 col-left
+.. container:: col-md-8 col-left
 
    The `DESI`_ Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
    infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
@@ -47,19 +47,17 @@
    .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 
-.. container:: col-md-6 col-right
+.. container:: col-md-4 col-right
 
    .. class:: jumbotron
 
    .. raw:: html
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
+      <h2>Current Data Release: 11</h2>
+      <p><a class="btn btn-primary btn-lg" href="dr11">DR11</a></p>
 
-      <h2>Current Data Release: 10.1</h2>
-      <p>September 2023 (How DR10/10.1 differ is described on the <a href="dr10/issues#bricks-for-which-sub-blob-was-set">known issues page</a>)</p>
-      <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
-
-.. container::
+.. container:: col-left
 
    .. raw:: html
 

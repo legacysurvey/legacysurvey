@@ -46,21 +46,21 @@ in other bands beyond the originally intended :math:`grz` coverage. For example,
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`i`, :math:`z`) status of the DESI Legacy Imaging Surveys
 as of DR11. The coverage is color-coded by (extinction-corrected) depth. As DR11 only added `new` data in the southern
-footprint of the Legacy Surveys, the northern coverage depicted below is technically from Data Release 9 (`DR9`_).
+footprint of the Legacy Surveys, the BASS/MzLS coverage depicted below is technically from Data Release 9 (`DR9`_).
 
 
 .. image:: /files/depth-g-dr11.png
-    :height: 410
+    :height: 300
     :width: 570
 
 .. image:: /files/depth-r-dr11.png
-    :height: 410
+    :height: 300
     :width: 570
 
 .. image:: /files/depth-i-dr11.png
-    :height: 410
+    :height: 300
     :width: 570
 
 .. image:: /files/depth-z-dr11.png
-    :height: 410
+    :height: 300
     :width: 570

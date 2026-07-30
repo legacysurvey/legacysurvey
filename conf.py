@@ -198,6 +198,7 @@ NAVIGATION_LINKS = {
             ("/dr2/gallery", 'DR2'),
             ), 'Gallery'),
         ((
+            ("https://sga.readthedocs.io/en/latest/", 'SGA-2025'),
             ("/sga/sga2020", 'SGA-2020'),
         ), 'SGA'),
         ("/status", 'Status'),

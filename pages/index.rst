@@ -42,7 +42,6 @@
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
    .. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
-   .. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
    .. _`NOIRLab Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/

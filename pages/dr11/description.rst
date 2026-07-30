@@ -43,7 +43,7 @@ An overview of the Legacy Surveys is available in `Dey et al. (2019)`_.
 .. _`MzLS`: ../../mzls
 .. _`Legacypipe`: https://github.com/legacysurvey/legacypipe
 .. _`Tractor`: https://github.com/dstndstn/tractor
-.. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
+.. _`NOIRLab Community Pipeline`: https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/PL201/
 .. _`Ceres solver`: http://ceres-solver.org
 .. _`SciPy`: https://www.scipy.org
 .. _`mixture-of-Gaussians`: https://arxiv.org/abs/1210.6563
@@ -635,7 +635,7 @@ Code Versions
 * `LegacyPipe <https://github.com/legacysurvey/legacypipe>`_: A range of versions; DR10.0.0, DR10.0.1, DR10.0.2, DR10.0.3, DR10.0.4, DR10.0.5, DR10.0.10 and DR10.0.12. The version used is documented in the Tractor header card ``LEGPIPEV``.
 * `Astrometry.net <https://github.com/dstndstn/astrometry.net>`_: 0.90-8-g575ad17b
 * `Tractor <https://github.com/dstndstn/tractor>`_: dr10.1
-* `NOIRLab Community Pipeline <https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
+* `NOIRLab Community Pipeline <https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/PL201/>`_: A mixture of versions; recorded in the `survey-ccds-* files`_ as ``plver``.
 * `SourceExtractor <http://www.astromatic.net/software/sextractor>`_: 2.25.3
 * `PSFEx <http://www.astromatic.net/software/psfex>`_: 3.23.0
 * `Astropy <https://www.astropy.org/>`_: 5.0.4
@@ -674,7 +674,7 @@ Brick
     are performed within bricks of size approximately 0.25\ |deg| |times| 0.25\ |deg|.
 
 CP
-    Community Pipeline (`reduction pipeline operated by NOIRLab <https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html>`_).
+    Community Pipeline (`reduction pipeline operated by NOIRLab <https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/PL201/>`_).
 
 DECaLS
     `Dark Energy Camera Legacy Survey <https://www.legacysurvey.org/decamls>`_.

@@ -21,7 +21,8 @@
 FITS binary table containing Tractor photometry. Before using these catalogs, note that there may be
 `known issues`_ regarding their content and derivation. All flux-based quantities in the
 catalogs are on the AB system (we specify that WISE fluxes are AB in the table for clarity, as
-such quantities are often quoted on the Vega system).
+such quantities are often quoted on the Vega system). Note that :math:`i`-band quantities are only present for
+``<region>=south``.
 
 .. _`known issues`: ../issues
 .. _`as documented here`: ../../release
@@ -34,6 +35,7 @@ such quantities are often quoted on the Vega system).
 ===================================== ============ ===================== ===============================================
 Name                                  Type         Units                 Description
 ===================================== ============ ===================== ===============================================
+``ls_id_dr11``                        int64                              Unique ID describing each Legacy Survey source
 ``release``		              int16	 		         Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`as documented here`_)
 ``brickid``                           int32                              Brick ID [1,662174]
 ``brickname``                         char[8]                            Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
@@ -63,13 +65,13 @@ Name                                  Type         Units                 Descrip
 ``ref_epoch``                         float32      yr                    Reference catalog reference epoch (eg, 2015.5 for `Gaia DR3`_)
 ``gaia_phot_g_mean_mag``              float32      mag                   `Gaia DR3`_ G band mag
 ``gaia_phot_g_mean_flux_over_error``  float32                            `Gaia DR3`_ G band signal-to-noise
-``gaia_phot_g_n_obs``                 int16                              `Gaia DR3`_ G band number of observations
+``gaia_phot_g_n_obs``                 int32                              `Gaia DR3`_ G band number of observations
 ``gaia_phot_bp_mean_mag``             float32      mag                   `Gaia DR3`_ BP mag
 ``gaia_phot_bp_mean_flux_over_error`` float32                            `Gaia DR3`_ BP signal-to-noise
-``gaia_phot_bp_n_obs``                int16                              `Gaia DR3`_ BP number of observations
+``gaia_phot_bp_n_obs``                int32                              `Gaia DR3`_ BP number of observations
 ``gaia_phot_rp_mean_mag``             float32      mag                   `Gaia DR3`_ RP mag
 ``gaia_phot_rp_mean_flux_over_error`` float32                            `Gaia DR3`_ RP signal-to-noise
-``gaia_phot_rp_n_obs``                int16                              `Gaia DR3`_ RP number of observations
+``gaia_phot_rp_n_obs``                int32                              `Gaia DR3`_ RP number of observations
 ``gaia_phot_variable_flag``           bool                               `Gaia DR3`_ photometric variable flag
 ``gaia_astrometric_excess_noise``     float32                            `Gaia DR3`_ astrometric excess noise
 ``gaia_astrometric_excess_noise_sig`` float32                            `Gaia DR3`_ astrometric excess noise uncertainty

@@ -14,6 +14,6 @@
 
 .. _`Rongpu Zhou`: ../../contact/#other-experts
 
-No special fringe correction was applied to DR10 images. But, any images that were inherited from DR9 will have had the `DR9 fringe correction applied`_.
+No special fringe correction was applied to DR11 images. But, any images that were inherited from DR9 will have had the `DR9 fringe correction applied`_.
 
 .. _`DR9 fringe correction applied`: ../../dr9/fringe

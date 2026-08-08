@@ -13,7 +13,7 @@
   ([PR#192](https://github.com/legacysurvey/legacysurvey/pull/192)):
     - Includes a sufficient set of DR11 pages for an initial release.
 
-# 10.1.3 (DR1, 2025-07-23)
+## 10.1.3 (DR10, 2025-07-23)
 
 - Add cutout documentation ([PR#184](https://github.com/legacysurvey/legacysurvey/pull/184)).
 - Fix slow-loading CSS font ([PR#183](https://github.com/legacysurvey/legacysurvey/pull/183)).

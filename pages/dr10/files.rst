@@ -356,7 +356,7 @@ Random Catalogs (``randoms/*``)
 randoms-1-\*.fits
 -----------------
 
-Twenty files of random points sampled across the CCDs that comprise the geometry of DR9 (see `Myers et al. 2023`_). Random locations
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR10 (see `Myers et al. 2023`_). Random locations
 were generated across the footprint at a density of 2,500 per square degree and meta-information
 about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
 ``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
@@ -370,7 +370,7 @@ Column               Type     Description
 ``RELEASE``	     int16    Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``          int32    A unique Brick ID (in the range [1, 662174])
 ``BRICKNAME``        char[8]  Name of the brick
-``BRICK_OBJID``      int32    Random catalog object number enumerate by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
+``BRICK_OBJID``      int32    Random catalog object number enumerated by increasing ``RA`` within each brick; a unique identifier hash is ``RELEASE,BRICKID,BRICK_OBJID``
 ``RA``               float64  Right ascension at equinox J2000
 ``DEC``              float64  Declination at equinox J2000
 ``NOBS_G``           int16    Number of images that contribute to the central pixel in the :math:`g` filter for this location (not profile-weighted)
@@ -489,7 +489,7 @@ contains all randoms for dr10, regardless of whether the brick is "officially" i
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
 .. _`a particular declination`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/io.py#L105
 .. _`the desitarget code`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/targets.py#L1048
-.. _`DESI data model`: https://desidatamodel.readthedocs.io/en/latest/SURVEYOPS/mtl/main/dark/mtl-dark-hp-HPX.html
+.. _`DESI data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_SURVEYOPS/mtl/main/dark/mtl-dark-hp-HPX.html
 .. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
 .. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/2.6.0/bin/select_randoms

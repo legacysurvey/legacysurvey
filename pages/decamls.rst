@@ -11,8 +11,8 @@
 .. |leq|    unicode:: U+2264 .. LESS-THAN-OR-EQUAL-TO SIGN
 
 The Dark Energy Camera (DECam) on the Blanco 4m telescope,
-located at the Cerro Tololo Inter-American Observatory, will provide the optical
-imaging for targeting for 2/3 of the Dark Energy Spectroscopic Instrument (`DESI`_)
+located at the Cerro Tololo Inter-American Observatory, provided the optical
+imaging for targeting for the majority of the Dark Energy Spectroscopic Instrument (`DESI`_)
 footprint, covering both the North Galactic Cap region at Dec |leq| 32\ |deg|
 and the South Galactic Cap region at Dec |leq| 34\ |deg|.  Due to the
 combination of large field of view and high sensitivity from 400-1000 nm,

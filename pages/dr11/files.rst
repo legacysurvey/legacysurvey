@@ -1,4 +1,4 @@
-.. title: Legacy Survey Files
+.. title: Legacy Surveys Files
 .. slug: files
 .. tags: 
 .. has_math: yes
@@ -24,18 +24,28 @@ For Web Access
 --------------
 
 | **Top level directory:**
-| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/
-| **Top level directory for sweep catalogs:**
-| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/south/sweep/
-
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/
+| **Top level directory for** `DECaLS`_ and other DECam **data**:
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/south/
+| **Top level directory for** `MzLS`_/`BASS`_ **data:**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/north/
+| **Top level directories for sweeps catalogs:**
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/south/sweep/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/north/sweep/
 
 At NERSC (for collaborators)
 ----------------------------
 
 | **Top level directory:**
-| /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/
-| **Top level directory for sweep catalogs:**
-| /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/south/sweep/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/
+| **Top level directory for** `DECaLS`_ **and other DECam data:**
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/south/
+| **Top level directory for** `MzLS`_/`BASS`_ **data:**
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/north/
+| **Top level directories for sweeps catalogs:**
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/south/sweep/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/north/sweep/
+
 
 Summary Files
 =============
@@ -45,28 +55,34 @@ survey-bricks.fits.gz
 
 FITS binary table with the RA, Dec bounds of each geometrical "brick" on the sky.
 This includes all bricks on the sky, not just the ones in our footprint or with
-coverage in DR10.  For that information, see the next file description.
+coverage in DR11.
 
-=============== ======= ======================================================
-Column          Type    Description
-=============== ======= ======================================================
-``BRICKNAME``   char[8] Name of the brick.
-``BRICKID``     int32   A unique integer with 1-to-1 mapping to ``brickname``.
-``BRICKQ``      int16   A "priority" factor used for processing.
-``BRICKROW``    int32   Dec row number.
-``BRICKCOL``    int32   Number of the brick within a Dec row.
-``RA``          float64 RA of the center of the brick.
-``DEC``         float64 Dec of the center of the brick.
-``RA1``         float64 Lower RA boundary.
-``RA2``         float64 Upper RA boundary.
-``DEC1``        float64 Lower Dec boundary.
-``DEC2``        float64 Upper Dec boundary.
-=============== ======= ======================================================
+=================== ======= ======================================================
+Column              Type    Description
+=================== ======= ======================================================
+``BRICKNAME``       char[8] Name of the brick.
+``BRICKID``         int32   A unique integer with 1-to-1 mapping to ``brickname``.
+``BRICKQ``          int16   A "priority" factor used for processing.
+``BRICKROW``        int32   Dec row number.
+``BRICKCOL``        int32   Number of the brick within a Dec row.
+``RA``              float64 RA of the center of the brick.
+``DEC``             float64 Dec of the center of the brick.
+``RA1``             float64 Lower RA boundary.
+``RA2``             float64 Upper RA boundary.
+``DEC1``            float64 Lower Dec boundary.
+``DEC2``            float64 Upper Dec boundary.
+``FALLPRIMGE1DR9N`` float64 Fraction of primary-area pixels in all filters with >= 1 exposure in DR9 north area
+``FALLPRIMGE1DR9S`` float64 Fraction of primary-area pixels in all filters with >= 1 exposure in DR9 south area
+``FALLPRIMGE1DR9S`` float64 Fraction of primary-area pixels in all filters with >= 1 exposure in DR11 area
+``DRVERSION``       int16   Whether brick lies in DR9 or DR11 based on the three previous quantities (9 for DR9, 11 for DR11, 0 for neither)
+``NGAIA``           int32   Number of Gaia sources in brick
+=================== ======= ======================================================
 
-south/survey-bricks-dr10-south.fits.gz
---------------------------------------
+<region>/survey-bricks-dr11-<region>.fits.gz
+--------------------------------------------
 
-A FITS binary table with information that summarizes the contents of each brick in DR10.
+A FITS binary table with information that summarizes the contents of each brick for a region of DR11. Note that :math:`i`-band quantities are not
+included for ``<region>=north``
 
 ================== ========== =========================================================================
 Column             Type       Description
@@ -133,21 +149,21 @@ Column             Type       Description
 ================== ========== =========================================================================
 
 Note that, for the ``nexphist`` rows, pixels that are masked by the NOIRLab Community Pipeline as, e.g., cosmic rays or saturation
-(see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR10 bitmasks page`_), do
+(see, e.g. the ``ALLMASK/ANYMASK`` information on the `DR11 bitmasks page`_), do
 *not* count toward the number of exposures. More information about the morphological types and ``MW_TRANSMISSION`` can be found on
 the `catalogs page`_.
 
 .. _`the larger description`: ../description/#morphological-classification
 .. _`catalogs page`: ../catalogs
 .. _`github`: https://github.com
-.. _`DR10 bitmasks page`: ../bitmasks
+.. _`DR11 bitmasks page`: ../bitmasks
 
-survey-ccds-decam-dr10.fits.gz
-------------------------------
+survey-ccds-<camera>-dr11.fits.gz
+---------------------------------
 
-A FITS binary table with almanac information about each individual CCD image for each camera.
+A FITS binary table with almanac information about each individual CCD image for each camera (where ``<camera>`` is one of ``90prime`` for `BASS`_, ``decam`` for `DECaLS`_ or ``mosaic`` for `MzLS`_).
 
-This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR10 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_.
+This file contains information regarding the photometric and astrometric zero points for each CCD of every image that is part of the DR11 data release. Photometric zero points for each CCD are computed by identifying stars and comparing their instrumental magnitudes to color-selected stars in `the PanSTARRS "qz" catalog`_.
 
 The photometric zeropoints (``zpt``, ``ccdzpt``, etc)
 are magnitude-like numbers (e.g. 25.04), and
@@ -166,7 +182,7 @@ counts.
 ==================== ========== =======================================================
 Column               Type       Description
 ==================== ========== =======================================================
-``image_filename``   char[65]   Path to FITS image, *e.g.* "decam/CP/V5.2.2LS/CP20140328/c4d_140329_040642_ooi_r_ls10.fits.fz".
+``image_filename``   char[X]    Path to FITS image, *e.g.* "decam/CP/V5.2.2LS/CP20140328/c4d_140329_040642_ooi_r_ls10.fits.fz".
 ``image_hdu``        int16      FITS HDU number in the ``image_filename`` file where this image can be found.
 ``camera``           char[X]    The camera that took this image (X is 7 for "90prime", 6 for "mosaic" and 5 for "decam").
 ``expnum``           int64      Exposure number, *e.g.* 348224.
@@ -175,8 +191,8 @@ Column               Type       Description
 ``plprocid``         char[7]    Unique, time-based, CP processing hash - see the `plprocid page`_ for how to convert this to a date.
 ``ccdname``          char[X]    CCD name, *e.g.* "N10", "S7" for DECam (X is 4 for 90prime and mosaic CCDs, and 3 for decam).
 ``object``           char[35]   Name listed in the object tag from the CCD header.
-``propid``           char[10]   Proposal ID of the program that took this image, eg "2014B-0404".
-``filter``           char[1]    Filter used for observation, *e.g.* ":math:`g`", ":math:`r`", ":math:`i`", ":math:`z`".
+``propid``           char[X]    Proposal ID of the program that took this image, eg "2014B-0404".
+``filter``           char[X]    Filter used for observation, *e.g.* ":math:`g`", ":math:`r`", ":math:`i`", ":math:`z`".
 ``exptime``          float32    Exposure time in seconds, *e.g.* 30.
 ``mjd_obs``          float64    Date of observation in MJD (in UTC system), *e.g.* 56884.99373389.
 ``airmass``          float32    Airmass of observation (measured at the telescope bore-sight).
@@ -200,8 +216,8 @@ Column               Type       Description
 ``sig1``             float32    Median per-pixel error standard deviation, in nanomaggies.
 ``ccdzpt``           float32    Zeropoint for the CCD (AB mag).
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), *e.g.* 25.0927.
-``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
-``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
+``ccdraoff``         float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
+``ccddecoff``        float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. DECam exposure data is in electrons. Mosaic and 90prime are in electrons/sec. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
 ``ccdskysb``         float32    Surface brightness (mag/arcsec\ |sup2|) for the sky background.
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
@@ -210,25 +226,24 @@ Column               Type       Description
 ``phrms``            float32    Median photometric rms across all CCDs in the image (in mag).
 ``ccdnastrom``       int16      Number of stars (after sigma-clipping) used to compute astrometric correction.
 ``ccdnphotom``       int16      Number of Gaia+PS1 stars detected with signal-to-noise ratio greater than five.
-``ccd_cuts``         int64      Bit mask describing CCD image quality (see the `DR10 bitmasks page`_).
-``v4plus``           boolean    ``True`` if the Community Pipeline (CP) version number (``plver``, above) is >= 4.0.0.
+``ccd_cuts``         int64      Bit mask describing CCD image quality (see the `DR11 bitmasks page`_).
 ==================== ========== =======================================================
 
 .. _`ordering of the CCD corners is detailed here`: ../../ccdordering
 
-survey-ccds-decam-dr10.kd.fits
-------------------------------
+survey-ccds-<camera>-dr11.kd.fits/ccds-annotated-<camera>-dr11.kd.fits
+----------------------------------------------------------------------
 
-As for the **survey-ccds-decam-dr10.fits.gz** file but limited by the depth of each observation. This file
-contains the CCDs actually used for the DR10 reductions. Columns are the same as for the **survey-ccds-decam-dr10.fits.gz** file.
+As for the **survey-ccds-<camera>-dr10.fits.gz** / **ccds-annotated-<camera>-dr11.fits.gz** files but limited by the depth of each observation. These files contain
+the CCDs actually used for the DR11 reductions. Columns are the same as for the **survey-ccds-<camera>-dr11.fits.gz** / **ccds-annotated-<camera>-dr11.fits.gz** files.
 
-ccds-annotated-decam-dr10.fits.gz
----------------------------------
+ccds-annotated-<camera>-dr11.fits.gz
+------------------------------------
 
-A version of the **survey-ccds-decam-dr10.fits.gz** file with additional information
+A version of the **survey-ccds-<camera>-dr11.fits.gz** files with additional information
 gathered during calibration pre-processing before running the Tractor reductions.
 
-Includes all of the columns in the **survey-ccds-decam-dr10.fits.gz** file plus the columns
+Includes all of the columns in the **survey-ccds-<camera>-dr11.fits.gz** files plus the columns
 listed below.
 
 ==================== ========== ======================================================
@@ -277,16 +292,22 @@ Column               Type       Description
 ``wise_extinction``  float32[4] Extinction for WISE bands W1,W2,W3,W4
 ``psfdepth``         float32    5-sigma PSF detection depth in AB mag, using PsfEx PSF model
 ``galdepth``         float32    5-sigma galaxy (0.45" round exp) detection depth in AB mag
-``gausspsfdepth``    float32    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
+``gausspsfdepth``    float64    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
 ``gaussgaldepth``    float32    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
+``v4plus``           boolean    ``True`` if the Community Pipeline (CP) version number (``plver``, above) is >= 4.0.0.
+``ccdnphotom_used``  int16
+``ccdrarmeds``       float32
+``ccddecrmeds``      float32
+``ccdbprp``          float32
+``ha``               float32
 ==================== ========== ======================================================
 
 .. _`status page`: ../../status
 .. _`issues page`: ../issues
 .. _`DECaLS`: ../../decamls
 
-south/dr10-south-depth.fits.gz
-------------------------------
+<region>/dr11-<region>-depth.fits.gz
+------------------------------------
 
 A concatenation of the depth histograms for each brick, from the
 ``coadd/*/*/*-depth.fits`` tables.  HDU1 contains histograms that describe the
@@ -318,10 +339,10 @@ Column               Type       Description
 ``depthhi``          float32    Upper bin edge for each histogram in HDU1 (5-sigma AB depth)
 ==================== =========  ============================================================
 
-south/dr10-south-depth-summary.fits.gz
---------------------------------------
+<region>/dr11-<region>-depth-summary.fits.gz
+--------------------------------------------
 
-A summary of the depth histogram for DR10.  FITS table with the following columns:
+A summary of the depth histograms for DR11. FITS table with the following columns:
 
 ==================== ======== ======================================================
 Column               Type     Description
@@ -356,12 +377,12 @@ Random Catalogs (``randoms/*``)
 randoms-1-\*.fits
 -----------------
 
-Twenty files of random points sampled across the CCDs that comprise the geometry of DR10 (see `Myers et al. 2023`_). Random locations
+Twenty files of random points sampled across the CCDs that comprise the geometry of DR11 (see `Myers et al. 2023`_). Random locations
 were generated across the footprint at a density of 2,500 per square degree and meta-information
-about the survey was extracted from pixels at each random location from files in the ``coadd`` directory (see below, e.g.
-``coadd/*/*/*-depth-<filter>.fits.fz``, ``coadd/*/*/*-galdepth-<filter>.fits.fz``,
-``coadd/*/*/*-nexp-<filter>.fits.fz``, ``coadd/*/*/*-maskbits.fits.fz``,
-``coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
+about the survey was extracted from pixels at each random location from files in the ``<region>/coadd`` directories (see below, e.g.
+``<region>/coadd/*/*/*-depth-<filter>.fits.fz``, ``<region>/coadd/*/*/*-galdepth-<filter>.fits.fz``,
+``<region>/coadd/*/*/*-nexp-<filter>.fits.fz``, ``<region>/coadd/*/*/*-maskbits.fits.fz``,
+``<region>/coadd/*/*/*-invvar-<filter>.fits.fz``). The order of the points within each file is also random
 (meaning that randomness is retained if just the first N rows of the file are read). Each file contains the following columns:
 
 ==================== ======== ======================================================
@@ -399,9 +420,9 @@ Column               Type     Description
 ``APFLUX_IVAR_R``    float32  Inverse variance of ``APFLUX_R``
 ``APFLUX_IVAR_I``    float32  Inverse variance of ``APFLUX_I``
 ``APFLUX_IVAR_Z``    float32  Inverse variance of ``APFLUX_Z``
-``MASKBITS``         int32    Bitwise mask for optical data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
-``WISEMASK_W1``      uint8    Bitwise mask for WISE W1 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
-``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
+``MASKBITS``         int32    Bitwise mask for optical data in the ``coadd/*/*/*maskbits*`` maps (see the `DR11 bitmasks page`_)
+``WISEMASK_W1``      uint8    Bitwise mask for WISE W1 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR11 bitmasks page`_)
+``WISEMASK_W2``      uint8    Bitwise mask for WISE W2 data in the ``coadd/*/*/*maskbits*`` maps (see the `DR11 bitmasks page`_)
 ``EBV``              float32  Galactic extinction E(B-V) reddening from `SFD98`_
 ``PHOTSYS``	     char[1]  'N' for an `MzLS`_/`BASS`_ location, 'S' for a `DECaLS`_ (or DECam) location
 ``HPXPIXEL``         int64    `HEALPixel`_ containing this location at NSIDE=64 in the NESTED scheme
@@ -428,7 +449,7 @@ Column               Type     Description
 ``PRIORITY``         int64    See the `DESI data model`_; set to 3400, appropriate to a QSO, the highest-priority DESI dark-time target (added to facilitate running randoms through the `DESI fiberassign code`_)
 ==================== ======== ======================================================
 
-The version of the `desitarget`_ code used to generate the random catalogs (``2.6.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
+The version of the `desitarget`_ code used to generate the random catalogs (``5.1.0``) can be extracted from the ``VERSION`` column. The `code is available on GitHub`_ (see also `here`_). The
 northern and southern imaging footprints overlap, so, randoms are resolved by `the desitarget code`_ at `a particular declination`_ and by the Galactic plane. The result is that
 randoms with locations at Dec :math:`\geq` 32.375\ |deg| `and` that are north of the Galactic Plane are only included in this file if they have pixels in `BASS`_/`MzLS`_ (``PHOTSYS`` set to "N"), and
 randoms with locations at Dec <  32.375\ |deg| `or` that are south of the Galactic Plane are only included in this file if they have pixels observed with DECam (``PHOTSYS`` set to "S").
@@ -438,7 +459,7 @@ Work which uses any of the random catalogs should cite `Myers et al. (2023)`_.
 randoms-outside-1-\*.fits
 -------------------------
 
-Twenty files of random points in bricks that do `not` contain an observation in DR10 (i.e. that are "outside" of the DR10 footprint). The columns in this file
+Twenty files of random points in bricks that do `not` contain an observation in DR11 (i.e. that are "outside" of the DR11 footprint). The columns in this file
 are simplified compared to the other random catalogs as most of the entries in the additional columns would be zeros.
 As with the other random catalogs, points were generated at a density of 2,500 per square degree and
 the order of the points within the file is also randomized. Contains the following columns:
@@ -466,11 +487,11 @@ twenty "all-sky" random catalogs (at a density of 2,500 locations per square deg
 where each brick is either populated with observations from the
 Legacy Surveys, or zeros. Contains a subset of the columns from the ``randoms-1-X.fits`` files.
 
-survey-bricks-dr10-randoms-2.6.0.fits
+survey-bricks-dr11-randoms-5.1.0.fits
 -------------------------------------
 
 A similar file to the `survey-bricks.fits.gz`_ file, but with extra columns to help interpret
-the random catalogs. Contains the same columns as the `survey-bricks.fits.gz`_ file, plus the additional
+the random catalogs. Contains similar columns to the `survey-bricks.fits.gz`_ file, plus the additional
 columns:
 
 ================== ======= ======================================================
@@ -480,39 +501,36 @@ Column             Type    Description
 ``AREA_PER_BRICK`` float64 The area of the brick in square degrees.
 ================== ======= ======================================================
 
-south/randoms/randoms-south-1-\*.fits
+<region>/randoms/randoms-<region>-1-\*.fits
 -------------------------------------------
 
 As for the corresponding ``randoms-1-*.fits`` file, but without resolving randoms using `the desitarget code`_. In other words, this file
-contains all randoms for dr10, regardless of whether the brick is "officially" in the ``south`` region.
+contains all randoms for the northern (southern) imaging surveys, regardless of whether the brick is "officially" in the ``north`` (``south``) region.
+
 
 .. _`survey-bricks.fits.gz`: ../files/#survey-bricks-fits-gz
-.. _`a particular declination`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/io.py#L105
-.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/targets.py#L1048
+.. _`a particular declination`: https://github.com/desihub/desitarget/blob/5.1.0/py/desitarget/io.py#L130
+.. _`the desitarget code`: https://github.com/desihub/desitarget/blob/5.1.0/py/desitarget/targets.py#L1246
 .. _`DESI data model`: https://desidatamodel.readthedocs.io/en/latest/DESI_SURVEYOPS/mtl/main/dark/mtl-dark-hp-HPX.html
 .. _`DESI fiberassign code`: https://github.com/desihub/fiberassign
 .. _`HEALPixel`: https://healpy.readthedocs.io/en/latest/
-.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/2.6.0/bin/select_randoms
+.. _`code is available on GitHub`: https://github.com/desihub/desitarget/blob/5.1.0/bin/select_randoms
 .. _`desitarget`: https://github.com/desihub/desitarget/
-.. _`here`: https://github.com/desihub/desitarget/blob/2.6.0/py/desitarget/randoms.py
+.. _`here`: https://github.com/desihub/desitarget/blob/5.1.0/py/desitarget/randoms.py
 
 External Match Files (``south/external/*``)
 ===========================================
-
-.. note::
-   In the summer of 2023, the external-match files were updated to fix a bug related to processing sources
-   in sub-blobs, as `documented on the known issues page`_. The original files, created before the
-   bug was fixed, have been retained in the ``dr10`` directory. We highly recommend using the external-match
-   files in the ``dr10.1`` directory, though, which were created after the bug was fixed.
 
 | **The Legacy Survey photometric catalogs have been matched to a range of external spectroscopic files from the SDSS. These external spectroscopic files can be accessed on the NERSC computers (for collaborators) at:**
 | /global/cfs/cdirs/sdss/data/sdss
 
 | **The resulting catalogs, which are listed below, can be accessed through the web at:**
-| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr10/south/external/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/north/external/
+| https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/south/external/
 
 | **Or on the NERSC computers at:**
-| /global/cfs/cdirs/cosmo/data/legacysurvey/dr10/south/external/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/north/external/
+| /global/cfs/cdirs/cosmo/data/legacysurvey/dr11/south/external/
 
 Each row of each external-match file contains the full record of the nearest object in our Tractored survey
 imaging catalogs, matched at a radius of 1.5 arcsec. The structure of the imaging catalog files
@@ -529,81 +547,81 @@ match with any Legacy Surveys ``BRICK_PRIMARY`` photometric object.
 .. _`catalogs`: ../catalogs
 .. _`Catalogs`: ../catalogs
 
-survey-dr(10|10.1)-south-specObj-dr16.fits
-------------------------------------------
+survey-dr11-<region>-specObj-dr16.fits
+--------------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16 spectrosopic
 pipeline file such that the photometric parameters in row "N" of
-**survey-dr10-south-specObj-dr16.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-specObj-dr16.fits** match the spectroscopic parameters in row "N" of
 specObj-dr16.fits. The spectroscopic file
-is documented in the SDSS DR16 `data model for specObj-dr16.fits`_.
+is documented in the SDSS `data model for specObj-dr16.fits`_.
 
 .. _`data model for specObj-dr16.fits`: https://data.sdss.org/datamodel/files/SPECTRO_REDUX/specObj.html
 
-survey-dr(10|10.1)-south-dr16Q-v4.fits
---------------------------------------
+survey-dr11-<region>-dr16Q-v4.fits
+------------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR16
 visually inspected quasar catalog (`Lyke et al. 2020`_)
 such that the photometric parameters in row "N" of
-**survey-dr10-south-dr16Q-v4.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-dr16Q-v4.fits** match the spectroscopic parameters in row "N" of
 DR16Q_v4.fits. The spectroscopic file
-is documented in the SDSS DR14 `data model for DR16Q_v4.fits`_.
+is documented in the SDSS `data model for DR16Q_v4.fits`_.
 
 .. _`Lyke et al. 2020`: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....8L/abstract
 .. _`Paris et al. 2018`: https://ui.adsabs.harvard.edu/abs/2018A%26A...613A..51P/abstract
 .. _`data model for DR16Q_v4.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_v4.html
 
-survey-dr(10|10.1)-south-superset-dr16Q-v3.fits
------------------------------------------------
+survey-dr11-<region>-superset-dr16Q-v3.fits
+-------------------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR16 spectroscopically
 confirmed objects that were visually inspected as possible quasars (`Lyke et al. 2020`_)
 such that the photometric parameters in row "N" of
-**survey-dr10-south-superset-dr16Q-v3.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-superset-dr16Q-v3.fits** match the spectroscopic parameters in row "N" of
 DR16Q_Superset_v3.fits. The spectroscopic file
-is documented in the SDSS DR16 `data model for DR16Q_Superset_v3.fits`_.
+is documented in the SDSS `data model for DR16Q_Superset_v3.fits`_.
 
 .. _`data model for DR16Q_Superset_v3.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR16Q/DR16Q_Superset_v3.html
 
-survey-dr(10|10.1)-south-dr12Q.fits
------------------------------------
+survey-dr11-<region>-dr12Q.fits
+-------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR12
 visually inspected quasar catalog (`Paris et al. 2017`_)
 such that the photometric parameters in row "N" of
-**survey-dr10-south-dr12Q.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-dr12Q.fits** match the spectroscopic parameters in row "N" of
 DR12Q.fits. The spectroscopic file
-is documented in the SDSS DR12 `data model for DR12Q.fits`_.
+is documented in the SDSS `data model for DR12Q.fits`_.
 
 .. _`Paris et al. 2017`: https://ui.adsabs.harvard.edu/abs/2017A%26A...597A..79P/abstract
 .. _`data model for DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q.html
 
-survey-dr(10|10.1)-south-superset-dr12Q.fits
---------------------------------------------
+survey-dr11-<region>-superset-dr12Q.fits
+----------------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the superset of all SDSS DR12 spectroscopically
 confirmed objects that were visually inspected as possible quasars
 (`Paris et al. 2017`_) such that the photometric parameters in row "N" of
-**survey-dr10-south-superset-dr12Q.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-superset-dr12Q.fits** match the spectroscopic parameters in row "N" of
 Superset_DR12Q.fits. The spectroscopic file
-is documented in the SDSS DR12 `data model for Superset_DR12Q.fits`_.
+is documented in the SDSS `data model for Superset_DR12Q.fits`_.
 
 .. _`data model for Superset_DR12Q.fits`: https://data.sdss.org/datamodel/files/BOSS_QSO/DR12Q/DR12Q_superset.html
 
-survey-dr(10|10.1)-south-dr7Q.fits
-----------------------------------
+survey-dr11-<region>-dr7Q.fits
+------------------------------
 
 HDU1 (the only HDU) contains Tractored survey
 photometry that is row-by-row-matched to the SDSS DR7
 visually inspected quasar catalog (`Schneider et al. 2010`_)
 such that the photometric parameters in row "N" of
-**survey-dr10-south-dr7Q.fits** match the spectroscopic parameters in row "N" of
+**survey-dr11-<region>-dr7Q.fits** match the spectroscopic parameters in row "N" of
 DR7qso.fit. The spectroscopic file
 is documented on the `DR7 quasar catalog description page`_.
 
@@ -611,8 +629,8 @@ is documented on the `DR7 quasar catalog description page`_.
 .. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
-Tractor Catalogs (``south/tractor/*``)
-======================================
+Tractor Catalogs (``<region>/tractor/*``)
+=========================================
 
 In the file listings outlined below:
 
@@ -640,16 +658,10 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 
 .. _`NOIRLab Astro Data Lab`: https://datalab.noirlab.edu/
 
-Sweep Catalogs (``south/sweep/*``)
-==================================
+Sweep Catalogs (``<region>/sweep/*``)
+=====================================
 
-.. note::
-   In the summer of 2023, the sweep catalogs were updated to fix a bug related to processing sources in
-   sub-blobs, as `documented on the known issues page`_. The original sweep catalogs, created before the
-   bug was fixed, have been retained in the ``10.0`` directory. We highly recommend using the sweep
-   catalogs in the ``10.1`` directory, though, which were created after the bug was fixed.
-
-10.[0-1]/sweep-<brickmin>-<brickmax>.fits
+11.0/sweep-<brickmin>-<brickmax>.fits
 -----------------------------------------
 
 The sweeps are light-weight FITS binary tables (containing a subset of the most commonly used
@@ -729,16 +741,16 @@ Name                                  Type         Units                 Descrip
 ``FRACIN_R``                          float32                            Fraction of a source's flux within the blob in :math:`r`, near unity for real sources
 ``FRACIN_I``                          float32                            Fraction of a source's flux within the blob in :math:`i`, near unity for real sources
 ``FRACIN_Z``                          float32                            Fraction of a source's flux within the blob in :math:`z`, near unity for real sources
-``ANYMASK_G``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` (see the `DR10 bitmasks page`_)
-``ANYMASK_R``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` (see the `DR10 bitmasks page`_)
-``ANYMASK_I``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`i` (see the `DR10 bitmasks page`_)
-``ANYMASK_Z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z` (see the `DR10 bitmasks page`_)
-``ALLMASK_G``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` (see the `DR10 bitmasks page`_)
-``ALLMASK_R``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` (see the `DR10 bitmasks page`_)
-``ALLMASK_I``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`i` (see the `DR10 bitmasks page`_)
-``ALLMASK_Z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` (see the `DR10 bitmasks page`_)
-``WISEMASK_W1``                       uint8                              W1 bitmask as cataloged on the `DR10 bitmasks page`_
-``WISEMASK_W2``                       uint8                              W2 bitmask as cataloged on the `DR10 bitmasks page`_
+``ANYMASK_G``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`g` (see the `DR11 bitmasks page`_)
+``ANYMASK_R``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`r` (see the `DR11 bitmasks page`_)
+``ANYMASK_I``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`i` (see the `DR11 bitmasks page`_)
+``ANYMASK_Z``                         int16                              Bitwise mask set if the central pixel from any image satisfies each condition in :math:`z` (see the `DR11 bitmasks page`_)
+``ALLMASK_G``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`g` (see the `DR11 bitmasks page`_)
+``ALLMASK_R``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`r` (see the `DR11 bitmasks page`_)
+``ALLMASK_I``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`i` (see the `DR11 bitmasks page`_)
+``ALLMASK_Z``                         int16                              Bitwise mask set if the central pixel from all images satisfy each condition in :math:`z` (see the `DR11 bitmasks page`_)
+``WISEMASK_W1``                       uint8                              W1 bitmask as cataloged on the `DR11 bitmasks page`_
+``WISEMASK_W2``                       uint8                              W2 bitmask as cataloged on the `DR11 bitmasks page`_
 ``PSFSIZE_G``                         float32      arcsec                Weighted average PSF FWHM in the :math:`g` band
 ``PSFSIZE_R``                         float32      arcsec                Weighted average PSF FWHM in the :math:`r` band
 ``PSFSIZE_I``                         float32      arcsec                Weighted average PSF FWHM in the :math:`i` band
@@ -788,21 +800,21 @@ Name                                  Type         Units                 Descrip
 ``PMRA_IVAR``                         float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMRA``
 ``PMDEC``                             float32      mas/yr                Reference catalog proper motion in Dec direction (:math:`\mu_\delta`) in the ICRS at ``REF_EPOCH``
 ``PMDEC_IVAR``                        float32      1/(mas/yr)\ |sup2|    Reference catalog inverse-variance on ``PMDEC``
-``MASKBITS``           		      int32    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR10 bitmasks page`_)
-``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR10 bitmasks page`_)
+``MASKBITS``           		      int32    	   	       		 Bitwise mask indicating that an object touches a pixel in the ``coadd/*/*/*maskbits*`` maps (see the `DR11 bitmasks page`_)
+``FITBITS``                           int16                              Bitwise mask detailing properties of how a source was fit (see the `DR11 bitmasks page`_)
 ``SERSIC``                            float32                            Power-law index for the Sersic profile model (``TYPE="SER"``)
 ``SERSIC_IVAR``                       float32                            Inverse variance of ``SERSIC``
 ===================================== ============ ===================== ===============================================
 
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
-.. _`SGA`: ../../sga/sga2020
-.. _`documented on the known issues page`: ../issues/#bricks-for-which-sub-blob-was-set
+.. _`SGA`: https://sga.readthedocs.io/en/latest/
+.. _`documented on the known issues page`: ../issues/#brickds-for-which-sub-blob-was-set
 
 .. _photometric-redshifts:
 
-Light Curve sweeps (10.[0-1]-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
------------------------------------------------------------------------------
+Light Curve sweeps (11.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
+-------------------------------------------------------------------------
 
 The "light curve" sweeps files contain values from the `Tractor catalogs`_ that
 relate to multi-epoch WISE data, which are
@@ -813,20 +825,20 @@ Name                   Type         Units                 Description
 ``RELEASE``            int16                              Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
 ``BRICKID``            int32                              A unique Brick ID (in the range [1, 662174])
 ``OBJID``              int32                              Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
-``LC_FLUX_W1``         float32[17]  nanomaggy             ``FLUX_W1`` in each of up to seventeen unWISE coadd epochs (AB system; defaults to zero for unused entries)
-``LC_FLUX_W2``         float32[17]  nanomaggy             ``FLUX_W2`` in each of up to seventeen unWISE coadd epochs (AB; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W1``    float32[17]  1/nanomaggy\ |sup2|   Inverse variance of ``LC_FLUX_W1`` (AB system; defaults to zero for unused entries)
-``LC_FLUX_IVAR_W2``    float32[17]  1/nanomaggy\ |sup2|   Inverse variance of ``LC_FLUX_W2`` (AB; defaults to zero for unused entries)
-``LC_NOBS_W1``         int16[17]                          ``NOBS_W1`` in each of up to seventeen unWISE coadd epochs
-``LC_NOBS_W2``         int16[17]                          ``NOBS_W2`` in each of up to seventeen unWISE coadd epochs
-``LC_MJD_W1``          float64[17]                        ``MJD_W1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_MJD_W2``          float64[17]                        ``MJD_W2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_FRACFLUX_W1``     float32[17]                        ``FRACFLUX_W1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_FRACFLUX_W2``     float32[17]                        ``FRACFLUX_W2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_RCHISQ_W1``       float32[17]                        ``RCHISQ_W1`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_RCHISQ_W2``       float32[17]                        ``RCHISQ_W2`` in each of up to seventeen unWISE coadd epochs (defaults to zero for unused entries)
-``LC_EPOCH_INDEX_W1``  int16[17]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
-``LC_EPOCH_INDEX_W2``  int16[17]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
+``LC_FLUX_W1``         float32[25]  nanomaggy             ``FLUX_W1`` in each of up to twenty five unWISE coadd epochs (AB system; defaults to zero for unused entries)
+``LC_FLUX_W2``         float32[25]  nanomaggy             ``FLUX_W2`` in each of up to twenty five unWISE coadd epochs (AB; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W1``    float32[25]  1/nanomaggy\ |sup2|   Inverse variance of ``LC_FLUX_W1`` (AB system; defaults to zero for unused entries)
+``LC_FLUX_IVAR_W2``    float32[25]  1/nanomaggy\ |sup2|   Inverse variance of ``LC_FLUX_W2`` (AB; defaults to zero for unused entries)
+``LC_NOBS_W1``         int16[25]                          ``NOBS_W1`` in each of up to twenty five unWISE coadd epochs
+``LC_NOBS_W2``         int16[25]                          ``NOBS_W2`` in each of up to twenty five unWISE coadd epochs
+``LC_MJD_W1``          float64[25]                        ``MJD_W1`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_MJD_W2``          float64[25]                        ``MJD_W2`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_FRACFLUX_W1``     float32[25]                        ``FRACFLUX_W1`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_FRACFLUX_W2``     float32[25]                        ``FRACFLUX_W2`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_RCHISQ_W1``       float32[25]                        ``RCHISQ_W1`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_RCHISQ_W2``       float32[25]                        ``RCHISQ_W2`` in each of up to twenty five unWISE coadd epochs (defaults to zero for unused entries)
+``LC_EPOCH_INDEX_W1``  int16[25]                          Index number of unWISE epoch for W1 (defaults to -1 for unused entries)
+``LC_EPOCH_INDEX_W2``  int16[25]                          Index number of unWISE epoch for W2 (defaults to -1 for unused entries)
 ====================== ============ ===================== =======================
 
 The light curve sweeps files are row-by-row-parallel to the standard sweeps files
@@ -835,7 +847,7 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 ``BRICKID`` and ``OBJID``).
 
 
-Extra sweeps (10.[0-1]-extra/sweep-<brickmin>-<brickmax>-ex.fits)
+Extra sweeps (11.0-extra/sweep-<brickmin>-<brickmax>-ex.fits)
 -----------------------------------------------------------------
 
 The "extra" sweeps files contain all columns from the `Tractor catalogs`_ that
@@ -850,112 +862,34 @@ in each row of the standard sweeps files, which can be verified using ``RELEASE`
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 
-Photo-z sweeps (10.1-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
------------------------------------------------------------------
-
-The photometric redshift (photo-z)
-sweeps catalogs are row-by-row-matched to the DR10.1 sweep catalogs as described above for the
-other types of sweeps files.
-
-The photometric redshifts are computed using a random forest algorithm.
-Details of the photo-z training and performance are similar to those
-found in `Zhou et al. (2023)`_.
-We include two sets of photo-zs as part of DR10.1. Both sets include WISE W1 and W2 fluxes, but
-one includes just :math:`grz` fluxes in the optical and one is extended to include
-:math:`i`-band fluxes. Columns in the catalogs that additionally use
-:math:`i`-band can be identified by ``_I`` in the column name.
-For computing the photo-zs, we require at least one exposure in
-each :math:`griz` band of interest. For example, for the :math:`grz`-based
-photo-zs we require at least one exposure in each of the
-:math:`g`, :math:`r` and :math:`z` bands (``NOBS_G,R,Z>1``).
-For objects that do not meet the ``NOBS`` cut,
-the photo-z values are filled with -99.
-
-Although we provide photo-zs for all
-objects that meet the ``NOBS`` cut, the brightest objects have the most reliable
-photo-zs. As a rule of thumb, objects brighter than :math:`z`-band magnitude of 21
-are mostly reliable, whereas fainter objects are increasingly unreliable with
-increasingly large systematic offsets. Plots of the overall performance of the photometric
-redshifts compared to a range of spectroscopic surveys are available for both
-the photo-zs that `do not include i-band`_ and those that `include i-band`_. We also
-provide a `table summarizing the relative performance of the photo-zs with and without i-band`_
-that can be compared to Table 7 of `Zhou et al. (2023)`_.
-
-.. _`do not include i-band`: ../../files/pz_vs_sz_south_dr10.pdf
-.. _`include i-band`: ../../files/pz_vs_sz_with_i_south_dr10.pdf
-.. _`table summarizing the relative performance of the photo-zs with and without i-band`: ../../files/dr10_photoz_performance.txt
-
-The photo-z catalogs do not provide information on star-galaxy separation.
-We do not attempt to identify stars, which are excluded from the photo-z
-training data. To perform star-galaxy separation, one can use the
-morphological ``TYPE`` and/or the photometry (*e.g.*, an optical-WISE
-color cut, as applied in  `Zhou et al. 2021`_, can be very effective for selecting
-redshift |gtapprox| 0.3 galaxies) in the sweep catalogs.
-
-=================== ========== ==========================================================================
-Name                Type       Description
-=================== ========== ==========================================================================
-``RELEASE``         int16      Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
-``BRICKID``         int32      A unique Brick ID (in the range [1, 662174])
-``OBJID``           int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
-``Z_SPEC``          float32    spectroscopic redshift, if available
-``SURVEY``          char[12]   source of the spectroscopic redshift
-``Z_PHOT_MEAN``     float32    photo-z derived from the mean of the photo-z PDF
-``Z_PHOT_MEDIAN``   float32    photo-z derived from the median of the photo-z PDF
-``Z_PHOT_STD``      float32    standard deviation of the photo-zs derived from the photo-z PDF
-``Z_PHOT_L68``      float32    lower bound of the 68% confidence region, derived from the photo-z PDF
-``Z_PHOT_U68``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF
-``Z_PHOT_L95``      float32    lower bound of the 95% confidence region, derived from the photo-z PDF
-``Z_PHOT_U95``      float32    upper bound of the 68% confidence region, derived from the photo-z PDF
-``TRAINING``        boolean    whether or not the spectroscopic redshift is used in photometric redshift training
-``KFOLD``           int16      index of the subset in the 10-fold cross-validation
-``Z_PHOT_MEAN_I``   float32    photo-z derived from the mean of the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_MEDIAN_I`` float32    photo-z derived from the median of the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_STD_I``    float32    standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_L68_I``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_U68_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_L95_I``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
-``Z_PHOT_U95_I``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes)
-``TRAINING_I``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training (including :math:`i`-band fluxes)
-``KFOLD_I``         int16      index of the subset in the 10-fold cross-validation (including :math:`i`-band fluxes)
-=================== ========== ==========================================================================
-
-Work which uses the photometric redshift sweeps should cite `Zhou et al. (2023)`_
-and include the `additional acknowledgment for photometric redshifts`_.
-
-.. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
-.. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
-.. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
-.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
-.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
-
 Foreground object masks (``masking/*``)
 =======================================
 
 The foreground object masks were used to set the ``BRIGHT``, ``MEDIUM``, ``GALAXY`` and ``CLUSTER`` bits
-described on the `DR10 bitmasks page`_. Files in the ``masking`` directory other than **gaia-mask-dr10.fits.gz**
+described on the `DR11 bitmasks page`_. Files in the ``masking`` directory other than **gaia-mask-dr11.fits.gz**
 are generally described as part the overview of the `external catalogs used for masking`_, and have data models
 that are detailed as part of the `Siena Galaxy Atlas (SGA)`_.
 
-gaia-mask-dr10.fits.gz
+gaia-mask-dr11.fits.gz
 ----------------------
 
-A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia EDR3`_ stars used to
-set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR10 bitmasks page`_. See also the general overview of
+A FITS binary table with a single HDU containing information about the `Tycho-2`_ and `Gaia DR3`_ stars used to
+set the ``BRIGHT`` and ``MEDIUM`` bits described on the `DR11 bitmasks page`_. See also the general overview of
 the `external catalogs used for masking`_.
 
 .. _`external catalogs used for masking`: ../external/#external-catalogs-used-for-masking
-.. _`Siena Galaxy Atlas (SGA)`: ../../sga/sga2020
+.. _`Siena Galaxy Atlas (SGA)`: https://sga.readthedocs.io/en/latest/
+.. _`Gaia DR3`: https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html
 
 ===================================== ======= ================== ========================
 Name                                  Type    Units              Description
 ===================================== ======= ================== ========================
-``ra``                                float64 deg                Right ascension from the `Gaia EDR3`_ or `Tycho-2`_ catalog
-``dec``                               float64 deg                Declination from the `Gaia EDR3`_ or `Tycho-2`_ catalog
-``ref_cat``                           char[2]                    Reference catalog source for this star: "T2" for `Tycho-2`_, "GE" for `Gaia EDR3`_
-``ref_id``                            int64                      Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia EDR3`_
-``ref_epoch``                         float32 yr                 Reference catalog reference epoch (eg, 2016.0 for `Gaia EDR3`_)
-``mag``                               float32 mag                Gaia G-band mag for `Gaia EDR3`_; V_T for `Tycho-2`_ when available, otherwise `Hipparcos`_ magnitude
+``ra``                                float64 deg                Right ascension from the `Gaia DR3`_ or `Tycho-2`_ catalog
+``dec``                               float64 deg                Declination from the `Gaia DR3`_ or `Tycho-2`_ catalog
+``ref_cat``                           char[2]                    Reference catalog source for this star: "T2" for `Tycho-2`_, "G3" for `Gaia DR3`_
+``ref_id``                            int64                      Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia DR3`_
+``ref_epoch``                         float32 yr                 Reference catalog reference epoch (eg, 2016.0 for `Gaia DR3`_)
+``mag``                               float32 mag                Gaia G-band mag for `Gaia DR3`_; V_T for `Tycho-2`_ when available, otherwise `Hipparcos`_ magnitude
 ``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
 ``radius``                            float32 deg                Masking radius
 ``radius_pix``                        int64   pix                Masking radius in 0.262 arcsec "brick" pixels
@@ -969,35 +903,31 @@ Name                                  Type    Units              Description
 ``parallax_ivar``                     float32 1/mas\ |sup2|      Reference catalog inverse-variance on ``parallax``
 ``in_desi``                           boolean                    In the DESI footprint?
 ``istycho``                           boolean                    From, or was matched to, the `Tycho-2`_ catalog?
-``isgaia``                            boolean                    From, or was matched to, the `Gaia EDR3`_ catalog?
-``isbright``                          boolean                    Is a ``BRIGHT`` star? ``BRIGHT`` stars are all `Tycho-2`_ stars, plus `Gaia EDR3`_ stars with ``mask_mag`` < 13 (see also the `DR10 bitmasks page`_)
-``ismedium``                          boolean                    Is a ``MEDIUM`` star? ``MEDIUM`` stars are `Gaia EDR3`_ stars with ``mask_mag`` < 16 (see also the `DR10 bitmasks page`_)
-``pointsource``                       boolean                    Does the star pass the Legacy Surveys `Gaia EDR3`_ point source cut?
-``donotfit``                          boolean                    Does the object match an `SGA`_ galaxy? If ``True`` then the object will appear in the `Tractor catalogs`_ as a "DUP" source.
-``decam_mag_g``                       float32 mag                The estimated DECam :math:`g` magnitude for `Gaia EDR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
-``decam_mag_r``                       float32 mag                The estimated DECam :math:`r` magnitude for `Gaia EDR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
-``decam_mag_i``                       float32 mag                The estimated DECam :math:`i` magnitude for `Gaia EDR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
-``decam_mag_z``                       float32 mag                The estimated DECam :math:`z` magnitude for `Gaia EDR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
+``isgaia``                            boolean                    From, or was matched to, the `Gaia DR3`_ catalog?
+``isbright``                          boolean                    Is a ``BRIGHT`` star? ``BRIGHT`` stars are all `Tycho-2`_ stars, plus `Gaia DR3`_ stars with ``mask_mag`` < 13 (see also the `DR11 bitmasks page`_)
+``ismedium``                          boolean                    Is a ``MEDIUM`` star? ``MEDIUM`` stars are `Gaia DR3`_ stars with ``mask_mag`` < 16 (see also the `DR11 bitmasks page`_)
+``pointsource``                       boolean                    Does the star pass the Legacy Surveys `Gaia DR3`_ point source cut?
+``decam_mag_g``                       float32 mag                The estimated DECam :math:`g` magnitude for `Gaia DR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
+``decam_mag_r``                       float32 mag                The estimated DECam :math:`r` magnitude for `Gaia DR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
+``decam_mag_i``                       float32 mag                The estimated DECam :math:`i` magnitude for `Gaia DR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
+``decam_mag_z``                       float32 mag                The estimated DECam :math:`z` magnitude for `Gaia DR3`_ stars based on the :math:`G` and :math:`Bp-Rp` color
 ``zguess``                            float32 mag                The estimated :math:`z` magnitude for `Tycho-2`_ stars from matching to `2MASS`_ and estimating :math:`V` to :math:`z` transformations based on `APASS`_.
 ``brickname``                         char[8]                    Name of brick, encoding the brick sky position, eg "1126p222" near RA=112.6, Dec=+22.2
 ``ibx``                               int32                      Integer brick pixel X coordinate (0-indexed) of this star
 ``iby``                               int32                      Integer brick pixel Y coordinate (0-indexed) of this star
-``gaia_phot_g_mean_mag``              float32 mag                `Gaia EDR3`_ G band magnitude
-``gaia_phot_g_mean_flux_over_error``  float32 	      	         `Gaia EDR3`_ G band signal-to-noise
-``gaia_phot_g_n_obs``                 int32 	      	      	 `Gaia EDR3`_ G band number of observations
-``gaia_phot_bp_mean_mag``             float32 mag     	      	 `Gaia EDR3`_ BP magnitude
-``gaia_phot_bp_mean_flux_over_error`` float32 	      	      	 `Gaia EDR3`_ BP signal-to-noise
-``gaia_phot_rp_mean_mag``             float32 mag      	      	 `Gaia EDR3`_ RP magnitude
-``gaia_phot_rp_mean_flux_over_error`` float32 	      	      	 `Gaia EDR3`_ RP signal-to-noise
-``gaia_astrometric_excess_noise``     float32 	      	      	 `Gaia EDR3`_ astrometric excess noise
-``gaia_astrometric_excess_noise_sig`` float32 	      	      	 `Gaia EDR3`_ astrometric excess noise uncertainty
-``gaia_duplicated_source``            boolean 	      	      	 `Gaia EDR3`_ duplicated source flag
-``gaia_phot_bp_rp_excess_factor``     float32 	      	      	 `Gaia EDR3`_ BP/RP excess factor
-``gaia_astrometric_sigma5d_max``      float32 mas   	      	 `Gaia EDR3`_ longest semi-major axis of the 5-d error ellipsoid
-``gaia_astrometric_params_solved``    uint8 	      	      	 Which astrometric parameters were estimated for a `Gaia EDR3`_ source
-``gaia_ipd_frac_multi_peak``          int8                       `Gaia EDR3`_ percent of successful windows from the Image Parameters Determination code with more than one peak
-``gaia_ipd_gof_harmonic_amplitude``   float32                    `Gaia EDR3`_ amplitude of the Image Parameters Determination code goodness-of-fit versus the position angle of a scan
-``gaia_ruwe``                         float32                    `Gaia EDR3`_ renormalized unit weight error
+``gaia_phot_g_mean_mag``              float32 mag                `Gaia DR3`_ G band magnitude
+``gaia_phot_g_mean_flux_over_error``  float32 	      	         `Gaia DR3`_ G band signal-to-noise
+``gaia_phot_g_n_obs``                 int32 	      	      	 `Gaia DR3`_ G band number of observations
+``gaia_phot_bp_mean_mag``             float32 mag     	      	 `Gaia DR3`_ BP magnitude
+``gaia_phot_bp_mean_flux_over_error`` float32 	      	      	 `Gaia DR3`_ BP signal-to-noise
+``gaia_phot_rp_mean_mag``             float32 mag      	      	 `Gaia DR3`_ RP magnitude
+``gaia_phot_rp_mean_flux_over_error`` float32 	      	      	 `Gaia DR3`_ RP signal-to-noise
+``gaia_astrometric_excess_noise``     float32 	      	      	 `Gaia DR3`_ astrometric excess noise
+``gaia_astrometric_excess_noise_sig`` float32 	      	      	 `Gaia DR3`_ astrometric excess noise uncertainty
+``gaia_duplicated_source``            boolean 	      	      	 `Gaia DR3`_ duplicated source flag
+``gaia_phot_bp_rp_excess_factor``     float32 	      	      	 `Gaia DR3`_ BP/RP excess factor
+``gaia_astrometric_sigma5d_max``      float32 mas   	      	 `Gaia DR3`_ longest semi-major axis of the 5-d error ellipsoid
+``gaia_astrometric_params_solved``    uint8 	      	      	 Which astrometric parameters were estimated for a `Gaia DR3`_ source
 ===================================== ======= ================== ========================
 
 .. _`Gaia EDR3`: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
@@ -1008,8 +938,8 @@ Name                                  Type    Units              Description
 .. _`Hipparcos`: https://heasarc.gsfc.nasa.gov/W3Browse/all/hipparcos.html
 .. _`Tractor catalogs`: ../catalogs
 
-Image Stacks (``south/coadd/*``)
-================================
+Image Stacks (``<region>/coadd/*``)
+===================================
 
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixels, at 0.262 arcseconds per pixel.
 
@@ -1020,7 +950,7 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 
 - <AAA>/<brick>/legacysurvey-<brick>-ccds.fits
     FITS binary table with the list of CCD images that were used in this brick.
-    Contains the same columns as **survey-ccds-decam-dr10.fits.gz**, and also contains
+    Contains the same columns as **survey-ccds-decam-dr11.fits.gz**, and also contains
     the additional columns listed below.
 
     ================ ========= ======================================================
@@ -1091,9 +1021,9 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 - <AAA>/<brick>/legacysurvey-<brick>-maskbits.fits.fz
     Bitmask of possible problems with pixels in this brick.
 
-    - HDU1: The optical bitmasks, corresponding to ``MASKBITS`` on the `DR10 bitmasks page`_.
-    - HDU2: The WISE W1 bitmasks, corresponding to ``WISEMASK_W1`` on the `DR10 bitmasks page`_.
-    - HDU3: The WISE W2 bitmasks, corresponding to ``WISEMASK_W2`` on the `DR10 bitmasks page`_.
+    - HDU1: The optical bitmasks, corresponding to ``MASKBITS`` on the `DR11 bitmasks page`_.
+    - HDU2: The WISE W1 bitmasks, corresponding to ``WISEMASK_W1`` on the `DR11 bitmasks page`_.
+    - HDU3: The WISE W2 bitmasks, corresponding to ``WISEMASK_W2`` on the `DR11 bitmasks page`_.
 
 - <AAA>/<brick>/legacysurvey-<brick>-model-<filter>.fits.fz
     Stacked model image centered on a brick location covering 0.25\ |deg| |times| 0.25\ |deg|.
@@ -1133,15 +1063,15 @@ Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixel
 - <AAA>/<brick>/legacysurvey-<brick>-wiseresid.jpg
     JPEG image of the residual image (data minus model) using the WISE filters as the colors.
 
-.. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/ddb05a39b739917d0b03b0cdfd5afccf907a0c7f/py/legacypipe/coadds.py#L466
+.. _`Weighted average PSF FWHM`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/coadds.py#L518
 
 
 Other Files
 ===========
 
 Much additional information is available as part of the `DESI`_ Legacy Imaging Surveys Data Releases, including, in separate directories,
-statistics of the Tractor fits (``south/metrics``),
-code outputs from the fitting processes (``south/logs``) and additional files
+statistics of the Tractor fits (``<region>/metrics``),
+code outputs from the fitting processes (``<region>/logs``) and additional files
 detailing the calibrations (``calib``).
 We don't expect that most users will need a description of these files, but `contact`_ us if you require more information.
 

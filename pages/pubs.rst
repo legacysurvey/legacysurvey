@@ -13,7 +13,7 @@
 
 When using data from the Legacy Surveys in papers, please include the `text on the acknowledgment page`_.
 
-Publications that use Legacy Surveys data or tools are tracked in the `ADS Public Library`_.
+Publications that use Legacy Surveys data or tools are tracked in an `ADS Public Library`_.
 
 .. _`text on the acknowledgment page`: ../acknowledgment
 .. _`ADS Public Library`: https://ui.adsabs.harvard.edu/public-libraries/3gbPEBdlSbe7n9P_EFp8kw

@@ -1,7 +1,7 @@
 .. title: Sky Viewer Tips & Tricks
 .. slug: svtips
 .. date: 2012-11-08 00:06:06
-.. tags: 
+.. tags:
 .. has_math: yes
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
@@ -13,7 +13,7 @@
 .. |AA|    unicode:: U+212B .. ANGSTROM SYMBOL
 .. |mu|    unicode:: U+00B5 .. MICRO SIGN
 
-The Legacy Survey Sky Viewer is generally intuitive, but here are some additional features of which you might not be aware:
+The Legacy Surveys `Sky Viewer`_ (also known as the "Interactive Map" on `the front page`_) is generally intuitive, but here are some additional features of which you might not be aware:
 
 #. Each time you reload the page, you'll jump to a new random NGC galaxy within the most recent Legacy Survey footprint.
 #. You can jump to a new random galaxy by entering a blank string in the "Jump to object" search box.
@@ -43,3 +43,5 @@ A list of the URL patterns that are supported by the viewer is
 available `here`_.
 
 .. _`here`: https://www.legacysurvey.org/viewer/urls
+.. _`Sky Viewer`: https://www.legacysurvey.org/viewer
+.. _`the front page`: ..

@@ -20,16 +20,12 @@
    <h1>DESI Legacy Imaging Surveys</h1>
 
 
-.. container:: col-md-6 col-left
+.. container:: col-md-7 col-left
 
-   The `DESI`_ Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
-   infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
-   of ~14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
-   (:math:`g,r,z`), which was augmented with four infrared bands from `NEOWISE`_.
-
-   Currently, the Legacy Surveys
-   inference model is being self-consistently expanded to > 20,000 square degrees by incorporating additional
-   public DECam data in extra optical bands (:math:`g,r,i,z`) from the `NOIRLab Data Archive`_.
+   The `DESI`_ Legacy Surveys team has produced an inference model and souce catalogs for ~31,000 square degrees
+   of the extragalactic sky in optical and infrared bands. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_)
+   conducted dedicated observations of ~14,000 square degrees in three optical bands (:math:`g,r,z`) , which has
+   been augmented with additional public DECam data (in :math:`g,r,i,z`) and four infrared bands from `NEOWISE`_.
 
    ============================================ ====================================== ================================= ======================================= =======================================
    *DESI Spectroscopic Data Releases* (`DESI`_) *Beijing-Arizona Sky Survey* (`BASS`_) *DECam Legacy Survey* (`DECaLS`_) *Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
@@ -42,24 +38,21 @@
    .. _`DECaLS`: ./decamls
    .. _`MzLS`: ./mzls
    .. _`Dey et al. (2019)`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract
-   .. _`NOIRLab Community Pipeline`: https://legacy.noirlab.edu/noao/staff/fvaldes/CPDocPrelim/PL201_3.html
    .. _`NOIRLab Data Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 
-.. container:: col-md-6 col-right
+.. container:: col-md-5 col-right
 
    .. class:: jumbotron
 
    .. raw:: html
 
       <h2><a href="https://www.legacysurvey.org/viewer">Interactive Map</a></h2>
+      <h2>Current Data Release: 11</h2>
+      <p><a class="btn btn-primary btn-lg" href="dr11">DR11</a></p>
 
-      <h2>Current Data Release: 10.1</h2>
-      <p>September 2023 (How DR10/10.1 differ is described on the <a href="dr10/issues#bricks-for-which-sub-blob-was-set">known issues page</a>)</p>
-      <p><a class="btn btn-primary btn-lg" href="dr10">DR10</a></p>
-
-.. container::
+.. container:: col-left
 
    .. raw:: html
 

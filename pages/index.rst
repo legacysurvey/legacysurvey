@@ -20,16 +20,12 @@
    <h1>DESI Legacy Imaging Surveys</h1>
 
 
-.. container:: col-md-8 col-left
+.. container:: col-md-7 col-left
 
-   The `DESI`_ Legacy Surveys team is producing an inference model of the extragalactic sky in the optical and
-   infrared. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_) conducted dedicated observations
-   of ~14,000 square degrees of extragalactic sky visible from the northern hemisphere in three optical bands
-   (:math:`g,r,z`), which was augmented with four infrared bands from `NEOWISE`_.
-
-   Currently, the Legacy Surveys
-   inference model is being self-consistently expanded to > 20,000 square degrees by incorporating additional
-   public DECam data in extra optical bands (:math:`g,r,i,z`) from the `NOIRLab Data Archive`_.
+   The `DESI`_ Legacy Surveys team has produced an inference model and souce catalogs for ~31,000 square degrees
+   of the extragalactic sky in optical and infrared bands. The original Legacy Surveys (`MzLS`_, `DECaLS`_ and `BASS`_)
+   conducted dedicated observations of ~14,000 square degrees in three optical bands (:math:`g,r,z`) , which has
+   been augmented with additional public DECam data (in :math:`g,r,i,z`) and four infrared bands from `NEOWISE`_.
 
    ============================================ ====================================== ================================= ======================================= =======================================
    *DESI Spectroscopic Data Releases* (`DESI`_) *Beijing-Arizona Sky Survey* (`BASS`_) *DECam Legacy Survey* (`DECaLS`_) *Mayall z-band Legacy Survey* (`MzLS`_) *Extra DECam data* (`NOIRLab Archive`_)
@@ -46,7 +42,7 @@
    .. _`NOIRLab Archive`: https://noirlab.edu/public/projects/astrodataarchive/
    .. _`NEOWISE`: https://wise2.ipac.caltech.edu/docs/release/neowise/
 
-.. container:: col-md-4 col-right
+.. container:: col-md-5 col-right
 
    .. class:: jumbotron
 

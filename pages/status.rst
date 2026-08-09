@@ -45,7 +45,7 @@ in other bands beyond the originally intended :math:`grz` coverage. For example,
 :math:`i` was included as part of Data Releases 10 (`DR10`_) and 11 (`DR11`_).
 
 The figures below depict the (:math:`g`, :math:`r`, :math:`i`, :math:`z`) status of the DESI Legacy Imaging Surveys
-as of DR11. The coverage is color-coded by (extinction-corrected) depth. As DR11 only added `new` data in the southern
+as of DR11. The coverage is color-coded by (extinction-corrected) depth. As DR11 only added *new* data in the southern
 footprint of the Legacy Surveys, the BASS/MzLS coverage depicted below is technically from Data Release 9 (`DR9`_).
 
 

@@ -82,7 +82,7 @@ DESI-COSMOS   1    67710 0.052        0.028        21.9                 5.3
    DESI-QSO  --  1008159 0.084        0.070        29.6                22.5
 
 
-Comparing the performance of South without-i-band and South with-i-band photo-z's (in parentheses) for objects that have valid photo-z's in both:
+Comparing the photo-z performance of South without-i-band and South with-i-band (in parentheses) for objects that have valid photo-z's in both:
 
    survey   bit  count             nmad   nmad_zmag<21  outlier (%)  outlier_zmag<21 (%)
 ----------- --- --------  -------------  -------------  -----------  -------------------

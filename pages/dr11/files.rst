@@ -885,7 +885,18 @@ Although we provide photo-zs for all objects that meet these criteria, the
 brightest objects have the most reliable photo-zs. As a rule of thumb, objects
 brighter than :math:`z`-band magnitude of 21 are mostly reliable, whereas
 fainter objects are increasingly unreliable with increasingly large systematic
-offsets.
+offsets. Plots of the overall performance of the photometric redshifts compared
+to a range of reference redshift surveys are available for the :math:`grz`-based
+photo-zs in the `north without i-band`_ and `south without i-band`_, and for the
+:math:`griz`-based photo-zs in the `south with i-band`_. We also provide a
+`table summarizing the photo-z performance`_, including a direct comparison of
+the southern photo-zs with and without :math:`i`-band, that can be compared to
+Table 7 of `Zhou et al. (2023)`_.
+
+.. _`north without i-band`: ../../files/pz_vs_sz_north_dr11.pdf
+.. _`south without i-band`: ../../files/pz_vs_sz_south_dr11.pdf
+.. _`south with i-band`: ../../files/pz_vs_sz_with_i_south_dr11.pdf
+.. _`table summarizing the photo-z performance`: ../../files/dr11_photoz_performance.txt
 
 The photo-z catalogs do not provide information on star-galaxy separation. We
 do not attempt to identify stars, which are excluded from the photo-z training

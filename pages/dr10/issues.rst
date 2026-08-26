@@ -94,6 +94,15 @@ was also updated to reflect the new information.
 The `dr10-south-depth.fits.gz`_ and `dr10-south-depth-summary.fits.gz`_ files were also updated in December of 2023, although
 all of the changes in these summary files were caused by fixes to the 598 bricks affected by the ``SUB_BLOB`` bug (described above).
 
+Model-fitting failed in some regions of DR10
+--------------------------------------------
+There are some areas where SGA model-fitting may have silently failed in DR10. Known regions include:
+
+- https://www.legacysurvey.org/viewer-dev/?ra=27.775&dec=-44.445&layer=ls-dr10-model&zoom=11&bricks&sga
+- https://www.legacysurvey.org/viewer-dev/?ra=186.5422&dec=13.0210&layer=ls-dr10-model&zoom=12&bricks&sga
+
+but this is a non-exhaustive set of examples, and we have not investigated further.
+
 
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020

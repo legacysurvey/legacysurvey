@@ -111,6 +111,12 @@ A small number of bleed trail artifacts are identified as large galaxies or brig
 as point sources are listed in `legacypipe issue #637`_ and those identified as large galaxies are listed in `legacypipe issue #639`_.
 
 
+Mosaic-3 pattern-noise impacts the :math:`z`-band SGA photometry
+----------------------------------------------------------------
+Subtraction of the Mosaic-3 pattern noise significantly affects the :math:`z`-band photometry of SGA-2020 galaxies in the northern (BASS+MzLS)
+Legacy Surveys, including notable objects such as M101. The outer envelopes of early-type spheroidal galaxies may also have been
+oversubtracted. See `Section 6`, `bullet 3` of `Moustakas et al. (2023)`_ for details and a possible partial fix.
+
 .. _`legacypipe issue #637`: https://github.com/legacysurvey/legacypipe/issues/637
 .. _`legacypipe issue #639`: https://github.com/legacysurvey/legacypipe/issues/639
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
@@ -120,3 +126,4 @@ as point sources are listed in `legacypipe issue #637`_ and those identified as 
 .. _`coadded stacks`: ../files/#image-stacks-region-coadd
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
+.. _`Moustakas et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023ApJS..269....3M/abstract

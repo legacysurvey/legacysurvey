@@ -179,7 +179,7 @@ NAVIGATION_LINKS = {
             ("https://www.darkenergysurvey.org", 'DES'),
             ("http://unwise.me", 'unWISE'),
             ("/rawdata", 'Raw Data')
-            ), 'Other Data'),
+            ), 'Data'),
         ((
         ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
@@ -208,6 +208,7 @@ NAVIGATION_LINKS = {
 #            ("http://thetractor.org", 'The Tractor'),
 #            ), 'Code'),
         ('/contact', 'Contacts'),
+        ('/faq', 'FAQ'),
 
     ),
 }

@@ -51,6 +51,13 @@ A list of the affected bricks `is available here`_.
 .. _`Cori Burst Buffer`: https://docs.nersc.gov/filesystems/cori-burst-buffer/
 .. _`is available here`: ../../files/dr9-south-patched-bricks.fits
 
+An additional missing brick
+---------------------------
+
+In addition to the issue mentioned above, `brick 3041m622 is missing from DR9`_ for reasons we can't yet explain.
+
+.. _`brick 3041m622 is missing from DR9`: https://www.legacysurvey.org/viewer?ra=304.1881&dec=-62.2471&layer=ls-dr9-south&zoom=11&bricks&sga
+
 "Blobmodel" images are not compressed
 -------------------------------------
 

@@ -629,6 +629,21 @@ is documented on the `DR7 quasar catalog description page`_.
 .. _`DR7 quasar catalog description page`: https://classic.sdss.org/dr7/products/value_added/qsocat_dr7.html
 
 
+.. _`reference-redshift photo-z catalog`:
+
+ls_dr11.0_photoz_specz_combined_<region>.fits
+---------------------------------------------
+
+This catalog concatenates all sweep objects that have valid ``Z_SPEC`` values.
+HDU1 (the only HDU) contains all sweep catalog columns
+and all photo-z columns. See the `photometric-redshifts`_ section for more
+information.
+This catalog has an additional
+column ``DESI_TARGET_CLASS`` that indicates if the object was targeted and observed
+as one of the DESI target classes, and it can be "LRG", "BGS", "ELG", "QSO",
+or "" (blank).
+
+
 Tractor Catalogs (``<region>/tractor/*``)
 =========================================
 
@@ -941,7 +956,10 @@ The mapping from survey name to bit number in ``SURVEY_BITMASK`` is:
 
     survey_bits = {'DESI': 0, 'DESI-COSMOS': 1, 'SDSS': 2, 'BOSS': 3, 'eBOSS-LRG': 4, 'eBOSS-ELG': 5, 'DEEP2+3': 6, 'DEEP2': 7, 'AGES': 8, 'VIPERS': 9, 'GAMA': 10, 'WiggleZ': 11, 'OzDES': 12, '2dFLenS': 13, 'C3R2': 14, 'VVDS': 15, 'COSMOS2015': 16, 'SDSS-QSO': 17}
 
-Work which uses the photometric redshift sweeps should cite
+For convenience, we also provide a `reference-redshift photo-z catalog`_
+containing all sweep objects with available reference redshifts (``Z_SPEC``).
+
+Work which uses the photometric redshifts should cite
 `Zhou et al. (2023)`_ and include the
 `additional acknowledgment for photometric redshifts`_.
 

@@ -811,8 +811,6 @@ Name                                  Type         Units                 Descrip
 .. _`SGA`: https://sga.readthedocs.io/en/latest/
 .. _`documented on the known issues page`: ../issues/#brickds-for-which-sub-blob-was-set
 
-.. _photometric-redshifts:
-
 Light Curve sweeps (11.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
 -------------------------------------------------------------------------
 
@@ -858,9 +856,89 @@ The extra sweeps files are row-by-row-parallel to the standard sweeps files
 in each row of the standard sweeps files, which can be verified using ``RELEASE``,
 ``BRICKID`` and ``OBJID``).
 
+.. _photometric-redshifts:
+
+Photo-z sweeps (11.0-photo-z/sweep-<brickmin>-<brickmax>-pz.fits)
+-----------------------------------------------------------------
+
+The photometric redshift (photo-z) sweep catalogs are row-by-row-matched to the
+DR11.0 sweep catalogs as described above for the other types of sweep files.
+
+The photometric redshifts are computed using a random forest algorithm. Details
+of the photo-z training and performance are similar to those found in
+`Zhou et al. (2023)`_. All of the photo-zs use :math:`grz` and WISE W1 and W2
+fluxes. The southern catalogs also include a second set of photo-zs that use
+:math:`i`-band fluxes. Columns for the photo-zs that additionally use
+:math:`i`-band are identified by ``_I`` in the column name. The northern catalogs
+do not contain these ``_I`` columns because DR11 has no :math:`i`-band data in
+the north.
+
+For computing the :math:`grz`-based photo-zs, we require at least one exposure
+and a positive flux inverse variance in each of the :math:`g`, :math:`r` and
+:math:`z` bands (``NOBS_G,R,Z >= 1`` and ``FLUX_IVAR_G,R,Z > 0``). The
+:math:`griz`-based photo-zs have the same requirements with the addition of the
+:math:`i` band. Objects with ``TYPE == 'DUP'`` are also excluded. For objects
+that do not meet these criteria, the corresponding photo-z values and ``KFOLD``
+are filled with -99.
+
+Although we provide photo-zs for all objects that meet these criteria, the
+brightest objects have the most reliable photo-zs. As a rule of thumb, objects
+brighter than :math:`z`-band magnitude of 21 are mostly reliable, whereas
+fainter objects are increasingly unreliable with increasingly large systematic
+offsets.
+
+The photo-z catalogs do not provide information on star-galaxy separation. We
+do not attempt to identify stars, which are excluded from the photo-z training
+data. To perform star-galaxy separation, one can use the morphological ``TYPE``
+and/or the photometry (*e.g.*, an optical-WISE color cut, as applied in
+`Zhou et al. 2021`_, can be very effective for selecting redshift |gtapprox|
+0.3 galaxies) in the sweep catalogs.
+
+=================== ========== ==========================================================================
+Name                Type       Description
+=================== ========== ==========================================================================
+``LS_ID_DR11``      int64      Unique ID describing each Legacy Survey source
+``RELEASE``         int16      Integer denoting the camera and filter set used, which will be unique for a given processing run of the data (`RELEASE is documented here`_)
+``BRICKID``         int32      A unique Brick ID (in the range [1, 662174])
+``OBJID``           int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
+``Z_SPEC``          float32    Reference (generally spectroscopic) redshift, if available; -99 otherwise
+``SURVEY``          char[11]   Source of the adopted reference redshift
+``SURVEY_BITMASK``  int32      Bitwise mask recording every source of an available reference redshift, as detailed in the table below
+``Z_PHOT_MEAN``     float32    Photo-z derived from the mean of the photo-z PDF
+``Z_PHOT_MEDIAN``   float32    Photo-z derived from the median of the photo-z PDF
+``Z_PHOT_STD``      float32    Standard deviation of the photo-zs derived from the photo-z PDF
+``Z_PHOT_L68``      float32    Lower bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_U68``      float32    Upper bound of the 68% confidence region, derived from the photo-z PDF
+``Z_PHOT_L95``      float32    Lower bound of the 95% confidence region, derived from the photo-z PDF
+``Z_PHOT_U95``      float32    Upper bound of the 95% confidence region, derived from the photo-z PDF
+``TRAINING``        boolean    Whether or not the reference redshift is used in photometric redshift training
+``KFOLD``           int16      Index of the subset in the 10-fold cross-validationon
+``Z_PHOT_MEAN_I``   float32    Photo-z derived from the mean of the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_MEDIAN_I`` float32    Photo-z derived from the median of the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_STD_I``    float32    Standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_L68_I``    float32    Lower bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_U68_I``    float32    Upper bound of the 68% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_L95_I``    float32    Lower bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes; south only)
+``Z_PHOT_U95_I``    float32    Upper bound of the 95% confidence region, derived from the photo-z PDF (including :math:`i`-band fluxes; south only)
+``TRAINING_I``      boolean    Whether or not the reference redshift is used in photometric redshift training (including :math:`i`-band fluxes; south only)
+``KFOLD_I``         int16      Index of the subset in the 10-fold cross-validation (including :math:`i`-band fluxes; south only)
+=================== ========== ==========================================================================
+
+The mapping from survey name to bit number in ``SURVEY_BITMASK`` is:
+
+.. code-block:: python
+
+    survey_bits = {'DESI': 0, 'DESI-COSMOS': 1, 'SDSS': 2, 'BOSS': 3, 'eBOSS-LRG': 4, 'eBOSS-ELG': 5, 'DEEP2+3': 6, 'DEEP2': 7, 'AGES': 8, 'VIPERS': 9, 'GAMA': 10, 'WiggleZ': 11, 'OzDES': 12, '2dFLenS': 13, 'C3R2': 14, 'VVDS': 15, 'COSMOS2015': 16, 'SDSS-QSO': 17}
+
+Work which uses the photometric redshift sweeps should cite
+`Zhou et al. (2023)`_ and include the
+`additional acknowledgment for photometric redshifts`_.
+
 .. _`additional acknowledgment for photometric redshifts`: ../../acknowledgment/#photometric-redshifts
 .. _`Zhou et al. (2021)`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
 .. _`Zhou et al. 2021`: https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3309Z/abstract
+.. _`Zhou et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
+.. _`Zhou et al. 2023`: https://ui.adsabs.harvard.edu/abs/2023arXiv230906443Z/abstract
 
 Foreground object masks (``masking/*``)
 =======================================

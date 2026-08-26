@@ -929,7 +929,7 @@ Name                Type       Description
 ``OBJID``           int32      Catalog object number within this brick; a unique identifier hash is ``RELEASE,BRICKID,OBJID``; ``OBJID`` spans [0,N-1] and is contiguously enumerated within each blob
 ``Z_SPEC``          float32    Reference (generally spectroscopic) redshift, if available; -99 otherwise
 ``SURVEY``          char[11]   Source of the adopted reference redshift
-``SURVEY_BITMASK``  int32      Bitwise mask recording every source of an available reference redshift, as detailed in the table below
+``SURVEY_BITMASK``  int32      Bitwise mask recording every source of an available reference redshift, as detailed in the mapping below
 ``Z_PHOT_MEAN``     float32    Photo-z derived from the mean of the photo-z PDF
 ``Z_PHOT_MEDIAN``   float32    Photo-z derived from the median of the photo-z PDF
 ``Z_PHOT_STD``      float32    Standard deviation of the photo-zs derived from the photo-z PDF
@@ -938,7 +938,7 @@ Name                Type       Description
 ``Z_PHOT_L95``      float32    Lower bound of the 95% confidence region, derived from the photo-z PDF
 ``Z_PHOT_U95``      float32    Upper bound of the 95% confidence region, derived from the photo-z PDF
 ``TRAINING``        boolean    Whether or not the reference redshift is used in photometric redshift training
-``KFOLD``           int16      Index of the subset in the 10-fold cross-validationon
+``KFOLD``           int16      Index of the subset in the 10-fold cross-validation
 ``Z_PHOT_MEAN_I``   float32    Photo-z derived from the mean of the photo-z PDF (including :math:`i`-band fluxes; south only)
 ``Z_PHOT_MEDIAN_I`` float32    Photo-z derived from the median of the photo-z PDF (including :math:`i`-band fluxes; south only)
 ``Z_PHOT_STD_I``    float32    Standard deviation of the photo-zs derived from the photo-z PDF (including :math:`i`-band fluxes; south only)

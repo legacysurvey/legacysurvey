@@ -631,7 +631,7 @@ is documented on the `DR7 quasar catalog description page`_.
 
 .. _`reference-redshift photo-z catalog`:
 
-ls_dr11.0_photoz_specz_combined_<region>.fits
+survey-dr11-<region>-photoz-specz-combined.fits
 ---------------------------------------------
 
 This catalog concatenates all sweep objects that have valid ``Z_SPEC`` values.

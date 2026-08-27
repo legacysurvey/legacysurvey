@@ -632,7 +632,7 @@ is documented on the `DR7 quasar catalog description page`_.
 .. _`reference-redshift photo-z catalog`:
 
 survey-dr11-<region>-photoz-specz-combined.fits
----------------------------------------------
+-----------------------------------------------
 
 This catalog concatenates all sweep objects that have valid ``Z_SPEC`` values.
 HDU1 (the only HDU) contains all sweep catalog columns

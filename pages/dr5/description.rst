@@ -153,6 +153,7 @@ See also the `list of URL/cutout patterns that are supported by the viewer`_.
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`DR4 description`: ../../dr4/description
 .. _`files`: ../files
+.. _`catalogs`: ../catalogs
 .. _`the Sky viewer`: https://www.legacysurvey.org/viewer
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
@@ -336,8 +337,8 @@ expect many such cases for the faintest objects.
 
 DR5 also contains WISE fluxes force-photometered at the position of Legacy Survey sources.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
-We have converted these to an AB system using the `recommended conversions by
-the WISE team`_. Namely,
+Where WISE fluxes are reported as being on the AB system for Legacy Surveys `files`_ and `catalogs`_, we
+have converted from a Vega to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to

@@ -84,6 +84,7 @@ Raw data can be obtained through `the NOIRLab portal`_ (see also the information
 the bottom of the `files`_ page).
 
 .. _`files`: ../files
+.. _`catalogs`: ../catalogs
 .. _`the NOIRLab portal`: https://astroarchive.noirlab.edu/portal/search/
 
 Source Detection
@@ -255,9 +256,8 @@ expect many such cases for the faintest objects.
 
 The DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
-We have converted these to an AB system using the recommended conversions by
-the WISE team documented here
-http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab. Namely,
+Where WISE fluxes are reported as being on the AB system for Legacy Surveys `files`_ and `catalogs`_, we
+have converted from a Vega to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
@@ -265,6 +265,7 @@ give units consistent with the Tractor catalogs.  These conversion factors are r
 Tractor catalog headers ("WISEAB1", etc).
 
 .. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
+.. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 
 Galactic Extinction
 ===================

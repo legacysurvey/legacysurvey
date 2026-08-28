@@ -65,3 +65,12 @@ and then subsequently migrate away from its origin during the fitting process.
 .. _`flag`: ../bitmasks/#fitbits
 .. _`sweep file`: ../files/#sweep-catalogs-region-sweep
 
+
+Missing :math:`i`-band data in the DES region
+---------------------------------------------
+The Legacy Surveys appears to be missing some :math:`i`-band data in the `DES region of DECaLS`_. These data don't appear to be rejected during processing,
+they simply don't appear in the data files reduced by the `NOIRLab Community Pipeline`_ (CP) and transferred to NERSC to be incorporated into the Legacy Surveys.
+We are currently investigating which data is missing any why.
+
+.. _`DES region of DECaLS`: ../../status
+.. _`NOIRLab Community Pipeline`: https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/PL201/

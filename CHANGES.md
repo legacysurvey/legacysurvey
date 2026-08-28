@@ -9,12 +9,12 @@
 
 ## 11.1.0 (DR11, 2026-09-0X)
 
-- Clean up issues through DR11.
+- Clean up issues through DR11
   ([PR#196](https://github.com/legacysurvey/legacysurvey/pull/196)):
     - Should address or mostly address
       [issue #156](https://github.com/legacysurvey/legacysurvey/issues/156) through
       [issue #194](https://github.com/legacysurvey/legacysurvey/issues/194).
-- Add documentation for the DR11 photoz sweeps
+- Add documentation for the DR11 photoz sweeps:
   ([PR#195](https://github.com/legacysurvey/legacysurvey/pull/196)).
     - Also includes new specz-photoz external-match catalog.
 

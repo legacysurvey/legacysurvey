@@ -155,7 +155,7 @@ NAVIGATION_LINKS = {
             ("/dr11/description", 'Description'),
             ("/dr11/files", 'Files'),
             ("/dr11/catalogs", 'Catalogs'),
-            ("/dr11/updates", 'Updates'),
+#            ("/dr11/updates", 'Updates'),
             ("/dr11/bitmasks", 'Bitmasks'),
             ("/dr11/external", 'External Catalogs'),
             ("/dr11/issues", 'Known Issues'),

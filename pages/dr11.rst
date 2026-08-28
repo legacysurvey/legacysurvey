@@ -7,7 +7,6 @@
    | `Description`_
    | `Files`_
    | `Catalogs`_
-   | `Updates`_
    | `Bitmasks`_
    | `External Catalogs`_
    | `Known Issues`_
@@ -15,7 +14,6 @@
 .. _`Description`: /dr11/description
 .. _`Files`: /dr11/files
 .. _`Catalogs`: /dr11/catalogs
-.. _`Updates`: /dr11/updates
 .. _`Bitmasks`: /dr11/bitmasks
 .. _`External Catalogs`: /dr11/external
 .. _`Known Issues`: /dr11/issues

@@ -724,7 +724,7 @@ Name              Type       Description
 ``z_phot_l68``    float32    lower bound of the 68% confidence region, derived from the photo-z PDF
 ``z_phot_u68``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
 ``z_phot_l95``    float32    lower bound of the 95% confidence region, derived from the photo-z PDF
-``z_phot_u95``    float32    upper bound of the 68% confidence region, derived from the photo-z PDF
+``z_phot_u95``    float32    upper bound of the 95% confidence region, derived from the photo-z PDF
 ``z_spec``        float32    spectroscopic redshift, if available
 ``survey``        char[10]   source of the spectroscopic redshift
 ``training``      boolean    whether or not the spectroscopic redshift is used in photometric redshift training

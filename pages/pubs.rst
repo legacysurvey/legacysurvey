@@ -15,5 +15,8 @@ When using data from the Legacy Surveys in papers, please include the `text on t
 
 Publications that use Legacy Surveys data or tools are tracked in an `ADS Public Library`_.
 
+Additional work that relies on the Legacy Surveys can be found in the `ADS list of citations to the Legacy Surveys Overview paper`_.
+
 .. _`text on the acknowledgment page`: ../acknowledgment
 .. _`ADS Public Library`: https://ui.adsabs.harvard.edu/public-libraries/3gbPEBdlSbe7n9P_EFp8kw
+.. _`ADS list of citations to the Legacy Surveys Overview paper`: https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/citations

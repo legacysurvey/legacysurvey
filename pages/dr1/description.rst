@@ -228,15 +228,15 @@ expect many such cases for the faintest objects.
 
 The SDSS, DECam and WISE fluxes are all within a few percent of being on an AB system.
 The WISE Level 1 images and the unWISE image stacks are on a Vega system.
-We have converted these to an AB system using the recommended conversions by
-the WISE team documented here
-http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
+Where WISE fluxes are reported as being on the AB system for Legacy Surveys files and catalogs, we
+have converted from a Vega to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} * 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to
 give units consistent with the Tractor catalogs.
 
 .. _`DR8 catalogs`: ../../dr8/catalogs/#galactic-extinction-coefficients
+.. _`recommended conversions by the WISE team`: http://wise2.ipac.caltech.edu/docs/release/allsky/expsup/sec4_4h.html#conv2ab
 
 Galactic Extinction
 ===================

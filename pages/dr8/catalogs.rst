@@ -279,3 +279,10 @@ and :math:`r, b/a, \phi`:
     |\epsilon|  & = & \frac{1 - b/a}{1 + b/a} \\
     \epsilon_1  & = & |\epsilon| \cos(2 \phi) \\
     \epsilon_2  & = & |\epsilon| \sin(2 \phi) \\
+
+The angle |phi| is related to the more typical astronomical position
+angle (:math:`PA`), measured counterclockwise from the North axis, via:
+
+.. math::
+
+    PA & = & (180-\phi) % \phi \\

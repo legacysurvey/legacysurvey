@@ -94,6 +94,34 @@ was also updated to reflect the new information.
 The `dr10-south-depth.fits.gz`_ and `dr10-south-depth-summary.fits.gz`_ files were also updated in December of 2023, although
 all of the changes in these summary files were caused by fixes to the 598 bricks affected by the ``SUB_BLOB`` bug (described above).
 
+Model-fitting failed in some regions of DR10
+--------------------------------------------
+There are some areas where SGA model-fitting may have silently failed in DR10. Known regions include:
+
+- https://www.legacysurvey.org/viewer-dev/?ra=27.775&dec=-44.445&layer=ls-dr10-model&zoom=11&bricks&sga
+- https://www.legacysurvey.org/viewer-dev/?ra=186.5422&dec=13.0210&layer=ls-dr10-model&zoom=12&bricks&sga
+
+but this is a non-exhaustive set of examples, and we have not investigated further.
+
+
+Bailout bricks that contain sources that have RA and Dec of zero
+----------------------------------------------------------------
+246 bricks reduced near the very end of the DR10 production run (October 4-5, 2022) were processed with
+the "bailout" option set. Of these, 186 include sources with ``RA`` = ``DEC`` = 0, even though ``BX`` and ``BY`` look reasonable.
+
+It is not clear why these bricks took so long to run, or whether they are genuinely problematic. They typically don't look unusual in the `Viewer`_.
+
+Example bricks that have ``BAILOUT`` set in the `MASKBITS bitmask`_ that contain some sources with zeroed-out coordinates include ``1854m320`` and ``1851m322``.
+
+Example bricks that have ``BAILOUT`` set in the `MASKBITS bitmask`_ that do not suffer from the coordinate problem include ``1851m317`` and ``1854m317``.
+
+`This file`_ lists all 246 bricks, and includes the following columns:
+
+- ``filename``: The filename of the relevant brick.
+- ``nbad``: The number of sources with ``RA`` = 0.
+- ``nbailout``: The number of sources with the ``BAILOUT`` flag set.
+- ``ngaia``: The number of Gaia stars.
+- ``ntot``: The total number of objects in the brick.
 
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
 .. _`Siena Galaxy Atlas`: ../../sga/sga2020
@@ -115,3 +143,5 @@ all of the changes in these summary files were caused by fixes to the 598 bricks
 .. _`Large Magellanic Cloud`: https://www.legacysurvey.org/viewer?ra=80.8916&dec=-69.7567&layer=ls-dr10&zoom=5
 .. _`is available here`: ../../files/dr10.1-sub-blob-bricks.txt
 .. _`RELEASE integer`: ../../release
+.. _`Viewer`: https://www.legacysurvey.org/viewer
+.. _`This file`: ../../files/dr10-bailout.txt

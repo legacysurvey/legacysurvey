@@ -232,6 +232,7 @@ More examples are available on the `list of URL/cutout patterns that are support
 .. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
+.. _`catalogs`: ../catalogs
 .. _`the bottom of the files`: ../files/#raw-data
 .. _`survey-ccds-* files`: ../files/#survey-ccds-decam-dr10-fits-gz
 .. _`random catalogs`: ../files/#random-catalogs-randoms
@@ -532,7 +533,8 @@ Starting with `DR6`_, PSF photometry uses the same PSF models
 So, for DR10 the measured fluxes for PS1 stars should be completely self-consistent.
 
 The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
-We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
+Where WISE fluxes are reported as being on the AB system for Legacy Surveys `files`_ and `catalogs`_, we
+have converted from a Vega to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} \times 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to

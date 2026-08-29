@@ -651,11 +651,7 @@ In the file listings outlined below:
 
 - brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|).
 
-- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in (RA, Dec). Explicitly, **<brickmin>** has the format `<AAA>c<BBB>` where `<AAA>` denotes three digits of the minimum :math:`int(RA)` in degrees, <BBB> denotes three digits of the minimum :math:`int(Dec)` in degrees, and `c` uses the `p`/`m` ("plus"/"minus") format outlined in the previous bullet point. The convention is similar for  **<brickmax>** and the maximum RA and Dec. For example `000m010-010m005` would correspond to a survey area limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
-
 - sub-directories are listed by the RA of the brick center, and sub-directory names (**<AAA>**) correspond to RA. For example `002` corresponds to brick centers between an RA of 2\ |deg| and an RA of 3\ |deg|.
-
-- **<filter>** denotes the :math:`g`, :math:`r`, :math:`i` or :math:`z` band, using the corresponding letter.
 
 Note that it is not possible to go from a brick name back to an *exact* (RA, Dec) center (the bricks are not on 0.1\ |deg| grid
 lines). The exact brick center for a given brick name can be derived from columns in the
@@ -675,6 +671,10 @@ Users interested in database access to the Tractor `catalogs`_ can use the `NOIR
 
 Sweep Catalogs (``<region>/sweep/*``)
 =====================================
+
+In the file listings outlined below:
+
+- **<brickmin>** and **<brickmax>** denote the corners of a rectangle in (RA, Dec). Explicitly, **<brickmin>** has the format `<AAA>c<BBB>` where `<AAA>` denotes three digits of the minimum :math:`int(RA)` in degrees, <BBB> denotes three digits of the minimum :math:`int(Dec)` in degrees, and `c` uses the `p`/`m` ("plus"/"minus") format outlined in the previous bullet point. The convention is similar for  **<brickmax>** and the maximum RA and Dec. For example `000m010-010m005` would correspond to a survey area limited by :math:`0^\circ \leq RA < 10^\circ` and :math:`-10^\circ \leq Dec < -5^\circ`.
 
 11.0/sweep-<brickmin>-<brickmax>.fits
 -----------------------------------------
@@ -795,8 +795,8 @@ Name                                  Type         Units                 Descrip
 ``FIBERTOTFLUX_R``                    float32      nanomaggy             Predicted :math:`r`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``FIBERTOTFLUX_I``                    float32      nanomaggy             Predicted :math:`i`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
 ``FIBERTOTFLUX_Z``                    float32      nanomaggy             Predicted :math:`z`-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing
-``REF_CAT``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "GE" for `Gaia EDR3`_, "L3" for the `SGA`_, empty otherwise
-``REF_ID``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia EDR3`_ and `SGA`_
+``REF_CAT``                           char[2]                            Reference catalog source for this star: "T2" for `Tycho-2`_, "G3" for `Gaia DR3`_, "L4" for the `SGA`_, "`MC`_" for an object in one of the Magellanic Clouds, empty otherwise
+``REF_ID``                            int64                              Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for `Gaia DR3`_ and `SGA`_; 1/2 for the LMC/SMC when ``REF_CAT`` is "`MC`_"
 ``REF_EPOCH``                         float32      yr                    Reference catalog reference epoch (eg, 2016.0 for `Gaia EDR3`_)
 ``GAIA_PHOT_G_MEAN_MAG``              float32      mag                   `Gaia EDR3`_ G band magnitude
 ``GAIA_PHOT_G_MEAN_FLUX_OVER_ERROR``  float32                            `Gaia EDR3`_ G band signal-to-noise
@@ -824,6 +824,7 @@ Name                                  Type         Units                 Descrip
 .. _`Gaia`: https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html
 .. _`Tycho-2`: https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html
 .. _`SGA`: https://sga.readthedocs.io/en/latest/
+.. _`MC`: https://github.com/legacysurvey/legacypipe/issues/766
 .. _`documented on the known issues page`: ../issues/#brickds-for-which-sub-blob-was-set
 
 Light Curve sweeps (11.0-lightcurves/sweep-<brickmin>-<brickmax>-lc.fits)
@@ -993,8 +994,8 @@ Name                                  Type    Units              Description
 ===================================== ======= ================== ========================
 ``ra``                                float64 deg                Right ascension from the `Gaia DR3`_ or `Tycho-2`_ catalog
 ``dec``                               float64 deg                Declination from the `Gaia DR3`_ or `Tycho-2`_ catalog
-``ref_cat``                           char[2]                    Reference catalog source for this star: "T2" for `Tycho-2`_, "G3" for `Gaia DR3`_
-``ref_id``                            int64                      Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for `Tycho-2`_; "sourceid" for `Gaia DR3`_
+``ref_cat``                           char[2]                    Reference catalog source for this star: "T2" for `Tycho-2`_, "G3" for `Gaia DR3`_, "L4" for the `SGA`_, "`MC`_" for an object in one of the Magellanic Clouds, empty otherwise
+``ref_id``                            int64                      Reference catalog identifier for this star; Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho2; "sourceid" for `Gaia DR3`_ and `SGA`_; 1/2 for the LMC/SMC when ``ref_cat`` is "`MC`_"
 ``ref_epoch``                         float32 yr                 Reference catalog reference epoch (eg, 2016.0 for `Gaia DR3`_)
 ``mag``                               float32 mag                Gaia G-band mag for `Gaia DR3`_; V_T for `Tycho-2`_ when available, otherwise `Hipparcos`_ magnitude
 ``mask_mag``                          float32 mag                Magnitude used for masking: the lesser of ``mag`` or (``zguess`` + 1)
@@ -1047,6 +1048,12 @@ Name                                  Type    Units              Description
 
 Image Stacks (``<region>/coadd/*``)
 ===================================
+
+In the file listings outlined below:
+
+- brick names (**<brick>**) have the format `<AAAa>c<BBB>` where `A`, `a` and `B` are digits and `c` is either the letter `m` or `p` (e.g. `1126p222`). The names are derived from the (RA, Dec) center of the brick. The first four digits are :math:`int(RA \times 10)`, followed by `p` to denote positive Dec or `m` to denote negative Dec ("plus"/"minus"), followed by three digits of :math:`int(Dec \times 10)`. For example the case `1126p222` corresponds to (RA, Dec) = (112.6\ |deg|, +22.2\ |deg|).
+
+- **<filter>** denotes the :math:`g`, :math:`r`, :math:`i` or :math:`z` band, using the corresponding letter.
 
 Image stacks are on tangent-plane (WCS TAN) projections, 3600 |times| 3600 pixels, at 0.262 arcseconds per pixel.
 

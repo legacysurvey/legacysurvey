@@ -23,6 +23,7 @@ Issues with CCDs that may have affected the quality of DECam observations are re
 .. _`legacypipe pipeline`: https://github.com/legacysurvey/legacypipe/issues?q=is:issue+sort:updated-desc
 .. _`DECam CCDs page`: https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/Status-DECam-CCDs
 
+
 The DR9sv "Data Release"
 ------------------------
 DR9sv was a preliminary version of the Legacy Surveys imaging intended to possibly be used for targeting during the DESI
@@ -36,9 +37,9 @@ and at NERSC in the directory:
 
 DR9sv has been supplanted by the full DR9 release. We recommend ignoring any data from DR9sv, and using DR9 instead.
 
+
 Bricks that were processed using the Burst Buffer at NERSC
 ----------------------------------------------------------
-
 After noticing that some bricks that were run using the `Cori Burst Buffer`_ at NERSC
 were corrupted, we reprocessed all such reductions. A total of 1691 bricks in the
 southern region of the Legacy Surveys were
@@ -51,17 +52,42 @@ A list of the affected bricks `is available here`_.
 .. _`Cori Burst Buffer`: https://docs.nersc.gov/filesystems/cori-burst-buffer/
 .. _`is available here`: ../../files/dr9-south-patched-bricks.fits
 
+
+An additional missing brick
+---------------------------
+In addition to the issue mentioned above, `brick 3041m622 is missing from DR9`_ for reasons we can't yet explain.
+
+.. _`brick 3041m622 is missing from DR9`: https://www.legacysurvey.org/viewer?ra=304.1881&dec=-62.2471&layer=ls-dr9-south&zoom=11&bricks&sga
+
+
 "Blobmodel" images are not compressed
 -------------------------------------
+`Blobmodel images`_ were intended to be compressed, and are named with a ``.fits.fz`` suffix, but they are not actually compressed. For
+example, comparing a DR9 file:
 
-`Blobmodel images`_ were intended to be compressed, and are named with a ``.fits.fz`` suffix, but they are not actually compressed.
+.. code-block::
+
+   $ funpack -L dr9/north/coadd/000/0001m002/legacysurvey-0001m002-blobmodel-z.fits.fz
+   # dr9/north/coadd/000/0001m002/legacysurvey-0001m002-blobmodel-z.fits.fz (51854400 bytes)
+      1 IMAGE SUMS=18446744073094615631/2534366083 BITPIX=-32 [3600x3600] not_tiled
+
+
+to DR10:
+
+.. code-block::
+
+   $ funpack -L dr10/south/coadd/000/0001m002/legacysurvey-0001m002-blobmodel-g.fits.fz
+   # dr10/south/coadd/000/0001m002/legacysurvey-0001m002-blobmodel-g.fits.fz (3409920 bytes)
+     1 IMAGE SUMS=18446744072462013538/0 BITPIX=16 [no_pixels] not_tiled
+     2 IMAGE SUMS=50753720/2437330543 BITPIX=-32 [3600x3600] unknown
+
+the DR10 file is clearly greatly compressed compared to the DR9 file.
 
 .. _`Blobmodel images`: ../files/#image-stacks-region-coadd
 
 
 ``NOBS`` differs between the Tractor catalogs and random catalogs
 -----------------------------------------------------------------
-
 Quantities named ``nobs_x`` (where ``x`` is any of the Legacy Surveys imaging bands) in the `Tractor catalogs`_ (and derived
 products such as the sweep files) are slightly different from the ``NOBS_X`` quantities in the `random catalogs`_.
 
@@ -75,9 +101,9 @@ be expected when deriving ``NOBS`` from the same location in the ``nexp`` `coadd
 are (almost) always larger than what would be derived from the ``nexp`` `coadded stacks`_. This means that constraints based on a minimum ``nexp`` value
 in a given filter will always result in reproducible survey geometry, at the expense of rejecting a small fraction (typically <1%) of sources.
 
+
 Duplicate ``ref_id`` values
 ---------------------------
-
 A very small number of ``ref_id`` values for Gaia sources appear twice in the `Tractor catalogs`_. One of the duplicates corresponds to the
 "correct" Gaia source and the second duplicate has all of the correct information for a Gaia source but with an incorrect
 ``ref_id``. The ``ref_id`` that would be correct for the second duplicate is missing entirely from the `Tractor catalogs`_.
@@ -104,6 +130,12 @@ A small number of bleed trail artifacts are identified as large galaxies or brig
 as point sources are listed in `legacypipe issue #637`_ and those identified as large galaxies are listed in `legacypipe issue #639`_.
 
 
+Mosaic-3 pattern-noise impacts the :math:`z`-band SGA photometry
+----------------------------------------------------------------
+Subtraction of the Mosaic-3 pattern noise significantly affects the :math:`z`-band photometry of SGA-2020 galaxies in the northern (BASS+MzLS)
+Legacy Surveys, including notable objects such as M101. The outer envelopes of early-type spheroidal galaxies may also have been
+oversubtracted. See `Section 6`, `bullet 3` of `Moustakas et al. (2023)`_ for details and a possible partial fix.
+
 .. _`legacypipe issue #637`: https://github.com/legacysurvey/legacypipe/issues/637
 .. _`legacypipe issue #639`: https://github.com/legacysurvey/legacypipe/issues/639
 .. _`legacypipe issue #680`: https://github.com/legacysurvey/legacypipe/issues/680
@@ -113,3 +145,4 @@ as point sources are listed in `legacypipe issue #637`_ and those identified as 
 .. _`coadded stacks`: ../files/#image-stacks-region-coadd
 .. _`sweep files`: ../files/#sweep-catalogs-region-sweep
 .. _`MASKBITS bitmask`: ../bitmasks/#maskbits
+.. _`Moustakas et al. (2023)`: https://ui.adsabs.harvard.edu/abs/2023ApJS..269....3M/abstract

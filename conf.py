@@ -155,7 +155,7 @@ NAVIGATION_LINKS = {
             ("/dr11/description", 'Description'),
             ("/dr11/files", 'Files'),
             ("/dr11/catalogs", 'Catalogs'),
-            ("/dr11/updates", 'Updates'),
+#            ("/dr11/updates", 'Updates'),
             ("/dr11/bitmasks", 'Bitmasks'),
             ("/dr11/external", 'External Catalogs'),
             ("/dr11/issues", 'Known Issues'),
@@ -179,7 +179,7 @@ NAVIGATION_LINKS = {
             ("https://www.darkenergysurvey.org", 'DES'),
             ("http://unwise.me", 'unWISE'),
             ("/rawdata", 'Raw Data')
-            ), 'Other Data'),
+            ), 'Data'),
         ((
         ("https://www.legacysurvey.org/viewer", 'Go to the Sky Viewer'),
         ("/svtips", 'Sky Viewer Tips & Tricks'),
@@ -208,6 +208,7 @@ NAVIGATION_LINKS = {
 #            ("http://thetractor.org", 'The Tractor'),
 #            ), 'Code'),
         ('/contact', 'Contacts'),
+        ('/faq', 'FAQ'),
 
     ),
 }

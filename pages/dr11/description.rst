@@ -243,6 +243,7 @@ More examples are available on the `list of URL/cutout patterns that are support
 .. _`list of URL/cutout patterns that are supported by the viewer`: https://www.legacysurvey.org/viewer/urls
 .. _`wget`: https://www.gnu.org/software/wget/manual/wget.html#Overview
 .. _`files`: ../files
+.. _`catalogs`: ../catalogs
 .. _`the bottom of the files`: ../files/#raw-data
 .. _`survey-ccds-* files`: ../files/#survey-ccds-decam-dr11-fits-gz
 .. _`random catalogs`: ../files/#random-catalogs-randoms
@@ -411,7 +412,7 @@ Primary Objects of Type All Northern Sources     All Southern Sources Resolved N
 *All*                            405,790,233           3,561,828,221            379,018,400              3,541,643,406     3,920,661,806
 ``PSF``                          190,400,842           2,031,416,132            177,046,620              2,021,435,284     2,198,481,904
 ``REX``                          165,922,629           1,107,137,679            155,621,636              1,099,223,580     1,254,845,216
-``EXP``                           26,383,507             215,859,266             24,670,753                214,563,217       239,233,970                           
+``EXP``                           26,383,507             215,859,266             24,670,753                214,563,217       239,233,970
 ``DEV``                           15,909,955             138,162,003             14,940,568                137,496,476       152,437,044
 ``SER``                            7,106,952              68,975,340              6,680,052                 68,650,450        75,330,502
 ``DUP``                               66,348                 277,801                 58,771                    274,399           333,170
@@ -542,7 +543,8 @@ Starting with `DR6`_, PSF photometry uses the same PSF models
 So, for DR10 the measured fluxes for PS1 stars should be completely self-consistent.
 
 The WISE Level 1 images and the `unWISE`_ image stacks are on a Vega system.
-We have converted these to an AB system using the `recommended conversions by the WISE team`_. Namely,
+Where WISE fluxes are reported as being on the AB system for Legacy Surveys `files`_ and `catalogs`_, we
+have converted from a Vega to an AB system using the `recommended conversions by the WISE team`_. Namely,
 :math:`\mathrm{Flux}_{\mathrm{AB}} = \mathrm{Flux}_{\mathrm{Vega}} \times 10^{-(\Delta m/2.5)}`
 where :math:`\Delta m` = 2.699, 3.339, 5.174, and 6.620 mag in the W1, W2, W3 and W4 bands.
 For example, a WISE W1 image should be multiplied by :math:`10^{-2.699/2.5} = 0.083253` to

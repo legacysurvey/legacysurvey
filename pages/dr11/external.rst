@@ -97,9 +97,9 @@ Large Galaxies
 | **/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/masking/SGA2025-ellipse-v1.6-dr11-south.kd.fits**
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/masking/SGA2025-ellipse-v1.6-dr11-north.kd.fits and
 | https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr11/masking/SGA2025-ellipse-v1.6-dr11-south.kd.fits
-|     These catalogs are based on the `2025 version of the Siena Galaxy Atlas`_. The elliptical geometry in the *ellipse* catalogs determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_) for the north and south regions of DR11. Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs to set the morphology of each mask. 
+|     These catalogs are based on the `2025 version of the Siena Galaxy Atlas`_. The elliptical geometry in the *ellipse* catalogs determined where we set the ``GALAXY`` ``MASKBITS`` bit (see the `bitmasks page`_) for the north and south regions of DR11. Specifically, we use the ``RA``, ``DEC``, ``DIAM``, ``PA``, and ``BA`` parameters in these catalogs to set the morphology of each mask.
 
-.. _`2025 version of the Siena Galaxy Atlas`: https://sga.readthedocs.io/en/latest/ 
+.. _`2025 version of the Siena Galaxy Atlas`: https://sga.readthedocs.io/en/latest/
 .. _`bitmasks page`: ../bitmasks
 .. _`can be found in the legacypipe software product`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/data/NGC-star-clusters.fits
 .. _`build-cluster-catalog.py`: https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/bin/build-cluster-catalog.py

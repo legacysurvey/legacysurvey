@@ -8,7 +8,7 @@
 ## 11.0.1 (DR11, 2026-09-0X)
 
 - Correct units for `ccdskycounts`
-  ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
+  ([PR#197](https://github.com/legacysurvey/legacysurvey/pull/197)).
 - Clean up issues through DR11
   ([PR#196](https://github.com/legacysurvey/legacysurvey/pull/196)):
     - Should address or mostly address

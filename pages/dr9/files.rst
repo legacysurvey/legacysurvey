@@ -165,15 +165,15 @@ CP-processed frames (``ooi`` files) have units of ADU for ``decam``, and
 ADU/sec for ``90prime`` and ``mosaic``. Thus for ``ccdskycounts``:
 
 * ``decam``: ``ccdskycounts`` is in ADU/sec; it is approximately equal to the median of the values in the ``ooi`` data product divided by ``exptime``.
-* ``90prime`` and ``mosaic``: ``ccdskycounts`` is in ADU/sec; it is approximately equal to median of ``ooi``.
+* ``90prime`` and ``mosaic``: ``ccdskycounts`` is in ADU/sec; it is approximately equal to the median of ``ooi``.
 
 Finally ``ccdskysb`` is the sky level in mag/arcsec\ |sup2|, computed as
 ``nominal_zeropoint - 2.5*log10(ccdskycounts / pixscale^2)``, where ``nominal_zeropoint``
 is defined for each camera:
 
-* `decam nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/main/py/legacypipe/decam.py#L21>`_
-* `90prime nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/main/py/legacypipe/bok.py#L16>`_
-* `mosaic nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/main/py/legacypipe/mosaic.py#L12>`_
+* `decam nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR9.10.2/py/legacypipe/decam.py#L29>`_
+* `90prime nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR9.10.2/py/legacypipe/bok.py#L18>`_
+* `mosaic nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR9.10.2/py/legacypipe/mosaic.py#L11>`_
 
 .. _`BASS`: ../../bass
 .. _`MzLS`: ../../mzls

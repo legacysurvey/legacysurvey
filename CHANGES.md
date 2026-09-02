@@ -5,7 +5,7 @@
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 11.0.1 (DR11, 2026-09-0X)
+## 11.0.1 (DR11, 2026-09-02)
 
 - Correct units for `ccdskycounts`
   ([PR#197](https://github.com/legacysurvey/legacysurvey/pull/197)).

@@ -232,7 +232,7 @@ Column               Type       Description
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), *e.g.* 25.0927.
 ``ccdraoff``         float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccddecoff``        float32    Median astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
-``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
+``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME; ADU/sec) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
 ``ccdskysb``         float32    Surface brightness (mag/arcsec\ |sup2|) for the sky background.
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.

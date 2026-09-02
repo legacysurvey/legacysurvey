@@ -1,6 +1,6 @@
 .. title: Legacy Survey Files
 .. slug: files
-.. tags: 
+.. tags:
 .. has_math: yes
 
 .. |sigma|    unicode:: U+003C3 .. GREEK SMALL LETTER SIGMA
@@ -158,6 +158,20 @@ contribute
 :math:`30 \times 10^{((25.04 - 22.5) / 2.5)} = 311.3`
 counts.
 
+CP-processed frames (``ooi`` files) have units of ADU for ``decam``, and
+ADU/sec for ``90prime`` and ``mosaic``. Thus for ``ccdskycounts``:
+
+* ``decam``: ``ccdskycounts`` is in ADU/sec; it is approximately equal to the median of the values in the ``ooi`` data product divided by ``exptime``.
+* ``90prime`` and ``mosaic``: ``ccdskycounts`` is in ADU/sec; it is approximately equal to the median of ``ooi``.
+
+Finally ``ccdskysb`` is the sky level in mag/arcsec\ |sup2|, computed as
+``nominal_zeropoint - 2.5*log10(ccdskycounts / pixscale^2)``, where ``nominal_zeropoint``
+is defined for each camera:
+
+* `decam nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR10.9.1/py/legacypipe/decam.py#L21>`_
+* `90prime nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR10.9.1/py/legacypipe/bok.py#L16>`_
+* `mosaic nominal zeropoint <https://github.com/legacysurvey/legacypipe/blob/DR10.9.1/py/legacypipe/mosaic.py#L12>`_
+
 .. _`BASS`: ../../bass
 .. _`MzLS`: ../../mzls
 .. _`description page`: ../description
@@ -202,7 +216,7 @@ Column               Type       Description
 ``zpt``              float32    Median zero point for the entire image (median of all CCDs of the image), *e.g.* 25.0927.
 ``ccdraoff``         float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
 ``ccddecoff``        float32    Median astrometric offset for the CCD <GAIA-Legacy Survey> in arcsec.
-``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. DECam exposure data is in electrons. Mosaic and 90prime are in electrons/sec. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
+``ccdskycounts``     float32    Mean sky counts level per pixel (AVSKY divided by EXPTIME; ADU/sec) in the CP-processed frames measured (with iterative rejection) for each CCD in the image section [500:1500,1500:2500]. Sky counts are normalized to maintain a mean level from the original gain-corrected ADU.
 ``ccdskysb``         float32    Surface brightness (mag/arcsec\ |sup2|) for the sky background.
 ``ccdrarms``         float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.
 ``ccddecrms``        float32    rms in astrometric offset for the CCD <Gaia-Legacy Survey> in arcsec.

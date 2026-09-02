@@ -1,14 +1,14 @@
 # legacysurvey Change Log
 
-## 11.1.1 (DR11, planned)
+## 11.1.0 (DR11, planned)
 
-- *Planned*: correct units for `ccdskycounts`
-  ([issue #152](https://github.com/legacysurvey/legacysurvey/issues/152)).
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
 
-## 11.1.0 (DR11, 2026-09-0X)
+## 11.0.1 (DR11, 2026-09-02)
 
+- Correct units for `ccdskycounts`
+  ([PR#197](https://github.com/legacysurvey/legacysurvey/pull/197)).
 - Clean up issues through DR11
   ([PR#196](https://github.com/legacysurvey/legacysurvey/pull/196)):
     - Should address or mostly address

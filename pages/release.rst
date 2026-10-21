@@ -27,18 +27,20 @@ These tables contains information regarding how the RELEASE integer corresponds 
 DR11 (11010)
 ------------
 
-======= ====== ====== =======
-RELEASE CAMERA FILTER PRIMARY
-======= ====== ====== =======
-11010   decam  |g|    1
-11010   decam  |r|    1
-11010   decam  |i|    1
-11010   decam  |z|    1
-11010   wise   |W1|   0
-11010   wise   |W2|   0
-11010   wise   |W3|   0
-11010   wise   |W4|   0
-======= ====== ====== =======
+========= ====== ========= ====== ====== =======
+RELEASE	  CAMERA RELEASE   CAMERA FILTER PRIMARY
+========= ====== ========= ====== ====== =======
+11010     decam  11011     bok    |g|    1
+11010     decam  11011     bok    |r|    1
+11010     decam  11011     none   |i|    1
+11010     decam  11011     mosaic |z|    1
+11010     wise   11011     wise   |W1|   0
+11010     wise   11011     wise   |W2|   0
+11010     wise   11011     wise   |W3|   0
+11010     wise   11011     wise   |W4|   0
+========= ====== ========= ====== ====== =======
+
+Note that "none" in this table signifies that there is no :math:`i`-band data in the northern footprint for DR11.
 
 DR10 (10000) and DR10.1 (10002)
 -------------------------------

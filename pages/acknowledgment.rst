@@ -98,7 +98,7 @@ Survey Explorer (NEOWISE), which is a project of the Jet Propulsion Laboratory/C
 of Technology. NEOWISE is funded by the National Aeronautics and Space Administration.
 
 The Legacy Surveys imaging of the DESI footprint is supported by the Director, Office of Science,
-Office of High Energy Physics of the U.S. Department of Energy under Contract No. DE-AC02-05CH1123,
+Office of High Energy Physics of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231,
 by the National Energy Research Scientific Computing Center, a DOE Office of Science User Facility
 under the same contract; and by the U.S. National Science Foundation, Division of Astronomical
 Sciences under Contract No. AST-0950945 to NOAO.

@@ -54,8 +54,8 @@ the Bok telescope, Steward Observatory, University of Arizona; and the
 Mayall telescope, Kitt Peak National Observatory, NOIRLab.
 Pipeline processing and analyses of the data were supported by NOIRLab and the
 Lawrence Berkeley National Laboratory (LBNL). The Legacy Surveys project is honored
-to be permitted to conduct astronomical research on Iolkam Du’ag (Kitt Peak),
-a mountain with particular significance to the Tohono O’odham Nation.
+to be permitted to conduct astronomical research on I’oligam Du’ag (Kitt Peak),
+a mountain with particular significance to the `Tohono O’odham Nation <https://www.tonation-nsn.gov/>`_.
 
 NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.
 LBNL is managed by the Regents of the University of California under contract to the U.S. Department of Energy.

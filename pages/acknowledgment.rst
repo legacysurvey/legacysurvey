@@ -54,8 +54,8 @@ the Bok telescope, Steward Observatory, University of Arizona; and the
 Mayall telescope, Kitt Peak National Observatory, NOIRLab.
 Pipeline processing and analyses of the data were supported by NOIRLab and the
 Lawrence Berkeley National Laboratory (LBNL). The Legacy Surveys project is honored
-to be permitted to conduct astronomical research on Iolkam Du’ag (Kitt Peak),
-a mountain with particular significance to the Tohono O’odham Nation.
+to be permitted to conduct astronomical research on I’oligam Du’ag (Kitt Peak),
+a mountain with particular significance to the `Tohono O’odham Nation <https://www.tonation-nsn.gov/>`_.
 
 NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.
 LBNL is managed by the Regents of the University of California under contract to the U.S. Department of Energy.
@@ -98,7 +98,7 @@ Survey Explorer (NEOWISE), which is a project of the Jet Propulsion Laboratory/C
 of Technology. NEOWISE is funded by the National Aeronautics and Space Administration.
 
 The Legacy Surveys imaging of the DESI footprint is supported by the Director, Office of Science,
-Office of High Energy Physics of the U.S. Department of Energy under Contract No. DE-AC02-05CH1123,
+Office of High Energy Physics of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231,
 by the National Energy Research Scientific Computing Center, a DOE Office of Science User Facility
 under the same contract; and by the U.S. National Science Foundation, Division of Astronomical
 Sciences under Contract No. AST-0950945 to NOAO.

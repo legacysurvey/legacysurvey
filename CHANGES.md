@@ -4,6 +4,11 @@
 
 - *Planned*: actually update the raw and CP-processed data access instructions
   ([issue #143](https://github.com/legacysurvey/legacysurvey/issues/143)).
+- Clean up latest minor issues for DR11
+  ([PR#202](https://github.com/legacysurvey/legacysurvey/pull/202)):
+    - Should address
+      [issue #199](https://github.com/legacysurvey/legacysurvey/issues/199) through
+      [issue #201](https://github.com/legacysurvey/legacysurvey/issues/201).
 
 ## 11.0.1 (DR11, 2026-09-02)
 

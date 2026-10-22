@@ -306,14 +306,14 @@ Column               Type       Description
 ``wise_extinction``  float32[4] Extinction for WISE bands W1,W2,W3,W4
 ``psfdepth``         float32    5-sigma PSF detection depth in AB mag, using PsfEx PSF model
 ``galdepth``         float32    5-sigma galaxy (0.45" round exp) detection depth in AB mag
-``gausspsfdepth``    float64    5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
+``gausspsfdepth``    float32\*  [\*float64 in DECam] 5-sigma PSF detection depth in AB mag, using Gaussian PSF approximation (using ``seeing`` value)
 ``gaussgaldepth``    float32    5-sigma galaxy detection depth in AB mag, using Gaussian PSF approximation
 ``v4plus``           boolean    ``True`` if the Community Pipeline (CP) version number (``plver``, above) is >= 4.0.0.
-``ccdnphotom_used``  int16
-``ccdrarmeds``       float32
-``ccddecrmeds``      float32
-``ccdbprp``          float32
-``ha``               float32
+``ccdnphotom_used``  int16      [DECam only] Number of stars used for photometric calibration
+``ccdrarmeds``       float32    [DECam only] Median absolute value of RA calibration error (arcsec)
+``ccddecrmeds``      float32    [DECam only] Median absolute value of Dec calibration error (arcsec)
+``ccdbprp``          float32    [DECam only] Median Gaia BP - RP of astrometric calibrator stars (mag)
+``ha``               float32    [DECam only] Hour angle of observations (deg)
 ==================== ========== ======================================================
 
 .. _`status page`: ../../status
